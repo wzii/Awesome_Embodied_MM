@@ -17,10 +17,10 @@ import json
 import time
 from typing import Type, TypeVar
 
-from openai import OpenAI
+from openai import (APIConnectionError, APITimeoutError, APIStatusError, OpenAI,
+                    RateLimitError)
 from pydantic import BaseModel, ValidationError
-from tenacity import (retry, retry_if_exception_type, stop_after_attempt,
-                      wait_exponential)
+from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponential
 
 from wam.config import Config, load_config
 from wam.logging import COST, get_logger
@@ -31,6 +31,15 @@ T = TypeVar("T", bound=BaseModel)
 
 class LLMError(RuntimeError):
     pass
+
+
+def _is_transient(exc: BaseException) -> bool:
+    """Retry only on rate limits, timeouts, connection drops, and 5xx — not 4xx."""
+    if isinstance(exc, (RateLimitError, APITimeoutError, APIConnectionError)):
+        return True
+    if isinstance(exc, APIStatusError):
+        return exc.status_code >= 500
+    return False
 
 
 class LLMClient:
@@ -72,7 +81,7 @@ class LLMClient:
             reraise=True,
             stop=stop_after_attempt(self._max_retries),
             wait=wait_exponential(multiplier=self._backoff, max=60),
-            retry=retry_if_exception_type(Exception),
+            retry=retry_if_exception(_is_transient),
         )
         def _do() -> tuple[str, int, int]:
             kwargs: dict = {"model": model, "messages": messages, "temperature": temperature}
@@ -116,7 +125,10 @@ class LLMClient:
         temperature = self.cfg.get("models.defaults.temperature", 0.2) if temperature is None else temperature
         max_tokens = self.cfg.get("models.defaults.max_tokens", 4096) if max_tokens is None else max_tokens
         schema_json = json.dumps(schema.model_json_schema(), indent=2)
-        sys_full = (f"{system}\n\nRespond with ONLY a JSON object matching this schema:\n"
+        keys = ", ".join(schema.model_fields.keys())
+        sys_full = (f"{system}\n\nReturn ONLY a JSON object with exactly these top-level keys: "
+                    f"{keys}. Put the values directly at the top level — do NOT wrap them in a "
+                    f"'properties' object and do NOT echo the schema. Schema for reference:\n"
                     f"{schema_json}")
         messages = [{"role": "system", "content": sys_full}, {"role": "user", "content": user}]
 
@@ -126,13 +138,15 @@ class LLMClient:
                                         max_tokens=max_tokens, json_mode=True,
                                         label=f"{label}#{attempt}")
             try:
-                return schema.model_validate_json(_strip_fences(content))
-            except (ValidationError, json.JSONDecodeError) as e:
+                return schema.model_validate(_extract_obj(content, schema))
+            except (ValidationError, json.JSONDecodeError, ValueError) as e:
                 last_err = e
-                log.warning("JSON validation failed for %s (attempt %d): %s", label, attempt, e)
+                log.warning("JSON validation failed for %s (attempt %d): %s", label, attempt,
+                            str(e)[:200])
                 messages.append({"role": "assistant", "content": content})
                 messages.append({"role": "user", "content":
-                                 f"That did not validate: {e}. Return corrected JSON only."})
+                                 f"That did not validate: {e}. Return ONLY the corrected JSON "
+                                 f"object with top-level keys {keys}."})
         raise LLMError(f"Could not get valid {schema.__name__} from {model}: {last_err}")
 
 
@@ -144,3 +158,24 @@ def _strip_fences(text: str) -> str:
         if t.endswith("```"):
             t = t[: t.rfind("```")]
     return t.strip()
+
+
+# Envelope keys some models wrap the real object in (e.g. deepseek echoes the JSON schema's
+# "properties"; others use "output"/"result").
+_ENVELOPES = ("properties", "output", "result", "data", "response", "json")
+
+
+def _extract_obj(content: str, schema: type[BaseModel]) -> dict:
+    """Parse model content to the target dict, tolerating common wrapper envelopes."""
+    raw = _strip_fences(content)
+    if not raw:
+        raise ValueError("empty content (model likely spent the token budget on reasoning)")
+    data = json.loads(raw)
+    if isinstance(data, dict):
+        required = set(schema.model_fields.keys())
+        if not (required & data.keys()):  # none of the expected keys at top level → unwrap
+            for key in _ENVELOPES:
+                inner = data.get(key)
+                if isinstance(inner, dict) and (required & inner.keys()):
+                    return inner
+    return data

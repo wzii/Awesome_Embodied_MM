@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
-"""Empirically pick tier models: run candidates on real papers, judge quality vs price.
+"""Generate anonymized model outputs for a BLIND ranking.
 
-For each tier, every candidate model runs the tier's representative task on a few real
-papers from the DB; an independent judge model rates each output 0-10. We report mean
-quality, total cost (live OpenRouter pricing), mean latency, and a quality-per-dollar
-ranking so the choice is data-driven rather than guessed.
+We do NOT score here. Each candidate model runs the representative tasks on a few real
+papers; outputs are written under anonymized codes (M01..) with a private label map. A
+separate strong, high-reasoning ranker (Opus 4.8) then ranks the codes WITHOUT seeing model
+names — avoiding both judge saturation and brand bias. Costs/latencies are pure generation
+(no judge), so they're accurate per-model.
 
-    python scripts/bench_models.py --tier all --papers 3
-    python scripts/bench_models.py --tier cheap --judge google/gemini-2.5-pro
+    python scripts/bench_models.py --papers 3 --out /tmp/wam_rank
 
-Needs OPENROUTER_API_KEY. Spend is small (cheap models, few papers) but nonzero.
+Writes <out>/anon_outputs.json (given to the ranker), <out>/label_map.json and
+<out>/stats.json (kept private, for de-anonymizing after).
 """
 
 from __future__ import annotations
 
 import argparse
+import json
+import random
 import sys
 import time
 from pathlib import Path
@@ -23,48 +26,42 @@ import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from pydantic import BaseModel, Field  # noqa: E402
-
 from wam.config import load_config  # noqa: E402
 from wam.llm import LLMClient  # noqa: E402
 from wam.logging import COST, get_logger, setup_logging  # noqa: E402
-from wam.pipeline.schemas import PaperAnalysis, PaperSummary, RelevanceVerdict, ScoreCard  # noqa: E402
+from wam.pipeline.schemas import PaperSummary, ScoreCard  # noqa: E402
 from wam.store import Database  # noqa: E402
 
 log = get_logger("bench")
 
-# Candidate models per tier (from the live OpenRouter catalog; edit freely).
-CANDIDATES = {
-    "cheap":  ["deepseek/deepseek-v4-flash", "google/gemini-2.5-flash-lite",
-               "openai/gpt-5-nano", "openai/gpt-oss-120b"],
-    "mid":    ["deepseek/deepseek-v4-pro", "google/gemini-3-flash-preview",
-               "openai/gpt-5-mini", "anthropic/claude-haiku-4.5"],
-    "strong": ["deepseek/deepseek-v4-pro", "google/gemini-3.5-flash",
-               "google/gemini-2.5-pro", "anthropic/claude-sonnet-4.6"],
-}
-DEFAULT_JUDGE = "anthropic/claude-sonnet-4.6"
+# Latest small + large model from each major family (live OpenRouter catalog, current
+# versions only). Edit freely.
+MODELS = [
+    "openai/gpt-5.4-nano", "openai/gpt-5.4-mini",
+    "google/gemini-3.1-flash-lite", "google/gemini-3.5-flash",
+    "anthropic/claude-haiku-4.5", "anthropic/claude-sonnet-4.6",
+    "deepseek/deepseek-v4-flash", "deepseek/deepseek-v4-pro",
+    "z-ai/glm-4.7-flash", "z-ai/glm-5.1",
+    "qwen/qwen3.6-flash", "qwen/qwen3.7-max",
+    "moonshotai/kimi-k2.6",
+    "xiaomi/mimo-v2.5", "xiaomi/mimo-v2.5-pro",
+]
 
-# Tier -> (schema, task description used in the prompt)
 TASKS = {
-    "cheap":  (RelevanceVerdict, "Classify this paper's track (core/adjacent/drop for World "
-                                 "Action Models) and give a 0-1 relevance with one reason."),
-    "mid":    (PaperAnalysis, "Give a deep technical analysis: contributions, limitations, and "
-                              "why it matters for World Action Models."),
-    "strong": (ScoreCard, "Score this paper on the two-layer WAM rubric (general + WAM "
-                          "metrics, 0-10 or N/A) with a brief rationale."),
+    "summary": (PaperSummary, "Summarize this paper: one-sentence tldr, problem, method, "
+                              "results."),
+    "score": (ScoreCard, "Score this paper on the two-layer WAM rubric (general: novelty/"
+                         "soundness/impact; wam: generalist/inference_speed/specialist/"
+                         "inference_cost/trustworthiness/collaborative/controlled_generation/"
+                         "other), each 0-10 or \"N/A\", with a brief rationale."),
 }
 
 
-class Quality(BaseModel):
-    quality: int = Field(ge=0, le=10, description="0-10 faithfulness+usefulness of the output")
-    note: str
-
-
-def live_pricing(candidate_ids: list[str]) -> dict[str, dict[str, float]]:
+def live_pricing(ids: list[str]) -> dict[str, dict[str, float]]:
     data = requests.get("https://openrouter.ai/api/v1/models", timeout=60).json()["data"]
     out = {}
     for m in data:
-        if m["id"] in candidate_ids:
+        if m["id"] in ids:
             p = m.get("pricing", {})
             out[m["id"]] = {"input": float(p.get("prompt", 0)) * 1e6,
                             "output": float(p.get("completion", 0)) * 1e6}
@@ -78,83 +75,71 @@ def sample_papers(db: Database, n: int) -> list[dict]:
     return [dict(r) for r in rows]
 
 
-def run_tier(client: LLMClient, tier: str, papers: list[dict], judge: str) -> list[dict]:
-    schema, task = TASKS[tier]
-    profile = client.cfg.profile_text()
-    results = []
-    for model in CANDIDATES[tier]:
-        cost0, in0, out0 = COST.cost_usd, COST.input_tokens, COST.output_tokens
-        lat, quals, outputs = [], [], []
-        for p in papers:
-            user = f"Paper: {p['title']}\n\nAbstract: {p['abstract']}\n\nTask: {task}"
-            t0 = time.monotonic()
-            try:
-                obj = client.complete_json("mid", profile, user, schema, model=model,
-                                           label=f"{tier}:{model}", max_tokens=1500)
-            except Exception as e:  # noqa: BLE001
-                log.warning("%s failed on %s: %s", model, p["id"], e)
-                continue
-            lat.append(time.monotonic() - t0)
-            outputs.append(obj.model_dump())
-            # judge
-            try:
-                q = client.complete_json(
-                    "strong", "You are a strict reviewer judging the quality of an automated "
-                    "analysis of a paper. Rate 0-10 for faithfulness to the abstract and "
-                    "usefulness.", f"Abstract: {p['abstract']}\n\nModel output:\n{obj.model_dump()}",
-                    Quality, model=judge, label="judge", max_tokens=300)
-                quals.append(q.quality)
-            except Exception as e:  # noqa: BLE001
-                log.warning("judge failed: %s", e)
-        dcost = COST.cost_usd - cost0
-        results.append({
-            "model": model,
-            "mean_quality": round(sum(quals) / len(quals), 2) if quals else None,
-            "cost_for_run": round(dcost, 5),
-            "mean_latency_s": round(sum(lat) / len(lat), 2) if lat else None,
-            "tokens": (COST.input_tokens - in0, COST.output_tokens - out0),
-            "n_ok": len(outputs),
-        })
-        log.info("  %-40s q=%s cost=$%.5f lat=%.2fs", model,
-                 results[-1]["mean_quality"], dcost, results[-1]["mean_latency_s"] or 0)
-    return results
-
-
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--tier", choices=["cheap", "mid", "strong", "all"], default="all")
     ap.add_argument("--papers", type=int, default=3)
-    ap.add_argument("--judge", default=DEFAULT_JUDGE)
+    ap.add_argument("--out", default="/tmp/wam_rank")
+    ap.add_argument("--models", nargs="*")
     args = ap.parse_args()
 
     cfg = load_config()
-    setup_logging(level="INFO", debug=True)  # full trace to logs/
+    setup_logging(level="INFO", debug=True)
     cfg.require_env(cfg.get("provider.api_key_env"))
-
-    tiers = ["cheap", "mid", "strong"] if args.tier == "all" else [args.tier]
-    all_ids = sorted({m for t in tiers for m in CANDIDATES[t]} | {args.judge})
-    cfg.data.setdefault("models", {})["cost_per_million"] = live_pricing(all_ids)
-    log.info("loaded live pricing for %d models", len(cfg.get("models.cost_per_million")))
-
+    models = args.models or MODELS
+    cfg.data.setdefault("models", {})["cost_per_million"] = live_pricing(models)
+    profile = cfg.profile_text()
     client = LLMClient(cfg)
+
     with Database(cfg) as db:
         papers = sample_papers(db, args.papers)
-    log.info("benchmarking on %d papers, judge=%s", len(papers), args.judge)
+    log.info("generating outputs for %d models on %d papers x %d tasks",
+             len(models), len(papers), len(TASKS))
 
-    report = {}
-    for tier in tiers:
-        log.info("=== tier: %s ===", tier)
-        report[tier] = run_tier(client, tier, papers, args.judge)
+    # Anonymize: shuffle so code order != model order; codes carry no brand info.
+    rng = random.Random(1234)
+    shuffled = models[:]
+    rng.shuffle(shuffled)
+    code_of = {m: f"M{ix:02d}" for ix, m in enumerate(shuffled, 1)}
 
-    print("\n================ RESULTS ================")
-    for tier, rows in report.items():
-        print(f"\n[{tier}]  (quality 0-10, cost for {len(papers)} papers)")
-        rows = [r for r in rows if r["mean_quality"] is not None]
-        for r in sorted(rows, key=lambda x: (-x["mean_quality"], x["cost_for_run"])):
-            qpd = r["mean_quality"] / r["cost_for_run"] if r["cost_for_run"] else float("inf")
-            print(f"  {r['model']:42s} q={r['mean_quality']:<5} ${r['cost_for_run']:<9.5f} "
-                  f"{r['mean_latency_s']}s  q/$={qpd:.0f}")
-    print(f"\n{COST.summary()}")
+    # anon[task][paper_idx][code] = output ; papers_meta[paper_idx] = {title, abstract}
+    anon: dict = {t: {} for t in TASKS}
+    papers_meta = {str(i): {"title": p["title"], "abstract": p["abstract"]}
+                   for i, p in enumerate(papers)}
+    stats: dict = {}
+
+    for model in models:
+        c0 = COST.cost_usd
+        lats, n_ok = [], 0
+        for i, p in enumerate(papers):
+            for tname, (schema, task) in TASKS.items():
+                user = f"Paper: {p['title']}\n\nAbstract: {p['abstract']}\n\nTask: {task}"
+                t0 = time.monotonic()
+                try:
+                    obj = client.complete_json("mid", profile, user, schema, model=model,
+                                               label=f"{model}:{tname}", max_tokens=8000)
+                except Exception as e:  # noqa: BLE001
+                    log.warning("%s failed (%s) p%d: %s", model, tname, i, e)
+                    continue
+                lats.append(time.monotonic() - t0)
+                n_ok += 1
+                anon[tname].setdefault(str(i), {})[code_of[model]] = obj.model_dump()
+        stats[model] = {
+            "code": code_of[model], "cost_gen": round(COST.cost_usd - c0, 5),
+            "mean_latency_s": round(sum(lats) / len(lats), 2) if lats else None,
+            "n_ok": n_ok, "n_expected": len(papers) * len(TASKS),
+        }
+        log.info("  %-32s code=%s cost=$%.5f lat=%ss ok=%d/%d", model,
+                 code_of[model], stats[model]["cost_gen"], stats[model]["mean_latency_s"],
+                 n_ok, stats[model]["n_expected"])
+
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "anon_outputs.json").write_text(json.dumps({"papers": papers_meta, "tasks": anon},
+                                                      indent=2))
+    (out / "label_map.json").write_text(json.dumps({v: k for k, v in code_of.items()}, indent=2))
+    (out / "stats.json").write_text(json.dumps(stats, indent=2))
+    log.info("wrote anon outputs + private maps to %s", out)
+    log.info(COST.summary())
     return 0
 
 

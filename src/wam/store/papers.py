@@ -42,3 +42,73 @@ def update_enrichment(conn: sqlite3.Connection, rec: PaperRecord) -> None:
 
 def count(conn: sqlite3.Connection) -> int:
     return conn.execute("SELECT count(*) AS c FROM papers").fetchone()["c"]
+
+
+# --- stage work-queues -------------------------------------------------------
+# Each returns rows (id, title, abstract, ...) that still need a given stage. Relevance
+# acts as a cache: a paper with track already set is not re-filtered.
+
+def _rows(conn: sqlite3.Connection, where: str, params: tuple = ()) -> list[sqlite3.Row]:
+    return conn.execute(
+        f"SELECT id, source, title, abstract, published, categories_json FROM papers "
+        f"WHERE {where}", params).fetchall()
+
+
+def _limit_clause(where: str, limit: int | None) -> str:
+    return where + (f" LIMIT {int(limit)}" if limit else "")
+
+
+def needs_filter(conn: sqlite3.Connection, limit: int | None = None) -> list[sqlite3.Row]:
+    # track NULL = unfiltered; relevance=-1 = a prior failure to retry.
+    return _rows(conn, _limit_clause("track IS NULL OR relevance = -1", limit))
+
+
+def needs_summary(conn: sqlite3.Connection, limit: int | None = None) -> list[sqlite3.Row]:
+    return _rows(conn, _limit_clause(
+        "track IN ('core','adjacent') AND summary_json IS NULL", limit))
+
+
+def needs_analysis(conn: sqlite3.Connection, limit: int | None = None) -> list[sqlite3.Row]:
+    q = "track = 'core' AND analysis_json IS NULL"
+    if limit:
+        q += f" ORDER BY relevance DESC LIMIT {int(limit)}"
+    return _rows(conn, q)
+
+
+def needs_score(conn: sqlite3.Connection, limit: int | None = None) -> list[sqlite3.Row]:
+    q = "track = 'core' AND analysis_json IS NOT NULL AND scores_json IS NULL"
+    if limit:
+        q += f" ORDER BY relevance DESC LIMIT {int(limit)}"
+    return _rows(conn, q)
+
+
+def needs_innovation(conn: sqlite3.Connection, limit: int | None = None) -> list[sqlite3.Row]:
+    return _rows(conn, _limit_clause("track = 'adjacent' AND innovation_json IS NULL", limit))
+
+
+# --- stage writers -----------------------------------------------------------
+def _touch(conn: sqlite3.Connection, pid: str, **cols) -> None:
+    cols["updated_at"] = datetime.now().isoformat(timespec="seconds")
+    sets = ", ".join(f"{k}=?" for k in cols)
+    conn.execute(f"UPDATE papers SET {sets} WHERE id=?", (*cols.values(), pid))
+
+
+def set_filter(conn, pid: str, track: str, relevance: float, reason: str) -> None:
+    _touch(conn, pid, track=track, relevance=relevance, relevance_reason=reason,
+           status="filtered")
+
+
+def set_summary(conn, pid: str, summary_json: str) -> None:
+    _touch(conn, pid, summary_json=summary_json, status="summarized")
+
+
+def set_analysis(conn, pid: str, analysis_json: str) -> None:
+    _touch(conn, pid, analysis_json=analysis_json, status="analyzed")
+
+
+def set_scores(conn, pid: str, scores_json: str) -> None:
+    _touch(conn, pid, scores_json=scores_json, status="scored")
+
+
+def set_innovation(conn, pid: str, innovation_json: str) -> None:
+    _touch(conn, pid, innovation_json=innovation_json, status="done")
