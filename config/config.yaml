@@ -1,0 +1,107 @@
+# Awesome-WAM system configuration.
+# Everything domain/tuning-related lives here so behavior changes need no code edits.
+
+provider:
+  # OpenRouter is OpenAI-compatible. Key read from this env var.
+  base_url: "https://openrouter.ai/api/v1"
+  api_key_env: "OPENROUTER_API_KEY"
+  # Sent as OpenRouter attribution headers (optional but recommended).
+  http_referer: "https://github.com/your-org/Awesome-WAM"
+  app_title: "Awesome-WAM"
+
+models:
+  # Tiered routing. Cheap = filtering/first-pass; mid = analysis; strong = scoring/Q&A.
+  # These are OpenRouter model IDs — adjust to taste/budget.
+  tiers:
+    cheap: "google/gemini-2.0-flash-001"
+    mid: "anthropic/claude-3.5-sonnet"
+    strong: "anthropic/claude-3.7-sonnet"
+  # Optional per-stage overrides (stage name -> tier). Falls back to the tier passed in code.
+  stage_tiers:
+    filter: cheap
+    summarize: cheap
+    analyze: mid
+    extract: mid
+    score: strong
+    innovation: mid
+    front_summary: strong
+    qa: strong
+  defaults:
+    temperature: 0.2
+    max_tokens: 4096
+  # USD per 1,000,000 tokens, {input, output}. Used for cost tracking/logging.
+  cost_per_million:
+    "google/gemini-2.0-flash-001": {input: 0.10, output: 0.40}
+    "anthropic/claude-3.5-sonnet": {input: 3.00, output: 15.00}
+    "anthropic/claude-3.7-sonnet": {input: 3.00, output: 15.00}
+
+constants:
+  request_timeout: 90        # seconds per LLM call
+  max_retries: 4
+  retry_backoff: 3.0         # seconds, exponential base
+  lookback_days: 60          # ignore papers older than this on fetch
+  relevance_threshold: 0.5   # below this -> dropped
+  analyze_cap: 40            # max papers fully analyzed per run (cost guard)
+
+logging:
+  level: "INFO"              # console level; debug file sink enabled via --debug/WAM_DEBUG
+  log_dir: "logs"
+
+paths:
+  db: "data/wam.db"
+  pdf_cache: "cache/pdfs"
+  index_dir: "data/index"
+
+# Two-layer scoring weights. Top-4 WAM metrics weighted 2x; computed over non-N/A metrics.
+scoring:
+  general_weights:
+    novelty: 1.0
+    soundness: 1.0
+    impact: 1.0
+  wam_weights:
+    generalist: 2.0
+    inference_speed: 2.0
+    specialist: 2.0
+    inference_cost: 2.0
+    trustworthiness: 1.0
+    collaborative: 1.0
+    controlled_generation: 1.0
+    other: 1.0
+
+# Source + search config is consumed in Phase 2 (fetch).
+sources:
+  arxiv:
+    enabled: true
+    categories: ["cs.RO", "cs.AI", "cs.LG", "cs.CV"]
+    max_results: 300
+  semantic_scholar:
+    enabled: true
+    api_key_env: "SEMANTIC_SCHOLAR_API_KEY"   # optional; higher rate limits if set
+  papers_with_code:
+    enabled: true
+  news:
+    enabled: true
+    feeds:
+      - "https://www.therobotreport.com/feed/"
+      - "https://spectrum.ieee.org/feeds/topic/robotics.rss"
+      - "https://huggingface.co/blog/feed.xml"
+
+# Search keyword sets. The LLM filter makes the final core/adjacent/drop call,
+# but these seed the source queries (broad net by design).
+keywords:
+  core:        # World Action Models proper
+    - "world action model"
+    - "action world model"
+    - "embodied foundation model"
+    - "robot foundation model"
+    - "generalist robot policy"
+  adjacent:    # transferable techniques — kept in the innovation track
+    - "vision-language-action"
+    - "world model"
+    - "video generation"
+    - "action-conditioned video"
+    - "interactive world model"
+
+people:
+  min_papers: 2              # influential if on >= N tracked papers ...
+  min_citations: 2000        # ... OR above this citation count (Semantic Scholar)
