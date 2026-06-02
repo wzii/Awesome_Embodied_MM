@@ -98,8 +98,9 @@ class LLMClient:
 
     # --- public API ------------------------------------------------------------
     def complete(self, tier: str, system: str, user: str, *, temperature: float | None = None,
-                 max_tokens: int | None = None, label: str = "complete") -> str:
-        model = self.resolve_model(tier)
+                 max_tokens: int | None = None, label: str = "complete",
+                 model: str | None = None) -> str:
+        model = model or self.resolve_model(tier)
         temperature = self.cfg.get("models.defaults.temperature", 0.2) if temperature is None else temperature
         max_tokens = self.cfg.get("models.defaults.max_tokens", 4096) if max_tokens is None else max_tokens
         messages = [{"role": "system", "content": system}, {"role": "user", "content": user}]
@@ -109,9 +110,9 @@ class LLMClient:
 
     def complete_json(self, tier: str, system: str, user: str, schema: Type[T], *,
                       temperature: float | None = None, max_tokens: int | None = None,
-                      label: str = "json", max_repair: int = 2) -> T:
+                      label: str = "json", max_repair: int = 2, model: str | None = None) -> T:
         """Return an instance of ``schema``. Retries with the validation error on failure."""
-        model = self.resolve_model(tier)
+        model = model or self.resolve_model(tier)
         temperature = self.cfg.get("models.defaults.temperature", 0.2) if temperature is None else temperature
         max_tokens = self.cfg.get("models.defaults.max_tokens", 4096) if max_tokens is None else max_tokens
         schema_json = json.dumps(schema.model_json_schema(), indent=2)
