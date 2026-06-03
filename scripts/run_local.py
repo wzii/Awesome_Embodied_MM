@@ -24,7 +24,8 @@ from wam.store import Database  # noqa: E402
 from wam.store import papers as ps  # noqa: E402
 
 ALL_STAGES = ["fetch", "filter", "summarize", "analyze", "extract", "score", "innovation",
-              "people"]
+              "people", "render"]
+LLM_STAGES = {"filter", "summarize", "analyze", "extract", "score", "innovation", "people"}
 
 
 def main() -> int:
@@ -44,9 +45,9 @@ def main() -> int:
     log = get_logger("run")
     log.info("stages: %s", stages)
 
-    # LLM client only needed for non-fetch stages.
+    # LLM client only needed for the stages that call models.
     client = None
-    if any(s != "fetch" for s in stages):
+    if any(s in LLM_STAGES for s in stages):
         from wam.llm import LLMClient
         client = LLMClient(cfg)
 
@@ -85,6 +86,15 @@ def main() -> int:
                 from wam.pipeline import people
                 c = people.run(cfg, client, db.conn, limit=args.limit)
                 db.log_run("people", c["authors"], c["groups"], COST.cost_usd, notes=str(c))
+            elif stage == "render":
+                from wam.render import readme as rnd
+                rnd.render_readme(cfg, db.conn)
+                rnd.render_digest(cfg, db.conn)
+                rnd.export_benchmarks_csv(cfg, db.conn)
+                issues = rnd.link_integrity(db.conn)
+                if issues:
+                    log.warning("link integrity: %d issues (e.g. %s)", len(issues), issues[:3])
+                db.log_run("render", 0, 0, notes=f"{len(issues)} link issues")
             else:
                 log.warning("unknown stage: %s", stage)
 
