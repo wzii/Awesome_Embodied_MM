@@ -140,6 +140,25 @@ def _news(conn: sqlite3.Connection, limit: int = 15) -> str:
     return "\n".join(out) + "\n"
 
 
+_MOM_ICON = {"rising": "📈 rising", "cooling": "📉 cooling", "steady": "➡️ steady"}
+
+
+def _trends(conn: sqlite3.Connection, limit: int = 12) -> str:
+    snap = conn.execute("SELECT max(snapshot_date) FROM fronts").fetchone()[0]
+    if not snap:
+        return "_No trend snapshot yet._\n"
+    rows = conn.execute(
+        "SELECT name, summary, size, momentum FROM fronts WHERE snapshot_date=? "
+        "ORDER BY size DESC LIMIT ?", (snap, limit)).fetchall()
+    if not rows:
+        return "_No research fronts detected._\n"
+    out = ["| Direction | Papers | Momentum | Summary |", "|-----------|-------:|----------|---------|"]
+    for r in rows:
+        out.append(f"| **{r['name']}** | {r['size']} | {_MOM_ICON.get(r['momentum'], r['momentum'])} "
+                   f"| {_clip(r['summary'], 120)} |")
+    return "\n".join(out) + "\n"
+
+
 def _counts(conn: sqlite3.Connection) -> dict:
     d = dict(conn.execute("SELECT track, count(*) FROM papers GROUP BY track").fetchall())
     return {"core": d.get("core", 0), "adjacent": d.get("adjacent", 0),
@@ -175,6 +194,8 @@ variants · **{c['authors']}** authors
 > (inference **speed**, **gen**eralist, **spec**ialist, inference **cost**) are weighted 2×.
 > `–` means the paper does not address that metric (we never fabricate a score).
 
+## 📈 Trends & Popular Directions
+{_trends(conn)}
 ## 🏆 Top World Action Model Papers
 {_core_table(conn)}
 ## 📊 Benchmark Leaderboard

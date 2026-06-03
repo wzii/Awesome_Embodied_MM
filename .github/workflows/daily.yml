@@ -1,0 +1,73 @@
+name: WAM daily
+
+on:
+  schedule:
+    - cron: "0 13 * * *"        # 13:00 UTC daily (after arXiv announcements)
+  workflow_dispatch: {}          # manual trigger
+
+# Never let two daily runs race on the committed DB.
+concurrency:
+  group: wam-daily
+  cancel-in-progress: false
+
+permissions:
+  contents: write                # commit results back to the repo
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+      GMAIL_USER: ${{ secrets.GMAIL_USER }}
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      SUBSCRIBERS: ${{ secrets.SUBSCRIBERS }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m pip install -U pip
+          pip install -e .
+          pip install sentence-transformers faiss-cpu scikit-learn
+
+      - name: Cache embedding model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-bge-small-v1
+
+      - name: Configure git
+        run: |
+          git config user.name "wam-bot"
+          git config user.email "actions@github.com"
+
+      # --- Stage group 1: fetch + LLM analysis (checkpoint commit) ---
+      - name: Fetch + analyze
+        run: |
+          python scripts/run_local.py \
+            --stages fetch,filter,summarize,analyze,extract,score,innovation,people,trends
+      - name: Checkpoint commit (data)
+        run: |
+          git add data/ && git commit -m "data: daily fetch+analysis $(date -u +%F)" || echo "no changes"
+          git pull --rebase --autostash || true
+          git push || echo "push skipped"
+
+      # --- Stage group 2: index + render (checkpoint commit) ---
+      - name: Index + render
+        run: python scripts/run_local.py --stages index,render
+      - name: Commit README + index
+        run: |
+          git add README.md data/ && git commit -m "render: daily update $(date -u +%F)" || echo "no changes"
+          git pull --rebase --autostash || true
+          git push || echo "push skipped"
+
+      # --- Email digest (last, so failures here don't block the commit) ---
+      - name: Send digest
+        run: python scripts/run_local.py --stages email

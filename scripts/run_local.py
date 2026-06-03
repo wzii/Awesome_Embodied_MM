@@ -24,8 +24,9 @@ from wam.store import Database  # noqa: E402
 from wam.store import papers as ps  # noqa: E402
 
 ALL_STAGES = ["fetch", "filter", "summarize", "analyze", "extract", "score", "innovation",
-              "people", "render"]
-LLM_STAGES = {"filter", "summarize", "analyze", "extract", "score", "innovation", "people"}
+              "people", "trends", "index", "render", "email"]
+LLM_STAGES = {"filter", "summarize", "analyze", "extract", "score", "innovation", "people",
+              "trends"}
 
 
 def main() -> int:
@@ -36,6 +37,8 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=None,
                     help="cap papers per LLM stage (for quick verification)")
     ap.add_argument("--debug", action="store_true")
+    ap.add_argument("--email-test", metavar="ADDR",
+                    help="send the digest only to ADDR (test) instead of SUBSCRIBERS")
     args = ap.parse_args()
 
     stages = ["fetch"] if args.fetch_only else [s.strip() for s in args.stages.split(",") if s.strip()]
@@ -86,6 +89,14 @@ def main() -> int:
                 from wam.pipeline import people
                 c = people.run(cfg, client, db.conn, limit=args.limit)
                 db.log_run("people", c["authors"], c["groups"], COST.cost_usd, notes=str(c))
+            elif stage == "trends":
+                from wam.pipeline import trends
+                n = trends.run(cfg, client, db.conn)
+                db.log_run("trends", 0, n, COST.cost_usd)
+            elif stage == "index":
+                from wam.store import index as index_mod
+                n = index_mod.build_index(cfg, db.conn)
+                db.log_run("index", n, n)
             elif stage == "render":
                 from wam.render import readme as rnd
                 rnd.render_readme(cfg, db.conn)
@@ -95,6 +106,10 @@ def main() -> int:
                 if issues:
                     log.warning("link integrity: %d issues (e.g. %s)", len(issues), issues[:3])
                 db.log_run("render", 0, 0, notes=f"{len(issues)} link issues")
+            elif stage == "email":
+                from wam.notify import mailer
+                n = mailer.send(cfg, db.conn, test_to=args.email_test)
+                db.log_run("email", 0, n)
             else:
                 log.warning("unknown stage: %s", stage)
 

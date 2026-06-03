@@ -112,6 +112,16 @@ keywords:
     - "action-conditioned video"
     - "interactive world model"
 
+rag:
+  embed_model: "BAAI/bge-small-en-v1.5"   # local sentence-transformers; free
+  top_k: 8                                 # retrieved chunks per query
+  index_dropped: true                      # keep filtered-out papers searchable in the KB
+
+trends:
+  sim_threshold: 0.62        # cosine edge threshold for the direction graph
+  min_front_size: 3          # ignore clusters smaller than this
+  window_days: 30            # momentum = recent window vs prior window
+
 people:
   min_papers: 2              # influential if on >= N tracked papers
   min_citations: 2000        # (reserved) citation-based influence via Semantic Scholar
