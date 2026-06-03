@@ -62,3 +62,39 @@ class ScoreCard(BaseModel):
 class InnovationNote(BaseModel):
     key_idea: str = Field(description="the core technical innovation")
     transferable_to_wam: str = Field(description="why/how it could transfer to World Action Models")
+
+
+# --- benchmark extraction (Phase 3b) ----------------------------------------
+class ModelVariant(BaseModel):
+    model_name: str = Field(description="model/system name as called in the paper")
+    training_dataset: str | None = Field(
+        default=None, description="dataset(s) it was trained/finetuned on — part of its "
+        "identity; same name on a different dataset is a different system")
+    base_model: str | None = None
+    params: str | None = Field(default=None, description="e.g. '7B', '300M'")
+    modality: str | None = None
+
+
+class BenchmarkRow(BaseModel):
+    model_name: str
+    training_dataset: str | None = None
+    benchmark: str = Field(description="benchmark/dataset the result is on")
+    task: str | None = None
+    split: str | None = None
+    metric_name: str | None = Field(default=None, description="e.g. 'success rate', 'accuracy'")
+    metric_value: float | None = None
+    inference_speed: float | None = Field(default=None, description="numeric value if stated")
+    speed_unit: str | None = Field(default=None, description="e.g. 'Hz', 'fps', 'ms', 'tok/s'")
+    inference_cost: float | None = None
+    cost_unit: str | None = Field(default=None, description="e.g. 'GPU-hours', 'FLOPs', '$'")
+    hardware: str | None = Field(default=None, description="hardware as reported, if any")
+    claimed_by_authors: bool = Field(
+        default=True, description="True if this is the paper's own reported number (vs a "
+        "third-party / comparison number quoted from another paper)")
+    notes: str | None = None
+
+
+class ExtractionResult(BaseModel):
+    """Only extract numbers ACTUALLY stated in the text. Empty lists are fine."""
+    models: list[ModelVariant] = Field(default_factory=list)
+    benchmarks: list[BenchmarkRow] = Field(default_factory=list)

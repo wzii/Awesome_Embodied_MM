@@ -14,6 +14,7 @@ shared :data:`wam.logging.COST` tracker.
 from __future__ import annotations
 
 import json
+import re
 import time
 from typing import Type, TypeVar
 
@@ -165,12 +166,21 @@ def _strip_fences(text: str) -> str:
 _ENVELOPES = ("properties", "output", "result", "data", "response", "json")
 
 
+def _loads_lenient(raw: str) -> object:
+    """json.loads, retrying after stripping trailing commas (a common LLM malformation)."""
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        repaired = re.sub(r",(\s*[}\]])", r"\1", raw)
+        return json.loads(repaired)
+
+
 def _extract_obj(content: str, schema: type[BaseModel]) -> dict:
     """Parse model content to the target dict, tolerating common wrapper envelopes."""
     raw = _strip_fences(content)
     if not raw:
         raise ValueError("empty content (model likely spent the token budget on reasoning)")
-    data = json.loads(raw)
+    data = _loads_lenient(raw)
     if isinstance(data, dict):
         required = set(schema.model_fields.keys())
         if not (required & data.keys()):  # none of the expected keys at top level → unwrap

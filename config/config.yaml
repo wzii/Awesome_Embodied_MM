@@ -30,7 +30,7 @@ models:
     filter: cheap
     summarize: cheap
     analyze: mid
-    extract: mid
+    extract: cheap      # deepseek-v4-flash: fast + JSON-reliable + faithful for table extraction
     score: xstrong      # flagship two-layer scoring -> gpt-5.5
     innovation: mid
     front_summary: strong
@@ -113,5 +113,6 @@ keywords:
     - "interactive world model"
 
 people:
-  min_papers: 2              # influential if on >= N tracked papers ...
-  min_citations: 2000        # ... OR above this citation count (Semantic Scholar)
+  min_papers: 2              # influential if on >= N tracked papers
+  min_citations: 2000        # (reserved) citation-based influence via Semantic Scholar
+  max_per_run: 30            # cap influential authors processed per run (most prolific first)

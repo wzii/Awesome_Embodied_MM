@@ -19,6 +19,37 @@ log = get_logger("source.s2")
 
 BATCH = "https://api.semanticscholar.org/graph/v1/paper/batch"
 FIELDS = "citationCount,influentialCitationCount,externalIds,openAccessPdf"
+AUTHOR_SEARCH = "https://api.semanticscholar.org/graph/v1/author/search"
+
+
+def _headers(cfg: Config) -> dict:
+    scfg = cfg.get("sources.semantic_scholar", {}) or {}
+    key = os.environ.get(scfg.get("api_key_env", "SEMANTIC_SCHOLAR_API_KEY") or "")
+    return {"x-api-key": key} if key else {}
+
+
+def search_author(cfg: Config, name: str) -> dict | None:
+    """Best-effort: return {name, affiliation, citations, h_index, url} for a name, or None."""
+    try:
+        r = requests.get(AUTHOR_SEARCH, params={
+            "query": name, "fields": "name,affiliations,hIndex,citationCount,url", "limit": 1},
+            headers=_headers(cfg), timeout=cfg.get("constants.request_timeout", 90))
+        if r.status_code == 429:
+            time.sleep(3)
+            return None
+        r.raise_for_status()
+        data = (r.json().get("data") or [])
+        if not data:
+            return None
+        a = data[0]
+        affs = a.get("affiliations") or []
+        return {"id": a.get("authorId"), "name": a.get("name"),
+                "affiliation": affs[0] if affs else None,
+                "citations": a.get("citationCount"), "h_index": a.get("hIndex"),
+                "url": a.get("url")}
+    except Exception as e:  # noqa: BLE001
+        log.debug("s2 author search failed for %s: %s", name, e)
+        return None
 
 
 def enrich(cfg: Config, records: list[PaperRecord]) -> list[PaperRecord]:

@@ -32,7 +32,10 @@ def run(cfg: Config, client: LLMClient, conn: sqlite3.Connection,
 
     todo = ps.needs_filter(conn, limit=limit)
     log.info("filtering %d papers (threshold=%.2f)", len(todo), threshold)
-    for row in todo:
+    for i, row in enumerate(todo):
+        if i and i % 25 == 0:
+            conn.commit()  # checkpoint so a long run doesn't lose progress on crash
+            log.info("filter progress: %d/%d", i, len(todo))
         if row["source"] == "news":
             ps.set_filter(conn, row["id"], "news", 1.0, "news item")
             counts["news"] += 1

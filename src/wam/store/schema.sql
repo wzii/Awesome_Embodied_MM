@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS papers (
     scores_json            TEXT,                     -- JSON {general,wam,weighted_total,rationale}
     status                 TEXT DEFAULT 'new',       -- new|filtered|summarized|analyzed|scored|done
     pdf_hash               TEXT,
+    benchmarks_extracted   INTEGER DEFAULT 0,        -- bool: benchmark/model extraction done
     updated_at             TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_papers_track ON papers(track);

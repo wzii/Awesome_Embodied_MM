@@ -23,7 +23,8 @@ from wam.logging import COST, get_logger, setup_logging  # noqa: E402
 from wam.store import Database  # noqa: E402
 from wam.store import papers as ps  # noqa: E402
 
-ALL_STAGES = ["fetch", "filter", "summarize", "analyze", "score", "innovation"]
+ALL_STAGES = ["fetch", "filter", "summarize", "analyze", "extract", "score", "innovation",
+              "people"]
 
 
 def main() -> int:
@@ -68,6 +69,10 @@ def main() -> int:
                 from wam.pipeline import analyze
                 n = analyze.run(cfg, client, db.conn, limit=args.limit)
                 db.log_run("analyze", n, n, COST.cost_usd)
+            elif stage == "extract":
+                from wam.pipeline import extract
+                n = extract.run(cfg, client, db.conn, limit=args.limit)
+                db.log_run("extract", n, n, COST.cost_usd)
             elif stage == "score":
                 from wam.pipeline import score
                 n = score.run(cfg, client, db.conn, limit=args.limit)
@@ -76,6 +81,10 @@ def main() -> int:
                 from wam.pipeline import innovation
                 n = innovation.run(cfg, client, db.conn, limit=args.limit)
                 db.log_run("innovation", n, n, COST.cost_usd)
+            elif stage == "people":
+                from wam.pipeline import people
+                c = people.run(cfg, client, db.conn, limit=args.limit)
+                db.log_run("people", c["authors"], c["groups"], COST.cost_usd, notes=str(c))
             else:
                 log.warning("unknown stage: %s", stage)
 

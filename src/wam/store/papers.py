@@ -86,6 +86,13 @@ def needs_innovation(conn: sqlite3.Connection, limit: int | None = None) -> list
     return _rows(conn, _limit_clause("track = 'adjacent' AND innovation_json IS NULL", limit))
 
 
+def needs_extract(conn: sqlite3.Connection, limit: int | None = None) -> list[sqlite3.Row]:
+    # core papers that have been analyzed but not yet benchmark-extracted
+    return conn.execute(_limit_clause(
+        "SELECT id, source, title, abstract, links_json FROM papers WHERE track='core' "
+        "AND analysis_json IS NOT NULL AND benchmarks_extracted=0", limit)).fetchall()
+
+
 # --- stage writers -----------------------------------------------------------
 def _touch(conn: sqlite3.Connection, pid: str, **cols) -> None:
     cols["updated_at"] = datetime.now().isoformat(timespec="seconds")

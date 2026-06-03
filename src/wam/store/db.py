@@ -27,7 +27,16 @@ def connect(db_path: str | Path) -> sqlite3.Connection:
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     conn.executescript(SCHEMA_PATH.read_text(encoding="utf-8"))
+    _migrate(conn)
     return conn
+
+
+def _migrate(conn: sqlite3.Connection) -> None:
+    """Idempotent additive migrations for DBs created before a column existed."""
+    cols = {r["name"] for r in conn.execute("PRAGMA table_info(papers)")}
+    if "benchmarks_extracted" not in cols:
+        conn.execute("ALTER TABLE papers ADD COLUMN benchmarks_extracted INTEGER DEFAULT 0")
+    conn.commit()
 
 
 class Database:
