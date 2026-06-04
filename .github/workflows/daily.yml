@@ -22,7 +22,7 @@ jobs:
       SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
       GMAIL_USER: ${{ secrets.GMAIL_USER }}
       GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-      SUBSCRIBERS: ${{ secrets.SUBSCRIBERS }}
+      SUBSCRIBERS: ${{ secrets.SUBSCRIBERS || vars.SUBSCRIBERS }}
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
       HF_SPACE: ${{ vars.HF_SPACE || 'HardToFindAGoodUserName/Awesome_Embodied_MM' }}
     steps:
