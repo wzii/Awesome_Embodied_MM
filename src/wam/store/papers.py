@@ -87,10 +87,11 @@ def needs_innovation(conn: sqlite3.Connection, limit: int | None = None) -> list
 
 
 def needs_extract(conn: sqlite3.Connection, limit: int | None = None) -> list[sqlite3.Row]:
-    # core papers that have been analyzed but not yet benchmark-extracted
+    # core + adjacent papers not yet benchmark-extracted (VLA/world-model papers report
+    # standard embodied benchmarks too). No analysis requirement — extraction reads the PDF.
     return conn.execute(_limit_clause(
-        "SELECT id, source, title, abstract, links_json FROM papers WHERE track='core' "
-        "AND analysis_json IS NOT NULL AND benchmarks_extracted=0", limit)).fetchall()
+        "SELECT id, source, title, abstract, links_json FROM papers WHERE "
+        "track IN ('core','adjacent') AND benchmarks_extracted=0", limit)).fetchall()
 
 
 # --- stage writers -----------------------------------------------------------

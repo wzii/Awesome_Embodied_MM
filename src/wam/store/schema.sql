@@ -75,6 +75,7 @@ CREATE TABLE IF NOT EXISTS authors (
     id              TEXT PRIMARY KEY,                -- semantic scholar id or slug
     name            TEXT NOT NULL,
     affiliation     TEXT,
+    region          TEXT,                            -- country/region of the affiliation
     s2_url          TEXT,
     citations       INTEGER,
     h_index         INTEGER,

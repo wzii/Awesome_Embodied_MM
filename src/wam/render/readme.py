@@ -79,20 +79,43 @@ def _core_table(conn: sqlite3.Connection, limit: int = 50) -> str:
     return "\n".join(out) + "\n"
 
 
-def _leaderboard(conn: sqlite3.Connection, limit: int = 40) -> str:
+def _leaderboard(conn: sqlite3.Connection, top_per: int = 10) -> str:
+    """Per-benchmark leaderboards grouped by canonical family (key embodied benchmarks first)."""
+    from wam.store.benchmarks import BENCH_FAMILIES, normalize_benchmark
+
     rows = conn.execute(
         "SELECT model_name, training_dataset, benchmark, task, metric_name, metric_value, "
-        "claimed_by_authors FROM benchmarks WHERE metric_value IS NOT NULL "
-        "ORDER BY benchmark, metric_value DESC LIMIT ?", (limit,)).fetchall()
+        "claimed_by_authors FROM benchmarks WHERE metric_value IS NOT NULL").fetchall()
     if not rows:
         return "_No benchmark results extracted yet._\n"
-    out = ["| Benchmark | Task | Model (training data) | Metric | Value | Source |",
-           "|-----------|------|-----------------------|--------|------:|:------:|"]
+    fam: dict[str, list] = {}
     for r in rows:
-        td = f" _({r['training_dataset']})_" if r["training_dataset"] else ""
-        src = "authors" if r["claimed_by_authors"] else "3rd-party"
-        out.append(f"| {r['benchmark']} | {r['task'] or '—'} | {r['model_name']}{td} | "
-                   f"{r['metric_name'] or '—'} | {r['metric_value']} | {src} |")
+        f = normalize_benchmark(r["benchmark"])
+        if f:
+            fam.setdefault(f, []).append(r)
+    key = [f for f in BENCH_FAMILIES if f in fam]
+    other = sorted((f for f in fam if f not in BENCH_FAMILIES), key=lambda f: -len(fam[f]))
+    out = ["_Model identity = (model, training data); same name on different data is a distinct "
+           "row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for "
+           "success-rate-style metrics._\n"]
+    for f in key + other[:12]:
+        seen, items = set(), []
+        for r in sorted(fam[f], key=lambda x: x["metric_value"], reverse=True):
+            k = (r["model_name"], r["training_dataset"], r["metric_name"])
+            if k in seen:
+                continue
+            seen.add(k)
+            items.append(r)
+            if len(items) >= top_per:
+                break
+        out.append(f"\n#### {f}  ·  _{len(fam[f])} results_\n")
+        out.append("| Model (training data) | Task | Metric | Value | Source |")
+        out.append("|-----------------------|------|--------|------:|:------:|")
+        for r in items:
+            td = f" _({r['training_dataset']})_" if r["training_dataset"] else ""
+            src = "authors" if r["claimed_by_authors"] else "3rd-party"
+            out.append(f"| {r['model_name']}{td} | {r['task'] or '—'} | {r['metric_name'] or '—'} "
+                       f"| {r['metric_value']} | {src} |")
     return "\n".join(out) + "\n"
 
 

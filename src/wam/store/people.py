@@ -14,21 +14,23 @@ def slug(name: str) -> str:
 
 def upsert_author(conn: sqlite3.Connection, *, author_id: str, name: str,
                   affiliation: str | None, s2_url: str | None, citations: int | None,
-                  h_index: int | None, paper_ids: list[str], directions: str | None) -> None:
+                  h_index: int | None, paper_ids: list[str], directions: str | None,
+                  region: str | None = None) -> None:
     conn.execute(
         """INSERT INTO authors
-           (id, name, affiliation, s2_url, citations, h_index, paper_ids_json, directions,
-            updated_at)
-           VALUES (?,?,?,?,?,?,?,?,?)
+           (id, name, affiliation, region, s2_url, citations, h_index, paper_ids_json,
+            directions, updated_at)
+           VALUES (?,?,?,?,?,?,?,?,?,?)
            ON CONFLICT(id) DO UPDATE SET
              affiliation=COALESCE(excluded.affiliation, affiliation),
+             region=COALESCE(excluded.region, region),
              s2_url=COALESCE(excluded.s2_url, s2_url),
              citations=COALESCE(excluded.citations, citations),
              h_index=COALESCE(excluded.h_index, h_index),
              paper_ids_json=excluded.paper_ids_json,
              directions=COALESCE(excluded.directions, directions),
              updated_at=excluded.updated_at""",
-        (author_id, name, affiliation, s2_url, citations, h_index, json.dumps(paper_ids),
+        (author_id, name, affiliation, region, s2_url, citations, h_index, json.dumps(paper_ids),
          directions, datetime.now().isoformat(timespec="seconds")),
     )
 

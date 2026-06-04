@@ -15,6 +15,39 @@ from datetime import date, datetime
 from wam.pipeline.schemas import BenchmarkRow, ModelVariant
 
 
+# Canonical embodied-AI benchmark families (raw name -> family via alias substring match).
+BENCH_FAMILIES: dict[str, list[str]] = {
+    "LIBERO": ["libero"],
+    "CALVIN": ["calvin"],
+    "RoboTwin": ["robotwin", "robo twin"],
+    "SimplerEnv": ["simpler"],
+    "RLBench": ["rlbench"],
+    "Meta-World": ["meta-world", "metaworld", "meta world"],
+    "ManiSkill": ["maniskill", "mani-skill", "mani skill"],
+    "RoboCasa": ["robocasa"],
+    "Open-X / RT": ["open-x", "openx", "open x", "rt-1", "rt-2", "rt-x", "bridgedata", "bridge data"],
+    "ALFWorld": ["alfworld"],
+    "VBench": ["vbench"],
+    "AgiBot / GENIE": ["agibot", "genie"],
+    "Habitat": ["habitat"],
+    "BEHAVIOR": ["behavior-1k", "behavior1k", "behavior "],
+}
+# Junk that the extractor sometimes emits as a "benchmark".
+_BENCH_JUNK = re.compile(r"^(table\s*\d|fig\.?\s*\d|average|overall|search|real[\s-]?robot|"
+                         r"main results?|ablation|results?|n/?a|simulation|sim)\b", re.I)
+
+
+def normalize_benchmark(raw: str | None) -> str | None:
+    """Map a raw benchmark string to a canonical family; return None for junk/empty."""
+    if not raw or not raw.strip() or _BENCH_JUNK.match(raw.strip()):
+        return None
+    low = raw.lower()
+    for family, aliases in BENCH_FAMILIES.items():
+        if any(a in low for a in aliases):
+            return family
+    return raw.strip()
+
+
 def variant_key(model_name: str, training_dataset: str | None) -> str:
     base = f"{model_name}|{training_dataset or 'unknown'}".lower()
     return re.sub(r"[^a-z0-9]+", "-", base).strip("-")

@@ -25,9 +25,13 @@ from wam.store.people import slug
 log = get_logger("pipeline.people")
 
 
-class Directions(BaseModel):
+class AuthorProfile(BaseModel):
     directions: str = Field(description="1-2 sentences on this author's main WAM-related "
                                         "research directions, grounded in the listed papers")
+    affiliation: str | None = Field(default=None, description="the author's institution as "
+                                    "stated in the papers' author/affiliation block, else null")
+    region: str | None = Field(default=None, description="country/region of that institution "
+                               "(e.g. 'China', 'USA', 'Singapore'), else null")
 
 
 def run(cfg: Config, client: LLMClient, conn: sqlite3.Connection,
@@ -72,21 +76,35 @@ def run(cfg: Config, client: LLMClient, conn: sqlite3.Connection,
     conn.execute("DELETE FROM authors")
     conn.execute("DELETE FROM groups")
 
+    from wam.sources import pdf
     kept = set(ranked)
     for aid in ranked:
         e = influential[aid]
         titles = "\n".join(f"- {meta[p]['title']}: {meta[p]['tldr']}" for p in e["pids"]
                            if p in meta)
+        # Author/affiliation block lives on the PDF first page — give the model that text
+        # (cached only, no download) so institution + region are grounded, not guessed.
+        blocks = []
+        for p in sorted(e["pids"])[:2]:
+            txt = pdf.get_text(cfg, p, "", max_chars=2500)
+            if txt:
+                blocks.append(f"[{meta.get(p,{}).get('title','')}]\n{txt}")
+        ctx = (f"Author: {e['name']}\nTracked papers:\n{titles}\n\n"
+               f"Author/affiliation blocks (first pages):\n" + "\n---\n".join(blocks))
+        aff, region, directions = e["affiliation"], None, None
         try:
-            directions = client.complete_json(
-                "cheap", "Summarize an author's research directions for a WAM digest. Write "
-                "in English.", f"Author: {e['name']}\nTracked papers:\n{titles}", Directions,
-                label="author-directions", max_tokens=2000).directions
+            prof = client.complete_json(
+                "cheap", "For the given author, summarize their WAM research directions and, "
+                "FROM the author/affiliation blocks only, extract their institution and "
+                "country/region. If a field isn't in the text, use null. Write in English.",
+                ctx, AuthorProfile, label="author-profile", max_tokens=2000)
+            directions = prof.directions
+            aff = prof.affiliation or e["affiliation"]
+            region = prof.region
         except Exception as ex:  # noqa: BLE001
-            log.warning("directions failed for %s: %s", e["name"], ex)
-            directions = None
+            log.warning("profile failed for %s: %s", e["name"], ex)
         store.upsert_author(
-            conn, author_id=aid, name=e["name"], affiliation=e["affiliation"],
+            conn, author_id=aid, name=e["name"], affiliation=aff, region=region,
             s2_url=f"https://www.semanticscholar.org/author/{aid}", citations=e["citations"],
             h_index=e["h_index"], paper_ids=sorted(e["pids"]), directions=directions)
     conn.commit()

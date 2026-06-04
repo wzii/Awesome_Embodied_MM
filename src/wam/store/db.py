@@ -36,6 +36,9 @@ def _migrate(conn: sqlite3.Connection) -> None:
     cols = {r["name"] for r in conn.execute("PRAGMA table_info(papers)")}
     if "benchmarks_extracted" not in cols:
         conn.execute("ALTER TABLE papers ADD COLUMN benchmarks_extracted INTEGER DEFAULT 0")
+    acols = {r["name"] for r in conn.execute("PRAGMA table_info(authors)")}
+    if "region" not in acols:
+        conn.execute("ALTER TABLE authors ADD COLUMN region TEXT")
     conn.commit()
 
 

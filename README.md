@@ -5,8 +5,8 @@
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
 **Last updated:** 2026-06-04 · **Tracked:** 124 core · 154 adjacent ·
-74 news · **367** benchmark rows across **98** model
-variants · **20** authors
+74 news · **599** benchmark rows across **257** model
+variants · **25** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
 > (inference **speed**, **gen**eralist, **spec**ialist, inference **cost**) are weighted 2×.
@@ -59,48 +59,249 @@ variants · **20** authors
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
 Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted comparison._
-| Benchmark | Task | Model (training data) | Metric | Value | Source |
-|-----------|------|-----------------------|--------|------:|:------:|
-| ALFWorld | world model prediction | GPT-5.4 | Delta-F1 | 91.8 | 3rd-party |
-| ALFWorld | world model prediction | COMAP | Delta-F1 | 89.2 | authors |
-| ALFWorld | world model prediction | DeepSeek-V4-Pro | Delta-F1 | 83.35 | 3rd-party |
-| ALFWorld | task planning | GPT-5.4 | success rate | 83.2 | 3rd-party |
-| ALFWorld | task planning | DeepSeek-V4-Pro | success rate | 82.4 | 3rd-party |
-| ALFWorld | world model prediction | DeepSeek-V4-Flash | Delta-F1 | 80.2 | 3rd-party |
-| ALFWorld | world model prediction | On-policy Training | Delta-F1 | 78.5 | 3rd-party |
-| ALFWorld | task planning | COMAP | success rate | 71.53 | authors |
-| ALFWorld | task planning | DeepSeek-V4-Flash | success rate | 67.8 | 3rd-party |
-| ALFWorld | task planning | ITPR | success rate | 67.15 | 3rd-party |
-| ALFWorld | task planning | Imagine-and-Act _(SFT)_ | success rate | 65.71 | 3rd-party |
-| ALFWorld | task planning | IWM | success rate | 64.29 | 3rd-party |
-| ALFWorld | task planning | ReAct _(SFT)_ | success rate | 62.86 | 3rd-party |
-| ALFWorld | task planning | WKM | success rate | 62.14 | 3rd-party |
-| ALFWorld | world model prediction | SFT | Delta-F1 | 52.3 | 3rd-party |
-| ALFWorld | task planning | ITPI | success rate | 31.43 | 3rd-party |
-| ALFWorld | world model prediction | Vanilla | Delta-F1 | 31.25 | 3rd-party |
-| ALFWorld | task planning | RAP | success rate | 24.29 | 3rd-party |
-| ALFWorld | task planning | Reflexion | success rate | 21.43 | 3rd-party |
-| ALFWorld | task planning | Imagine-and-Act | success rate | 20.0 | 3rd-party |
-| ALFWorld | task planning | ReAct | success rate | 14.29 | 3rd-party |
-| Average | world model prediction | GPT-5.4 | Delta-F1 | 89.05 | 3rd-party |
-| Average | world model prediction | DeepSeek-V4-Pro | Delta-F1 | 85.76 | 3rd-party |
-| Average | world model prediction | COMAP | Delta-F1 | 85.4 | authors |
-| Average | — | DeepSeek-V4-Pro | average success rate | 74.13 | 3rd-party |
-| Average | world model prediction | DeepSeek-V4-Flash | Delta-F1 | 73.63 | 3rd-party |
-| Average | — | COMAP | average success rate | 72.11 | authors |
-| Average | — | GPT-5.4 | average success rate | 70.78 | 3rd-party |
-| Average | — | DeepSeek-V4-Pro | average success rate | 70.77 | 3rd-party |
-| Average | — | ITPR | average success rate | 69.53 | 3rd-party |
-| Average | — | GPT-5.4 | average success rate | 67.83 | 3rd-party |
-| Average | — | IWM | average success rate | 62.75 | 3rd-party |
-| Average | — | WKM | average success rate | 60.97 | 3rd-party |
-| Average | — | COMAP | average success rate | 60.15 | authors |
-| Average | — | DeepSeek-V4-Flash | average success rate | 59.58 | 3rd-party |
-| Average | — | DeepSeek-V4-Flash | average success rate | 56.18 | 3rd-party |
-| Average | — | Imagine-and-Act _(SFT)_ | average success rate | 55.65 | 3rd-party |
-| Average | — | ReAct _(SFT)_ | average success rate | 55.21 | 3rd-party |
-| Average | — | ITPR | average success rate | 51.52 | 3rd-party |
-| Average | — | IWM | average success rate | 46.58 | 3rd-party |
+_Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
+
+
+#### LIBERO  ·  _62 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| π0.5 | — | success rate | 99.5 | authors |
+| ELAN4D(π0.5) _(LIBERO (original, ~2K demos))_ | — | Overall success rate | 97.0 | authors |
+| π0.5 _(Open X-Embodiment)_ | — | Overall success rate | 96.9 | 3rd-party |
+| π0.5 | — | success rate (SR) | 96.6 | authors |
+| GeoPredict | — | Overall success rate | 96.6 | 3rd-party |
+| Pri4R | — | Overall success rate | 96.3 | 3rd-party |
+| Cosmos-Policy-2B | — | success rate (SR) | 95.3 | authors |
+| ELAN4D(π0) _(LIBERO (original, ~2K demos))_ | — | Overall success rate | 95.0 | authors |
+| GR00T-N1.7 | — | success rate (SR) | 94.3 | authors |
+| π0 _(Open X-Embodiment)_ | — | Overall success rate | 94.2 | 3rd-party |
+
+#### RoboTwin  ·  _11 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
+| ELAN4D(π0.5) _(RoboTwin2.0 (100 expert episodes per task under clean setting))_ | — | Overall success rate | 37.0 | authors |
+| π0.5 _(Open X-Embodiment)_ | — | Overall success rate | 32.0 | 3rd-party |
+| ELAN4D(π0) _(RoboTwin2.0 (100 expert episodes per task under clean setting))_ | — | Overall success rate | 15.0 | authors |
+| π0 _(Open X-Embodiment)_ | — | Overall success rate | 12.0 | 3rd-party |
+
+#### RoboCasa  ·  _16 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| RLDX-1-FT-RC365 | — | success rate (SR) | 58.4 | authors |
+| π0.5 | — | safety | 55.7 | authors |
+| RLDX-1-FT-RC365 | — | safety | 54.1 | authors |
+| GR00T-N1.5 | — | success rate (SR) | 47.2 | authors |
+| π0 | — | safety | 44.6 | authors |
+| π0.5 | — | success rate (SR) | 42.3 | authors |
+| GR00T-N1.5 | — | safety | 40.7 | authors |
+| π0 | — | success rate (SR) | 32.4 | authors |
+| GR00T-N1.5 | — | SBU | 26.3 | authors |
+| RLDX-1-FT-RC365 | — | SBU | 23.1 | authors |
+
+#### Open-X / RT  ·  _6 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| OpenVLA + RL | speed steering | success rate | 48.9 | authors |
+| OpenVLA + PID | height steering | success rate | 46.0 | authors |
+| OpenVLA | height steering | success rate | 40.0 | authors |
+
+#### VBench  ·  _71 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| CogVideoX-2B | — | Subject consistency | 95.91 | 3rd-party |
+| CoFi | — | Subject consistency | 94.11 | authors |
+| CDGS | — | Subject consistency | 91.67 | 3rd-party |
+| SlotMemory _(VidProM)_ | single-prompt 30s | Quality Score | 85.23 | authors |
+| Lumos-Nexus | — | Quality | 85.03 | authors |
+| InfinityStar + VPG | — | Overall | 84.35 | authors |
+| SlotMemory _(VidProM)_ | single-prompt 30s | Total Score | 84.28 | authors |
+| Lumos-Nexus | — | Total | 84.12 | authors |
+| InfinityStar | — | Overall | 83.86 | authors |
+| Omni-Video | — | Total | 83.82 | 3rd-party |
+
+#### RealEstate10K  ·  _27 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| DFoT _(RealEstate10K)_ | loop-closing | FVD | 265.03 | 3rd-party |
+| WorldMem _(RealEstate10K)_ | loop-closing | FVD | 242.36 | 3rd-party |
+| VMem _(RealEstate10K)_ | loop-closing | FVD | 231.77 | 3rd-party |
+| COVRAG _(RealEstate10K)_ | loop-closing | FVD | 226.4 | authors |
+| VMem _(RealEstate10K)_ | — | average latency | 45.4 | 3rd-party |
+| DFoT _(RealEstate10K)_ | loop-closing | FID | 29.88 | 3rd-party |
+| WorldMem _(RealEstate10K)_ | loop-closing | FID | 24.77 | 3rd-party |
+| VMem _(RealEstate10K)_ | loop-closing | FID | 24.05 | 3rd-party |
+| COVRAG _(RealEstate10K)_ | loop-closing | FID | 23.0 | authors |
+| COVRAG _(RealEstate10K)_ | loop-closing | PSNR | 18.9 | authors |
+
+#### CARLA-AIR  ·  _27 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| AerialVLN | Cooperative Occlusion-Recovery Escort | RAT (s) | 7.2 | authors |
+| SPF | Cooperative Occlusion-Recovery Escort | RAT (s) | 6.5 | authors |
+| OpenUAV | Cooperative Occlusion-Recovery Escort | RAT (s) | 6.2 | authors |
+| AerialVLA | Cooperative Occlusion-Recovery Escort | Re-acquisition Time (RAT) (s) | 4.8 | authors |
+| OpenFly | Cooperative Occlusion-Recovery Escort | RAT (s) | 4.5 | authors |
+| Rule-Coop-State | Cooperative Occlusion-Recovery Escort | RAT (s) | 1.8 | authors |
+| Rule-Coop-State | Cooperative Occlusion-Recovery Escort | RSR | 0.86 | authors |
+| Rule-Coop-State | Cooperative Moving-Platform Landing | TSR | 0.84 | authors |
+| OpenFly | Cooperative Moving-Platform Landing | TSR | 0.81 | authors |
+| AerialVLA | Cooperative Moving-Platform Landing | Tracking Success Rate (TSR) | 0.78 | authors |
+
+#### Controlled Diagnostic Benchmark  ·  _26 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LAMP | — | Out-Rate | 41.0 | 3rd-party |
+| PulpMotion (DiT) | — | Out-Rate | 36.2 | 3rd-party |
+| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | Out-Rate | 5.45 | authors |
+| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | F-Ori | 0.969 | authors |
+| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | F-Tilt | 0.964 | authors |
+| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | F-Roll | 0.937 | authors |
+| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | Auteur-Score | 0.91 | authors |
+| Baseline | — | F-Roll | 0.88 | 3rd-party |
+| Baseline | — | F-Tilt | 0.875 | 3rd-party |
+| PulpMotion (DiT) | — | F-Tilt | 0.873 | 3rd-party |
+
+#### Meve  ·  _26 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| TunerDiT | — | Q4 | 3.34 | authors |
+| TunerDiT | — | Q1 | 3.16 | authors |
+| TunerDiT | — | Q2 | 3.03 | authors |
+| TunerDiT | — | Q3 | 3.03 | authors |
+| TunerDiT | — | TVA | 1.533 | authors |
+| TunerDiT | — | CSCV | 0.854 | authors |
+| DiTCtrl | — | CSCV | 0.803 | 3rd-party |
+| FreeNoise | — | CSCV | 0.748 | 3rd-party |
+| MEVG | — | CSCV | 0.707 | 3rd-party |
+| TunerDiT | — | EI | 0.572 | authors |
+
+#### DL3DV10K  ·  _24 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| DFoT _(DL3DV10K)_ | — | FVD | 706.7 | 3rd-party |
+| WorldMem _(DL3DV10K)_ | — | FVD | 428.49 | 3rd-party |
+| VMem _(DL3DV10K)_ | — | FVD | 394.79 | 3rd-party |
+| COVRAG _(DL3DV10K)_ | — | FVD | 321.81 | authors |
+| DFoT _(DL3DV10K)_ | — | FID | 88.01 | 3rd-party |
+| WorldMem _(DL3DV10K)_ | — | FID | 58.24 | 3rd-party |
+| VMem _(DL3DV10K)_ | — | FID | 57.61 | 3rd-party |
+| COVRAG _(DL3DV10K)_ | — | FID | 46.92 | authors |
+| COVRAG _(DL3DV10K)_ | — | PSNR | 17.9 | authors |
+| VMem _(DL3DV10K)_ | — | PSNR | 16.3 | 3rd-party |
+
+#### VIP-200K  ·  _24 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| ST-DRC (Ours) _(VIP-200K)_ | — | CLIP-Score | 33.04 | authors |
+| VACE | — | CLIP-Score | 32.61 | 3rd-party |
+| IPVG-STD | — | CLIP-Score | 31.82 | 3rd-party |
+| Phantom | — | CLIP-Score | 31.55 | 3rd-party |
+| ConsisID | — | CLIP-Score | 31.47 | 3rd-party |
+| ST-DRC (Ours) _(VIP-200K)_ | — | MS | 0.992 | authors |
+| ConsisID | — | MS | 0.982 | 3rd-party |
+| ST-DRC (Ours) _(VIP-200K)_ | — | DD | 0.93 | authors |
+| VACE | — | IQ | 0.688 | 3rd-party |
+| ST-DRC (Ours) _(VIP-200K)_ | — | IQ | 0.682 | authors |
+
+#### PulpMotion  ·  _16 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LAMP | — | Cam F1 | 99.7 | 3rd-party |
+| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | Cam F1 | 83.6 | authors |
+| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | CLaTr | 71.1 | authors |
+| LAMP | — | CLaTr | 69.5 | 3rd-party |
+| PulpMotion (MAR) | — | Cam F1 | 64.8 | 3rd-party |
+| PulpMotion (DiT) | — | Cam F1 | 52.9 | 3rd-party |
+| PulpMotion (MAR) | — | CLaTr | 49.3 | 3rd-party |
+| PulpMotion (DiT) | — | CLaTr | 39.7 | 3rd-party |
+| LAMP | — | FDframe | 35.5 | 3rd-party |
+| PulpMotion (MAR) | — | Out-rate | 29.1 | 3rd-party |
+
+#### WorldMem (Minecraft)  ·  _16 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| DecMem _(WorldMem dataset (Minecraft))_ | — | Spatio-temporal Consistency (STC) | 42.12 | authors |
+| MineWorld _(Minecraft dataset)_ | — | FID | 41.9661 | 3rd-party |
+| DecMem _(WorldMem dataset (Minecraft))_ | — | Visual Quality (VQ) | 39.77 | authors |
+| DecMem _(WorldMem dataset (Minecraft))_ | — | Action Controllability (AC) | 37.81 | authors |
+| DecMem _(WorldMem dataset (Minecraft))_ | — | PSNR | 30.0785 | authors |
+| WorldMem _(Minecraft dataset)_ | — | PSNR | 26.5414 | 3rd-party |
+| Oasis _(Minecraft dataset)_ | — | PSNR | 24.1293 | 3rd-party |
+| MineWorld _(Minecraft dataset)_ | — | PSNR | 20.2989 | 3rd-party |
+| Oasis _(Minecraft dataset)_ | — | FID | 15.9163 | 3rd-party |
+| WorldMem _(Minecraft dataset)_ | — | FID | 11.7379 | 3rd-party |
+
+#### MNIST modular arithmetic  ·  _15 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| JEPA + additive embedding (ResNet-18) _(MNIST)_ | digit classification after arithmetic operation | seen operation accuracy | 0.9946 | authors |
+| BRo-JEPA (ResNet + MFR) _(MNIST)_ | digit classification after arithmetic operation | zero-shot operation accuracy | 0.9946 | authors |
+| BRo-JEPA (ResNet + MFR) _(MNIST)_ | digit classification after arithmetic operation | unseen operation rollout accuracy | 0.9946 | authors |
+| BRo-JEPA (ResNet + SFR) _(MNIST)_ | digit classification after arithmetic operation | zero-shot operation accuracy | 0.9893 | authors |
+| Supervised ResNet-18 + additive embedding _(MNIST)_ | digit classification after arithmetic operation | seen operation accuracy | 0.9844 | authors |
+| JEPA + additive embedding (MLP) _(MNIST)_ | digit classification after arithmetic operation | seen operation accuracy | 0.9794 | authors |
+| JEPA + additive embedding (MLP) _(MNIST)_ | digit classification after arithmetic operation | unseen operation rollout accuracy | 0.9793 | authors |
+| JEPA + additive embedding (MLP w/ compositional consistency loss) _(MNIST)_ | digit classification after arithmetic operation | zero-shot operation accuracy | 0.9777 | authors |
+| Supervised MLP + additive embedding _(MNIST)_ | digit classification after arithmetic operation | seen operation accuracy | 0.9737 | authors |
+| BRo-JEPA (MLP + MFR) _(MNIST)_ | digit classification after arithmetic operation | zero-shot operation accuracy | 0.9724 | authors |
+
+#### RoboTrustBench  ·  _14 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Kling-v2.6 | Normal | Overall Average (GPT-5.4 automatic evaluation, normalized to [0,1]) | 0.886 | authors |
+| Kling-v2.6 | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.776 | authors |
+| LingBot-World | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.681 | authors |
+| Cosmos-14B | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.673 | authors |
+| Wan2.2 | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.661 | authors |
+| Veo-3.1-Fast | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.658 | authors |
+| Cosmos-2B | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.651 | authors |
+| HunyuanVideo-1.5 | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.579 | authors |
+
+#### AgentGym  ·  _14 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| PatchWorld-Simple _(AgentGym trajectories)_ | — | macro success rate | 76.4 | authors |
+| LLM-Direct | — | macro success rate | 75.8 | 3rd-party |
+| ReAct | — | macro success rate | 74.4 | 3rd-party |
+| PatchWorld-Residual _(AgentGym trajectories)_ | — | macro success rate | 72.9 | authors |
+| PoE-World _(AgentGym trajectories)_ | — | macro success rate | 69.3 | 3rd-party |
+| WorldCoder _(AgentGym trajectories)_ | — | macro success rate | 64.4 | 3rd-party |
+| Word2World _(AgentGym trajectories)_ | — | macro success rate | 63.5 | 3rd-party |
+| Word2World _(AgentGym trajectories)_ | — | macro Token F1 | 0.85 | 3rd-party |
+| PatchWorld-Residual _(AgentGym trajectories)_ | — | macro Token F1 | 0.69 | authors |
+| LLM-Direct | — | macro Token F1 | 0.64 | 3rd-party |
+
+#### SafeGen-Bench  ·  _13 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Llama-Guard | — | Failure Rate Across 7 Categories | 80.0 | authors |
+| LLaVA-Guard | — | Failure Rate Across 7 Categories | 80.0 | authors |
+| CogVideoX | — | Average Quality Score | 66.8 | authors |
+| Open-Sora-Plan v1.2.0 | — | Average Quality Score | 63.2 | authors |
+| Kling V1.0 | — | Average Quality Score | 59.8 | authors |
+| I2VGen-XL | — | Average Quality Score | 50.1 | authors |
+| Gen3-turbo | — | Average Quality Score | 46.9 | authors |
+| CogVideoX | — | Average Unsafety Score | 44.5 | authors |
+| Open-Sora-Plan v1.2.0 | — | Average Unsafety Score | 33.6 | authors |
+| I2VGen-XL | — | Average Unsafety Score | 31.0 | authors |
 
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
@@ -131,26 +332,31 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **Self-Revising Discovery Systems for Science: A Categorical Framework for Agentic Artificial Intelligence** — A category-theoretic framework for self-revising agentic systems where discovery is formalized as a verified regime transition u: S_b → S_b' between schema categories. Old artifacts are preserved via left Kan extension (Lan_u I_t) along the transition functor, and genuine novelty is identified as residual content… _(→ WAM: World Action Models must maintain and update internal world models, but currently lack principled mechanisms for restructuring their representational schema when encountering out-of-distribution or structurally novel situations. The regime transition…)_ [abs](https://arxiv.org/abs/2606.01444) · [pdf](https://arxiv.org/pdf/2606.01444v1) · [code](https://github.com/lamm-mit/scienceclaw)
 
 ## 👥 Influential Authors & Groups
-- **[Pengfei Wan](https://www.semanticscholar.org/author/2363570130)** (3 papers) — Pengfei Wan focuses on advancing video world models and video generation, particularly for long-horizon geometric and visual consistency, with recent work on decoupled memory architectures for minute-long generation and leveraging VLMs as teachers for video…
-- **[Bin Zhu](https://www.semanticscholar.org/author/2337784762)** (3 papers) — Bin Zhu researches world-action models (WAMs) for robotic manipulation, focusing on diagnostics beyond task success, benchmarking trustworthiness, and unifying video prediction with action evaluation via diffusion models.
-- **[Ye Li](https://www.semanticscholar.org/author/2310388004)** (3 papers) — Ye Li's research focuses on developing world models and video generation frameworks for robotics, including closed-loop video simulators for manipulation, long video extrapolation, and efficient vision-language-action models with adaptive computation…
-- **[Xiaotong Zhao](https://www.semanticscholar.org/author/2290452230)** (3 papers) — Xiaotong Zhao's research focuses on advancing controllable and interactive video generation, with an emphasis on reasoning-driven intent interpretation, object-level trajectory control, and expert-calibrated evaluation for professional cinematic quality.
-- **[Alan Zhao](https://www.semanticscholar.org/author/2346976453)** (3 papers) — Alan Zhao's research focuses on advancing controllable and interactive video generation, particularly for professional cinematic applications, by developing reasoning-driven frameworks that interpret abstract user intent and enable precise object-level…
-- **[Jiancheng Zhao](https://www.semanticscholar.org/author/2325368986)** (3 papers) — Jiancheng Zhao advances world models for interactive video generation and control in games and complex scenes, focusing on cross-game generalization, fine-grained multi-entity natural-language control, and long-range temporal coherence in autoregressive video…
-- **[Hang Zhao](https://www.semanticscholar.org/author/2284724822)** (3 papers) — Hang Zhao's research focuses on developing Vision-Language-Action (VLA) models for autonomous driving and robotic manipulation, with an emphasis on replacing verbose language reasoning with concise, verifiable meta-actions to improve efficiency and…
-- **[Shanghang Zhang](https://www.semanticscholar.org/author/2376781333)** (3 papers) — Shanghang Zhang's research focuses on developing foundation models for long-horizon embodied tasks, including world-ego modeling for hybrid evolution, joint-embedding architectures for cross-embodiment imitation, and open-source vision-language-action systems…
-- **[Pinar Yanardag](https://www.semanticscholar.org/author/3137679)** (2 papers) — Pinar Yanardag's research focuses on advancing autoregressive world models and video generation by developing training-free methods for concept insertion and dynamic latent state evolution, enabling more flexible and natural visual content creation.
-- **[Kun Gai](https://www.semanticscholar.org/author/2385564054)** (2 papers) — Kun Gai's main WAM-related research directions focus on advancing long-horizon, consistent world generation through decoupled memory architectures, and improving video reasoning capabilities via adaptive test-time optimization using large vision-language…
-- **[Qixing Hu](https://www.semanticscholar.org/author/152280941)** (2 papers) — Developing retrieval-augmented frameworks and efficient parallel infrastructure for long video generation, focusing on reducing error accumulation and achieving significant speedups via NVFP4-based training and inference.
-- **[Shuai Yang](https://www.semanticscholar.org/author/2256555282)** (2 papers) — Shuai Yang's research focuses on improving long video generation through retrieval-augmented frameworks and efficient parallel infrastructure, notably developing LongLive-RAG to mitigate error accumulation in sliding-window attention and LongLive-2.0 as the…
-- **[Yukang Chen](https://www.semanticscholar.org/author/2109297557)** (2 papers) — Yukang Chen focuses on advancing long video generation through retrieval-augmented frameworks and efficient parallel infrastructure, specifically addressing error accumulation in sliding-window attention and leveraging NVFP4 precision for significant speedups…
-- **[Minseok Joo](https://www.semanticscholar.org/author/2313642518)** (2 papers) — Minseok Joo's research focuses on improving consistency and control in vision-language-action models and video generation, specifically by mitigating state aliasing through inverse dynamics learning and enhancing long-video geometric consistency via…
-- **[Kyujin Lee](https://www.semanticscholar.org/author/2439353694)** (2 papers) — Kyujin Lee's research focuses on improving visual representation learning for consistent generation and control, specifically addressing state aliasing in vision-language-action models via inverse dynamics learning and enhancing long-horizon geometric…
-- **[Min Wei](https://www.semanticscholar.org/author/2357859140)** (2 papers) — Min Wei's research focuses on integrating 3D geometric understanding into video generation models, developing geometry-aware memory and mesh tokenization techniques to improve long-horizon consistency and motion control in world models and video diffusion.
-- **[Fan Wang](https://www.semanticscholar.org/author/2320184479)** (2 papers) — Fan Wang's research focuses on interactive video world modeling and 3D-aware video diffusion, aiming to enable controllable, real-time video generation with improved 3D structure understanding and motion control.
-- **[Tianzhuo Yang](https://www.semanticscholar.org/author/2367280829)** (2 papers) — Tianzhuo Yang's research focuses on enhancing the safety and reliability of AI systems, particularly LLM agents and robotic world models, through proactive risk mitigation and rigorous evaluation of action-conditioned performance.
-- **[Jiaming Ji](https://www.semanticscholar.org/author/2273548793)** (2 papers) — Jiaming Ji focuses on enhancing the safety and reliability of AI agents, particularly through proactive defense mechanisms for LLM agents (SafeMCP) and rigorous evaluation of action-conditioned reliability in robotic world models (MiraBench), aiming to bridge…
-- **[Juntao Dai](https://www.semanticscholar.org/author/2368404298)** (2 papers) — Juntao Dai's research focuses on enhancing the safety and reliability of LLM agents and robotic world models. His work includes developing proactive defense mechanisms for LLM agents through environment-grounded look-ahead reasoning, and establishing…
+- **[Ye Li](https://www.semanticscholar.org/author/2310388004)** (3 papers · Zhejiang University) — Ye Li's research focuses on long video generation and world simulation, including multi-shot video extrapolation with recursive context allocation and closed-loop video world simulators for robotic manipulation, as well as efficient vision-language-action…
+- **[Shanghang Zhang](https://www.semanticscholar.org/author/2376781333)** (3 papers · Peking University) — Shanghang Zhang's research focuses on vision-language-action (VLA) models for dexterous manipulation, one-shot cross-embodiment imitation via joint-embedding predictive architectures, and world-ego modeling for long-horizon hybrid embodied tasks.
+- **[Pinar Yanardag](https://www.semanticscholar.org/author/3137679)** (2 papers · Virginia Tech) — Pinar Yanardag's research focuses on autoregressive video diffusion and world models, specifically improving temporal dynamics and controllability by manipulating the anchor (reference frame) mechanism—e.g., replacing static anchors with self-evolving latent…
+- **[Pengfei Wan](https://www.semanticscholar.org/author/2363570130)** (2 papers · Kuaishou Technology) — Pengfei Wan's research focuses on video generation models, particularly on improving video reasoning through adaptive test-time optimization with VLMs as teachers, and on achieving long-horizon, consistent world generation via decoupled memory architectures.
+- **[Kun Gai](https://www.semanticscholar.org/author/2385564054)** (2 papers · The University of Hong Kong) — DecMem introduces a decoupled memory architecture with Sparse Global Memory and Anchored Local Memory to achieve minute-long, consistent world generation by overcoming computational inefficiency and attention dispersion in long-horizon video extrapolation…
+- **[Minseok Joo](https://www.semanticscholar.org/author/2313642518)** (2 papers · Korea University) — Minseok Joo's research focuses on improving consistency and reducing ambiguity in vision-based models, specifically through inverse dynamics learning to mitigate state aliasing in Vision-Language-Action models for robot manipulation, and through…
+- **[Kyujin Lee](https://www.semanticscholar.org/author/2439353694)** (2 papers · KAIST) — Kyujin Lee's WAM research focuses on improving visual representation learning in Vision-Language-Action (VLA) models for robot manipulation by using inverse dynamics as an auxiliary objective to mitigate state aliasing, and enhancing long-horizon geometric…
+- **[Weihua Chen](https://www.semanticscholar.org/author/2365043710)** (2 papers · DAMO Academy, Alibaba Group) — Weihua Chen's research focuses on human motion control in video generation using 3D-aware mesh tokenization without rendering, and efficient video unified models that bridge frequency domains for high-fidelity generation with reduced computational cost.
+- **[Fan Wang](https://www.semanticscholar.org/author/2320184479)** (2 papers · DAMO Academy, Alibaba Group) — Fan Wang's research focuses on enhancing video diffusion models with 3D awareness, particularly through mesh tokenization for human motion control, and on interactive world modeling for action-conditioned video generation with long-horizon consistency.
+- **[Tianzhuo Yang](https://www.semanticscholar.org/author/2367280829)** (2 papers · Institute for Artificial Intelligence, Peking University) — Developing defense mechanisms for LLM agents via proactive power regulation and environment-grounded look-ahead reasoning, and evaluating action-conditioned reliability in robotic world models through hierarchical benchmarks.
+- **[Jiaming Ji](https://www.semanticscholar.org/author/2273548793)** (2 papers · Institute for Artificial Intelligence, Peking University) — Jiaming Ji's research focuses on safety and reliability in AI systems, particularly in LLM agents and robotic world models. This includes proactive defense mechanisms for LLM agents via environment-grounded look-ahead reasoning (SafeMCP) and evaluating…
+- **[Juntao Dai](https://www.semanticscholar.org/author/2368404298)** (2 papers · Physis Lab, Institute for Artificial Intelligence, Peking University) — Juntao Dai's research focuses on improving the safety and reliability of AI agents, particularly through proactive defense mechanisms for LLM agents (SafeMCP) and evaluating the action-conditioned reliability of robotic world models (MiraBench).
+- **[Chensheng Peng](https://www.semanticscholar.org/author/2160952549)** (2 papers · Applied Intuition) — Chensheng Peng's research focuses on interactive video world modeling, including action-conditioned video generation, long-horizon consistency, and memory mechanisms for out-of-sight state evolution, as demonstrated by work on dynamic memory for video…
+- **[Jun Nie](https://www.semanticscholar.org/author/2315126639)** (2 papers · Peking University) — Jun Nie's research focuses on extracting value-like information from frozen vision-language-action (VLA) policies to improve action selection, and on developing training-free methods to dynamically adjust execution horizons for action-chunking robot policies…
+- **[Jiachen Zhang](https://www.semanticscholar.org/author/2376800622)** (2 papers · Peking University) — The author's research focuses on improving robot imitation learning policies by extracting value-like information about task success from frozen vision-language-action (VLA) representations for test-time action selection (probing study), and developing…
+- **[Junying Lao](https://www.semanticscholar.org/author/2176256865)** (2 papers · Peking University) — Junying Lao's primary WAM research directions focus on improving robot policy performance at test time without retraining. This includes probing frozen Vision-Language-Action (VLA) representations for value-like information about task success to guide action…
+- **[Songfang Huang Peking University](https://www.semanticscholar.org/author/2438923144)** (2 papers · Peking University) — Research on improving robot policy performance by extracting value-like information about task success from frozen VLA representations and by dynamically selecting execution horizons for action-chunking policies to enhance success rates.
+- **[Haibao Yu](https://www.semanticscholar.org/author/2162290793)** (2 papers · The University of Hong Kong) — Haibao Yu's research focuses on developing world models for robotic manipulation and navigation, particularly through feed-forward 3D Gaussian representations for manipulation and autoregressive training strategies for long-horizon navigation prediction.
+- **[Li Jiang](https://www.semanticscholar.org/author/2292670885)** (2 papers · The Chinese University of Hong Kong, Shenzhen) — Li Jiang's research focuses on world-action modeling for autonomous driving and robotic manipulation, leveraging video generative priors and 4D supervision to enhance planning and policy robustness.
+- **[Jie-Ying Lee](https://www.semanticscholar.org/author/2311274155)** (2 papers · National Yang Ming Chiao Tung University) — Jie-Ying Lee's research focuses on video generation models, particularly evaluating causal understanding in video diffusion models and developing 3D-aware 360° video generation for digital twin applications.
+- **[Yu-Lun Liu](https://www.semanticscholar.org/author/2309657159)** (2 papers · National Yang Ming Chiao Tung University) — Research focuses on advancing video generation models for digital twins and world models, developing benchmarks and frameworks that enforce geometric consistency (e.g., 360° video generation via 3D Cache) and evaluate causal reasoning capabilities of video…
+- **[Xiancong Ren](https://www.semanticscholar.org/author/2392686023)** (2 papers · X-Humanoid) — Xiancong Ren's research focuses on developing self-evolving embodied agents that autonomously induce navigation heuristics and refine cognitive strategies through continuous reflection-adaptation loops, as well as diagnosing Vision-Language-Action (VLA)…
+- **[Yong Dai](https://www.semanticscholar.org/author/2439566558)** (2 papers · X-Humanoid) — Yong Dai focuses on building self-evolving embodied agents that autonomously induce navigation heuristics and refine cognitive strategies through continuous reflection-adaptation loops, as well as diagnosing Vision-Language-Action (VLA) models by tracing…
+- **[Xiaozhu Ju](https://www.semanticscholar.org/author/2392718853)** (2 papers · X-Humanoid) — Research on embodied AI, focusing on self-evolving navigation agents with dual-grain cognitive memory and autonomous knowledge induction, as well as diagnostic methods for Vision-Language-Action models through representation and behavior tracing.
+- **[Jiayi Luo](https://www.semanticscholar.org/author/2319302828)** (2 papers · BUAA) — Jiayi Luo's main WAM-related research directions are developing closed-loop video world simulators for robotic manipulation (GE-Sim 2.0) and designing training-free KV cache policies for autoregressive video generation to improve long-video consistency under…
 
 ## 📰 Embodied / Physical-AI News
 - [2026 Robotics Summit & Expo Recap](https://www.therobotreport.com/2026-robotics-summit-expo-recap/) — _The Robot Report_

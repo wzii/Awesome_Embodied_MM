@@ -95,13 +95,14 @@ def render(cfg: Config) -> None:
     # --- Authors ---
     st.subheader("👥 Influential authors")
     arows = con.execute(
-        "SELECT name, citations, h_index, paper_ids_json, directions, s2_url FROM authors "
-        "ORDER BY json_array_length(paper_ids_json) DESC").fetchall()
+        "SELECT name, region, affiliation, citations, h_index, paper_ids_json, directions, "
+        "s2_url FROM authors ORDER BY json_array_length(paper_ids_json) DESC").fetchall()
     if arows:
         adf = pd.DataFrame([{
-            "author": n, "papers": len(json.loads(pj or "[]")), "citations": cit,
-            "h_index": h, "directions": (d or "")[:200], "s2": url or ""}
-            for n, cit, h, pj, d, url in arows])
+            "author": n, "region": reg or "", "institution": aff or "",
+            "papers": len(json.loads(pj or "[]")), "citations": cit, "h_index": h,
+            "directions": (d or "")[:200], "s2": url or ""}
+            for n, reg, aff, cit, h, pj, d, url in arows])
         st.dataframe(adf, use_container_width=True, hide_index=True,
                      column_config={"s2": st.column_config.LinkColumn("s2")})
     else:
