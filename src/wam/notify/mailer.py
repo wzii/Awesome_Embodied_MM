@@ -52,6 +52,42 @@ def _score_badge(v) -> str:
             f'font-size:12px;margin-left:6px">{v}</span>')
 
 
+_GEN_LABELS = [("novelty", "nov"), ("soundness", "snd"), ("impact", "imp")]
+# WAM order: top-4 (weighted 2x) first, then the rest.
+_WAM_LABELS = [("inference_speed", "spd"), ("generalist", "gen"), ("specialist", "spec"),
+               ("inference_cost", "cost"), ("trustworthiness", "trust"),
+               ("collaborative", "collab"), ("controlled_generation", "ctrl"), ("other", "other")]
+_WAM_TOP4 = {"inference_speed", "generalist", "specialist", "inference_cost"}
+
+
+def _v(x) -> str:
+    return str(x) if isinstance(x, int) else "–"
+
+
+def _chip(label: str, val: str, strong: bool = False) -> str:
+    bg, weight = ("#e8f0ff", "600") if strong else ("#f2f2f2", "400")
+    return (f'<span style="background:{bg};border-radius:4px;padding:1px 5px;margin:0 4px 2px 0;'
+            f'font-size:11px;color:#333;font-weight:{weight};display:inline-block">{label} {val}</span>')
+
+
+def _metric_badges(scores: dict) -> str:
+    """Full two-layer dimension badges (general + all WAM; top-4 WAM emphasized)."""
+    g, w = scores.get("general", {}) or {}, scores.get("wam", {}) or {}
+    gen = "".join(_chip(l, _v(g.get(k))) for k, l in _GEN_LABELS)
+    wam = "".join(_chip(l, _v(w.get(k)), k in _WAM_TOP4) for k, l in _WAM_LABELS)
+    return (f'<div style="margin:5px 0 0"><span style="color:#999;font-size:11px">general</span> '
+            f'{gen}</div>'
+            f'<div style="margin:2px 0 0"><span style="color:#999;font-size:11px">WAM</span> '
+            f'{wam}</div>')
+
+
+def _top4_inline(scores: dict) -> str:
+    w = scores.get("wam", {}) or {}
+    return " · ".join(f"{l} {_v(w.get(k))}" for k, l in
+                      [("inference_speed", "spd"), ("generalist", "gen"),
+                       ("specialist", "spec"), ("inference_cost", "cost")])
+
+
 def _card(row) -> str:
     """Detailed featured card: title link + score badge + one-line tldr."""
     s = json.loads(row["scores_json"])
@@ -60,7 +96,8 @@ def _card(row) -> str:
     return (f'<div style="margin:10px 0 14px">'
             f'<a href="{link}" style="font-weight:600;color:#1a4fcc;text-decoration:none;'
             f'font-size:14px">{row["title"]}</a>{_score_badge(s.get("weighted_total","?"))}'
-            f'<div style="font-size:13px;color:#333;margin-top:3px">{tldr}</div></div>')
+            f'<div style="font-size:13px;color:#333;margin-top:3px">{tldr}</div>'
+            f'{_metric_badges(s)}</div>')
 
 
 def _compact(row) -> str:
@@ -71,10 +108,11 @@ def _compact(row) -> str:
         tldr = tldr[:160].rsplit(" ", 1)[0].rstrip(".,;: ") + "…"
     link = (_links(row["links_json"]).get("abs") or _links(row["links_json"]).get("pdf") or "#")
     desc = f' — <span style="color:#444">{tldr}</span>' if tldr else ""
-    return (f'<div style="font-size:13px;margin:4px 0">'
+    return (f'<div style="font-size:13px;margin:5px 0">'
             f'<b>{s.get("weighted_total","?")}</b> · '
             f'<a href="{link}" style="color:#1a4fcc;text-decoration:none">{row["title"]}</a>'
-            f'{desc}</div>')
+            f'{desc}'
+            f'<div style="font-size:11px;color:#888;margin-top:1px">{_top4_inline(s)}</div></div>')
 
 
 def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) -> tuple[str, str]:
@@ -145,7 +183,13 @@ def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) 
                 parts.extend(_compact(r) for r in groups[gname])
         else:
             parts.extend(_compact(r) for r in rest)
-    parts.append(f'<p style="color:#999;font-size:12px;margin-top:20px">Awesome-WAM · '
+    parts.append(
+        '<p style="color:#aaa;font-size:11px;margin-top:18px;border-top:1px solid #eee;'
+        'padding-top:8px">Dimensions — general: nov=novelty, snd=soundness, imp=impact · '
+        'WAM (bold = weighted 2×): spd=inference speed, gen=generalist, spec=specialist, '
+        'cost=inference cost, trust=trustworthiness, collab=collaborative, '
+        'ctrl=controlled generation. “–” = the paper doesn’t address it.</p>')
+    parts.append(f'<p style="color:#999;font-size:12px;margin-top:8px">Awesome-WAM · '
                  f'<a href="https://github.com/your-org/Awesome-WAM">repo</a></p></div>')
     subject = f"WAM Daily — {today}: {new_core} new" + ("" if not fallback else " (recap)")
     return subject, "".join(parts)
