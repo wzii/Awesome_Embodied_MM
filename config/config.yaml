@@ -51,7 +51,9 @@ constants:
   retry_backoff: 3.0         # seconds, exponential base
   lookback_days: 60          # ignore papers older than this on fetch
   relevance_threshold: 0.5   # below this -> dropped
-  analyze_cap: 40            # max papers fully analyzed per run (cost guard)
+  analyze_cap: 40            # max papers fully analyzed per run (cost guard; override with --limit)
+  llm_workers: 6             # concurrency for analyze/score/innovation stages
+  extract_workers: 6         # concurrency for benchmark extraction
 
 logging:
   level: "INFO"              # console level; debug file sink enabled via --debug/WAM_DEBUG

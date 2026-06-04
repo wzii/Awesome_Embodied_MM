@@ -58,28 +58,32 @@ def weighted_total(card: ScoreCard, cfg: Config) -> float:
 
 def run(cfg: Config, client: LLMClient, conn: sqlite3.Connection,
         limit: int | None = None) -> int:
+    from wam.pipeline._concurrent import run_stage
     cap = limit or int(cfg.get("constants.analyze_cap", 40))
     system = SYSTEM.format(profile=cfg.profile_text())
-    todo = ps.needs_score(conn, limit=cap)
-    log.info("scoring %d analyzed papers (cap=%d)", len(todo), cap)
-    done = 0
-    for row in todo:
-        analysis = conn.execute("SELECT summary_json, analysis_json FROM papers WHERE id=?",
-                                (row["id"],)).fetchone()
+    workers = int(cfg.get("constants.llm_workers", 6))
+    # Fetch all needed text in the MAIN thread (workers must not touch the connection).
+    todo = conn.execute(
+        "SELECT id, title, abstract, summary_json, analysis_json FROM papers WHERE track='core' "
+        "AND analysis_json IS NOT NULL AND scores_json IS NULL "
+        "ORDER BY relevance DESC LIMIT ?", (cap,)).fetchall()
+    log.info("scoring %d analyzed papers (%d workers)", len(todo), workers)
+
+    def worker(row):
         ctx = (f"Title: {row['title']}\n\nAbstract: {row['abstract'] or '(none)'}\n\n"
-               f"Summary: {analysis['summary_json']}\n\nAnalysis: {analysis['analysis_json']}")
+               f"Summary: {row['summary_json']}\n\nAnalysis: {row['analysis_json']}")
         try:
-            card = client.complete_json("score", system, ctx, ScoreCard,
-                                        label="score", max_tokens=5000)
+            return row["id"], client.complete_json("score", system, ctx, ScoreCard,
+                                                   label="score", max_tokens=5000)
         except Exception as e:  # noqa: BLE001
             log.warning("score failed for %s: %s", row["id"], e)
-            continue
+            return row["id"], None
+
+    def store(pid, card):
         payload = card.model_dump()
         payload["weighted_total"] = weighted_total(card, cfg)
-        ps.set_scores(conn, row["id"], json.dumps(payload))
-        done += 1
-        if done % 10 == 0:
-            conn.commit()
-    conn.commit()
-    log.info("scored %d papers", done)
-    return done
+        ps.set_scores(conn, pid, json.dumps(payload))
+
+    n = run_stage(todo, worker, store, conn, workers, "score", log)
+    log.info("scored %d papers", n)
+    return n

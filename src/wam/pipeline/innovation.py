@@ -23,21 +23,21 @@ SYSTEM = ("This paper is adjacent to World Action Models (it is VLA / a world mo
 
 def run(cfg: Config, client: LLMClient, conn: sqlite3.Connection,
         limit: int | None = None) -> int:
+    from wam.pipeline._concurrent import run_stage
     todo = ps.needs_innovation(conn, limit=limit)
-    log.info("extracting innovation notes for %d adjacent papers", len(todo))
-    done = 0
-    for row in todo:
+    workers = int(cfg.get("constants.llm_workers", 6))
+    log.info("extracting innovation notes for %d adjacent papers (%d workers)", len(todo), workers)
+
+    def worker(row):
         user = f"Title: {row['title']}\n\nAbstract: {row['abstract'] or '(none)'}"
         try:
-            note = client.complete_json("innovation", SYSTEM, user, InnovationNote,
-                                        label="innovation", max_tokens=2000)
+            return row["id"], client.complete_json("innovation", SYSTEM, user, InnovationNote,
+                                                   label="innovation", max_tokens=2000)
         except Exception as e:  # noqa: BLE001
             log.warning("innovation failed for %s: %s", row["id"], e)
-            continue
-        ps.set_innovation(conn, row["id"], note.model_dump_json())
-        done += 1
-        if done % 20 == 0:
-            conn.commit()
-    conn.commit()
-    log.info("innovation notes for %d papers", done)
-    return done
+            return row["id"], None
+
+    n = run_stage(todo, worker, lambda pid, x: ps.set_innovation(conn, pid, x.model_dump_json()),
+                  conn, workers, "innovation", log)
+    log.info("innovation notes for %d papers", n)
+    return n

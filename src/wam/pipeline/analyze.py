@@ -23,23 +23,23 @@ SYSTEM = ("You are an expert reviewer of World Action Models (embodied/robot fou
 
 def run(cfg: Config, client: LLMClient, conn: sqlite3.Connection,
         limit: int | None = None) -> int:
+    from wam.pipeline._concurrent import run_stage
     cap = limit or int(cfg.get("constants.analyze_cap", 40))
     system = SYSTEM.format(profile=cfg.profile_text())
     todo = ps.needs_analysis(conn, limit=cap)
-    log.info("analyzing %d core papers (cap=%d)", len(todo), cap)
-    done = 0
-    for row in todo:
+    workers = int(cfg.get("constants.llm_workers", 6))
+    log.info("analyzing %d core papers (%d workers)", len(todo), workers)
+
+    def worker(row):
         user = f"Title: {row['title']}\n\nAbstract: {row['abstract'] or '(none)'}"
         try:
-            a = client.complete_json("analyze", system, user, PaperAnalysis,
-                                     label="analyze", max_tokens=5000)
+            return row["id"], client.complete_json("analyze", system, user, PaperAnalysis,
+                                                    label="analyze", max_tokens=5000)
         except Exception as e:  # noqa: BLE001
             log.warning("analyze failed for %s: %s", row["id"], e)
-            continue
-        ps.set_analysis(conn, row["id"], a.model_dump_json())
-        done += 1
-        if done % 10 == 0:
-            conn.commit()
-    conn.commit()
-    log.info("analyzed %d papers", done)
-    return done
+            return row["id"], None
+
+    n = run_stage(todo, worker, lambda pid, a: ps.set_analysis(conn, pid, a.model_dump_json()),
+                  conn, workers, "analyze", log)
+    log.info("analyzed %d papers", n)
+    return n
