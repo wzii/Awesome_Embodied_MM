@@ -28,6 +28,44 @@ def _headers(cfg: Config) -> dict:
     return {"x-api-key": key} if key else {}
 
 
+def fetch_authors(cfg: Config, arxiv_ids: list[str]) -> dict[str, list[dict]]:
+    """Map arxiv_id -> list of authors with reliable S2 ids (authorId, name, affiliations,
+    hIndex, citationCount), via the batch paper endpoint. Best-effort; missing -> absent."""
+    if not arxiv_ids:
+        return {}
+    fields = "authors.authorId,authors.name,authors.affiliations,authors.hIndex,authors.citationCount"
+    out: dict[str, list[dict]] = {}
+    headers = _headers(cfg)
+    timeout = cfg.get("constants.request_timeout", 90)
+    # Small chunks + generous backoff because the keyless S2 limit is tight (429-prone).
+    for start in range(0, len(arxiv_ids), 100):
+        chunk = arxiv_ids[start:start + 100]
+        ids = [f"ARXIV:{a}" for a in chunk]
+        data = None
+        for attempt, wait in enumerate((0, 6, 15, 30)):
+            if wait:
+                time.sleep(wait)
+            try:
+                r = requests.post(BATCH, params={"fields": fields}, json={"ids": ids},
+                                  headers=headers, timeout=timeout)
+                if r.status_code == 429:
+                    log.info("s2 429, backing off (attempt %d)", attempt + 1)
+                    continue
+                r.raise_for_status()
+                data = r.json()
+                break
+            except Exception as e:  # noqa: BLE001
+                log.warning("s2 author batch error (attempt %d): %s", attempt + 1, e)
+        if not data:
+            continue
+        for aid, item in zip(chunk, data):
+            if item and item.get("authors"):
+                out[f"arxiv:{aid}"] = item["authors"]
+        time.sleep(1.5)
+    log.info("s2 fetched authors for %d/%d papers", len(out), len(arxiv_ids))
+    return out
+
+
 def search_author(cfg: Config, name: str) -> dict | None:
     """Best-effort: return {name, affiliation, citations, h_index, url} for a name, or None."""
     try:

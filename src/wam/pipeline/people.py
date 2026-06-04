@@ -1,9 +1,10 @@
 """People stage — influential authors + research groups.
 
-Aggregates authors across tracked (core + adjacent) papers, flags the influential ones
-(appear on >= N tracked papers, or high Semantic Scholar citations), enriches them via S2
-(affiliation, citations, h-index), and uses the strong model to summarize each one's main
-research directions. Groups are inferred from shared affiliation among influential authors.
+Identity comes from **Semantic Scholar author IDs** attached to each paper (reliable; avoids
+name collisions), not name search. Influential authors (on >= N tracked papers) get an
+LLM-summarized research direction. **Groups are co-authorship clusters**: influential authors
+who publish together form a lab/group (connected components of the co-authorship graph) —
+this works even though S2's affiliation data is sparse.
 """
 
 from __future__ import annotations
@@ -29,79 +30,89 @@ class Directions(BaseModel):
                                         "research directions, grounded in the listed papers")
 
 
-def _tracked_authorship(conn: sqlite3.Connection) -> tuple[dict, dict]:
-    """Return (author_name -> [paper_ids], paper_id -> {title, tldr})."""
-    rows = conn.execute(
-        "SELECT id, title, authors_json, summary_json FROM papers "
-        "WHERE track IN ('core','adjacent')").fetchall()
-    by_author: dict[str, list[str]] = defaultdict(list)
-    papers: dict[str, dict] = {}
-    for r in rows:
-        tldr = ""
-        if r["summary_json"]:
-            try:
-                tldr = json.loads(r["summary_json"]).get("tldr", "")
-            except Exception:  # noqa: BLE001
-                pass
-        papers[r["id"]] = {"title": r["title"], "tldr": tldr}
-        for name in json.loads(r["authors_json"] or "[]"):
-            if name and name != "(none)":
-                by_author[name].append(r["id"])
-    return by_author, papers
-
-
 def run(cfg: Config, client: LLMClient, conn: sqlite3.Connection,
         limit: int | None = None) -> dict[str, int]:
     min_papers = int(cfg.get("people.min_papers", 2))
     cap = limit or int(cfg.get("people.max_per_run", 30))
-    by_author, papers = _tracked_authorship(conn)
-    log.info("aggregated %d distinct authors across tracked papers", len(by_author))
 
-    # Process the most prolific authors first, bounded per run to keep cost/time sane.
-    candidates = sorted(((n, p) for n, p in by_author.items() if len(p) >= min_papers),
-                        key=lambda kv: -len(kv[1]))[:cap]
-    influential: dict[str, dict] = {}
-    for name, pids in candidates:
-        influential[name] = {"pids": pids, "s2": s2.search_author(cfg, name)}
+    rows = conn.execute(
+        "SELECT id, title, summary_json FROM papers WHERE track IN ('core','adjacent')").fetchall()
+    meta = {r["id"]: {"title": r["title"],
+                      "tldr": (json.loads(r["summary_json"] or "{}").get("tldr", "")
+                               if r["summary_json"] else "")} for r in rows}
+    arxiv_ids = [r["id"].split("arxiv:", 1)[1] for r in rows if r["id"].startswith("arxiv:")]
+    authors_by_paper = s2.fetch_authors(cfg, arxiv_ids)
+    log.info("got authors for %d papers", len(authors_by_paper))
+    if not authors_by_paper:
+        # Don't wipe the existing registry on a transient S2 failure (e.g. 429).
+        log.warning("no author data from S2 (rate-limited?); keeping existing registry")
+        return {"authors": 0, "groups": 0}
 
-    log.info("identified %d influential authors (processing top %d)", len(candidates), cap)
-    n_auth = 0
-    for name, info in influential.items():
-        titles = "\n".join(f"- {papers[p]['title']}: {papers[p]['tldr']}" for p in info["pids"]
-                           if p in papers)
+    # Aggregate by S2 authorId.
+    agg: dict[str, dict] = {}
+    for pid, alist in authors_by_paper.items():
+        for a in alist:
+            aid = a.get("authorId")
+            if not aid:
+                continue
+            e = agg.setdefault(aid, {"name": a.get("name") or "?", "pids": set(),
+                                     "affiliation": None, "h_index": a.get("hIndex"),
+                                     "citations": a.get("citationCount")})
+            e["pids"].add(pid)
+            affs = a.get("affiliations") or []
+            if affs and not e["affiliation"]:
+                e["affiliation"] = affs[0]
+
+    influential = {aid: e for aid, e in agg.items() if len(e["pids"]) >= min_papers}
+    ranked = sorted(influential, key=lambda x: -len(influential[x]["pids"]))[:cap]
+    log.info("%d distinct S2 authors; %d influential (>=%d papers); processing top %d",
+             len(agg), len(influential), min_papers, len(ranked))
+
+    # Fresh rebuild each run.
+    conn.execute("DELETE FROM authors")
+    conn.execute("DELETE FROM groups")
+
+    kept = set(ranked)
+    for aid in ranked:
+        e = influential[aid]
+        titles = "\n".join(f"- {meta[p]['title']}: {meta[p]['tldr']}" for p in e["pids"]
+                           if p in meta)
         try:
-            d = client.complete_json(
+            directions = client.complete_json(
                 "cheap", "Summarize an author's research directions for a WAM digest. Write "
-                "in English.",
-                f"Author: {name}\nTheir tracked papers:\n{titles}", Directions,
+                "in English.", f"Author: {e['name']}\nTracked papers:\n{titles}", Directions,
                 label="author-directions", max_tokens=2000).directions
-        except Exception as e:  # noqa: BLE001
-            log.warning("directions failed for %s: %s", name, e)
-            d = None
-        s2info = info["s2"] or {}
+        except Exception as ex:  # noqa: BLE001
+            log.warning("directions failed for %s: %s", e["name"], ex)
+            directions = None
         store.upsert_author(
-            conn, author_id=s2info.get("id") or slug(name), name=name,
-            affiliation=s2info.get("affiliation"), s2_url=s2info.get("url"),
-            citations=s2info.get("citations"), h_index=s2info.get("h_index"),
-            paper_ids=info["pids"], directions=d)
-        n_auth += 1
+            conn, author_id=aid, name=e["name"], affiliation=e["affiliation"],
+            s2_url=f"https://www.semanticscholar.org/author/{aid}", citations=e["citations"],
+            h_index=e["h_index"], paper_ids=sorted(e["pids"]), directions=directions)
     conn.commit()
 
-    # Groups by shared affiliation among influential authors.
-    by_aff: dict[str, list[str]] = defaultdict(list)
-    for name, info in influential.items():
-        aff = (info["s2"] or {}).get("affiliation")
-        if aff:
-            by_aff[aff].append(name)
+    # Groups = co-authorship clusters among the influential authors.
+    import networkx as nx
+    g = nx.Graph()
+    g.add_nodes_from(kept)
+    for pid, alist in authors_by_paper.items():
+        ids = [a["authorId"] for a in alist if a.get("authorId") in kept]
+        for i in range(len(ids)):
+            for j in range(i + 1, len(ids)):
+                g.add_edge(ids[i], ids[j])
     n_grp = 0
-    for aff, members in by_aff.items():
+    for comp in nx.connected_components(g):
+        members = [m for m in comp]
         if len(members) < 2:
             continue
-        member_ids = [slug(m) for m in members]
+        lead = max(members, key=lambda m: len(influential[m]["pids"]))
+        aff = next((influential[m]["affiliation"] for m in members
+                    if influential[m]["affiliation"]), None)
+        name = f"{influential[lead]['name']} group" + (f" · {aff}" if aff else "")
         notable = sorted({p for m in members for p in influential[m]["pids"]})[:8]
-        store.upsert_group(conn, group_id=slug(aff), name=aff, affiliation=aff,
-                           member_ids=member_ids, directions=None, notable=notable)
+        store.upsert_group(conn, group_id=slug(name), name=name, affiliation=aff,
+                           member_ids=members, directions=None, notable=notable)
         n_grp += 1
     conn.commit()
-    log.info("stored %d authors, %d groups", n_auth, n_grp)
-    return {"authors": n_auth, "groups": n_grp}
+    log.info("stored %d authors, %d co-authorship groups", len(ranked), n_grp)
+    return {"authors": len(ranked), "groups": n_grp}
