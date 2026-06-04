@@ -1,4 +1,4 @@
-# Awesome-WAM system configuration.
+# Awesome-Embodied&MM system configuration.
 # Everything domain/tuning-related lives here so behavior changes need no code edits.
 
 provider:
@@ -6,8 +6,8 @@ provider:
   base_url: "https://openrouter.ai/api/v1"
   api_key_env: "OPENROUTER_API_KEY"
   # Sent as OpenRouter attribution headers (optional but recommended).
-  http_referer: "https://github.com/your-org/Awesome-WAM"
-  app_title: "Awesome-WAM"
+  http_referer: "https://github.com/wzii/Awesome_Embodied_MM"
+  app_title: "Awesome-Embodied&MM"
 
 models:
   # Tiered routing. Cheap = filtering/first-pass (high volume); mid = analysis; strong =
@@ -124,6 +124,8 @@ qa:
   # passed to the qa-tier model. See stage_tiers.qa for the model.
   max_papers: 400            # cap papers in the pack (most-scored first) to bound context
   include_dropped: true      # include filtered-out papers (title-only) so the KB still covers them
+  web_search: true           # also search the web (paper original text, related concepts)
+  web_max_results: 5         # web results per query (OpenRouter web plugin; ~$0.02/query)
 
 trends:
   sim_threshold: 0.62        # cosine edge threshold for the direction graph

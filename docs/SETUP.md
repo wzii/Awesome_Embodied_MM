@@ -1,4 +1,4 @@
-# Awesome-WAM — Setup & Operations
+# Awesome-Embodied&MM — Setup & Operations
 
 ## Secrets
 

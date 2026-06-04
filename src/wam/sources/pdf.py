@@ -39,7 +39,7 @@ def get_text(cfg: Config, paper_id: str, pdf_url: str, *, max_chars: int = 60000
         return None
     try:
         resp = requests.get(pdf_url, timeout=cfg.get("constants.request_timeout", 90),
-                            headers={"User-Agent": "Awesome-WAM/0.1"})
+                            headers={"User-Agent": "Awesome-Embodied-MM/0.1"})
         resp.raise_for_status()
         with fitz.open(stream=resp.content, filetype="pdf") as doc:
             text = "\n".join(page.get_text() for page in doc)

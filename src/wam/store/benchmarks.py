@@ -46,9 +46,11 @@ def insert_benchmark(conn: sqlite3.Connection, row: BenchmarkRow, source_paper_i
             metric_value, inference_speed, speed_unit, inference_cost, cost_unit, hardware,
             source_paper_id, claimed_by_authors, notes, extracted_on)
            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-        (vk, row.model_name, row.training_dataset, row.benchmark, row.task, row.split,
-         row.metric_name, row.metric_value, row.inference_speed, row.speed_unit,
-         row.inference_cost, row.cost_unit, row.hardware, source_paper_id,
+        # Coalesce the UNIQUE-key text cols to '' so SQLite dedups them (NULLs are all
+        # distinct in a UNIQUE index, which would let near-duplicate rows slip through).
+        (vk, row.model_name, row.training_dataset, row.benchmark, row.task or "",
+         row.split or "", row.metric_name or "", row.metric_value, row.inference_speed,
+         row.speed_unit, row.inference_cost, row.cost_unit, row.hardware, source_paper_id,
          int(row.claimed_by_authors), row.notes, date.today().isoformat()),
     )
 

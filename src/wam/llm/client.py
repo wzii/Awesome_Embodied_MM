@@ -77,7 +77,7 @@ class LLMClient:
 
     # --- core call -------------------------------------------------------------
     def _call(self, model: str, messages: list[dict], *, temperature: float, max_tokens: int,
-              json_mode: bool, label: str) -> tuple[str, int, int]:
+              json_mode: bool, label: str, extra_body: dict | None = None) -> tuple[str, int, int]:
         @retry(
             reraise=True,
             stop=stop_after_attempt(self._max_retries),
@@ -90,6 +90,8 @@ class LLMClient:
                 kwargs["max_tokens"] = max_tokens
             if json_mode:
                 kwargs["response_format"] = {"type": "json_object"}
+            if extra_body:
+                kwargs["extra_body"] = extra_body
             t0 = time.monotonic()
             resp = self.client.chat.completions.create(**kwargs)
             dt = time.monotonic() - t0
@@ -109,13 +111,26 @@ class LLMClient:
     # --- public API ------------------------------------------------------------
     def complete(self, tier: str, system: str, user: str, *, temperature: float | None = None,
                  max_tokens: int | None = None, label: str = "complete",
-                 model: str | None = None) -> str:
+                 model: str | None = None, extra_body: dict | None = None) -> str:
         model = model or self.resolve_model(tier)
         temperature = self.cfg.get("models.defaults.temperature", 0.2) if temperature is None else temperature
         max_tokens = self.cfg.get("models.defaults.max_tokens", 4096) if max_tokens is None else max_tokens
         messages = [{"role": "system", "content": system}, {"role": "user", "content": user}]
         content, _, _ = self._call(model, messages, temperature=temperature,
-                                    max_tokens=max_tokens, json_mode=False, label=label)
+                                    max_tokens=max_tokens, json_mode=False, label=label,
+                                    extra_body=extra_body)
+        return content
+
+    def chat(self, tier: str, messages: list[dict], *, temperature: float | None = None,
+             max_tokens: int | None = None, label: str = "chat", model: str | None = None,
+             extra_body: dict | None = None) -> str:
+        """Multi-turn: pass a full messages list (system + prior turns + new user message)."""
+        model = model or self.resolve_model(tier)
+        temperature = self.cfg.get("models.defaults.temperature", 0.2) if temperature is None else temperature
+        max_tokens = self.cfg.get("models.defaults.max_tokens", 4096) if max_tokens is None else max_tokens
+        content, _, _ = self._call(model, messages, temperature=temperature,
+                                    max_tokens=max_tokens, json_mode=False, label=label,
+                                    extra_body=extra_body)
         return content
 
     def complete_json(self, tier: str, system: str, user: str, schema: Type[T], *,

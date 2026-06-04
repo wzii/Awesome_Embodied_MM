@@ -19,10 +19,14 @@ from wam.store import Database
 log = get_logger("webapp.qa")
 
 SYSTEM = (
-    "You answer questions about World Action Models research using ONLY the knowledge pack "
-    "below (tracked papers with scores, a benchmark leaderboard, author directions, and "
-    "trends). Cite papers by their id like (arxiv:2606.01234). If the pack doesn't contain "
-    "the answer, say so — never invent papers, numbers, or citations. Be concise and concrete.")
+    "You answer questions about World Action Models research. You have two sources:\n"
+    "1) the KNOWLEDGE PACK below — our curated corpus (tracked papers with scores, a "
+    "benchmark leaderboard, author directions, trends). Use it for facts about what we track.\n"
+    "2) WEB SEARCH results (when provided) — use them for the original paper text, definitions "
+    "of related concepts, and anything not in the pack.\n"
+    "Cite tracked papers by id like (arxiv:2606.01234) and web sources by their URL. Prefer the "
+    "pack for our corpus facts; never invent papers, numbers, or citations. Be concise and "
+    "concrete, and write in English.")
 
 
 def build_pack(conn: sqlite3.Connection, max_papers: int = 400,
@@ -88,7 +92,12 @@ def build_pack(conn: sqlite3.Connection, max_papers: int = 400,
     return "\n\n".join(sections)
 
 
-def answer(question: str, cfg: Config | None = None, client: LLMClient | None = None) -> dict:
+def answer(question: str, history: list[dict] | None = None, cfg: Config | None = None,
+           client: LLMClient | None = None) -> dict:
+    """Answer a question, optionally with prior conversation turns for multi-turn chat.
+
+    ``history`` is a list of {"role": "user"|"assistant", "content": ...} from earlier turns.
+    """
     cfg = cfg or load_config()
     client = client or LLMClient(cfg)
     with Database(cfg) as db:
@@ -96,8 +105,15 @@ def answer(question: str, cfg: Config | None = None, client: LLMClient | None = 
                           include_dropped=bool(cfg.get("qa.include_dropped", True)))
     if not pack.strip():
         return {"answer": "The knowledge base is empty — run the pipeline first.", "pack_chars": 0}
-    # Generous ceiling: the qa-tier model may be a reasoning model (burns tokens before the
-    # answer); too low a cap yields empty content.
-    ans = client.complete("qa", SYSTEM, f"KNOWLEDGE PACK:\n{pack}\n\nQUESTION: {question}",
-                          label="qa", max_tokens=6000)
-    return {"answer": ans, "pack_chars": len(pack)}
+    # Optionally let the model also search the web (paper original text, related concepts)
+    # via OpenRouter's web plugin — works with any model.
+    extra_body = None
+    if bool(cfg.get("qa.web_search", True)):
+        extra_body = {"plugins": [{"id": "web",
+                                   "max_results": int(cfg.get("qa.web_max_results", 5))}]}
+    messages = [{"role": "system", "content": f"{SYSTEM}\n\nKNOWLEDGE PACK:\n{pack}"}]
+    messages += list(history or [])
+    messages.append({"role": "user", "content": question})
+    # Generous ceiling: the qa-tier model may be a reasoning model (burns tokens first).
+    ans = client.chat("qa", messages, label="qa", max_tokens=6000, extra_body=extra_body)
+    return {"answer": ans, "pack_chars": len(pack), "web": bool(extra_body)}
