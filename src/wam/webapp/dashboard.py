@@ -78,19 +78,38 @@ def render(cfg: Config) -> None:
     else:
         st.info("No scored papers for this track yet.")
 
-    # --- Benchmark leaderboard ---
+    # --- Benchmark leaderboard (filterable) ---
     st.subheader("📊 Benchmark leaderboard")
     bench = pd.read_sql_query(
         "SELECT benchmark, task, model_name AS model, training_dataset AS trained_on, "
         "metric_name AS metric, metric_value AS value, "
         "CASE claimed_by_authors WHEN 1 THEN 'authors' ELSE '3rd-party' END AS source "
-        "FROM benchmarks WHERE metric_value IS NOT NULL ORDER BY benchmark, value DESC", con)
-    if not bench.empty:
-        st.caption("Model identity = (model, training data) — same name on different data is a "
-                   "distinct row.")
-        st.dataframe(bench, use_container_width=True, hide_index=True)
-    else:
+        "FROM benchmarks WHERE metric_value IS NOT NULL", con)
+    if bench.empty:
         st.info("No benchmark rows yet.")
+    else:
+        from wam.store.benchmarks import BENCH_FAMILIES, normalize_benchmark
+        bench["family"] = bench["benchmark"].map(lambda b: normalize_benchmark(b) or "(other)")
+        present = set(bench["family"])
+        fams = ([f for f in BENCH_FAMILIES if f in present]
+                + sorted(present - set(BENCH_FAMILIES)))
+        c1, c2, c3 = st.columns([2, 1, 1])
+        sel = c1.multiselect("Benchmark family", fams,
+                             default=[f for f in BENCH_FAMILIES if f in fams])
+        src = c2.selectbox("Source", ["all", "authors", "3rd-party"])
+        query = c3.text_input("Model contains")
+        view = bench
+        if sel:
+            view = view[view["family"].isin(sel)]
+        if src != "all":
+            view = view[view["source"] == src]
+        if query:
+            view = view[view["model"].str.contains(query, case=False, na=False)]
+        view = view.sort_values(["family", "value"], ascending=[True, False])
+        st.caption(f"{len(view)} of {len(bench)} rows · model identity = (model, training data) "
+                   "· `authors` = self-reported. Click a column header to sort.")
+        st.dataframe(view[["family", "benchmark", "task", "model", "trained_on", "metric",
+                           "value", "source"]], use_container_width=True, hide_index=True)
 
     # --- Authors ---
     st.subheader("👥 Influential authors")
