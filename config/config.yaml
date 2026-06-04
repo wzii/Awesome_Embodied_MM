@@ -68,21 +68,15 @@ paths:
   pdf_cache: "cache/pdfs"
   index_dir: "data/index"
 
-# Two-layer scoring weights. Top-4 WAM metrics weighted 2x; computed over non-N/A metrics.
+# Scoring aggregation — EXCELLENCE-oriented: a paper outstanding on ONE WAM dimension scores
+# high; it need not excel on all. The WAM contribution is peak-dominant (max + top-k mean),
+# not an average; general quality is a mean baseline. N/A dims are ignored (never penalize).
 scoring:
-  general_weights:
-    novelty: 1.0
-    soundness: 1.0
-    impact: 1.0
-  wam_weights:
-    generalist: 2.0
-    inference_speed: 2.0
-    specialist: 2.0
-    inference_cost: 2.0
-    trustworthiness: 1.0
-    collaborative: 1.0
-    controlled_generation: 1.0
-    other: 1.0
+  general_weight: 0.4          # weight of general quality (novelty/soundness/impact mean)
+  wam_weight: 0.6              # weight of WAM excellence
+  wam_peak_weight: 0.6         # within WAM: weight on the single best dimension (vs top-k mean)
+  wam_topk: 3                  # the "rest" of WAM excellence = mean of the top-k dims
+  secondary_discount: 0.8      # non-top-4 WAM dims (trust/collab/ctrl/other) count slightly less
 
 # Source + search config is consumed in Phase 2 (fetch).
 sources:
