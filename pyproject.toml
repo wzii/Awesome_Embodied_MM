@@ -17,10 +17,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-rag = [
-    "sentence-transformers>=3.0.0",  # local embeddings
-    "faiss-cpu>=1.8.0",              # vector index
-    "streamlit>=1.36.0",            # Q&A web app
+webapp = [
+    "streamlit>=1.36.0",  # long-context Q&A web app (no embeddings/vector DB)
 ]
 dev = [
     "pytest>=8.0.0",

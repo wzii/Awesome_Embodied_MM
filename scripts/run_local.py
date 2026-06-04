@@ -24,7 +24,7 @@ from wam.store import Database  # noqa: E402
 from wam.store import papers as ps  # noqa: E402
 
 ALL_STAGES = ["fetch", "filter", "summarize", "analyze", "extract", "score", "innovation",
-              "people", "trends", "index", "render", "email"]
+              "people", "trends", "render", "email"]
 LLM_STAGES = {"filter", "summarize", "analyze", "extract", "score", "innovation", "people",
               "trends"}
 
@@ -93,10 +93,6 @@ def main() -> int:
                 from wam.pipeline import trends
                 n = trends.run(cfg, client, db.conn)
                 db.log_run("trends", 0, n, COST.cost_usd)
-            elif stage == "index":
-                from wam.store import index as index_mod
-                n = index_mod.build_index(cfg, db.conn)
-                db.log_run("index", n, n)
             elif stage == "render":
                 from wam.render import readme as rnd
                 rnd.render_readme(cfg, db.conn)

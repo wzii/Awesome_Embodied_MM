@@ -12,6 +12,22 @@ variants · **8** authors
 > (inference **speed**, **gen**eralist, **spec**ialist, inference **cost**) are weighted 2×.
 > `–` means the paper does not address that metric (we never fabricate a score).
 
+## 📈 Trends & Popular Directions
+| Direction | Papers | Momentum | Summary |
+|-----------|-------:|----------|---------|
+| **Miscellaneous** | 94 | 📈 rising | Papers that do not fit neatly into the other clusters, covering diverse topics such as affective computing, medical… |
+| **Embedded and Interactive World Models for Agents** | 39 | 📈 rising | Focuses on world models that enable interactive, multi-modal agent behavior, including navigation, exploration, and… |
+| **Safety and Robustness of VLA Models** | 28 | 📈 rising | Addresses safety, robustness, and trustworthiness of Vision-Language-Action models through benchmarks, defense… |
+| **Benchmarking and Evaluation of World Models and VLAs** | 28 | 📈 rising | Develops benchmarks, diagnostic frameworks, and evaluation protocols for assessing world model and VLA capabilities… |
+| **Reinforcement Learning and Planning with World Models** | 21 | 📈 rising | Combines world models with reinforcement learning, planning, and optimal control for decision-making in embodied and… |
+| **Long-Horizon Video Generation and Memory Management** | 15 | 📈 rising | Focuses on generating long, consistent videos by addressing memory, retrieval, and context management across extended… |
+| **Training-Free Video Editing and Control** | 15 | 📈 rising | Investigates training-free methods for controlled video generation, editing, and steering, often using latent… |
+| **VLA Model Integration and Multimodal Interaction** | 15 | 📈 rising | Unifies vision, language, and action across embodiments and tasks, often through modular architectures, cross-task… |
+| **Efficient and Scalable Video Generation** | 14 | 📈 rising | Explores methods to improve the efficiency, scalability, and speed of video generation, including pruning… |
+| **Theory and Foundations of World Models** | 13 | 📈 rising | Develops theoretical foundations, architectural principles, and abstractions for world models, including causal… |
+| **World Models for Robotics and Manipulation** | 12 | 📈 rising | Develops world models for robotic manipulation, including synthesis, planning, and evaluation of action-conditioned… |
+| **World Models for Autonomous Driving** | 11 | 📈 rising | Applies world models to autonomous driving tasks, including planning, reasoning, and action-conditioned visual… |
+
 ## 🏆 Top World Action Model Papers
 | Score | Paper | Published | Top-4 (spd·gen·spec·cost) | Links |
 |------:|-------|-----------|---------------------------|-------|

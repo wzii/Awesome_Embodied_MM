@@ -35,13 +35,6 @@ jobs:
         run: |
           python -m pip install -U pip
           pip install -e .
-          pip install sentence-transformers faiss-cpu scikit-learn
-
-      - name: Cache embedding model
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/huggingface
-          key: hf-bge-small-v1
 
       - name: Configure git
         run: |
@@ -59,10 +52,10 @@ jobs:
           git pull --rebase --autostash || true
           git push || echo "push skipped"
 
-      # --- Stage group 2: index + render (checkpoint commit) ---
-      - name: Index + render
-        run: python scripts/run_local.py --stages index,render
-      - name: Commit README + index
+      # --- Stage group 2: render (checkpoint commit) ---
+      - name: Render
+        run: python scripts/run_local.py --stages render
+      - name: Commit README
         run: |
           git add README.md data/ && git commit -m "render: daily update $(date -u +%F)" || echo "no changes"
           git pull --rebase --autostash || true

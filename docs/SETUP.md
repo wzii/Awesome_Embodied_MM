@@ -21,24 +21,25 @@ Required for the daily workflow (`.github/workflows/daily.yml`):
 ## Local development
 ```bash
 python -m venv .venv && . .venv/bin/activate
-pip install -e . && pip install sentence-transformers faiss-cpu scikit-learn
+pip install -e .   # no embeddings/vector DB needed (Q&A is long-context)
 cp .env.example .env   # fill OPENROUTER_API_KEY (+ GMAIL_*/SUBSCRIBERS to test email)
 
 # Run stages (idempotent, resumable). --limit caps LLM stages for quick tests.
 python scripts/run_local.py --stages fetch
 python scripts/run_local.py --stages filter,summarize,analyze,extract,score,innovation --limit 20
-python scripts/run_local.py --stages people,trends,index,render
+python scripts/run_local.py --stages people,trends,render
 WAM_DEBUG=1 python scripts/run_local.py            # full pipeline, full trace to logs/
 python scripts/run_local.py --stages email --email-test you@example.com   # test send to self
 ```
 
 ## Knowledge-base web app (Hugging Face Space)
 - Create a **Streamlit** Space; point it at this repo (or sync `src/wam`, `config/`,
-  `data/index/`, `requirements.txt`).
+  `data/wam.db`, `requirements.txt`).
 - Set the Space secret `OPENROUTER_API_KEY` (stays server-side).
 - Entry point: `src/wam/webapp/app.py` (`streamlit run src/wam/webapp/app.py`).
-- The app loads the committed FAISS index from `data/index/`; rebuild it with the pipeline's
-  `index` stage. Dropped papers are included in the index (searchable) by design.
+- Q&A is **long-context, no embeddings**: it builds a knowledge pack from the committed
+  `data/wam.db` (summaries + scores + leaderboard + authors + trends) and answers with
+  citations. Dropped papers are included (title-only) so the KB still covers them.
 
 ## Scheduling
 The daily workflow runs at 13:00 UTC and on manual dispatch. It commits results back to the
