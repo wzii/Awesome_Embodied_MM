@@ -23,6 +23,8 @@ jobs:
       GMAIL_USER: ${{ secrets.GMAIL_USER }}
       GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
       SUBSCRIBERS: ${{ secrets.SUBSCRIBERS }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HF_SPACE: ${{ vars.HF_SPACE }}
     steps:
       - uses: actions/checkout@v4
 
@@ -45,7 +47,7 @@ jobs:
       - name: Fetch + analyze
         run: |
           python scripts/run_local.py \
-            --stages fetch,filter,summarize,analyze,extract,score,innovation,people,trends
+            --stages fetch,filter,summarize,analyze,extract,score,innovation,links,people,trends
       - name: Checkpoint commit (data)
         run: |
           git add data/ && git commit -m "data: daily fetch+analysis $(date -u +%F)" || echo "no changes"
@@ -60,6 +62,21 @@ jobs:
           git add README.md data/ && git commit -m "render: daily update $(date -u +%F)" || echo "no changes"
           git pull --rebase --autostash || true
           git push || echo "push skipped"
+
+      # --- Sync the fresh DB to the Hugging Face Space (so chat + dashboard stay current) ---
+      - name: Sync DB to HF Space
+        if: env.HF_TOKEN != '' && env.HF_SPACE != ''
+        run: |
+          pip install -q huggingface_hub
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+          HfApi(token=os.environ["HF_TOKEN"]).upload_file(
+              path_or_fileobj="data/wam.db", path_in_repo="data/wam.db",
+              repo_id=os.environ["HF_SPACE"], repo_type="space",
+              commit_message="daily data sync")
+          print("synced data/wam.db to Space", os.environ["HF_SPACE"])
+          PY
 
       # --- Email digest (last, so failures here don't block the commit) ---
       - name: Send digest

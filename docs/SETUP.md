@@ -12,6 +12,8 @@ Required for the daily workflow (`.github/workflows/daily.yml`):
 | `GMAIL_APP_PASSWORD` | Gmail **app password** (not your login password) — see below |
 | `SUBSCRIBERS` | Recipient list, comma-separated or JSON array. **Never commit this.** |
 | `SEMANTIC_SCHOLAR_API_KEY` | *(optional)* higher S2 rate limits |
+| `HF_TOKEN` | *(optional)* push the daily DB to the HF Space (keeps chat/dashboard fresh) |
+| `HF_SPACE` *(repo **variable**, not secret)* | e.g. `HardToFindAGoodUserName/Awesome_Embodied_MM` |
 
 ### Gmail app password
 1. Enable 2-Step Verification on the Google account.
