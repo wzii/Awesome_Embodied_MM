@@ -16,7 +16,8 @@ from wam.store import papers as ps
 log = get_logger("pipeline.analyze")
 
 SYSTEM = ("You are an expert reviewer of World Action Models (embodied/robot foundation "
-          "models, VLA, world models). Analyze the paper rigorously and skeptically.\n\n"
+          "models, VLA, world models). Analyze the paper rigorously and skeptically. Always "
+          "write in English, regardless of the paper's language.\n\n"
           "--- PROFILE ---\n{profile}")
 
 

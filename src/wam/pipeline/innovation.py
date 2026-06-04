@@ -17,7 +17,8 @@ log = get_logger("pipeline.innovation")
 
 SYSTEM = ("This paper is adjacent to World Action Models (it is VLA / a world model / video "
           "generation, not a WAM itself). Identify its core technical innovation and explain "
-          "concretely why/how it could transfer to World Action Models.")
+          "concretely why/how it could transfer to World Action Models. Always write in "
+          "English, regardless of the paper's language.")
 
 
 def run(cfg: Config, client: LLMClient, conn: sqlite3.Connection,

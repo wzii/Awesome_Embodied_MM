@@ -20,7 +20,7 @@ log = get_logger("pipeline.filter")
 
 SYSTEM = ("You triage papers for a World Action Models (WAM) intelligence digest. Use the "
           "profile below to decide the track. Be decisive but inclusive of adjacent work with "
-          "transferable techniques.\n\n--- PROFILE ---\n{profile}")
+          "transferable techniques. Write the reason in English.\n\n--- PROFILE ---\n{profile}")
 
 
 def run(cfg: Config, client: LLMClient, conn: sqlite3.Connection,

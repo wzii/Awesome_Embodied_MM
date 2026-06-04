@@ -71,7 +71,8 @@ def run(cfg: Config, client: LLMClient, conn: sqlite3.Connection,
                            if p in papers)
         try:
             d = client.complete_json(
-                "cheap", "Summarize an author's research directions for a WAM digest.",
+                "cheap", "Summarize an author's research directions for a WAM digest. Write "
+                "in English.",
                 f"Author: {name}\nTheir tracked papers:\n{titles}", Directions,
                 label="author-directions", max_tokens=2000).directions
         except Exception as e:  # noqa: BLE001

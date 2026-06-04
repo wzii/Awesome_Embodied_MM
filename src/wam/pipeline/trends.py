@@ -35,7 +35,8 @@ class TrendResult(BaseModel):
 SYSTEM = ("Cluster these World Action Models papers into coherent research directions "
           "(aim for 6-12 directions). Every paper index should belong to exactly one "
           "direction; put genuine outliers in a 'Miscellaneous' direction. Use the numbered "
-          "list; refer to papers only by their index.")
+          "list; refer to papers only by their index. Write direction names and summaries in "
+          "English.")
 
 
 def _month(d: str | None) -> str:

@@ -13,7 +13,8 @@ from wam.store import papers as ps
 log = get_logger("pipeline.summarize")
 
 SYSTEM = ("Summarize the paper for a World Action Models research digest. Be faithful to the "
-          "abstract; do not invent results.")
+          "abstract; do not invent results. Always write in English, regardless of the "
+          "paper's language.")
 
 
 def run(cfg: Config, client: LLMClient, conn: sqlite3.Connection,

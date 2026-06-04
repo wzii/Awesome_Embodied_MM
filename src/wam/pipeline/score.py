@@ -20,7 +20,8 @@ log = get_logger("pipeline.score")
 
 SYSTEM = ("Score the paper on the two-layer WAM rubric. Use the profile's definitions and "
           "scoring guidance. Output 0-10 per metric, or \"N/A\" when the paper does not address "
-          "a metric (do NOT guess). Be skeptical of self-reported numbers.\n\n"
+          "a metric (do NOT guess). Be skeptical of self-reported numbers. Write the "
+          "rationale in English.\n\n"
           "--- PROFILE ---\n{profile}")
 
 

@@ -24,7 +24,7 @@ from wam.store import Database  # noqa: E402
 from wam.store import papers as ps  # noqa: E402
 
 ALL_STAGES = ["fetch", "filter", "summarize", "analyze", "extract", "score", "innovation",
-              "people", "trends", "render", "email"]
+              "links", "people", "trends", "render", "email"]
 LLM_STAGES = {"filter", "summarize", "analyze", "extract", "score", "innovation", "people",
               "trends"}
 
@@ -85,6 +85,10 @@ def main() -> int:
                 from wam.pipeline import innovation
                 n = innovation.run(cfg, client, db.conn, limit=args.limit)
                 db.log_run("innovation", n, n, COST.cost_usd)
+            elif stage == "links":
+                from wam.pipeline import links
+                n = links.run(cfg, db.conn, limit=args.limit)
+                db.log_run("links", 0, n)
             elif stage == "people":
                 from wam.pipeline import people
                 c = people.run(cfg, client, db.conn, limit=args.limit)
