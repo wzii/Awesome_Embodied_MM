@@ -24,7 +24,7 @@ jobs:
       GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
       SUBSCRIBERS: ${{ secrets.SUBSCRIBERS }}
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
-      HF_SPACE: ${{ vars.HF_SPACE }}
+      HF_SPACE: ${{ vars.HF_SPACE || 'HardToFindAGoodUserName/Awesome_Embodied_MM' }}
     steps:
       - uses: actions/checkout@v4
 
