@@ -61,7 +61,8 @@ logging:
 
 email:
   feature_threshold: 7.0        # core papers with weighted_total >= this get a detailed card
-  max_featured: 8               # cap on featured (detailed) papers
+  max_featured: 60              # safety ceiling only; the threshold is the real gate so ALL
+                                # papers >= feature_threshold are featured (not silently demoted)
   max_grouped: 40               # cap on the grouped lower tier
   group_lower_by_direction: true  # group the lower tier by research direction (else flat list)
 
