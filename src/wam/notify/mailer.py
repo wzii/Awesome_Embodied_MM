@@ -40,28 +40,69 @@ def _links(lj: str | None) -> dict:
         return {}
 
 
+def _wt(row) -> float:
+    try:
+        return float(json.loads(row["scores_json"]).get("weighted_total") or 0)
+    except Exception:  # noqa: BLE001
+        return 0.0
+
+
+def _score_badge(v) -> str:
+    return (f'<span style="background:#1a4fcc;color:#fff;border-radius:4px;padding:1px 6px;'
+            f'font-size:12px;margin-left:6px">{v}</span>')
+
+
+def _card(row) -> str:
+    """Detailed featured card: title link + score badge + one-line tldr."""
+    s = json.loads(row["scores_json"])
+    tldr = json.loads(row["summary_json"] or "{}").get("tldr", "")
+    link = (_links(row["links_json"]).get("abs") or _links(row["links_json"]).get("pdf") or "#")
+    return (f'<div style="margin:10px 0 14px">'
+            f'<a href="{link}" style="font-weight:600;color:#1a4fcc;text-decoration:none;'
+            f'font-size:14px">{row["title"]}</a>{_score_badge(s.get("weighted_total","?"))}'
+            f'<div style="font-size:13px;color:#333;margin-top:3px">{tldr}</div></div>')
+
+
+def _compact(row) -> str:
+    """Compact one-liner for the grouped lower tier: score + title link."""
+    s = json.loads(row["scores_json"])
+    link = (_links(row["links_json"]).get("abs") or _links(row["links_json"]).get("pdf") or "#")
+    return (f'<div style="font-size:13px;margin:3px 0">'
+            f'<b>{s.get("weighted_total","?")}</b> · '
+            f'<a href="{link}" style="color:#1a4fcc;text-decoration:none">{row["title"]}</a></div>')
+
+
 def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) -> tuple[str, str]:
     today = today or date.today().isoformat()
     counts = dict(conn.execute("SELECT track, count(*) FROM papers GROUP BY track").fetchall())
     new_core = conn.execute(
         "SELECT count(*) FROM papers WHERE track='core' AND first_seen=?", (today,)).fetchone()[0]
 
-    # Top picks: new core today; fall back to top recent core if none new.
-    picks = conn.execute(
-        "SELECT title, links_json, scores_json, summary_json FROM papers WHERE track='core' "
-        "AND scores_json IS NOT NULL AND first_seen=? "
-        "ORDER BY json_extract(scores_json,'$.weighted_total') DESC LIMIT 8", (today,)).fetchall()
-    fallback = not picks
+    # Core papers: new today; fall back to recent if none new.
+    sel = ("SELECT id, title, links_json, scores_json, summary_json FROM papers WHERE "
+           "track='core' AND scores_json IS NOT NULL")
+    order = " ORDER BY json_extract(scores_json,'$.weighted_total') DESC"
+    rows = conn.execute(sel + " AND first_seen=?" + order, (today,)).fetchall()
+    fallback = not rows
     if fallback:
-        picks = conn.execute(
-            "SELECT title, links_json, scores_json, summary_json FROM papers WHERE track='core' "
-            "AND scores_json IS NOT NULL "
-            "ORDER BY json_extract(scores_json,'$.weighted_total') DESC LIMIT 8").fetchall()
+        rows = conn.execute(sel + order + " LIMIT 60").fetchall()
 
     snap = conn.execute("SELECT max(snapshot_date) FROM fronts").fetchone()[0]
     hot = conn.execute(
         "SELECT name, size, momentum FROM fronts WHERE snapshot_date=? AND momentum='rising' "
         "ORDER BY size DESC LIMIT 5", (snap,)).fetchall() if snap else []
+    # paper id -> research direction (smaller/more-specific fronts win, via size ASC)
+    dir_of: dict[str, str] = {}
+    if snap:
+        for fr in conn.execute("SELECT name, member_ids_json FROM fronts WHERE "
+                               "snapshot_date=? ORDER BY size", (snap,)):
+            for pid in json.loads(fr["member_ids_json"] or "[]"):
+                dir_of[pid] = fr["name"]
+
+    feat_thr = float(cfg.get("email.feature_threshold", 7.0))
+    featured = [r for r in rows if _wt(r) >= feat_thr][: int(cfg.get("email.max_featured", 8))]
+    feat_ids = {r["id"] for r in featured}
+    rest = [r for r in rows if r["id"] not in feat_ids][: int(cfg.get("email.max_grouped", 40))]
 
     S = "font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif"
     parts = [f'<div style="max-width:640px;margin:auto;{S};color:#1a1a1a">']
@@ -75,21 +116,30 @@ def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) 
             f'margin-right:6px">📈 {h["name"]} ({h["size"]})</span>' for h in hot)
         parts.append(f'<p style="font-size:13px;margin:0 0 16px"><b>What\'s hot:</b> {chips}</p>')
 
-    heading = "Top recent papers" if fallback else "Top new papers today"
+    # Tier 1 — featured (detailed cards)
+    label = "Top recent papers" if fallback else "Top new papers today"
     parts.append(f'<h2 style="font-size:15px;border-bottom:1px solid #eee;padding-bottom:4px">'
-                 f'{heading}</h2>')
-    for r in picks:
-        s = json.loads(r["scores_json"])
-        tldr = json.loads(r["summary_json"] or "{}").get("tldr", "")
-        links = _links(r["links_json"])
-        link = links.get("abs") or links.get("pdf") or "#"
-        parts.append(
-            f'<div style="margin:10px 0 14px">'
-            f'<a href="{link}" style="font-weight:600;color:#1a4fcc;text-decoration:none;'
-            f'font-size:14px">{r["title"]}</a>'
-            f'<span style="background:#1a4fcc;color:#fff;border-radius:4px;padding:1px 6px;'
-            f'font-size:12px;margin-left:6px">{s.get("weighted_total","?")}</span>'
-            f'<div style="font-size:13px;color:#333;margin-top:3px">{tldr}</div></div>')
+                 f'⭐ {label} (score ≥ {feat_thr:g})</h2>')
+    if not featured:
+        parts.append('<p style="font-size:13px;color:#666">Nothing above the feature threshold '
+                     '— see the rest below.</p>')
+    parts.extend(_card(r) for r in featured)
+
+    # Tier 2 — the rest, grouped by research direction
+    if rest:
+        parts.append('<h2 style="font-size:15px;border-bottom:1px solid #eee;padding-bottom:4px;'
+                     'margin-top:18px">More core papers</h2>')
+        if bool(cfg.get("email.group_lower_by_direction", True)):
+            groups: dict[str, list] = {}
+            for r in rest:
+                groups.setdefault(dir_of.get(r["id"], "Other"), []).append(r)
+            for gname in sorted(groups, key=lambda k: (k == "Other", -len(groups[k]))):
+                parts.append(f'<p style="font-weight:600;font-size:13px;margin:12px 0 2px">'
+                             f'{gname} <span style="color:#999;font-weight:400">'
+                             f'({len(groups[gname])})</span></p>')
+                parts.extend(_compact(r) for r in groups[gname])
+        else:
+            parts.extend(_compact(r) for r in rest)
     parts.append(f'<p style="color:#999;font-size:12px;margin-top:20px">Awesome-WAM · '
                  f'<a href="https://github.com/your-org/Awesome-WAM">repo</a></p></div>')
     subject = f"WAM Daily — {today}: {new_core} new" + ("" if not fallback else " (recap)")
