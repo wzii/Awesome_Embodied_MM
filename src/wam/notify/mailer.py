@@ -64,12 +64,17 @@ def _card(row) -> str:
 
 
 def _compact(row) -> str:
-    """Compact one-liner for the grouped lower tier: score + title link."""
+    """Compact grouped-tier item: score + title link + short description."""
     s = json.loads(row["scores_json"])
+    tldr = json.loads(row["summary_json"] or "{}").get("tldr", "")
+    if len(tldr) > 160:
+        tldr = tldr[:160].rsplit(" ", 1)[0].rstrip(".,;: ") + "…"
     link = (_links(row["links_json"]).get("abs") or _links(row["links_json"]).get("pdf") or "#")
-    return (f'<div style="font-size:13px;margin:3px 0">'
+    desc = f' — <span style="color:#444">{tldr}</span>' if tldr else ""
+    return (f'<div style="font-size:13px;margin:4px 0">'
             f'<b>{s.get("weighted_total","?")}</b> · '
-            f'<a href="{link}" style="color:#1a4fcc;text-decoration:none">{row["title"]}</a></div>')
+            f'<a href="{link}" style="color:#1a4fcc;text-decoration:none">{row["title"]}</a>'
+            f'{desc}</div>')
 
 
 def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) -> tuple[str, str]:
