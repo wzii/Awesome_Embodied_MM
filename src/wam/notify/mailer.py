@@ -280,6 +280,21 @@ def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) 
                 parts.extend(_compact(r) for r in groups[gname])
         else:
             parts.extend(_compact(r) for r in rest)
+
+    # --- Embodied / physical-AI news ---
+    news = conn.execute(
+        "SELECT title, authors_json, links_json FROM papers WHERE track='news' "
+        "ORDER BY published DESC LIMIT 8").fetchall()
+    if news:
+        parts.append('<h2 style="font-size:15px;border-bottom:1px solid #eee;padding-bottom:4px;'
+                     'margin-top:18px">📰 Embodied / physical-AI news</h2>')
+        for r in news:
+            outlet = (json.loads(r["authors_json"] or "[]") or ["—"])[0]
+            link = _links(r["links_json"]).get("abs", "#")
+            parts.append(f'<div style="font-size:13px;margin:4px 0">'
+                         f'<a href="{link}" style="color:#1a4fcc;text-decoration:none">'
+                         f'{r["title"]}</a> <span style="color:#999">· {outlet}</span></div>')
+
     parts.append(_teams_html(conn))
 
     parts.append(

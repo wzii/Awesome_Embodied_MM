@@ -126,3 +126,17 @@ def render(cfg: Config) -> None:
                      column_config={"s2": st.column_config.LinkColumn("s2")})
     else:
         st.info("No authors yet.")
+
+    # --- News ---
+    st.subheader("📰 Embodied / physical-AI news")
+    nrows = con.execute("SELECT title, authors_json, published, links_json FROM papers "
+                        "WHERE track='news' ORDER BY published DESC LIMIT 50").fetchall()
+    if nrows:
+        ndf = pd.DataFrame([{
+            "date": pub or "", "outlet": (json.loads(aj or "[]") or [""])[0], "title": t,
+            "link": json.loads(lj or "{}").get("abs", "")}
+            for t, aj, pub, lj in nrows])
+        st.dataframe(ndf, use_container_width=True, hide_index=True,
+                     column_config={"link": st.column_config.LinkColumn("link")})
+    else:
+        st.info("No news items yet.")
