@@ -53,9 +53,28 @@ def fetch(cfg: Config, *, max_results: int | None = None,
         "sortOrder": "descending",
     }
     log.info("arxiv query: %s (max=%d, since=%s)", params["search_query"], max_results, cutoff)
-    resp = requests.get(API, params=params, timeout=cfg.get("constants.request_timeout", 90))
-    resp.raise_for_status()
-    feed = feedparser.parse(resp.text)
+    # arXiv frequently 429s shared IPs (e.g. GitHub runners) — retry with backoff, and a UA.
+    timeout = cfg.get("constants.request_timeout", 90)
+    headers = {"User-Agent": "Awesome-Embodied-MM/0.1 (research digest)"}
+    feed = None
+    for attempt, wait in enumerate((0, 5, 15, 30, 60)):
+        if wait:
+            time.sleep(wait)
+        try:
+            resp = requests.get(API, params=params, timeout=timeout, headers=headers)
+            if resp.status_code == 429 or resp.status_code >= 500:
+                log.warning("arxiv %s, backing off (attempt %d)", resp.status_code, attempt + 1)
+                continue
+            resp.raise_for_status()
+            feed = feedparser.parse(resp.text)
+            if feed.entries or not resp.text.strip():
+                break
+            log.warning("arxiv returned no entries (attempt %d)", attempt + 1)
+        except requests.RequestException as e:
+            log.warning("arxiv request error (attempt %d): %s", attempt + 1, e)
+    if feed is None:
+        log.error("arxiv fetch failed after retries; skipping arXiv this run")
+        return []
 
     records: list[PaperRecord] = []
     for e in feed.entries:

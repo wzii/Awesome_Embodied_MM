@@ -20,15 +20,24 @@ log = get_logger("pipeline.fetch")
 
 
 def gather(cfg: Config) -> list[PaperRecord]:
-    """Pull + enrich candidates from all sources (no DB writes). Deduped by id."""
+    """Pull + enrich candidates from all sources (no DB writes). Deduped by id.
+
+    Each source is isolated: a failure (e.g. arXiv rate-limit) degrades gracefully rather
+    than crashing the whole run.
+    """
     records: dict[str, PaperRecord] = {}
-    for rec in arxiv.fetch(cfg):
-        records.setdefault(rec.id, rec)
-    for rec in news.fetch(cfg):
-        records.setdefault(rec.id, rec)
+    for name, src in (("arxiv", arxiv), ("news", news)):
+        try:
+            for rec in src.fetch(cfg):
+                records.setdefault(rec.id, rec)
+        except Exception as e:  # noqa: BLE001
+            log.error("source %s failed, continuing: %s", name, e)
     candidates = list(records.values())
     log.info("gathered %d unique candidates across sources", len(candidates))
-    semantic_scholar.enrich(cfg, [r for r in candidates if r.source != "news"])
+    try:
+        semantic_scholar.enrich(cfg, [r for r in candidates if r.source != "news"])
+    except Exception as e:  # noqa: BLE001
+        log.warning("s2 enrichment failed, continuing: %s", e)
     return candidates
 
 
