@@ -5,7 +5,7 @@
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
 **Last updated:** 2026-06-04 · **Tracked:** 124 core · 154 adjacent ·
-74 news · **599** benchmark rows across **257** model
+74 news · **3871** benchmark rows across **1612** model
 variants · **25** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,246 +88,342 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _62 results_
+#### LIBERO  ·  _405 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| π0.5 | — | success rate | 99.5 | authors |
-| ELAN4D(π0.5) _(LIBERO (original, ~2K demos))_ | — | Overall success rate | 97.0 | authors |
-| π0.5 _(Open X-Embodiment)_ | — | Overall success rate | 96.9 | 3rd-party |
-| π0.5 | — | success rate (SR) | 96.6 | authors |
-| GeoPredict | — | Overall success rate | 96.6 | 3rd-party |
-| Pri4R | — | Overall success rate | 96.3 | 3rd-party |
-| Cosmos-Policy-2B | — | success rate (SR) | 95.3 | authors |
-| ELAN4D(π0) _(LIBERO (original, ~2K demos))_ | — | Overall success rate | 95.0 | authors |
-| GR00T-N1.7 | — | success rate (SR) | 94.3 | authors |
-| π0 _(Open X-Embodiment)_ | — | Overall success rate | 94.2 | 3rd-party |
+| OpenVLA-7B _(LIBERO)_ | — | I(X; X~) (attack channel capacity) | 5000.0 | authors |
+| Wan 2.2 (chunked) _(LIBERO-90)_ | — | FVD | 4177.0 | 3rd-party |
+| SimpleVLA-RL _(LIBERO)_ | Long | iterations to 90% success rate | 2450.0 | authors |
+| ConfidenceVLA | — | avg inference time | 712.9 | 3rd-party |
+| Agentic-VLA _(LIBERO)_ | Long | iterations to 90% success rate | 700.0 | authors |
+| SKIP _(LIBERO-90)_ | — | FVD | 458.0 | authors |
+| Pre-VLA _(PPO rollout trajectories from LIBERO with Critic-derived labels)_ | Overall (forward verification time per action chunk) | average forward verification time | 183.9 | authors |
+| Omega-QVLA | Goal | success rate | 100.0 | authors |
+| VLA-Hijack | Spatial | Failure Rate | 100.0 | authors |
+| π0.5 _(LIBERO (per-suite finetuned))_ | — | success rate | 100.0 | authors |
 
-#### RoboTwin  ·  _11 results_
+#### CALVIN  ·  _52 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| FLOWER + Ours _(CALVIN ABC)_ | — | success rate (1 task) | 99.5 | authors |
+| FLOWER _(CALVIN ABC)_ | — | success rate (1 task) | 99.3 | authors |
+| FLOWER + Ours _(CALVIN ABC)_ | — | success rate (2 tasks) | 96.6 | authors |
+| FLOWER _(CALVIN ABC)_ | — | success rate (2 tasks) | 95.9 | authors |
+| VLM4VLA + Ours _(CALVIN ABC)_ | — | success rate (1 task) | 94.4 | authors |
+| VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
+| FLOWER + Ours _(CALVIN ABC)_ | — | success rate (3 tasks) | 91.2 | authors |
+| FLOWER _(CALVIN ABC)_ | — | success rate (3 tasks) | 90.5 | authors |
+| FLOWER + Ours _(CALVIN ABC)_ | — | success rate (4 tasks) | 86.9 | authors |
+| VLM4VLA + Ours _(CALVIN ABC)_ | — | success rate (2 tasks) | 86.7 | authors |
+
+#### RoboTwin  ·  _65 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
-| ELAN4D(π0.5) _(RoboTwin2.0 (100 expert episodes per task under clean setting))_ | — | Overall success rate | 37.0 | authors |
-| π0.5 _(Open X-Embodiment)_ | — | Overall success rate | 32.0 | 3rd-party |
-| ELAN4D(π0) _(RoboTwin2.0 (100 expert episodes per task under clean setting))_ | — | Overall success rate | 15.0 | authors |
-| π0 _(Open X-Embodiment)_ | — | Overall success rate | 12.0 | 3rd-party |
+| SANTS _(RoboTwin 2.0 + real-robot data)_ | — | success rate | 94.4 | authors |
+| LingBot-VA | — | success rate | 92.2 | 3rd-party |
+| Fast-WAM | — | success rate | 91.8 | 3rd-party |
+| EvoScene-VLA _(RoboTwin)_ | 31 tasks | success rate | 89.1 | authors |
+| π0.5-Key-Gram | Avg. 50 Tasks | success rate | 89.0 | authors |
+| OpenVLA-OFT + Feat2Go | — | success rate | 88.8 | authors |
+| DeMaVLA _(~5000 hours real-world dual-arm demonstrations)_ | — | average success rate | 88.42 | authors |
+| Motus | — | success rate | 87.8 | 3rd-party |
+| Qwen-VLA-Instruct _(Qwen-VLA pretraining mixture + SFT on multi-task and real-robot + RL on SimplerEnv)_ | — | success rate | 87.2 | authors |
 
-#### RoboCasa  ·  _16 results_
+#### SimplerEnv  ·  _58 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
+| OpenVLA-7b | Pick up | failure rate (FR) | 97.5 | authors |
+| GR00T-N1.6 | Pick up | failed object coverage (FOC) | 97.1 | authors |
+| Afford-VLA _(LIBERO + Affordance dataset)_ | Put Eggplant | Success rate | 96.8 | authors |
+| EO-1 | Pick up | trajectory coverage (TC) | 84.0 | authors |
+| GR00T-N1.6 | Pick up | trajectory coverage under failure (TCF) | 83.0 | authors |
+| ElegantVLA _(CogACT)_ | Visual Matching | success rate | 77.59 | authors |
+| SpatialVLA + Ours _(Bridge)_ | Eggplant | success rate | 75.0 | authors |
+| ElegantVLA _(GR00T)_ | Google Robot | success rate | 75.0 | authors |
+| CogACT | Visual Matching | success rate | 74.8 | 3rd-party |
+| SAFE-Pruner | — | success rate | 74.5 | authors |
+
+#### RLBench  ·  _25 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| PointACT _(RLBench (10 tasks))_ | Close laptop lid | success rate | 99.0 | authors |
+| EO1 (reproduced) _(RLBench (10 tasks))_ | Mean | success rate | 73.2 | 3rd-party |
+| GR00T(arch) + Point _(LIBERO-Spatial / RLBench-10Tasks)_ | Mean | success rate | 69.7 | authors |
+| GR00T(arch) + Point (final layer) _(RLBench-10Tasks)_ | Mean | success rate | 69.7 | authors |
+| GR00T(arch) + Point (multi-scale, K=128) _(RLBench-10Tasks)_ | Mean | success rate | 65.6 | authors |
+| GR00T(arch) + Point (multi-scale, K=64) _(RLBench-10Tasks)_ | Mean | success rate | 65.2 | authors |
+| GR00T(arch) _(LIBERO-Spatial / RLBench-10Tasks)_ | Mean | success rate | 50.8 | authors |
+| HARP-SRPD | — | average success rate | 46.59 | authors |
+| HARP-SR | 18 tasks | average success rate | 43.41 | authors |
+| Unadapted | 18 tasks | average success rate | 37.56 | authors |
+
+#### Meta-World  ·  _2 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| ProgVLA (0.1B) _(Meta-World MT50)_ | — | success rate | 78.5 | authors |
+| SmolVLA (2.25B) | — | success rate | 68.24 | 3rd-party |
+
+#### ManiSkill  ·  _7 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
+| OpenVLA-OFT + Steps-To-Go | — | success rate | 79.0 | 3rd-party |
+| OpenVLA-OFT + PPO | — | success rate | 76.8 | 3rd-party |
+| OpenVLA-OFT + GRPO | — | success rate | 58.3 | 3rd-party |
+| π0.5 + SFT | — | success rate | 26.4 | 3rd-party |
+| π0 + SFT | — | success rate | 18.1 | 3rd-party |
+| OpenVLA-OFT + SFT | — | success rate | 17.5 | 3rd-party |
+
+#### RoboCasa  ·  _49 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| GR00T-N1.5 _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 71.7 | authors |
+| Late Fusion _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 71.0 | authors |
+| Early Fusion _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 69.7 | authors |
+| Spatial Forcing _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 68.3 | authors |
+| X-DiffVLA _(GR00T dataset (RoboCasa tasks))_ | — | Success Rate | 64.5 | authors |
 | RLDX-1-FT-RC365 | — | success rate (SR) | 58.4 | authors |
 | π0.5 | — | safety | 55.7 | authors |
+| Qwen3-VL-4B _(G+E then AgiBot-World-Beta (LoRA r64))_ | — | Success Rate | 55.2 | authors |
+| GaussianDream | — | Success rate | 54.8 | authors |
 | RLDX-1-FT-RC365 | — | safety | 54.1 | authors |
-| GR00T-N1.5 | — | success rate (SR) | 47.2 | authors |
-| π0 | — | safety | 44.6 | authors |
-| π0.5 | — | success rate (SR) | 42.3 | authors |
-| GR00T-N1.5 | — | safety | 40.7 | authors |
-| π0 | — | success rate (SR) | 32.4 | authors |
-| GR00T-N1.5 | — | SBU | 26.3 | authors |
-| RLDX-1-FT-RC365 | — | SBU | 23.1 | authors |
 
-#### Open-X / RT  ·  _6 results_
+#### Open-X / RT  ·  _10 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
+| VisualThink-VLA _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 89.49 | authors |
+| FullSoft _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 88.45 | authors |
+| ECoT | — | success rate | 85.09 | 3rd-party |
+| BaseVLA _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 75.37 | authors |
 | OpenVLA + RL | speed steering | success rate | 48.9 | authors |
 | OpenVLA + PID | height steering | success rate | 46.0 | authors |
 | OpenVLA | height steering | success rate | 40.0 | authors |
 
-#### VBench  ·  _71 results_
+#### ALFWorld  ·  _2 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| CogVideoX-2B | — | Subject consistency | 95.91 | 3rd-party |
-| CoFi | — | Subject consistency | 94.11 | authors |
-| CDGS | — | Subject consistency | 91.67 | 3rd-party |
-| SlotMemory _(VidProM)_ | single-prompt 30s | Quality Score | 85.23 | authors |
-| Lumos-Nexus | — | Quality | 85.03 | authors |
-| InfinityStar + VPG | — | Overall | 84.35 | authors |
-| SlotMemory _(VidProM)_ | single-prompt 30s | Total Score | 84.28 | authors |
-| Lumos-Nexus | — | Total | 84.12 | authors |
-| InfinityStar | — | Overall | 83.86 | authors |
-| Omni-Video | — | Total | 83.82 | 3rd-party |
+| GIGPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 90.4 | authors |
+| GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 
-#### RealEstate10K  ·  _27 results_
+#### VBench  ·  _335 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| DFoT _(RealEstate10K)_ | loop-closing | FVD | 265.03 | 3rd-party |
-| WorldMem _(RealEstate10K)_ | loop-closing | FVD | 242.36 | 3rd-party |
-| VMem _(RealEstate10K)_ | loop-closing | FVD | 231.77 | 3rd-party |
-| COVRAG _(RealEstate10K)_ | loop-closing | FVD | 226.4 | authors |
-| VMem _(RealEstate10K)_ | — | average latency | 45.4 | 3rd-party |
-| DFoT _(RealEstate10K)_ | loop-closing | FID | 29.88 | 3rd-party |
-| WorldMem _(RealEstate10K)_ | loop-closing | FID | 24.77 | 3rd-party |
-| VMem _(RealEstate10K)_ | loop-closing | FID | 24.05 | 3rd-party |
-| COVRAG _(RealEstate10K)_ | loop-closing | FID | 23.0 | authors |
-| COVRAG _(RealEstate10K)_ | loop-closing | PSNR | 18.9 | authors |
+| Wan-I2V | Cut & Drag | Flow-Err | 181.1 | 3rd-party |
+| GWTF | Cut & Drag | Flow-Err | 152.81 | 3rd-party |
+| PTQ4DiT | — | FVD-FP | 124.2 | authors |
+| Q-ARVD | — | FVD-FP | 116.26 | authors |
+| Wan-T2V | T2V Motion Transfer | Flow-Err | 103.26 | 3rd-party |
+| TTM | Cut & Drag | Flow-Err | 102.39 | 3rd-party |
+| ϕ-Noise | Cut & Drag | Flow-Err | 101.49 | authors |
+| IAMFlow | — | Temporal Flickering | 99.438 | authors |
+| LongLive | — | Temporal Flickering | 99.402 | 3rd-party |
+| MemFlow | — | Temporal Flickering | 99.386 | 3rd-party |
 
-#### CARLA-AIR  ·  _27 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| AerialVLN | Cooperative Occlusion-Recovery Escort | RAT (s) | 7.2 | authors |
-| SPF | Cooperative Occlusion-Recovery Escort | RAT (s) | 6.5 | authors |
-| OpenUAV | Cooperative Occlusion-Recovery Escort | RAT (s) | 6.2 | authors |
-| AerialVLA | Cooperative Occlusion-Recovery Escort | Re-acquisition Time (RAT) (s) | 4.8 | authors |
-| OpenFly | Cooperative Occlusion-Recovery Escort | RAT (s) | 4.5 | authors |
-| Rule-Coop-State | Cooperative Occlusion-Recovery Escort | RAT (s) | 1.8 | authors |
-| Rule-Coop-State | Cooperative Occlusion-Recovery Escort | RSR | 0.86 | authors |
-| Rule-Coop-State | Cooperative Moving-Platform Landing | TSR | 0.84 | authors |
-| OpenFly | Cooperative Moving-Platform Landing | TSR | 0.81 | authors |
-| AerialVLA | Cooperative Moving-Platform Landing | Tracking Success Rate (TSR) | 0.78 | authors |
-
-#### Controlled Diagnostic Benchmark  ·  _26 results_
+#### Habitat  ·  _4 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| LAMP | — | Out-Rate | 41.0 | 3rd-party |
-| PulpMotion (DiT) | — | Out-Rate | 36.2 | 3rd-party |
-| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | Out-Rate | 5.45 | authors |
-| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | F-Ori | 0.969 | authors |
-| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | F-Tilt | 0.964 | authors |
-| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | F-Roll | 0.937 | authors |
-| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | Auteur-Score | 0.91 | authors |
-| Baseline | — | F-Roll | 0.88 | 3rd-party |
-| Baseline | — | F-Tilt | 0.875 | 3rd-party |
-| PulpMotion (DiT) | — | F-Tilt | 0.873 | 3rd-party |
+| ViewCrafter | sparse views-to-video | FVD | 778.207 | 3rd-party |
+| TrajectoryCrafter | sparse views-to-video | FVD | 690.322 | 3rd-party |
+| GEN3C | sparse views-to-video | FVD | 511.039 | 3rd-party |
+| Pantheon360 _(360-1M (filtered))_ | sparse views-to-video | FVD | 450.696 | authors |
 
-#### Meve  ·  _26 results_
+#### BEHAVIOR  ·  _2 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| TunerDiT | — | Q4 | 3.34 | authors |
-| TunerDiT | — | Q1 | 3.16 | authors |
-| TunerDiT | — | Q2 | 3.03 | authors |
-| TunerDiT | — | Q3 | 3.03 | authors |
-| TunerDiT | — | TVA | 1.533 | authors |
-| TunerDiT | — | CSCV | 0.854 | authors |
-| DiTCtrl | — | CSCV | 0.803 | 3rd-party |
-| FreeNoise | — | CSCV | 0.748 | 3rd-party |
-| MEVG | — | CSCV | 0.707 | 3rd-party |
-| TunerDiT | — | EI | 0.572 | authors |
+| MPVI _(none (no additional training))_ | — | Q-score improvement | 113.0 | authors |
+| openpi-comet _(BEHAVIOR-1K 2025 Challenge teleoperation data + motion-planner-synthesized trajectories)_ | — | success rate | 11.4 | 3rd-party |
 
-#### DL3DV10K  ·  _24 results_
+#### RealisDance-Val  ·  _56 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| DFoT _(DL3DV10K)_ | — | FVD | 706.7 | 3rd-party |
-| WorldMem _(DL3DV10K)_ | — | FVD | 428.49 | 3rd-party |
-| VMem _(DL3DV10K)_ | — | FVD | 394.79 | 3rd-party |
-| COVRAG _(DL3DV10K)_ | — | FVD | 321.81 | authors |
-| DFoT _(DL3DV10K)_ | — | FID | 88.01 | 3rd-party |
-| WorldMem _(DL3DV10K)_ | — | FID | 58.24 | 3rd-party |
-| VMem _(DL3DV10K)_ | — | FID | 57.61 | 3rd-party |
-| COVRAG _(DL3DV10K)_ | — | FID | 46.92 | authors |
-| COVRAG _(DL3DV10K)_ | — | PSNR | 17.9 | authors |
-| VMem _(DL3DV10K)_ | — | PSNR | 16.3 | 3rd-party |
+| MeshToken _(internal 300K video clips)_ | — | Motion Smooth | 98.79 | authors |
+| RealisDance-DiT | — | Motion Smooth | 98.71 | 3rd-party |
+| MusePose | — | Motion Smooth | 98.57 | 3rd-party |
+| Animate-X | — | Motion Smooth | 98.52 | 3rd-party |
+| MeshToken _(internal 300K video clips)_ | — | Temporal Flicker | 98.32 | authors |
+| MimicMotion | — | Motion Smooth | 98.2 | 3rd-party |
+| ControlNeXt | — | Motion Smooth | 98.05 | 3rd-party |
+| MusePose | — | Temporal Flicker | 97.88 | 3rd-party |
+| RealisDance-DiT | — | Temporal Flicker | 97.76 | 3rd-party |
+| Animate-X | — | Temporal Flicker | 97.4 | 3rd-party |
 
-#### VIP-200K  ·  _24 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| ST-DRC (Ours) _(VIP-200K)_ | — | CLIP-Score | 33.04 | authors |
-| VACE | — | CLIP-Score | 32.61 | 3rd-party |
-| IPVG-STD | — | CLIP-Score | 31.82 | 3rd-party |
-| Phantom | — | CLIP-Score | 31.55 | 3rd-party |
-| ConsisID | — | CLIP-Score | 31.47 | 3rd-party |
-| ST-DRC (Ours) _(VIP-200K)_ | — | MS | 0.992 | authors |
-| ConsisID | — | MS | 0.982 | 3rd-party |
-| ST-DRC (Ours) _(VIP-200K)_ | — | DD | 0.93 | authors |
-| VACE | — | IQ | 0.688 | 3rd-party |
-| ST-DRC (Ours) _(VIP-200K)_ | — | IQ | 0.682 | authors |
-
-#### PulpMotion  ·  _16 results_
+#### SpelkeBench  ·  _42 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| LAMP | — | Cam F1 | 99.7 | 3rd-party |
-| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | Cam F1 | 83.6 | authors |
-| Auteur _(Auteur dataset (procedural + CondensedMovies))_ | — | CLaTr | 71.1 | authors |
-| LAMP | — | CLaTr | 69.5 | 3rd-party |
-| PulpMotion (MAR) | — | Cam F1 | 64.8 | 3rd-party |
-| PulpMotion (DiT) | — | Cam F1 | 52.9 | 3rd-party |
-| PulpMotion (MAR) | — | CLaTr | 49.3 | 3rd-party |
-| PulpMotion (DiT) | — | CLaTr | 39.7 | 3rd-party |
-| LAMP | — | FDframe | 35.5 | 3rd-party |
-| PulpMotion (MAR) | — | Out-rate | 29.1 | 3rd-party |
+| PSI _(3 million real-world RGB video clips)_ | point-prompted movable object segmentation | mIoU | 0.681 | authors |
+| SAM2 | unprompted movable object segmentation | mIoU | 0.68 | 3rd-party |
+| SAM2 | unprompted movable object segmentation | AR | 0.62 | 3rd-party |
+| FPT | point-prompted movable object segmentation | mIoU | 0.566 | 3rd-party |
+| PSI _(3 million real-world RGB video clips)_ | point-prompted movable object segmentation | AR | 0.541 | authors |
+| MaskFormer | point-prompted movable object segmentation | mIoU | 0.506 | 3rd-party |
+| CWM | point-prompted movable object segmentation | mIoU | 0.481 | 3rd-party |
+| MaskFormer | point-prompted movable object segmentation | AR | 0.439 | 3rd-party |
+| ProMerge | point-prompted movable object segmentation | mIoU | 0.431 | 3rd-party |
+| CutLER | point-prompted movable object segmentation | mIoU | 0.423 | 3rd-party |
 
-#### WorldMem (Minecraft)  ·  _16 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| DecMem _(WorldMem dataset (Minecraft))_ | — | Spatio-temporal Consistency (STC) | 42.12 | authors |
-| MineWorld _(Minecraft dataset)_ | — | FID | 41.9661 | 3rd-party |
-| DecMem _(WorldMem dataset (Minecraft))_ | — | Visual Quality (VQ) | 39.77 | authors |
-| DecMem _(WorldMem dataset (Minecraft))_ | — | Action Controllability (AC) | 37.81 | authors |
-| DecMem _(WorldMem dataset (Minecraft))_ | — | PSNR | 30.0785 | authors |
-| WorldMem _(Minecraft dataset)_ | — | PSNR | 26.5414 | 3rd-party |
-| Oasis _(Minecraft dataset)_ | — | PSNR | 24.1293 | 3rd-party |
-| MineWorld _(Minecraft dataset)_ | — | PSNR | 20.2989 | 3rd-party |
-| Oasis _(Minecraft dataset)_ | — | FID | 15.9163 | 3rd-party |
-| WorldMem _(Minecraft dataset)_ | — | FID | 11.7379 | 3rd-party |
-
-#### MNIST modular arithmetic  ·  _15 results_
+#### NAVSIM  ·  _39 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| JEPA + additive embedding (ResNet-18) _(MNIST)_ | digit classification after arithmetic operation | seen operation accuracy | 0.9946 | authors |
-| BRo-JEPA (ResNet + MFR) _(MNIST)_ | digit classification after arithmetic operation | zero-shot operation accuracy | 0.9946 | authors |
-| BRo-JEPA (ResNet + MFR) _(MNIST)_ | digit classification after arithmetic operation | unseen operation rollout accuracy | 0.9946 | authors |
-| BRo-JEPA (ResNet + SFR) _(MNIST)_ | digit classification after arithmetic operation | zero-shot operation accuracy | 0.9893 | authors |
-| Supervised ResNet-18 + additive embedding _(MNIST)_ | digit classification after arithmetic operation | seen operation accuracy | 0.9844 | authors |
-| JEPA + additive embedding (MLP) _(MNIST)_ | digit classification after arithmetic operation | seen operation accuracy | 0.9794 | authors |
-| JEPA + additive embedding (MLP) _(MNIST)_ | digit classification after arithmetic operation | unseen operation rollout accuracy | 0.9793 | authors |
-| JEPA + additive embedding (MLP w/ compositional consistency loss) _(MNIST)_ | digit classification after arithmetic operation | zero-shot operation accuracy | 0.9777 | authors |
-| Supervised MLP + additive embedding _(MNIST)_ | digit classification after arithmetic operation | seen operation accuracy | 0.9737 | authors |
-| BRo-JEPA (MLP + MFR) _(MNIST)_ | digit classification after arithmetic operation | zero-shot operation accuracy | 0.9724 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
+| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
+| RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
+| Ours-Rep+Geo+MCB _(OpenScene (NAVSIM train split))_ | planning (frozen tokenizer + lightweight decoder) | PDMS | 91.8 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | PDMS | 91.8 | authors |
+| DriveMA-4B _(NAVSIM trainval)_ | — | PDMS | 91.2 | authors |
+| DriveMA-2B _(NAVSIM trainval)_ | — | PDMS | 90.5 | authors |
 
-#### RoboTrustBench  ·  _14 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Kling-v2.6 | Normal | Overall Average (GPT-5.4 automatic evaluation, normalized to [0,1]) | 0.886 | authors |
-| Kling-v2.6 | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.776 | authors |
-| LingBot-World | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.681 | authors |
-| Cosmos-14B | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.673 | authors |
-| Wan2.2 | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.661 | authors |
-| Veo-3.1-Fast | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.658 | authors |
-| Cosmos-2B | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.651 | authors |
-| HunyuanVideo-1.5 | Normal | Overall Average (human evaluation, normalized to [0,1]) | 0.579 | authors |
-
-#### AgentGym  ·  _14 results_
+#### DAVIS  ·  _37 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| PatchWorld-Simple _(AgentGym trajectories)_ | — | macro success rate | 76.4 | authors |
-| LLM-Direct | — | macro success rate | 75.8 | 3rd-party |
-| ReAct | — | macro success rate | 74.4 | 3rd-party |
-| PatchWorld-Residual _(AgentGym trajectories)_ | — | macro success rate | 72.9 | authors |
-| PoE-World _(AgentGym trajectories)_ | — | macro success rate | 69.3 | 3rd-party |
-| WorldCoder _(AgentGym trajectories)_ | — | macro success rate | 64.4 | 3rd-party |
-| Word2World _(AgentGym trajectories)_ | — | macro success rate | 63.5 | 3rd-party |
-| Word2World _(AgentGym trajectories)_ | — | macro Token F1 | 0.85 | 3rd-party |
-| PatchWorld-Residual _(AgentGym trajectories)_ | — | macro Token F1 | 0.69 | authors |
-| LLM-Direct | — | macro Token F1 | 0.64 | 3rd-party |
+| TrajectoryCrafter | 10 ReCamMaster camera trajectory types | RotErr | 10.434 | 3rd-party |
+| CogNVS | 10 ReCamMaster camera trajectory types | RotErr | 6.9499 | 3rd-party |
+| Recammaster _(synthetic (Unreal Engine))_ | 10 ReCamMaster camera trajectory types | RotErr | 2.3175 | 3rd-party |
+| Redirector _(synthetic)_ | 10 ReCamMaster camera trajectory types, speed=2.0 | RotErr | 1.9246 | 3rd-party |
+| Ours _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types, speed=2.0 | RotErr | 1.8821 | authors |
+| Full reward (Geo-Align) _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | RotErr | 1.3895 | authors |
+| Ours _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | Dyn-MEt3R | 0.8573 | authors |
+| Geo-Align _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | Dyn-MEt3R | 0.8573 | authors |
+| Redirector _(synthetic)_ | 10 ReCamMaster camera trajectory types | Dyn-MEt3R | 0.8497 | 3rd-party |
+| TrajectoryCrafter | 10 ReCamMaster camera trajectory types | Dyn-MEt3R | 0.8244 | 3rd-party |
 
-#### SafeGen-Bench  ·  _13 results_
+#### 3DEditBench  ·  _36 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| Llama-Guard | — | Failure Rate Across 7 Categories | 80.0 | authors |
-| LLaVA-Guard | — | Failure Rate Across 7 Categories | 80.0 | authors |
-| CogVideoX | — | Average Quality Score | 66.8 | authors |
-| Open-Sora-Plan v1.2.0 | — | Average Quality Score | 63.2 | authors |
-| Kling V1.0 | — | Average Quality Score | 59.8 | authors |
-| I2VGen-XL | — | Average Quality Score | 50.1 | authors |
-| Gen3-turbo | — | Average Quality Score | 46.9 | authors |
-| CogVideoX | — | Average Unsafety Score | 44.5 | authors |
-| Open-Sora-Plan v1.2.0 | — | Average Unsafety Score | 33.6 | authors |
-| I2VGen-XL | — | Average Unsafety Score | 31.0 | authors |
+| 3WM | 3D object manipulation | PSNR | 22.73 | authors |
+| LightningDrag | 3D object manipulation | PSNR | 19.52 | 3rd-party |
+| DiffusionHandles | 3D object manipulation | PSNR | 17.82 | 3rd-party |
+| DragAnything | 3D object manipulation | PSNR | 15.13 | 3rd-party |
+| 3WM | 3D object manipulation | Edit Adherence (EA) | 0.797 | authors |
+| PSI _(3 million real-world RGB video clips)_ | object manipulation (PSI segment, PSI editing model) | EA | 0.776 | authors |
+| PSI _(3 million real-world RGB video clips)_ | object manipulation (PSI segment, PSI editing model) | SSIM | 0.736 | authors |
+| LightningDrag | 3D object manipulation | Edit Adherence (EA) | 0.722 | 3rd-party |
+| DasS | object manipulation (PSI segment, DasS editing model) | SSIM | 0.707 | authors |
+| PasC | object manipulation (PSI segment, PasC editing model) | EA | 0.679 | authors |
+
+#### Verse-Bench  ·  _35 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Ovi 1.1 | — | Sync-D | 7.979 | 3rd-party |
+| daVinci-MagiHuman | — | Sync-D | 7.816 | 3rd-party |
+| MoVA | — | Sync-D | 7.808 | 3rd-party |
+| NAVA | — | Sync-C | 7.791 | authors |
+| LTX 2.3 | — | Sync-D | 7.69 | 3rd-party |
+| NAVA | — | Sync-D | 7.566 | authors |
+| Ovi 1.1 | — | Sync-C | 7.484 | 3rd-party |
+| MoVA | — | Sync-C | 7.289 | 3rd-party |
+| LTX 2.3 | — | Sync-C | 7.248 | 3rd-party |
+| MoVA | — | PQ | 7.233 | 3rd-party |
+
+#### Trajectory100  ·  _35 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Wan-2.1-I2V | — | FVD | 1421.87 | 3rd-party |
+| Tora | — | FVD | 957.81 | 3rd-party |
+| RealisDance-DiT | — | FVD | 758.08 | 3rd-party |
+| MeshToken _(internal 300K video clips)_ | — | FVD | 695.62 | authors |
+| RealisMotion | — | FVD | 314.59 | 3rd-party |
+| Wan-2.1-I2V | — | FID | 33.06 | 3rd-party |
+| RealisDance-DiT | — | FID | 23.02 | 3rd-party |
+| RealisMotion | — | PSNR | 22.57 | 3rd-party |
+| MeshToken _(internal 300K video clips)_ | — | FID | 22.13 | authors |
+| Tora | — | FID | 21.51 | 3rd-party |
+
+#### CrossFPS  ·  _32 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| HY-World 1.5 | — | FVD | 1131.7 | 3rd-party |
+| Matrix-Game 3.0 | — | FVD | 1022.7 | 3rd-party |
+| LingBot-World (Act) | — | FVD | 954.4 | 3rd-party |
+| SCOPE _(CrossFPS)_ | — | FVD | 690.3 | authors |
+| SCOPE _(CrossFPS)_ | — | Flow Score | 18.24 | authors |
+| LingBot-World (Act) | — | Flow Score | 15.5 | 3rd-party |
+| Matrix-Game 3.0 | — | Flow Score | 13.36 | 3rd-party |
+| HY-World 1.5 | — | Photometric Smoothness | 2.523 | 3rd-party |
+| Matrix-Game 3.0 | — | Motion Smoothness | 2.502 | 3rd-party |
+| SCOPE _(CrossFPS)_ | — | Motion Smoothness | 2.383 | authors |
+
+#### Minecraft VLA benchmark  ·  _30 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| CaB (When+How) _(VPT Demonstration Dataset)_ | smelt | E1: F1 per group | 94.2 | authors |
+| CaB (When+How) _(VPT Demonstration Dataset)_ | — | E1: F1↑ | 90.5 | authors |
+| CaB-When _(VPT Demonstration Dataset)_ | — | E1: F1↑ | 90.3 | authors |
+| Signed-distance regression _(VPT Demonstration Dataset)_ | — | E1: F1↑ | 79.5 | authors |
+| Hazard-style completion _(VPT Demonstration Dataset)_ | — | E1: F1↑ | 77.8 | authors |
+| Progress regression (STG) _(VPT Demonstration Dataset)_ | — | E1: F1↑ | 74.6 | authors |
+| Binary completion (+dwell) _(VPT Demonstration Dataset)_ | — | E1: F1 | 73.8 | authors |
+| CaB (When+How) _(VPT Demonstration Dataset)_ | — | E2: Single↑ | 61.1 | authors |
+| Binary completion (+dwell) _(VPT Demonstration Dataset)_ | — | E2: Single↑ | 52.4 | authors |
+| Signed-distance regression _(VPT Demonstration Dataset)_ | — | E2: Single↑ | 52.1 | authors |
+
+#### custom benchmark  ·  _29 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| TeleOmni | — | FVD | 2.202 | 3rd-party |
+| W/O Dual-RoPE _(curated dataset (text-to-video corpora + existing video editing datasets))_ | — | FVD | 1.837 | authors |
+| UniVideo | — | FVD | 1.687 | 3rd-party |
+| UniVideo-Q | — | FVD | 1.389 | 3rd-party |
+| Single-Stream _(curated dataset (text-to-video corpora + existing video editing datasets))_ | — | FVD | 1.364 | authors |
+| VACE | — | FVD | 1.302 | 3rd-party |
+| W/O Feedback _(curated dataset (text-to-video corpora + existing video editing datasets))_ | — | FVD | 1.074 | authors |
+| Smart-Insertion-V _(curated dataset (text-to-video corpora + existing video editing datasets))_ | — | FVD | 1.055 | authors |
+| Smart-Insertion-V _(curated dataset (text-to-video corpora + existing video editing datasets))_ | — | Harmonic Score | 0.842 | authors |
+| W/O Feedback _(curated dataset (text-to-video corpora + existing video editing datasets))_ | — | DINO-Similarity-V | 0.749 | authors |
+
+#### DeepMind Control Suite  ·  _29 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Ours (PH-RSSM) _(DeepMind Control Suite)_ | Reacher Easy | return | 985.1 | authors |
+| R2Dreamer _(DeepMind Control Suite)_ | Average (Cheetah Run, Walker Stand, Reacher Easy, Hopper Hop, Walker Walk, Walker Run) | return | 762.5 | 3rd-party |
+| Ours (PH-RSSM) _(DeepMind Control Suite)_ | Average (6 tasks) | imagined reward | 738.9 | authors |
+| R2Dreamer _(DeepMind Control Suite)_ | Average (6 tasks) | imagined reward | 702.5 | 3rd-party |
+| DreamerV3 _(DeepMind Control Suite)_ | Cheetah Run | return | 689.9 | 3rd-party |
+| Ours (PH-RSSM) _(DeepMind Control Suite)_ | Cheetah Run | imagined reward (mean ± std) | 687.1 | authors |
+| TC-WM | Cheetah | episode return | 292.0 | authors |
+| R2Dreamer _(DeepMind Control Suite)_ | — | Total Energy Consumption (absolute proxy) | 122.1 | 3rd-party |
+| Ours (PH-RSSM) _(DeepMind Control Suite)_ | — | Total Energy Consumption (absolute proxy) | 112.58 | authors |
+| R2Dreamer _(DeepMind Control Suite)_ | — | Mean Squared Jerk (absolute proxy) | 44.05 | 3rd-party |
+
+#### RoboSemanticBench  ·  _28 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| OpenVLA-OFT _(RSB expert demonstrations)_ | RSB-HardMath-4 | TSR | 20.5 | authors |
+| TinyVLA _(RSB expert demonstrations)_ | RSB-General-4 | TSR | 14.8 | authors |
+| DexVLA _(RSB expert demonstrations)_ | RSB-Math-4 | TSR | 13.6 | authors |
+| OpenVLA-OFT _(RSB expert demonstrations)_ | Average | TSR Avg | 11.1 | authors |
+| TinyVLA _(RSB expert demonstrations)_ | Average | TSR Avg | 8.6 | authors |
+| DexVLA _(RSB expert demonstrations)_ | Average | TSR Avg | 6.5 | authors |
+| GO1 _(RSB expert demonstrations)_ | RSB-Math-4 | TSR | 3.8 | authors |
+| GO1 _(RSB expert demonstrations)_ | Average | TSR Avg | 2.0 | authors |
 
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
