@@ -1,16 +1,12 @@
-# Awesome-Embodied&MM
+# Awesome-Embodied&MM — Issue 0 (Inaugural)
 
-> Daily-updated intelligence on **World Action Models** — world models, vision-language-action
-> (VLA) models, action-conditioned video/world generation, robot foundation models, and
-> embodied/physical AI. Auto-generated; do not edit by hand.
+> The creation edition: a one-time roundup of the initial ~60-day backlog of World Action
+> Models, VLA, world-model and video-generation research. Subsequent issues cover only each
+> day's new papers — see the [archive index](README.md).
 
-**Last updated:** 2026-06-04 · **Tracked:** 124 core · 154 adjacent ·
-87 news · **3913** benchmark rows across **1620** model
-variants · **30** authors
-
-> Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
-> (inference **speed**, **gen**eralist, **spec**ialist, inference **cost**) are weighted 2×.
-> `–` means the paper does not address that metric (we never fabricate a score).
+**Corpus:** 124 core · 154 adjacent · 87 news ·
+**3913** benchmark rows across **1620** model variants ·
+**30** authors
 
 ## 📈 Trends & Popular Directions
 | Direction | Papers | Momentum | Summary |
@@ -81,9 +77,7 @@ variants · **30** authors
 | **6.59** | Distill to Think, Foresee to Act: Cognitive-Physical Reinforcement Learning for Autonomous Driving | 2026-05-20 | spd – · gen 3 · spec 7 · cost 5 | [abs](https://arxiv.org/abs/2605.21139) · [pdf](https://arxiv.org/pdf/2605.21139v2) · [code](https://github.com/OpenDriveLab/OpenScene) |
 | **6.58** | RoboDream: Compositional World Models for Scalable Robot Data Synthesis | 2026-06-01 | spd – · gen 6 · spec 6 · cost – | [abs](https://arxiv.org/abs/2606.02577) · [pdf](https://arxiv.org/pdf/2606.02577v1) |
 
-## 📊 Benchmark Leaderboard
-_Model identity = (name, training dataset); the same name on different data is a distinct row.
-Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted comparison._
+## 📊 Benchmark Leaderboards
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
@@ -425,7 +419,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | GO1 _(RSB expert demonstrations)_ | Average | TSR Avg | 2.0 | authors |
 
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
-_Not scored; surfaced for techniques transferable to WAM._
 - **World Models: A Comprehensive Survey of Architectures, Methodologies, Reasoning Paradigms, and Applications** — A unifying multi-axis taxonomy for world models that integrates architecture, methodological families, reasoning strategies (particularly the convergence of chain-of-thought reasoning with world-model imagination), and applications, providing a structured framework to map the fragmented landscape of world model… _(→ WAM: The taxonomy's explicit categorization of reasoning strategies (imagination-based planning, latent policy learning, counterfactual reasoning) directly informs how WAMs can be architected to generate actions rather than just passive predictions. Specifically…)_ [abs](https://arxiv.org/abs/2606.00133) · [pdf](https://arxiv.org/pdf/2606.00133v1)
 - **PhAIL: A Real-Robot VLA Benchmark and Distributional Methodology** — Replacing binary success rate metrics with a distributional evaluation methodology based on the time-to-success cumulative distribution function (CDF), scored via Human-Relative Throughput (HRT) and compared using macro-averaged Kolmogorov-Smirnov significance tests to resolve close model comparisons with small sample… _(→ WAM: Evaluating World Action Models often relies on binary task completion metrics, which fail to capture the speed-efficiency trade-offs of different policies. By adopting the time-to-success CDF and HRT scoring, WAM evaluations can distinguish between models…)_ [abs](https://arxiv.org/abs/2605.29710) · [pdf](https://arxiv.org/pdf/2605.29710v1) · [code](https://github.com/Positronic-Robotics/phail-paper)
 - **VLAConf: Calibrated Task-Success Confidence for Vision-Language-Action Models** — A lightweight, one-class discriminative confidence head that leverages frozen pretrained VLA internal representations and step-conditioned modeling to estimate step-wise anomaly scores in a single forward pass, avoiding the computational overhead of resampling and generalizing to continuous action spaces. _(→ WAM: World Action Models (WAMs) often suffer from compounding errors over long horizons and need to know when their world state predictions become unreliable. VLAConf's lightweight confidence head can be directly attached to a WAM's internal representations to…)_ [abs](https://arxiv.org/abs/2605.29605) · [pdf](https://arxiv.org/pdf/2605.29605v1)
@@ -502,4 +495,4 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Petal Surgical adds more funding for incisionless surgical robot](https://www.therobotreport.com/petal-surgical-adds-more-funding-for-incisionless-surgical-robot/) — _The Robot Report_
 
 ---
-_Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
+_Issue 0 · generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._

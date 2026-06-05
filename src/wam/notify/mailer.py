@@ -311,6 +311,16 @@ def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) 
 
 def send(cfg: Config, conn: sqlite3.Connection, today: str | None = None,
          test_to: str | None = None) -> int:
+    today = today or date.today().isoformat()
+    subject, html = build_html(cfg, conn, today)
+    # Always archive the exact email HTML (a browsable newsletter record), even if the
+    # actual SMTP send is skipped (missing creds/recipients).
+    if not test_to:
+        out = cfg.root / "data" / "emails"
+        out.mkdir(parents=True, exist_ok=True)
+        (out / f"{today}.html").write_text(html, encoding="utf-8")
+        log.info("archived email -> data/emails/%s.html", today)
+
     user = os.environ.get("GMAIL_USER")
     pw = os.environ.get("GMAIL_APP_PASSWORD")
     if not (user and pw):
@@ -320,7 +330,6 @@ def send(cfg: Config, conn: sqlite3.Connection, today: str | None = None,
     if not recipients:
         log.warning("no SUBSCRIBERS configured; skipping send")
         return 0
-    subject, html = build_html(cfg, conn, today)
     msg = MIMEMultipart("alternative")
     msg["Subject"], msg["From"] = subject, user
     msg["To"] = ", ".join(recipients)
