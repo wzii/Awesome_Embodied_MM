@@ -1,8 +1,8 @@
-name: WAM daily
+name: WAM bi-daily
 
 on:
   schedule:
-    - cron: "0 13 * * *"        # 13:00 UTC daily (after arXiv announcements)
+    - cron: "0 13 */2 * *"      # every other day at 13:00 UTC (after arXiv announcements)
   workflow_dispatch: {}          # manual trigger
 
 # Never let two daily runs race on the committed DB.

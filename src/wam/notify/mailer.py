@@ -227,7 +227,7 @@ def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) 
 
     S = "font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif"
     parts = [f'<div style="max-width:640px;margin:auto;{S};color:#1a1a1a">']
-    parts.append(f'<h1 style="font-size:20px;margin:0 0 8px">🤖 Embodied&amp;MM Daily — {today}</h1>')
+    parts.append(f'<h1 style="font-size:20px;margin:0 0 8px">🤖 Embodied&amp;MM — {today}</h1>')
     new_adj = conn.execute("SELECT count(*) FROM papers WHERE track='adjacent' AND first_seen=?",
                            (today,)).fetchone()[0]
     total_core, total_adj = counts.get("core", 0), counts.get("adjacent", 0)
@@ -305,7 +305,7 @@ def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) 
         'ctrl=controlled generation. “–” = the paper doesn’t address it.</p>')
     parts.append(f'<p style="color:#999;font-size:12px;margin-top:8px">Awesome-Embodied&amp;MM · '
                  f'<a href="https://github.com/wzii/Awesome_Embodied_MM">repo</a></p></div>')
-    subject = f"Embodied&MM Daily — {today}: {new_core} new" + ("" if not fallback else " (recap)")
+    subject = f"Embodied&MM — {today}: {new_core} new" + ("" if not fallback else " (recap)")
     return subject, "".join(parts)
 
 

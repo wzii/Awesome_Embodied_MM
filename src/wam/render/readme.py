@@ -205,7 +205,7 @@ def render_readme(cfg: Config, conn: sqlite3.Connection, today: str | None = Non
     c = _counts(conn)
     md = f"""# Awesome-Embodied&MM
 
-> Daily-updated intelligence on **World Action Models** — world models, vision-language-action
+> Auto-updated (bi-daily) intelligence on **World Action Models** — world models, vision-language-action
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
@@ -247,7 +247,7 @@ def render_digest(cfg: Config, conn: sqlite3.Connection, today: str | None = Non
         "SELECT count(*) FROM papers WHERE track='core' AND first_seen=?", (today,)).fetchone()[0]
     new_adj = conn.execute(
         "SELECT count(*) FROM papers WHERE track='adjacent' AND first_seen=?", (today,)).fetchone()[0]
-    lines = [f"# Embodied&MM Daily — {today}\n",
+    lines = [f"# Embodied&MM — {today}\n",
              f"**New today:** {new_core} core · {new_adj} adjacent · "
              f"[full leaderboard & rankings →](../../README.md)\n"]
 

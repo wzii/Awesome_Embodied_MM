@@ -1,6 +1,6 @@
 # Awesome-Embodied&MM
 
-> Daily-updated intelligence on **World Action Models** — world models, vision-language-action
+> Auto-updated (bi-daily) intelligence on **World Action Models** — world models, vision-language-action
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
