@@ -20,7 +20,7 @@ log = get_logger("pipeline.fetch")
 
 
 def gather(cfg: Config) -> list[PaperRecord]:
-    """Pull + enrich candidates from all sources (no DB writes). Deduped by id.
+    """Pull candidates from all sources (no enrichment, no DB writes). Deduped by id.
 
     Each source is isolated: a failure (e.g. arXiv rate-limit) degrades gracefully rather
     than crashing the whole run.
@@ -34,27 +34,21 @@ def gather(cfg: Config) -> list[PaperRecord]:
             log.error("source %s failed, continuing: %s", name, e)
     candidates = list(records.values())
     log.info("gathered %d unique candidates across sources", len(candidates))
-    try:
-        semantic_scholar.enrich(cfg, [r for r in candidates if r.source != "news"])
-    except Exception as e:  # noqa: BLE001
-        log.warning("s2 enrichment failed, continuing: %s", e)
     return candidates
-
-
-def persist(conn: sqlite3.Connection, candidates: list[PaperRecord]) -> list[PaperRecord]:
-    """Insert new records, refresh enrichment on existing. Returns the new ones."""
-    seen = paper_store.existing_ids(conn)
-    new = [r for r in candidates if r.id not in seen]
-    for rec in candidates:
-        if rec.id in seen:
-            paper_store.update_enrichment(conn, rec)
-        else:
-            paper_store.insert_new(conn, rec)
-    conn.commit()
-    log.info("persisted: %d new, %d already known", len(new), len(candidates) - len(new))
-    return new
 
 
 def run(cfg: Config, conn: sqlite3.Connection) -> list[PaperRecord]:
     candidates = gather(cfg)
-    return persist(conn, candidates)
+    seen = paper_store.existing_ids(conn)
+    new = [r for r in candidates if r.id not in seen]
+    # Enrich (Semantic Scholar) only the NEW papers — existing ones keep their stored
+    # citations, so daily runs don't re-query S2 for the whole corpus.
+    try:
+        semantic_scholar.enrich(cfg, [r for r in new if r.source != "news"])
+    except Exception as e:  # noqa: BLE001
+        log.warning("s2 enrichment failed, continuing: %s", e)
+    for rec in new:
+        paper_store.insert_new(conn, rec)
+    conn.commit()
+    log.info("persisted: %d new, %d already known", len(new), len(candidates) - len(new))
+    return new

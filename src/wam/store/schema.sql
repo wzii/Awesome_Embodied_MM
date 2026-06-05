@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS papers (
     status                 TEXT DEFAULT 'new',       -- new|filtered|summarized|analyzed|scored|done
     pdf_hash               TEXT,
     benchmarks_extracted   INTEGER DEFAULT 0,        -- bool: benchmark/model extraction done
+    links_checked          INTEGER DEFAULT 0,        -- bool: code/HF link lookup attempted
     updated_at             TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_papers_track ON papers(track);

@@ -1,0 +1,63 @@
+name: WAM weekly
+
+# Corpus-wide stages that don't need to run daily: influential authors/groups (full
+# Semantic Scholar pass) and trend clustering (re-cluster the whole corpus). The daily
+# workflow handles the fast, diff-aware stages.
+on:
+  schedule:
+    - cron: "30 13 * * 1"        # Mondays 13:30 UTC (after the daily run)
+  workflow_dispatch: {}
+
+concurrency:
+  group: wam-daily               # share the daily group so they never race on the DB
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  aggregates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HF_SPACE: ${{ vars.HF_SPACE || 'HardToFindAGoodUserName/Awesome_Embodied_MM' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: |
+          python -m pip install -U pip
+          pip install -e .
+      - name: Configure git
+        run: |
+          git config user.name "wam-bot"
+          git config user.email "actions@github.com"
+
+      - name: People + trends + render
+        run: python scripts/run_local.py --stages people,trends,render
+
+      - name: Commit + push
+        run: |
+          git add data/ README.md && git commit -m "weekly: authors/trends $(date -u +%F)" || echo "no changes"
+          git pull --rebase --autostash || true
+          git push || echo "push skipped"
+
+      - name: Sync DB to HF Space
+        if: env.HF_TOKEN != '' && env.HF_SPACE != ''
+        run: |
+          pip install -q huggingface_hub
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+          HfApi(token=os.environ["HF_TOKEN"]).upload_file(
+              path_or_fileobj="data/wam.db", path_in_repo="data/wam.db",
+              repo_id=os.environ["HF_SPACE"], repo_type="space",
+              commit_message="weekly aggregates sync")
+          print("synced data/wam.db to Space")
+          PY

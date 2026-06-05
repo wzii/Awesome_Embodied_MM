@@ -44,10 +44,12 @@ jobs:
           git config user.email "actions@github.com"
 
       # --- Stage group 1: fetch + LLM analysis (checkpoint commit) ---
+      # Fast daily path: only diff-aware stages. Corpus-wide stages (links sweep, people,
+      # trends) run in the weekly workflow.
       - name: Fetch + analyze
         run: |
           python scripts/run_local.py \
-            --stages fetch,filter,summarize,analyze,extract,score,innovation,links,people,trends
+            --stages fetch,filter,summarize,analyze,extract,score,innovation,links
       - name: Checkpoint commit (data)
         run: |
           git add data/ && git commit -m "data: daily fetch+analysis $(date -u +%F)" || echo "no changes"

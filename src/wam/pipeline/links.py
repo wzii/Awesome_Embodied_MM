@@ -50,7 +50,9 @@ def _best(text: str, pattern: re.Pattern, deny: tuple = ()) -> str | None:
 
 def run(cfg: Config, conn: sqlite3.Connection, limit: int | None = None,
         download: bool = True, use_pwc: bool = True) -> int:
-    q = ("SELECT id, abstract, links_json FROM papers WHERE track IN ('core','adjacent')")
+    # Attempt-once: only papers not yet checked, so daily runs don't re-scan the whole corpus.
+    q = ("SELECT id, abstract, links_json FROM papers WHERE track IN ('core','adjacent') "
+         "AND links_checked=0")
     if limit:
         q += f" LIMIT {int(limit)}"
     rows = conn.execute(q).fetchall()
@@ -81,9 +83,11 @@ def run(cfg: Config, conn: sqlite3.Connection, limit: int | None = None,
             if url:
                 links["code"], changed = _clean(url), True
         if changed:
-            conn.execute("UPDATE papers SET links_json=? WHERE id=?",
+            conn.execute("UPDATE papers SET links_json=?, links_checked=1 WHERE id=?",
                          (json.dumps(links), r["id"]))
             found += 1
+        else:
+            conn.execute("UPDATE papers SET links_checked=1 WHERE id=?", (r["id"],))
         if i and i % 25 == 0:
             conn.commit()
             log.info("links progress: %d/%d (found %d)", i, len(rows), found)
