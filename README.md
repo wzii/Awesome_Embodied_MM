@@ -4,7 +4,7 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-06-04 · **Tracked:** 124 core · 154 adjacent ·
+**Last updated:** 2026-06-05 · **Tracked:** 124 core · 154 adjacent ·
 87 news · **3913** benchmark rows across **1620** model
 variants · **30** authors
 
