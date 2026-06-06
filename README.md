@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-06-05 · **Tracked:** 156 core · 190 adjacent ·
-92 news · **5214** benchmark rows across **1968** model
+**Last updated:** 2026-06-06 · **Tracked:** 162 core · 193 adjacent ·
+92 news · **5332** benchmark rows across **2009** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -31,9 +31,10 @@ variants · **30** authors
 | Score | Paper | Published | Top-4 (spd·gen·spec·cost) | Links |
 |------:|-------|-----------|---------------------------|-------|
 | **8.23** | Flash-WAM: Modality-Aware Distillation for World Action Models | 2026-06-03 | spd 9 · gen 6 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2606.05254) · [pdf](https://arxiv.org/pdf/2606.05254v1) |
-| **7.66** | Cosmos 3: Omnimodal World Models for Physical AI | 2026-06-01 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.02800) · [pdf](https://arxiv.org/pdf/2606.02800v1) |
+| **7.66** | Cosmos 3: Omnimodal World Models for Physical AI | 2026-06-01 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.02800) · [pdf](https://arxiv.org/pdf/2606.02800v1) · [code](https://github.com/nvidia/cosmos) |
+| **7.58** | Revisiting Embodied Chain-of-Thought for Generalizable Robot Manipulation | 2026-06-02 | spd – · gen 6 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.03784) · [pdf](https://arxiv.org/pdf/2606.03784v2) |
 | **7.57** | SANTS: A State-Adaptive Scheduler for World Action Models | 2026-05-27 | spd 8 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2605.27947) · [pdf](https://arxiv.org/pdf/2605.27947v1) |
-| **7.52** | World-Language-Action Model for Unified World Modeling, Language Reasoning, and Action Synthesis | 2026-06-04 | spd 8 · gen 7 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.05979) · [pdf](https://arxiv.org/pdf/2606.05979v1) |
+| **7.52** | World-Language-Action Model for Unified World Modeling, Language Reasoning, and Action Synthesis | 2026-06-04 | spd 8 · gen 7 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.05979) · [pdf](https://arxiv.org/pdf/2606.05979v1) · [code](https://github.com/SJTU-DENG-Lab/WLA) |
 | **7.49** | 3DThinkVLA: Endowing Vision-Language-Action Models with Latent 3D Priors via 3D-Thinking-Guided Co-training | 2026-06-03 | spd – · gen 6 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.04436) · [pdf](https://arxiv.org/pdf/2606.04436v1) |
 | **7.48** | LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World | 2026-05-31 | spd – · gen 4 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.01458) · [pdf](https://arxiv.org/pdf/2606.01458v1) |
 | **7.46** | Feat2Go: Visual Feature-Grounded Value Estimation for Embodied Reinforcement Learning | 2026-05-29 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2605.30795) · [pdf](https://arxiv.org/pdf/2605.30795v1) |
@@ -61,10 +62,10 @@ variants · **30** authors
 | **7.06** | MiraBench: Evaluating Action-Conditioned Reliability in Robotic World Models | 2026-05-28 | spd – · gen 5 · spec – · cost – | [abs](https://arxiv.org/abs/2605.29360) · [pdf](https://arxiv.org/pdf/2605.29360v1) |
 | **7.02** | Beyond Euclidean Proximity: Repairing Latent World Models with Horizon-Matched Trajectory Reachability Metrics | 2026-05-21 | spd – · gen 2 · spec 8 · cost – | [abs](https://arxiv.org/abs/2605.22164) · [pdf](https://arxiv.org/pdf/2605.22164v1) |
 | **7.0** | Uni-LaViRA: Language-Vision-Robot Actions Translation for Unified Embodied Navigation | 2026-05-26 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.27582) · [pdf](https://arxiv.org/pdf/2605.27582v1) |
-| **7.0** | Echo-Infinity: Learning Evolving Memory for Real-Time Infinite Video Generation | 2026-06-03 | spd – · gen – · spec – · cost – | [abs](https://arxiv.org/abs/2606.04527) · [pdf](https://arxiv.org/pdf/2606.04527v1) |
+| **7.0** | Echo-Infinity: Learning Evolving Memory for Real-Time Infinite Video Generation | 2026-06-03 | spd – · gen – · spec – · cost – | [abs](https://arxiv.org/abs/2606.04527) · [pdf](https://arxiv.org/pdf/2606.04527v1) · [code](https://github.com/Echo-Team-Joy-Future-Academy-JD/Echo-Infinity) |
 | **6.96** | Primitive Subspaces Mediate Few-Shot Transfer in VLAs | 2026-05-29 | spd – · gen 7 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.30695) · [pdf](https://arxiv.org/pdf/2605.30695v1) |
 | **6.89** | Demo-JEPA: Joint-Embedding Predictive Architecture for One-shot Cross-Embodiment Imitation | 2026-05-20 | spd – · gen 7 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.20811) · [pdf](https://arxiv.org/pdf/2605.20811v1) |
-| **6.89** | SeeTraceAct: Visibility-Aware Latent Planning from Cross-Embodiment Demonstration Videos | 2026-06-01 | spd – · gen 7 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.02745) · [pdf](https://arxiv.org/pdf/2606.02745v1) |
+| **6.89** | SeeTraceAct: Visibility-Aware Latent Planning from Cross-Embodiment Demonstration Videos | 2026-06-01 | spd – · gen 7 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.02745) · [pdf](https://arxiv.org/pdf/2606.02745v1) · [code](https://github.com/jaehyeon-son/SeeTraceAct) |
 | **6.87** | $τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation | 2026-05-31 | spd – · gen 6 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.01027) · [pdf](https://arxiv.org/pdf/2606.01027v1) |
 | **6.87** | GEM: Generative Supervision Helps Embodied Intelligence | 2026-05-27 | spd – · gen 6 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.28548) · [pdf](https://arxiv.org/pdf/2605.28548v1) · [code](https://github.com/starVLA/starVLA) |
 | **6.87** | DEFLECT: Delay-Robust Execution via Flow-matching Likelihood-Estimated Counterfactual Tuning for VLA Policies | 2026-05-19 | spd 7 · gen 5 · spec 6 · cost – | [abs](https://arxiv.org/abs/2605.19294) · [pdf](https://arxiv.org/pdf/2605.19294v1) |
@@ -79,7 +80,6 @@ variants · **30** authors
 | **6.76** | Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies | 2026-05-31 | spd – · gen 5 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2606.01151) · [pdf](https://arxiv.org/pdf/2606.01151v1) |
 | **6.76** | LVDrive: Latent Visual Representation Enhanced Vision-Language-Action Autonomous Driving Model | 2026-05-21 | spd 3 · gen 2 · spec 8 · cost – | [abs](https://arxiv.org/abs/2605.22089) · [pdf](https://arxiv.org/pdf/2605.22089v1) · [code](https://github.com/Thinklab-SJTU/Bench2Drive) |
 | **6.75** | OneVLA: A Unified Framework for Embodied Tasks | 2026-05-31 | spd – · gen 7 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.01241) · [pdf](https://arxiv.org/pdf/2606.01241v1) · [code](https://github.com/linglingxiansen/OneVLA) |
-| **6.71** | SAFE-Pruner: Semantic Attention-Guided Future-Aware Token Pruning for Efficient Vision-Language-Action Manipulation | 2026-05-28 | spd 7 · gen 4 · spec 6 · cost 6 | [abs](https://arxiv.org/abs/2605.29662) · [pdf](https://arxiv.org/pdf/2605.29662v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _508 results_
+#### LIBERO  ·  _523 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -147,7 +147,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SpatialVLA + Ours _(Bridge)_ | Eggplant | success rate | 75.0 | authors |
 | ElegantVLA _(GR00T)_ | Google Robot | success rate | 75.0 | authors |
 
-#### RLBench  ·  _29 results_
+#### RLBench  ·  _33 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -162,12 +162,13 @@ _Model identity = (model, training data); same name on different data is a disti
 | HARP-SR | 18 tasks | average success rate | 43.41 | authors |
 | Unadapted | 18 tasks | average success rate | 37.56 | authors |
 
-#### Meta-World  ·  _2 results_
+#### Meta-World  ·  _3 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | ProgVLA (0.1B) _(Meta-World MT50)_ | — | success rate | 78.5 | authors |
 | SmolVLA (2.25B) | — | success rate | 68.24 | 3rd-party |
+| Gemini-1.5-Pro | — | PIB (bits) | 2.65 | authors |
 
 #### ManiSkill  ·  _7 results_
 
@@ -196,7 +197,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GaussianDream | — | Success rate | 54.8 | authors |
 | RLDX-1-FT-RC365 | — | safety | 54.1 | authors |
 
-#### Open-X / RT  ·  _37 results_
+#### Open-X / RT  ·  _38 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -235,7 +236,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | LongLive | — | Temporal Flickering | 99.402 | 3rd-party |
 | MemFlow | — | Temporal Flickering | 99.386 | 3rd-party |
 
-#### Habitat  ·  _4 results_
+#### Habitat  ·  _6 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -243,6 +244,8 @@ _Model identity = (model, training data); same name on different data is a disti
 | TrajectoryCrafter | sparse views-to-video | FVD | 690.322 | 3rd-party |
 | GEN3C | sparse views-to-video | FVD | 511.039 | 3rd-party |
 | Pantheon360 _(360-1M (filtered))_ | sparse views-to-video | FVD | 450.696 | authors |
+| multiple (LLaVA-1.6, GPT-4V, Gemini-1.5-Pro, InternVL2, OpenVLA) | — | success rate relative to oracle | 94.2 | authors |
+| Gemini-1.5-Pro | — | PIB (bits) | 1.05 | authors |
 
 #### BEHAVIOR  ·  _2 results_
 
@@ -325,6 +328,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | Ours† _(OpenScene (NAVSIM train split))_ | planning | PDMS | 91.8 | authors |
 | DriveMA-4B _(NAVSIM trainval)_ | — | PDMS | 91.2 | authors |
 | DriveMA-2B _(NAVSIM trainval)_ | — | PDMS | 90.5 | authors |
+
+#### InterBench  ·  _39 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Matrix-Game | — | FVD | 2260.7 | 3rd-party |
+| Matrix-Game-2.0 | — | FVD | 1920.6 | 3rd-party |
+| GameCraft-PCM | — | FVD | 1883.3 | 3rd-party |
+| GameCraft-2 _(mixed real and synthetic interactive video data)_ | — | FVD | 1856.3 | authors |
+| GameCraft | — | FVD | 1554.2 | 3rd-party |
+| GameCraft | — | Dynamic | 67.2 | 3rd-party |
+| GameCraft-2 _(mixed real and synthetic interactive video data)_ | — | Dynamic | 45.2 | authors |
+| GameCraft-PCM | — | Dynamic | 43.8 | 3rd-party |
+| Matrix-Game | — | Dynamic | 31.7 | 3rd-party |
+| Matrix-Game-2.0 | — | Dynamic | 20.5 | 3rd-party |
 
 #### Wan 2.1  ·  _38 results_
 
@@ -416,21 +434,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | MeshToken _(internal 300K video clips)_ | — | FID | 22.13 | authors |
 | Tora | — | FID | 21.51 | 3rd-party |
 
-#### HunyuanVideo  ·  _35 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| SVG | — | Latency (s) | 3459.0 | 3rd-party |
-| VGDFR | — | Latency (s) | 3019.0 | 3rd-party |
-| Ours | — | Latency (s) | 2939.0 | authors |
-| EasyCache | — | Latency (s) | 2850.0 | 3rd-party |
-| DiCache | — | Latency (s) | 2814.0 | 3rd-party |
-| SAP | — | Latency (s) | 2634.0 | 3rd-party |
-| Ours + SAP | — | Latency (s) | 2555.0 | authors |
-| Ours | — | PSNR | 26.34 | authors |
-| Ours + SAP | — | PSNR | 25.01 | authors |
-| SAP | — | PSNR | 24.64 | 3rd-party |
-
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
 - **World Models: A Comprehensive Survey of Architectures, Methodologies, Reasoning Paradigms, and Applications** — A unifying multi-axis taxonomy for world models that integrates architecture, methodological families, reasoning strategies (particularly the convergence of chain-of-thought reasoning with world-model imagination), and applications, providing a structured framework to map the fragmented landscape of world model… _(→ WAM: The taxonomy's explicit categorization of reasoning strategies (imagination-based planning, latent policy learning, counterfactual reasoning) directly informs how WAMs can be architected to generate actions rather than just passive predictions. Specifically…)_ [abs](https://arxiv.org/abs/2606.00133) · [pdf](https://arxiv.org/pdf/2606.00133v1)
@@ -442,6 +445,7 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **HapTile: A Haptic-Informed Vision-Tactile-Language-Action Dataset for Contact-Rich Imitation Learning** — HapTile introduces a dual-level haptic integration for contact-rich manipulation: (1) fingertip tactile sensors at the robot end-effector provide contact-grounded visuotactile observations, and (2) haptic feedback to the teleoperator during demonstration collection improves the quality and physical realism of the… _(→ WAM: World Action Models must predict future world states and actions, but for contact-rich manipulation, critical physical dynamics—contact forces, pressure distribution, slip, deformation—are largely unobservable from vision alone. A WAM trained only on visual…)_ [abs](https://arxiv.org/abs/2606.04825) · [pdf](https://arxiv.org/pdf/2606.04825v1)
 - **OSCAR: Omni-Embodiment Action-Conditioned World Model for Robotics** — OSCAR introduces 2D kinematic skeleton rendering as a unified action-conditioning representation for video world models, which abstracts away embodiment-specific details (joint configurations, action spaces) into a common visual format that generalizes across different robot arms and even human hands. This is paired… _(→ WAM: The 2D kinematic skeleton representation directly addresses a core challenge for World Action Models: unifying action spaces across diverse embodiments. WAMs must reason about and generate actions for heterogeneous robots and possibly humans; skeleton…)_ [abs](https://arxiv.org/abs/2606.04463) · [pdf](https://arxiv.org/pdf/2606.04463v2)
 - **Exact equivariance, kept through training, buys zero-shot generalisation across the symmetry group** — Building a latent world model from exactly equivariant encoder and predictor yields a training loss that is provably invariant across the entire symmetry group, meaning training on a restricted slice of orientations mathematically determines the dynamics on the full orbit. Crucially, this exact equivariance survives… _(→ WAM: World Action Models are latent world models with action-conditioned prediction and planning. By constructing the WAM's encoder, dynamics predictor, and planner to be exactly equivariant under relevant symmetry groups (e.g., SE(3) for robotic manipulation)…)_ [abs](https://arxiv.org/abs/2606.03003) · [pdf](https://arxiv.org/pdf/2606.03003v1)
+- **Wow, wo, val! A Comprehensive Embodied World Model Evaluation Turing Test** — The paper introduces the Embodied Turing Test benchmark (Wow-wo-val) with a comprehensive evaluation protocol of 22 metrics across five core abilities (perception, planning, prediction, generalization, execution) for assessing video foundation models as world models. The most novel component is the Inverse Dynamic… _(→ WAM: The IDM Turing Test concept transfers directly and critically to World Action Models. WAMs must generate not just plausible future states but futures that are grounded in correct action dynamics. The IDM test provides a concrete, automated methodology to…)_ [abs](https://openreview.net/forum?id=uZD81YIUPz) · [pdf](https://openreview.net/pdf?id=uZD81YIUPz)
 - **Towards Interactive Video World Modeling: Frontiers, Challenges, Benchmarks, and Future Trends** — The paper systematically identifies and categorizes three crucial technical challenges for interactive world modeling: action-conditioned controllability, long-horizon interactions and memory, and action-following responsiveness for real-time interactivity. _(→ WAM: World Action Models fundamentally rely on action-conditioned state transitions. Addressing these three identified challenges—ensuring actions reliably control state evolution, maintaining coherent long-term memory across extended action sequences, and…)_ [abs](https://arxiv.org/abs/2606.01164) · [pdf](https://arxiv.org/pdf/2606.01164v1) · [code](https://github.com/liujiuming123/Awesome-Interactive-World-Model)
 - **Coarse-to-Fine Compositional Diffusion for Long-Horizon Planning** — Coarse-to-Fine Compositional Diffusion (CoFi) separates global structure formation from local detail refinement during inference-time compositional generation. It first aligns local denoised estimates around a shared coarse scaffold capturing long-range task-level arrangement, then diffuses this scaffold to an… _(→ WAM: World Action Models must generate long-horizon action sequences or world-state trajectories that are both globally coherent (the overall plan makes sense) and locally precise (each step's actions are physically valid). CoFi's coarse-to-fine composition…)_ [abs](https://arxiv.org/abs/2606.00837) · [pdf](https://arxiv.org/pdf/2606.00837v1) · [code](https://github.com/KAIST-Visual-AI-Group/SyncDiffusion)
 - **MBench: A Comprehensive Benchmark on Memory Capability for Video World Models** — A systematic decomposition of world model memory capability into three hierarchical and complementary dimensions—entity consistency, environment consistency, and causal consistency—further refined into 12 quantifiable sub-dimensions, enabling objective evaluation of long-term state retention in video world models… _(→ WAM: World Action Models must maintain coherent internal world states over extended action sequences, making memory capability critical. The three-dimensional decomposition transfers directly: (1) Entity consistency ensures WAMs track object identities and…)_ [abs](https://arxiv.org/abs/2606.00793) · [pdf](https://arxiv.org/pdf/2606.00793v1) · [code](https://github.com/study-overflow/MBench)
@@ -462,7 +466,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **Proprio: Latent Self-Scoring and Inference-Time Refinement for Physically Plausible Video Generation** — Proprio introduces a training-free, self-scoring mechanism for video generators by measuring flow residuals under controlled latent perturbations. The core insight is that a frozen generative model's own internal dynamics encode implicit physical knowledge: samples that are better explained by the generator's learned… _(→ WAM: World Action Models (WAMs) must predict physically plausible future states conditioned on actions, but like video generators, they often produce violations of physical laws. Proprio's self-scoring mechanism transfers directly: a WAM's flow residuals under…)_ [abs](https://arxiv.org/abs/2605.28230) · [pdf](https://arxiv.org/pdf/2605.28230v1)
 - **VLA-Hijack: A Transferable Patch Attack against Vision-Language-Action Models via Visual Proprioception Hijacking** — The core innovation is the 'VLA-Hijack' framework, which exploits the universal mechanism of visual proprioception (visual self-localization of the agent's embodiment) in VLA models to achieve highly transferable adversarial attacks. It concurrently optimizes Attention-Guided Proprioceptive Suppression to hide the… _(→ WAM: World Action Models (WAMs) inherently rely on visual proprioception to predict future world states conditioned on actions; if the model cannot locate the agent in the current frame, its action-conditioned predictions will fail. The 'visual proprioception…)_ [abs](https://arxiv.org/abs/2605.28083) · [pdf](https://arxiv.org/pdf/2605.28083v1)
 - **What-If World: A Causal Benchmark for General World Models in Embodied Scenarios** — A causal evaluation methodology for world simulators that tests whether models respond to controlled physical interventions by evaluating paired prompts (same scene, one variable changed) rather than scoring videos individually. The benchmark uses a four-part rubric (APEO: Adherence, Physics, Environment, Outcome) to… _(→ WAM: This paired-intervention evaluation paradigm transfers directly to World Action Models because their core purpose is predicting how the world changes under different actions. A WAM that produces visually plausible futures but fails to change its predictions…)_ [abs](https://arxiv.org/abs/2605.27589) · [pdf](https://arxiv.org/pdf/2605.27589v1)
-- **PEACE: A Planner-Executor Agent with Constraint Enforcement for UAVs** — A planner-executor architecture that decouples high-level LLM task planning from low-level control execution via a structured tool-calling interface, augmented with an explicit constraint enforcement layer (altitude limits, geofencing) and bounded replanning for recovery from action failures, while constructing a… _(→ WAM: The decoupling of planning from execution with an explicit constraint enforcement layer transfers directly to WAMs: a WAM generates predicted future world states conditioned on actions, but those predictions must respect physical and safety constraints (e.g…)_ [abs](https://arxiv.org/abs/2606.00104) · [pdf](https://arxiv.org/pdf/2606.00104v1) · [code](https://github.com/erdemuysalx/PEACE)
 
 ## 👥 Influential Authors & Groups
 - **[Pengfei Wan](https://www.semanticscholar.org/author/2363570130)** (3 papers · Kling Team, Kuaishou Technology) — Pengfei Wan's research focuses on long-horizon consistent video world generation, particularly through decoupled memory architectures and geometry-aware implicit memory to maintain spatio-temporal and geometric consistency in minute-long video generation.
