@@ -18,6 +18,7 @@ from email.mime.text import MIMEText
 
 from wam.config import Config
 from wam.logging import get_logger
+from wam.store import institutes as inst
 
 log = get_logger("notify.mailer")
 
@@ -130,9 +131,9 @@ def _top4_inline(scores: dict) -> str:
                        ("specialist", "spec"), ("inference_cost", "cost")])
 
 
-def _card(row, direction: str | None = None) -> str:
-    """Detailed featured card: title (+ links), direction tag, blurb, metrics."""
-    s = json.loads(row["scores_json"])
+def _card(row, cfg, direction: str | None = None) -> str:
+    """Detailed featured card: title (+ links), direction tag, institute tags, blurb, metrics."""
+    s = json.loads(row["scores_json"] or "{}")
     sm = json.loads(row["summary_json"] or "{}")
     links = _links(row["links_json"])
     link = links.get("abs") or links.get("pdf") or "#"
@@ -151,24 +152,47 @@ def _card(row, direction: str | None = None) -> str:
             f'<a href="{link}" style="font-weight:600;color:#1a4fcc;text-decoration:none;'
             f'font-size:14px">{row["title"]}</a>{_score_badge(s.get("weighted_total","?"))}'
             f'{_title_links(links, row["abstract"])}'
-            f'{dir_html}{blurb}'
+            f'{dir_html}{_inst_chips(row, cfg)}{blurb}'
             f'<div style="margin-top:6px">{_metric_badges(s)}</div></div>')
 
 
-def _compact(row) -> str:
-    """Compact grouped-tier item: score + title link + short description."""
-    s = json.loads(row["scores_json"])
-    tldr = json.loads(row["summary_json"] or "{}").get("tldr", "")
-    if len(tldr) > 160:
-        tldr = tldr[:160].rsplit(" ", 1)[0].rstrip(".,;: ") + "…"
-    link = (_links(row["links_json"]).get("abs") or _links(row["links_json"]).get("pdf") or "#")
+def _compact(row, cfg) -> str:
+    """Compact item: score (if any) + title link + institute tags + short description."""
+    s = json.loads(row["scores_json"] or "{}")
+    wt = s.get("weighted_total")
+    tldr = _clip(json.loads(row["summary_json"] or "{}").get("tldr", ""), 160)
+    links = _links(row["links_json"])
+    link = links.get("abs") or links.get("pdf") or "#"
     desc = f' — <span style="color:#444">{tldr}</span>' if tldr else ""
-    return (f'<div style="font-size:13px;margin:5px 0">'
-            f'<b>{s.get("weighted_total","?")}</b> · '
+    score = f'<b>{wt}</b> · ' if wt is not None else ""
+    top4 = (f'<div style="font-size:11px;color:#888;margin-top:1px">{_top4_inline(s)}</div>'
+            if s.get("wam") else "")
+    return (f'<div style="font-size:13px;margin:6px 0">{score}'
             f'<a href="{link}" style="color:#1a4fcc;text-decoration:none">{row["title"]}</a>'
-            f'{_title_links(_links(row["links_json"]), row["abstract"])}'
-            f'{desc}'
-            f'<div style="font-size:11px;color:#888;margin-top:1px">{_top4_inline(s)}</div></div>')
+            f'{_title_links(links, row["abstract"])}{desc}'
+            f'{_inst_chips(row, cfg)}{top4}</div>')
+
+
+def _inst_chips(row, cfg) -> str:
+    """Institute tags shown after a paper: watch-list 'top' labs highlighted, others muted."""
+    try:
+        insts = inst.paper_institutes(row["institutes_json"])
+    except (IndexError, KeyError):
+        return ""
+    if not insts:
+        return ""
+    chips = []
+    for name in insts[:4]:
+        if inst.match_top([name], cfg):
+            chips.append(
+                f'<span style="background:#fce8d6;color:#b25400;border-radius:9px;padding:1px 7px;'
+                f'font-size:10px;margin:0 3px 2px 0;display:inline-block;font-weight:600">'
+                f'🏛️ {name}</span>')
+        else:
+            chips.append(
+                f'<span style="background:#f2f2f2;color:#888;border-radius:9px;padding:1px 7px;'
+                f'font-size:10px;margin:0 3px 2px 0;display:inline-block">{name}</span>')
+    return f'<div style="margin-top:4px">{"".join(chips)}</div>'
 
 
 def _teams_html(conn: sqlite3.Connection) -> str:
@@ -194,17 +218,18 @@ def _teams_html(conn: sqlite3.Connection) -> str:
 def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) -> tuple[str, str]:
     today = today or date.today().isoformat()
     counts = dict(conn.execute("SELECT track, count(*) FROM papers GROUP BY track").fetchall())
-    new_core = conn.execute(
-        "SELECT count(*) FROM papers WHERE track='core' AND first_seen=?", (today,)).fetchone()[0]
-
-    # Core papers: new today; fall back to recent if none new.
-    sel = ("SELECT id, title, abstract, links_json, scores_json, summary_json FROM papers WHERE "
-           "track='core' AND scores_json IS NOT NULL")
+    # "New this issue" = papers first seen on THIS run's date. fetch stamps every freshly
+    # discovered paper with today's date, and runs ARE the issue boundaries — so this is robust
+    # in CI (no dependency on committed email archives). 0 new -> a small labelled recap, never
+    # the full top-N (which would make a quiet day identical to the previous one).
+    sel = ("SELECT id, title, abstract, links_json, scores_json, summary_json, institutes_json "
+           "FROM papers WHERE track='core' AND scores_json IS NOT NULL")
     order = " ORDER BY json_extract(scores_json,'$.weighted_total') DESC"
-    rows = conn.execute(sel + " AND first_seen=?" + order, (today,)).fetchall()
-    fallback = not rows
-    if fallback:
-        rows = conn.execute(sel + order + " LIMIT 60").fetchall()
+    since = (" AND first_seen = ?", today)
+    new_rows = conn.execute(sel + since[0] + order, (since[1],)).fetchall()
+    recap = not new_rows
+    rows = new_rows if not recap else conn.execute(sel + order + " LIMIT 3").fetchall()
+    new_core = len(new_rows)
 
     snap = conn.execute("SELECT max(snapshot_date) FROM fronts").fetchone()[0]
     # Rising directions, excluding the catch-all "Miscellaneous" bucket.
@@ -221,15 +246,38 @@ def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) 
                 dir_of[pid] = fr["name"]
 
     feat_thr = float(cfg.get("email.feature_threshold", 7.0))
-    featured = [r for r in rows if _wt(r) >= feat_thr][: int(cfg.get("email.max_featured", 8))]
-    feat_ids = {r["id"] for r in featured}
-    rest = [r for r in rows if r["id"] not in feat_ids][: int(cfg.get("email.max_grouped", 40))]
+
+    # Top-lab matches for every NEW-this-issue core/adjacent paper (id -> canonical tops).
+    lab_match: dict[str, list[str]] = {}
+    lab_rows: dict[str, sqlite3.Row] = {}
+    if not recap and bool(cfg.get("institutes.enabled", True)):
+        for r in conn.execute(
+                "SELECT id, title, abstract, links_json, scores_json, summary_json, "
+                "institutes_json FROM papers WHERE track IN ('core','adjacent')" + since[0]
+                + " AND institutes_json IS NOT NULL" + order, (since[1],)):
+            m = inst.match_top(inst.paper_institutes(r["institutes_json"]), cfg)
+            if m:
+                lab_match[r["id"]] = m
+                lab_rows[r["id"]] = r
+
+    if recap:
+        featured, rest, top_lab_low = rows, [], []
+    else:
+        featured = [r for r in rows if _wt(r) >= feat_thr][: int(cfg.get("email.max_featured", 8))]
+        feat_ids = {r["id"] for r in featured}
+        # "More new papers" = remaining core below threshold that are NOT from a top lab
+        # (top-lab low-scorers get their own bottom section → nothing appears twice).
+        rest = [r for r in rows if r["id"] not in feat_ids and r["id"] not in lab_match
+                ][: int(cfg.get("email.max_grouped", 40))]
+        # Bottom section: top-lab papers that didn't make the featured cut (low-score core +
+        # adjacent) — kept BECAUSE they're from a tracked lab, even with a low/no score.
+        top_lab_low = [lab_rows[i] for i in lab_match if i not in feat_ids]
 
     S = "font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif"
     parts = [f'<div style="max-width:640px;margin:auto;{S};color:#1a1a1a">']
     parts.append(f'<h1 style="font-size:20px;margin:0 0 8px">🤖 Embodied&amp;MM — {today}</h1>')
-    new_adj = conn.execute("SELECT count(*) FROM papers WHERE track='adjacent' AND first_seen=?",
-                           (today,)).fetchone()[0]
+    new_adj = conn.execute("SELECT count(*) FROM papers WHERE track='adjacent'" + since[0],
+                           (since[1],)).fetchone()[0]
     total_core, total_adj = counts.get("core", 0), counts.get("adjacent", 0)
 
     def _stat(n, lbl):
@@ -239,9 +287,20 @@ def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) 
     parts.append(
         '<table style="width:100%;border-collapse:collapse;margin:0 0 18px;background:#f5f8ff;'
         'border-radius:8px"><tr>'
-        + _stat(new_core + new_adj, "relevant today") + _stat(new_core, "core today")
+        + _stat(new_core + new_adj, "new this issue") + _stat(new_core, "new core")
         + _stat(total_core + total_adj, "relevant total") + _stat(total_core, "core total")
         + '</tr></table>')
+    # One-line status banner up top, so "what's new" is unmistakable at a glance.
+    if recap:
+        parts.append('<p style="font-size:13px;color:#b25400;background:#fff7ed;'
+                     'border-radius:6px;padding:8px 12px;margin:0 0 14px">'
+                     f'🔕 <b>No new papers today</b> ({today}) — showing a recap of top picks '
+                     'below.</p>')
+    else:
+        parts.append('<p style="font-size:13px;color:#1a4fcc;background:#f0f5ff;'
+                     'border-radius:6px;padding:8px 12px;margin:0 0 14px">'
+                     f'🆕 <b>{new_core} new core</b> + {new_adj} adjacent papers today '
+                     f'({today}).</p>')
     if hot:
         parts.append('<h2 style="font-size:15px;border-bottom:1px solid #eee;'
                      'padding-bottom:4px">📈 What\'s hot</h2>')
@@ -253,18 +312,22 @@ def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) 
         parts.append(items)
 
     # Tier 1 — featured (detailed cards)
-    label = "Top recent papers" if fallback else "Top new papers today"
-    parts.append(f'<h2 style="font-size:15px;border-bottom:1px solid #eee;padding-bottom:4px">'
-                 f'⭐ {label} (score ≥ {feat_thr:g})</h2>')
-    if not featured:
-        parts.append('<p style="font-size:13px;color:#666">Nothing above the feature threshold '
-                     '— see the rest below.</p>')
-    parts.extend(_card(r, dir_of.get(r["id"])) for r in featured)
+    if recap:
+        parts.append('<h2 style="font-size:15px;border-bottom:1px solid #eee;padding-bottom:4px">'
+                     '🔁 Recap — top picks <span style="color:#999;font-weight:400;font-size:13px">'
+                     '(no new papers since last issue)</span></h2>')
+    else:
+        parts.append('<h2 style="font-size:15px;border-bottom:1px solid #eee;padding-bottom:4px">'
+                     f'⭐ Top new papers (score ≥ {feat_thr:g})</h2>')
+        if not featured:
+            parts.append('<p style="font-size:13px;color:#666">No new paper cleared the feature '
+                         'threshold this issue — see the rest below.</p>')
+    parts.extend(_card(r, cfg, dir_of.get(r["id"])) for r in featured)
 
     # Tier 2 — the rest, grouped by research direction
     if rest:
         parts.append('<h2 style="font-size:15px;border-bottom:1px solid #eee;padding-bottom:4px;'
-                     'margin-top:18px">More core papers</h2>')
+                     'margin-top:18px">More new papers</h2>')
         if bool(cfg.get("email.group_lower_by_direction", True)):
             groups: dict[str, list] = {}
             for r in rest:
@@ -277,9 +340,18 @@ def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) 
                 parts.append(f'<p style="font-weight:600;font-size:13px;margin:12px 0 2px">'
                              f'{gname} <span style="color:#999;font-weight:400">'
                              f'({len(groups[gname])})</span></p>')
-                parts.extend(_compact(r) for r in groups[gname])
+                parts.extend(_compact(r, cfg) for r in groups[gname])
         else:
-            parts.extend(_compact(r) for r in rest)
+            parts.extend(_compact(r, cfg) for r in rest)
+
+    # --- Top labs that didn't reach the feature threshold (no overlap with the above) ---
+    if top_lab_low:
+        parts.append('<h2 style="font-size:15px;border-bottom:1px solid #eee;padding-bottom:4px;'
+                     'margin-top:18px">🏛️ Top labs — below the score threshold</h2>')
+        parts.append('<p style="font-size:12px;color:#888;margin:2px 0 6px">New work from a '
+                     'tracked top lab / team that didn\'t reach the feature threshold — surfaced '
+                     'anyway because of who\'s behind it.</p>')
+        parts.extend(_compact(r, cfg) for r in top_lab_low[:25])
 
     # --- Embodied / physical-AI news ---
     news = conn.execute(
@@ -303,9 +375,14 @@ def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) 
         'WAM (bold = weighted 2×): spd=inference speed, gen=generalist, spec=specialist, '
         'cost=inference cost, trust=trustworthiness, collab=collaborative, '
         'ctrl=controlled generation. “–” = the paper doesn’t address it.</p>')
-    parts.append(f'<p style="color:#999;font-size:12px;margin-top:8px">Awesome-Embodied&amp;MM · '
-                 f'<a href="https://github.com/wzii/Awesome_Embodied_MM">repo</a></p></div>')
-    subject = f"Embodied&MM — {today}: {new_core} new" + ("" if not fallback else " (recap)")
+    space = os.environ.get("HF_SPACE", "HardToFindAGoodUserName/Awesome_Embodied_MM")
+    space_url = f"https://huggingface.co/spaces/{space}"
+    parts.append(
+        '<p style="color:#999;font-size:12px;margin-top:8px">Awesome-Embodied&amp;MM · '
+        '<a href="https://github.com/wzii/Awesome_Embodied_MM" style="color:#1a4fcc">GitHub repo</a>'
+        f' · <a href="{space_url}" style="color:#1a4fcc">🤗 Chat &amp; database (HF Space)</a></p></div>')
+    subject = (f"Embodied&MM — {today}: no new papers (recap)" if recap
+               else f"Embodied&MM — {today}: {new_core} new")
     return subject, "".join(parts)
 
 

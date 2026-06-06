@@ -29,6 +29,8 @@ CREATE TABLE IF NOT EXISTS papers (
     pdf_hash               TEXT,
     benchmarks_extracted   INTEGER DEFAULT 0,        -- bool: benchmark/model extraction done
     links_checked          INTEGER DEFAULT 0,        -- bool: code/HF link lookup attempted
+    institutes_json        TEXT,                     -- JSON array of author affiliations (institutions)
+    institutes_extracted   INTEGER DEFAULT 0,        -- bool: affiliation extraction attempted
     updated_at             TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_papers_track ON papers(track);

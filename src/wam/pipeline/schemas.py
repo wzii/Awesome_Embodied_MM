@@ -64,6 +64,15 @@ class InnovationNote(BaseModel):
     transferable_to_wam: str = Field(description="why/how it could transfer to World Action Models")
 
 
+class InstituteResult(BaseModel):
+    """Distinct author affiliations (research institutions / companies) credited on a paper."""
+    institutes: list[str] = Field(
+        default_factory=list,
+        description="full canonical institution/company names from the author block, e.g. "
+        "'Google DeepMind', 'Stanford University', 'Tsinghua University', 'NVIDIA'. "
+        "Deduplicated. Empty list if none is stated.")
+
+
 # --- benchmark extraction (Phase 3b) ----------------------------------------
 class ModelVariant(BaseModel):
     model_name: str = Field(description="model/system name as called in the paper")

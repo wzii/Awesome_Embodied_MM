@@ -19,7 +19,9 @@ from wam.models import Links, PaperRecord
 
 log = get_logger("source.arxiv")
 
-API = "http://export.arxiv.org/api/query"
+# Must be HTTPS: the http:// endpoint now 301-redirects (and intermittently 503s on the
+# redirect), which surfaced as silent empty fetches. Hit https directly.
+API = "https://export.arxiv.org/api/query"
 
 
 def _build_query(categories: list[str], keywords: list[str]) -> str:

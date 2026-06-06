@@ -94,6 +94,13 @@ def needs_extract(conn: sqlite3.Connection, limit: int | None = None) -> list[sq
         "track IN ('core','adjacent') AND benchmarks_extracted=0", limit)).fetchall()
 
 
+def needs_institute(conn: sqlite3.Connection, limit: int | None = None) -> list[sqlite3.Row]:
+    # core + adjacent papers whose author affiliations haven't been extracted yet.
+    return conn.execute(_limit_clause(
+        "SELECT id, source, title, abstract, links_json FROM papers WHERE "
+        "track IN ('core','adjacent') AND institutes_extracted=0", limit)).fetchall()
+
+
 # --- stage writers -----------------------------------------------------------
 def _touch(conn: sqlite3.Connection, pid: str, **cols) -> None:
     cols["updated_at"] = datetime.now().isoformat(timespec="seconds")
@@ -120,3 +127,7 @@ def set_scores(conn, pid: str, scores_json: str) -> None:
 
 def set_innovation(conn, pid: str, innovation_json: str) -> None:
     _touch(conn, pid, innovation_json=innovation_json, status="done")
+
+
+def set_institutes(conn, pid: str, institutes_json: str) -> None:
+    _touch(conn, pid, institutes_json=institutes_json, institutes_extracted=1)

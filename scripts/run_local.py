@@ -13,7 +13,9 @@ resumable (each only processes rows that still need it), so re-running is cheap.
 from __future__ import annotations
 
 import argparse
+import os
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
@@ -24,9 +26,42 @@ from wam.store import Database  # noqa: E402
 from wam.store import papers as ps  # noqa: E402
 
 ALL_STAGES = ["fetch", "filter", "summarize", "analyze", "extract", "score", "innovation",
-              "links", "people", "trends", "render", "email"]
-LLM_STAGES = {"filter", "summarize", "analyze", "extract", "score", "innovation", "people",
-              "trends"}
+              "institute", "links", "people", "trends", "render", "email"]
+LLM_STAGES = {"filter", "summarize", "analyze", "extract", "score", "innovation", "institute",
+              "people", "trends"}
+
+
+def _emit_run_summary(log, stage_stats: list[tuple], elapsed: float) -> None:
+    """Print a token/cost/time recap and, in CI, append it to the GitHub step summary."""
+    from wam.logging import COST
+    head = (f"{stage_stats[0][0]}…{stage_stats[-1][0]}" if stage_stats else "—")
+    lines = [
+        f"## 🤖 WAM run summary — {head}",
+        "",
+        f"- **Wall time:** {elapsed:.0f}s ({elapsed / 60:.1f} min)",
+        f"- **LLM:** {COST.calls} calls · {COST.input_tokens:,}+{COST.output_tokens:,} tokens "
+        f"· **${COST.cost_usd:.4f}**",
+        "",
+        "| Stage | LLM calls | Cost (USD) | Time |",
+        "|---|--:|--:|--:|",
+    ]
+    for s, dt, dcost, dcalls in stage_stats:
+        lines.append(f"| {s} | {dcalls} | ${dcost:.4f} | {dt:.0f}s |")
+    if COST.by_model:
+        lines += ["", "| Model | Calls | Cost (USD) |", "|---|--:|--:|"]
+        for m, v in sorted(COST.by_model.items()):
+            lines.append(f"| {m} | {int(v['calls'])} | ${v['cost']:.4f} |")
+    md = "\n".join(lines)
+    path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if path:
+        try:
+            with open(path, "a", encoding="utf-8") as f:
+                f.write(md + "\n\n")
+            log.info("wrote run summary to GITHUB_STEP_SUMMARY")
+        except OSError as e:
+            log.warning("could not write step summary: %s", e)
+    log.info("run: %d stage(s) in %.0fs, %d LLM calls, $%.4f",
+             len(stage_stats), elapsed, COST.calls, COST.cost_usd)
 
 
 def main() -> int:
@@ -54,8 +89,11 @@ def main() -> int:
         from wam.llm import LLMClient
         client = LLMClient(cfg)
 
+    t_run = time.time()
+    stage_stats: list[tuple] = []
     with Database(cfg) as db:
         for stage in stages:
+            t0, c0, calls0 = time.time(), COST.cost_usd, COST.calls
             if stage == "fetch":
                 from wam.pipeline import fetch
                 new = fetch.run(cfg, db.conn)
@@ -85,6 +123,10 @@ def main() -> int:
                 from wam.pipeline import innovation
                 n = innovation.run(cfg, client, db.conn, limit=args.limit)
                 db.log_run("innovation", n, n, COST.cost_usd)
+            elif stage == "institute":
+                from wam.pipeline import institute
+                n = institute.run(cfg, client, db.conn, limit=args.limit)
+                db.log_run("institute", n, n, COST.cost_usd)
             elif stage == "links":
                 from wam.pipeline import links
                 n = links.run(cfg, db.conn, limit=args.limit)
@@ -112,8 +154,11 @@ def main() -> int:
                 db.log_run("email", 0, n)
             else:
                 log.warning("unknown stage: %s", stage)
+            stage_stats.append(
+                (stage, time.time() - t0, COST.cost_usd - c0, COST.calls - calls0))
 
     log.info(COST.summary())
+    _emit_run_summary(log, stage_stats, time.time() - t_run)
     return 0
 
 

@@ -13,6 +13,7 @@ import pandas as pd
 import streamlit as st
 
 from wam.config import Config
+from wam.store import institutes as inst
 
 _WAM_TOP4 = [("inference_speed", "spd"), ("generalist", "gen"),
              ("specialist", "spec"), ("inference_cost", "cost")]
@@ -50,31 +51,39 @@ def render(cfg: Config) -> None:
 
     # --- Top papers ---
     st.subheader("🏆 Top scored papers")
-    track = st.selectbox("Track", ["core", "adjacent", "all"], index=0)
+    c_trk, c_inst = st.columns([1, 2])
+    track = c_trk.selectbox("Track", ["core", "adjacent", "all"], index=0)
     where = "" if track == "all" else f"AND track='{track}'"
     rows = con.execute(
-        f"SELECT id, title, track, published, relevance, scores_json, links_json FROM papers "
-        f"WHERE scores_json IS NOT NULL {where} "
-        f"ORDER BY json_extract(scores_json,'$.weighted_total') DESC LIMIT 200").fetchall()
+        f"SELECT id, title, track, published, relevance, scores_json, links_json, "
+        f"institutes_json FROM papers WHERE scores_json IS NOT NULL {where} "
+        f"ORDER BY json_extract(scores_json,'$.weighted_total') DESC LIMIT 300").fetchall()
     recs = []
-    for pid, title, trk, pub, rel, sj, lj in rows:
+    for pid, title, trk, pub, rel, sj, lj, ij in rows:
         s = json.loads(sj or "{}")
         wam = s.get("wam", {})
         links = json.loads(lj or "{}")
+        top = inst.match_top(inst.paper_institutes(ij), cfg)
         rec = {"score": s.get("weighted_total"), "title": title, "track": trk,
-               "published": pub}
+               "published": pub, "top labs": ", ".join(top)}
         for key, lbl in _WAM_TOP4:
             v = wam.get(key)
             rec[lbl] = v if isinstance(v, int) else None
         rec["code"] = links.get("code") or ""
         rec["abs"] = links.get("abs") or ""
+        rec["_top"] = top
         recs.append(rec)
     if recs:
-        df = pd.DataFrame(recs)
+        all_labs = sorted({m for r in recs for m in r["_top"]})
+        picks = c_inst.multiselect("Top lab/institute (any)", all_labs, default=[])
+        view = [r for r in recs if (not picks or any(m in picks for m in r["_top"]))]
+        df = pd.DataFrame([{k: v for k, v in r.items() if k != "_top"} for r in view])
         st.dataframe(df, use_container_width=True, hide_index=True, column_config={
             "abs": st.column_config.LinkColumn("abs"),
             "code": st.column_config.LinkColumn("code")})
-        st.caption("Score = weighted total. spd/gen/spec/cost = top-4 WAM dims (blank = N/A).")
+        st.caption(f"{len(view)} of {len(recs)} scored papers · score = weighted total · "
+                   "spd/gen/spec/cost = top-4 WAM dims (blank = N/A) · "
+                   "'top labs' = matched watch-list institutes.")
     else:
         st.info("No scored papers for this track yet.")
 

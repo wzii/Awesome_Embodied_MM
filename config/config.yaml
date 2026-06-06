@@ -33,6 +33,7 @@ models:
     extract: cheap      # deepseek-v4-flash: fast + JSON-reliable + faithful for table extraction
     score: xstrong      # flagship two-layer scoring -> gpt-5.5
     innovation: mid
+    institute: cheap    # read the PDF author block -> list affiliations (cheap, high volume)
     front_summary: strong
     qa: strong          # TODO: pick a low-latency Q&A model in Phase 7 (deferred)
   defaults:
@@ -92,6 +93,9 @@ sources:
     api_key_env: "SEMANTIC_SCHOLAR_API_KEY"   # optional; higher rate limits if set
   papers_with_code:
     enabled: true
+  openreview:
+    enabled: true
+    per_term: 30             # forum-level hits per keyword (api2 search, source=forum)
   news:
     enabled: true
     feeds:
@@ -128,6 +132,38 @@ trends:
   sim_threshold: 0.62        # cosine edge threshold for the direction graph
   min_front_size: 3          # ignore clusters smaller than this
   window_days: 30            # momentum = recent window vs prior window
+
+# Top labs/teams/institutes to spotlight. Each paper's author affiliations are extracted by
+# the `institute` stage (stored raw); these entries are matched alias-aware (case-insensitive
+# substring) at render/email time, so the watch-list can change without re-extracting. A paper
+# from any of these is featured in the email's "From top labs" column + filterable on the HF
+# Space — even if its score is below the email threshold.
+institutes:
+  enabled: true
+  top:
+    - {name: "Google DeepMind",            aliases: ["deepmind", "google brain"]}
+    - {name: "Google Research",            aliases: ["google research"]}
+    - {name: "NVIDIA",                     aliases: ["nvidia"]}
+    - {name: "Meta (FAIR)",                aliases: ["fair", "meta ai", "facebook ai research"]}
+    - {name: "Microsoft Research",         aliases: ["microsoft research"]}
+    - {name: "OpenAI",                     aliases: ["openai"]}
+    - {name: "Physical Intelligence",      aliases: ["physical intelligence"]}
+    - {name: "Figure AI",                  aliases: ["figure ai", "figure robotics"]}
+    - {name: "Tesla Optimus",              aliases: ["tesla"]}
+    - {name: "1X Technologies",            aliases: ["1x technologies"]}
+    - {name: "Skild AI",                   aliases: ["skild"]}
+    - {name: "Toyota Research Institute",  aliases: ["toyota research"]}
+    - {name: "Stanford University",        aliases: ["stanford"]}
+    - {name: "UC Berkeley",                aliases: ["berkeley"]}
+    - {name: "MIT",                        aliases: ["massachusetts institute of technology"]}
+    - {name: "Carnegie Mellon (CMU)",      aliases: ["carnegie mellon"]}
+    - {name: "Princeton University",       aliases: ["princeton"]}
+    - {name: "University of Washington",   aliases: ["university of washington"]}
+    - {name: "Tsinghua University",        aliases: ["tsinghua"]}
+    - {name: "Peking University",          aliases: ["peking university"]}
+    - {name: "Shanghai AI Laboratory",     aliases: ["shanghai ai lab", "shanghai artificial intelligence"]}
+    - {name: "ByteDance",                  aliases: ["bytedance"]}
+    - {name: "Galaxea / Galbot",           aliases: ["galbot", "galaxea"]}
 
 people:
   min_papers: 2              # influential if on >= N tracked papers

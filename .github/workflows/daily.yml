@@ -1,8 +1,8 @@
-name: WAM bi-daily
+name: WAM daily
 
 on:
   schedule:
-    - cron: "0 13 */2 * *"      # every other day at 13:00 UTC (after arXiv announcements)
+    - cron: "0 13 * * *"        # daily at 13:00 UTC (after arXiv announcements)
   workflow_dispatch: {}          # manual trigger
 
 # Never let two daily runs race on the committed DB.
@@ -49,7 +49,7 @@ jobs:
       - name: Fetch + analyze
         run: |
           python scripts/run_local.py \
-            --stages fetch,filter,summarize,analyze,extract,score,innovation,links
+            --stages fetch,filter,summarize,analyze,extract,score,innovation,institute,links
       - name: Checkpoint commit (data)
         run: |
           git add data/ && git commit -m "data: daily fetch+analysis $(date -u +%F)" || echo "no changes"
