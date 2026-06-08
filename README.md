@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-06-07 · **Tracked:** 162 core · 193 adjacent ·
-95 news · **5332** benchmark rows across **2009** model
+**Last updated:** 2026-06-08 · **Tracked:** 170 core · 200 adjacent ·
+98 news · **5632** benchmark rows across **2084** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -55,6 +55,7 @@ variants · **30** authors
 | **7.15** | Dexora: Open-source VLA for High-DoF Bimanual Dexterity | 2026-05-18 | spd – · gen 7 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.18722) · [pdf](https://arxiv.org/pdf/2605.18722v1) |
 | **7.14** | FineVLA: Fine-Grained Instruction Alignment for Steerable Vision-Language-Action Policies | 2026-05-26 | spd – · gen 6 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.27284) · [pdf](https://arxiv.org/pdf/2605.27284v1) · [code](https://github.com/NVIDIA/Isaac-GR00T) |
 | **7.13** | MAD: Mapping-Aware World Models for Agile Quadrotor Flight | 2026-06-03 | spd 7 · gen 3 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.04534) · [pdf](https://arxiv.org/pdf/2606.04534v1) |
+| **7.13** | RhinoVLA Technical Report | 2026-06-05 | spd 8 · gen 6 · spec 4 · cost 7 | [abs](https://arxiv.org/abs/2606.07383) · [pdf](https://arxiv.org/pdf/2606.07383v1) · [code](https://github.com/HuixiAI/RhinoVLA) |
 | **7.1** | GeoAlign: Beyond Semantics with State-Guided Spatial Alignment in VLA Models | 2026-06-02 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.03240) · [pdf](https://arxiv.org/pdf/2606.03240v1) |
 | **7.09** | World-Task Factorization for Robot Learning | 2026-06-01 | spd – · gen 7 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.02027) · [pdf](https://arxiv.org/pdf/2606.02027v1) |
 | **7.09** | EXPO-FT: Sample-Efficient Reinforcement Learning Finetuning for Vision-Language-Action Models | 2026-05-25 | spd – · gen 4 · spec 8 · cost – | [abs](https://arxiv.org/abs/2605.25477) · [pdf](https://arxiv.org/pdf/2605.25477v1) |
@@ -79,7 +80,6 @@ variants · **30** authors
 | **6.78** | World-Ego Modeling for Long-Horizon Evolution in Hybrid Embodied Tasks | 2026-05-19 | spd – · gen 5 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.19957) · [pdf](https://arxiv.org/pdf/2605.19957v1) · [code](https://github.com/ZGCA-HMI-Lab/WEM) |
 | **6.76** | Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies | 2026-05-31 | spd – · gen 5 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2606.01151) · [pdf](https://arxiv.org/pdf/2606.01151v1) |
 | **6.76** | LVDrive: Latent Visual Representation Enhanced Vision-Language-Action Autonomous Driving Model | 2026-05-21 | spd 3 · gen 2 · spec 8 · cost – | [abs](https://arxiv.org/abs/2605.22089) · [pdf](https://arxiv.org/pdf/2605.22089v1) · [code](https://github.com/Thinklab-SJTU/Bench2Drive) |
-| **6.75** | OneVLA: A Unified Framework for Embodied Tasks | 2026-05-31 | spd – · gen 7 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.01241) · [pdf](https://arxiv.org/pdf/2606.01241v1) · [code](https://github.com/linglingxiansen/OneVLA) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _523 results_
+#### LIBERO  ·  _569 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FLOWER + Ours _(CALVIN ABC)_ | — | success rate (3 tasks) | 91.2 | authors |
 | FLOWER _(CALVIN ABC)_ | — | success rate (3 tasks) | 90.5 | authors |
 
-#### RoboTwin  ·  _90 results_
+#### RoboTwin  ·  _94 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -125,14 +125,14 @@ _Model identity = (model, training data); same name on different data is a disti
 | Flash-WAM _(LingBot-VA)_ | — | per-chunk latency | 348.0 | authors |
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
 | SANTS _(RoboTwin 2.0 + real-robot data)_ | — | success rate | 94.4 | authors |
+| AdaWAM _(LIBERO + RoboTwin 2.0 + real-world ALOHA/PiPER)_ | Clean Overall SR | success rate | 93.11 | authors |
 | WLA-0 _(RoboTwin 2.0 mixed)_ | — | success rate | 92.94 | authors |
 | GeoSem-WAM _(RoboTwin 2.0)_ | all 50 tasks | Success Rate | 92.94 | authors |
 | Lingbot-VA | — | success rate | 92.9 | 3rd-party |
 | GeoSem-WAM _(RoboTwin 2.0)_ | all 50 tasks | Average Success Rate | 92.52 | authors |
 | LingBot-VA | — | success rate | 92.2 | 3rd-party |
-| Fast-WAM | — | success rate | 91.88 | 3rd-party |
 
-#### SimplerEnv  ·  _78 results_
+#### SimplerEnv  ·  _89 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -142,10 +142,10 @@ _Model identity = (model, training data); same name on different data is a disti
 | Afford-VLA _(LIBERO + Affordance dataset)_ | Put Eggplant | Success rate | 96.8 | authors |
 | GeoAlign _(robot-domain RGB-D + Dpol (SimplerEnv-Fractal demonstrations))_ | — | unweighted average success rate | 85.3 | authors |
 | EO-1 | Pick up | trajectory coverage (TC) | 84.0 | authors |
+| Coarse-to-Control _(SimplerEnv-WidowX)_ | — | success rate | 83.3 | authors |
 | GR00T-N1.6 | Pick up | trajectory coverage under failure (TCF) | 83.0 | authors |
-| ElegantVLA _(CogACT)_ | Visual Matching | success rate | 77.59 | authors |
-| SpatialVLA + Ours _(Bridge)_ | Eggplant | success rate | 75.0 | authors |
-| ElegantVLA _(GR00T)_ | Google Robot | success rate | 75.0 | authors |
+| GR00T-N1.6-LARA _(GR00T-N1.6 base + LARA post-training on target)_ | — | success rate | 79.9 | authors |
+| GR00T-N1.6 _(large-scale pre-train + target post-train)_ | — | success rate | 78.9 | 3rd-party |
 
 #### RLBench  ·  _33 results_
 
@@ -299,6 +299,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | RealisDance-DiT | — | Temporal Flicker | 97.76 | 3rd-party |
 | Animate-X | — | Temporal Flicker | 97.4 | 3rd-party |
 
+#### EGO STATIC SCENE  ·  _45 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| AnchorWorld _(200K single-person action videos + 101K MultiCamVideo UE + Ego-Exo4D + LEMMA)_ | — | Mat. Pix.(K) | 4493.4 | authors |
+| CaM-Ego _(same as AnchorWorld (egocentric data))_ | — | Mat. Pix.(K) | 4379.4 | 3rd-party |
+| PlayerOne-Scene _(same as AnchorWorld (re-implemented with anchor-view injection))_ | — | Mat. Pix.(K) | 4334.8 | 3rd-party |
+| PlayerOne _(same as AnchorWorld (re-implemented))_ | — | Mat. Pix.(K) | 3961.6 | 3rd-party |
+| CaM-UE _(official UE dataset)_ | — | Mat. Pix.(K) | 3706.9 | 3rd-party |
+| AnchorWorld _(200K single-person action videos + 101K MultiCamVideo UE + Ego-Exo4D + LEMMA)_ | — | PSNR | 16.06 | authors |
+| CaM-Ego _(same as AnchorWorld (egocentric data))_ | — | PSNR | 15.16 | 3rd-party |
+| PlayerOne-Scene _(same as AnchorWorld (re-implemented with anchor-view injection))_ | — | PSNR | 14.38 | 3rd-party |
+| PlayerOne _(same as AnchorWorld (re-implemented))_ | — | PSNR | 13.26 | 3rd-party |
+| CaM-UE _(official UE dataset)_ | — | PSNR | 11.57 | 3rd-party |
+
 #### SpelkeBench  ·  _42 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -314,6 +329,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | ProMerge | point-prompted movable object segmentation | mIoU | 0.431 | 3rd-party |
 | CutLER | point-prompted movable object segmentation | mIoU | 0.423 | 3rd-party |
 
+#### Perceptual Evaluation (human study)  ·  _42 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| StreamForce _(Synthetic force-conditioned video + Pexels image-force pairs)_ | Global Force - Change | Force Adherence | 86.5 | authors |
+| StreamForce _(Synthetic force-conditioned video + Pexels image-force pairs)_ | Global Force - Change | Realism / Physics | 77.3 | authors |
+| StreamForce _(Synthetic force-conditioned video + Pexels image-force pairs)_ | Global Force - Change | Visual Quality | 76.9 | authors |
+| ForcePrompt (reproduced on Wan2.2) _(Synthetic force videos (ForcePrompt pipeline))_ | Global Force - Preserve | Force Adherence | 74.2 | 3rd-party |
+| Kling 1.5 Motion Brush | Local Force - Preserve | Visual Quality | 52.3 | 3rd-party |
+| ForcePrompt (reproduced on Wan2.2) _(Synthetic force videos (ForcePrompt pipeline))_ | Global Force - Preserve | Realism / Physics | 47.3 | 3rd-party |
+| Kling 1.5 Motion Brush | Local Force - Preserve | Realism / Physics | 45.8 | 3rd-party |
+| Kling 1.5 Motion Brush | Local Force - Preserve | Force Adherence | 44.2 | 3rd-party |
+| Wan2.2 TI2V | Global Force - Preserve | Visual Quality | 40.4 | 3rd-party |
+| ForcePrompt (reproduced on Wan2.2) _(Synthetic force videos (ForcePrompt pipeline))_ | Global Force - Preserve | Visual Quality | 38.8 | 3rd-party |
+
 #### NAVSIM  ·  _40 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -328,6 +358,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | Ours† _(OpenScene (NAVSIM train split))_ | planning | PDMS | 91.8 | authors |
 | DriveMA-4B _(NAVSIM trainval)_ | — | PDMS | 91.2 | authors |
 | DriveMA-2B _(NAVSIM trainval)_ | — | PDMS | 90.5 | authors |
+
+#### EGO DYNAMIC SCENE  ·  _40 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| AnchorWorld _(200K single-person action videos + 101K MultiCamVideo UE + Ego-Exo4D + LEMMA)_ | — | Mat. Pix.(K) | 4634.6 | authors |
+| CaM-UE _(official UE dataset)_ | — | Mat. Pix.(K) | 4466.5 | 3rd-party |
+| CaM-Ego _(same as AnchorWorld (egocentric data))_ | — | Mat. Pix.(K) | 4459.0 | 3rd-party |
+| PlayerOne-Scene _(same as AnchorWorld (re-implemented with anchor-view injection))_ | — | Mat. Pix.(K) | 4455.4 | 3rd-party |
+| AnchorWorld _(200K single-person action videos + 101K MultiCamVideo UE + Ego-Exo4D + LEMMA)_ | — | PSNR | 16.37 | authors |
+| CaM-Ego _(same as AnchorWorld (egocentric data))_ | — | PSNR | 14.57 | 3rd-party |
+| PlayerOne-Scene _(same as AnchorWorld (re-implemented with anchor-view injection))_ | — | PSNR | 14.24 | 3rd-party |
+| CaM-UE _(official UE dataset)_ | — | PSNR | 12.82 | 3rd-party |
+| PlayerOne-Scene _(same as AnchorWorld (re-implemented with anchor-view injection))_ | — | RRE | 1.784 | 3rd-party |
+| CaM-Ego _(same as AnchorWorld (egocentric data))_ | — | RRE | 1.636 | 3rd-party |
 
 #### InterBench  ·  _39 results_
 
@@ -389,53 +434,9 @@ _Model identity = (model, training data); same name on different data is a disti
 | Redirector _(synthetic)_ | 10 ReCamMaster camera trajectory types | Dyn-MEt3R | 0.8497 | 3rd-party |
 | TrajectoryCrafter | 10 ReCamMaster camera trajectory types | Dyn-MEt3R | 0.8244 | 3rd-party |
 
-#### 3DEditBench  ·  _36 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| 3WM | 3D object manipulation | PSNR | 22.73 | authors |
-| LightningDrag | 3D object manipulation | PSNR | 19.52 | 3rd-party |
-| DiffusionHandles | 3D object manipulation | PSNR | 17.82 | 3rd-party |
-| DragAnything | 3D object manipulation | PSNR | 15.13 | 3rd-party |
-| 3WM | 3D object manipulation | Edit Adherence (EA) | 0.797 | authors |
-| PSI _(3 million real-world RGB video clips)_ | object manipulation (PSI segment, PSI editing model) | EA | 0.776 | authors |
-| PSI _(3 million real-world RGB video clips)_ | object manipulation (PSI segment, PSI editing model) | SSIM | 0.736 | authors |
-| LightningDrag | 3D object manipulation | Edit Adherence (EA) | 0.722 | 3rd-party |
-| DasS | object manipulation (PSI segment, DasS editing model) | SSIM | 0.707 | authors |
-| PasC | object manipulation (PSI segment, PasC editing model) | EA | 0.679 | authors |
-
-#### Verse-Bench  ·  _35 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Ovi 1.1 | — | Sync-D | 7.979 | 3rd-party |
-| daVinci-MagiHuman | — | Sync-D | 7.816 | 3rd-party |
-| MoVA | — | Sync-D | 7.808 | 3rd-party |
-| NAVA | — | Sync-C | 7.791 | authors |
-| LTX 2.3 | — | Sync-D | 7.69 | 3rd-party |
-| NAVA | — | Sync-D | 7.566 | authors |
-| Ovi 1.1 | — | Sync-C | 7.484 | 3rd-party |
-| MoVA | — | Sync-C | 7.289 | 3rd-party |
-| LTX 2.3 | — | Sync-C | 7.248 | 3rd-party |
-| MoVA | — | PQ | 7.233 | 3rd-party |
-
-#### Trajectory100  ·  _35 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Wan-2.1-I2V | — | FVD | 1421.87 | 3rd-party |
-| Tora | — | FVD | 957.81 | 3rd-party |
-| RealisDance-DiT | — | FVD | 758.08 | 3rd-party |
-| MeshToken _(internal 300K video clips)_ | — | FVD | 695.62 | authors |
-| RealisMotion | — | FVD | 314.59 | 3rd-party |
-| Wan-2.1-I2V | — | FID | 33.06 | 3rd-party |
-| RealisDance-DiT | — | FID | 23.02 | 3rd-party |
-| RealisMotion | — | PSNR | 22.57 | 3rd-party |
-| MeshToken _(internal 300K video clips)_ | — | FID | 22.13 | authors |
-| Tora | — | FID | 21.51 | 3rd-party |
-
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
+- **ActionMap: Robot Policy Learning via Voxel Action Heatmap** — ActionMap replaces the unstructured single-point action decoder in VLA models with a voxel heatmap action head that predicts a probability distribution over a discretized 3D action space, explicitly exploiting the geometric proximity of neighboring actions rather than treating the action space as unstructured… _(→ WAM: In World Action Models, the action conditioning mechanism is critical for predicting how actions transform world states. The voxel heatmap representation can transfer in two ways: (1) as a structured action encoding input to the world model—replacing flat…)_ [abs](https://arxiv.org/abs/2606.06904) · [pdf](https://arxiv.org/pdf/2606.06904v1) · [code](https://github.com/showlab/ActionMap)
 - **World Models: A Comprehensive Survey of Architectures, Methodologies, Reasoning Paradigms, and Applications** — A unifying multi-axis taxonomy for world models that integrates architecture, methodological families, reasoning strategies (particularly the convergence of chain-of-thought reasoning with world-model imagination), and applications, providing a structured framework to map the fragmented landscape of world model… _(→ WAM: The taxonomy's explicit categorization of reasoning strategies (imagination-based planning, latent policy learning, counterfactual reasoning) directly informs how WAMs can be architected to generate actions rather than just passive predictions. Specifically…)_ [abs](https://arxiv.org/abs/2606.00133) · [pdf](https://arxiv.org/pdf/2606.00133v1)
 - **PhAIL: A Real-Robot VLA Benchmark and Distributional Methodology** — Replacing binary success rate metrics with a distributional evaluation methodology based on the time-to-success cumulative distribution function (CDF), scored via Human-Relative Throughput (HRT) and compared using macro-averaged Kolmogorov-Smirnov significance tests to resolve close model comparisons with small sample… _(→ WAM: Evaluating World Action Models often relies on binary task completion metrics, which fail to capture the speed-efficiency trade-offs of different policies. By adopting the time-to-success CDF and HRT scoring, WAM evaluations can distinguish between models…)_ [abs](https://arxiv.org/abs/2605.29710) · [pdf](https://arxiv.org/pdf/2605.29710v1) · [code](https://github.com/Positronic-Robotics/phail-paper)
 - **VLAConf: Calibrated Task-Success Confidence for Vision-Language-Action Models** — A lightweight, one-class discriminative confidence head that leverages frozen pretrained VLA internal representations and step-conditioned modeling to estimate step-wise anomaly scores in a single forward pass, avoiding the computational overhead of resampling and generalizing to continuous action spaces. _(→ WAM: World Action Models (WAMs) often suffer from compounding errors over long horizons and need to know when their world state predictions become unreliable. VLAConf's lightweight confidence head can be directly attached to a WAM's internal representations to…)_ [abs](https://arxiv.org/abs/2605.29605) · [pdf](https://arxiv.org/pdf/2605.29605v1)
@@ -465,7 +466,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **OSP-Next: Efficient High-Quality Video Generation with Sparse Sequence Parallelism, HiF8 Quantization, and Reinforcement Learning** — OSP-Next introduces a hybrid full-sparse attention architecture (Skiparse-2D Attention) that applies fixed-pattern token-wise and group-wise sparsity along spatial dimensions while remaining natively compatible with FlashAttention kernels, paired with Sparse Sequence Parallelism (SSP) that partitions subsequences… _(→ WAM: World Action Models must process long sequences of observations and actions in real-time, making the quadratic cost of full attention prohibitive. Skiparse-2D's fixed sparse pattern—leveraging spatial locality while preserving FlashAttention…)_ [abs](https://arxiv.org/abs/2605.28691) · [pdf](https://arxiv.org/pdf/2605.28691v1) · [code](https://github.com/PKU-YuanGroup/OSP-Next)
 - **Proprio: Latent Self-Scoring and Inference-Time Refinement for Physically Plausible Video Generation** — Proprio introduces a training-free, self-scoring mechanism for video generators by measuring flow residuals under controlled latent perturbations. The core insight is that a frozen generative model's own internal dynamics encode implicit physical knowledge: samples that are better explained by the generator's learned… _(→ WAM: World Action Models (WAMs) must predict physically plausible future states conditioned on actions, but like video generators, they often produce violations of physical laws. Proprio's self-scoring mechanism transfers directly: a WAM's flow residuals under…)_ [abs](https://arxiv.org/abs/2605.28230) · [pdf](https://arxiv.org/pdf/2605.28230v1)
 - **VLA-Hijack: A Transferable Patch Attack against Vision-Language-Action Models via Visual Proprioception Hijacking** — The core innovation is the 'VLA-Hijack' framework, which exploits the universal mechanism of visual proprioception (visual self-localization of the agent's embodiment) in VLA models to achieve highly transferable adversarial attacks. It concurrently optimizes Attention-Guided Proprioceptive Suppression to hide the… _(→ WAM: World Action Models (WAMs) inherently rely on visual proprioception to predict future world states conditioned on actions; if the model cannot locate the agent in the current frame, its action-conditioned predictions will fail. The 'visual proprioception…)_ [abs](https://arxiv.org/abs/2605.28083) · [pdf](https://arxiv.org/pdf/2605.28083v1)
-- **What-If World: A Causal Benchmark for General World Models in Embodied Scenarios** — A causal evaluation methodology for world simulators that tests whether models respond to controlled physical interventions by evaluating paired prompts (same scene, one variable changed) rather than scoring videos individually. The benchmark uses a four-part rubric (APEO: Adherence, Physics, Environment, Outcome) to… _(→ WAM: This paired-intervention evaluation paradigm transfers directly to World Action Models because their core purpose is predicting how the world changes under different actions. A WAM that produces visually plausible futures but fails to change its predictions…)_ [abs](https://arxiv.org/abs/2605.27589) · [pdf](https://arxiv.org/pdf/2605.27589v1)
 
 ## 👥 Influential Authors & Groups
 - **[Pengfei Wan](https://www.semanticscholar.org/author/2363570130)** (3 papers · Kling Team, Kuaishou Technology) — Pengfei Wan's research focuses on long-horizon consistent video world generation, particularly through decoupled memory architectures and geometry-aware implicit memory to maintain spatio-temporal and geometric consistency in minute-long video generation.
@@ -495,6 +495,9 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Jai Relan](https://www.semanticscholar.org/author/2439647839)** (2 papers · rellingsystems.com) — Jai Relan researches vision-language-action (VLA) policies for robot manipulation, focusing on improving sample efficiency and safety. His work proposes primitive-aware training to enable few-shot transfer to novel assembly tasks and introduces a conformal…
 
 ## 📰 Embodied / Physical-AI News
+- [Daimon Robotics and Galbot jointly launches RobOmni for benchmarking tactile perception and dexterous manipulation](https://www.therobotreport.com/daimon-robotics-and-galbot-jointly-launches-robomni-for-benchmarking-tactile-perception-and-dexterous-manipulation/) — _The Robot Report_
+- [The crash that vanished: control and emergence in a five-model economy](https://huggingface.co/blog/build-small-hackathon/thousand-token-wood-sim-v3) — _Hugging Face - Blog_
+- [The Open Source Community is backing OpenEnv for Agentic RL](https://huggingface.co/blog/openenv-agentic-rl) — _Hugging Face - Blog_
 - [AGIBOT holds World Challenge 2026 to see how AI models perform on real tasks](https://www.therobotreport.com/agibot-holds-world-challenge-2026-see-how-ai-models-perform-real-tasks/) — _The Robot Report_
 - [Sponsors especially OPENAI CODEX voucher usage for codex - openAI challange](https://huggingface.co/blog/build-small-hackathon/sponsors-vouchers) — _Hugging Face - Blog_
 - [Robots can enhance manufacturing workers rather than replace them](https://www.therobotreport.com/robots-can-enhance-manufacturing-workers-rather-than-replace-them/) — _The Robot Report_
@@ -507,9 +510,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Proteus gets natural-language ability as Amazon expands European robot deployments](https://www.therobotreport.com/proteus-gets-natural-language-ability-amazon-expands-europe-robot-deployments/) — _The Robot Report_
 - [Generalist raises $400M to scale its general-purpose AI models](https://www.therobotreport.com/generalist-raises-400m-to-scale-its-general-purpose-ai-models/) — _The Robot Report_
 - [Voyager Technologies acquires Astrobotic to advance lunar initiatives](https://www.therobotreport.com/voyager-technologies-acquires-astrobotic-advance-lunar-initiatives/) — _The Robot Report_
-- [Nemotron 3.5 Content Safety: Customizable Multimodal Safety for Global Enterprise AI](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety) — _Hugging Face - Blog_
-- [EVA-Bench Data 2.0: 3 Domains, 121 Tools, 213 Scenarios](https://huggingface.co/blog/ServiceNow-AI/eva-bench-data) — _Hugging Face - Blog_
-- [Designing the hf CLI as an agent-optimized way to work with the Hub](https://huggingface.co/blog/hf-cli-for-agents) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
