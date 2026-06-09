@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-06-08 · **Tracked:** 170 core · 200 adjacent ·
-98 news · **5632** benchmark rows across **2084** model
+**Last updated:** 2026-06-09 · **Tracked:** 200 core · 219 adjacent ·
+104 news · **6165** benchmark rows across **2293** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -31,7 +31,11 @@ variants · **30** authors
 | Score | Paper | Published | Top-4 (spd·gen·spec·cost) | Links |
 |------:|-------|-----------|---------------------------|-------|
 | **8.23** | Flash-WAM: Modality-Aware Distillation for World Action Models | 2026-06-03 | spd 9 · gen 6 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2606.05254) · [pdf](https://arxiv.org/pdf/2606.05254v1) |
+| **7.73** | BLUE: Toward Better Language Use in Efficient Vision-Language-Action Models for Autonomous Driving | 2026-06-07 | spd 8 · gen 3 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2606.08684) · [pdf](https://arxiv.org/pdf/2606.08684v1) · [code](https://github.com/George-Ling3/BLUE) |
+| **7.67** | vla.cpp: A Unified Inference Runtime for Vision-Language-Action Models | 2026-06-06 | spd 8 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2606.08094) · [pdf](https://arxiv.org/pdf/2606.08094v1) · [code](https://github.com/ggml-org/llama.cpp) |
 | **7.66** | Cosmos 3: Omnimodal World Models for Physical AI | 2026-06-01 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.02800) · [pdf](https://arxiv.org/pdf/2606.02800v1) · [code](https://github.com/nvidia/cosmos) |
+| **7.61** | AHA-WAM:Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing | 2026-06-08 | spd 8 · gen 3 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.09811) · [pdf](https://arxiv.org/pdf/2606.09811v1) |
+| **7.61** | GEAR-VLA: Learning Geometry-Aware Action Representations for Generalizable Robotic Manipulation | 2026-06-07 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.08530) · [pdf](https://arxiv.org/pdf/2606.08530v1) · [code](https://github.com/babynabeauty/GEAR-VLA) |
 | **7.58** | Revisiting Embodied Chain-of-Thought for Generalizable Robot Manipulation | 2026-06-02 | spd – · gen 6 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.03784) · [pdf](https://arxiv.org/pdf/2606.03784v2) |
 | **7.57** | SANTS: A State-Adaptive Scheduler for World Action Models | 2026-05-27 | spd 8 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2605.27947) · [pdf](https://arxiv.org/pdf/2605.27947v1) |
 | **7.52** | World-Language-Action Model for Unified World Modeling, Language Reasoning, and Action Synthesis | 2026-06-04 | spd 8 · gen 7 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.05979) · [pdf](https://arxiv.org/pdf/2606.05979v1) · [code](https://github.com/SJTU-DENG-Lab/WLA) |
@@ -51,6 +55,7 @@ variants · **30** authors
 | **7.23** | ProgVLA: Progress-Aware Robot Manipulation Skill Learning | 2026-05-27 | spd – · gen 6 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2605.28231) · [pdf](https://arxiv.org/pdf/2605.28231v1) |
 | **7.22** | DriveMA: Driving Vision-Language-Action Models with verifiable Meta-Actions | 2026-05-29 | spd – · gen 3 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2605.31271) · [pdf](https://arxiv.org/pdf/2605.31271v1) |
 | **7.21** | ElegantVLA: Learning When to Think for Efficient Vision-Language-Action Models | 2026-05-28 | spd 8 · gen 6 · spec – · cost 8 | [abs](https://arxiv.org/abs/2605.29438) · [pdf](https://arxiv.org/pdf/2605.29438v1) |
+| **7.19** | C$^3$ache: Accelerating World Action Models with Cross Inference Chunk Cache | 2026-06-08 | spd 8 · gen – · spec 5 · cost 7 | [abs](https://arxiv.org/abs/2606.08962) · [pdf](https://arxiv.org/pdf/2606.08962v1) |
 | **7.18** | From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model | 2026-05-21 | spd – · gen 6 · spec 8 · cost – | [abs](https://arxiv.org/abs/2605.22671) · [pdf](https://arxiv.org/pdf/2605.22671v2) |
 | **7.15** | Dexora: Open-source VLA for High-DoF Bimanual Dexterity | 2026-05-18 | spd – · gen 7 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.18722) · [pdf](https://arxiv.org/pdf/2605.18722v1) |
 | **7.14** | FineVLA: Fine-Grained Instruction Alignment for Steerable Vision-Language-Action Policies | 2026-05-26 | spd – · gen 6 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.27284) · [pdf](https://arxiv.org/pdf/2605.27284v1) · [code](https://github.com/NVIDIA/Isaac-GR00T) |
@@ -65,6 +70,7 @@ variants · **30** authors
 | **7.0** | Uni-LaViRA: Language-Vision-Robot Actions Translation for Unified Embodied Navigation | 2026-05-26 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.27582) · [pdf](https://arxiv.org/pdf/2605.27582v1) |
 | **7.0** | Echo-Infinity: Learning Evolving Memory for Real-Time Infinite Video Generation | 2026-06-03 | spd – · gen – · spec – · cost – | [abs](https://arxiv.org/abs/2606.04527) · [pdf](https://arxiv.org/pdf/2606.04527v1) · [code](https://github.com/Echo-Team-Joy-Future-Academy-JD/Echo-Infinity) |
 | **6.96** | Primitive Subspaces Mediate Few-Shot Transfer in VLAs | 2026-05-29 | spd – · gen 7 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.30695) · [pdf](https://arxiv.org/pdf/2605.30695v1) |
+| **6.92** | FiberTune: Preserving Action-Fiber Visual Residuals in Vision-Language-Action Fine-Tuning | 2026-06-07 | spd 6 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2606.08653) · [pdf](https://arxiv.org/pdf/2606.08653v1) |
 | **6.89** | Demo-JEPA: Joint-Embedding Predictive Architecture for One-shot Cross-Embodiment Imitation | 2026-05-20 | spd – · gen 7 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.20811) · [pdf](https://arxiv.org/pdf/2605.20811v1) |
 | **6.89** | SeeTraceAct: Visibility-Aware Latent Planning from Cross-Embodiment Demonstration Videos | 2026-06-01 | spd – · gen 7 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.02745) · [pdf](https://arxiv.org/pdf/2606.02745v1) · [code](https://github.com/jaehyeon-son/SeeTraceAct) |
 | **6.87** | $τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation | 2026-05-31 | spd – · gen 6 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.01027) · [pdf](https://arxiv.org/pdf/2606.01027v1) |
@@ -74,12 +80,6 @@ variants · **30** authors
 | **6.87** | CLAW: Learning Continuous Latent Action World Models via Adversarial Latent Regularization | 2026-06-02 | spd – · gen 7 · spec 6 · cost – | [abs](https://arxiv.org/abs/2606.04130) · [pdf](https://arxiv.org/pdf/2606.04130v1) |
 | **6.81** | Turning Video Models into Generalist Robot Policies | 2026-05-27 | spd – · gen 7 · spec 6 · cost – | [abs](https://arxiv.org/abs/2605.27817) · [pdf](https://arxiv.org/pdf/2605.27817v1) |
 | **6.81** | PointAction: 3D Points as Universal Action Representations for Robot Control | 2026-06-02 | spd – · gen 6 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.03943) · [pdf](https://arxiv.org/pdf/2606.03943v1) |
-| **6.79** | Light Interaction: Training-Free Inference Acceleration for Interactive Video World Models | 2026-05-29 | spd 7 · gen 4 · spec 6 · cost 7 | [abs](https://arxiv.org/abs/2605.31158) · [pdf](https://arxiv.org/pdf/2605.31158v1) |
-| **6.79** | GaussianDream: A Feed-Forward 3D Gaussian World Model for Robotic Manipulation | 2026-05-20 | spd 6 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2605.20752) · [pdf](https://arxiv.org/pdf/2605.20752v2) · [code](https://github.com/TuojingAI/GaussianDream) |
-| **6.78** | Theoretical Foundations and Effective Algorithms for Policy-Aware Simulator Learning | 2026-05-27 | spd – · gen 3 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.29032) · [pdf](https://arxiv.org/pdf/2605.29032v1) |
-| **6.78** | World-Ego Modeling for Long-Horizon Evolution in Hybrid Embodied Tasks | 2026-05-19 | spd – · gen 5 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.19957) · [pdf](https://arxiv.org/pdf/2605.19957v1) · [code](https://github.com/ZGCA-HMI-Lab/WEM) |
-| **6.76** | Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies | 2026-05-31 | spd – · gen 5 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2606.01151) · [pdf](https://arxiv.org/pdf/2606.01151v1) |
-| **6.76** | LVDrive: Latent Visual Representation Enhanced Vision-Language-Action Autonomous Driving Model | 2026-05-21 | spd 3 · gen 2 · spec 8 · cost – | [abs](https://arxiv.org/abs/2605.22089) · [pdf](https://arxiv.org/pdf/2605.22089v1) · [code](https://github.com/Thinklab-SJTU/Bench2Drive) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _569 results_
+#### LIBERO  ·  _614 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,7 +102,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Pre-VLA _(PPO rollout trajectories from LIBERO with Critic-derived labels)_ | Overall (forward verification time per action chunk) | average forward verification time | 183.9 | authors |
 | Omega-QVLA | Goal | success rate | 100.0 | authors |
 
-#### CALVIN  ·  _64 results_
+#### CALVIN  ·  _69 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FLOWER + Ours _(CALVIN ABC)_ | — | success rate (3 tasks) | 91.2 | authors |
 | FLOWER _(CALVIN ABC)_ | — | success rate (3 tasks) | 90.5 | authors |
 
-#### RoboTwin  ·  _94 results_
+#### RoboTwin  ·  _114 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -125,14 +125,14 @@ _Model identity = (model, training data); same name on different data is a disti
 | Flash-WAM _(LingBot-VA)_ | — | per-chunk latency | 348.0 | authors |
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
 | SANTS _(RoboTwin 2.0 + real-robot data)_ | — | success rate | 94.4 | authors |
+| AHA-WAM _(RoboTwin 2.0)_ | — | success rate | 93.4 | authors |
 | AdaWAM _(LIBERO + RoboTwin 2.0 + real-world ALOHA/PiPER)_ | Clean Overall SR | success rate | 93.11 | authors |
 | WLA-0 _(RoboTwin 2.0 mixed)_ | — | success rate | 92.94 | authors |
 | GeoSem-WAM _(RoboTwin 2.0)_ | all 50 tasks | Success Rate | 92.94 | authors |
 | Lingbot-VA | — | success rate | 92.9 | 3rd-party |
-| GeoSem-WAM _(RoboTwin 2.0)_ | all 50 tasks | Average Success Rate | 92.52 | authors |
-| LingBot-VA | — | success rate | 92.2 | 3rd-party |
+| LingBot-VA _(RoboTwin 2.0)_ | — | success rate | 92.9 | 3rd-party |
 
-#### SimplerEnv  ·  _89 results_
+#### SimplerEnv  ·  _90 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -221,7 +221,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FQE _(πb trajectories (Llama-3.1-8B-Instr.))_ | iter1 policy | Spearman ρ | 0.82 | 3rd-party |
 | ADWM _(πb trajectories (Llama-3.1-8B-Instr.))_ | iter3 policy | Spearman ρ | 0.8 | authors |
 
-#### VBench  ·  _471 results_
+#### VBench  ·  _480 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -253,6 +253,21 @@ _Model identity = (model, training data); same name on different data is a disti
 |-----------------------|------|--------|------:|:------:|
 | MPVI _(none (no additional training))_ | — | Q-score improvement | 113.0 | authors |
 | openpi-comet _(BEHAVIOR-1K 2025 Challenge teleoperation data + motion-planner-synthesized trajectories)_ | — | success rate | 11.4 | 3rd-party |
+
+#### Context-as-Memory dataset  ·  _98 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| State-Space (block-wise) _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 69.0 | authors |
+| Context learning, K=20 _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 58.63 | authors |
+| Context learning, K=5 _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 50.75 | authors |
+| Length r=4 _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 43.25 | authors |
+| State-Space (legacy hybrid) _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 34.75 | authors |
+| Length r=2 _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 24.0 | authors |
+| Compression weight-only _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 22.38 | authors |
+| Spatial cross-attn RO _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 17.12 | authors |
+| Spatial inject-none _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 15.5 | authors |
+| Spatial inject-none _(Context-as-Memory dataset)_ | replay | Replay PSNR | 14.66 | authors |
 
 #### T2VSafetyBench  ·  _84 results_
 
@@ -419,21 +434,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | SVG | — | PSNR | 24.13 | 3rd-party |
 | PAB | — | PSNR | 23.23 | 3rd-party |
 
-#### DAVIS  ·  _37 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| TrajectoryCrafter | 10 ReCamMaster camera trajectory types | RotErr | 10.434 | 3rd-party |
-| CogNVS | 10 ReCamMaster camera trajectory types | RotErr | 6.9499 | 3rd-party |
-| Recammaster _(synthetic (Unreal Engine))_ | 10 ReCamMaster camera trajectory types | RotErr | 2.3175 | 3rd-party |
-| Redirector _(synthetic)_ | 10 ReCamMaster camera trajectory types, speed=2.0 | RotErr | 1.9246 | 3rd-party |
-| Ours _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types, speed=2.0 | RotErr | 1.8821 | authors |
-| Full reward (Geo-Align) _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | RotErr | 1.3895 | authors |
-| Ours _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | Dyn-MEt3R | 0.8573 | authors |
-| Geo-Align _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | Dyn-MEt3R | 0.8573 | authors |
-| Redirector _(synthetic)_ | 10 ReCamMaster camera trajectory types | Dyn-MEt3R | 0.8497 | 3rd-party |
-| TrajectoryCrafter | 10 ReCamMaster camera trajectory types | Dyn-MEt3R | 0.8244 | 3rd-party |
-
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
 - **ActionMap: Robot Policy Learning via Voxel Action Heatmap** — ActionMap replaces the unstructured single-point action decoder in VLA models with a voxel heatmap action head that predicts a probability distribution over a discretized 3D action space, explicitly exploiting the geometric proximity of neighboring actions rather than treating the action space as unstructured… _(→ WAM: In World Action Models, the action conditioning mechanism is critical for predicting how actions transform world states. The voxel heatmap representation can transfer in two ways: (1) as a structured action encoding input to the world model—replacing flat…)_ [abs](https://arxiv.org/abs/2606.06904) · [pdf](https://arxiv.org/pdf/2606.06904v1) · [code](https://github.com/showlab/ActionMap)
@@ -495,21 +495,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Jai Relan](https://www.semanticscholar.org/author/2439647839)** (2 papers · rellingsystems.com) — Jai Relan researches vision-language-action (VLA) policies for robot manipulation, focusing on improving sample efficiency and safety. His work proposes primitive-aware training to enable few-shot transfer to novel assembly tasks and introduces a conformal…
 
 ## 📰 Embodied / Physical-AI News
+- [Effort to establish a National Commission on Robotics advances in Congress](https://www.therobotreport.com/effort-establish-national-commission-on-robotics-advances-congress/) — _The Robot Report_
+- [Standard Bots raises $200M to expand U.S. manufacturing footprint](https://www.therobotreport.com/standard-bots-raises-200m-expand-u-s-manufacturing-footprint/) — _The Robot Report_
+- [Beyond Dexterity: Why Contact May Define the Next Era of Robotics](https://spectrum.ieee.org/agilink-contact-intelligence-robot-manipulation) — _IEEE Spectrum_
+- [How JPL Keeps the 13-Year-Old Curiosity Rover Doing Science](https://spectrum.ieee.org/curiosity-rover-jpl-mars-science) — _IEEE Spectrum_
+- [How an Agent Built a 3D Paris Gallery by Chaining Two Hugging Face Spaces](https://huggingface.co/blog/mishig/spaces-agents-md) — _Hugging Face - Blog_
 - [Daimon Robotics and Galbot jointly launches RobOmni for benchmarking tactile perception and dexterous manipulation](https://www.therobotreport.com/daimon-robotics-and-galbot-jointly-launches-robomni-for-benchmarking-tactile-perception-and-dexterous-manipulation/) — _The Robot Report_
 - [The crash that vanished: control and emergence in a five-model economy](https://huggingface.co/blog/build-small-hackathon/thousand-token-wood-sim-v3) — _Hugging Face - Blog_
 - [The Open Source Community is backing OpenEnv for Agentic RL](https://huggingface.co/blog/openenv-agentic-rl) — _Hugging Face - Blog_
+- [ACS raises $200M to scale autonomous counter-drone system](https://www.therobotreport.com/allen-control-systems-raises-200m-for-autonomous-weapons-stations/) — _The Robot Report_
 - [AGIBOT holds World Challenge 2026 to see how AI models perform on real tasks](https://www.therobotreport.com/agibot-holds-world-challenge-2026-see-how-ai-models-perform-real-tasks/) — _The Robot Report_
 - [Sponsors especially OPENAI CODEX voucher usage for codex - openAI challange](https://huggingface.co/blog/build-small-hackathon/sponsors-vouchers) — _Hugging Face - Blog_
 - [Robots can enhance manufacturing workers rather than replace them](https://www.therobotreport.com/robots-can-enhance-manufacturing-workers-rather-than-replace-them/) — _The Robot Report_
 - [GENISOM AI debuts deployable robotics platforms at ICRA 2026](https://www.therobotreport.com/genisom-ai-debuts-deployable-robotics-platforms-icra-2026/) — _The Robot Report_
 - [Mitsubishi Electric opens Serendie Street Boston digital transformation hub](https://www.therobotreport.com/mitsubishi-electric-opens-serendie-street-boston-digital-transformation-hub/) — _The Robot Report_
 - [Video Friday: Watch This Running Robot Not Fall Down Stairs](https://spectrum.ieee.org/video-friday-humanoid-robot-running) — _IEEE Spectrum_
-- [Why deterministic real-time systems are more critical than ever in robotics](https://www.therobotreport.com/qnx-why-deterministic-real-time-systems-are-more-critical-than-ever-robotics/) — _The Robot Report_
-- [Thousand Token Wood: shipping a multi-agent economy on a 3B model](https://huggingface.co/blog/build-small-hackathon/thousand-token-wood-sim) — _Hugging Face - Blog_
-- [Can surgical robots fly? SS Innovations discusses challenges, solutions](https://www.therobotreport.com/can-surgical-robots-fly-ss-innovations-discusses-challenges-solutions/) — _The Robot Report_
-- [Proteus gets natural-language ability as Amazon expands European robot deployments](https://www.therobotreport.com/proteus-gets-natural-language-ability-amazon-expands-europe-robot-deployments/) — _The Robot Report_
-- [Generalist raises $400M to scale its general-purpose AI models](https://www.therobotreport.com/generalist-raises-400m-to-scale-its-general-purpose-ai-models/) — _The Robot Report_
-- [Voyager Technologies acquires Astrobotic to advance lunar initiatives](https://www.therobotreport.com/voyager-technologies-acquires-astrobotic-advance-lunar-initiatives/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
