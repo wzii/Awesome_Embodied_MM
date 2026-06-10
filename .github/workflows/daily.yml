@@ -65,9 +65,22 @@ jobs:
           git pull --rebase --autostash || true
           git push || echo "push skipped"
 
-      # --- Sync the fresh DB to the Hugging Face Space (so chat + dashboard stay current) ---
+      # --- Email digest (the user-facing deliverable: send it BEFORE the HF sync so a
+      # flaky/hanging upload can never block or skip the email). ---
+      - name: Send digest
+        run: python scripts/run_local.py --stages email
+
+      # --- Sync the fresh DB to the Hugging Face Space (so chat + dashboard stay current).
+      # Best-effort and isolated: the huggingface_hub upload can hang indefinitely at the
+      # "Processing Files (0/0)" XET/LFS preprocessing stage (this exact hang ate the whole
+      # 120-min job on 2026-06-10 and skipped the email). So: disable XET (plain HTTP upload),
+      # cap this step at 15 min, and never fail the job on it. ---
       - name: Sync DB to HF Space
         if: env.HF_TOKEN != '' && env.HF_SPACE != ''
+        timeout-minutes: 15
+        continue-on-error: true
+        env:
+          HF_HUB_DISABLE_XET: "1"
         run: |
           pip install -q huggingface_hub
           python - <<'PY'
@@ -79,7 +92,3 @@ jobs:
               commit_message="daily data sync")
           print("synced data/wam.db to Space", os.environ["HF_SPACE"])
           PY
-
-      # --- Email digest (last, so failures here don't block the commit) ---
-      - name: Send digest
-        run: python scripts/run_local.py --stages email
