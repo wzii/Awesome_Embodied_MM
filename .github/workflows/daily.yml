@@ -70,6 +70,15 @@ jobs:
       - name: Send digest
         run: python scripts/run_local.py --stages email
 
+      # --- Persist the "last emailed" issue marker (written by the email stage only on a
+      # successful send). This step runs only if Send digest succeeded (default step gating),
+      # so a failed send leaves the marker stale and the next issue catches up the backlog. ---
+      - name: Commit email marker
+        run: |
+          git add data/last_email.json && git commit -m "email: mark issue sent $(date -u +%F)" || echo "no changes"
+          git pull --rebase --autostash || true
+          git push || echo "push skipped"
+
       # --- Sync the fresh DB to the Hugging Face Space (so chat + dashboard stay current).
       # Best-effort and isolated: the huggingface_hub upload can hang indefinitely at the
       # "Processing Files (0/0)" XET/LFS preprocessing stage (this exact hang ate the whole

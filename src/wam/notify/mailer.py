@@ -215,17 +215,45 @@ def _teams_html(conn: sqlite3.Connection) -> str:
             f'<p style="font-size:13px;color:#444;margin:6px 0 0">{lead}</p>')
 
 
+# --- "new this issue" boundary -------------------------------------------------------------
+# The issue boundary is "papers not yet emailed", NOT "papers first-seen on the send's calendar
+# day" — otherwise a send that slips past midnight UTC, or a failed send retried the next day,
+# silently drops a day's papers. We persist the last successfully-emailed issue date and feature
+# everything first-seen AFTER it, so a missed/late send automatically catches up. The marker is
+# committed by CI only AFTER a successful send: a failed send leaves it stale, so the next send
+# picks up the whole backlog.
+
+def _last_email_path(cfg: Config):
+    return cfg.root / "data" / "last_email.json"
+
+
+def _read_last_emailed(cfg: Config) -> str | None:
+    try:
+        return json.loads(_last_email_path(cfg).read_text()).get("last_emailed") or None
+    except (OSError, ValueError):
+        return None
+
+
+def _mark_emailed(cfg: Config, today: str) -> None:
+    p = _last_email_path(cfg)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps({"last_emailed": today}) + "\n", encoding="utf-8")
+    log.info("marked last_emailed = %s", today)
+
+
 def build_html(cfg: Config, conn: sqlite3.Connection, today: str | None = None) -> tuple[str, str]:
     today = today or date.today().isoformat()
     counts = dict(conn.execute("SELECT track, count(*) FROM papers GROUP BY track").fetchall())
-    # "New this issue" = papers first seen on THIS run's date. fetch stamps every freshly
-    # discovered paper with today's date, and runs ARE the issue boundaries — so this is robust
-    # in CI (no dependency on committed email archives). 0 new -> a small labelled recap, never
-    # the full top-N (which would make a quiet day identical to the previous one).
+    # "New this issue" = papers first-seen since the last successfully-emailed issue (see the
+    # boundary helpers above). 0 new -> a small labelled recap, never the full top-N (which would
+    # make a quiet day identical to the previous one).
     sel = ("SELECT id, title, abstract, links_json, scores_json, summary_json, institutes_json "
            "FROM papers WHERE track='core' AND scores_json IS NOT NULL")
     order = " ORDER BY json_extract(scores_json,'$.weighted_total') DESC"
-    since = (" AND first_seen = ?", today)
+    # Window = everything first-seen AFTER the last successfully-emailed issue (so a missed/late
+    # send catches up); falls back to "== today" on a fresh install with no marker yet.
+    last_emailed = _read_last_emailed(cfg)
+    since = (" AND first_seen > ?", last_emailed) if last_emailed else (" AND first_seen = ?", today)
     new_rows = conn.execute(sel + since[0] + order, (since[1],)).fetchall()
     recap = not new_rows
     rows = new_rows if not recap else conn.execute(sel + order + " LIMIT 3").fetchall()
@@ -416,4 +444,8 @@ def send(cfg: Config, conn: sqlite3.Connection, today: str | None = None,
         server.login(user, pw)
         server.sendmail(user, recipients, msg.as_string())
     log.info("sent digest to %d recipient(s)", len(recipients))
+    # Advance the issue boundary only on a real (non-test) successful send, so the next issue
+    # features only papers first-seen after this one.
+    if not test_to:
+        _mark_emailed(cfg, today)
     return len(recipients)
