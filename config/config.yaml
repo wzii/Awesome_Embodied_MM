@@ -140,6 +140,9 @@ trends:
 # Space — even if its score is below the email threshold.
 institutes:
   enabled: true
+  cap: 200                    # max papers to extract affiliations for per run (cheap tier;
+                              # decoupled from analyze_cap so busy days don't leave papers
+                              # unlabeled before the email). Highest-relevance first.
   top:
     - {name: "Google DeepMind",            aliases: ["deepmind", "google brain"]}
     - {name: "Google Research",            aliases: ["google research"]}

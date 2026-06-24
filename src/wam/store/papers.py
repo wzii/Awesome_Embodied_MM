@@ -96,9 +96,12 @@ def needs_extract(conn: sqlite3.Connection, limit: int | None = None) -> list[sq
 
 def needs_institute(conn: sqlite3.Connection, limit: int | None = None) -> list[sqlite3.Row]:
     # core + adjacent papers whose author affiliations haven't been extracted yet.
+    # Highest-relevance first so that if a busy-day cap is hit, the papers left for the next
+    # run are the least important — the email's featured papers get their institutes in time.
     return conn.execute(_limit_clause(
         "SELECT id, source, title, abstract, links_json FROM papers WHERE "
-        "track IN ('core','adjacent') AND institutes_extracted=0", limit)).fetchall()
+        "track IN ('core','adjacent') AND institutes_extracted=0 "
+        "ORDER BY relevance DESC", limit)).fetchall()
 
 
 # --- stage writers -----------------------------------------------------------

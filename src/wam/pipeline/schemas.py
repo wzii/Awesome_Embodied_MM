@@ -7,13 +7,43 @@ never penalize with a fake 0.
 
 from __future__ import annotations
 
+import re
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 Track = Literal["core", "adjacent", "drop"]
 # Scores are 0-10 ints, or the string "N/A" when unaddressed.
 Score = int | Literal["N/A"]
+
+# CJK / kana / fullwidth ranges. The cheap summary/innovation model occasionally drifts into
+# Chinese despite the "English" instruction in the prompt; the digest must be English, so any
+# output carrying these characters is rejected. The validation error feeds straight into
+# LLMClient.complete_json's repair loop, which re-prompts the model to redo it in English.
+_CJK = re.compile(
+    "[　-〿"   # CJK symbols & punctuation
+    "぀-ヿ"    # hiragana + katakana
+    "㐀-䶿"    # CJK ext A
+    "一-鿿"    # CJK unified ideographs
+    "豈-﫿"    # CJK compatibility ideographs
+    "＀-￯]"   # halfwidth/fullwidth forms
+)
+
+
+class _EnglishOut(BaseModel):
+    """Base for human-facing LLM text outputs: reject non-Latin (CJK) text in any str field."""
+
+    @model_validator(mode="after")
+    def _english_only(self):
+        for name, val in self:
+            texts = [val] if isinstance(val, str) else (
+                [v for v in val if isinstance(v, str)] if isinstance(val, list) else [])
+            for t in texts:
+                if _CJK.search(t):
+                    raise ValueError(
+                        f"Field '{name}' must be written in English but contains non-Latin "
+                        f"(CJK) characters. Rewrite ALL text fields in English.")
+        return self
 
 
 class RelevanceVerdict(BaseModel):
@@ -23,14 +53,14 @@ class RelevanceVerdict(BaseModel):
     reason: str = Field(description="one sentence justification")
 
 
-class PaperSummary(BaseModel):
+class PaperSummary(_EnglishOut):
     tldr: str = Field(description="one-sentence takeaway")
     problem: str
     method: str
     results: str
 
 
-class PaperAnalysis(BaseModel):
+class PaperAnalysis(_EnglishOut):
     contributions: list[str] = Field(description="key contributions, most important first")
     limitations: list[str]
     wam_relevance: str = Field(description="why this matters for World Action Models")
@@ -53,13 +83,13 @@ class WAMScores(BaseModel):
     other: Score
 
 
-class ScoreCard(BaseModel):
+class ScoreCard(_EnglishOut):
     general: GeneralScores
     wam: WAMScores
     rationale: str = Field(description="brief justification grounded in the paper")
 
 
-class InnovationNote(BaseModel):
+class InnovationNote(_EnglishOut):
     key_idea: str = Field(description="the core technical innovation")
     transferable_to_wam: str = Field(description="why/how it could transfer to World Action Models")
 

@@ -53,7 +53,10 @@ def run(cfg: Config, client: LLMClient, conn: sqlite3.Connection,
     if not bool(cfg.get("institutes.enabled", True)):
         log.info("institutes disabled in config; skipping")
         return 0
-    cap = limit or int(cfg.get("constants.analyze_cap", 40))
+    # Institute extraction is cheap (cheap tier + just the PDF first page), so it gets its own
+    # generous cap rather than reusing the strong-model analyze_cap (40) — otherwise a busy day
+    # (e.g. 85 papers) leaves the lower-ranked half unlabeled in that run's email.
+    cap = limit if limit is not None else int(cfg.get("institutes.cap", 200))
     todo = ps.needs_institute(conn, limit=cap)
     workers = int(cfg.get("constants.extract_workers", 6))
     log.info("extracting institutes for %d papers (%d workers)", len(todo), workers)
