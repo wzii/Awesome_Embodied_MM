@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-06-24 · **Tracked:** 363 core · 365 adjacent ·
-171 news · **10054** benchmark rows across **3863** model
+**Last updated:** 2026-06-25 · **Tracked:** 379 core · 378 adjacent ·
+176 news · **10551** benchmark rows across **4050** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -32,6 +32,7 @@ variants · **30** authors
 | Score | Paper | Published | Top-4 (spd·gen·spec·cost) | Links |
 |------:|-------|-----------|---------------------------|-------|
 | **8.23** | Flash-WAM: Modality-Aware Distillation for World Action Models | 2026-06-03 | spd 9 · gen 6 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2606.05254) · [pdf](https://arxiv.org/pdf/2606.05254v1) |
+| **7.79** | Causal-rCM: A Unified Teacher-Forcing and Self-Forcing Open Recipe for Autoregressive Diffusion Distillation in Streaming Video Generation and Interactive World Models | 2026-06-24 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.25473) · [pdf](https://arxiv.org/pdf/2606.25473v1) · [code](https://github.com/NVlabs/rcm) |
 | **7.73** | BLUE: Toward Better Language Use in Efficient Vision-Language-Action Models for Autonomous Driving | 2026-06-07 | spd 8 · gen 3 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2606.08684) · [pdf](https://arxiv.org/pdf/2606.08684v1) · [code](https://github.com/George-Ling3/BLUE) |
 | **7.71** | LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies | 2026-06-14 | spd 7 · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.15768) · [pdf](https://arxiv.org/pdf/2606.15768v1) |
 | **7.67** | vla.cpp: A Unified Inference Runtime for Vision-Language-Action Models | 2026-06-06 | spd 8 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2606.08094) · [pdf](https://arxiv.org/pdf/2606.08094v1) · [code](https://github.com/ggml-org/llama.cpp) |
@@ -80,7 +81,6 @@ variants · **30** authors
 | **7.23** | UniFS: Unified Fast-to-Slow Hierarchical Architecture for Vision-Language-Action Models | 2026-06-22 | spd 7 · gen 4 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.22794) · [pdf](https://arxiv.org/pdf/2606.22794v1) · [code](https://github.com/linsun449/UniFS) |
 | **7.22** | DriveMA: Driving Vision-Language-Action Models with verifiable Meta-Actions | 2026-05-29 | spd – · gen 3 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2605.31271) · [pdf](https://arxiv.org/pdf/2605.31271v1) |
 | **7.22** | T-Rex: Tactile-Reactive Dexterous Manipulation | 2026-06-15 | spd – · gen 4 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.17055) · [pdf](https://arxiv.org/pdf/2606.17055v1) · [code](https://github.com/xiaoxiaoxh/reactive_diffusion_policy) |
-| **7.21** | ElegantVLA: Learning When to Think for Efficient Vision-Language-Action Models | 2026-05-28 | spd 8 · gen 6 · spec – · cost 8 | [abs](https://arxiv.org/abs/2605.29438) · [pdf](https://arxiv.org/pdf/2605.29438v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1118 results_
+#### LIBERO  ·  _1180 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _263 results_
+#### RoboTwin  ·  _274 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -133,7 +133,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Next Forcing _(in-house general video dataset (3.5M clips) + RoboTwin)_ | — | success rate | 94.1 | authors |
 | AHA-WAM _(RoboTwin 2.0)_ | — | success rate | 93.4 | authors |
 
-#### SimplerEnv  ·  _120 results_
+#### SimplerEnv  ·  _126 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -141,14 +141,14 @@ _Model identity = (model, training data); same name on different data is a disti
 | OpenVLA-7b | Pick up | failure rate (FR) | 97.5 | authors |
 | GR00T-N1.6 | Pick up | failed object coverage (FOC) | 97.1 | authors |
 | Afford-VLA _(LIBERO + Affordance dataset)_ | Put Eggplant | Success rate | 96.8 | authors |
+| Reflective VLA _(π0.5 training data)_ | Spoon | success rate | 95.8 | authors |
 | Embodied-R1.5-VLA | — | success rate | 92.4 | authors |
 | TBD-VLA _(Fractal)_ | Visual Matching | success rate | 91.0 | authors |
 | GeoAlign _(robot-domain RGB-D + Dpol (SimplerEnv-Fractal demonstrations))_ | — | unweighted average success rate | 85.3 | authors |
 | EO-1 | Pick up | trajectory coverage (TC) | 84.0 | authors |
 | InternVLA-M1 | Variant Aggregation | success rate | 83.7 | 3rd-party |
-| Coarse-to-Control _(SimplerEnv-WidowX)_ | — | success rate | 83.3 | authors |
 
-#### RLBench  ·  _36 results_
+#### RLBench  ·  _42 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -163,7 +163,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | HARP-SR | 18 tasks | average success rate | 43.41 | authors |
 | Unadapted | 18 tasks | average success rate | 37.56 | authors |
 
-#### Meta-World  ·  _20 results_
+#### Meta-World  ·  _24 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -178,7 +178,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Gemini-1.5-Pro | — | PIB (bits) | 2.65 | authors |
 | π0.5 | MT50 | end-to-end speedup | 2.52 | authors |
 
-#### ManiSkill  ·  _31 results_
+#### ManiSkill  ·  _47 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -189,11 +189,11 @@ _Model identity = (model, training data); same name on different data is a disti
 | FM policy _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | anytime success rate | 95.78 | authors |
 | FM policy _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | end success rate | 93.14 | authors |
 | π0.5 | — | success rate | 89.8 | authors |
+| FORCE (π0) _(ManiSkill (offline + online))_ | — | success rate | 86.9 | authors |
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
-| OpenVLA-OFT + Steps-To-Go | — | success rate | 79.0 | 3rd-party |
-| OpenVLA-OFT + PPO | — | success rate | 76.8 | 3rd-party |
+| FORCE (Octo) _(ManiSkill (offline + online))_ | — | success rate | 82.3 | authors |
 
-#### RoboCasa  ·  _101 results_
+#### RoboCasa  ·  _103 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -208,7 +208,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | μ0 _(TraceExtract)_ | SlideToasterOvenRack | success rate | 56.0 | authors |
 | π0.5 | — | safety | 55.7 | authors |
 
-#### Open-X / RT  ·  _38 results_
+#### Open-X / RT  ·  _50 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -232,7 +232,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FQE _(πb trajectories (Llama-3.1-8B-Instr.))_ | iter1 policy | Spearman ρ | 0.82 | 3rd-party |
 | ADWM _(πb trajectories (Llama-3.1-8B-Instr.))_ | iter3 policy | Spearman ρ | 0.8 | authors |
 
-#### VBench  ·  _571 results_
+#### VBench  ·  _593 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -316,6 +316,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | [69] | Racism | VBench (Subject Consistency) | 0.937 | 3rd-party |
 | SAFREE [10] | Sexual | VBench (Subject Consistency) | 0.933 | 3rd-party |
 
+#### Open-Domain S2V  ·  _99 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| DomainShuttle (Wan2.2-14B) _(200K image-personalization dataset + 750K video-personalization dataset (Phantom-Data, OpenS2V, Ditto-1M))_ | Overall | MS | 0.987 | authors |
+| VACE-Wan2.1-14B | Overall | MS | 0.985 | 3rd-party |
+| HuMo | Overall | MS | 0.981 | 3rd-party |
+| DomainShuttle (Wan2.1-14B) _(200K image-personalization dataset + 750K video-personalization dataset (Phantom-Data, OpenS2V, Ditto-1M))_ | Overall | MS | 0.977 | authors |
+| VACE-Wan2.2-14B | Overall | MS | 0.974 | 3rd-party |
+| Phantom | Overall | MS | 0.972 | 3rd-party |
+| Kling 1.6 | Overall | MS | 0.965 | 3rd-party |
+| MAGREF | Overall | MS | 0.964 | 3rd-party |
+| BindWeave | Overall | MS | 0.963 | 3rd-party |
+| FFGO-Wan2.2-14B | Overall | MS | 0.945 | 3rd-party |
+
 #### Context-as-Memory dataset  ·  _98 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -346,7 +361,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | LA-LQR (ours) | Copyright & Trademarks | VBench (Subject Consistency) | 0.976 | authors |
 | SAFREE [10] | Copyright & Trademarks | VBench (Subject Consistency) | 0.973 | 3rd-party |
 
-#### Bench2Drive  ·  _62 results_
+#### Bench2Drive  ·  _64 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -360,6 +375,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | CriticVLA | — | driving score | 88.02 | 3rd-party |
 | HiP-AD _(Think2Drive)_ | — | driving score | 86.77 | 3rd-party |
 | HiP-AD | — | Driving Score | 86.77 | 3rd-party |
+
+#### DAVIS  ·  _61 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| TrajectoryCrafter | 10 ReCamMaster camera trajectory types | RotErr | 10.434 | 3rd-party |
+| CogNVS | 10 ReCamMaster camera trajectory types | RotErr | 6.9499 | 3rd-party |
+| Recammaster _(synthetic (Unreal Engine))_ | 10 ReCamMaster camera trajectory types | RotErr | 2.3175 | 3rd-party |
+| Redirector _(synthetic)_ | 10 ReCamMaster camera trajectory types, speed=2.0 | RotErr | 1.9246 | 3rd-party |
+| Ours _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types, speed=2.0 | RotErr | 1.8821 | authors |
+| MVTrack4Gen ReCamMaster _(Kubric + MultiCamVideo)_ | — | mRotErr | 1.858 | authors |
+| MVTrack4Gen Redirector _(Kubric + MultiCamVideo)_ | — | mRotErr | 1.718 | authors |
+| Full reward (Geo-Align) _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | RotErr | 1.3895 | authors |
+| MVTrack4Gen Redirector _(Kubric + MultiCamVideo)_ | — | Motion Smoothness | 0.986 | authors |
+| MVTrack4Gen ReCamMaster _(Kubric + MultiCamVideo)_ | — | Motion Smoothness | 0.984 | authors |
 
 #### RealisDance-Val  ·  _56 results_
 
@@ -391,6 +421,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | SVG2 | — | Density | 55.0 | 3rd-party |
 | SVG | — | Density | 55.0 | 3rd-party |
 
+#### Real-world  ·  _49 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| InSight _(50 human scooping demonstrations + acquired lateral-push primitive)_ | sweeping | success rate | 100.0 | authors |
+| OASIS | Goal | success rate | 98.6 | authors |
+| InSight _(50 human pick-and-place demonstrations + 20 successful pour primitives)_ | pour beans into bowl | success rate | 96.0 | authors |
+| 3DThinkVLA (Ours) _(VLA data + 3D reasoning data (co-training))_ | Transparent container placement | success rate | 93.3 | authors |
+| InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
+| MaskWAM | language-ambiguous tasks (ID + OOD) | success rate | 84.9 | authors |
+| π0.5 | Average (Goal, Spatial, Long) | success rate | 81.6 | 3rd-party |
+| Afford-VLA _(LIBERO + Affordance dataset)_ | Cup-to-Plate | Success rate | 80.0 | authors |
+| VLAJS (zero-shot) | Pick & Place | success rate | 80.0 | authors |
+| RepWAM-5B _(AgiBot, RoboMIND, RoboCOIN, InternA1)_ | Push drawer | success rate | 80.0 | authors |
+
 #### SIMMER  ·  _49 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -406,22 +451,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Claude Opus 4.6 | — | plans with immediate failures | 85.0 | authors |
 | Gemini 3 Flash | — | plans with any failure | 83.0 | authors |
 
-#### EGO STATIC SCENE  ·  _45 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| AnchorWorld _(200K single-person action videos + 101K MultiCamVideo UE + Ego-Exo4D + LEMMA)_ | — | Mat. Pix.(K) | 4493.4 | authors |
-| CaM-Ego _(same as AnchorWorld (egocentric data))_ | — | Mat. Pix.(K) | 4379.4 | 3rd-party |
-| PlayerOne-Scene _(same as AnchorWorld (re-implemented with anchor-view injection))_ | — | Mat. Pix.(K) | 4334.8 | 3rd-party |
-| PlayerOne _(same as AnchorWorld (re-implemented))_ | — | Mat. Pix.(K) | 3961.6 | 3rd-party |
-| CaM-UE _(official UE dataset)_ | — | Mat. Pix.(K) | 3706.9 | 3rd-party |
-| AnchorWorld _(200K single-person action videos + 101K MultiCamVideo UE + Ego-Exo4D + LEMMA)_ | — | PSNR | 16.06 | authors |
-| CaM-Ego _(same as AnchorWorld (egocentric data))_ | — | PSNR | 15.16 | 3rd-party |
-| PlayerOne-Scene _(same as AnchorWorld (re-implemented with anchor-view injection))_ | — | PSNR | 14.38 | 3rd-party |
-| PlayerOne _(same as AnchorWorld (re-implemented))_ | — | PSNR | 13.26 | 3rd-party |
-| CaM-UE _(official UE dataset)_ | — | PSNR | 11.57 | 3rd-party |
-
-#### PushT  ·  _43 results_
+#### PushT  ·  _46 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -435,36 +465,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | PRISM-MPPI _(expert dataset (18.7k PushT, 10k Cube))_ | — | success rate | 89.0 | authors |
 | FF-JEPA (Det) _(PushT filtered successful demonstrations)_ | Long-horizon (t=75) | success rate | 88.67 | authors |
 | DINO | Short-horizon (t=25) | success rate | 84.0 | 3rd-party |
-
-#### SpelkeBench  ·  _42 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| PSI _(3 million real-world RGB video clips)_ | point-prompted movable object segmentation | mIoU | 0.681 | authors |
-| SAM2 | unprompted movable object segmentation | mIoU | 0.68 | 3rd-party |
-| SAM2 | unprompted movable object segmentation | AR | 0.62 | 3rd-party |
-| FPT | point-prompted movable object segmentation | mIoU | 0.566 | 3rd-party |
-| PSI _(3 million real-world RGB video clips)_ | point-prompted movable object segmentation | AR | 0.541 | authors |
-| MaskFormer | point-prompted movable object segmentation | mIoU | 0.506 | 3rd-party |
-| CWM | point-prompted movable object segmentation | mIoU | 0.481 | 3rd-party |
-| MaskFormer | point-prompted movable object segmentation | AR | 0.439 | 3rd-party |
-| ProMerge | point-prompted movable object segmentation | mIoU | 0.431 | 3rd-party |
-| CutLER | point-prompted movable object segmentation | mIoU | 0.423 | 3rd-party |
-
-#### Real-World  ·  _42 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Pi0.5 _(real-world demo)_ | pick fruits to basket | success rate | 100.0 | 3rd-party |
-| Pi0.5+adapter _(real-world demo)_ | pick fruits to basket | success rate | 100.0 | authors |
-| HIL-ResRL (Diffusion Policy) _(50 demos (Pick and Place, Place Upright), 80 demos (Plug in Hole))_ | Pick and Place, Place Upright, Plug in Hole (aggregate) | Average success rate | 95.0 | authors |
-| HIL-ResRL (π0.5) _(50 demos (Pick and Place, Place Upright), 80 demos (Plug in Hole))_ | Pick and Place, Place Upright, Plug in Hole (aggregate) | Average success rate | 95.0 | authors |
-| LaWAM _(3,000 hours robot videos + 1,500 hours egocentric human videos)_ | Pick-and-Place | success rate | 93.3 | authors |
-| HIL-ResRL (with force) _(80 demos (Plug in Hole))_ | Multiple Plug-in-Hole | Success rate | 93.0 | authors |
-| MemoryWAM | Shell Game | success rate | 90.0 | authors |
-| π0.5 | Pick-and-Place | success rate | 86.7 | 3rd-party |
-| GR00T-N1.6 | Pick-and-Place | success rate | 83.3 | 3rd-party |
-| LingBot-VA | Open Drawer | success rate | 83.3 | 3rd-party |
 
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
@@ -527,9 +527,14 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Arman Akbari](https://www.semanticscholar.org/author/2273976198)** (3 papers) — Arman Akbari's research focuses on improving the efficiency and physical plausibility of world-action models (WAMs) and vision-language-action (VLA) models for Physical AI, including post-training for video generation world models, modality-aware distillation…
 
 ## 📰 Embodied / Physical-AI News
+- [ARM Institute expands RoboticsCareer.org into physical AI](https://www.therobotreport.com/arm-institute-launches-physical-ai-focused-expansion-roboticscareer-org/) — _The Robot Report_
 - [Humanoid maker Agility Robotics to go public through SPAC merger](https://www.therobotreport.com/humanoid-maker-agility-robotics-go-public-through-spac-merger/) — _The Robot Report_
 - [Mantis Robotics launches dual-arm, fenceless robot](https://www.therobotreport.com/mantis-robotics-launches-dual-arm-fenceless-robot/) — _The Robot Report_
 - [Deep dive into ARM’s physical AI and robotics strategies with Drew Henry](https://www.therobotreport.com/deep-dive-into-arms-physical-ai-and-robotics-strategies-with-drew-henry/) — _The Robot Report_
+- [Reservoir acquires Contain to scale agtech startups](https://www.therobotreport.com/reservoir-acquires-contain-to-scale-agtech-startups/) — _The Robot Report_
+- [FAULHABER focuses on torque, noise, and power with new GPT gearheads](https://www.therobotreport.com/faulhaber-focuses-torque-noise-power-new-gpt-gearheads/) — _The Robot Report_
+- [Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel](https://huggingface.co/blog/nvidia/accelerating-fine-tuning-nvidia-nemo-automodel) — _Hugging Face - Blog_
+- [Introducing the FFASR Leaderboard: Benchmarking ASR in the Real World](https://huggingface.co/blog/ffasr-leaderboard) — _Hugging Face - Blog_
 - [Why physical AI 2.0 needs a reality check](https://www.therobotreport.com/why-physical-ai-2-0-needs-reality-check/) — _The Robot Report_
 - [Build real agentic apps using CUGA: two dozen working examples on a lightweight harness](https://huggingface.co/blog/ibm-research/cuga-apps) — _Hugging Face - Blog_
 - [Shipping huggingface_hub every week with AI, open tools, and a human in the loop](https://huggingface.co/blog/huggingface-hub-release-ci) — _Hugging Face - Blog_
@@ -537,11 +542,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Vention collaborates with FANUC and Universal Robots on software-defined automation](https://www.therobotreport.com/vention-collaborates-with-fanuc-universal-robots-software-defined-automation/) — _The Robot Report_
 - [CreateMe partners with Avalo and Laguna Fabrics to bring resilience to apparel supply chains](https://www.therobotreport.com/createme-partners-with-avalo-and-laguna-fabrics-to-bring-resilience-to-apparel-supply-chains/) — _The Robot Report_
 - [Experimenting with the proposed Cross-Origin Storage API in Transformers.js](https://huggingface.co/blog/cross-origin-storage) — _Hugging Face - Blog_
-- [NVIDIA releases Halos, a full-stack safety system for robotics](https://www.therobotreport.com/nvidia-releases-halos-a-full-stack-safety-system-for-robotics/) — _The Robot Report_
-- [Cobot’s Proxie Gen 2 robot adds autotasking, mobile manipulation](https://www.therobotreport.com/cobots-proxie-gen-2-robot-adds-autotasking-mobile-manipulation/) — _The Robot Report_
-- [PP-OCRv6 on Hugging Face: 50-Language OCR from 1.5M to 34.5M Parameters](https://huggingface.co/blog/PaddlePaddle/pp-ocrv6) — _Hugging Face - Blog_
-- [FORT and NVIDIA launch AI-driven Outside-In Safety blueprint](https://www.therobotreport.com/fort-and-nvidia-launch-ai-driven-outside-in-safety-blueprint/) — _The Robot Report_
-- [How Intrinsic eliminates manual robot coding](https://www.therobotreport.com/how-intrinsic-eliminates-manual-robot-coding/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
