@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-06-30 · **Tracked:** 426 core · 418 adjacent ·
-196 news · **11644** benchmark rows across **4475** model
+**Last updated:** 2026-07-01 · **Tracked:** 443 core · 426 adjacent ·
+200 news · **11909** benchmark rows across **4594** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -58,6 +58,7 @@ variants · **30** authors
 | **7.44** | VisualThink-VLA: Visual Intermediate Reasoning for Effective and Low-Latency Vision-Language-Action Policies | 2026-05-28 | spd 8 · gen 7 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2605.30011) · [pdf](https://arxiv.org/pdf/2605.30011v1) · [code](https://github.com/DCDmllm/VisualThink-VLA) |
 | **7.44** | Efficient-WAM: A 1B-Parameter World-Action Model with Low-Cost Future Imagination | 2026-06-08 | spd 8 · gen 5 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2606.10040) · [pdf](https://arxiv.org/pdf/2606.10040v1) |
 | **7.44** | Flow as Flow: Modeling Robot Velocity Fields as Probability Velocity Fields for Flow-Based Object Manipulation | 2026-06-22 | spd 8 · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.23090) · [pdf](https://arxiv.org/pdf/2606.23090v1) |
+| **7.44** | ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies | 2026-06-30 | spd 8 · gen 4 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.31132) · [pdf](https://arxiv.org/pdf/2606.31132v1) |
 | **7.38** | Intercepting the Future: Latent-Space Predictive World Model for Dynamic VLA Manipulation | 2026-06-01 | spd 5 · gen 6 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2606.02486) · [pdf](https://arxiv.org/pdf/2606.02486v1) |
 | **7.38** | Wall-OSS-0.5 Technical Report | 2026-05-29 | spd – · gen 8 · spec 6 · cost 5 | [abs](https://arxiv.org/abs/2605.30877) · [pdf](https://arxiv.org/pdf/2605.30877v2) · [code](https://github.com/X-Square-Robot/wall-x) |
 | **7.37** | EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies | 2026-06-18 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.20092) · [pdf](https://arxiv.org/pdf/2606.20092v1) |
@@ -66,6 +67,7 @@ variants · **30** authors
 | **7.35** | Colosseum V2: Benchmarking Generalization for Vision Language Action Models | 2026-05-26 | spd – · gen 8 · spec – · cost – | [abs](https://arxiv.org/abs/2605.27759) · [pdf](https://arxiv.org/pdf/2605.27759v1) |
 | **7.33** | DuoBench: A Reproducible Benchmark for Bimanual Manipulation in Simulation and the Real World | 2026-06-10 | spd – · gen – · spec – · cost – | [abs](https://arxiv.org/abs/2606.11901) · [pdf](https://arxiv.org/pdf/2606.11901v1) · [code](https://github.com/isaac-sim/IsaacSim) |
 | **7.33** | dVLA-RL: Reinforcement Learning over Denoising Trajectories for Discrete Diffusion Vision-Language-Action Models | 2026-06-22 | spd – · gen 6 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2606.23623) · [pdf](https://arxiv.org/pdf/2606.23623v1) |
+| **7.33** | Long-term Traffic Simulation via Structured Autoregressive Modeling | 2026-06-30 | spd – · gen – · spec – · cost – | [abs](https://arxiv.org/abs/2606.31209) · [pdf](https://arxiv.org/pdf/2606.31209v1) |
 | **7.31** | CausalDrive: Real-time Causal World Models for Autonomous Driving | 2026-06-13 | spd 6 · gen 4 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.15341) · [pdf](https://arxiv.org/pdf/2606.15341v1) |
 | **7.31** | Invertible Neural Network Adapter for One-Step Flow Matching in Robot Manipulation | 2026-06-17 | spd 8 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2606.19194) · [pdf](https://arxiv.org/pdf/2606.19194v1) |
 | **7.28** | Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving and Urban Navigation | 2026-06-14 | spd 6 · gen 6 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2606.15869) · [pdf](https://arxiv.org/pdf/2606.15869v1) |
@@ -79,8 +81,6 @@ variants · **30** authors
 | **7.23** | IOI: Decoupling Kinematics and Physics for Interactive World Models | 2026-06-22 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.23296) · [pdf](https://arxiv.org/pdf/2606.23296v1) |
 | **7.23** | AdaReP:Adaptive Re-Planning under Model Mismatch for Neural World-Model Predictive Control | 2026-06-22 | spd 7 · gen 6 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.23079) · [pdf](https://arxiv.org/pdf/2606.23079v1) |
 | **7.23** | UniFS: Unified Fast-to-Slow Hierarchical Architecture for Vision-Language-Action Models | 2026-06-22 | spd 7 · gen 4 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.22794) · [pdf](https://arxiv.org/pdf/2606.22794v1) · [code](https://github.com/linsun449/UniFS) |
-| **7.23** | S$^2$-VLA: State-Space Guided Vision-Language-Action Models for Long-Horizon Manipulation | 2026-06-26 | spd – · gen 6 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.27872) · [pdf](https://arxiv.org/pdf/2606.27872v1) |
-| **7.22** | DriveMA: Driving Vision-Language-Action Models with verifiable Meta-Actions | 2026-05-29 | spd – · gen 3 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2605.31271) · [pdf](https://arxiv.org/pdf/2605.31271v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1334 results_
+#### LIBERO  ·  _1380 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -193,20 +193,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 | FORCE (Octo) _(ManiSkill (offline + online))_ | — | success rate | 82.3 | authors |
 
-#### RoboCasa  ·  _107 results_
+#### RoboCasa  ·  _122 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | Cosmos-Policy | Turn Off Microwave | success rate | 100.0 | authors |
+| Z-1 RL _(RoboCasa demonstrations)_ | Door | success rate | 97.0 | authors |
+| Z-1 SFT _(RoboCasa demonstrations)_ | Door | success rate | 93.2 | authors |
+| X-WAM | — | success rate | 79.2 | 3rd-party |
 | ACE-EGO-0 _(Mixed robot demonstrations and egocentric human videos (6.0K+ hours))_ | — | average success | 72.8 | authors |
 | GR00T-N1.5 _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 71.7 | authors |
 | Late Fusion _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 71.0 | authors |
 | Early Fusion _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 69.7 | authors |
 | ZR-0 _(ProcCorpus-60M)_ | — | success rate | 69.3 | authors |
 | Spatial Forcing _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 68.3 | authors |
-| World Pilot _(LIBERO)_ | — | success rate | 65.5 | authors |
-| X-DiffVLA _(GR00T dataset (RoboCasa tasks))_ | — | Success Rate | 64.5 | authors |
-| RLDX-1-FT-RC365 | — | success rate (SR) | 58.4 | authors |
 
 #### Open-X / RT  ·  _50 results_
 
@@ -232,7 +232,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FQE _(πb trajectories (Llama-3.1-8B-Instr.))_ | iter1 policy | Spearman ρ | 0.82 | 3rd-party |
 | ADWM _(πb trajectories (Llama-3.1-8B-Instr.))_ | iter3 policy | Spearman ρ | 0.8 | authors |
 
-#### VBench  ·  _660 results_
+#### VBench  ·  _668 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -393,6 +393,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | MVTrack4Gen Redirector _(Kubric + MultiCamVideo)_ | — | Motion Smoothness | 0.986 | authors |
 | MVTrack4Gen ReCamMaster _(Kubric + MultiCamVideo)_ | — | Motion Smoothness | 0.984 | authors |
 
+#### NAVSIM  ·  _58 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
+| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
+| ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
+| RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
+| LWDrive _(Impromptu dataset (adaptation stage))_ | — | PDMS | 92.0 | authors |
+| Ours-Rep+Geo+MCB _(OpenScene (NAVSIM train split))_ | planning (frozen tokenizer + lightweight decoder) | PDMS | 91.8 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | PDMS | 91.8 | authors |
+
 #### RealisDance-Val  ·  _56 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -408,20 +423,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | RealisDance-DiT | — | Temporal Flicker | 97.76 | 3rd-party |
 | Animate-X | — | Temporal Flicker | 97.4 | 3rd-party |
 
-#### NAVSIM  ·  _55 results_
+#### PushT  ·  _52 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
-| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
-| RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
-| LWDrive _(Impromptu dataset (adaptation stage))_ | — | PDMS | 92.0 | authors |
-| Ours-Rep+Geo+MCB _(OpenScene (NAVSIM train split))_ | planning (frozen tokenizer + lightweight decoder) | PDMS | 91.8 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | PDMS | 91.8 | authors |
-| DriveMA-4B _(NAVSIM trainval)_ | — | PDMS | 91.2 | authors |
+| LeWM + AITS | — | success rate | 100.0 | authors |
+| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
+| LeWM | — | success rate | 96.0 | authors |
+| LeWM _(PushT)_ | Short-horizon (t=25) | success rate | 94.53 | authors |
+| VLWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 94.0 | authors |
+| AdaJEPA (WM w/ Temporal Straightening spatial) _(PushT)_ | goal-reaching | success rate | 92.0 | authors |
+| Frozen (WM w/ Temporal Straightening spatial) _(PushT)_ | goal-reaching | success rate | 91.3 | authors |
+| LeWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 90.0 | 3rd-party |
+| DINO (Hierarchy) | Short-horizon (t=25) | success rate | 89.0 | 3rd-party |
+| PRISM-MPPI _(expert dataset (18.7k PushT, 10k Cube))_ | — | success rate | 89.0 | authors |
 
 #### HunyuanVideo  ·  _50 results_
 
@@ -453,25 +468,11 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLAJS (zero-shot) | Pick & Place | success rate | 80.0 | authors |
 | RepWAM-5B _(AgiBot, RoboMIND, RoboCOIN, InternA1)_ | Push drawer | success rate | 80.0 | authors |
 
-#### SIMMER  ·  _49 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Llama 3.3 70B | — | plans with any failure | 100.0 | authors |
-| Llama 3.3 70B | — | plans with immediate failures | 99.0 | authors |
-| DeepSeek V3.2 | — | plans with any failure | 99.0 | authors |
-| Qwen 3.5 27B | — | plans with any failure | 99.0 | authors |
-| Qwen 3.5 27B | — | plans with immediate failures | 99.0 | authors |
-| DeepSeek V3.2 | — | plans with immediate failures | 96.0 | authors |
-| Claude Opus 4.6 | — | plans with any failure | 89.0 | authors |
-| GPT-5.4 | — | plans with any failure | 87.0 | authors |
-| Claude Opus 4.6 | — | plans with immediate failures | 85.0 | authors |
-| Gemini 3 Flash | — | plans with any failure | 83.0 | authors |
-
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
 - **ActionMap: Robot Policy Learning via Voxel Action Heatmap** — ActionMap replaces the unstructured single-point action decoder in VLA models with a voxel heatmap action head that predicts a probability distribution over a discretized 3D action space, explicitly exploiting the geometric proximity of neighboring actions rather than treating the action space as unstructured… _(→ WAM: In World Action Models, the action conditioning mechanism is critical for predicting how actions transform world states. The voxel heatmap representation can transfer in two ways: (1) as a structured action encoding input to the world model—replacing flat…)_ [abs](https://arxiv.org/abs/2606.06904) · [pdf](https://arxiv.org/pdf/2606.06904v1) · [code](https://github.com/showlab/ActionMap)
 - **Fast Enough to Act: Spatio-Temporal Visual Token Merging for Low-Latency Robotic VLMs and VLAs** — ST-Merge is a plug-and-play, training-free spatio-temporal visual token merging framework that reduces inference latency by fusing redundant visual tokens during the visual encoding phase. It constructs 3D spatiotemporal coordinates for multi-queue parallel matching and weighted aggregation across frames, and… _(→ WAM: World Action Models must process long video histories to predict future world states and generate actions, making visual token count a critical computational bottleneck. ST-Merge's spatio-temporal token merging could be directly applied to the visual encoder…)_ [abs](https://arxiv.org/abs/2606.29350) · [pdf](https://arxiv.org/pdf/2606.29350v1) · [code](https://github.com/Junzhou-Chen/ST_Merge)
+- **WorldRoamBench: An Open-World Benchmark for Long-Horizon Stability of Interactive World Models** — A multi-dimensional, long-horizon evaluation framework for interactive world models that introduces novel metrics: per-frame action metrics to bypass semantic scale disparity, segment-based drift metrics to capture mid-sequence visual collapse, controllability-gated physics evaluation to isolate physical plausibility… _(→ WAM: World Action Models (WAMs) inherently suffer from compounding errors over long horizons, leading to visual drift, physical inconsistencies, and memory loss. The benchmark's metrics—particularly the controllability-gated physics evaluation and action-decoupled…)_ [abs](https://arxiv.org/abs/2606.31672) · [pdf](https://arxiv.org/pdf/2606.31672v1)
 - **World Models: A Comprehensive Survey of Architectures, Methodologies, Reasoning Paradigms, and Applications** — A unifying multi-axis taxonomy for world models that integrates architecture, methodological families, reasoning strategies (particularly the convergence of chain-of-thought reasoning with world-model imagination), and applications, providing a structured framework to map the fragmented landscape of world model… _(→ WAM: The taxonomy's explicit categorization of reasoning strategies (imagination-based planning, latent policy learning, counterfactual reasoning) directly informs how WAMs can be architected to generate actions rather than just passive predictions. Specifically…)_ [abs](https://arxiv.org/abs/2606.00133) · [pdf](https://arxiv.org/pdf/2606.00133v1)
 - **PhAIL: A Real-Robot VLA Benchmark and Distributional Methodology** — Replacing binary success rate metrics with a distributional evaluation methodology based on the time-to-success cumulative distribution function (CDF), scored via Human-Relative Throughput (HRT) and compared using macro-averaged Kolmogorov-Smirnov significance tests to resolve close model comparisons with small sample… _(→ WAM: Evaluating World Action Models often relies on binary task completion metrics, which fail to capture the speed-efficiency trade-offs of different policies. By adopting the time-to-success CDF and HRT scoring, WAM evaluations can distinguish between models…)_ [abs](https://arxiv.org/abs/2605.29710) · [pdf](https://arxiv.org/pdf/2605.29710v1) · [code](https://github.com/Positronic-Robotics/phail-paper)
 - **VLAConf: Calibrated Task-Success Confidence for Vision-Language-Action Models** — A lightweight, one-class discriminative confidence head that leverages frozen pretrained VLA internal representations and step-conditioned modeling to estimate step-wise anomaly scores in a single forward pass, avoiding the computational overhead of resampling and generalizing to continuous action spaces. _(→ WAM: World Action Models (WAMs) often suffer from compounding errors over long horizons and need to know when their world state predictions become unreliable. VLAConf's lightweight confidence head can be directly attached to a WAM's internal representations to…)_ [abs](https://arxiv.org/abs/2605.29605) · [pdf](https://arxiv.org/pdf/2605.29605v1)
@@ -495,11 +496,10 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **From Tokens to States: LLMs as a Special Case of World Models and the Continuous Path Beyond** — LLMs are a degenerate special case of world models (state space = token sequences, action = append token), and there exists a continuous spectrum from next-token prediction to JEPA-style latent world models, with identifiable intermediate stations—multi-token prediction, future-summary prediction, and next-latent… _(→ WAM: WAMs can explicitly position themselves on this spectrum rather than treating token prediction and world simulation as incompatible paradigms. The intermediate stations offer concrete architectural and objective choices for WAM design: multi-token prediction…)_ [abs](https://arxiv.org/abs/2606.28127) · [pdf](https://arxiv.org/pdf/2606.28127v1)
 - **Drop-Then-Recovery: How Redundant Are Vision-Language-Action Models?** — The paper introduces Drop-Then-Recovery (DTR), a protocol for measuring architectural redundancy in VLA models by removing transformer blocks and fine-tuning to assess recoverability, along with GateProbe, a one-shot virtual-gate sensitivity metric that ranks blocks by their contribution to the downstream action loss… _(→ WAM: World Action Models similarly integrate language, vision, and action components for predicting action consequences and generating actions. The DTR protocol and GateProbe metric can be directly applied to identify which components of a WAM are redundant versus…)_ [abs](https://arxiv.org/abs/2606.27755) · [pdf](https://arxiv.org/pdf/2606.27755v1) · [code](https://github.com/s1ghhh/VLADrop)
 - **The Speedup Paradox: Rethinking Inference Speed-Quality Trade-off in Embodied Tasks** — TISED (Task-level Inference Speedup Effect Decomposition), an analytical framework that decomposes how lossy inference optimizations (quantization, pruning, asynchronous inference) affect closed-loop embodied task performance, revealing paradoxical effects: (1) on static tasks, per-step speedup can increase total task… _(→ WAM: World Action Models operate in closed-loop settings where predicted world states feed back into action selection, making them subject to the same speedup paradox. TISED's decomposition directly applies: moderate quantization or pruning of a WAM's world…)_ [abs](https://arxiv.org/abs/2606.28529) · [pdf](https://arxiv.org/pdf/2606.28529v1)
+- **Position: Vision-Language-Action Models Cannot Be Verified to Perform Physical Reasoning** — Decomposing VLA policies into semantic mapping and physical action decision components, and proposing evaluation designs with controlled variation that causally disentangle whether performance gains stem from semantic matching/distributional overlap versus genuine physical generalization — without requiring access to… _(→ WAM: World Action Models face the identical identifiability problem: when a WAM predicts future world states and actions accurately, it is unclear whether this reflects learned physical dynamics (genuine world modeling) or semantic pattern matching from…)_ [abs](https://arxiv.org/abs/2606.30686) · [pdf](https://arxiv.org/pdf/2606.30686v1)
 - **Towards Interactive Video World Modeling: Frontiers, Challenges, Benchmarks, and Future Trends** — The paper systematically identifies and categorizes three crucial technical challenges for interactive world modeling: action-conditioned controllability, long-horizon interactions and memory, and action-following responsiveness for real-time interactivity. _(→ WAM: World Action Models fundamentally rely on action-conditioned state transitions. Addressing these three identified challenges—ensuring actions reliably control state evolution, maintaining coherent long-term memory across extended action sequences, and…)_ [abs](https://arxiv.org/abs/2606.01164) · [pdf](https://arxiv.org/pdf/2606.01164v1) · [code](https://github.com/liujiuming123/Awesome-Interactive-World-Model)
 - **Coarse-to-Fine Compositional Diffusion for Long-Horizon Planning** — Coarse-to-Fine Compositional Diffusion (CoFi) separates global structure formation from local detail refinement during inference-time compositional generation. It first aligns local denoised estimates around a shared coarse scaffold capturing long-range task-level arrangement, then diffuses this scaffold to an… _(→ WAM: World Action Models must generate long-horizon action sequences or world-state trajectories that are both globally coherent (the overall plan makes sense) and locally precise (each step's actions are physically valid). CoFi's coarse-to-fine composition…)_ [abs](https://arxiv.org/abs/2606.00837) · [pdf](https://arxiv.org/pdf/2606.00837v1) · [code](https://github.com/KAIST-Visual-AI-Group/SyncDiffusion)
 - **MBench: A Comprehensive Benchmark on Memory Capability for Video World Models** — A systematic decomposition of world model memory capability into three hierarchical and complementary dimensions—entity consistency, environment consistency, and causal consistency—further refined into 12 quantifiable sub-dimensions, enabling objective evaluation of long-term state retention in video world models… _(→ WAM: World Action Models must maintain coherent internal world states over extended action sequences, making memory capability critical. The three-dimensional decomposition transfers directly: (1) Entity consistency ensures WAMs track object identities and…)_ [abs](https://arxiv.org/abs/2606.00793) · [pdf](https://arxiv.org/pdf/2606.00793v1) · [code](https://github.com/study-overflow/MBench)
-- **SafeVLA-Bench: A Benchmark for the Success-Safety Gap in Vision-Language-Action Models** — Formalizing task-aware safety requirements as Signal Temporal Logic (STL) specifications and introducing metrics that expose the success-safety gap: Succ-But-Unsafe (SBU) rate measuring successful-yet-unsafe episodes, and Violation Severity Index (VSI) quantifying worst-case violation depth, revealing that high task… _(→ WAM: World Action Models generate action sequences and predict world states; they could inherit this STL-based safety specification framework to formally constrain their generated trajectories during planning. Currently, WAMs optimizing solely for task-completion…)_ [abs](https://arxiv.org/abs/2606.00773) · [pdf](https://arxiv.org/pdf/2606.00773v1)
-- **Closed-Loop Neural Activation Control in Vision-Language-Action Models** — CTRL-STEER decouples representation from regulation in test-time steering of VLA models: rather than applying a fixed steering coefficient along an internal activation direction (open-loop), it uses a closed-loop feedback controller (PID or RL-based) that adaptively adjusts intervention magnitude online based on the… _(→ WAM: World Action Models face the same fundamental problem when being steered at test time: fixed-coefficient interventions on internal representations cause overcorrection and oscillation, especially for temporal/action concepts (speed, smoothness, force). The…)_ [abs](https://arxiv.org/abs/2606.00269) · [pdf](https://arxiv.org/pdf/2606.00269v1)
 
 ## 👥 Influential Authors & Groups
 - **[Xiaofeng Wang](https://www.semanticscholar.org/author/2242976725)** (5 papers) — 研究具身智能中的世界模型、动作表示与视觉导航，包括将动作转化为视觉图像（iMaC）、稀疏关键帧插值加速（SKIP）、3D感知数据增强（R2RDreamer）、潜空间世界-动作联合建模（WAM-Nav）以及无人机主动感知（ScoutVLA）。
@@ -529,21 +529,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Arman Akbari](https://www.semanticscholar.org/author/2273976198)** (3 papers) — Arman Akbari's research focuses on improving the efficiency and physical plausibility of world-action models (WAMs) and vision-language-action (VLA) models for Physical AI, including post-training for video generation world models, modality-aware distillation…
 
 ## 📰 Embodied / Physical-AI News
+- [Apptronik unveils Apollo 2 and a flagship data collection and training facility](https://www.therobotreport.com/apptronik-unveils-apollo-2-flagship-data-collection-training-facility/) — _The Robot Report_
+- [Hugging Face and Cerebras bring Gemma 4 to real-time voice AI](https://huggingface.co/blog/cerebras-gemma4-voice-ai) — _Hugging Face - Blog_
 - [Queue raises funding to build fully autonomous pharmacy](https://www.therobotreport.com/queue-raises-funding-fully-autonomous-pharmacy/) — _The Robot Report_
 - [Soft, robotic cells from morph embed physical AI into hardware](https://www.therobotreport.com/soft-robotic-cells-from-morph-embed-physical-ai-into-hardware/) — _The Robot Report_
 - [Sonair ADAR One 3D ultrasonic sensor is now safety-certified](https://www.therobotreport.com/sonair-3d-ultrasonic-sensor-is-now-safety-certified/) — _The Robot Report_
 - [Why Specialization Is Inevitable](https://huggingface.co/blog/Dharma-AI/why-specialization-is-inevitable) — _Hugging Face - Blog_
 - [Featuring Every Eval Ever Results on Hugging Face Model Pages](https://huggingface.co/blog/eee-community-evals) — _Hugging Face - Blog_
+- [X Square Robot brings its valuation to $2.8B with four consecutive funding rounds](https://www.therobotreport.com/x-square-robot-brings-valuation-2-8b-four-consecutive-funding-rounds/) — _The Robot Report_
+- [ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration](https://huggingface.co/blog/ibm-research/scarfbench) — _Hugging Face - Blog_
 - [MBody AI expands service robotics operations to eleven states and Canada](https://www.therobotreport.com/mbody-ai-expands-service-robotics-operations-eleven-states-canada/) — _The Robot Report_
 - [Advantages of hypoid gearing over worm, bevel and bevel-planetary](https://www.therobotreport.com/advantages-of-hypoid-gearing-over-worm-bevel-and-bevel-planetary/) — _The Robot Report_
 - [Insights behind Kinisi’s acquisition by Bear Robotics](https://www.therobotreport.com/insights-behind-kinisi-acquisition-by-bear-robotics/) — _The Robot Report_
 - [BMW Group deploys Figure 03 humanoid after tests with previous version](https://www.therobotreport.com/bmw-group-deploys-figure-03-humanoid-after-tests-previous-version/) — _The Robot Report_
 - [DiScoFormer: One transformer for density and score, across distributions](https://huggingface.co/blog/allenai/discoformer) — _Hugging Face - Blog_
 - [AGIBOT produces 15,000th robot, marking a milestone in embodied AI deployment](https://www.therobotreport.com/agibot-produces-15000th-robot-marking-milestone-embodied-ai-deployment/) — _The Robot Report_
-- [We know how to build smarter robots. Now, we need to learn smarter ways to test them](https://www.therobotreport.com/we-know-how-to-build-smarter-robots-now-we-need-to-learn-smarter-ways-to-test-them/) — _The Robot Report_
-- [How compact cobot integration enhances autonomous mobile robot applications](https://www.therobotreport.com/how-compact-cobot-integration-enhances-autonomous-mobile-robot-applications/) — _The Robot Report_
-- [Orbbec shows AI-powered vision systems at Automate 2026](https://www.therobotreport.com/orbbec-shows-ai-powered-vision-systems-automate-2026/) — _The Robot Report_
-- [Run a vLLM Server on HF Jobs in One Command](https://huggingface.co/blog/vllm-jobs) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
