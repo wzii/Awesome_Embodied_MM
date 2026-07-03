@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-07-02 · **Tracked:** 454 core · 432 adjacent ·
-205 news · **12061** benchmark rows across **4676** model
+**Last updated:** 2026-07-03 · **Tracked:** 470 core · 445 adjacent ·
+208 news · **12385** benchmark rows across **4822** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1399 results_
+#### LIBERO  ·  _1425 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _321 results_
+#### RoboTwin  ·  _325 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -127,13 +127,13 @@ _Model identity = (model, training data); same name on different data is a disti
 | Fast-WAM _(RoboTwin 2.0)_ | — | inference latency | 425.53 | 3rd-party |
 | Flash-WAM _(LingBot-VA)_ | — | per-chunk latency | 348.0 | authors |
 | IRASim _(RoboTwin 2.0)_ | Overall | FVD | 126.2 | authors |
+| HY-VLA | place_empty_cup | success rate | 100.0 | authors |
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
 | Ours _(RoboTwin 2.0 demonstration data (50 per task, easy setting))_ | S3 (Lift Pot) | success rate | 97.0 | authors |
 | StaKe _(RoboTwin 2.0 (50 demos per task))_ | Adjust Bottle | success rate | 96.0 | authors |
 | SANTS _(RoboTwin 2.0 + real-robot data)_ | — | success rate | 94.4 | authors |
-| Next Forcing _(in-house general video dataset (3.5M clips) + RoboTwin)_ | — | success rate | 94.1 | authors |
 
-#### SimplerEnv  ·  _139 results_
+#### SimplerEnv  ·  _148 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -163,7 +163,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | HARP-SR | 18 tasks | average success rate | 43.41 | authors |
 | Unadapted | 18 tasks | average success rate | 37.56 | authors |
 
-#### Meta-World  ·  _25 results_
+#### Meta-World  ·  _31 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -172,11 +172,11 @@ _Model identity = (model, training data); same name on different data is a disti
 | LA4VLA-1B _(LA4-33K + LA-33K-V (MixPT))_ | — | success rate | 87.53 | authors |
 | ProgVLA (0.1B) _(Meta-World MT50)_ | — | success rate | 78.5 | authors |
 | SmolVLA (2.25B) | — | success rate | 68.24 | 3rd-party |
+| SmolVLA + VLA-Corrector _(MetaWorld)_ | — | success rate | 66.65 | authors |
 | π0.5 | MT50 | success rate | 65.4 | authors |
-| AVDC _(Meta-World (11 tasks))_ | — | success rate | 55.0 | 3rd-party |
-| π0.5-Finetune _(Meta-World MT50)_ | — | success rate | 26.1 | 3rd-party |
-| π0.5-Scratch _(Meta-World MT50)_ | — | success rate | 20.6 | 3rd-party |
-| Gemini-1.5-Pro | — | PIB (bits) | 2.65 | authors |
+| π0.5 + VLA-Corrector _(MetaWorld)_ | — | success rate | 64.35 | authors |
+| SmolVLA _(MetaWorld)_ | — | success rate | 61.9 | authors |
+| X-VLA + VLA-Corrector _(MetaWorld)_ | — | success rate | 59.6 | authors |
 
 #### ManiSkill  ·  _53 results_
 
@@ -232,7 +232,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FQE _(πb trajectories (Llama-3.1-8B-Instr.))_ | iter1 policy | Spearman ρ | 0.82 | 3rd-party |
 | ADWM _(πb trajectories (Llama-3.1-8B-Instr.))_ | iter3 policy | Spearman ρ | 0.8 | authors |
 
-#### VBench  ·  _681 results_
+#### VBench  ·  _687 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -262,7 +262,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ViPSim(DiT) _(AgiBotWorld-Beta)_ | — | Overall | 5.5697 | authors |
 | ViPSim(UNet) _(AgiBotWorld-Beta)_ | — | Overall | 5.4291 | authors |
 
-#### Habitat  ·  _6 results_
+#### Habitat  ·  _10 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -272,6 +272,9 @@ _Model identity = (model, training data); same name on different data is a disti
 | Pantheon360 _(360-1M (filtered))_ | sparse views-to-video | FVD | 450.696 | authors |
 | multiple (LLaVA-1.6, GPT-4V, Gemini-1.5-Pro, InternVL2, OpenVLA) | — | success rate relative to oracle | 94.2 | authors |
 | Gemini-1.5-Pro | — | PIB (bits) | 1.05 | authors |
+| CoFL-S _(R2R-CE + RxR-CE training episodes (augmented with instruction-diverse slots from Fine-Grained R2R and Landmark RxR))_ | — | success rate (SR) | 0.43 | authors |
+| Action Chunk _(R2R-CE + RxR-CE training episodes (same matched training))_ | — | success rate (SR) | 0.3 | 3rd-party |
+| Action Token _(R2R-CE + RxR-CE training episodes (same matched training))_ | — | success rate (SR) | 0.25 | 3rd-party |
 
 #### BEHAVIOR  ·  _31 results_
 
@@ -288,7 +291,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | PI0.5 (ft) _(per-task finetune on BEHAVIOR-1K)_ | Failure recovery (object drop) | recovery time | 24.3 | authors |
 | SERF _(per-task finetune on BEHAVIOR-1K)_ | Failure recovery (object drop) | recovery time | 20.5 | authors |
 
-#### nuScenes  ·  _180 results_
+#### nuScenes  ·  _187 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -363,6 +366,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | LA-LQR (ours) | Copyright & Trademarks | VBench (Subject Consistency) | 0.976 | authors |
 | SAFREE [10] | Copyright & Trademarks | VBench (Subject Consistency) | 0.973 | 3rd-party |
 
+#### NAVSIM  ·  _64 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
+| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
+| ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
+| RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
+| LWDrive _(Impromptu dataset (adaptation stage))_ | — | PDMS | 92.0 | authors |
+| Ours-Rep+Geo+MCB _(OpenScene (NAVSIM train split))_ | planning (frozen tokenizer + lightweight decoder) | PDMS | 91.8 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | PDMS | 91.8 | authors |
+
 #### Bench2Drive  ·  _64 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -393,21 +411,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | MVTrack4Gen Redirector _(Kubric + MultiCamVideo)_ | — | Motion Smoothness | 0.986 | authors |
 | MVTrack4Gen ReCamMaster _(Kubric + MultiCamVideo)_ | — | Motion Smoothness | 0.984 | authors |
 
-#### NAVSIM  ·  _58 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
-| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
-| ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
-| RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
-| LWDrive _(Impromptu dataset (adaptation stage))_ | — | PDMS | 92.0 | authors |
-| Ours-Rep+Geo+MCB _(OpenScene (NAVSIM train split))_ | planning (frozen tokenizer + lightweight decoder) | PDMS | 91.8 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | PDMS | 91.8 | authors |
-
 #### RealisDance-Val  ·  _56 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -423,20 +426,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | RealisDance-DiT | — | Temporal Flicker | 97.76 | 3rd-party |
 | Animate-X | — | Temporal Flicker | 97.4 | 3rd-party |
 
-#### PushT  ·  _52 results_
+#### PushT  ·  _54 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | LeWM + AITS | — | success rate | 100.0 | authors |
 | FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
 | LeWM | — | success rate | 96.0 | authors |
+| Le-WM | — | success rate | 96.0 | authors |
 | LeWM _(PushT)_ | Short-horizon (t=25) | success rate | 94.53 | authors |
 | VLWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 94.0 | authors |
 | AdaJEPA (WM w/ Temporal Straightening spatial) _(PushT)_ | goal-reaching | success rate | 92.0 | authors |
 | Frozen (WM w/ Temporal Straightening spatial) _(PushT)_ | goal-reaching | success rate | 91.3 | authors |
 | LeWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 90.0 | 3rd-party |
 | DINO (Hierarchy) | Short-horizon (t=25) | success rate | 89.0 | 3rd-party |
-| PRISM-MPPI _(expert dataset (18.7k PushT, 10k Cube))_ | — | success rate | 89.0 | authors |
 
 #### HunyuanVideo  ·  _50 results_
 
@@ -529,9 +532,12 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Arman Akbari](https://www.semanticscholar.org/author/2273976198)** (3 papers) — Arman Akbari's research focuses on improving the efficiency and physical plausibility of world-action models (WAMs) and vision-language-action (VLA) models for Physical AI, including post-training for video generation world models, modality-aware distillation…
 
 ## 📰 Embodied / Physical-AI News
+- [Quarterhill discusses transport modernization as U.S. marks 70 years of federal highways](https://www.therobotreport.com/quarterhill-discusses-transport-modernization-u-s-marks-70-years-federal-highways/) — _The Robot Report_
+- [Video Friday: An Earthbound Mars Rover for the Moon](https://spectrum.ieee.org/video-friday-nasa-lunar-rover) — _IEEE Spectrum_
 - [Why you should combine robot dexterity with mechanical positioning for complex assembly operations](https://www.therobotreport.com/why-you-should-combine-robot-dexterity-with-mechanical-positioning-for-complex-assembly-operations/) — _The Robot Report_
 - [Luxonis closes Series A round to scale physical AI perception layer](https://www.therobotreport.com/luxonis-closes-series-a-round-to-scale-physical-ai-perception-layer/) — _The Robot Report_
 - [Blattner awards Built Robotics $75M contract for physical AI to help meet energy demand](https://www.therobotreport.com/blattner-awards-built-robotics-75m-contract-meet-energy-demands/) — _The Robot Report_
+- [Automate 2026 show recap](https://www.therobotreport.com/automate-2026-show-recap/) — _The Robot Report_
 - [Apptronik unveils Apollo 2 and a flagship data collection and training facility](https://www.therobotreport.com/apptronik-unveils-apollo-2-flagship-data-collection-training-facility/) — _The Robot Report_
 - [Hugging Face and Cerebras bring Gemma 4 to real-time voice AI](https://huggingface.co/blog/cerebras-gemma4-voice-ai) — _Hugging Face - Blog_
 - [In Robotics, Ruggedization Is No Longer Optional](https://www.therobotreport.com/in-robotics-ruggedization-is-no-longer-optional/) — _The Robot Report_
@@ -541,9 +547,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Sonair ADAR One 3D ultrasonic sensor is now safety-certified](https://www.therobotreport.com/sonair-3d-ultrasonic-sensor-is-now-safety-certified/) — _The Robot Report_
 - [Why Specialization Is Inevitable](https://huggingface.co/blog/Dharma-AI/why-specialization-is-inevitable) — _Hugging Face - Blog_
 - [Featuring Every Eval Ever Results on Hugging Face Model Pages](https://huggingface.co/blog/eee-community-evals) — _Hugging Face - Blog_
-- [X Square Robot brings its valuation to $2.8B with four consecutive funding rounds](https://www.therobotreport.com/x-square-robot-brings-valuation-2-8b-four-consecutive-funding-rounds/) — _The Robot Report_
-- [ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration](https://huggingface.co/blog/ibm-research/scarfbench) — _Hugging Face - Blog_
-- [MBody AI expands service robotics operations to eleven states and Canada](https://www.therobotreport.com/mbody-ai-expands-service-robotics-operations-eleven-states-canada/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
