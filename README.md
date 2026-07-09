@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-07-08 · **Tracked:** 521 core · 477 adjacent ·
-224 news · **13331** benchmark rows across **5215** model
+**Last updated:** 2026-07-09 · **Tracked:** 521 core · 477 adjacent ·
+230 news · **13353** benchmark rows across **5221** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1502 results_
+#### LIBERO  ·  _1509 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _348 results_
+#### RoboTwin  ·  _354 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -539,6 +539,12 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Jingjing Gong](https://www.semanticscholar.org/author/2371292918)** (4 papers) — Jingjing Gong's research focuses on advancing Vision-Language-Action (VLA) models for robotic control, including in-context world modeling for adaptation, efficient one-step action generation, coarse-to-control planning for long-horizon tasks, and…
 
 ## 📰 Embodied / Physical-AI News
+- [Beyond da Vinci: Why versatile humanoid robots are the next frontier in surgery](https://www.therobotreport.com/beyond-da-vinci-why-versatile-humanoid-robots-are-next-frontier-surgery/) — _The Robot Report_
+- [Tickets, geofences, and 1M miles: The new reality of California AV compliance](https://www.therobotreport.com/tickets-geofences-1m-miles-new-reality-california-av-compliance/) — _The Robot Report_
+- [NVIDIA and Hugging Face bring new models and frameworks to LeRobot](https://www.therobotreport.com/nvidia-hugging-face-bring-new-models-frameworks-lerobot/) — _The Robot Report_
+- [ENCY Software and Stäubli Robotics partner to simplify robot programming](https://www.therobotreport.com/ency-software-staubli-robotics-partner-simplify-robot-programming/) — _The Robot Report_
+- [Data for Agents](https://huggingface.co/blog/nvidia/open-data-for-agents) — _Hugging Face - Blog_
+- [Native-speed vLLM transformers modeling backend](https://huggingface.co/blog/native-speed-vllm-transformers-backend) — _Hugging Face - Blog_
 - [LeRobot v0.6.0: Imagine, Evaluate, Improve](https://huggingface.co/blog/lerobot-release-v060) — _Hugging Face - Blog_
 - [Tesollo initiates IPO process while developing humanoid hands](https://www.therobotreport.com/tesollo-initiates-ipo-process-developing-humanoid-hands/) — _The Robot Report_
 - [HIVE brings in $15M to build physical AI for industrial machines](https://www.therobotreport.com/hive-brings-in-15m-to-build-physical-ai-for-industrial-machines/) — _The Robot Report_
@@ -548,12 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [From Hugging Face to Amazon SageMaker Studio in one click](https://huggingface.co/blog/amazon/one-click-to-sagemaker-studio) — _Hugging Face - Blog_
 - [Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot](https://huggingface.co/blog/skypilot-hf-storage) — _Hugging Face - Blog_
 - [PRX Part 4: Our Data Strategy](https://huggingface.co/blog/Photoroom/prx-part4-data) — _Hugging Face - Blog_
-- [🤗 Kernels: Major Updates](https://huggingface.co/blog/revamped-kernels) — _Hugging Face - Blog_
-- [Kraken Robotics acquires Covelya Group for $615M](https://www.therobotreport.com/kraken-robotics-acquires-covelya-group-for-615m/) — _The Robot Report_
-- [Boston Dynamics brings its legged robots to the FIFA World Cup](https://www.therobotreport.com/boston-dynamics-brings-its-legged-robots-to-the-fifa-world-cup/) — _The Robot Report_
-- [Quantum Systems raises $1.2B to expand drone production and deployments](https://www.therobotreport.com/quantum-systems-raises-1-2b-expand-drone-production-deployments/) — _The Robot Report_
-- [Humanoid says KinetIQ Ascend reinforcement learning approaches human-level dexterity](https://www.therobotreport.com/humanoid-announces-kinetiq-ascend-reinforcement-learning-approach/) — _The Robot Report_
-- [Context is king: How Avride uses cloud VLMs as a safety net for delivery robots](https://www.therobotreport.com/how-avride-uses-cloud-vlms-safety-net-delivery-robots/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
