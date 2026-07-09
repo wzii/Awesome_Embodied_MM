@@ -9,6 +9,7 @@ keep this stage cheap. Returns the list of *newly inserted* records.
 from __future__ import annotations
 
 import sqlite3
+from datetime import date, datetime
 
 from wam.config import Config
 from wam.logging import get_logger
@@ -22,6 +23,21 @@ log = get_logger("pipeline.fetch")
 def _norm_title(t: str | None) -> str:
     """Loose title key for cross-source dedup (drops case/punctuation/whitespace)."""
     return "".join(ch for ch in (t or "").lower() if ch.isalnum())
+
+
+def _record_alert(conn: sqlite3.Connection, kind: str, msg: str) -> None:
+    """Persist a durable alert row in `runs` so a silent fetch failure is visible in the
+    committed DB (and any dashboard/query over it), not just buried in the run log."""
+    try:
+        conn.execute(
+            "INSERT INTO runs (run_date, stage, n_in, n_out, cost_usd, notes, created_at) "
+            "VALUES (?,?,?,?,?,?,?)",
+            (date.today().isoformat(), f"alert:{kind}", 0, 0, 0.0, msg,
+             datetime.now().isoformat(timespec="seconds")),
+        )
+        conn.commit()
+    except Exception as e:  # noqa: BLE001
+        log.warning("failed to record alert row: %s", e)
 
 
 def gather(cfg: Config) -> list[PaperRecord]:
@@ -44,6 +60,17 @@ def gather(cfg: Config) -> list[PaperRecord]:
 
 def run(cfg: Config, conn: sqlite3.Connection) -> list[PaperRecord]:
     candidates = gather(cfg)
+    # Health check / alert: the arXiv query is broad enough that a successful fetch always
+    # returns hundreds of in-window papers. Zero arXiv candidates while the source is
+    # enabled means the fetch was throttled/failed (see arxiv.ArxivFetchError) — the day's
+    # papers will be recovered on the next successful run, but flag it loudly so a run of
+    # empty days doesn't pass unnoticed.
+    if cfg.get("sources.arxiv.enabled", True) and not any(
+            r.source == "arxiv" for r in candidates):
+        msg = ("arXiv returned 0 candidates — throttled/failed fetch; "
+               "papers recover on the next successful run")
+        log.error("🚨 ALERT: %s", msg)
+        _record_alert(conn, "arxiv_fetch", msg)
     seen = paper_store.existing_ids(conn)
     new = [r for r in candidates if r.id not in seen]
     # Cross-source title dedup: an OpenReview/news copy of a paper already in the DB (or of

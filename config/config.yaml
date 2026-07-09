@@ -87,7 +87,8 @@ sources:
   arxiv:
     enabled: true
     categories: ["cs.RO", "cs.AI", "cs.LG", "cs.CV"]
-    max_results: 300
+    max_results: 300         # total cap across pages within the lookback window
+    page_size: 100           # per-request page; fetch pages until cutoff/cap reached
   semantic_scholar:
     enabled: true
     api_key_env: "SEMANTIC_SCHOLAR_API_KEY"   # optional; higher rate limits if set
@@ -167,6 +168,8 @@ institutes:
     - {name: "Shanghai AI Laboratory",     aliases: ["shanghai ai lab", "shanghai artificial intelligence"]}
     - {name: "ByteDance",                  aliases: ["bytedance"]}
     - {name: "Galaxea / Galbot",           aliases: ["galbot", "galaxea"]}
+    - {name: "LingBot",                    aliases: ["lingbot", "lingbot-world", "ling bot"]}
+    - {name: "Qwen Team (Alibaba)",        aliases: ["qwen", "tongyi", "alibaba"]}
 
 people:
   min_papers: 2              # influential if on >= N tracked papers
