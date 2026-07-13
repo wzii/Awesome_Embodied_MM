@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-07-12 · **Tracked:** 540 core · 488 adjacent ·
-242 news · **13640** benchmark rows across **5399** model
+**Last updated:** 2026-07-13 · **Tracked:** 547 core · 492 adjacent ·
+243 news · **13742** benchmark rows across **5470** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1555 results_
+#### LIBERO  ·  _1566 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -163,7 +163,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | HARP-SRPD | — | average success rate | 46.59 | authors |
 | HARP-SR | 18 tasks | average success rate | 43.41 | authors |
 
-#### Meta-World  ·  _44 results_
+#### Meta-World  ·  _50 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -178,7 +178,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Evo-1 | — | tier-average success rate | 80.6 | 3rd-party |
 | ProgVLA (0.1B) _(Meta-World MT50)_ | — | success rate | 78.5 | authors |
 
-#### ManiSkill  ·  _53 results_
+#### ManiSkill  ·  _56 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -253,7 +253,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Reward (Vanilla) | — | KV Cache | 100.0 | authors |
 | Krea (Vanilla) | — | KV Cache | 100.0 | authors |
 
-#### AgiBot / GENIE  ·  _21 results_
+#### AgiBot / GENIE  ·  _33 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -262,11 +262,11 @@ _Model identity = (model, training data); same name on different data is a disti
 | PAIWorld _(AgiBot-World, RoboMIND, Galaxea, RoboTwin, RoboCOIN (2.5M clips))_ | — | Scene Consistency | 90.41 | authors |
 | PAIWorld _(AgiBot-World, RoboMIND, Galaxea, RoboTwin, RoboCOIN (2.5M clips))_ | — | EWMScore | 82.45 | authors |
 | Wan2.2 (no pretraining) | Seen tasks (in-distribution) | success rate | 40.0 | authors |
+| DreamDojo (14B) | target-action transfer do(ut=utar) | FDCE | 24.82 | 3rd-party |
+| DreamDojo (2B) | target-action transfer do(ut=utar) | FDCE | 24.36 | 3rd-party |
+| CD-LAM (2B) _(EgoDex (100h), AgiBot)_ | target-action transfer do(ut=utar) | FDCE | 22.55 | authors |
+| CD-LAM (14B) _(EgoDex (100h), AgiBot)_ | target-action transfer do(ut=utar) | FDCE | 21.11 | authors |
 | ViPSim(DiT) _(AgiBotWorld-Beta)_ | — | PSNR | 20.35 | authors |
-| ViPSim(UNet) _(AgiBotWorld-Beta)_ | — | PSNR | 18.42 | authors |
-| EnerVerse-AC | — | PSNR | 17.93 | 3rd-party |
-| ViPSim(DiT) _(AgiBotWorld-Beta)_ | — | Overall | 5.5697 | authors |
-| ViPSim(UNet) _(AgiBotWorld-Beta)_ | — | Overall | 5.4291 | authors |
 
 #### Habitat  ·  _19 results_
 
@@ -539,6 +539,7 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Jingjing Gong](https://www.semanticscholar.org/author/2371292918)** (4 papers) — Jingjing Gong's research focuses on advancing Vision-Language-Action (VLA) models for robotic control, including in-context world modeling for adaptation, efficient one-step action generation, coarse-to-control planning for long-horizon tasks, and…
 
 ## 📰 Embodied / Physical-AI News
+- [The Robot Report parent company, WTWH Media, rebrands as Arrowfly](https://www.therobotreport.com/the-robot-report-parent-company-wtwh-media-rebrands-as-arrowfly/) — _The Robot Report_
 - [STEM education in the classroom, introducing BotBall](https://www.therobotreport.com/stem-education-classroom-introducing-botball/) — _The Robot Report_
 - [Are suppliers ready for new robot safety standards?](https://www.therobotreport.com/are-suppliers-ready-for-new-robot-safety-standards/) — _The Robot Report_
 - [Why robotics teams need virtual gyms before deployment](https://www.therobotreport.com/why-robotics-teams-need-virtual-gyms-before-deployment/) — _The Robot Report_
@@ -553,7 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Calling all robotics startups: apply to RoboBusiness Startup Alley](https://www.therobotreport.com/calling-all-robotics-startups-apply-to-robobusiness-startup-alley/) — _The Robot Report_
 - [Rollon launches two telescopic rails with integrated magnets](https://www.therobotreport.com/rollon-launches-two-telescopic-rails-integrated-magnets/) — _The Robot Report_
 - [Tickets, geofences, and 1M miles: The new reality of California AV compliance](https://www.therobotreport.com/tickets-geofences-1m-miles-new-reality-california-av-compliance/) — _The Robot Report_
-- [NVIDIA and Hugging Face bring new models and frameworks to LeRobot](https://www.therobotreport.com/nvidia-hugging-face-bring-new-models-frameworks-lerobot/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
