@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-07-13 · **Tracked:** 547 core · 492 adjacent ·
-243 news · **13742** benchmark rows across **5470** model
+**Last updated:** 2026-07-14 · **Tracked:** 558 core · 500 adjacent ·
+245 news · **13979** benchmark rows across **5581** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -26,6 +26,7 @@ variants · **30** authors
 | **8.23** | Flash-WAM: Modality-Aware Distillation for World Action Models | 2026-06-03 | spd 9 · gen 6 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2606.05254) · [pdf](https://arxiv.org/pdf/2606.05254v1) |
 | **7.79** | Causal-rCM: A Unified Teacher-Forcing and Self-Forcing Open Recipe for Autoregressive Diffusion Distillation in Streaming Video Generation and Interactive World Models | 2026-06-24 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.25473) · [pdf](https://arxiv.org/pdf/2606.25473v1) · [code](https://github.com/NVlabs/rcm) |
 | **7.73** | BLUE: Toward Better Language Use in Efficient Vision-Language-Action Models for Autonomous Driving | 2026-06-07 | spd 8 · gen 3 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2606.08684) · [pdf](https://arxiv.org/pdf/2606.08684v1) · [code](https://github.com/George-Ling3/BLUE) |
+| **7.72** | Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model | 2026-07-13 | spd – · gen 7 · spec 8 · cost 2 | [abs](https://arxiv.org/abs/2607.11643) · [pdf](https://arxiv.org/pdf/2607.11643v1) |
 | **7.71** | LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies | 2026-06-14 | spd 7 · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.15768) · [pdf](https://arxiv.org/pdf/2606.15768v1) |
 | **7.67** | vla.cpp: A Unified Inference Runtime for Vision-Language-Action Models | 2026-06-06 | spd 8 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2606.08094) · [pdf](https://arxiv.org/pdf/2606.08094v1) · [code](https://github.com/ggml-org/llama.cpp) |
 | **7.67** | Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models | 2026-06-16 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.17846) · [pdf](https://arxiv.org/pdf/2606.17846v1) · [code](https://github.com/QwenLM/Qwen-RobotManip) |
@@ -48,6 +49,7 @@ variants · **30** authors
 | **7.46** | Feat2Go: Visual Feature-Grounded Value Estimation for Embodied Reinforcement Learning | 2026-05-29 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2605.30795) · [pdf](https://arxiv.org/pdf/2605.30795v1) |
 | **7.46** | Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments | 2026-05-28 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2605.30280) · [pdf](https://arxiv.org/pdf/2605.30280v2) · [code](https://github.com/QwenLM/Qwen-VLA) |
 | **7.46** | Afford-VLA: Action-Aligned Visual Planning via Internalized Affordance | 2026-05-22 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2605.24203) · [pdf](https://arxiv.org/pdf/2605.24203v1) |
+| **7.46** | WALA Learning Executable Latent Actions from Action-Labeled Demonstrations and Action-Free Videos | 2026-07-13 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.11397) · [pdf](https://arxiv.org/pdf/2607.11397v1) |
 | **7.45** | QPILOTS: Efficient Test-Time Q-Steering for Flow Policies | 2026-06-11 | spd – · gen 6 · spec 8 · cost 4 | [abs](https://arxiv.org/abs/2606.14801) · [pdf](https://arxiv.org/pdf/2606.14801v1) |
 | **7.44** | VisualThink-VLA: Visual Intermediate Reasoning for Effective and Low-Latency Vision-Language-Action Policies | 2026-05-28 | spd 8 · gen 7 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2605.30011) · [pdf](https://arxiv.org/pdf/2605.30011v1) · [code](https://github.com/DCDmllm/VisualThink-VLA) |
 | **7.44** | Efficient-WAM: A 1B-Parameter World-Action Model with Low-Cost Future Imagination | 2026-06-08 | spd 8 · gen 5 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2606.10040) · [pdf](https://arxiv.org/pdf/2606.10040v1) |
@@ -70,9 +72,7 @@ variants · **30** authors
 | **7.31** | Invertible Neural Network Adapter for One-Step Flow Matching in Robot Manipulation | 2026-06-17 | spd 8 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2606.19194) · [pdf](https://arxiv.org/pdf/2606.19194v1) |
 | **7.31** | RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation | 2026-07-07 | spd 8 · gen 6 · spec 6 · cost 4 | [abs](https://arxiv.org/abs/2607.06558) · [pdf](https://arxiv.org/pdf/2607.06558v1) · [code](https://github.com/alibaba-damo-academy/RynnWorld-Teleop) |
 | **7.28** | Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving and Urban Navigation | 2026-06-14 | spd 6 · gen 6 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2606.15869) · [pdf](https://arxiv.org/pdf/2606.15869v1) |
-| **7.26** | Embodied-R1.5: Evolving Physical Intelligence via Embodied Foundation Models | 2026-06-09 | spd – · gen 8 · spec 7 · cost 5 | [abs](https://arxiv.org/abs/2606.11324) · [pdf](https://arxiv.org/pdf/2606.11324v1) · [code](https://github.com/pickxiguapi/Embodied-R1.5) |
-| **7.26** | MoWorld: A Flash World Model | 2026-07-07 | spd 8 · gen 4 · spec – · cost 7 | [abs](https://arxiv.org/abs/2607.06216) · [pdf](https://arxiv.org/pdf/2607.06216v1) |
-| **7.25** | SparseWorld: Enhancing End-to-End Autonomous Driving via World Models with Sparse Scene Representation | 2026-05-23 | spd – · gen 2 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2605.24354) · [pdf](https://arxiv.org/pdf/2605.24354v1) |
+| **7.28** | TS-Mask VLA: 2D Temporal-Spatial Masking for Vision-Language-Action Model with Effective Bridging | 2026-07-10 | spd – · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2607.09818) · [pdf](https://arxiv.org/pdf/2607.09818v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -80,7 +80,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1566 results_
+#### LIBERO  ·  _1589 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -95,7 +95,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ConfidenceVLA | — | avg inference time | 712.9 | 3rd-party |
 | Agentic-VLA _(LIBERO)_ | Long | iterations to 90% success rate | 700.0 | authors |
 
-#### CALVIN  ·  _95 results_
+#### CALVIN  ·  _100 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -110,7 +110,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _357 results_
+#### RoboTwin  ·  _358 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -155,20 +155,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | HARP-SRPD | — | average success rate | 46.59 | authors |
 | HARP-SR | 18 tasks | average success rate | 43.41 | authors |
 
-#### Meta-World  ·  _50 results_
+#### Meta-World  ·  _55 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | SWAAP _(fine-tuned on 5000 transitions with 10% poisoned, α=0.9)_ | push | return | 1641.0 | authors |
 | VICX _(Meta-World (drawer-open, reach, basketball))_ | coffee-button | success rate | 100.0 | authors |
+| SUREFlow _(LIBERO, Meta-World, LIBERO-PRO)_ | Easy | Success Rate | 97.8 | authors |
 | FabriVLA _(Evo-1 Meta-World demonstration dataset)_ | easy | success rate | 95.0 | authors |
 | FabriVLA _(Evo-1 Meta-World demonstration dataset)_ | — | overall episode-level success rate | 92.0 | authors |
 | FabriVLA _(Evo-1 Meta-World demonstration dataset)_ | — | tier-average success rate | 90.0 | authors |
+| SUREFlow _(LIBERO, Meta-World, LIBERO-PRO)_ | — | Average Success Rate | 88.32 | authors |
 | LA4VLA-1B _(LA4-33K + LA-33K-V (MixPT))_ | — | success rate | 87.53 | authors |
 | LA4VLA | — | tier-average success rate | 87.5 | 3rd-party |
 | Evo-Depth | — | tier-average success rate | 84.4 | 3rd-party |
-| Evo-1 | — | tier-average success rate | 80.6 | 3rd-party |
-| ProgVLA (0.1B) _(Meta-World MT50)_ | — | success rate | 78.5 | authors |
 
 #### ManiSkill  ·  _56 results_
 
@@ -185,7 +185,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 | FORCE (Octo) _(ManiSkill (offline + online))_ | — | success rate | 82.3 | authors |
 
-#### RoboCasa  ·  _145 results_
+#### RoboCasa  ·  _156 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -193,12 +193,12 @@ _Model identity = (model, training data); same name on different data is a disti
 | Z-1 RL _(RoboCasa demonstrations)_ | Door | success rate | 97.0 | authors |
 | Z-1 SFT _(RoboCasa demonstrations)_ | Door | success rate | 93.2 | authors |
 | X-WAM | — | success rate | 79.2 | 3rd-party |
+| WALA _(RoboCasa-GR1-Tabletop)_ | — | average success rate | 75.2 | authors |
 | ACE-EGO-0 _(Mixed robot demonstrations and egocentric human videos (6.0K+ hours))_ | — | average success | 72.8 | authors |
 | GR00T-N1.5 _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 71.7 | authors |
 | Late Fusion _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 71.0 | authors |
+| DIAL _(RoboCasa-GR1-Tabletop)_ | — | average success rate | 70.2 | 3rd-party |
 | Early Fusion _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 69.7 | authors |
-| ZR-0 _(ProcCorpus-60M)_ | — | success rate | 69.3 | authors |
-| Spatial Forcing _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 68.3 | authors |
 
 #### Open-X / RT  ·  _50 results_
 
@@ -230,7 +230,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Wall-E | — | Success Rate | 27.6 | 3rd-party |
 | WorldCoder | — | Success Rate | 25.4 | 3rd-party |
 
-#### VBench  ·  _764 results_
+#### VBench  ·  _775 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -290,7 +290,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _219 results_
+#### nuScenes  ·  _221 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -532,6 +532,8 @@ _Not scored; surfaced for techniques transferable to WAM._
 
 ## 📰 Embodied / Physical-AI News
 - [The Robot Report parent company, WTWH Media, rebrands as Arrowfly](https://www.therobotreport.com/the-robot-report-parent-company-wtwh-media-rebrands-as-arrowfly/) — _The Robot Report_
+- [Ondas acquires DZYNE for $875.8M, expanding its defense capabilities](https://www.therobotreport.com/ondas-acquires-dzyne-875-8m-expanding-its-defense-capabilities/) — _The Robot Report_
+- [Yaskawa America gets information security certification](https://www.therobotreport.com/yaskawa-america-gets-information-seccurity-certification/) — _The Robot Report_
 - [STEM education in the classroom, introducing BotBall](https://www.therobotreport.com/stem-education-classroom-introducing-botball/) — _The Robot Report_
 - [Are suppliers ready for new robot safety standards?](https://www.therobotreport.com/are-suppliers-ready-for-new-robot-safety-standards/) — _The Robot Report_
 - [Why robotics teams need virtual gyms before deployment](https://www.therobotreport.com/why-robotics-teams-need-virtual-gyms-before-deployment/) — _The Robot Report_
@@ -544,8 +546,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Beyond da Vinci: Why versatile humanoid robots are the next frontier in surgery](https://www.therobotreport.com/beyond-da-vinci-why-versatile-humanoid-robots-are-next-frontier-surgery/) — _The Robot Report_
 - [ForSight Robotics’ road to performing a fully robotic cataract surgery](https://www.therobotreport.com/forsight-robotics-road-to-performing-a-fully-robotic-cataracts-surgery/) — _The Robot Report_
 - [Calling all robotics startups: apply to RoboBusiness Startup Alley](https://www.therobotreport.com/calling-all-robotics-startups-apply-to-robobusiness-startup-alley/) — _The Robot Report_
-- [Rollon launches two telescopic rails with integrated magnets](https://www.therobotreport.com/rollon-launches-two-telescopic-rails-integrated-magnets/) — _The Robot Report_
-- [Tickets, geofences, and 1M miles: The new reality of California AV compliance](https://www.therobotreport.com/tickets-geofences-1m-miles-new-reality-california-av-compliance/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
