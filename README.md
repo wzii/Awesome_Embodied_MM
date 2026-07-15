@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-07-14 · **Tracked:** 558 core · 500 adjacent ·
-245 news · **13979** benchmark rows across **5581** model
+**Last updated:** 2026-07-15 · **Tracked:** 565 core · 505 adjacent ·
+249 news · **14061** benchmark rows across **5621** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -38,6 +38,7 @@ variants · **30** authors
 | **7.58** | FOCA: Future-Oriented Conditioning for Data-Efficient Vision-Language-Action Adaptation | 2026-06-18 | spd – · gen 6 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.20867) · [pdf](https://arxiv.org/pdf/2606.20867v1) |
 | **7.57** | SANTS: A State-Adaptive Scheduler for World Action Models | 2026-05-27 | spd 8 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2605.27947) · [pdf](https://arxiv.org/pdf/2605.27947v1) |
 | **7.57** | Finetuning Vision-Language-Action Models Requires Fewer Layers Than You Think | 2026-06-18 | spd 7 · gen 7 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.20246) · [pdf](https://arxiv.org/pdf/2606.20246v1) |
+| **7.54** | Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference | 2026-07-14 | spd 8 · gen 4 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2607.12659) · [pdf](https://arxiv.org/pdf/2607.12659v1) · [code](https://github.com/PKU-SEC-Lab/Jetson-PI) |
 | **7.53** | SWAP: Symmetric Equivariant World-Model for Agile Robot Parkour | 2026-06-18 | spd – · gen 4 · spec 9 · cost – | [abs](https://arxiv.org/abs/2606.19928) · [pdf](https://arxiv.org/pdf/2606.19928v1) |
 | **7.53** | Learning While Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies | 2026-07-10 | spd – · gen 7 · spec 8 · cost – | [abs](https://openreview.net/forum?id=h3hJmhiWJ7) · [pdf](https://openreview.net/pdf?id=h3hJmhiWJ7) |
 | **7.52** | World-Language-Action Model for Unified World Modeling, Language Reasoning, and Action Synthesis | 2026-06-04 | spd 8 · gen 7 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.05979) · [pdf](https://arxiv.org/pdf/2606.05979v1) · [code](https://github.com/SJTU-DENG-Lab/WLA) |
@@ -64,6 +65,7 @@ variants · **30** authors
 | **7.36** | SKIP: Sparse Keyframe Interpolation Paradigm for Efficient Embodied World Models | 2026-05-30 | spd 7 · gen 4 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.00664) · [pdf](https://arxiv.org/pdf/2606.00664v1) |
 | **7.36** | ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing? | 2026-06-17 | spd 7 · gen 6 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.19531) · [pdf](https://arxiv.org/pdf/2606.19531v1) · [code](https://github.com/yuyangalin/ImageWAM) |
 | **7.35** | Colosseum V2: Benchmarking Generalization for Vision Language Action Models | 2026-05-26 | spd – · gen 8 · spec – · cost – | [abs](https://arxiv.org/abs/2605.27759) · [pdf](https://arxiv.org/pdf/2605.27759v1) |
+| **7.35** | FlowWAM: Optical Flow as a Unified Action Representation for World Action Models | 2026-07-14 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.13017) · [pdf](https://arxiv.org/pdf/2607.13017v1) |
 | **7.33** | DuoBench: A Reproducible Benchmark for Bimanual Manipulation in Simulation and the Real World | 2026-06-10 | spd – · gen – · spec – · cost – | [abs](https://arxiv.org/abs/2606.11901) · [pdf](https://arxiv.org/pdf/2606.11901v1) · [code](https://github.com/isaac-sim/IsaacSim) |
 | **7.33** | dVLA-RL: Reinforcement Learning over Denoising Trajectories for Discrete Diffusion Vision-Language-Action Models | 2026-06-22 | spd – · gen 6 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2606.23623) · [pdf](https://arxiv.org/pdf/2606.23623v1) |
 | **7.33** | Long-term Traffic Simulation via Structured Autoregressive Modeling | 2026-06-30 | spd – · gen – · spec – · cost – | [abs](https://arxiv.org/abs/2606.31209) · [pdf](https://arxiv.org/pdf/2606.31209v1) |
@@ -71,8 +73,6 @@ variants · **30** authors
 | **7.31** | CausalDrive: Real-time Causal World Models for Autonomous Driving | 2026-06-13 | spd 6 · gen 4 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.15341) · [pdf](https://arxiv.org/pdf/2606.15341v1) |
 | **7.31** | Invertible Neural Network Adapter for One-Step Flow Matching in Robot Manipulation | 2026-06-17 | spd 8 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2606.19194) · [pdf](https://arxiv.org/pdf/2606.19194v1) |
 | **7.31** | RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation | 2026-07-07 | spd 8 · gen 6 · spec 6 · cost 4 | [abs](https://arxiv.org/abs/2607.06558) · [pdf](https://arxiv.org/pdf/2607.06558v1) · [code](https://github.com/alibaba-damo-academy/RynnWorld-Teleop) |
-| **7.28** | Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving and Urban Navigation | 2026-06-14 | spd 6 · gen 6 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2606.15869) · [pdf](https://arxiv.org/pdf/2606.15869v1) |
-| **7.28** | TS-Mask VLA: 2D Temporal-Spatial Masking for Vision-Language-Action Model with Effective Bridging | 2026-07-10 | spd – · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2607.09818) · [pdf](https://arxiv.org/pdf/2607.09818v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -80,7 +80,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1589 results_
+#### LIBERO  ·  _1627 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -95,7 +95,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ConfidenceVLA | — | avg inference time | 712.9 | 3rd-party |
 | Agentic-VLA _(LIBERO)_ | Long | iterations to 90% success rate | 700.0 | authors |
 
-#### CALVIN  ·  _100 results_
+#### CALVIN  ·  _103 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -110,7 +110,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _358 results_
+#### RoboTwin  ·  _365 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -230,10 +230,11 @@ _Model identity = (model, training data); same name on different data is a disti
 | Wall-E | — | Success Rate | 27.6 | 3rd-party |
 | WorldCoder | — | Success Rate | 25.4 | 3rd-party |
 
-#### VBench  ·  _775 results_
+#### VBench  ·  _790 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
+| HunyuanVideo (no caching) | 33 prompts from VBench | Latency | 1359.0 | authors |
 | Wan-I2V | Cut & Drag | Flow-Err | 181.1 | 3rd-party |
 | GWTF | Cut & Drag | Flow-Err | 152.81 | 3rd-party |
 | PTQ4DiT | — | FVD-FP | 124.2 | authors |
@@ -243,7 +244,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | ϕ-Noise | Cut & Drag | Flow-Err | 101.49 | authors |
 | LongLive (Vanilla) | — | KV Cache | 100.0 | authors |
 | Reward (Vanilla) | — | KV Cache | 100.0 | authors |
-| Krea (Vanilla) | — | KV Cache | 100.0 | authors |
 
 #### AgiBot / GENIE  ·  _33 results_
 
@@ -531,9 +531,13 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Yinghao Xu](https://www.semanticscholar.org/author/121983635)** (5 papers) — Yinghao Xu's research focuses on world action modeling (WAM) for embodied intelligence, including video-action pretraining, causal world modeling with multi-chunk prediction, and developing scalable world models with mixture-of-experts and semantic…
 
 ## 📰 Embodied / Physical-AI News
+- [Introducing Real World VoiceEQ: Measuring the human quality of voice AI](https://huggingface.co/blog/real-world-voiceeq) — _Hugging Face - Blog_
+- [Key to Humanoid Progress: Managing the Power Behind the Robots](https://www.therobotreport.com/key-to-humanoid-progress-managing-the-power-behind-the-robots/) — _The Robot Report_
+- [NVIDIA shares how to evaluate general-purpose robot policies for real-world deployment](https://www.therobotreport.com/nvidia-shares-how-evaluate-general-purpose-robot-policies-real-world-deployment/) — _The Robot Report_
 - [The Robot Report parent company, WTWH Media, rebrands as Arrowfly](https://www.therobotreport.com/the-robot-report-parent-company-wtwh-media-rebrands-as-arrowfly/) — _The Robot Report_
 - [Ondas acquires DZYNE for $875.8M, expanding its defense capabilities](https://www.therobotreport.com/ondas-acquires-dzyne-875-8m-expanding-its-defense-capabilities/) — _The Robot Report_
 - [Yaskawa America gets information security certification](https://www.therobotreport.com/yaskawa-america-gets-information-seccurity-certification/) — _The Robot Report_
+- [Building a Foundation Stack for General-Purpose Robots](https://spectrum.ieee.org/x-square-robot-embodied-ai-stack) — _IEEE Spectrum_
 - [STEM education in the classroom, introducing BotBall](https://www.therobotreport.com/stem-education-classroom-introducing-botball/) — _The Robot Report_
 - [Are suppliers ready for new robot safety standards?](https://www.therobotreport.com/are-suppliers-ready-for-new-robot-safety-standards/) — _The Robot Report_
 - [Why robotics teams need virtual gyms before deployment](https://www.therobotreport.com/why-robotics-teams-need-virtual-gyms-before-deployment/) — _The Robot Report_
@@ -542,10 +546,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [How Path Robotics uses AI to optimize robotic welding](https://www.therobotreport.com/how-path-robotics-uses-ai-optimize-robotic-welding/) — _The Robot Report_
 - [XTEND secures U.S. patent for autonomous navigation technology](https://www.therobotreport.com/xtend-secures-u-s-patent-autonomous-navigation-technology/) — _The Robot Report_
 - [AI² Robotics raises $735M at $3B valuation for wheeled humanoid robots](https://www.therobotreport.com/ai%c2%b2-robotics-raises-735m-3b-valuation-wheeled-humanoid-robots/) — _The Robot Report_
-- [Video Friday: A World Cup for Robots](https://spectrum.ieee.org/video-friday-robot-world-cup) — _IEEE Spectrum_
-- [Beyond da Vinci: Why versatile humanoid robots are the next frontier in surgery](https://www.therobotreport.com/beyond-da-vinci-why-versatile-humanoid-robots-are-next-frontier-surgery/) — _The Robot Report_
-- [ForSight Robotics’ road to performing a fully robotic cataract surgery](https://www.therobotreport.com/forsight-robotics-road-to-performing-a-fully-robotic-cataracts-surgery/) — _The Robot Report_
-- [Calling all robotics startups: apply to RoboBusiness Startup Alley](https://www.therobotreport.com/calling-all-robotics-startups-apply-to-robobusiness-startup-alley/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
