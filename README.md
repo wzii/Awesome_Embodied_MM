@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-07-15 · **Tracked:** 565 core · 505 adjacent ·
-249 news · **14061** benchmark rows across **5621** model
+**Last updated:** 2026-07-16 · **Tracked:** 572 core · 517 adjacent ·
+260 news · **14230** benchmark rows across **5683** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -80,7 +80,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1627 results_
+#### LIBERO  ·  _1645 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -95,7 +95,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ConfidenceVLA | — | avg inference time | 712.9 | 3rd-party |
 | Agentic-VLA _(LIBERO)_ | Long | iterations to 90% success rate | 700.0 | authors |
 
-#### CALVIN  ·  _103 results_
+#### CALVIN  ·  _108 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -125,7 +125,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Ours _(RoboTwin 2.0 demonstration data (50 per task, easy setting))_ | S3 (Lift Pot) | success rate | 97.0 | authors |
 | HALO-WA _(online task-specific)_ | Click Bell | success rate | 97.0 | authors |
 
-#### SimplerEnv  ·  _166 results_
+#### SimplerEnv  ·  _172 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -365,6 +365,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | PersonaDrive | — | Driving Score | 88.95 | authors |
 | BevAD _(PDM-Lite)_ | — | driving score | 88.11 | 3rd-party |
 
+#### NAVSIM  ·  _86 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
+| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | NC (no at-fault collision) | 99.4 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
+| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
+| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | TTC (time-to-collision) | 98.5 | authors |
+| S2-VLA _(ReCogDrive VQA + NAVSIM)_ | — | NC | 98.4 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
+| ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
+| RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
+
 #### T2VSafetyBench  ·  _84 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -379,21 +394,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | [69] | Copyright & Trademarks | VBench (Subject Consistency) | 0.976 | 3rd-party |
 | LA-LQR (ours) | Copyright & Trademarks | VBench (Subject Consistency) | 0.976 | authors |
 | SAFREE [10] | Copyright & Trademarks | VBench (Subject Consistency) | 0.973 | 3rd-party |
-
-#### NAVSIM  ·  _77 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
-| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | NC (no at-fault collision) | 99.4 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
-| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
-| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | TTC (time-to-collision) | 98.5 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
-| ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
-| RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
-| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | PDMS (Predictive Driver Model Score) | 92.9 | authors |
 
 #### DAVIS  ·  _63 results_
 
@@ -531,21 +531,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Yinghao Xu](https://www.semanticscholar.org/author/121983635)** (5 papers) — Yinghao Xu's research focuses on world action modeling (WAM) for embodied intelligence, including video-action pretraining, causal world modeling with multi-chunk prediction, and developing scalable world models with mixture-of-experts and semantic…
 
 ## 📰 Embodied / Physical-AI News
+- [Xpanner rolls out X1 Panel Lift for automated solar panel installation](https://www.therobotreport.com/xpanner-rolls-out-x1-panel-lift-automated-solar-panel-installation/) — _The Robot Report_
+- [Lockheed Martin taps Machina’s robots for mission-critical missile parts](https://www.therobotreport.com/lockheed-martin-taps-machinas-robots-for-mission-critical-missile-parts/) — _The Robot Report_
+- [Newer Models, Same Advantage](https://huggingface.co/blog/Dharma-AI/newer-models-same-advantages) — _Hugging Face - Blog_
+- [Security incident disclosure — July 2026](https://huggingface.co/blog/security-incident-july-2026) — _Hugging Face - Blog_
 - [Introducing Real World VoiceEQ: Measuring the human quality of voice AI](https://huggingface.co/blog/real-world-voiceeq) — _Hugging Face - Blog_
+- [Walden Robotics launches at $1.1B valuation for general-purpose robots](https://www.therobotreport.com/walden-robotics-launches-1-1b-valuation-general-purpose-robots/) — _The Robot Report_
+- [Agility outlines six recommendations for U.S. humanoid robot policies](https://www.therobotreport.com/agility-outlines-six-recommendations-for-u-s-humanoid-robot-policies/) — _The Robot Report_
+- [Vicarious Surgical board seeks to dissolve company](https://www.therobotreport.com/vicarious-surgical-board-seeks-to-dissolve-company/) — _The Robot Report_
+- [Icarus Robotics uses KULR technology to power JOY free-flying space robot](https://www.therobotreport.com/icarus-robotics-uses-kulr-technology-to-power-joy-free-flying-space-robot/) — _The Robot Report_
+- [What building Shippy taught us about building agents](https://huggingface.co/blog/allenai/shippy-tech-blog) — _Hugging Face - Blog_
+- [Model Routing Is Simple. Until It Isn’t.](https://huggingface.co/blog/ibm-research/model-routing-is-simple-until-it-isnt) — _Hugging Face - Blog_
+- [Welcome Inkling by Thinking Machines](https://huggingface.co/blog/thinkingmachines-inkling) — _Hugging Face - Blog_
 - [Key to Humanoid Progress: Managing the Power Behind the Robots](https://www.therobotreport.com/key-to-humanoid-progress-managing-the-power-behind-the-robots/) — _The Robot Report_
 - [NVIDIA shares how to evaluate general-purpose robot policies for real-world deployment](https://www.therobotreport.com/nvidia-shares-how-evaluate-general-purpose-robot-policies-real-world-deployment/) — _The Robot Report_
 - [The Robot Report parent company, WTWH Media, rebrands as Arrowfly](https://www.therobotreport.com/the-robot-report-parent-company-wtwh-media-rebrands-as-arrowfly/) — _The Robot Report_
-- [Ondas acquires DZYNE for $875.8M, expanding its defense capabilities](https://www.therobotreport.com/ondas-acquires-dzyne-875-8m-expanding-its-defense-capabilities/) — _The Robot Report_
-- [Yaskawa America gets information security certification](https://www.therobotreport.com/yaskawa-america-gets-information-seccurity-certification/) — _The Robot Report_
-- [Building a Foundation Stack for General-Purpose Robots](https://spectrum.ieee.org/x-square-robot-embodied-ai-stack) — _IEEE Spectrum_
-- [STEM education in the classroom, introducing BotBall](https://www.therobotreport.com/stem-education-classroom-introducing-botball/) — _The Robot Report_
-- [Are suppliers ready for new robot safety standards?](https://www.therobotreport.com/are-suppliers-ready-for-new-robot-safety-standards/) — _The Robot Report_
-- [Why robotics teams need virtual gyms before deployment](https://www.therobotreport.com/why-robotics-teams-need-virtual-gyms-before-deployment/) — _The Robot Report_
-- [Ground Robots Inherit the Kill Zone](https://spectrum.ieee.org/ukraine-ground-drones) — _IEEE Spectrum_
-- [Profiling in PyTorch (Part 3): Attention is all you profile](https://huggingface.co/blog/torch-attention-profile) — _Hugging Face - Blog_
-- [How Path Robotics uses AI to optimize robotic welding](https://www.therobotreport.com/how-path-robotics-uses-ai-optimize-robotic-welding/) — _The Robot Report_
-- [XTEND secures U.S. patent for autonomous navigation technology](https://www.therobotreport.com/xtend-secures-u-s-patent-autonomous-navigation-technology/) — _The Robot Report_
-- [AI² Robotics raises $735M at $3B valuation for wheeled humanoid robots](https://www.therobotreport.com/ai%c2%b2-robotics-raises-735m-3b-valuation-wheeled-humanoid-robots/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
