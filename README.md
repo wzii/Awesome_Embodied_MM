@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-07-16 · **Tracked:** 572 core · 517 adjacent ·
-260 news · **14230** benchmark rows across **5683** model
+**Last updated:** 2026-07-17 · **Tracked:** 591 core · 522 adjacent ·
+264 news · **14543** benchmark rows across **5802** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -24,6 +24,7 @@ variants · **30** authors
 | Score | Paper | Published | Top-4 (spd·gen·spec·cost) | Links |
 |------:|-------|-----------|---------------------------|-------|
 | **8.23** | Flash-WAM: Modality-Aware Distillation for World Action Models | 2026-06-03 | spd 9 · gen 6 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2606.05254) · [pdf](https://arxiv.org/pdf/2606.05254v1) |
+| **8.09** | DriftWorld: Fast World Modeling through Drifting | 2026-07-16 | spd 9 · gen 6 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.15065) · [pdf](https://arxiv.org/pdf/2607.15065v1) · [code](https://github.com/Susie-Lu/driftworld) |
 | **7.79** | Causal-rCM: A Unified Teacher-Forcing and Self-Forcing Open Recipe for Autoregressive Diffusion Distillation in Streaming Video Generation and Interactive World Models | 2026-06-24 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.25473) · [pdf](https://arxiv.org/pdf/2606.25473v1) · [code](https://github.com/NVlabs/rcm) |
 | **7.73** | BLUE: Toward Better Language Use in Efficient Vision-Language-Action Models for Autonomous Driving | 2026-06-07 | spd 8 · gen 3 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2606.08684) · [pdf](https://arxiv.org/pdf/2606.08684v1) · [code](https://github.com/George-Ling3/BLUE) |
 | **7.72** | Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model | 2026-07-13 | spd – · gen 7 · spec 8 · cost 2 | [abs](https://arxiv.org/abs/2607.11643) · [pdf](https://arxiv.org/pdf/2607.11643v1) |
@@ -72,7 +73,6 @@ variants · **30** authors
 | **7.33** | GigaWorld-1: A Roadmap to Build World Models for Robot Policy Evaluation | 2026-07-02 | spd – · gen – · spec – · cost – | [abs](https://arxiv.org/abs/2607.02642) · [pdf](https://arxiv.org/pdf/2607.02642v1) |
 | **7.31** | CausalDrive: Real-time Causal World Models for Autonomous Driving | 2026-06-13 | spd 6 · gen 4 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.15341) · [pdf](https://arxiv.org/pdf/2606.15341v1) |
 | **7.31** | Invertible Neural Network Adapter for One-Step Flow Matching in Robot Manipulation | 2026-06-17 | spd 8 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2606.19194) · [pdf](https://arxiv.org/pdf/2606.19194v1) |
-| **7.31** | RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation | 2026-07-07 | spd 8 · gen 6 · spec 6 · cost 4 | [abs](https://arxiv.org/abs/2607.06558) · [pdf](https://arxiv.org/pdf/2607.06558v1) · [code](https://github.com/alibaba-damo-academy/RynnWorld-Teleop) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -80,7 +80,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1645 results_
+#### LIBERO  ·  _1738 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -185,7 +185,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 | FORCE (Octo) _(ManiSkill (offline + online))_ | — | success rate | 82.3 | authors |
 
-#### RoboCasa  ·  _156 results_
+#### RoboCasa  ·  _163 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -200,7 +200,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | DIAL _(RoboCasa-GR1-Tabletop)_ | — | average success rate | 70.2 | 3rd-party |
 | Early Fusion _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 69.7 | authors |
 
-#### Open-X / RT  ·  _50 results_
+#### Open-X / RT  ·  _51 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -531,10 +531,14 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Yinghao Xu](https://www.semanticscholar.org/author/121983635)** (5 papers) — Yinghao Xu's research focuses on world action modeling (WAM) for embodied intelligence, including video-action pretraining, causal world modeling with multi-chunk prediction, and developing scalable world models with mixture-of-experts and semantic…
 
 ## 📰 Embodied / Physical-AI News
+- [With new funding, Monumental plans to bring its construction robots to the U.S.](https://www.therobotreport.com/with-new-funding-monumental-plans-bring-construction-robots-u-s/) — _The Robot Report_
 - [Xpanner rolls out X1 Panel Lift for automated solar panel installation](https://www.therobotreport.com/xpanner-rolls-out-x1-panel-lift-automated-solar-panel-installation/) — _The Robot Report_
 - [Lockheed Martin taps Machina’s robots for mission-critical missile parts](https://www.therobotreport.com/lockheed-martin-taps-machinas-robots-for-mission-critical-missile-parts/) — _The Robot Report_
 - [Newer Models, Same Advantage](https://huggingface.co/blog/Dharma-AI/newer-models-same-advantages) — _Hugging Face - Blog_
 - [Security incident disclosure — July 2026](https://huggingface.co/blog/security-incident-july-2026) — _Hugging Face - Blog_
+- [TerraFirma raises $115M to build robotic infrastructure for construction](https://www.therobotreport.com/terrafirma-raises-115m-build-robotic-infrastructure-construction/) — _The Robot Report_
+- [How to Make an Invisible Drone](https://spectrum.ieee.org/invisible-spinning-drone) — _IEEE Spectrum_
+- [NVIDIA Nemotron 3 Embed Ranks #1 Overall on RTEB, Advancing Agentic Retrieval](https://huggingface.co/blog/nvidia/nemotron-3-embed-wins-rteb) — _Hugging Face - Blog_
 - [Introducing Real World VoiceEQ: Measuring the human quality of voice AI](https://huggingface.co/blog/real-world-voiceeq) — _Hugging Face - Blog_
 - [Walden Robotics launches at $1.1B valuation for general-purpose robots](https://www.therobotreport.com/walden-robotics-launches-1-1b-valuation-general-purpose-robots/) — _The Robot Report_
 - [Agility outlines six recommendations for U.S. humanoid robot policies](https://www.therobotreport.com/agility-outlines-six-recommendations-for-u-s-humanoid-robot-policies/) — _The Robot Report_
@@ -542,10 +546,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Icarus Robotics uses KULR technology to power JOY free-flying space robot](https://www.therobotreport.com/icarus-robotics-uses-kulr-technology-to-power-joy-free-flying-space-robot/) — _The Robot Report_
 - [What building Shippy taught us about building agents](https://huggingface.co/blog/allenai/shippy-tech-blog) — _Hugging Face - Blog_
 - [Model Routing Is Simple. Until It Isn’t.](https://huggingface.co/blog/ibm-research/model-routing-is-simple-until-it-isnt) — _Hugging Face - Blog_
-- [Welcome Inkling by Thinking Machines](https://huggingface.co/blog/thinkingmachines-inkling) — _Hugging Face - Blog_
-- [Key to Humanoid Progress: Managing the Power Behind the Robots](https://www.therobotreport.com/key-to-humanoid-progress-managing-the-power-behind-the-robots/) — _The Robot Report_
-- [NVIDIA shares how to evaluate general-purpose robot policies for real-world deployment](https://www.therobotreport.com/nvidia-shares-how-evaluate-general-purpose-robot-policies-real-world-deployment/) — _The Robot Report_
-- [The Robot Report parent company, WTWH Media, rebrands as Arrowfly](https://www.therobotreport.com/the-robot-report-parent-company-wtwh-media-rebrands-as-arrowfly/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
