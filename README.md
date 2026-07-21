@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-07-20 · **Tracked:** 595 core · 532 adjacent ·
-271 news · **14688** benchmark rows across **5865** model
+**Last updated:** 2026-07-21 · **Tracked:** 609 core · 546 adjacent ·
+279 news · **15002** benchmark rows across **5980** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -80,7 +80,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1747 results_
+#### LIBERO  ·  _1793 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -110,7 +110,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _365 results_
+#### RoboTwin  ·  _366 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -125,7 +125,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Ours _(RoboTwin 2.0 demonstration data (50 per task, easy setting))_ | S3 (Lift Pot) | success rate | 97.0 | authors |
 | HALO-WA _(online task-specific)_ | Click Bell | success rate | 97.0 | authors |
 
-#### SimplerEnv  ·  _172 results_
+#### SimplerEnv  ·  _173 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -185,14 +185,14 @@ _Model identity = (model, training data); same name on different data is a disti
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 | FORCE (Octo) _(ManiSkill (offline + online))_ | — | success rate | 82.3 | authors |
 
-#### RoboCasa  ·  _163 results_
+#### RoboCasa  ·  _165 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | Cosmos-Policy | Turn Off Microwave | success rate | 100.0 | authors |
 | Z-1 RL _(RoboCasa demonstrations)_ | Door | success rate | 97.0 | authors |
 | Z-1 SFT _(RoboCasa demonstrations)_ | Door | success rate | 93.2 | authors |
-| X-WAM | — | success rate | 79.2 | 3rd-party |
+| X-WAM | Group average | success rate | 80.8 | authors |
 | WALA _(RoboCasa-GR1-Tabletop)_ | — | average success rate | 75.2 | authors |
 | ACE-EGO-0 _(Mixed robot demonstrations and egocentric human videos (6.0K+ hours))_ | — | average success | 72.8 | authors |
 | GR00T-N1.5 _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 71.7 | authors |
@@ -230,7 +230,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Wall-E | — | Success Rate | 27.6 | 3rd-party |
 | WorldCoder | — | Success Rate | 25.4 | 3rd-party |
 
-#### VBench  ·  _816 results_
+#### VBench  ·  _822 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -245,7 +245,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | LongLive (Vanilla) | — | KV Cache | 100.0 | authors |
 | Reward (Vanilla) | — | KV Cache | 100.0 | authors |
 
-#### AgiBot / GENIE  ·  _33 results_
+#### AgiBot / GENIE  ·  _38 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -257,8 +257,8 @@ _Model identity = (model, training data); same name on different data is a disti
 | DreamDojo (14B) | target-action transfer do(ut=utar) | FDCE | 24.82 | 3rd-party |
 | DreamDojo (2B) | target-action transfer do(ut=utar) | FDCE | 24.36 | 3rd-party |
 | CD-LAM (2B) _(EgoDex (100h), AgiBot)_ | target-action transfer do(ut=utar) | FDCE | 22.55 | authors |
+| RL (ours) _(Agibot Alpha)_ | — | PSNR | 21.2 | authors |
 | CD-LAM (14B) _(EgoDex (100h), AgiBot)_ | target-action transfer do(ut=utar) | FDCE | 21.11 | authors |
-| ViPSim(DiT) _(AgiBotWorld-Beta)_ | — | PSNR | 20.35 | authors |
 
 #### Habitat  ·  _19 results_
 
@@ -425,6 +425,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | CD | PointMaze-Giant | success rate | 68.0 | 3rd-party |
 | CGQL _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 67.0 | 3rd-party |
 
+#### PushT  ·  _57 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LeWM + AITS | — | success rate | 100.0 | authors |
+| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
+| LeWM | — | success rate | 96.0 | authors |
+| Le-WM | — | success rate | 96.0 | authors |
+| LeWM _(PushT)_ | Short-horizon (t=25) | success rate | 94.53 | authors |
+| VLWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 94.0 | authors |
+| AdaJEPA (WM w/ Temporal Straightening spatial) _(PushT)_ | goal-reaching | success rate | 92.0 | authors |
+| Frozen (WM w/ Temporal Straightening spatial) _(PushT)_ | goal-reaching | success rate | 91.3 | authors |
+| LeWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 90.0 | 3rd-party |
+| DINO (Hierarchy) | Short-horizon (t=25) | success rate | 89.0 | 3rd-party |
+
 #### RealisDance-Val  ·  _56 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -439,21 +454,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | MusePose | — | Temporal Flicker | 97.88 | 3rd-party |
 | RealisDance-DiT | — | Temporal Flicker | 97.76 | 3rd-party |
 | Animate-X | — | Temporal Flicker | 97.4 | 3rd-party |
-
-#### PushT  ·  _54 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| LeWM + AITS | — | success rate | 100.0 | authors |
-| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
-| LeWM | — | success rate | 96.0 | authors |
-| Le-WM | — | success rate | 96.0 | authors |
-| LeWM _(PushT)_ | Short-horizon (t=25) | success rate | 94.53 | authors |
-| VLWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 94.0 | authors |
-| AdaJEPA (WM w/ Temporal Straightening spatial) _(PushT)_ | goal-reaching | success rate | 92.0 | authors |
-| Frozen (WM w/ Temporal Straightening spatial) _(PushT)_ | goal-reaching | success rate | 91.3 | authors |
-| LeWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 90.0 | 3rd-party |
-| DINO (Hierarchy) | Short-horizon (t=25) | success rate | 89.0 | 3rd-party |
 
 #### HDTF  ·  _51 results_
 
@@ -531,6 +531,14 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Yinghao Xu](https://www.semanticscholar.org/author/121983635)** (5 papers) — Yinghao Xu's research focuses on world action modeling (WAM) for embodied intelligence, including video-action pretraining, causal world modeling with multi-chunk prediction, and developing scalable world models with mixture-of-experts and semantic…
 
 ## 📰 Embodied / Physical-AI News
+- [MISUMI Americas releases reshoring report, supports manufacturing training bill](https://www.therobotreport.com/misumi-americas-releases-reshoring-report-supports-manufacturing-training-bill/) — _The Robot Report_
+- [Friction is key to making better robot world models](https://www.therobotreport.com/friction-is-key-to-making-better-robot-world-models/) — _The Robot Report_
+- [Grabette: an open system to record robot-manipulation data](https://huggingface.co/blog/grabette) — _Hugging Face - Blog_
+- [Building robots for unpredictable, infrastructure-free environments](https://www.therobotreport.com/building-robots-for-unpredictable-infrastructure-free-environments/) — _The Robot Report_
+- [BrainCo demonstrates brain-controlled robot AI platform](https://www.therobotreport.com/brainco-demonstrates-brain-controlled-robot-ai-platform/) — _The Robot Report_
+- [Boston Dynamics to discuss the art behind human-robot interaction](https://www.therobotreport.com/boston-dynamics-discuss-art-behind-human-robot-interaction/) — _The Robot Report_
+- [AGIBOT unveils four embodied AI products for real-world operations at WAIC](https://www.therobotreport.com/agibot-unveils-four-embodied-ai-products-real-world-operations-waic/) — _The Robot Report_
+- [Introducing Cosmos 3 Edge](https://huggingface.co/blog/nvidia/cosmos3edge) — _Hugging Face - Blog_
 - [How to avoid the teleoperation trap in robotics development](https://www.therobotreport.com/how-to-avoid-teleoperation-trap-robotics-development/) — _The Robot Report_
 - [Palm Garden AI develops Coherence Guard relational decision layer for human-facing robots](https://www.therobotreport.com/palm-garden-ai-develops-coherence-guard-relational-decision-layer-human-facing-robots/) — _The Robot Report_
 - [With new funding, Monumental plans to bring its construction robots to the U.S.](https://www.therobotreport.com/with-new-funding-monumental-plans-bring-construction-robots-u-s/) — _The Robot Report_
@@ -538,14 +546,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Weave Robotics launches Isaac, its first mobile humanoid robot](https://www.therobotreport.com/weave-robotics-launches-isaac-first-mobile-humanoid-robot/) — _The Robot Report_
 - [This Graduate Student Equips NASA’s Robots With Assembly Skills](https://spectrum.ieee.org/graduate-student-nasas-robots-assembly) — _IEEE Spectrum_
 - [Video Friday: Your Robot Surgeon Will See You Now](https://spectrum.ieee.org/video-friday-robotic-surgery) — _IEEE Spectrum_
-- [Fine-tune video and image models at scale with NVIDIA NeMo Automodel and 🤗 Diffusers](https://huggingface.co/blog/nvidia/scale-diffusers-finetuning-nemo-automodel) — _Hugging Face - Blog_
-- [Xpanner rolls out X1 Panel Lift for automated solar panel installation](https://www.therobotreport.com/xpanner-rolls-out-x1-panel-lift-automated-solar-panel-installation/) — _The Robot Report_
-- [Lockheed Martin taps Machina’s robots for mission-critical missile parts](https://www.therobotreport.com/lockheed-martin-taps-machinas-robots-for-mission-critical-missile-parts/) — _The Robot Report_
-- [Newer Models, Same Advantage](https://huggingface.co/blog/Dharma-AI/newer-models-same-advantages) — _Hugging Face - Blog_
-- [Security incident disclosure — July 2026](https://huggingface.co/blog/security-incident-july-2026) — _Hugging Face - Blog_
-- [TerraFirma raises $115M to build robotic infrastructure for construction](https://www.therobotreport.com/terrafirma-raises-115m-build-robotic-infrastructure-construction/) — _The Robot Report_
-- [How to Make an Invisible Drone](https://spectrum.ieee.org/invisible-spinning-drone) — _IEEE Spectrum_
-- [NVIDIA Nemotron 3 Embed Ranks #1 Overall on RTEB, Advancing Agentic Retrieval](https://huggingface.co/blog/nvidia/nemotron-3-embed-wins-rteb) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
