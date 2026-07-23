@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-07-22 · **Tracked:** 609 core · 546 adjacent ·
-283 news · **15002** benchmark rows across **5980** model
+**Last updated:** 2026-07-23 · **Tracked:** 623 core · 563 adjacent ·
+286 news · **15285** benchmark rows across **6130** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -69,10 +69,10 @@ variants · **30** authors
 | **7.36** | ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing? | 2026-06-17 | spd 7 · gen 6 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.19531) · [pdf](https://arxiv.org/pdf/2606.19531v1) · [code](https://github.com/yuyangalin/ImageWAM) |
 | **7.35** | Colosseum V2: Benchmarking Generalization for Vision Language Action Models | 2026-05-26 | spd – · gen 8 · spec – · cost – | [abs](https://arxiv.org/abs/2605.27759) · [pdf](https://arxiv.org/pdf/2605.27759v1) |
 | **7.35** | FlowWAM: Optical Flow as a Unified Action Representation for World Action Models | 2026-07-14 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.13017) · [pdf](https://arxiv.org/pdf/2607.13017v1) |
+| **7.34** | AlayaWorld: Interactive Long-Horizon World Modeling -- Full Technical Report | 2026-07-20 | spd 5 · gen – · spec 8 · cost 4 | [abs](https://arxiv.org/abs/2607.18367) · [pdf](https://arxiv.org/pdf/2607.18367v1) · [code](https://github.com/AlayaLab/AlayaWorld) |
 | **7.33** | DuoBench: A Reproducible Benchmark for Bimanual Manipulation in Simulation and the Real World | 2026-06-10 | spd – · gen – · spec – · cost – | [abs](https://arxiv.org/abs/2606.11901) · [pdf](https://arxiv.org/pdf/2606.11901v1) · [code](https://github.com/isaac-sim/IsaacSim) |
 | **7.33** | dVLA-RL: Reinforcement Learning over Denoising Trajectories for Discrete Diffusion Vision-Language-Action Models | 2026-06-22 | spd – · gen 6 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2606.23623) · [pdf](https://arxiv.org/pdf/2606.23623v1) |
 | **7.33** | Long-term Traffic Simulation via Structured Autoregressive Modeling | 2026-06-30 | spd – · gen – · spec – · cost – | [abs](https://arxiv.org/abs/2606.31209) · [pdf](https://arxiv.org/pdf/2606.31209v1) |
-| **7.33** | GigaWorld-1: A Roadmap to Build World Models for Robot Policy Evaluation | 2026-07-02 | spd – · gen – · spec – · cost – | [abs](https://arxiv.org/abs/2607.02642) · [pdf](https://arxiv.org/pdf/2607.02642v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -80,7 +80,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1793 results_
+#### LIBERO  ·  _1795 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -230,7 +230,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Wall-E | — | Success Rate | 27.6 | 3rd-party |
 | WorldCoder | — | Success Rate | 25.4 | 3rd-party |
 
-#### VBench  ·  _822 results_
+#### VBench  ·  _861 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -425,7 +425,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | CD | PointMaze-Giant | success rate | 68.0 | 3rd-party |
 | CGQL _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 67.0 | 3rd-party |
 
-#### PushT  ·  _57 results_
+#### PushT  ·  _59 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -435,10 +435,10 @@ _Model identity = (model, training data); same name on different data is a disti
 | Le-WM | — | success rate | 96.0 | authors |
 | LeWM _(PushT)_ | Short-horizon (t=25) | success rate | 94.53 | authors |
 | VLWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 94.0 | authors |
+| LeWM _(PushT)_ | — | CEM planning success rate | 94.0 | authors |
 | AdaJEPA (WM w/ Temporal Straightening spatial) _(PushT)_ | goal-reaching | success rate | 92.0 | authors |
+| DWM _(PushT)_ | — | CEM planning success rate | 92.0 | authors |
 | Frozen (WM w/ Temporal Straightening spatial) _(PushT)_ | goal-reaching | success rate | 91.3 | authors |
-| LeWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 90.0 | 3rd-party |
-| DINO (Hierarchy) | Short-horizon (t=25) | success rate | 89.0 | 3rd-party |
 
 #### RealisDance-Val  ·  _56 results_
 
@@ -475,6 +475,7 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **ActionMap: Robot Policy Learning via Voxel Action Heatmap** — ActionMap replaces the unstructured single-point action decoder in VLA models with a voxel heatmap action head that predicts a probability distribution over a discretized 3D action space, explicitly exploiting the geometric proximity of neighboring actions rather than treating the action space as unstructured… _(→ WAM: In World Action Models, the action conditioning mechanism is critical for predicting how actions transform world states. The voxel heatmap representation can transfer in two ways: (1) as a structured action encoding input to the world model—replacing flat…)_ [abs](https://arxiv.org/abs/2606.06904) · [pdf](https://arxiv.org/pdf/2606.06904v1) · [code](https://github.com/showlab/ActionMap)
 - **Fast Enough to Act: Spatio-Temporal Visual Token Merging for Low-Latency Robotic VLMs and VLAs** — ST-Merge is a plug-and-play, training-free spatio-temporal visual token merging framework that reduces inference latency by fusing redundant visual tokens during the visual encoding phase. It constructs 3D spatiotemporal coordinates for multi-queue parallel matching and weighted aggregation across frames, and… _(→ WAM: World Action Models must process long video histories to predict future world states and generate actions, making visual token count a critical computational bottleneck. ST-Merge's spatio-temporal token merging could be directly applied to the visual encoder…)_ [abs](https://arxiv.org/abs/2606.29350) · [pdf](https://arxiv.org/pdf/2606.29350v1) · [code](https://github.com/Junzhou-Chen/ST_Merge)
 - **WorldRoamBench: An Open-World Benchmark for Long-Horizon Stability of Interactive World Models** — A multi-dimensional, long-horizon evaluation framework for interactive world models that introduces novel metrics: per-frame action metrics to bypass semantic scale disparity, segment-based drift metrics to capture mid-sequence visual collapse, controllability-gated physics evaluation to isolate physical plausibility… _(→ WAM: World Action Models (WAMs) inherently suffer from compounding errors over long horizons, leading to visual drift, physical inconsistencies, and memory loss. The benchmark's metrics—particularly the controllability-gated physics evaluation and action-decoupled…)_ [abs](https://arxiv.org/abs/2606.31672) · [pdf](https://arxiv.org/pdf/2606.31672v1)
+- **DWM: Separating World Effects from Actions in Latent World Models** — DWM decomposes latent world model transitions into an action-invariant world effect (environment-intrinsic dynamics like gravity, inertia, drift) and a complementary action-driven component, using an auxiliary world head regularized by a normalized world-contrastive objective to be action-invariant, coupled with an… _(→ WAM: World Action Models must predict future states conditioned on actions and then use those predictions to select or generate actions. DWM's decomposition transfers directly: (1) By separating action-invariant dynamics from action-driven effects, a WAM can more…)_ [abs](https://arxiv.org/abs/2607.18715) · [pdf](https://arxiv.org/pdf/2607.18715v1)
 - **World Models: A Comprehensive Survey of Architectures, Methodologies, Reasoning Paradigms, and Applications** — A unifying multi-axis taxonomy for world models that integrates architecture, methodological families, reasoning strategies (particularly the convergence of chain-of-thought reasoning with world-model imagination), and applications, providing a structured framework to map the fragmented landscape of world model… _(→ WAM: The taxonomy's explicit categorization of reasoning strategies (imagination-based planning, latent policy learning, counterfactual reasoning) directly informs how WAMs can be architected to generate actions rather than just passive predictions. Specifically…)_ [abs](https://arxiv.org/abs/2606.00133) · [pdf](https://arxiv.org/pdf/2606.00133v1)
 - **PhAIL: A Real-Robot VLA Benchmark and Distributional Methodology** — Replacing binary success rate metrics with a distributional evaluation methodology based on the time-to-success cumulative distribution function (CDF), scored via Human-Relative Throughput (HRT) and compared using macro-averaged Kolmogorov-Smirnov significance tests to resolve close model comparisons with small sample… _(→ WAM: Evaluating World Action Models often relies on binary task completion metrics, which fail to capture the speed-efficiency trade-offs of different policies. By adopting the time-to-success CDF and HRT scoring, WAM evaluations can distinguish between models…)_ [abs](https://arxiv.org/abs/2605.29710) · [pdf](https://arxiv.org/pdf/2605.29710v1) · [code](https://github.com/Positronic-Robotics/phail-paper)
 - **VLAConf: Calibrated Task-Success Confidence for Vision-Language-Action Models** — A lightweight, one-class discriminative confidence head that leverages frozen pretrained VLA internal representations and step-conditioned modeling to estimate step-wise anomaly scores in a single forward pass, avoiding the computational overhead of resampling and generalizing to continuous action spaces. _(→ WAM: World Action Models (WAMs) often suffer from compounding errors over long horizons and need to know when their world state predictions become unreliable. VLAConf's lightweight confidence head can be directly attached to a WAM's internal representations to…)_ [abs](https://arxiv.org/abs/2605.29605) · [pdf](https://arxiv.org/pdf/2605.29605v1)
@@ -501,7 +502,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **Position: Vision-Language-Action Models Cannot Be Verified to Perform Physical Reasoning** — Decomposing VLA policies into semantic mapping and physical action decision components, and proposing evaluation designs with controlled variation that causally disentangle whether performance gains stem from semantic matching/distributional overlap versus genuine physical generalization — without requiring access to… _(→ WAM: World Action Models face the identical identifiability problem: when a WAM predicts future world states and actions accurately, it is unclear whether this reflects learned physical dynamics (genuine world modeling) or semantic pattern matching from…)_ [abs](https://arxiv.org/abs/2606.30686) · [pdf](https://arxiv.org/pdf/2606.30686v1)
 - **RoboWorld: Fast and Reliable Neural Simulators for Generalist Robot Policy Evaluation** — Step Forcing: A technique for autoregressive video world models that combines anchored (ground-truth) contexts with one-step self-forwarded (model-predicted) contexts during rollouts to reduce train-test mismatch (exposure bias) and error accumulation, while preserving action-observation dynamics. _(→ WAM: World Action Models suffer heavily from compounding errors during long-horizon, action-conditioned autoregressive rollouts, which causes state drift and out-of-distribution failures. By adopting Step Forcing, WAMs can mitigate this exposure bias by…)_ [abs](https://arxiv.org/abs/2607.01060) · [pdf](https://arxiv.org/pdf/2607.01060v1)
 - **Green for Go, Red for No: Visual Grounding via Semantic Segmentation for VLA Navigation Policies** — A real-time, segmentation-based visual grounding method that overlays semantic traversability information onto input observations—green for traversable, red for non-traversable—using SegFormer, serving as a lightweight input preprocessing step that requires no model retraining and acts primarily as a trajectory length… _(→ WAM: World Action Models predict future world states conditioned on actions, and they can suffer from generating physically implausible predictions (e.g., agents moving through obstacles). The segmentation-based visual grounding overlay can be directly applied as…)_ [abs](https://arxiv.org/abs/2607.05122) · [pdf](https://arxiv.org/pdf/2607.05122v1)
-- **VLA Grounder: Language-Conditioning Space Optimization for Black-Box VLA Models** — Treating language as an optimizable variable for frozen Vision-Language-Action (VLA) models by training a separate language-conditioning space policy using reinforcement learning. This policy translates human instructions into VLA-grounded commands (incorporating object appearance, spatial relations, and… _(→ WAM: World Action Models (WAMs) similarly rely on conditioning inputs (like language goals or action tokens) to generate future states or action trajectories. Transferring this concept, one could optimize the input conditioning space (language prompts or latent…)_ [abs](https://arxiv.org/abs/2607.04517) · [pdf](https://arxiv.org/pdf/2607.04517v1)
 
 ## 👥 Influential Authors & Groups
 - **[Xiaofeng Wang](https://www.semanticscholar.org/author/2242976725)** (7 papers) — Xiaofeng Wang's research focuses on embodied world models and unified action-motion representations for robotic control, including visual navigation, manipulation, and aerial embodied question answering. Key contributions include redefining actions as visual…
@@ -531,6 +531,9 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Yinghao Xu](https://www.semanticscholar.org/author/121983635)** (5 papers) — Yinghao Xu's research focuses on world action modeling (WAM) for embodied intelligence, including video-action pretraining, causal world modeling with multi-chunk prediction, and developing scalable world models with mixture-of-experts and semantic…
 
 ## 📰 Embodied / Physical-AI News
+- [Bringing Nunchaku 4-bit Diffusion Inference to Diffusers](https://huggingface.co/blog/nunchaku-diffusers) — _Hugging Face - Blog_
+- [Report shares the state of physical AI and robotics](https://www.therobotreport.com/physical-ai-and-robotics/) — _The Robot Report_
+- [Medtronic to launch AI compute platform for the operating room](https://www.therobotreport.com/medtronic-launch-ai-compute-platform-operating-room/) — _The Robot Report_
 - [MISUMI Americas releases reshoring report, supports manufacturing training bill](https://www.therobotreport.com/misumi-americas-releases-reshoring-report-supports-manufacturing-training-bill/) — _The Robot Report_
 - [Friction is key to making better robot world models](https://www.therobotreport.com/friction-is-key-to-making-better-robot-world-models/) — _The Robot Report_
 - [Grabette: an open system to record robot-manipulation data](https://huggingface.co/blog/grabette) — _Hugging Face - Blog_
@@ -543,9 +546,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Boston Dynamics to discuss the art behind human-robot interaction](https://www.therobotreport.com/boston-dynamics-discuss-art-behind-human-robot-interaction/) — _The Robot Report_
 - [AGIBOT unveils four embodied AI products for real-world operations at WAIC](https://www.therobotreport.com/agibot-unveils-four-embodied-ai-products-real-world-operations-waic/) — _The Robot Report_
 - [Introducing Cosmos 3 Edge](https://huggingface.co/blog/nvidia/cosmos3edge) — _Hugging Face - Blog_
-- [How to avoid the teleoperation trap in robotics development](https://www.therobotreport.com/how-to-avoid-teleoperation-trap-robotics-development/) — _The Robot Report_
-- [Palm Garden AI develops Coherence Guard relational decision layer for human-facing robots](https://www.therobotreport.com/palm-garden-ai-develops-coherence-guard-relational-decision-layer-human-facing-robots/) — _The Robot Report_
-- [With new funding, Monumental plans to bring its construction robots to the U.S.](https://www.therobotreport.com/with-new-funding-monumental-plans-bring-construction-robots-u-s/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
