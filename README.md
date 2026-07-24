@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-07-23 · **Tracked:** 623 core · 563 adjacent ·
-286 news · **15285** benchmark rows across **6130** model
+**Last updated:** 2026-07-24 · **Tracked:** 625 core · 568 adjacent ·
+291 news · **15380** benchmark rows across **6155** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -80,7 +80,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1795 results_
+#### LIBERO  ·  _1807 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -230,7 +230,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Wall-E | — | Success Rate | 27.6 | 3rd-party |
 | WorldCoder | — | Success Rate | 25.4 | 3rd-party |
 
-#### VBench  ·  _861 results_
+#### VBench  ·  _871 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -410,6 +410,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | MVTrack4Gen Redirector _(Kubric + MultiCamVideo)_ | — | mRotErr | 1.718 | authors |
 | Full reward (Geo-Align) _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | RotErr | 1.3895 | authors |
 
+#### MoveBench  ·  _66 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Wan-Move | Multi-object motion | FVD | 226.3 | 3rd-party |
+| Go-with-the-Flow | Single-object motion | FVD | 216.9 | 3rd-party |
+| UniCaMo _(400K clips from DynPose100K++, WSDG-1M, 4DNeX)_ | Multi-object motion | FVD | 215.2 | authors |
+| Motion-I2V _(10M)_ | — | FVD | 159.32 | 3rd-party |
+| Tora _(630K)_ | — | FVD | 110.47 | 3rd-party |
+| WISA _(80K)_ | — | FVD | 107.89 | 3rd-party |
+| MagicMotion _(23K)_ | — | FVD | 105.12 | 3rd-party |
+| FlashMotion _(23K)_ | — | FVD | 104.12 | 3rd-party |
+| GraphVid _(GraphVid-Bench (~27K))_ | — | FVD | 99.42 | authors |
+| Wan-Move _(2M)_ | — | FVD | 82.17 | 3rd-party |
+
 #### OGBench  ·  _62 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -454,21 +469,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | MusePose | — | Temporal Flicker | 97.88 | 3rd-party |
 | RealisDance-DiT | — | Temporal Flicker | 97.76 | 3rd-party |
 | Animate-X | — | Temporal Flicker | 97.4 | 3rd-party |
-
-#### HDTF  ·  _51 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| FantasyTalking | — | FID | 16.488 | 3rd-party |
-| Hallo3 | — | FID | 14.656 | 3rd-party |
-| Sonic | — | FID | 13.242 | 3rd-party |
-| ReFree-S2V (w/o RL) _(Hallo3, CelebV-HQ, Seamless Interaction)_ | — | FID | 12.319 | authors |
-| ReFree-S2V _(Hallo3, CelebV-HQ, Seamless Interaction)_ | — | FID | 11.643 | authors |
-| StableAvatar-1.3B | — | Sync-D | 11.18 | 3rd-party |
-| FantasyTalking | — | Sync-D | 11.072 | 3rd-party |
-| OmniAvatar | — | Sync-D | 9.242 | 3rd-party |
-| Hallo3 | — | Sync-D | 9.181 | 3rd-party |
-| LiveAvatar | — | Sync-D | 8.447 | 3rd-party |
 
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
@@ -531,7 +531,12 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Yinghao Xu](https://www.semanticscholar.org/author/121983635)** (5 papers) — Yinghao Xu's research focuses on world action modeling (WAM) for embodied intelligence, including video-action pretraining, causal world modeling with multi-chunk prediction, and developing scalable world models with mixture-of-experts and semantic…
 
 ## 📰 Embodied / Physical-AI News
+- [NEURA Robotics establishes NEURA Gym RWTH Aachen to train physical AI](https://www.therobotreport.com/neura-robotics-establishes-neura-gym-rwth-aachen-train-physical-ai/) — _The Robot Report_
 - [Bringing Nunchaku 4-bit Diffusion Inference to Diffusers](https://huggingface.co/blog/nunchaku-diffusers) — _Hugging Face - Blog_
+- [Holiday Robotics raises $105M for its FRIDAY wheeled humanoid](https://www.therobotreport.com/holiday-robotics-raises-105m-wheeled-humanoid-friday/) — _The Robot Report_
+- [Uber co-founder raises $1.7B for new robotics startup ATOMS](https://www.therobotreport.com/uber-co-founder-raises-1-7b-for-new-robotics-startup-atoms/) — _The Robot Report_
+- [AMD unveils Kria module for real-time control, unified memory for robots](https://www.therobotreport.com/amd-unveils-kria-module-real-time-control-unified-memory-robots/) — _The Robot Report_
+- [Ropedia raises $22M to scale data collection for training robots](https://www.therobotreport.com/ropedia-raises-22m-scale-data-collection-training-robots/) — _The Robot Report_
 - [Report shares the state of physical AI and robotics](https://www.therobotreport.com/physical-ai-and-robotics/) — _The Robot Report_
 - [Medtronic to launch AI compute platform for the operating room](https://www.therobotreport.com/medtronic-launch-ai-compute-platform-operating-room/) — _The Robot Report_
 - [MISUMI Americas releases reshoring report, supports manufacturing training bill](https://www.therobotreport.com/misumi-americas-releases-reshoring-report-supports-manufacturing-training-bill/) — _The Robot Report_
@@ -541,11 +546,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Vicarious Surgical officially shutting down](https://www.therobotreport.com/vicarious-surgical-officially-shutting-down/) — _The Robot Report_
 - [Generative Bionics unveils humanoid robot with full-body tactile sensing](https://www.therobotreport.com/generative-bionics-unveils-humanoid-robot-with-full-body-tactile-sensing/) — _The Robot Report_
 - [The State of Simulation for Physical AI: An Overview](https://huggingface.co/blog/nvidia/state-of-simulation-for-physical-ai) — _Hugging Face - Blog_
-- [Building robots for unpredictable, infrastructure-free environments](https://www.therobotreport.com/building-robots-for-unpredictable-infrastructure-free-environments/) — _The Robot Report_
-- [BrainCo demonstrates brain-controlled robot AI platform](https://www.therobotreport.com/brainco-demonstrates-brain-controlled-robot-ai-platform/) — _The Robot Report_
-- [Boston Dynamics to discuss the art behind human-robot interaction](https://www.therobotreport.com/boston-dynamics-discuss-art-behind-human-robot-interaction/) — _The Robot Report_
-- [AGIBOT unveils four embodied AI products for real-world operations at WAIC](https://www.therobotreport.com/agibot-unveils-four-embodied-ai-products-real-world-operations-waic/) — _The Robot Report_
-- [Introducing Cosmos 3 Edge](https://huggingface.co/blog/nvidia/cosmos3edge) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
