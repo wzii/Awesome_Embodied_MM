@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-07-27 · **Tracked:** 631 core · 573 adjacent ·
-298 news · **15470** benchmark rows across **6193** model
+**Last updated:** 2026-07-28 · **Tracked:** 647 core · 586 adjacent ·
+302 news · **15755** benchmark rows across **6321** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1811 results_
+#### LIBERO  ·  _1844 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _366 results_
+#### RoboTwin  ·  _371 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -193,7 +193,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 | FORCE (Octo) _(ManiSkill (offline + online))_ | — | success rate | 82.3 | authors |
 
-#### RoboCasa  ·  _171 results_
+#### RoboCasa  ·  _175 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -203,10 +203,10 @@ _Model identity = (model, training data); same name on different data is a disti
 | X-WAM | Group average | success rate | 80.8 | authors |
 | WALA _(RoboCasa-GR1-Tabletop)_ | — | average success rate | 75.2 | authors |
 | ACE-EGO-0 _(Mixed robot demonstrations and egocentric human videos (6.0K+ hours))_ | — | average success | 72.8 | authors |
+| DeVA _(RoboCasa (24 tasks, 50 demos/task))_ | — | success rate | 72.0 | authors |
 | GR00T-N1.5 _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 71.7 | authors |
 | Late Fusion _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 71.0 | authors |
 | DIAL _(RoboCasa-GR1-Tabletop)_ | — | average success rate | 70.2 | 3rd-party |
-| Early Fusion _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 69.7 | authors |
 
 #### Open-X / RT  ·  _51 results_
 
@@ -238,7 +238,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Wall-E | — | Success Rate | 27.6 | 3rd-party |
 | WorldCoder | — | Success Rate | 25.4 | 3rd-party |
 
-#### VBench  ·  _871 results_
+#### VBench  ·  _878 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -539,7 +539,11 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Yujun Shen](https://www.semanticscholar.org/author/2392945842)** (5 papers) — Research on world action models (WAM) including causal world modeling, video pretraining for embodied intelligence, and controllable world simulators, focusing on multi-chunk prediction, Mixture-of-Experts, and persistent dynamic memory for long-term video…
 
 ## 📰 Embodied / Physical-AI News
+- [How Integrated Actuators Improve Humanoid Robot Joint Performance and System Integration](https://www.therobotreport.com/how-integrated-actuators-improve-humanoid-robot-joint-performance-and-system-integration/) — _The Robot Report_
+- [LFM2.5-Encoders for Fast Long-Context Inference on CPU](https://huggingface.co/blog/LiquidAI/lfm2-5-encoders) — _Hugging Face - Blog_
 - [NVIDIA Cosmos-H-Dreams: Bringing Real-Time Generative Simulation to Surgical Robotics](https://huggingface.co/blog/nvidia/cosmos-h-dreams) — _Hugging Face - Blog_
+- [NORD expands compact NORDAC VFD family to 200 hp](https://www.therobotreport.com/nord-expands-nordac-compact-vfd-family-to-200-hp/) — _The Robot Report_
+- [Kraken Technology raises Series B funding for autonomous vessels](https://www.therobotreport.com/kraken-technology-raises-series-b-funding-autonomous-vessels/) — _The Robot Report_
 - [Magmotor makes motors for a changing world for 150+ years](https://www.therobotreport.com/magmotor-makes-motors-changing-world-150-years/) — _The Robot Report_
 - [Optical Tech Would Update a Robot’s AI on the Fly](https://spectrum.ieee.org/ai-in-robotics) — _IEEE Spectrum_
 - [Photos: First look at J&J’s Ottava surgical robot](https://www.therobotreport.com/photos-first-look-at-jjs-ottava-surgical-robot/) — _The Robot Report_
@@ -550,10 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Bringing Nunchaku 4-bit Diffusion Inference to Diffusers](https://huggingface.co/blog/nunchaku-diffusers) — _Hugging Face - Blog_
 - [Holiday Robotics raises $105M for its FRIDAY wheeled humanoid](https://www.therobotreport.com/holiday-robotics-raises-105m-wheeled-humanoid-friday/) — _The Robot Report_
 - [Uber co-founder raises $1.7B for new robotics startup ATOMS](https://www.therobotreport.com/uber-co-founder-raises-1-7b-for-new-robotics-startup-atoms/) — _The Robot Report_
-- [AMD unveils Kria module for real-time control, unified memory for robots](https://www.therobotreport.com/amd-unveils-kria-module-real-time-control-unified-memory-robots/) — _The Robot Report_
-- [Ropedia raises $22M to scale data collection for training robots](https://www.therobotreport.com/ropedia-raises-22m-scale-data-collection-training-robots/) — _The Robot Report_
-- [Report shares the state of physical AI and robotics](https://www.therobotreport.com/physical-ai-and-robotics/) — _The Robot Report_
-- [Medtronic to launch AI compute platform for the operating room](https://www.therobotreport.com/medtronic-launch-ai-compute-platform-operating-room/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
