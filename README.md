@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-07-30 · **Tracked:** 667 core · 600 adjacent ·
-310 news · **16188** benchmark rows across **6480** model
+**Last updated:** 2026-07-31 · **Tracked:** 679 core · 606 adjacent ·
+315 news · **16374** benchmark rows across **6567** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1892 results_
+#### LIBERO  ·  _1936 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _374 results_
+#### RoboTwin  ·  _378 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -193,7 +193,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 | FORCE (Octo) _(ManiSkill (offline + online))_ | — | success rate | 82.3 | authors |
 
-#### RoboCasa  ·  _180 results_
+#### RoboCasa  ·  _191 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -238,7 +238,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Wall-E | — | Success Rate | 27.6 | 3rd-party |
 | WorldCoder | — | Success Rate | 25.4 | 3rd-party |
 
-#### VBench  ·  _910 results_
+#### VBench  ·  _916 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -253,7 +253,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | LongLive (Vanilla) | — | KV Cache | 100.0 | authors |
 | Reward (Vanilla) | — | KV Cache | 100.0 | authors |
 
-#### AgiBot / GENIE  ·  _38 results_
+#### AgiBot / GENIE  ·  _46 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -539,6 +539,11 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Yujun Shen](https://www.semanticscholar.org/author/2392945842)** (5 papers) — Research on world action models (WAM) including causal world modeling, video pretraining for embodied intelligence, and controllable world simulators, focusing on multi-chunk prediction, Mixture-of-Experts, and persistent dynamic memory for long-term video…
 
 ## 📰 Embodied / Physical-AI News
+- [Procore Technologies acquires DroneDeploy for $845M](https://www.therobotreport.com/procore-technologies-acquires-dronedeploy-845m/) — _The Robot Report_
+- [5 Physical AI infrastructure platforms shaping robotics in 2026](https://www.therobotreport.com/5-physical-ai-infrastructure-platforms-shaping-robotics-in-2026/) — _The Robot Report_
+- [DoorDash gains FAA certification to operate its own drone delivery program](https://www.therobotreport.com/doordash-gains-faa-certification-to-operate-its-own-drone-delivery-program/) — _The Robot Report_
+- [Teradyne Robotics revenue rises 33% year over year in Q2](https://www.therobotreport.com/teradyne-robotics-revenue-rises-33-year-over-year-in-q2/) — _The Robot Report_
+- [GPU Management: Why Idle GPUs Are the New Grounded Aircraft](https://huggingface.co/blog/Dharma-AI/gpu-management) — _Hugging Face - Blog_
 - [Experts react to FCC limits on U.S. imports of new humanoid and mobile robots](https://www.therobotreport.com/industry-reacts-fcc-ban-u-s-imports-new-humanoid-quadruped-robots/) — _The Robot Report_
 - [GMEX Robotics to acquire MediaMeta.ai for social intelligence](https://www.therobotreport.com/gmex-robotics-to-acquire-mediameta-ai-social-intelligence/) — _The Robot Report_
 - [How Integrated Actuators Improve Humanoid Robot Joint Performance and System Integration](https://www.therobotreport.com/how-integrated-actuators-improve-humanoid-robot-joint-performance-and-system-integration/) — _The Robot Report_
@@ -549,11 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Robot Finger Feels in Color](https://spectrum.ieee.org/robot-finger) — _IEEE Spectrum_
 - [The OlmoEarth Platform: Geospatial inference at planetary scale](https://huggingface.co/blog/allenai/olmoearth-infrastructure) — _Hugging Face - Blog_
 - [NVIDIA Cosmos-H-Dreams: Bringing Real-Time Generative Simulation to Surgical Robotics](https://huggingface.co/blog/nvidia/cosmos-h-dreams) — _Hugging Face - Blog_
-- [NORD expands compact NORDAC VFD family to 200 hp](https://www.therobotreport.com/nord-expands-nordac-compact-vfd-family-to-200-hp/) — _The Robot Report_
-- [Kraken Technology raises Series B funding for autonomous vessels](https://www.therobotreport.com/kraken-technology-raises-series-b-funding-autonomous-vessels/) — _The Robot Report_
-- [Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident](https://huggingface.co/blog/agent-intrusion-technical-timeline) — _Hugging Face - Blog_
-- [Magmotor makes motors for a changing world for 150+ years](https://www.therobotreport.com/magmotor-makes-motors-changing-world-150-years/) — _The Robot Report_
-- [Optical Tech Would Update a Robot’s AI on the Fly](https://spectrum.ieee.org/ai-in-robotics) — _IEEE Spectrum_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
