@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-02 · **Tracked:** 679 core · 606 adjacent ·
-319 news · **16374** benchmark rows across **6567** model
+**Last updated:** 2026-08-03 · **Tracked:** 688 core · 611 adjacent ·
+321 news · **16614** benchmark rows across **6642** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -71,6 +71,7 @@ variants · **30** authors
 | **7.44** | ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies | 2026-06-30 | spd 8 · gen 4 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.31132) · [pdf](https://arxiv.org/pdf/2606.31132v1) |
 | **7.44** | Learning 4D Geometric Priors for Inference-Efficient World Action Models | 2026-07-06 | spd 5 · gen 6 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2607.05468) · [pdf](https://arxiv.org/pdf/2607.05468v1) |
 | **7.41** | Qantara: Bridge-Flow Training for Multi-Paradigm JEPA Control | 2026-07-06 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.04978) · [pdf](https://arxiv.org/pdf/2607.04978v1) |
+| **7.41** | BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning | 2026-07-31 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.29302) · [pdf](https://arxiv.org/pdf/2607.29302v1) |
 | **7.39** | NativeMEM: Native Memory Compression for Long-Horizon Robotic Manipulation | 2026-07-07 | spd 6 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.06678) · [pdf](https://arxiv.org/pdf/2607.06678v1) |
 | **7.39** | INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models | 2026-07-28 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.26056) · [pdf](https://arxiv.org/pdf/2607.26056v1) |
 | **7.38** | Intercepting the Future: Latent-Space Predictive World Model for Dynamic VLA Manipulation | 2026-06-01 | spd 5 · gen 6 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2606.02486) · [pdf](https://arxiv.org/pdf/2606.02486v1) |
@@ -80,7 +81,6 @@ variants · **30** authors
 | **7.36** | ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing? | 2026-06-17 | spd 7 · gen 6 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.19531) · [pdf](https://arxiv.org/pdf/2606.19531v1) · [code](https://github.com/yuyangalin/ImageWAM) |
 | **7.35** | Colosseum V2: Benchmarking Generalization for Vision Language Action Models | 2026-05-26 | spd – · gen 8 · spec – · cost – | [abs](https://arxiv.org/abs/2605.27759) · [pdf](https://arxiv.org/pdf/2605.27759v1) |
 | **7.35** | FlowWAM: Optical Flow as a Unified Action Representation for World Action Models | 2026-07-14 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.13017) · [pdf](https://arxiv.org/pdf/2607.13017v1) |
-| **7.34** | AlayaWorld: Interactive Long-Horizon World Modeling -- Full Technical Report | 2026-07-20 | spd 5 · gen – · spec 8 · cost 4 | [abs](https://arxiv.org/abs/2607.18367) · [pdf](https://arxiv.org/pdf/2607.18367v1) · [code](https://github.com/AlayaLab/AlayaWorld) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1936 results_
+#### LIBERO  ·  _1993 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,22 +118,22 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _378 results_
+#### RoboTwin  ·  _383 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | LingBot-VA | — | per-chunk latency | 8100.0 | authors |
+| ST-WAM _(RoboTwin 2.0)_ | — | inference latency | 756.17 | authors |
+| Fast-WAM _(RoboTwin 2.0)_ | — | inference latency | 609.3 | authors |
 | WAM4D _(RoboTwin 2.0)_ | — | inference latency | 525.43 | authors |
-| Fast-WAM _(RoboTwin 2.0)_ | — | inference latency | 425.53 | 3rd-party |
 | Flash-WAM _(LingBot-VA)_ | — | per-chunk latency | 348.0 | authors |
 | HALO-WA _(online task-specific)_ | Beat Block Hammer | episode length | 213.7 | authors |
 | IRASim _(RoboTwin 2.0)_ | Overall | FVD | 126.2 | authors |
 | HY-VLA | place_empty_cup | success rate | 100.0 | authors |
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
 | Ours _(RoboTwin 2.0 demonstration data (50 per task, easy setting))_ | S3 (Lift Pot) | success rate | 97.0 | authors |
-| HALO-WA _(online task-specific)_ | Click Bell | success rate | 97.0 | authors |
 
-#### SimplerEnv  ·  _187 results_
+#### SimplerEnv  ·  _204 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -238,7 +238,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Wall-E | — | Success Rate | 27.6 | 3rd-party |
 | WorldCoder | — | Success Rate | 25.4 | 3rd-party |
 
-#### VBench  ·  _916 results_
+#### VBench  ·  _920 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -448,6 +448,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | GraphVid _(GraphVid-Bench (~27K))_ | — | FVD | 99.42 | authors |
 | Wan-Move _(2M)_ | — | FVD | 82.17 | 3rd-party |
 
+#### Real-world  ·  _63 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| InSight _(50 human scooping demonstrations + acquired lateral-push primitive)_ | sweeping | success rate | 100.0 | authors |
+| SAGE-SFT _(π0.5)_ | Place the green cube on the plate | Success rate | 100.0 | authors |
+| OASIS | Goal | success rate | 98.6 | authors |
+| InSight _(50 human pick-and-place demonstrations + 20 successful pour primitives)_ | pour beans into bowl | success rate | 96.0 | authors |
+| 3DThinkVLA (Ours) _(VLA data + 3D reasoning data (co-training))_ | Transparent container placement | success rate | 93.3 | authors |
+| InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
+| π0.5 | Place the green cube on the plate | Success rate | 90.0 | 3rd-party |
+| MaskWAM | language-ambiguous tasks (ID + OOD) | success rate | 84.9 | authors |
+| π0.5 | Average (Goal, Spatial, Long) | success rate | 81.6 | 3rd-party |
+| Afford-VLA _(LIBERO + Affordance dataset)_ | Cup-to-Plate | Success rate | 80.0 | authors |
+
 #### OGBench  ·  _62 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -462,21 +477,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | QAM _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 70.0 | 3rd-party |
 | CD | PointMaze-Giant | success rate | 68.0 | 3rd-party |
 | CGQL _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 67.0 | 3rd-party |
-
-#### Real-world  ·  _61 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| InSight _(50 human scooping demonstrations + acquired lateral-push primitive)_ | sweeping | success rate | 100.0 | authors |
-| SAGE-SFT _(π0.5)_ | Place the green cube on the plate | Success rate | 100.0 | authors |
-| OASIS | Goal | success rate | 98.6 | authors |
-| InSight _(50 human pick-and-place demonstrations + 20 successful pour primitives)_ | pour beans into bowl | success rate | 96.0 | authors |
-| 3DThinkVLA (Ours) _(VLA data + 3D reasoning data (co-training))_ | Transparent container placement | success rate | 93.3 | authors |
-| InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
-| π0.5 | Place the green cube on the plate | Success rate | 90.0 | 3rd-party |
-| MaskWAM | language-ambiguous tasks (ID + OOD) | success rate | 84.9 | authors |
-| π0.5 | Average (Goal, Spatial, Long) | success rate | 81.6 | 3rd-party |
-| Afford-VLA _(LIBERO + Affordance dataset)_ | Cup-to-Plate | Success rate | 80.0 | authors |
 
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
@@ -539,11 +539,13 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Yujun Shen](https://www.semanticscholar.org/author/2392945842)** (5 papers) — Research on world action models (WAM) including causal world modeling, video pretraining for embodied intelligence, and controllable world simulators, focusing on multi-chunk prediction, Mixture-of-Experts, and persistent dynamic memory for long-term video…
 
 ## 📰 Embodied / Physical-AI News
+- [Reimagine Robotics emerges from stealth with robots that ‘learn on the job’](https://www.therobotreport.com/reimagine-robotics-emerges-stealth-with-robotslearn-on-the-job/) — _The Robot Report_
 - [Google DeepMind says Gemini Robotics 2 enables full body control](https://www.therobotreport.com/google-deepmind-says-gemini-robotics-2-enables-full-body-control/) — _The Robot Report_
 - [Top 10 robotics stories of July 2026](https://www.therobotreport.com/top-10-robotics-stories-july-2026/) — _The Robot Report_
 - [Procore Technologies acquires DroneDeploy for $845M](https://www.therobotreport.com/procore-technologies-acquires-dronedeploy-845m/) — _The Robot Report_
 - [FCC robot ruling shines a spotlight on U.S. policy; how next-gen AI can help warehousing](https://www.therobotreport.com/fcc-robot-ruling-shines-spotlight-on-u-s-policy-how-next-gen-ai-can-help-warehousing/) — _The Robot Report_
 - [KUKA deploys Automation Management Platform for North American automakers](https://www.therobotreport.com/kuka-deploys-automation-management-platform-north-american-automakers/) — _The Robot Report_
+- [Video Friday: Meet Google DeepMind’s Gemini Robotics 2](https://spectrum.ieee.org/video-robot-gemini2-ai-robot) — _IEEE Spectrum_
 - [5 Physical AI infrastructure platforms shaping robotics in 2026](https://www.therobotreport.com/5-physical-ai-infrastructure-platforms-shaping-robotics-in-2026/) — _The Robot Report_
 - [DoorDash gains FAA certification to operate its own drone delivery program](https://www.therobotreport.com/doordash-gains-faa-certification-to-operate-its-own-drone-delivery-program/) — _The Robot Report_
 - [Teradyne Robotics revenue rises 33% year over year in Q2](https://www.therobotreport.com/teradyne-robotics-revenue-rises-33-year-over-year-in-q2/) — _The Robot Report_
@@ -552,8 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [GMEX Robotics to acquire MediaMeta.ai for social intelligence](https://www.therobotreport.com/gmex-robotics-to-acquire-mediameta-ai-social-intelligence/) — _The Robot Report_
 - [How Integrated Actuators Improve Humanoid Robot Joint Performance and System Integration](https://www.therobotreport.com/how-integrated-actuators-improve-humanoid-robot-joint-performance-and-system-integration/) — _The Robot Report_
 - [LFM2.5-Encoders for Fast Long-Context Inference on CPU](https://huggingface.co/blog/LiquidAI/lfm2-5-encoders) — _Hugging Face - Blog_
-- [Registration is open for RoboBusiness 2026](https://www.therobotreport.com/registration-is-open-for-robobusiness-2026/) — _The Robot Report_
-- [ENvue Medical develops robotic feeding tube placement system](https://www.therobotreport.com/envue-medical-develops-robotic-feeding-tube-placement-system/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
