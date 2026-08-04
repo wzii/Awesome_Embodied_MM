@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-03 · **Tracked:** 688 core · 611 adjacent ·
-321 news · **16614** benchmark rows across **6642** model
+**Last updated:** 2026-08-04 · **Tracked:** 715 core · 630 adjacent ·
+326 news · **17154** benchmark rows across **6840** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -70,17 +70,17 @@ variants · **30** authors
 | **7.44** | Flow as Flow: Modeling Robot Velocity Fields as Probability Velocity Fields for Flow-Based Object Manipulation | 2026-06-22 | spd 8 · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.23090) · [pdf](https://arxiv.org/pdf/2606.23090v1) |
 | **7.44** | ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies | 2026-06-30 | spd 8 · gen 4 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.31132) · [pdf](https://arxiv.org/pdf/2606.31132v1) |
 | **7.44** | Learning 4D Geometric Priors for Inference-Efficient World Action Models | 2026-07-06 | spd 5 · gen 6 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2607.05468) · [pdf](https://arxiv.org/pdf/2607.05468v1) |
+| **7.44** | Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies | 2026-08-03 | spd 6 · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2608.01826) · [pdf](https://arxiv.org/pdf/2608.01826v1) |
+| **7.44** | FlowPilot: Real-Time World-Action Modeling for Agile UAV Navigation | 2026-08-01 | spd 8 · gen 2 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.00635) · [pdf](https://arxiv.org/pdf/2608.00635v1) |
 | **7.41** | Qantara: Bridge-Flow Training for Multi-Paradigm JEPA Control | 2026-07-06 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.04978) · [pdf](https://arxiv.org/pdf/2607.04978v1) |
 | **7.41** | BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning | 2026-07-31 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.29302) · [pdf](https://arxiv.org/pdf/2607.29302v1) |
 | **7.39** | NativeMEM: Native Memory Compression for Long-Horizon Robotic Manipulation | 2026-07-07 | spd 6 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.06678) · [pdf](https://arxiv.org/pdf/2607.06678v1) |
 | **7.39** | INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models | 2026-07-28 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.26056) · [pdf](https://arxiv.org/pdf/2607.26056v1) |
 | **7.38** | Intercepting the Future: Latent-Space Predictive World Model for Dynamic VLA Manipulation | 2026-06-01 | spd 5 · gen 6 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2606.02486) · [pdf](https://arxiv.org/pdf/2606.02486v1) |
 | **7.38** | Wall-OSS-0.5 Technical Report | 2026-05-29 | spd – · gen 8 · spec 6 · cost 5 | [abs](https://arxiv.org/abs/2605.30877) · [pdf](https://arxiv.org/pdf/2605.30877v2) · [code](https://github.com/X-Square-Robot/wall-x) |
+| **7.38** | SG-WAM: Self-Guided World Modeling in Geometry-Aware Policy Space | 2026-08-02 | spd – · gen 5 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.01397) · [pdf](https://arxiv.org/pdf/2608.01397v1) |
 | **7.37** | EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies | 2026-06-18 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.20092) · [pdf](https://arxiv.org/pdf/2606.20092v1) |
 | **7.36** | SKIP: Sparse Keyframe Interpolation Paradigm for Efficient Embodied World Models | 2026-05-30 | spd 7 · gen 4 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.00664) · [pdf](https://arxiv.org/pdf/2606.00664v1) |
-| **7.36** | ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing? | 2026-06-17 | spd 7 · gen 6 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.19531) · [pdf](https://arxiv.org/pdf/2606.19531v1) · [code](https://github.com/yuyangalin/ImageWAM) |
-| **7.35** | Colosseum V2: Benchmarking Generalization for Vision Language Action Models | 2026-05-26 | spd – · gen 8 · spec – · cost – | [abs](https://arxiv.org/abs/2605.27759) · [pdf](https://arxiv.org/pdf/2605.27759v1) |
-| **7.35** | FlowWAM: Optical Flow as a Unified Action Representation for World Action Models | 2026-07-14 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.13017) · [pdf](https://arxiv.org/pdf/2607.13017v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _1993 results_
+#### LIBERO  ·  _2092 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _383 results_
+#### RoboTwin  ·  _399 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -133,20 +133,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
 | Ours _(RoboTwin 2.0 demonstration data (50 per task, easy setting))_ | S3 (Lift Pot) | success rate | 97.0 | authors |
 
-#### SimplerEnv  ·  _204 results_
+#### SimplerEnv  ·  _217 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
+| dense | pick-coke | serve latency p50 | 102.1 | authors |
+| VLA-Pruner | pick-coke | serve latency p50 | 101.2 | authors |
 | GeoAlign _(robot-domain RGB-D + Dpol (SimplerEnv-Fractal demonstrations))_ | Pick Coke Can | success rate | 100.0 | authors |
 | S2-VLA | Eggplant in Basket | success rate | 100.0 | authors |
+| actuation-slack refresh | pick-coke | serve latency p50 | 100.0 | authors |
 | OpenVLA-7b | Pick up | failure rate (FR) | 97.5 | authors |
 | GR00T-N1.6 | Pick up | failed object coverage (FOC) | 97.1 | authors |
 | Afford-VLA _(LIBERO + Affordance dataset)_ | Put Eggplant | Success rate | 96.8 | authors |
 | X-VLA + IDR | WidowX | Average success rate | 95.83 | authors |
 | Reflective VLA _(π0.5 training data)_ | Spoon | success rate | 95.8 | authors |
-| X-VLA | WidowX | Average success rate | 93.75 | authors |
-| Embodied-R1.5-VLA | — | success rate | 92.4 | authors |
-| TBD-VLA _(Fractal)_ | Visual Matching | success rate | 91.0 | authors |
 
 #### RLBench  ·  _50 results_
 
@@ -238,7 +238,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Wall-E | — | Success Rate | 27.6 | 3rd-party |
 | WorldCoder | — | Success Rate | 25.4 | 3rd-party |
 
-#### VBench  ·  _920 results_
+#### VBench  ·  _922 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -358,7 +358,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Spatial inject-none _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 15.5 | authors |
 | Spatial inject-none _(Context-as-Memory dataset)_ | replay | Replay PSNR | 14.66 | authors |
 
-#### Bench2Drive  ·  _88 results_
+#### Bench2Drive  ·  _92 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -373,7 +373,22 @@ _Model identity = (model, training data); same name on different data is a disti
 | PersonaDrive | — | Driving Score | 88.95 | authors |
 | BevAD _(PDM-Lite)_ | — | driving score | 88.11 | 3rd-party |
 
-#### NAVSIM  ·  _86 results_
+#### DROID  ·  _92 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
+| MiniWorld-3B _(DROID)_ | — | Trajectory Accuracy improvement | 249.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | Depth Accuracy improvement | 238.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | LPIPS improvement | 216.0 | authors |
+| TesserAct | — | FID | 164.54 | 3rd-party |
+| MiniWorld-3B _(DROID)_ | — | SSIM improvement | 125.0 | authors |
+| π0.5-droid _(DROID)_ | Task Average | task progression rate | 89.3 | 3rd-party |
+| Cloak-VLA _(DROID)_ | Task Average | task progression rate | 88.0 | authors |
+| LAP-VLA | Task Average | task progression rate | 87.9 | 3rd-party |
+| CF + VACE _(DROID, Taste-ROB, TACO, OakInk, LIBERO)_ | — | FID | 75.17 | authors |
+
+#### NAVSIM  ·  _90 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -387,21 +402,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
 | ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
 | RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
-
-#### DROID  ·  _84 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
-| TesserAct | — | FID | 164.54 | 3rd-party |
-| π0.5-droid _(DROID)_ | Task Average | task progression rate | 89.3 | 3rd-party |
-| Cloak-VLA _(DROID)_ | Task Average | task progression rate | 88.0 | authors |
-| LAP-VLA | Task Average | task progression rate | 87.9 | 3rd-party |
-| CF + VACE _(DROID, Taste-ROB, TACO, OakInk, LIBERO)_ | — | FID | 75.17 | authors |
-| CTRL-World | — | FID | 72.9 | 3rd-party |
-| Cloak-VLA-Overlap _(DROID)_ | Task Average | task progression rate | 72.1 | 3rd-party |
-| Kinema4D | — | FID | 67.06 | 3rd-party |
-| Cloak-VLA-NoAug _(DROID)_ | Task Average | task progression rate | 65.1 | 3rd-party |
 
 #### T2VSafetyBench  ·  _84 results_
 
@@ -418,6 +418,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | LA-LQR (ours) | Copyright & Trademarks | VBench (Subject Consistency) | 0.976 | authors |
 | SAFREE [10] | Copyright & Trademarks | VBench (Subject Consistency) | 0.973 | 3rd-party |
 
+#### HDTF  ·  _79 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Echomimic | — | FVD | 981.0 | 3rd-party |
+| Hallo3 | — | FVD | 972.0 | 3rd-party |
+| FantasyTalking | — | FVD | 884.0 | 3rd-party |
+| Hallo3 | — | FID | 871.0 | 3rd-party |
+| Echomimic | — | FID | 722.0 | 3rd-party |
+| FantasyTalking | — | FID | 459.0 | 3rd-party |
+| SoulX-FlashHead | — | FVD | 452.0 | 3rd-party |
+| StableAvatar | — | FVD | 329.0 | 3rd-party |
+| LeapTalk (Lite) _(VividHead)_ | — | FVD | 285.0 | authors |
+| LeapTalk (Pro) _(VividHead)_ | — | FVD | 197.0 | authors |
+
 #### DAVIS  ·  _77 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -433,22 +448,22 @@ _Model identity = (model, training data); same name on different data is a disti
 | MVTrack4Gen Redirector _(Kubric + MultiCamVideo)_ | — | mRotErr | 1.718 | authors |
 | Full reward (Geo-Align) _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | RotErr | 1.3895 | authors |
 
-#### MoveBench  ·  _66 results_
+#### OGBench  ·  _70 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| Wan-Move | Multi-object motion | FVD | 226.3 | 3rd-party |
-| Go-with-the-Flow | Single-object motion | FVD | 216.9 | 3rd-party |
-| UniCaMo _(400K clips from DynPose100K++, WSDG-1M, 4DNeX)_ | Multi-object motion | FVD | 215.2 | authors |
-| Motion-I2V _(10M)_ | — | FVD | 159.32 | 3rd-party |
-| Tora _(630K)_ | — | FVD | 110.47 | 3rd-party |
-| WISA _(80K)_ | — | FVD | 107.89 | 3rd-party |
-| MagicMotion _(23K)_ | — | FVD | 105.12 | 3rd-party |
-| FlashMotion _(23K)_ | — | FVD | 104.12 | 3rd-party |
-| GraphVid _(GraphVid-Bench (~27K))_ | — | FVD | 99.42 | authors |
-| Wan-Move _(2M)_ | — | FVD | 82.17 | 3rd-party |
+| CoFi | PointMaze-Giant | success rate | 96.0 | authors |
+| ProWorld _(OGBench)_ | PushT | success rate | 94.0 | authors |
+| QPILOTS-M _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 90.0 | authors |
+| QPILOTS-U _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 89.0 | authors |
+| QAM-E _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 85.0 | 3rd-party |
+| CDGS | AntMaze-Giant | success rate | 84.0 | 3rd-party |
+| LeWM _(OGBench)_ | PushT | success rate | 83.33 | authors |
+| FQL _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 82.0 | 3rd-party |
+| FEdit _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 79.0 | 3rd-party |
+| QAM _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 70.0 | 3rd-party |
 
-#### Real-world  ·  _63 results_
+#### Real-world  ·  _66 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -463,27 +478,13 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 | Average (Goal, Spatial, Long) | success rate | 81.6 | 3rd-party |
 | Afford-VLA _(LIBERO + Affordance dataset)_ | Cup-to-Plate | Success rate | 80.0 | authors |
 
-#### OGBench  ·  _62 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| CoFi | PointMaze-Giant | success rate | 96.0 | authors |
-| QPILOTS-M _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 90.0 | authors |
-| QPILOTS-U _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 89.0 | authors |
-| QAM-E _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 85.0 | 3rd-party |
-| CDGS | AntMaze-Giant | success rate | 84.0 | 3rd-party |
-| FQL _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 82.0 | 3rd-party |
-| FEdit _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 79.0 | 3rd-party |
-| QAM _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 70.0 | 3rd-party |
-| CD | PointMaze-Giant | success rate | 68.0 | 3rd-party |
-| CGQL _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 67.0 | 3rd-party |
-
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
 - **ActionMap: Robot Policy Learning via Voxel Action Heatmap** — ActionMap replaces the unstructured single-point action decoder in VLA models with a voxel heatmap action head that predicts a probability distribution over a discretized 3D action space, explicitly exploiting the geometric proximity of neighboring actions rather than treating the action space as unstructured… _(→ WAM: In World Action Models, the action conditioning mechanism is critical for predicting how actions transform world states. The voxel heatmap representation can transfer in two ways: (1) as a structured action encoding input to the world model—replacing flat…)_ [abs](https://arxiv.org/abs/2606.06904) · [pdf](https://arxiv.org/pdf/2606.06904v1) · [code](https://github.com/showlab/ActionMap)
 - **Fast Enough to Act: Spatio-Temporal Visual Token Merging for Low-Latency Robotic VLMs and VLAs** — ST-Merge is a plug-and-play, training-free spatio-temporal visual token merging framework that reduces inference latency by fusing redundant visual tokens during the visual encoding phase. It constructs 3D spatiotemporal coordinates for multi-queue parallel matching and weighted aggregation across frames, and… _(→ WAM: World Action Models must process long video histories to predict future world states and generate actions, making visual token count a critical computational bottleneck. ST-Merge's spatio-temporal token merging could be directly applied to the visual encoder…)_ [abs](https://arxiv.org/abs/2606.29350) · [pdf](https://arxiv.org/pdf/2606.29350v1) · [code](https://github.com/Junzhou-Chen/ST_Merge)
 - **WorldRoamBench: An Open-World Benchmark for Long-Horizon Stability of Interactive World Models** — A multi-dimensional, long-horizon evaluation framework for interactive world models that introduces novel metrics: per-frame action metrics to bypass semantic scale disparity, segment-based drift metrics to capture mid-sequence visual collapse, controllability-gated physics evaluation to isolate physical plausibility… _(→ WAM: World Action Models (WAMs) inherently suffer from compounding errors over long horizons, leading to visual drift, physical inconsistencies, and memory loss. The benchmark's metrics—particularly the controllability-gated physics evaluation and action-decoupled…)_ [abs](https://arxiv.org/abs/2606.31672) · [pdf](https://arxiv.org/pdf/2606.31672v1)
 - **DWM: Separating World Effects from Actions in Latent World Models** — DWM decomposes latent world model transitions into an action-invariant world effect (environment-intrinsic dynamics like gravity, inertia, drift) and a complementary action-driven component, using an auxiliary world head regularized by a normalized world-contrastive objective to be action-invariant, coupled with an… _(→ WAM: World Action Models must predict future states conditioned on actions and then use those predictions to select or generate actions. DWM's decomposition transfers directly: (1) By separating action-invariant dynamics from action-driven effects, a WAM can more…)_ [abs](https://arxiv.org/abs/2607.18715) · [pdf](https://arxiv.org/pdf/2607.18715v1)
+- **The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of Training-Free VLA Token Skipping** — The core innovation is identifying that the provenance of the gate signal—not the token-skipping mechanism itself (reuse vs. deletion)—determines closed-loop reliability in accelerated VLAs. When the gate is 'dirty' (harvested from the model's own accelerated/skipped forwards), compounding visibility errors cause… _(→ WAM: World Action Models operate in closed-loop rollouts where compounding prediction errors are already a central challenge. If WAMs adopt token skipping, caching, or pruning for efficient world-state prediction, the same self-harvested gate collapse will occur…)_ [abs](https://arxiv.org/abs/2608.00391) · [pdf](https://arxiv.org/pdf/2608.00391v1)
 - **World Models: A Comprehensive Survey of Architectures, Methodologies, Reasoning Paradigms, and Applications** — A unifying multi-axis taxonomy for world models that integrates architecture, methodological families, reasoning strategies (particularly the convergence of chain-of-thought reasoning with world-model imagination), and applications, providing a structured framework to map the fragmented landscape of world model… _(→ WAM: The taxonomy's explicit categorization of reasoning strategies (imagination-based planning, latent policy learning, counterfactual reasoning) directly informs how WAMs can be architected to generate actions rather than just passive predictions. Specifically…)_ [abs](https://arxiv.org/abs/2606.00133) · [pdf](https://arxiv.org/pdf/2606.00133v1)
 - **PhAIL: A Real-Robot VLA Benchmark and Distributional Methodology** — Replacing binary success rate metrics with a distributional evaluation methodology based on the time-to-success cumulative distribution function (CDF), scored via Human-Relative Throughput (HRT) and compared using macro-averaged Kolmogorov-Smirnov significance tests to resolve close model comparisons with small sample… _(→ WAM: Evaluating World Action Models often relies on binary task completion metrics, which fail to capture the speed-efficiency trade-offs of different policies. By adopting the time-to-success CDF and HRT scoring, WAM evaluations can distinguish between models…)_ [abs](https://arxiv.org/abs/2605.29710) · [pdf](https://arxiv.org/pdf/2605.29710v1) · [code](https://github.com/Positronic-Robotics/phail-paper)
 - **VLAConf: Calibrated Task-Success Confidence for Vision-Language-Action Models** — A lightweight, one-class discriminative confidence head that leverages frozen pretrained VLA internal representations and step-conditioned modeling to estimate step-wise anomaly scores in a single forward pass, avoiding the computational overhead of resampling and generalizing to continuous action spaces. _(→ WAM: World Action Models (WAMs) often suffer from compounding errors over long horizons and need to know when their world state predictions become unreliable. VLAConf's lightweight confidence head can be directly attached to a WAM's internal representations to…)_ [abs](https://arxiv.org/abs/2605.29605) · [pdf](https://arxiv.org/pdf/2605.29605v1)
@@ -509,7 +510,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **The Speedup Paradox: Rethinking Inference Speed-Quality Trade-off in Embodied Tasks** — TISED (Task-level Inference Speedup Effect Decomposition), an analytical framework that decomposes how lossy inference optimizations (quantization, pruning, asynchronous inference) affect closed-loop embodied task performance, revealing paradoxical effects: (1) on static tasks, per-step speedup can increase total task… _(→ WAM: World Action Models operate in closed-loop settings where predicted world states feed back into action selection, making them subject to the same speedup paradox. TISED's decomposition directly applies: moderate quantization or pruning of a WAM's world…)_ [abs](https://arxiv.org/abs/2606.28529) · [pdf](https://arxiv.org/pdf/2606.28529v1)
 - **Position: Vision-Language-Action Models Cannot Be Verified to Perform Physical Reasoning** — Decomposing VLA policies into semantic mapping and physical action decision components, and proposing evaluation designs with controlled variation that causally disentangle whether performance gains stem from semantic matching/distributional overlap versus genuine physical generalization — without requiring access to… _(→ WAM: World Action Models face the identical identifiability problem: when a WAM predicts future world states and actions accurately, it is unclear whether this reflects learned physical dynamics (genuine world modeling) or semantic pattern matching from…)_ [abs](https://arxiv.org/abs/2606.30686) · [pdf](https://arxiv.org/pdf/2606.30686v1)
 - **RoboWorld: Fast and Reliable Neural Simulators for Generalist Robot Policy Evaluation** — Step Forcing: A technique for autoregressive video world models that combines anchored (ground-truth) contexts with one-step self-forwarded (model-predicted) contexts during rollouts to reduce train-test mismatch (exposure bias) and error accumulation, while preserving action-observation dynamics. _(→ WAM: World Action Models suffer heavily from compounding errors during long-horizon, action-conditioned autoregressive rollouts, which causes state drift and out-of-distribution failures. By adopting Step Forcing, WAMs can mitigate this exposure bias by…)_ [abs](https://arxiv.org/abs/2607.01060) · [pdf](https://arxiv.org/pdf/2607.01060v1)
-- **Green for Go, Red for No: Visual Grounding via Semantic Segmentation for VLA Navigation Policies** — A real-time, segmentation-based visual grounding method that overlays semantic traversability information onto input observations—green for traversable, red for non-traversable—using SegFormer, serving as a lightweight input preprocessing step that requires no model retraining and acts primarily as a trajectory length… _(→ WAM: World Action Models predict future world states conditioned on actions, and they can suffer from generating physically implausible predictions (e.g., agents moving through obstacles). The segmentation-based visual grounding overlay can be directly applied as…)_ [abs](https://arxiv.org/abs/2607.05122) · [pdf](https://arxiv.org/pdf/2607.05122v1)
 
 ## 👥 Influential Authors & Groups
 - **[Xiaowei Chi](https://www.semanticscholar.org/author/2192825554)** (8 papers) — Xiaowei Chi's research focuses on developing world-action models (WAMs) for embodied AI, particularly for robotic manipulation. This includes integrating vision, tactile, and 4D geometry data, improving efficiency, and applying reinforcement learning to…
@@ -539,7 +539,12 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Xinyuan Song](https://www.semanticscholar.org/author/2384121658)** (5 papers) — Research focuses on world models in long-horizon language agents, including their collapse dynamics, error propagation, calibration through environment probing, and correction methods.
 
 ## 📰 Embodied / Physical-AI News
+- [What Robotics Companies Think About the U.S. Foreign Robot Ban](https://spectrum.ieee.org/fcc-covered-list-mobile-robots) — _IEEE Spectrum_
+- [Deploy local agents everywhere with LFM2.5-2.6B](https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b) — _Hugging Face - Blog_
 - [Reimagine Robotics emerges from stealth with robots that ‘learn on the job’](https://www.therobotreport.com/reimagine-robotics-emerges-stealth-with-robotslearn-on-the-job/) — _The Robot Report_
+- [igus launches energy chain with 600-degree rotation for industrial robots](https://www.therobotreport.com/igus-launches-energy-chain-600-degree-rotation-industrial-robots/) — _The Robot Report_
+- [HEBI Robotics earns NASA SBIR grant to fast track miniaturized actuators](https://www.therobotreport.com/hebi-robotics-earns-nasa-sbir-grant-fast-track-miniaturized-actuators/) — _The Robot Report_
+- [Walden Robotics Partners With Toyota on Practical Humanoids](https://spectrum.ieee.org/humanoid-robots-walden-robotics-toyota) — _IEEE Spectrum_
 - [Google DeepMind says Gemini Robotics 2 enables full body control](https://www.therobotreport.com/google-deepmind-says-gemini-robotics-2-enables-full-body-control/) — _The Robot Report_
 - [Top 10 robotics stories of July 2026](https://www.therobotreport.com/top-10-robotics-stories-july-2026/) — _The Robot Report_
 - [Procore Technologies acquires DroneDeploy for $845M](https://www.therobotreport.com/procore-technologies-acquires-dronedeploy-845m/) — _The Robot Report_
@@ -549,11 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [5 Physical AI infrastructure platforms shaping robotics in 2026](https://www.therobotreport.com/5-physical-ai-infrastructure-platforms-shaping-robotics-in-2026/) — _The Robot Report_
 - [DoorDash gains FAA certification to operate its own drone delivery program](https://www.therobotreport.com/doordash-gains-faa-certification-to-operate-its-own-drone-delivery-program/) — _The Robot Report_
 - [Teradyne Robotics revenue rises 33% year over year in Q2](https://www.therobotreport.com/teradyne-robotics-revenue-rises-33-year-over-year-in-q2/) — _The Robot Report_
-- [GPU Management: Why Idle GPUs Are the New Grounded Aircraft](https://huggingface.co/blog/Dharma-AI/gpu-management) — _Hugging Face - Blog_
-- [Experts react to FCC limits on U.S. imports of new humanoid and mobile robots](https://www.therobotreport.com/industry-reacts-fcc-ban-u-s-imports-new-humanoid-quadruped-robots/) — _The Robot Report_
-- [GMEX Robotics to acquire MediaMeta.ai for social intelligence](https://www.therobotreport.com/gmex-robotics-to-acquire-mediameta-ai-social-intelligence/) — _The Robot Report_
-- [How Integrated Actuators Improve Humanoid Robot Joint Performance and System Integration](https://www.therobotreport.com/how-integrated-actuators-improve-humanoid-robot-joint-performance-and-system-integration/) — _The Robot Report_
-- [LFM2.5-Encoders for Fast Long-Context Inference on CPU](https://huggingface.co/blog/LiquidAI/lfm2-5-encoders) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
