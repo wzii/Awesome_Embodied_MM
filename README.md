@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-04 · **Tracked:** 715 core · 630 adjacent ·
-326 news · **17154** benchmark rows across **6840** model
+**Last updated:** 2026-08-05 · **Tracked:** 726 core · 636 adjacent ·
+329 news · **17365** benchmark rows across **6936** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -50,6 +50,7 @@ variants · **30** authors
 | **7.58** | FOCA: Future-Oriented Conditioning for Data-Efficient Vision-Language-Action Adaptation | 2026-06-18 | spd – · gen 6 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.20867) · [pdf](https://arxiv.org/pdf/2606.20867v1) |
 | **7.57** | SANTS: A State-Adaptive Scheduler for World Action Models | 2026-05-27 | spd 8 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2605.27947) · [pdf](https://arxiv.org/pdf/2605.27947v1) |
 | **7.57** | Finetuning Vision-Language-Action Models Requires Fewer Layers Than You Think | 2026-06-18 | spd 7 · gen 7 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.20246) · [pdf](https://arxiv.org/pdf/2606.20246v1) |
+| **7.57** | Structure-Aware Robust Fine-Tuning: Defending Vision-Language-Action Robots Against Physical Attention Hijacking | 2026-08-04 | spd 8 · gen 5 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2608.03231) · [pdf](https://arxiv.org/pdf/2608.03231v1) |
 | **7.54** | Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference | 2026-07-14 | spd 8 · gen 4 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2607.12659) · [pdf](https://arxiv.org/pdf/2607.12659v1) · [code](https://github.com/PKU-SEC-Lab/Jetson-PI) |
 | **7.54** | CoTinyVLA: Chain-of-Thought Distillation for a Sub-Billion-Parameter Vision-Language-Action Model | 2026-07-28 | spd – · gen 5 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2607.25487) · [pdf](https://arxiv.org/pdf/2607.25487v1) · [code](https://github.com/BrainJellyPie/CoTinyVLA) |
 | **7.53** | SWAP: Symmetric Equivariant World-Model for Agile Robot Parkour | 2026-06-18 | spd – · gen 4 · spec 9 · cost – | [abs](https://arxiv.org/abs/2606.19928) · [pdf](https://arxiv.org/pdf/2606.19928v1) |
@@ -80,7 +81,6 @@ variants · **30** authors
 | **7.38** | Wall-OSS-0.5 Technical Report | 2026-05-29 | spd – · gen 8 · spec 6 · cost 5 | [abs](https://arxiv.org/abs/2605.30877) · [pdf](https://arxiv.org/pdf/2605.30877v2) · [code](https://github.com/X-Square-Robot/wall-x) |
 | **7.38** | SG-WAM: Self-Guided World Modeling in Geometry-Aware Policy Space | 2026-08-02 | spd – · gen 5 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.01397) · [pdf](https://arxiv.org/pdf/2608.01397v1) |
 | **7.37** | EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies | 2026-06-18 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.20092) · [pdf](https://arxiv.org/pdf/2606.20092v1) |
-| **7.36** | SKIP: Sparse Keyframe Interpolation Paradigm for Efficient Embodied World Models | 2026-05-30 | spd 7 · gen 4 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.00664) · [pdf](https://arxiv.org/pdf/2606.00664v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2092 results_
+#### LIBERO  ·  _2146 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,11 +118,12 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _399 results_
+#### RoboTwin  ·  _422 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | LingBot-VA | — | per-chunk latency | 8100.0 | authors |
+| LingBot-VLA + BCP _(RoboTwin 2.0 Clean)_ | all 50 tasks | VLA inference time | 940.13 | authors |
 | ST-WAM _(RoboTwin 2.0)_ | — | inference latency | 756.17 | authors |
 | Fast-WAM _(RoboTwin 2.0)_ | — | inference latency | 609.3 | authors |
 | WAM4D _(RoboTwin 2.0)_ | — | inference latency | 525.43 | authors |
@@ -131,7 +132,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | IRASim _(RoboTwin 2.0)_ | Overall | FVD | 126.2 | authors |
 | HY-VLA | place_empty_cup | success rate | 100.0 | authors |
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
-| Ours _(RoboTwin 2.0 demonstration data (50 per task, easy setting))_ | S3 (Lift Pot) | success rate | 97.0 | authors |
 
 #### SimplerEnv  ·  _217 results_
 
@@ -193,7 +193,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 | FORCE (Octo) _(ManiSkill (offline + online))_ | — | success rate | 82.3 | authors |
 
-#### RoboCasa  ·  _191 results_
+#### RoboCasa  ·  _200 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -208,7 +208,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GR00T-N1.5 _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 71.7 | authors |
 | Late Fusion _(RoboCasa demonstrations)_ | average over 8 tasks | success rate | 71.0 | authors |
 
-#### Open-X / RT  ·  _52 results_
+#### Open-X / RT  ·  _56 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -253,7 +253,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | LongLive (Vanilla) | — | KV Cache | 100.0 | authors |
 | Reward (Vanilla) | — | KV Cache | 100.0 | authors |
 
-#### AgiBot / GENIE  ·  _46 results_
+#### AgiBot / GENIE  ·  _51 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -262,11 +262,11 @@ _Model identity = (model, training data); same name on different data is a disti
 | PAIWorld _(AgiBot-World, RoboMIND, Galaxea, RoboTwin, RoboCOIN (2.5M clips))_ | — | Scene Consistency | 90.41 | authors |
 | PAIWorld _(AgiBot-World, RoboMIND, Galaxea, RoboTwin, RoboCOIN (2.5M clips))_ | — | EWMScore | 82.45 | authors |
 | Wan2.2 (no pretraining) | Seen tasks (in-distribution) | success rate | 40.0 | authors |
-| DreamDojo (14B) | target-action transfer do(ut=utar) | FDCE | 24.82 | 3rd-party |
-| DreamDojo (2B) | target-action transfer do(ut=utar) | FDCE | 24.36 | 3rd-party |
-| CD-LAM (2B) _(EgoDex (100h), AgiBot)_ | target-action transfer do(ut=utar) | FDCE | 22.55 | authors |
-| RL (ours) _(Agibot Alpha)_ | — | PSNR | 21.2 | authors |
-| CD-LAM (14B) _(EgoDex (100h), AgiBot)_ | target-action transfer do(ut=utar) | FDCE | 21.11 | authors |
+| EmbodiedVAE _(RobNet, RobSet, BC-Z, RH20T, DROID)_ | video reconstruction | PSNR | 31.6745 | authors |
+| CMD | video reconstruction | PSNR | 31.403 | authors |
+| VidTwin | video reconstruction | PSNR | 30.8263 | authors |
+| OpenSoraPlan | video reconstruction | PSNR | 30.7553 | authors |
+| CV-VAE | video reconstruction | PSNR | 30.2767 | authors |
 
 #### Habitat  ·  _19 results_
 
@@ -541,6 +541,9 @@ _Not scored; surfaced for techniques transferable to WAM._
 ## 📰 Embodied / Physical-AI News
 - [What Robotics Companies Think About the U.S. Foreign Robot Ban](https://spectrum.ieee.org/fcc-covered-list-mobile-robots) — _IEEE Spectrum_
 - [Deploy local agents everywhere with LFM2.5-2.6B](https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b) — _Hugging Face - Blog_
+- [Zoox unveils production-ready robotaxi for U.S. expansion](https://www.therobotreport.com/zoox-unveils-production-ready-robotaxi-for-u-s-expansion/) — _The Robot Report_
+- [U.S. Navy picks Blue Water Autonomy to use autonomous vessels for deep ocean surveys](https://www.therobotreport.com/u-s-navy-picks-blue-water-autonomy-to-use-autonomous-vessels-for-deep-ocean-surveys/) — _The Robot Report_
+- [Humanoids won’t scale on factory floors until costs drop](https://www.therobotreport.com/humanoids-wont-scale-on-factory-floors-until-costs-drop/) — _The Robot Report_
 - [Reimagine Robotics emerges from stealth with robots that ‘learn on the job’](https://www.therobotreport.com/reimagine-robotics-emerges-stealth-with-robotslearn-on-the-job/) — _The Robot Report_
 - [igus launches energy chain with 600-degree rotation for industrial robots](https://www.therobotreport.com/igus-launches-energy-chain-600-degree-rotation-industrial-robots/) — _The Robot Report_
 - [HEBI Robotics earns NASA SBIR grant to fast track miniaturized actuators](https://www.therobotreport.com/hebi-robotics-earns-nasa-sbir-grant-fast-track-miniaturized-actuators/) — _The Robot Report_
@@ -551,9 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [FCC robot ruling shines a spotlight on U.S. policy; how next-gen AI can help warehousing](https://www.therobotreport.com/fcc-robot-ruling-shines-spotlight-on-u-s-policy-how-next-gen-ai-can-help-warehousing/) — _The Robot Report_
 - [KUKA deploys Automation Management Platform for North American automakers](https://www.therobotreport.com/kuka-deploys-automation-management-platform-north-american-automakers/) — _The Robot Report_
 - [Video Friday: Meet Google DeepMind’s Gemini Robotics 2](https://spectrum.ieee.org/video-robot-gemini2-ai-robot) — _IEEE Spectrum_
-- [5 Physical AI infrastructure platforms shaping robotics in 2026](https://www.therobotreport.com/5-physical-ai-infrastructure-platforms-shaping-robotics-in-2026/) — _The Robot Report_
-- [DoorDash gains FAA certification to operate its own drone delivery program](https://www.therobotreport.com/doordash-gains-faa-certification-to-operate-its-own-drone-delivery-program/) — _The Robot Report_
-- [Teradyne Robotics revenue rises 33% year over year in Q2](https://www.therobotreport.com/teradyne-robotics-revenue-rises-33-year-over-year-in-q2/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
