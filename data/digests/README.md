@@ -3,6 +3,7 @@
 Daily issues (newest first). Each links that day's new papers & news.
 
 - ⭐ [Issue 0 — Inaugural backlog](issue-00.md)
+- [2026-08-06](2026-08-06.md)
 - [2026-08-05](2026-08-05.md)
 - [2026-08-04](2026-08-04.md)
 - [2026-08-03](2026-08-03.md)

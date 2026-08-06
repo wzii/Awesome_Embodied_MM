@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-05 · **Tracked:** 726 core · 636 adjacent ·
-329 news · **17365** benchmark rows across **6936** model
+**Last updated:** 2026-08-06 · **Tracked:** 737 core · 643 adjacent ·
+335 news · **17565** benchmark rows across **7024** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -35,6 +35,7 @@ variants · **30** authors
 | **8.12** | TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM | 2026-07-29 | spd 9 · gen 3 · spec 8 · cost 9 | [abs](https://arxiv.org/abs/2607.27205) · [pdf](https://arxiv.org/pdf/2607.27205v1) · [code](https://github.com/H-EmbodVis/TurboVLA) |
 | **8.11** | Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving | 2026-07-17 | spd 9 · gen 4 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2607.15621) · [pdf](https://arxiv.org/pdf/2607.15621v1) |
 | **8.09** | DriftWorld: Fast World Modeling through Drifting | 2026-07-16 | spd 9 · gen 6 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.15065) · [pdf](https://arxiv.org/pdf/2607.15065v1) · [code](https://github.com/Susie-Lu/driftworld) |
+| **7.83** | Deltoris: Enabling Real-time VLA Inference in Embodied AI via Bit-level Sparsity and Speculative Inference | 2026-08-05 | spd 9 · gen – · spec 4 · cost 7 | [abs](https://arxiv.org/abs/2608.04428) · [pdf](https://arxiv.org/pdf/2608.04428v1) |
 | **7.79** | Causal-rCM: A Unified Teacher-Forcing and Self-Forcing Open Recipe for Autoregressive Diffusion Distillation in Streaming Video Generation and Interactive World Models | 2026-06-24 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.25473) · [pdf](https://arxiv.org/pdf/2606.25473v1) · [code](https://github.com/NVlabs/rcm) |
 | **7.73** | BLUE: Toward Better Language Use in Efficient Vision-Language-Action Models for Autonomous Driving | 2026-06-07 | spd 8 · gen 3 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2606.08684) · [pdf](https://arxiv.org/pdf/2606.08684v1) · [code](https://github.com/George-Ling3/BLUE) |
 | **7.72** | Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model | 2026-07-13 | spd – · gen 7 · spec 8 · cost 2 | [abs](https://arxiv.org/abs/2607.11643) · [pdf](https://arxiv.org/pdf/2607.11643v1) |
@@ -80,7 +81,6 @@ variants · **30** authors
 | **7.38** | Intercepting the Future: Latent-Space Predictive World Model for Dynamic VLA Manipulation | 2026-06-01 | spd 5 · gen 6 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2606.02486) · [pdf](https://arxiv.org/pdf/2606.02486v1) |
 | **7.38** | Wall-OSS-0.5 Technical Report | 2026-05-29 | spd – · gen 8 · spec 6 · cost 5 | [abs](https://arxiv.org/abs/2605.30877) · [pdf](https://arxiv.org/pdf/2605.30877v2) · [code](https://github.com/X-Square-Robot/wall-x) |
 | **7.38** | SG-WAM: Self-Guided World Modeling in Geometry-Aware Policy Space | 2026-08-02 | spd – · gen 5 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.01397) · [pdf](https://arxiv.org/pdf/2608.01397v1) |
-| **7.37** | EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies | 2026-06-18 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.20092) · [pdf](https://arxiv.org/pdf/2606.20092v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2146 results_
+#### LIBERO  ·  _2209 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -103,7 +103,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ConfidenceVLA | — | avg inference time | 712.9 | 3rd-party |
 | Agentic-VLA _(LIBERO)_ | Long | iterations to 90% success rate | 700.0 | authors |
 
-#### CALVIN  ·  _116 results_
+#### CALVIN  ·  _119 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _422 results_
+#### RoboTwin  ·  _423 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -133,7 +133,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | HY-VLA | place_empty_cup | success rate | 100.0 | authors |
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
 
-#### SimplerEnv  ·  _217 results_
+#### SimplerEnv  ·  _218 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -163,12 +163,13 @@ _Model identity = (model, training data); same name on different data is a disti
 | HARP-SRPD | — | average success rate | 46.59 | authors |
 | HARP-SR | 18 tasks | average success rate | 43.41 | authors |
 
-#### Meta-World  ·  _62 results_
+#### Meta-World  ·  _63 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | SWAAP _(fine-tuned on 5000 transitions with 10% poisoned, α=0.9)_ | push | return | 1641.0 | authors |
 | VICX _(Meta-World (drawer-open, reach, basketball))_ | coffee-button | success rate | 100.0 | authors |
+| GUARD (SmolVLA) | — | ROC-AUC | 99.94 | authors |
 | SUREFlow _(LIBERO, Meta-World, LIBERO-PRO)_ | Easy | Success Rate | 97.8 | authors |
 | FabriVLA _(Evo-1 Meta-World demonstration dataset)_ | easy | success rate | 95.0 | authors |
 | FabriVLA _(Evo-1 Meta-World demonstration dataset)_ | — | overall episode-level success rate | 92.0 | authors |
@@ -176,9 +177,8 @@ _Model identity = (model, training data); same name on different data is a disti
 | SUREFlow _(LIBERO, Meta-World, LIBERO-PRO)_ | — | Average Success Rate | 88.32 | authors |
 | π0+DLAM _(Action-free mixture (11 datasets))_ | — | success rate | 87.6 | authors |
 | LA4VLA-1B _(LA4-33K + LA-33K-V (MixPT))_ | — | success rate | 87.53 | authors |
-| LA4VLA | — | tier-average success rate | 87.5 | 3rd-party |
 
-#### ManiSkill  ·  _62 results_
+#### ManiSkill  ·  _66 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -253,7 +253,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | LongLive (Vanilla) | — | KV Cache | 100.0 | authors |
 | Reward (Vanilla) | — | KV Cache | 100.0 | authors |
 
-#### AgiBot / GENIE  ·  _51 results_
+#### AgiBot / GENIE  ·  _55 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -261,12 +261,12 @@ _Model identity = (model, training data); same name on different data is a disti
 | Reward as an Agent | — | Overall Accuracy | 91.0 | authors |
 | PAIWorld _(AgiBot-World, RoboMIND, Galaxea, RoboTwin, RoboCOIN (2.5M clips))_ | — | Scene Consistency | 90.41 | authors |
 | PAIWorld _(AgiBot-World, RoboMIND, Galaxea, RoboTwin, RoboCOIN (2.5M clips))_ | — | EWMScore | 82.45 | authors |
+| π0.5 + language memory (Genie Sim) | single-package sorting | average stage success rate | 63.9 | authors |
+| π0.5 (Genie Sim) | single-package sorting | average stage success rate | 41.7 | authors |
 | Wan2.2 (no pretraining) | Seen tasks (in-distribution) | success rate | 40.0 | authors |
 | EmbodiedVAE _(RobNet, RobSet, BC-Z, RH20T, DROID)_ | video reconstruction | PSNR | 31.6745 | authors |
 | CMD | video reconstruction | PSNR | 31.403 | authors |
 | VidTwin | video reconstruction | PSNR | 30.8263 | authors |
-| OpenSoraPlan | video reconstruction | PSNR | 30.7553 | authors |
-| CV-VAE | video reconstruction | PSNR | 30.2767 | authors |
 
 #### Habitat  ·  _19 results_
 
@@ -283,7 +283,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Qwen3.5-4B+SVA | — | success rate | 53.06 | authors |
 | Qwen3.5-27B | — | success rate | 47.22 | 3rd-party |
 
-#### BEHAVIOR  ·  _48 results_
+#### BEHAVIOR  ·  _50 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -312,6 +312,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | ReWorld _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 270.4 | authors |
 | Diffusion (calibrated) - AnchoredVAEDiT | future frame prediction | FID | 162.5 | authors |
 | DrivingGPT | video generation | FVD | 142.6 | 3rd-party |
+
+#### DROID  ·  _102 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
+| MiniWorld-3B _(DROID)_ | — | Trajectory Accuracy improvement | 249.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | Depth Accuracy improvement | 238.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | LPIPS improvement | 216.0 | authors |
+| TesserAct | — | FID | 164.54 | 3rd-party |
+| MiniWorld-3B _(DROID)_ | — | SSIM improvement | 125.0 | authors |
+| π0.5-droid _(DROID)_ | Task Average | task progression rate | 89.3 | 3rd-party |
+| Cloak-VLA _(DROID)_ | Task Average | task progression rate | 88.0 | authors |
+| LAP-VLA | Task Average | task progression rate | 87.9 | 3rd-party |
+| CF + VACE _(DROID, Taste-ROB, TACO, OakInk, LIBERO)_ | — | FID | 75.17 | authors |
 
 #### SafeSora  ·  _99 results_
 
@@ -372,21 +387,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | TakeVLA _(PDM-Lite)_ | — | driving score | 89.72 | 3rd-party |
 | PersonaDrive | — | Driving Score | 88.95 | authors |
 | BevAD _(PDM-Lite)_ | — | driving score | 88.11 | 3rd-party |
-
-#### DROID  ·  _92 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
-| MiniWorld-3B _(DROID)_ | — | Trajectory Accuracy improvement | 249.0 | authors |
-| MiniWorld-3B _(DROID)_ | — | Depth Accuracy improvement | 238.0 | authors |
-| MiniWorld-3B _(DROID)_ | — | LPIPS improvement | 216.0 | authors |
-| TesserAct | — | FID | 164.54 | 3rd-party |
-| MiniWorld-3B _(DROID)_ | — | SSIM improvement | 125.0 | authors |
-| π0.5-droid _(DROID)_ | Task Average | task progression rate | 89.3 | 3rd-party |
-| Cloak-VLA _(DROID)_ | Task Average | task progression rate | 88.0 | authors |
-| LAP-VLA | Task Average | task progression rate | 87.9 | 3rd-party |
-| CF + VACE _(DROID, Taste-ROB, TACO, OakInk, LIBERO)_ | — | FID | 75.17 | authors |
 
 #### NAVSIM  ·  _90 results_
 
@@ -539,6 +539,12 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Xinyuan Song](https://www.semanticscholar.org/author/2384121658)** (5 papers) — Research focuses on world models in long-horizon language agents, including their collapse dynamics, error propagation, calibration through environment probing, and correction methods.
 
 ## 📰 Embodied / Physical-AI News
+- [Baseten on Hugging Face Inference Providers 🔥](https://huggingface.co/blog/baseten) — _Hugging Face - Blog_
+- [Avnet and Weston Robot partner to launch edge AI inspection platform](https://www.therobotreport.com/avnet-and-weston-robot-partner-to-launch-edge-ai-inspection-platform/) — _The Robot Report_
+- [GAM Enterprises to produce Schaeffler’s PSC gear reducers](https://www.therobotreport.com/gam-enterprises-to-produce-schaefflers-psc-gear-reducers/) — _The Robot Report_
+- [University of Florida opens new robotics lab dedicated to industrialized construction](https://www.therobotreport.com/university-of-florida-opens-new-robotics-lab-dedicated-to-industrialized-construction/) — _The Robot Report_
+- [Moove raises $250M to build infrastructure for autonomous vehicles](https://www.therobotreport.com/moove-raises-250m-to-build-infrastructure-for-autonomous-vehicles/) — _The Robot Report_
+- [Why perception is the key to scaling industrial autonomy](https://www.therobotreport.com/why-perception-is-the-key-to-scaling-industrial-autonomy/) — _The Robot Report_
 - [What Robotics Companies Think About the U.S. Foreign Robot Ban](https://spectrum.ieee.org/fcc-covered-list-mobile-robots) — _IEEE Spectrum_
 - [Deploy local agents everywhere with LFM2.5-2.6B](https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b) — _Hugging Face - Blog_
 - [Zoox unveils production-ready robotaxi for U.S. expansion](https://www.therobotreport.com/zoox-unveils-production-ready-robotaxi-for-u-s-expansion/) — _The Robot Report_
@@ -548,12 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [igus launches energy chain with 600-degree rotation for industrial robots](https://www.therobotreport.com/igus-launches-energy-chain-600-degree-rotation-industrial-robots/) — _The Robot Report_
 - [HEBI Robotics earns NASA SBIR grant to fast track miniaturized actuators](https://www.therobotreport.com/hebi-robotics-earns-nasa-sbir-grant-fast-track-miniaturized-actuators/) — _The Robot Report_
 - [Walden Robotics Partners With Toyota on Practical Humanoids](https://spectrum.ieee.org/humanoid-robots-walden-robotics-toyota) — _IEEE Spectrum_
-- [Google DeepMind says Gemini Robotics 2 enables full body control](https://www.therobotreport.com/google-deepmind-says-gemini-robotics-2-enables-full-body-control/) — _The Robot Report_
-- [Top 10 robotics stories of July 2026](https://www.therobotreport.com/top-10-robotics-stories-july-2026/) — _The Robot Report_
-- [Procore Technologies acquires DroneDeploy for $845M](https://www.therobotreport.com/procore-technologies-acquires-dronedeploy-845m/) — _The Robot Report_
-- [FCC robot ruling shines a spotlight on U.S. policy; how next-gen AI can help warehousing](https://www.therobotreport.com/fcc-robot-ruling-shines-spotlight-on-u-s-policy-how-next-gen-ai-can-help-warehousing/) — _The Robot Report_
-- [KUKA deploys Automation Management Platform for North American automakers](https://www.therobotreport.com/kuka-deploys-automation-management-platform-north-american-automakers/) — _The Robot Report_
-- [Video Friday: Meet Google DeepMind’s Gemini Robotics 2](https://spectrum.ieee.org/video-robot-gemini2-ai-robot) — _IEEE Spectrum_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
