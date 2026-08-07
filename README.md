@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-06 · **Tracked:** 737 core · 643 adjacent ·
-335 news · **17565** benchmark rows across **7024** model
+**Last updated:** 2026-08-07 · **Tracked:** 753 core · 655 adjacent ·
+338 news · **17848** benchmark rows across **7140** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2209 results_
+#### LIBERO  ·  _2254 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _423 results_
+#### RoboTwin  ·  _432 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -133,7 +133,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | HY-VLA | place_empty_cup | success rate | 100.0 | authors |
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
 
-#### SimplerEnv  ·  _218 results_
+#### SimplerEnv  ·  _221 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -193,7 +193,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 | FORCE (Octo) _(ManiSkill (offline + online))_ | — | success rate | 82.3 | authors |
 
-#### RoboCasa  ·  _200 results_
+#### RoboCasa  ·  _206 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -238,7 +238,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Wall-E | — | Success Rate | 27.6 | 3rd-party |
 | WorldCoder | — | Success Rate | 25.4 | 3rd-party |
 
-#### VBench  ·  _922 results_
+#### VBench  ·  _933 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -298,7 +298,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _221 results_
+#### nuScenes  ·  _225 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -463,7 +463,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FEdit _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 79.0 | 3rd-party |
 | QAM _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 70.0 | 3rd-party |
 
-#### Real-world  ·  _66 results_
+#### Real-world  ·  _69 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -540,6 +540,9 @@ _Not scored; surfaced for techniques transferable to WAM._
 
 ## 📰 Embodied / Physical-AI News
 - [Baseten on Hugging Face Inference Providers 🔥](https://huggingface.co/blog/baseten) — _Hugging Face - Blog_
+- [HII signs up to $900M agreement with Path Robotics, GrayMatter Robotics](https://www.therobotreport.com/hii-signs-up-to-900m-agreement-with-path-robotics-graymatter-robotics/) — _The Robot Report_
+- [How Robin, the robotic companion, keeps patients calm during hospital visits](https://www.therobotreport.com/how-robin-robotic-companion-keeps-patients-calm-during-hospital-visits/) — _The Robot Report_
+- [Report looks at advances in autonomous mobile robots](https://www.therobotreport.com/report-looks-at-advances-in-autonomous-mobile-robots/) — _The Robot Report_
 - [Avnet and Weston Robot partner to launch edge AI inspection platform](https://www.therobotreport.com/avnet-and-weston-robot-partner-to-launch-edge-ai-inspection-platform/) — _The Robot Report_
 - [GAM Enterprises to produce Schaeffler’s PSC gear reducers](https://www.therobotreport.com/gam-enterprises-to-produce-schaefflers-psc-gear-reducers/) — _The Robot Report_
 - [University of Florida opens new robotics lab dedicated to industrialized construction](https://www.therobotreport.com/university-of-florida-opens-new-robotics-lab-dedicated-to-industrialized-construction/) — _The Robot Report_
@@ -551,9 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [U.S. Navy picks Blue Water Autonomy to use autonomous vessels for deep ocean surveys](https://www.therobotreport.com/u-s-navy-picks-blue-water-autonomy-to-use-autonomous-vessels-for-deep-ocean-surveys/) — _The Robot Report_
 - [Humanoids won’t scale on factory floors until costs drop](https://www.therobotreport.com/humanoids-wont-scale-on-factory-floors-until-costs-drop/) — _The Robot Report_
 - [Reimagine Robotics emerges from stealth with robots that ‘learn on the job’](https://www.therobotreport.com/reimagine-robotics-emerges-stealth-with-robotslearn-on-the-job/) — _The Robot Report_
-- [igus launches energy chain with 600-degree rotation for industrial robots](https://www.therobotreport.com/igus-launches-energy-chain-600-degree-rotation-industrial-robots/) — _The Robot Report_
-- [HEBI Robotics earns NASA SBIR grant to fast track miniaturized actuators](https://www.therobotreport.com/hebi-robotics-earns-nasa-sbir-grant-fast-track-miniaturized-actuators/) — _The Robot Report_
-- [Walden Robotics Partners With Toyota on Practical Humanoids](https://spectrum.ieee.org/humanoid-robots-walden-robotics-toyota) — _IEEE Spectrum_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
