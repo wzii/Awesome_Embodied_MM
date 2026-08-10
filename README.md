@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-09 · **Tracked:** 753 core · 655 adjacent ·
-345 news · **17848** benchmark rows across **7140** model
+**Last updated:** 2026-08-10 · **Tracked:** 769 core · 657 adjacent ·
+347 news · **18059** benchmark rows across **7245** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -60,6 +60,7 @@ variants · **30** authors
 | **7.51** | FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation | 2026-06-11 | spd – · gen 8 · spec 6 · cost – | [abs](https://arxiv.org/abs/2606.13102) · [pdf](https://arxiv.org/pdf/2606.13102v1) |
 | **7.49** | 3DThinkVLA: Endowing Vision-Language-Action Models with Latent 3D Priors via 3D-Thinking-Guided Co-training | 2026-06-03 | spd – · gen 6 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.04436) · [pdf](https://arxiv.org/pdf/2606.04436v1) |
 | **7.49** | $\texttt{WEAVER}$, Better, Faster, Longer: An Effective World Model for Robotic Manipulation | 2026-06-11 | spd 7 · gen 4 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.13672) · [pdf](https://arxiv.org/pdf/2606.13672v1) · [code](https://github.com/mseitzer/pytorch-fid) |
+| **7.49** | SimWAM: A Simple World Action Model for End-to-End Autonomous Driving | 2026-08-07 | spd 6 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2608.07468) · [pdf](https://arxiv.org/pdf/2608.07468v1) · [code](https://github.com/H-EmbodVis/SimWAM) |
 | **7.48** | LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World | 2026-05-31 | spd – · gen 4 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.01458) · [pdf](https://arxiv.org/pdf/2606.01458v1) |
 | **7.47** | DAM-VLA: Decoupled Asynchronous Multimodal Vision Language Action model | 2026-06-10 | spd 8 · gen 4 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.12105) · [pdf](https://arxiv.org/pdf/2606.12105v1) |
 | **7.46** | Feat2Go: Visual Feature-Grounded Value Estimation for Embodied Reinforcement Learning | 2026-05-29 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2605.30795) · [pdf](https://arxiv.org/pdf/2605.30795v1) |
@@ -76,11 +77,10 @@ variants · **30** authors
 | **7.44** | FlowPilot: Real-Time World-Action Modeling for Agile UAV Navigation | 2026-08-01 | spd 8 · gen 2 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.00635) · [pdf](https://arxiv.org/pdf/2608.00635v1) |
 | **7.41** | Qantara: Bridge-Flow Training for Multi-Paradigm JEPA Control | 2026-07-06 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.04978) · [pdf](https://arxiv.org/pdf/2607.04978v1) |
 | **7.41** | BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning | 2026-07-31 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.29302) · [pdf](https://arxiv.org/pdf/2607.29302v1) |
+| **7.41** | AtlasVLA: Persistent World-Ego State Modeling for Vision-Language-Action Models | 2026-08-07 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2608.06729) · [pdf](https://arxiv.org/pdf/2608.06729v1) |
 | **7.39** | NativeMEM: Native Memory Compression for Long-Horizon Robotic Manipulation | 2026-07-07 | spd 6 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.06678) · [pdf](https://arxiv.org/pdf/2607.06678v1) |
 | **7.39** | INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models | 2026-07-28 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.26056) · [pdf](https://arxiv.org/pdf/2607.26056v1) |
 | **7.38** | Intercepting the Future: Latent-Space Predictive World Model for Dynamic VLA Manipulation | 2026-06-01 | spd 5 · gen 6 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2606.02486) · [pdf](https://arxiv.org/pdf/2606.02486v1) |
-| **7.38** | Wall-OSS-0.5 Technical Report | 2026-05-29 | spd – · gen 8 · spec 6 · cost 5 | [abs](https://arxiv.org/abs/2605.30877) · [pdf](https://arxiv.org/pdf/2605.30877v2) · [code](https://github.com/X-Square-Robot/wall-x) |
-| **7.38** | SG-WAM: Self-Guided World Modeling in Geometry-Aware Policy Space | 2026-08-02 | spd – · gen 5 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.01397) · [pdf](https://arxiv.org/pdf/2608.01397v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2254 results_
+#### LIBERO  ·  _2285 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -103,7 +103,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ConfidenceVLA | — | avg inference time | 712.9 | 3rd-party |
 | Agentic-VLA _(LIBERO)_ | Long | iterations to 90% success rate | 700.0 | authors |
 
-#### CALVIN  ·  _119 results_
+#### CALVIN  ·  _129 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -148,20 +148,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | X-VLA + IDR | WidowX | Average success rate | 95.83 | authors |
 | Reflective VLA _(π0.5 training data)_ | Spoon | success rate | 95.8 | authors |
 
-#### RLBench  ·  _50 results_
+#### RLBench  ·  _52 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | PointACT _(RLBench (10 tasks))_ | Close laptop lid | success rate | 99.0 | authors |
 | EO1 (reproduced) _(RLBench (10 tasks))_ | Mean | success rate | 73.2 | 3rd-party |
+| AtlasVLA _(RLBench (100 demos per task))_ | — | success rate | 70.8 | authors |
 | GR00T(arch) + Point _(LIBERO-Spatial / RLBench-10Tasks)_ | Mean | success rate | 69.7 | authors |
 | GR00T(arch) + Point (final layer) _(RLBench-10Tasks)_ | Mean | success rate | 69.7 | authors |
 | GR00T(arch) + Point (multi-scale, K=128) _(RLBench-10Tasks)_ | Mean | success rate | 65.6 | authors |
 | GR00T(arch) + Point (multi-scale, K=64) _(RLBench-10Tasks)_ | Mean | success rate | 65.2 | authors |
+| MemoryVLA _(RLBench (100 demos per task))_ | — | success rate | 55.0 | 3rd-party |
 | π0 + CamVLA | Mean | success rate | 51.4 | authors |
 | GR00T(arch) _(LIBERO-Spatial / RLBench-10Tasks)_ | Mean | success rate | 50.8 | authors |
-| HARP-SRPD | — | average success rate | 46.59 | authors |
-| HARP-SR | 18 tasks | average success rate | 43.41 | authors |
 
 #### Meta-World  ·  _63 results_
 
@@ -193,7 +193,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 | FORCE (Octo) _(ManiSkill (offline + online))_ | — | success rate | 82.3 | authors |
 
-#### RoboCasa  ·  _206 results_
+#### RoboCasa  ·  _209 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -223,20 +223,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | BaseVLA _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 75.37 | authors |
 | OpenVLA + RL | speed steering | success rate | 48.9 | authors |
 
-#### ALFWorld  ·  _15 results_
+#### ALFWorld  ·  _21 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | GIGPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 90.4 | authors |
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
+| Qwen3-8B (MEMWM+Skill) | Overall | task success | 65.24 | authors |
 | Expel | — | Success Rate | 60.1 | 3rd-party |
+| Qwen2.5-7B (MEMWM+Skill) | Overall | task success | 57.27 | authors |
+| Qwen2.5-7B (WM - SFT) | Overall | task success | 49.05 | authors |
 | OCM | — | Success Rate | 41.7 | authors |
 | AWM | — | Success Rate | 37.3 | 3rd-party |
 | OCM | — | Steps | 34.5 | authors |
 | Reflexion | — | Success Rate | 30.6 | 3rd-party |
-| ReAct | — | Success Rate | 29.9 | 3rd-party |
-| Wall-E | — | Success Rate | 27.6 | 3rd-party |
-| WorldCoder | — | Success Rate | 25.4 | 3rd-party |
 
 #### VBench  ·  _933 results_
 
@@ -298,7 +298,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _225 results_
+#### nuScenes  ·  _231 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -373,22 +373,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Spatial inject-none _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 15.5 | authors |
 | Spatial inject-none _(Context-as-Memory dataset)_ | replay | Replay PSNR | 14.66 | authors |
 
-#### Bench2Drive  ·  _92 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| BLUE _(SimLingo training set (~400 routes))_ | — | latency | 549.5 | authors |
-| CLEAR (InternVL3-1B) _(SimLingo dataset (~3.1M samples))_ | — | Efficiency | 275.4 | authors |
-| VLGA _(Bench2Drive train routes)_ | — | Efficiency | 194.63 | authors |
-| LinkVLA _(PDM-Lite)_ | — | Driving Score | 91.01 | 3rd-party |
-| BLUE _(SimLingo training set (~400 routes))_ | — | driving score | 90.58 | authors |
-| BLUE (CriticVLA) _(CriticVLA training set)_ | — | driving score | 90.37 | authors |
-| AnchorVLA _(PDM-Lite)_ | — | Driving Score | 89.92 | authors |
-| TakeVLA _(PDM-Lite)_ | — | driving score | 89.72 | 3rd-party |
-| PersonaDrive | — | Driving Score | 88.95 | authors |
-| BevAD _(PDM-Lite)_ | — | driving score | 88.11 | 3rd-party |
-
-#### NAVSIM  ·  _90 results_
+#### NAVSIM  ·  _97 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -402,6 +387,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
 | ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
 | RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
+
+#### Bench2Drive  ·  _95 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| BLUE _(SimLingo training set (~400 routes))_ | — | latency | 549.5 | authors |
+| ORION _(Bench2Drive, Chat-B2D)_ | trajectory prediction | decoder latency | 497.52 | authors |
+| CLEAR (InternVL3-1B) _(SimLingo dataset (~3.1M samples))_ | — | Efficiency | 275.4 | authors |
+| VLGA _(Bench2Drive train routes)_ | — | Efficiency | 194.63 | authors |
+| ORION _(Bench2Drive, Chat-B2D)_ | command probe | command-probe accuracy | 97.7 | authors |
+| LinkVLA _(PDM-Lite)_ | — | Driving Score | 91.01 | 3rd-party |
+| BLUE _(SimLingo training set (~400 routes))_ | — | driving score | 90.58 | authors |
+| BLUE (CriticVLA) _(CriticVLA training set)_ | — | driving score | 90.37 | authors |
+| AnchorVLA _(PDM-Lite)_ | — | Driving Score | 89.92 | authors |
+| TakeVLA _(PDM-Lite)_ | — | driving score | 89.72 | 3rd-party |
 
 #### T2VSafetyBench  ·  _84 results_
 
@@ -448,6 +448,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | MVTrack4Gen Redirector _(Kubric + MultiCamVideo)_ | — | mRotErr | 1.718 | authors |
 | Full reward (Geo-Align) _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | RotErr | 1.3895 | authors |
 
+#### Real-world  ·  _73 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| InSight _(50 human scooping demonstrations + acquired lateral-push primitive)_ | sweeping | success rate | 100.0 | authors |
+| SAGE-SFT _(π0.5)_ | Place the green cube on the plate | Success rate | 100.0 | authors |
+| OASIS | Goal | success rate | 98.6 | authors |
+| InSight _(50 human pick-and-place demonstrations + 20 successful pour primitives)_ | pour beans into bowl | success rate | 96.0 | authors |
+| 3DThinkVLA (Ours) _(VLA data + 3D reasoning data (co-training))_ | Transparent container placement | success rate | 93.3 | authors |
+| InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
+| π0.5 | Place the green cube on the plate | Success rate | 90.0 | 3rd-party |
+| MaskWAM | language-ambiguous tasks (ID + OOD) | success rate | 84.9 | authors |
+| π0.5 | Average (Goal, Spatial, Long) | success rate | 81.6 | 3rd-party |
+| Afford-VLA _(LIBERO + Affordance dataset)_ | Cup-to-Plate | Success rate | 80.0 | authors |
+
 #### OGBench  ·  _70 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -462,21 +477,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | FQL _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 82.0 | 3rd-party |
 | FEdit _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 79.0 | 3rd-party |
 | QAM _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 70.0 | 3rd-party |
-
-#### Real-world  ·  _69 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| InSight _(50 human scooping demonstrations + acquired lateral-push primitive)_ | sweeping | success rate | 100.0 | authors |
-| SAGE-SFT _(π0.5)_ | Place the green cube on the plate | Success rate | 100.0 | authors |
-| OASIS | Goal | success rate | 98.6 | authors |
-| InSight _(50 human pick-and-place demonstrations + 20 successful pour primitives)_ | pour beans into bowl | success rate | 96.0 | authors |
-| 3DThinkVLA (Ours) _(VLA data + 3D reasoning data (co-training))_ | Transparent container placement | success rate | 93.3 | authors |
-| InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
-| π0.5 | Place the green cube on the plate | Success rate | 90.0 | 3rd-party |
-| MaskWAM | language-ambiguous tasks (ID + OOD) | success rate | 84.9 | authors |
-| π0.5 | Average (Goal, Spatial, Long) | success rate | 81.6 | 3rd-party |
-| Afford-VLA _(LIBERO + Affordance dataset)_ | Cup-to-Plate | Success rate | 80.0 | authors |
 
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
@@ -539,6 +539,8 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Xinyuan Song](https://www.semanticscholar.org/author/2384121658)** (5 papers) — Research focuses on world models in long-horizon language agents, including their collapse dynamics, error propagation, calibration through environment probing, and correction methods.
 
 ## 📰 Embodied / Physical-AI News
+- [Making Knowledge Distillation Cheap Enough to Run at Scale](https://huggingface.co/blog/MultiverseComputingCAI/efficient-knowledge-distillation) — _Hugging Face - Blog_
+- [Meta is back with Muse Glimmer: local, agentic, multimodal, and open source](https://huggingface.co/blog/muse-glimmer) — _Hugging Face - Blog_
 - [Analog Devices returns as strategic sponsor to aid MassRobotics startups](https://www.therobotreport.com/analog-devices-returns-strategic-sponsor-aid-massrobotics-startups/) — _The Robot Report_
 - [Experts look ahead at the next 20 years of robotics at RoboBusiness](https://www.therobotreport.com/experts-look-ahead-at-the-next-20-years-of-robotics-at-robobusiness/) — _The Robot Report_
 - [Building robots that survive the warehouse](https://www.therobotreport.com/building-robots-that-survive-warehouse/) — _The Robot Report_
@@ -552,8 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Report looks at advances in autonomous mobile robots](https://www.therobotreport.com/report-looks-at-advances-in-autonomous-mobile-robots/) — _The Robot Report_
 - [Avnet and Weston Robot partner to launch edge AI inspection platform](https://www.therobotreport.com/avnet-and-weston-robot-partner-to-launch-edge-ai-inspection-platform/) — _The Robot Report_
 - [GAM Enterprises to produce Schaeffler’s PSC gear reducers](https://www.therobotreport.com/gam-enterprises-to-produce-schaefflers-psc-gear-reducers/) — _The Robot Report_
-- [University of Florida opens new robotics lab dedicated to industrialized construction](https://www.therobotreport.com/university-of-florida-opens-new-robotics-lab-dedicated-to-industrialized-construction/) — _The Robot Report_
-- [Moove raises $250M to build infrastructure for autonomous vehicles](https://www.therobotreport.com/moove-raises-250m-to-build-infrastructure-for-autonomous-vehicles/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
