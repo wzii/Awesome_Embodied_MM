@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-10 · **Tracked:** 769 core · 657 adjacent ·
-347 news · **18059** benchmark rows across **7245** model
+**Last updated:** 2026-08-11 · **Tracked:** 794 core · 679 adjacent ·
+354 news · **18536** benchmark rows across **7442** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -47,6 +47,7 @@ variants · **30** authors
 | **7.61** | AHA-WAM:Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing | 2026-06-08 | spd 8 · gen 3 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.09811) · [pdf](https://arxiv.org/pdf/2606.09811v1) |
 | **7.61** | GEAR-VLA: Learning Geometry-Aware Action Representations for Generalizable Robotic Manipulation | 2026-06-07 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.08530) · [pdf](https://arxiv.org/pdf/2606.08530v1) · [code](https://github.com/babynabeauty/GEAR-VLA) |
 | **7.59** | Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories | 2026-07-16 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.15330) · [pdf](https://arxiv.org/pdf/2607.15330v1) · [code](https://github.com/Physical-Intelligence/openpi) |
+| **7.59** | JEPA-WAM: Learning Vision-Language-Action Policies with Joint-Embedding World Modeling | 2026-08-10 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2608.09381) · [pdf](https://arxiv.org/pdf/2608.09381v1) |
 | **7.58** | Revisiting Embodied Chain-of-Thought for Generalizable Robot Manipulation | 2026-06-02 | spd – · gen 6 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.03784) · [pdf](https://arxiv.org/pdf/2606.03784v2) |
 | **7.58** | FOCA: Future-Oriented Conditioning for Data-Efficient Vision-Language-Action Adaptation | 2026-06-18 | spd – · gen 6 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.20867) · [pdf](https://arxiv.org/pdf/2606.20867v1) |
 | **7.57** | SANTS: A State-Adaptive Scheduler for World Action Models | 2026-05-27 | spd 8 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2605.27947) · [pdf](https://arxiv.org/pdf/2605.27947v1) |
@@ -80,7 +81,6 @@ variants · **30** authors
 | **7.41** | AtlasVLA: Persistent World-Ego State Modeling for Vision-Language-Action Models | 2026-08-07 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2608.06729) · [pdf](https://arxiv.org/pdf/2608.06729v1) |
 | **7.39** | NativeMEM: Native Memory Compression for Long-Horizon Robotic Manipulation | 2026-07-07 | spd 6 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.06678) · [pdf](https://arxiv.org/pdf/2607.06678v1) |
 | **7.39** | INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models | 2026-07-28 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.26056) · [pdf](https://arxiv.org/pdf/2607.26056v1) |
-| **7.38** | Intercepting the Future: Latent-Space Predictive World Model for Dynamic VLA Manipulation | 2026-06-01 | spd 5 · gen 6 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2606.02486) · [pdf](https://arxiv.org/pdf/2606.02486v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2285 results_
+#### LIBERO  ·  _2341 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -103,7 +103,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ConfidenceVLA | — | avg inference time | 712.9 | 3rd-party |
 | Agentic-VLA _(LIBERO)_ | Long | iterations to 90% success rate | 700.0 | authors |
 
-#### CALVIN  ·  _129 results_
+#### CALVIN  ·  _130 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _432 results_
+#### RoboTwin  ·  _452 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -133,7 +133,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | HY-VLA | place_empty_cup | success rate | 100.0 | authors |
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
 
-#### SimplerEnv  ·  _221 results_
+#### SimplerEnv  ·  _235 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -178,7 +178,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0+DLAM _(Action-free mixture (11 datasets))_ | — | success rate | 87.6 | authors |
 | LA4VLA-1B _(LA4-33K + LA-33K-V (MixPT))_ | — | success rate | 87.53 | authors |
 
-#### ManiSkill  ·  _66 results_
+#### ManiSkill  ·  _72 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -238,7 +238,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | OCM | — | Steps | 34.5 | authors |
 | Reflexion | — | Success Rate | 30.6 | 3rd-party |
 
-#### VBench  ·  _933 results_
+#### VBench  ·  _960 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -539,21 +539,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Xinyuan Song](https://www.semanticscholar.org/author/2384121658)** (5 papers) — Research focuses on world models in long-horizon language agents, including their collapse dynamics, error propagation, calibration through environment probing, and correction methods.
 
 ## 📰 Embodied / Physical-AI News
+- [Thinking of ACE? We Can Do It with Fewer Tokens](https://huggingface.co/blog/ibm-research/altk-evolve-sldd) — _Hugging Face - Blog_
 - [Making Knowledge Distillation Cheap Enough to Run at Scale](https://huggingface.co/blog/MultiverseComputingCAI/efficient-knowledge-distillation) — _Hugging Face - Blog_
 - [Meta is back with Muse Glimmer: local, agentic, multimodal, and open source](https://huggingface.co/blog/muse-glimmer) — _Hugging Face - Blog_
+- [RoboStore launches Robo Inc. to help U.S. organizations deploy robots](https://www.therobotreport.com/robostore-launches-robo-inc-to-help-u-s-organizations-deploy-robots/) — _The Robot Report_
+- [Hadrian raises $1.37B to accelerate U.S. defense, aerospace manufacturing](https://www.therobotreport.com/hadrian-raises-1-37b-accelerate-u-s-manufacturing/) — _The Robot Report_
+- [Tate deploys 58 Hirebotics cobot welders across multiple facilities](https://www.therobotreport.com/tate-deploys-58-hirebotics-cobot-welders-across-multiple-facilities/) — _The Robot Report_
+- [VicOne releases free NVIDIA Isaac Sim cybersecurity extension based on DEF CON 34 research](https://www.therobotreport.com/vicone-releases-free-nviida-isaac-sim-cybersecurity-extension-based-def-con-34-research/) — _The Robot Report_
+- [Robot Recycler Salvages Parts from Broken Machines](https://spectrum.ieee.org/recycling-robot) — _IEEE Spectrum_
+- [Build Low-Latency Multilingual Voice Agents: Open Weights & Full Deployment Control with NVIDIA Magpie TTS](https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents) — _Hugging Face - Blog_
 - [Analog Devices returns as strategic sponsor to aid MassRobotics startups](https://www.therobotreport.com/analog-devices-returns-strategic-sponsor-aid-massrobotics-startups/) — _The Robot Report_
 - [Experts look ahead at the next 20 years of robotics at RoboBusiness](https://www.therobotreport.com/experts-look-ahead-at-the-next-20-years-of-robotics-at-robobusiness/) — _The Robot Report_
 - [Building robots that survive the warehouse](https://www.therobotreport.com/building-robots-that-survive-warehouse/) — _The Robot Report_
 - [Tacta Systems takes aim at high-skilled manufacturing work with TactaBot](https://www.therobotreport.com/tacta-systems-takes-aim-high-skilled-manufacturing-work-tactabot/) — _The Robot Report_
 - [Avatar Robotics raises seed round to address industrial labor constraints](https://www.therobotreport.com/avatar-robotics-raises-6-5-m-seed-round-address-industrial-labor-constraints/) — _The Robot Report_
 - [Video Friday: Drones Go Heavy in DARPA Lift Challenge](https://spectrum.ieee.org/video-friday-heavy-lift-drone) — _IEEE Spectrum_
-- [TutorMoments: Do AI tutors know when to help and when to hold back?](https://huggingface.co/blog/allenai/tutormoments) — _Hugging Face - Blog_
-- [Baseten on Hugging Face Inference Providers 🔥](https://huggingface.co/blog/baseten) — _Hugging Face - Blog_
-- [HII signs up to $900M agreement with Path Robotics, GrayMatter Robotics](https://www.therobotreport.com/hii-signs-up-to-900m-agreement-with-path-robotics-graymatter-robotics/) — _The Robot Report_
-- [How Robin, the robotic companion, keeps patients calm during hospital visits](https://www.therobotreport.com/how-robin-robotic-companion-keeps-patients-calm-during-hospital-visits/) — _The Robot Report_
-- [Report looks at advances in autonomous mobile robots](https://www.therobotreport.com/report-looks-at-advances-in-autonomous-mobile-robots/) — _The Robot Report_
-- [Avnet and Weston Robot partner to launch edge AI inspection platform](https://www.therobotreport.com/avnet-and-weston-robot-partner-to-launch-edge-ai-inspection-platform/) — _The Robot Report_
-- [GAM Enterprises to produce Schaeffler’s PSC gear reducers](https://www.therobotreport.com/gam-enterprises-to-produce-schaefflers-psc-gear-reducers/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
