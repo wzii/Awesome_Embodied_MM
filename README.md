@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-11 · **Tracked:** 794 core · 679 adjacent ·
-354 news · **18536** benchmark rows across **7442** model
+**Last updated:** 2026-08-12 · **Tracked:** 807 core · 690 adjacent ·
+361 news · **18919** benchmark rows across **7583** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -69,6 +69,7 @@ variants · **30** authors
 | **7.46** | Afford-VLA: Action-Aligned Visual Planning via Internalized Affordance | 2026-05-22 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2605.24203) · [pdf](https://arxiv.org/pdf/2605.24203v1) |
 | **7.46** | WALA Learning Executable Latent Actions from Action-Labeled Demonstrations and Action-Free Videos | 2026-07-13 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.11397) · [pdf](https://arxiv.org/pdf/2607.11397v1) |
 | **7.45** | QPILOTS: Efficient Test-Time Q-Steering for Flow Policies | 2026-06-11 | spd – · gen 6 · spec 8 · cost 4 | [abs](https://arxiv.org/abs/2606.14801) · [pdf](https://arxiv.org/pdf/2606.14801v1) |
+| **7.45** | Flex-$π$: A Multi-Stream World-Action Model with Compute Flexibility | 2026-08-11 | spd 6 · gen 5 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2608.10860) · [pdf](https://arxiv.org/pdf/2608.10860v1) |
 | **7.44** | VisualThink-VLA: Visual Intermediate Reasoning for Effective and Low-Latency Vision-Language-Action Policies | 2026-05-28 | spd 8 · gen 7 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2605.30011) · [pdf](https://arxiv.org/pdf/2605.30011v1) · [code](https://github.com/DCDmllm/VisualThink-VLA) |
 | **7.44** | Efficient-WAM: A 1B-Parameter World-Action Model with Low-Cost Future Imagination | 2026-06-08 | spd 8 · gen 5 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2606.10040) · [pdf](https://arxiv.org/pdf/2606.10040v1) |
 | **7.44** | Flow as Flow: Modeling Robot Velocity Fields as Probability Velocity Fields for Flow-Based Object Manipulation | 2026-06-22 | spd 8 · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.23090) · [pdf](https://arxiv.org/pdf/2606.23090v1) |
@@ -80,7 +81,6 @@ variants · **30** authors
 | **7.41** | BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning | 2026-07-31 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.29302) · [pdf](https://arxiv.org/pdf/2607.29302v1) |
 | **7.41** | AtlasVLA: Persistent World-Ego State Modeling for Vision-Language-Action Models | 2026-08-07 | spd – · gen 5 · spec 8 · cost – | [abs](https://arxiv.org/abs/2608.06729) · [pdf](https://arxiv.org/pdf/2608.06729v1) |
 | **7.39** | NativeMEM: Native Memory Compression for Long-Horizon Robotic Manipulation | 2026-07-07 | spd 6 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.06678) · [pdf](https://arxiv.org/pdf/2607.06678v1) |
-| **7.39** | INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models | 2026-07-28 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.26056) · [pdf](https://arxiv.org/pdf/2607.26056v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2341 results_
+#### LIBERO  ·  _2369 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -103,7 +103,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ConfidenceVLA | — | avg inference time | 712.9 | 3rd-party |
 | Agentic-VLA _(LIBERO)_ | Long | iterations to 90% success rate | 700.0 | authors |
 
-#### CALVIN  ·  _130 results_
+#### CALVIN  ·  _134 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _452 results_
+#### RoboTwin  ·  _472 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -133,7 +133,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | HY-VLA | place_empty_cup | success rate | 100.0 | authors |
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
 
-#### SimplerEnv  ·  _235 results_
+#### SimplerEnv  ·  _250 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -163,20 +163,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0 + CamVLA | Mean | success rate | 51.4 | authors |
 | GR00T(arch) _(LIBERO-Spatial / RLBench-10Tasks)_ | Mean | success rate | 50.8 | authors |
 
-#### Meta-World  ·  _63 results_
+#### Meta-World  ·  _85 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | SWAAP _(fine-tuned on 5000 transitions with 10% poisoned, α=0.9)_ | push | return | 1641.0 | authors |
+| Oracle inverse | reach, push, pick-place | mean cumulative reward | 485.5 | authors |
+| RLS | reach, push, pick-place | mean cumulative reward | 434.41 | authors |
+| Replay | reach, push, pick-place | mean cumulative reward | 428.59 | authors |
+| SpikeWorld _(multimodal cache (SHD, SSC, text, image, video) + Meta-World)_ | reach, push, pick-place | mean cumulative reward | 422.58 | authors |
+| Full prediction tuning _(same as SpikeWorld (further tuning on Meta-World))_ | reach, push, pick-place | mean cumulative reward | 422.19 | authors |
 | VICX _(Meta-World (drawer-open, reach, basketball))_ | coffee-button | success rate | 100.0 | authors |
 | GUARD (SmolVLA) | — | ROC-AUC | 99.94 | authors |
 | SUREFlow _(LIBERO, Meta-World, LIBERO-PRO)_ | Easy | Success Rate | 97.8 | authors |
 | FabriVLA _(Evo-1 Meta-World demonstration dataset)_ | easy | success rate | 95.0 | authors |
-| FabriVLA _(Evo-1 Meta-World demonstration dataset)_ | — | overall episode-level success rate | 92.0 | authors |
-| FabriVLA _(Evo-1 Meta-World demonstration dataset)_ | — | tier-average success rate | 90.0 | authors |
-| SUREFlow _(LIBERO, Meta-World, LIBERO-PRO)_ | — | Average Success Rate | 88.32 | authors |
-| π0+DLAM _(Action-free mixture (11 datasets))_ | — | success rate | 87.6 | authors |
-| LA4VLA-1B _(LA4-33K + LA-33K-V (MixPT))_ | — | success rate | 87.53 | authors |
 
 #### ManiSkill  ·  _72 results_
 
@@ -283,7 +283,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Qwen3.5-4B+SVA | — | success rate | 53.06 | authors |
 | Qwen3.5-27B | — | success rate | 47.22 | 3rd-party |
 
-#### BEHAVIOR  ·  _50 results_
+#### BEHAVIOR  ·  _65 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -298,7 +298,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _231 results_
+#### nuScenes  ·  _233 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -539,7 +539,14 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Xinyuan Song](https://www.semanticscholar.org/author/2384121658)** (5 papers) — Research focuses on world models in long-horizon language agents, including their collapse dynamics, error propagation, calibration through environment probing, and correction methods.
 
 ## 📰 Embodied / Physical-AI News
+- [Strengthening U.S. Army sustainment: TALUS to deliver autonomous distribution](https://www.therobotreport.com/strengthening-u-s-army-sustainment-talus-to-deliver-autonomous-distribution/) — _The Robot Report_
+- [DAF Trucks to integrate Einride Driver to scale autonomous electric freight](https://www.therobotreport.com/daf-trucks-integrates-einride-driver-scale-autonomous-electric-freight/) — _The Robot Report_
+- [LFM2.5-VL-3B for Better and Faster Vision Capabilities for the Edge](https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b) — _Hugging Face - Blog_
 - [Thinking of ACE? We Can Do It with Fewer Tokens](https://huggingface.co/blog/ibm-research/altk-evolve-sldd) — _Hugging Face - Blog_
+- [Defense drone developer Cambridge Aerospace raises $300M](https://www.therobotreport.com/defense-drone-developer-cambridge-aerospace-raises-300m/) — _The Robot Report_
+- [PlusAI reaches key milestones ahead of launching its autonomous trucks](https://www.therobotreport.com/plusai-reaches-key-milestones-ahead-launch-autonomous-trucks/) — _The Robot Report_
+- [Webinar to discuss safety and scaling robot fleets in the warehouse](https://www.therobotreport.com/webinar-to-discuss-safety-scaling-robot-fleets-warehouse/) — _The Robot Report_
+- [The 370-billion-dollar race: How integrated design can help humanoid manufacturers succeed in a rapidly growing market](https://www.therobotreport.com/the-370-billion-dollar-race-how-integrated-design-can-help-humanoid-manufacturers-succeed-in-a-rapidly-growing-market/) — _The Robot Report_
 - [Making Knowledge Distillation Cheap Enough to Run at Scale](https://huggingface.co/blog/MultiverseComputingCAI/efficient-knowledge-distillation) — _Hugging Face - Blog_
 - [Meta is back with Muse Glimmer: local, agentic, multimodal, and open source](https://huggingface.co/blog/muse-glimmer) — _Hugging Face - Blog_
 - [RoboStore launches Robo Inc. to help U.S. organizations deploy robots](https://www.therobotreport.com/robostore-launches-robo-inc-to-help-u-s-organizations-deploy-robots/) — _The Robot Report_
@@ -547,13 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Tate deploys 58 Hirebotics cobot welders across multiple facilities](https://www.therobotreport.com/tate-deploys-58-hirebotics-cobot-welders-across-multiple-facilities/) — _The Robot Report_
 - [VicOne releases free NVIDIA Isaac Sim cybersecurity extension based on DEF CON 34 research](https://www.therobotreport.com/vicone-releases-free-nviida-isaac-sim-cybersecurity-extension-based-def-con-34-research/) — _The Robot Report_
 - [Robot Recycler Salvages Parts from Broken Machines](https://spectrum.ieee.org/recycling-robot) — _IEEE Spectrum_
-- [Build Low-Latency Multilingual Voice Agents: Open Weights & Full Deployment Control with NVIDIA Magpie TTS](https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents) — _Hugging Face - Blog_
-- [Analog Devices returns as strategic sponsor to aid MassRobotics startups](https://www.therobotreport.com/analog-devices-returns-strategic-sponsor-aid-massrobotics-startups/) — _The Robot Report_
-- [Experts look ahead at the next 20 years of robotics at RoboBusiness](https://www.therobotreport.com/experts-look-ahead-at-the-next-20-years-of-robotics-at-robobusiness/) — _The Robot Report_
-- [Building robots that survive the warehouse](https://www.therobotreport.com/building-robots-that-survive-warehouse/) — _The Robot Report_
-- [Tacta Systems takes aim at high-skilled manufacturing work with TactaBot](https://www.therobotreport.com/tacta-systems-takes-aim-high-skilled-manufacturing-work-tactabot/) — _The Robot Report_
-- [Avatar Robotics raises seed round to address industrial labor constraints](https://www.therobotreport.com/avatar-robotics-raises-6-5-m-seed-round-address-industrial-labor-constraints/) — _The Robot Report_
-- [Video Friday: Drones Go Heavy in DARPA Lift Challenge](https://spectrum.ieee.org/video-friday-heavy-lift-drone) — _IEEE Spectrum_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
