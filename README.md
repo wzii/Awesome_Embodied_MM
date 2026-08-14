@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-13 · **Tracked:** 815 core · 692 adjacent ·
-367 news · **19054** benchmark rows across **7638** model
+**Last updated:** 2026-08-14 · **Tracked:** 829 core · 700 adjacent ·
+372 news · **19277** benchmark rows across **7738** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2418 results_
+#### LIBERO  ·  _2431 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _478 results_
+#### RoboTwin  ·  _486 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -238,7 +238,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | OCM | — | Steps | 34.5 | authors |
 | Reflexion | — | Success Rate | 30.6 | 3rd-party |
 
-#### VBench  ·  _960 results_
+#### VBench  ·  _969 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -298,7 +298,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _233 results_
+#### nuScenes  ·  _242 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -448,6 +448,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | MVTrack4Gen Redirector _(Kubric + MultiCamVideo)_ | — | mRotErr | 1.718 | authors |
 | Full reward (Geo-Align) _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | RotErr | 1.3895 | authors |
 
+#### NAVSIM v1  ·  _74 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| UNIVERSE w.o. Mask _(NAVSIM v1)_ | — | inference latency | 1623.0 | authors |
+| UNIVERSE Two-DiT _(NAVSIM v1)_ | — | inference latency | 551.0 | authors |
+| UNIVERSE _(NAVSIM v1)_ | — | inference latency | 376.0 | authors |
+| Full-depth planner _(NAVSIM)_ | — | end-to-end planning latency | 320.0 | authors |
+| Fixed B15 (single trajectory) _(NAVSIM)_ | — | end-to-end planning latency | 190.0 | authors |
+| Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
+| CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
+| CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
+| CoPhy _(NAVSIM v1+v2)_ | — | DAC | 98.2 | authors |
+| CoPhy _(NAVSIM v1+v2)_ | — | TTC | 96.8 | authors |
+
 #### Real-world  ·  _73 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -462,21 +477,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | MaskWAM | language-ambiguous tasks (ID + OOD) | success rate | 84.9 | authors |
 | π0.5 | Average (Goal, Spatial, Long) | success rate | 81.6 | 3rd-party |
 | Afford-VLA _(LIBERO + Affordance dataset)_ | Cup-to-Plate | Success rate | 80.0 | authors |
-
-#### OGBench  ·  _70 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| CoFi | PointMaze-Giant | success rate | 96.0 | authors |
-| ProWorld _(OGBench)_ | PushT | success rate | 94.0 | authors |
-| QPILOTS-M _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 90.0 | authors |
-| QPILOTS-U _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 89.0 | authors |
-| QAM-E _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 85.0 | 3rd-party |
-| CDGS | AntMaze-Giant | success rate | 84.0 | 3rd-party |
-| LeWM _(OGBench)_ | PushT | success rate | 83.33 | authors |
-| FQL _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 82.0 | 3rd-party |
-| FEdit _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 79.0 | 3rd-party |
-| QAM _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 70.0 | 3rd-party |
 
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
@@ -539,8 +539,13 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Xinyuan Song](https://www.semanticscholar.org/author/2384121658)** (5 papers) — Research focuses on world models in long-horizon language agents, including their collapse dynamics, error propagation, calibration through environment probing, and correction methods.
 
 ## 📰 Embodied / Physical-AI News
+- [Robots on Wall Street: Non-traditional paths to public markets for robotics companies](https://www.therobotreport.com/robots-on-wall-street-non-traditional-paths-public-markets-robotics-companies/) — _The Robot Report_
 - [ARM Institute calls for defense manufacturing technology projects](https://www.therobotreport.com/arm-institute-calls-for-defense-manufacturing-technology-project/) — _The Robot Report_
 - [Experts to discuss the state of humanoid robots at RoboBusiness](https://www.therobotreport.com/experts-discuss-state-humanoid-robots-robobusiness-2026/) — _The Robot Report_
+- [Mobile manipulators and humanoids: The future of robotics](https://www.therobotreport.com/mobile-manipulators-and-humanoids/) — _The Robot Report_
+- [BioflexBot robot hand aims to replicate key human hand motions](https://www.therobotreport.com/bioflexbot-robot-hand-aims-to-replicate-key-human-hand-motions/) — _The Robot Report_
+- [Record, train, and deploy from one place with Strands Agents, LeRobot, and Hugging Face Storage Buckets](https://huggingface.co/blog/amazon/strands-lerobot-streaming-data-loop) — _Hugging Face - Blog_
+- [What We Learned by Reproducing 2,200 papers from ICML](https://huggingface.co/blog/icml-2026-open-reproductions) — _Hugging Face - Blog_
 - [Strengthening U.S. Army sustainment: TALUS to deliver autonomous distribution](https://www.therobotreport.com/strengthening-u-s-army-sustainment-talus-to-deliver-autonomous-distribution/) — _The Robot Report_
 - [DAF Trucks to integrate Einride Driver to scale autonomous electric freight](https://www.therobotreport.com/daf-trucks-integrates-einride-driver-scale-autonomous-electric-freight/) — _The Robot Report_
 - [LFM2.5-VL-3B for Better and Faster Vision Capabilities for the Edge](https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b) — _Hugging Face - Blog_
@@ -549,11 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Celona launches Orion agentic wireless platform built for physical AI and robotics](https://www.therobotreport.com/celona-launches-orion-agentic-wireless-platform-built-for-physical-ai-robotics/) — _The Robot Report_
 - [Introducing OlmoEarth embeddings: Custom embedding exports from OlmoEarth Studio for downstream analysis](https://huggingface.co/blog/allenai/olmoearth-embeddings) — _Hugging Face - Blog_
 - [Thinking of ACE? We Can Do It with Fewer Tokens](https://huggingface.co/blog/ibm-research/altk-evolve-sldd) — _Hugging Face - Blog_
-- [Defense drone developer Cambridge Aerospace raises $300M](https://www.therobotreport.com/defense-drone-developer-cambridge-aerospace-raises-300m/) — _The Robot Report_
-- [PlusAI reaches key milestones ahead of launching its autonomous trucks](https://www.therobotreport.com/plusai-reaches-key-milestones-ahead-launch-autonomous-trucks/) — _The Robot Report_
-- [Webinar to discuss safety and scaling robot fleets in the warehouse](https://www.therobotreport.com/webinar-to-discuss-safety-scaling-robot-fleets-warehouse/) — _The Robot Report_
-- [The 370-billion-dollar race: How integrated design can help humanoid manufacturers succeed in a rapidly growing market](https://www.therobotreport.com/the-370-billion-dollar-race-how-integrated-design-can-help-humanoid-manufacturers-succeed-in-a-rapidly-growing-market/) — _The Robot Report_
-- [Making Knowledge Distillation Cheap Enough to Run at Scale](https://huggingface.co/blog/MultiverseComputingCAI/efficient-knowledge-distillation) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._

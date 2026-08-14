@@ -605,6 +605,12 @@ comet-unknown,COMET,,All tasks,,,mean normalized score,,,,,,,arxiv:2606.14418,1,
 glam-aligned-bc-any-variant-unknown,GLAM-aligned BC (any variant),,All tasks (overall),,,average improvement in success rate,48.0,,,,,,arxiv:2606.21672,1,stated in abstract; baseline comparisons,2026-06-24
 uni-pi-unknown,Uni-Pi*,,Allegro-Sim,,,success rate,0.0,,,,,,arxiv:2605.27817,0,Task progress also 0.0,2026-06-04
 vera-j-idm-droid-allegro-sim-allegro-real,VERA (J-IDM),"DROID, Allegro-Sim, Allegro-Real",Allegro-Sim,,,success rate,70.0,,,,,,arxiv:2605.27817,1,Task progress also 70.0 ± 14.5,2026-06-04
+alpamayo-1-5-10b-unknown,Alpamayo 1.5-10B,,AlpaSim (closed-loop),autonomous driving,,Collision rate,0.19,,,,,,arxiv:2608.12932,1,,2026-08-14
+alpamayo-1-5-10b-unknown,Alpamayo 1.5-10B,,AlpaSim (closed-loop),autonomous driving,,Off Road rate,0.41,,,,,,arxiv:2608.12932,1,,2026-08-14
+alpamayo-1-5-10b-unknown,Alpamayo 1.5-10B,,AlpaSim (closed-loop),autonomous driving,,latency,1150.0,,ms,,,,arxiv:2608.12932,1,per-step rollout latency,2026-08-14
+flashdrive-alpamayo-1-5-10b-nvidia-autonomous-vehicle-dataset,FlashDrive (Alpamayo 1.5-10B),NVIDIA Autonomous Vehicle Dataset,AlpaSim (closed-loop),autonomous driving,,Collision rate,0.15,,,,,,arxiv:2608.12932,1,,2026-08-14
+flashdrive-alpamayo-1-5-10b-nvidia-autonomous-vehicle-dataset,FlashDrive (Alpamayo 1.5-10B),NVIDIA Autonomous Vehicle Dataset,AlpaSim (closed-loop),autonomous driving,,Off Road rate,0.32,,,,,,arxiv:2608.12932,1,,2026-08-14
+flashdrive-alpamayo-1-5-10b-nvidia-autonomous-vehicle-dataset,FlashDrive (Alpamayo 1.5-10B),NVIDIA Autonomous Vehicle Dataset,AlpaSim (closed-loop),autonomous driving,,latency,463.0,,ms,,,,arxiv:2608.12932,1,per-step rollout latency,2026-08-14
 alpamayo-r1-target-only-alpamayo-r1-dataset,Alpamayo-R1 (target only),Alpamayo-R1 dataset,Alpamayo-R1,,off-shelf test,throughput,34.0,34.0,tok/s,,,H100,arxiv:2606.31160,1,baseline without draft,2026-07-01
 dflash-flatrope-aarl-alpamayo-r1-training-clips,DFlash (FlatRoPE + AARL),Alpamayo-R1 training clips,Alpamayo-R1,,off-shelf test,mean accepted length L,4.95,143.1,tok/s,,,H100,arxiv:2606.31160,1,theoretical speedup 4.21x,2026-07-01
 dflash-flatrope-alpamayo-r1-training-clips,DFlash (FlatRoPE),Alpamayo-R1 training clips,Alpamayo-R1,,off-shelf test,mean accepted length L,4.95,143.1,tok/s,,,H100,arxiv:2606.31160,1,theoretical speedup 4.21x,2026-07-01
@@ -2269,6 +2275,7 @@ diffusion-policy-expert-dataset-18-7k-pusht-10k-cube,Diffusion Policy,"expert da
 dino-wm-unknown,DINO-WM,,Cube,,,Success (%),69.0,,,,,,arxiv:2606.15594,0,Baseline,2026-06-17
 le-wm-unknown,Le-WM,,Cube,,,Success (%),28.5,,,,,,arxiv:2606.15594,0,Baseline,2026-06-17
 le-wm-unknown,Le-WM,,Cube,,,success rate,70.0,,,,,,arxiv:2607.02403,1,Original planning cost (goal cost only),2026-07-03
+lewm-unaugmented,LeWM,unaugmented,Cube,,,planning success rate drop at σ=0.08 (percentage points),22.1,,,,,,arxiv:2608.12939,1,mean loss; clean success not explicitly stated,2026-08-14
 ours-unknown,Ours,,Cube,,,Success (%),91.5,,,,,,arxiv:2606.15594,1,Nominal planning,2026-06-17
 patch-policy-diffusion-policy-webssl,Patch Policy (Diffusion Policy),WebSSL,Cube,,,average objects placed,1.73,,,,,,arxiv:2607.18236,1,,2026-07-21
 patch-policy-vq-bet-webssl,Patch Policy (VQ-BeT),WebSSL,Cube,,,average objects placed,1.68,,,,,,arxiv:2607.18236,1,,2026-07-21
@@ -3024,6 +3031,16 @@ gigaworld-0-video-unknown,GigaWorld-0-Video,,DROID-100,,zero-shot,ADE,32.46,2697
 im2flow2act-flow-as-flow-unknown,Im2Flow2Act + Flow as Flow,,DROID-100,,zero-shot,ADE,38.87,230.0,ms,,,,arxiv:2606.23090,1,quoted from table 1,2026-06-24
 im2flow2act-unknown,Im2Flow2Act,,DROID-100,,zero-shot,ADE,44.14,5580.0,ms,,,,arxiv:2606.23090,0,quoted from table 1,2026-06-24
 track2act-unknown,Track2Act,,DROID-100,,zero-shot,ADE,40.73,1430.0,ms,,,,arxiv:2606.23090,0,quoted from table 1,2026-06-24
+kimi-48b-a3b-unknown,Kimi-48B-A3B,,DSBench,,,leaderboard percentile,17.3,,,,,,arxiv:2608.12564,0,Avg over categories,2026-08-14
+nemotron-120b-a12b-unknown,Nemotron-120B-A12B,,DSBench,,,leaderboard percentile,31.7,,,,,,arxiv:2608.12564,0,Avg over categories,2026-08-14
+qwen3-5-4b-grpo-mle-dojo-train,Qwen3.5-4B-GRPO,MLE-Dojo (train),DSBench,,,leaderboard percentile,25.7,,,,,A100,arxiv:2608.12564,1,Avg over categories,2026-08-14
+qwen3-5-4b-ours-mle-dojo-train,Qwen3.5-4B-Ours,MLE-Dojo (train),DSBench,,,leaderboard percentile,28.8,,,,,A100,arxiv:2608.12564,1,Avg over categories,2026-08-14
+qwen3-5-4b-unknown,Qwen3.5-4B,,DSBench,,,leaderboard percentile,17.1,,,,,,arxiv:2608.12564,0,Avg over categories,2026-08-14
+qwen3-5-4b-wm-mle-dojo-train,Qwen3.5-4B-WM,MLE-Dojo (train),DSBench,,,leaderboard percentile,23.1,,,,,A100,arxiv:2608.12564,1,Avg over categories,2026-08-14
+qwen3-5-9b-grpo-mle-dojo-train,Qwen3.5-9B-GRPO,MLE-Dojo (train),DSBench,,,leaderboard percentile,31.2,,,,,A100,arxiv:2608.12564,1,Avg over categories,2026-08-14
+qwen3-5-9b-ours-mle-dojo-train,Qwen3.5-9B-Ours,MLE-Dojo (train),DSBench,,,leaderboard percentile,32.8,,,,,A100,arxiv:2608.12564,1,Avg over categories,2026-08-14
+qwen3-5-9b-unknown,Qwen3.5-9B,,DSBench,,,leaderboard percentile,23.9,,,,,,arxiv:2608.12564,0,Avg over categories,2026-08-14
+qwen3-5-9b-wm-mle-dojo-train,Qwen3.5-9B-WM,MLE-Dojo (train),DSBench,,,leaderboard percentile,28.0,,,,,A100,arxiv:2608.12564,1,Avg over categories,2026-08-14
 phyagentos-unknown,PhyAgentOS,,DST-Dojo,,,,,,,,,,arxiv:2607.16636,1,No quantitative results reported in provided text,2026-07-21
 3wm-unknown,3WM,,DTU,Novel View Synthesis (SEVA benchmark),,PSNR,14.63,,,,,,arxiv:2605.24321,1,,2026-06-04
 3wm-unknown,3WM,,DTU,Novel View Synthesis (SEVA benchmark),,LPIPS,0.357,,,,,,arxiv:2605.24321,1,,2026-06-04
@@ -3795,6 +3812,7 @@ gemma-3-27b-it-unknown,gemma-3-27b-it,unknown,Everyday Causal Reasoning,,,catego
 gpt-5-2-unknown,GPT-5.2,unknown,Everyday Causal Reasoning,,,accuracy,0.87,,,,,,arxiv:2606.13607,1,Proprietary frontier model,2026-06-12
 human-unknown,Human,,Everyday Causal Reasoning,,,accuracy,0.71,,,,,,arxiv:2606.13607,1,Overall human accuracy,2026-06-12
 human-unknown,Human,,Everyday Causal Reasoning,,,test-retest correlation,0.6,,,,,,arxiv:2606.13607,1,Consistency of errors across two presentations,2026-06-12
+evoke-student-unknown,Evoke Student,,Evoke (internal),hour-scale generation,,generation time per chunk,2.11,,s,,,single H200 at 384x640,arxiv:2608.13546,1,1.5 s chunk generated in 2.11 s,2026-08-14
 gvl-unknown,GVL,,Expert-VOC,,OXE,VOC,0.67,,,,,,arxiv:2606.24742,0,,2026-06-25
 wvm-robocoin-egodex-roboreward-robosuite-ours-agilex-single-arm-ours-agilex-dual-arm-ours-arx-ours,WVM,"RoboCOIN, EgoDex, RoboReward, RoboSuite (ours), AgileX single-arm (ours), AgileX dual-arm (ours), ARX (ours)",Expert-VOC,,OXE,VOC,0.94,,,,,,arxiv:2606.24742,1,,2026-06-25
 earthformer-earthnet2021,Earthformer,EarthNet2021,Extreme Summer Benchmark,,,ENS,0.2539,,,,,,arxiv:2606.27277,0,,2026-06-26
@@ -4195,6 +4213,25 @@ nwm-unknown,NWM,,GO STANFORD,image-goal navigation,,subject consistency,0.524,,,
 nwm-unknown,NWM,,GO Stanford,,,ATE,0.895,,,,,,arxiv:2608.03244,0,,2026-08-05
 uninav-fast-recon-sacson-go-stanford-scand,UniNav-Fast,"RECON, SaCSoN, GO Stanford, SCAND",GO Stanford,,,ATE,0.687,,,,,,arxiv:2608.03244,1,,2026-08-05
 uninav-full-recon-sacson-go-stanford-scand,UniNav-Full,"RECON, SaCSoN, GO Stanford, SCAND",GO Stanford,,,ATE,0.722,,,,,,arxiv:2608.03244,1,,2026-08-05
+flat-conflict-preserving-unknown,Flat conflict-preserving,,GPM-ReleaseBench v1,,evaluator-hidden,atomic match,1800.0,,,,,,arxiv:2608.12476,0,1800/3600,2026-08-14
+flat-conflict-preserving-unknown,Flat conflict-preserving,,GPM-ReleaseBench v1,,evaluator-hidden,answer accuracy,52.17,,,,,,arxiv:2608.12476,0,52.17%,2026-08-14
+flat-conflict-preserving-unknown,Flat conflict-preserving,,GPM-ReleaseBench v1,,evaluator-hidden,unsafe release,50.0,,,,,,arxiv:2608.12476,0,50.00%,2026-08-14
+flat-conflict-preserving-unknown,Flat conflict-preserving,,GPM-ReleaseBench v1,,evaluator-hidden,safe coverage,61.54,,,,,,arxiv:2608.12476,0,61.54%,2026-08-14
+gpm-unknown,GPM,,GPM-ReleaseBench v1,,evaluator-hidden,atomic match,3600.0,,,,,,arxiv:2608.12476,1,3600/3600,2026-08-14
+gpm-unknown,GPM,,GPM-ReleaseBench v1,,evaluator-hidden,answer accuracy,100.0,,,,,,arxiv:2608.12476,1,100.00%,2026-08-14
+gpm-unknown,GPM,,GPM-ReleaseBench v1,,evaluator-hidden,unsafe release,0.0,,,,,,arxiv:2608.12476,1,0.00%,2026-08-14
+gpm-unknown,GPM,,GPM-ReleaseBench v1,,evaluator-hidden,safe coverage,84.62,,,,,,arxiv:2608.12476,1,84.62%,2026-08-14
+latest-first-unknown,Latest-first,,GPM-ReleaseBench v1,,evaluator-hidden,atomic match,1500.0,,,,,,arxiv:2608.12476,0,1500/3600,2026-08-14
+latest-first-unknown,Latest-first,,GPM-ReleaseBench v1,,evaluator-hidden,answer accuracy,43.48,,,,,,arxiv:2608.12476,0,43.48%,2026-08-14
+latest-first-unknown,Latest-first,,GPM-ReleaseBench v1,,evaluator-hidden,unsafe release,58.33,,,,,,arxiv:2608.12476,0,58.33%,2026-08-14
+latest-first-unknown,Latest-first,,GPM-ReleaseBench v1,,evaluator-hidden,safe coverage,53.85,,,,,,arxiv:2608.12476,0,53.85%,2026-08-14
+raw-append-unknown,Raw append,,GPM-ReleaseBench v1,,evaluator-hidden,atomic match,1500.0,,,,,,arxiv:2608.12476,0,1500/3600,2026-08-14
+raw-append-unknown,Raw append,,GPM-ReleaseBench v1,,evaluator-hidden,answer accuracy,43.48,,,,,,arxiv:2608.12476,0,43.48%,2026-08-14
+raw-append-unknown,Raw append,,GPM-ReleaseBench v1,,evaluator-hidden,unsafe release,91.67,,,,,,arxiv:2608.12476,0,91.67%,2026-08-14
+raw-append-unknown,Raw append,,GPM-ReleaseBench v1,,evaluator-hidden,safe coverage,76.92,,,,,,arxiv:2608.12476,0,76.92%,2026-08-14
+statefuse-unknown,StateFuse,,GPM-ReleaseBench v1,,evaluator-hidden,atomic match,1200.0,,,,,,arxiv:2608.12476,0,1200/2100 supported cases,2026-08-14
+statefuse-unknown,StateFuse,,GPM-ReleaseBench v1,,evaluator-hidden,unsafe release,0.0,,,,,,arxiv:2608.12476,0,0% on supported cases,2026-08-14
+statefuse-unknown,StateFuse,,GPM-ReleaseBench v1,,evaluator-hidden,safe coverage,62.5,,,,,,arxiv:2608.12476,0,62.50% on supported cases,2026-08-14
 coconut-unknown,Coconut,,GQA,,,accuracy,63.5,,,,,,arxiv:2606.15160,0,,2026-06-16
 colar-unknown,CoLaR,,GQA,,,accuracy,64.1,,,,,,arxiv:2606.15160,0,,2026-06-16
 cot-unknown,CoT,,GQA,,,accuracy,61.2,,,,,,arxiv:2606.15160,0,,2026-06-16
@@ -4337,6 +4374,9 @@ nwm-unknown,NWM,,"Go Stanford, SCAND, RECON, HuRoN",,,PSNR,14.343,,,,,,arxiv:260
 uniwm-unknown,UniWM,,"Go Stanford, SCAND, RECON, HuRoN",,,ATE,0.302,,,,,,arxiv:2606.24101,0,,2026-06-25
 uniwm-unknown,UniWM,,"Go Stanford, SCAND, RECON, HuRoN",,,PSNR,14.172,,,,,,arxiv:2606.24101,0,,2026-06-25
 pantheon360-dual-latent-fusion-360-1m-filtered,Pantheon360 (Dual+Latent Fusion),360-1M (filtered),Google Maps Street View,two-view interpolation,,PSNR,28.948,,,,,,arxiv:2605.25449,1,ablation best,2026-06-04
+gpm-unknown,GPM,,Governed-QA Sealed V3,,,correct clusters,2400.0,,,,,,arxiv:2608.12476,1,2400/2400,2026-08-14
+qwen2-5-7b-unknown,Qwen2.5-7B,,Governed-QA Sealed V3,,,correct clusters,600.0,,,,,,arxiv:2608.12476,0,"600/2400, ungoverned comparison",2026-08-14
+gpm-unknown,GPM,,Governed-QA Sealed V5,,Chinese-command arm,correct clusters,2400.0,,,,,,arxiv:2608.12476,1,2400/2400,2026-08-14
 actswm-unknown,ActSWM,,Grand Theft Auto V,local action recovery,,action gap,252.38,,,,,,arxiv:2607.26712,1,,2026-07-30
 actswm-unknown,ActSWM,,Grand Theft Auto V,local action recovery,,key accuracy,0.662,,,,,,arxiv:2607.26712,1,,2026-07-30
 actswm-unknown,ActSWM,,Grand Theft Auto V,local action recovery,,active accuracy,0.761,,,,,,arxiv:2607.26712,1,,2026-07-30
@@ -4394,6 +4434,12 @@ qwen2-vl-7b-unknown,Qwen2-VL-7B,,GroupToM-Bench,,,Cognitive Transition Gap,24.5,
 qwen2-vl-7b-unknown,Qwen2-VL-7B,,GroupToM-Bench,,,accuracy,58.3,,,,,,arxiv:2606.04184,1,Level 1 (Belief),2026-06-05
 qwen3-vl-8b-unknown,Qwen3-VL-8B,,GroupToM-Bench,,,Cognitive Transition Gap,27.3,,,,,,arxiv:2606.04184,1,Difference between individual (L1-L3) and group (L4-L7) accuracy,2026-06-05
 qwen3-vl-8b-unknown,Qwen3-VL-8B,,GroupToM-Bench,,,accuracy,73.3,,,,,,arxiv:2606.04184,1,Level 1 (Belief),2026-06-05
+hunyuanvideo-1-5-i2v-unknown,HunyuanVideo 1.5-I2V,,H2R-Bench,,Parallel-Jaw Gripper,H2RCore,30.0,,,,,,arxiv:2608.13049,1,,2026-08-14
+kling-v3-unknown,Kling-V3,,H2R-Bench,,Parallel-Jaw Gripper,H2RCore,74.5,,,,,,arxiv:2608.13049,1,,2026-08-14
+mitty-epic14b-epic14b,Mitty-EPIC14B,EPIC14B,H2R-Bench,,Parallel-Jaw Gripper,H2RCore,61.5,,,,,,arxiv:2608.13049,1,,2026-08-14
+seedance-2-0-unknown,Seedance 2.0,,H2R-Bench,,Parallel-Jaw Gripper,H2RCore,77.3,,,,,,arxiv:2608.13049,1,,2026-08-14
+veo-3-1-unknown,Veo 3.1,,H2R-Bench,,Parallel-Jaw Gripper,H2RCore,49.6,,,,,,arxiv:2608.13049,1,,2026-08-14
+wan2-7-unknown,Wan2.7,,H2R-Bench,,Parallel-Jaw Gripper,H2RCore,76.5,,,,,,arxiv:2608.13049,1,,2026-08-14
 halo-n-a,HALO,N/A,HALO,Hand,,IoU,96.62,,,,,,arxiv:2605.18743,0,"Table 4, baseline",2026-06-04
 worldstring-n-a,WorldString,N/A,HALO,Hand,,IoU,96.24,,,,,,arxiv:2605.18743,1,Table 4. Paper compares to HALO on hand reconstruction.,2026-06-04
 flare-unknown,FLARE,,HAZARD,Fire,,rescue value,42.22,,,,,,arxiv:2607.00457,0,Baseline reported in Table 2. Standard deviation ±0.75.,2026-07-02
@@ -4651,6 +4697,20 @@ tfqas-unknown,TFQAS,,HamQASBench,BeH2-6q,,mean frozen-policy energy error,20.3,,
 tfqas-unknown,TFQAS,,HamQASBench,LiH-6q,,mean frozen-policy energy error,36.0,,,,,,arxiv:2607.29491,1,final-quality context only,2026-08-03
 tfqas-unknown,TFQAS,,HamQASBench,BeH2-8q,,mean frozen-policy energy error,56.7,,,,,,arxiv:2607.29491,1,final-quality context only,2026-08-03
 tfqas-unknown,TFQAS,,HamQASBench,BeH2-10q,,mean frozen-policy energy error,77.9,,,,,,arxiv:2607.29491,1,final-quality context only,2026-08-03
+intention-predictor-hand2bot-real,Intention Predictor,Hand2Bot-Real,Hand2Bot-Real,,test,Mean Acc.,87.5,,,,,,arxiv:2608.13028,1,"Table 6, Real only",2026-08-14
+intention-predictor-hand2bot-real,Intention Predictor,Hand2Bot-Real,Hand2Bot-Real,,test,Mean FPR,22.8,,,,,,arxiv:2608.13028,1,"Table 6, Real only",2026-08-14
+intention-predictor-hand2bot-real,Intention Predictor,Hand2Bot-Real,Hand2Bot-Real,Unseen Obj.,test,ISR,0.6,,,,,,arxiv:2608.13028,1,"Table 6, Real only, 6/10",2026-08-14
+intention-predictor-hand2bot-real-hand2bot-syn,Intention Predictor,Hand2Bot-Real + Hand2Bot-Syn,Hand2Bot-Real,,test,Mean Acc.,90.0,,,,,,arxiv:2608.13028,1,"Table 6, Real+Syn",2026-08-14
+intention-predictor-hand2bot-real-hand2bot-syn,Intention Predictor,Hand2Bot-Real + Hand2Bot-Syn,Hand2Bot-Real,,test,Mean FPR,13.6,,,,,,arxiv:2608.13028,1,"Table 6, Real+Syn",2026-08-14
+intention-predictor-hand2bot-real-hand2bot-syn,Intention Predictor,Hand2Bot-Real + Hand2Bot-Syn,Hand2Bot-Real,Unseen Obj.,test,ISR,0.7,,,,,,arxiv:2608.13028,1,"Table 6, Real+Syn, 7/10",2026-08-14
+passgen-baseline-hand2bot-real,PassGen (Baseline),Hand2Bot-Real,Hand2Bot-Real,,evaluation subset,Mean Acc.,72.7,,,,,,arxiv:2608.13028,1,"Table 4, no gaze or object term",2026-08-14
+passgen-baseline-hand2bot-real,PassGen (Baseline),Hand2Bot-Real,Hand2Bot-Real,,evaluation subset,FPR,95.5,,,,,,arxiv:2608.13028,1,"Table 4, no gaze or object term",2026-08-14
+passgen-full-module-hand2bot-real,PassGen (Full Module),Hand2Bot-Real,Hand2Bot-Real,,evaluation subset,Mean Acc.,90.0,,,,,,arxiv:2608.13028,1,"Table 4, intention gating",2026-08-14
+passgen-full-module-hand2bot-real,PassGen (Full Module),Hand2Bot-Real,Hand2Bot-Real,,evaluation subset,FPR,13.6,,,,,,arxiv:2608.13028,1,"Table 4, intention gating",2026-08-14
+passgen-hand2bot-real,PassGen,Hand2Bot-Real,Hand2Bot-Real,,test,FVD,337.59,,,,,NVIDIA A6000,arxiv:2608.13028,1,"Table 2, video-level metric",2026-08-14
+passgen-hand2bot-real,PassGen,Hand2Bot-Real,Hand2Bot-Real,,test,PSNR,25.12,,,,,NVIDIA A6000,arxiv:2608.13028,1,"Table 2, frame-level metric",2026-08-14
+stableanimator-unknown,StableAnimator,,Hand2Bot-Real,,test,FVD,372.81,,,,,NVIDIA A6000,arxiv:2608.13028,0,"Table 2, best baseline",2026-08-14
+stableanimator-unknown,StableAnimator,,Hand2Bot-Real,,test,PSNR,23.17,,,,,NVIDIA A6000,arxiv:2608.13028,0,"Table 2, best baseline",2026-08-14
 lift-unknown,LIFT,,Hanoi ring placement,,,success rate,0.6,,,,,,arxiv:2607.14236,1,peaked at 1.7K samples,2026-07-17
 lift-w-o-reactive-force-injection-unknown,LIFT w/o Reactive Force Injection,,Hanoi ring placement,,,success rate,0.5,,,,,,arxiv:2607.14236,1,peaked at 0.7K samples,2026-07-17
 pi0-5-w-online-dagger-unknown,pi0.5 w/ Online DAgger,,Hanoi ring placement,,,success rate,0.3,,,,,,arxiv:2607.14236,1,peaked at 1.4K samples,2026-07-17
@@ -5338,6 +5398,9 @@ bsce-k100-lt-real,BSCE,K100-LT (real),K100-LT,,,accuracy,64.5,,,,,,arxiv:2606.22
 ce-k100-lt-real,CE,K100-LT (real),K100-LT,,,accuracy,54.8,,,,,,arxiv:2606.22416,1,"From Table 2, overall average C/A.",2026-06-23
 gen2balance-k100-lt-real-synthetic,Gen2Balance,K100-LT (real + synthetic),K100-LT,,,accuracy,72.6,,,,,,arxiv:2606.22416,1,"Overall average C/A, surpasses strongest baseline by +7.0%.",2026-06-23
 logit-adj-k100-lt-real,Logit Adj.,K100-LT (real),K100-LT,,,accuracy,65.6,,,,,,arxiv:2606.22416,1,,2026-06-23
+v-rae-best-variant-unknown,V-RAE (best variant),,K600,,,gFVD,19.16,,,,,,arxiv:2608.13556,1,"Class-conditional generation, converges up to 6x faster",2026-08-14
+v-rae-dinov3-l-ucf101-k600,V-RAE (DINOv3-L),UCF101+K600,K600,,val,rFVD,2.76,,,,,,arxiv:2608.13556,1,,2026-08-14
+v-rae-v-jepa2-1-l-ucf101-k600,V-RAE (V-JEPA2.1-L),UCF101+K600,K600,,val,rFVD,2.13,,,,,,arxiv:2608.13556,1,Best reconstruction rFVD on K600,2026-08-14
 copy-last-unknown,Copy Last,,KITTI,depth estimation,,AbsR,0.19,,,,,,arxiv:2606.18250,0,T+2.0s,2026-06-17
 cut3r-32-datasets-pre-trained,CUT3R,32 datasets (pre-trained),KITTI,depth estimation,,AbsR,0.086,,,,,,arxiv:2606.18250,0,"Oracle, T+2.0s",2026-06-17
 cut3r-foresight-waymo-open-dataset,CUT3R-Foresight,Waymo Open Dataset,KITTI,depth estimation,,AbsR,0.2,,,,,,arxiv:2606.18250,0,T+2.0s,2026-06-17
@@ -6997,6 +7060,7 @@ worldvla-unknown,WorldVLA,,LIBERO-GOAL,,,success rate,83.4,2.4,Hz,,,,arxiv:2606.
 0-5-experts-task-specific-libero-datasets,π0.5 Experts,task-specific LIBERO datasets,LIBERO-Goal,,,success rate,0.93,,,,,,arxiv:2606.07217,0,,2026-06-08
 0-5-libero-finetuned,π0.5,LIBERO-finetuned,LIBERO-Goal,,,Attack ASR,95.1,,,,,,arxiv:2606.12978,1,Baseline with no preprocessing,2026-06-12
 0-5-libero-goal,π0.5,LIBERO-Goal,LIBERO-Goal,Goal SR,,success rate,93.0,,,,,,arxiv:2608.02497,1,native canonical,2026-08-04
+0-5-libero-pi05-libero,π0.5,LIBERO (pi05_libero),LIBERO-Goal,,,success rate,77.0,,,,,,arxiv:2608.13453,1,target object: plate; clean baseline 96.0,2026-08-14
 0-5-unknown,π0.5,,LIBERO-Goal,,,success rate,96.0,,,,,,arxiv:2605.30117,1,,2026-06-04
 0-eqm-unknown,π0-EqM,,LIBERO-Goal,,,success rate,94.8,,,,,,arxiv:2605.23128,1,,2026-06-04
 0-unknown,π0,,LIBERO-Goal,,,success rate,95.8,,,,,,arxiv:2605.23128,0,baseline from π0 paper,2026-06-04
@@ -7034,6 +7098,7 @@ octo-open-x-embodiment,Octo,Open X-Embodiment,LIBERO-Goal,,,success rate,88.0,,,
 octo-v-vlaps-value-head-open-x-embodiment-frozen-offline-vla-rollouts-on-libero-per-suite,Octo + V-VLAPS (value head),Open X-Embodiment (frozen) + offline VLA rollouts on LIBERO per suite,LIBERO-Goal,,,success rate,93.0,,,,,,openreview:Qlv5FabcEb,1,budget 600s,2026-06-06
 octo-vlaps-open-x-embodiment-frozen,Octo + VLAPS,Open X-Embodiment (frozen),LIBERO-Goal,,,success rate,92.0,,,,,,openreview:Qlv5FabcEb,1,budget 600s,2026-06-06
 openvla-libero-goal,OpenVLA,LIBERO-Goal,LIBERO-Goal,,task split,R2,0.5493,,,,,,arxiv:2605.28527,1,Best feature: vision backbone,2026-06-04
+openvla-libero-goal,OpenVLA,LIBERO-Goal,LIBERO-Goal,,,success rate,58.0,,,,,,arxiv:2608.13453,1,target object: plate; clean baseline 99.0,2026-08-14
 openvla-oft-libero-goal,OpenVLA-OFT,LIBERO-Goal,LIBERO-Goal,,task split,R2,0.5505,,,,,,arxiv:2605.28527,1,Best feature: vision backbone,2026-06-04
 openvla-oft-unknown,OpenVLA-OFT,,LIBERO-Goal,,,success rate,98.0,,,,,,arxiv:2606.27755,1,Dense baseline,2026-06-29
 openvla-oft-unknown,OpenVLA-oft,,LIBERO-Goal,,,Failure Rate,100.0,,,,,,arxiv:2608.03231,1,AGSD attack,2026-08-05
@@ -7155,6 +7220,11 @@ kv-arm-always-write-unknown,KV arm (always-write),,LIBERO-Long,,,success rate,0.
 kv-baseline-growing-cache-unknown,KV baseline (growing cache),,LIBERO-Long,,,inference state size at 100k steps,25600000.0,,,,bytes,L40S GPU,arxiv:2606.02775,1,"25,600,000 bytes at 100k steps; 6061x AURA-Mem",2026-06-05
 memoryvla-unknown,MemoryVLA,,LIBERO-Long,,,success rate,93.4,,,,,,arxiv:2607.05377,0,baseline from other paper,2026-07-07
 midas-1-demonstration,MiDAS,1 demonstration,LIBERO-Long,,,success rate,91.2,,,,,,arxiv:2608.11363,1,mean ± 4.2,2026-08-13
+minivla-1b-grpo-libero-90,MiniVLA-1B-GRPO,LIBERO-90,LIBERO-Long,,,success rate,38.3,,,,,,arxiv:2608.12564,1,Overall avg@8,2026-08-14
+minivla-1b-ours-libero-90,MiniVLA-1B-Ours,LIBERO-90,LIBERO-Long,,,success rate,41.2,,,,,,arxiv:2608.12564,1,Overall avg@8,2026-08-14
+minivla-1b-sft-libero-90,MiniVLA-1B-SFT,LIBERO-90,LIBERO-Long,,,success rate,37.4,,,,,,arxiv:2608.12564,1,Overall avg@8,2026-08-14
+minivla-1b-unknown,MiniVLA-1B,,LIBERO-Long,,,success rate,3.8,,,,,,arxiv:2608.12564,0,Overall avg@8,2026-08-14
+minivla-1b-wm-libero-90,MiniVLA-1B-WM,LIBERO-90,LIBERO-Long,,,success rate,39.2,,,,,,arxiv:2608.12564,1,Overall avg@8,2026-08-14
 mirth-unknown,MIRTH,,LIBERO-Long,,,success rate,95.3,,,,,,arxiv:2606.31167,1,,2026-07-01
 octo-unknown,Octo,,LIBERO-Long,,,success rate,51.1,,,,,,arxiv:2607.29596,0,,2026-08-03
 openvla-flat-libero-long-replication-libero-long-flat-view,OpenVLA-flat (LIBERO-Long replication),LIBERO-Long (flat view),LIBERO-Long,held-out tasks,,success rate,0.42,,,,,,arxiv:2605.30695,1,m=3,2026-06-04
@@ -7187,9 +7257,12 @@ sg-wam-libero,SG-WAM,LIBERO,LIBERO-Long,,,success rate,96.2,,,,,,arxiv:2608.0139
 smolvla-pd-lerobot-libero-dataset,SmolVLA-PD,Lerobot-Libero dataset,LIBERO-Long,,,success rate,81.0,,,,,,arxiv:2607.04171,1,,2026-07-08
 spatialvla-unknown,SpatialVLA,,LIBERO-Long,,,success rate,55.5,,,,,,arxiv:2607.29596,0,,2026-08-03
 stablevla-libero-calvin,StableVLA,LIBERO/CALVIN,LIBERO-Long,,clean,success rate,93.6,,,,,,arxiv:2605.18287,1,,2026-06-04
+stage-reward-grpo-libero-long,Stage-Reward GRPO,LIBERO-Long,LIBERO-Long,,,success rate,94.7,,,,,,arxiv:2608.13026,1,std 0.9,2026-08-14
 tc-lewm-libero-10-tasks-per-suite,TC-LeWM,LIBERO (10 tasks per suite),LIBERO-Long,,10-task joint,success rate,51.8,,,,,,arxiv:2607.26924,1,Table 1,2026-07-30
+temporal-grpo-libero-long,Temporal GRPO,LIBERO-Long,LIBERO-Long,,,success rate,99.1,,,,,,arxiv:2608.13026,1,std 0.4,2026-08-14
 time-domain-unknown,Time-Domain,,LIBERO-Long,,,success rate,50.0,,,,,,arxiv:2608.04527,1,ablation: removes frequency-selective correction,2026-08-06
 tracevla-unknown,TraceVLA,,LIBERO-Long,,,success rate,54.1,,,,,,arxiv:2607.29596,0,,2026-08-03
+trajectory-grpo-libero-long,Trajectory-GRPO,LIBERO-Long,LIBERO-Long,,,success rate,88.4,,,,,,arxiv:2608.13026,1,std 1.5,2026-08-14
 uwm-libero-per-suite,UWM,LIBERO (per suite),LIBERO-Long,,OOD,average success rate,0.34,,,,,,arxiv:2605.23856,0,baseline on modified OOD,2026-06-04
 vision-language-planner-unknown,Vision-language planner,,LIBERO-Long,PnP alphabet soup & tomato sauce,,success rate,56.0,,,,,,arxiv:2607.27599,0,,2026-07-31
 visualthink-vla-open-x-embodiment-bridgedata-v2-fractal-roboturk-libero-ut-austin-mutex,VisualThink-VLA,"Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX)",LIBERO-Long,,,success rate,95.87,0.421,s,,,,arxiv:2605.30011,1,avg step latency,2026-06-04
@@ -7722,6 +7795,7 @@ vistavla-unknown,VistaVLA,,LIBERO-Pro-Swap,,,average success rate,12.2,,,,,,arxi
 vla-adapter-unknown,VLA-Adapter,,LIBERO-Pro-Swap,,,average success rate,1.7,,,,,,arxiv:2607.12356,0,Baseline from paper,2026-07-15
 openvla-libero-safety-l0-l1-4-safety-categories,OpenVLA,"LIBERO-Safety (L0+L1, 4 safety categories)",LIBERO-Safety,AAG L0,,Success Rate,6.0,,,,,8 NVIDIA A800 GPUs,arxiv:2606.23686,1,Std dev 1.6,2026-06-23
 0-5-experts-task-specific-libero-datasets,π0.5 Experts,task-specific LIBERO datasets,LIBERO-Spatial,,,success rate,0.97,,,,,,arxiv:2606.07217,0,,2026-06-08
+0-5-libero-pi05-libero,π0.5,LIBERO (pi05_libero),LIBERO-Spatial,,,success rate,33.0,,,,,,arxiv:2608.13453,1,target object: plate; clean baseline 100.0,2026-08-14
 0-5-unknown,π0.5,,LIBERO-Spatial,,,success rate,98.5,,,,,,arxiv:2605.30117,1,,2026-06-04
 0-5-unknown,π0.5,,LIBERO-Spatial,,Baseline,success rate,97.8,,,,,8 A100 GPUs,arxiv:2606.22540,1,Baseline result from Table 1,2026-06-24
 0-5-unknown,π0.5,,LIBERO-Spatial,,PolicyTrim,average physical steps,59.8,,,,,8 A100 GPUs,arxiv:2606.22540,1,PolicyTrim result from Table 1,2026-06-24
@@ -7764,6 +7838,7 @@ octo-open-x-embodiment,Octo,Open X-Embodiment,LIBERO-Spatial,,,success rate,81.0
 octo-v-vlaps-value-head-open-x-embodiment-frozen-offline-vla-rollouts-on-libero-per-suite,Octo + V-VLAPS (value head),Open X-Embodiment (frozen) + offline VLA rollouts on LIBERO per suite,LIBERO-Spatial,,,success rate,95.0,,,,,,openreview:Qlv5FabcEb,1,budget 600s,2026-06-06
 octo-vlaps-open-x-embodiment-frozen,Octo + VLAPS,Open X-Embodiment (frozen),LIBERO-Spatial,,,success rate,96.0,,,,,,openreview:Qlv5FabcEb,1,budget 600s,2026-06-06
 openvla-7b-libero,OpenVLA-7B,LIBERO,LIBERO-Spatial,,,success rate,95.4,,,,,,arxiv:2605.25889,0,"clean input, from Section 1",2026-06-04
+openvla-libero-spatial,OpenVLA,LIBERO-Spatial,LIBERO-Spatial,,,success rate,53.0,,,,,,arxiv:2608.13453,1,target object: plate; clean baseline 84.0,2026-08-14
 openvla-oft-open-x-embodiment-web,OpenVLA-OFT,Open X-Embodiment + Web,LIBERO-Spatial,,clean,success rate,92.6,,,,,,arxiv:2605.18287,0,,2026-06-04
 openvla-oft-re-pretrained-with-h-16,OpenVLA-OFT,re-pretrained with h=16,LIBERO-Spatial,,PolicyTrim S1+S2,end-to-end speedup,2.97,,,,,8 A100 GPUs,arxiv:2606.22540,1,"From Table 3, cross-architecture experiment",2026-06-24
 openvla-oft-unknown,OpenVLA-OFT,,LIBERO-Spatial,,,success rate,92.0,,,,,,arxiv:2606.13886,0,"Baseline, chunked",2026-06-15
@@ -7800,6 +7875,7 @@ smolvla-baseline-libero-simulation,SmolVLA-Baseline,LIBERO (simulation),LIBERO-S
 smolvla-naive-aug-libero-simulation-with-hsv-augmentation,SmolVLA-Naive-Aug,LIBERO (simulation) with HSV augmentation,LIBERO-Spatial,,Optimized attack,success rate,78.8,,,,,,arxiv:2607.14698,1,Naive augmentation maintains high SR under attack,2026-07-17
 stablevla-libero-calvin,StableVLA,LIBERO/CALVIN,LIBERO-Spatial,,clean,success rate,96.2,,,,,,arxiv:2605.18287,1,,2026-06-04
 trustvla-libero-style-transfer,TrustVLA,LIBERO-style transfer,LIBERO-Spatial,,,VLA-ASR,0.44,,,,,,arxiv:2607.12571,1,"π0.5 transfer, BadVLA attack",2026-07-15
+unitexture-openvla-libero-spatial,UniTexture (OpenVLA),LIBERO-Spatial,LIBERO-Spatial,,,mean success rate,48.4,,,,,,arxiv:2608.13453,1,aggregate across all model-object-suite settings; clean baseline 90.0,2026-08-14
 visualthink-vla-open-x-embodiment-bridgedata-v2-fractal-roboturk-libero-ut-austin-mutex,VisualThink-VLA,"Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX)",LIBERO-Spatial,,,success rate,96.69,0.356,s,,,,arxiv:2605.30011,1,avg step latency,2026-06-04
 vla-adapter-libero-calvin,VLA-Adapter,LIBERO/CALVIN,LIBERO-Spatial,,clean,success rate,96.0,,,,,,arxiv:2605.18287,0,,2026-06-04
 vla-cache-unknown,VLA-Cache,,LIBERO-Spatial,,,success rate,78.8,,,1.43,TFLOPs/step,NVIDIA A100 GPU,arxiv:2608.10824,0,OpenVLA baseline from text,2026-08-12
@@ -8236,6 +8312,20 @@ openvla-oft-episodic-mikasa-robo-vla-5-task-mixture,OpenVLA-OFT (episodic),MIKAS
 openvla-oft-open-x-embodiment,OpenVLA-OFT,Open X-Embodiment,MIKASA-Robo-VLA,5 training tasks,,average success rate,0.42,,,,,,arxiv:2606.12497,0,memoryless baseline (R1),2026-06-12
 vla-m-64-k-2-mikasa-robo-vla-5-task-mixture,"µVLA (m=64, K=2)",MIKASA-Robo-VLA (5-task mixture),MIKASA-Robo-VLA,5 training tasks,,average success rate,0.84,,,,,,arxiv:2606.12497,1,best recurrent variant,2026-06-12
 vla-m-64-k-2-mikasa-robo-vla-5-task-mixture,"µVLA (m=64, K=2)",MIKASA-Robo-VLA (5-task mixture),MIKASA-Robo-VLA,held-out matched memory semantics,,average success rate,0.23,,,,,,arxiv:2606.12497,1,,2026-06-12
+kimi-48b-a3b-unknown,Kimi-48B-A3B,,MLE-Dojo,,test,leaderboard percentile,8.1,,,,,,arxiv:2608.12564,0,Avg over categories,2026-08-14
+nemotron-120b-a12b-unknown,Nemotron-120B-A12B,,MLE-Dojo,,test,leaderboard percentile,20.5,,,,,,arxiv:2608.12564,0,Avg over categories,2026-08-14
+qwen3-5-4b-grpo-mle-dojo-train,Qwen3.5-4B-GRPO,MLE-Dojo (train),MLE-Dojo,,test,leaderboard percentile,15.2,,,,,A100,arxiv:2608.12564,1,Avg over categories,2026-08-14
+qwen3-5-4b-grpo-mle-dojo-train,Qwen3.5-4B-GRPO,MLE-Dojo (train),MLE-Dojo,,test,GPU-hours,883.0,,,,,A100,arxiv:2608.12564,1,Total training compute,2026-08-14
+qwen3-5-4b-ours-mle-dojo-train,Qwen3.5-4B-Ours,MLE-Dojo (train),MLE-Dojo,,test,leaderboard percentile,16.4,,,,,A100,arxiv:2608.12564,1,Avg over categories,2026-08-14
+qwen3-5-4b-ours-mle-dojo-train,Qwen3.5-4B-Ours,MLE-Dojo (train),MLE-Dojo,,test,GPU-hours,286.0,,,,,A100,arxiv:2608.12564,1,Total training compute,2026-08-14
+qwen3-5-4b-unknown,Qwen3.5-4B,,MLE-Dojo,,test,leaderboard percentile,7.3,,,,,,arxiv:2608.12564,0,Avg over categories,2026-08-14
+qwen3-5-4b-wm-mle-dojo-train,Qwen3.5-4B-WM,MLE-Dojo (train),MLE-Dojo,,test,leaderboard percentile,12.9,,,,,A100,arxiv:2608.12564,1,Avg over categories,2026-08-14
+qwen3-5-9b-grpo-mle-dojo-train,Qwen3.5-9B-GRPO,MLE-Dojo (train),MLE-Dojo,,test,leaderboard percentile,18.8,,,,,A100,arxiv:2608.12564,1,Avg over categories,2026-08-14
+qwen3-5-9b-grpo-mle-dojo-train,Qwen3.5-9B-GRPO,MLE-Dojo (train),MLE-Dojo,,test,GPU-hours,1174.0,,,,,A100,arxiv:2608.12564,1,Total training compute,2026-08-14
+qwen3-5-9b-ours-mle-dojo-train,Qwen3.5-9B-Ours,MLE-Dojo (train),MLE-Dojo,,test,leaderboard percentile,21.6,,,,,A100,arxiv:2608.12564,1,Avg over categories,2026-08-14
+qwen3-5-9b-ours-mle-dojo-train,Qwen3.5-9B-Ours,MLE-Dojo (train),MLE-Dojo,,test,GPU-hours,349.0,,,,,A100,arxiv:2608.12564,1,Total training compute,2026-08-14
+qwen3-5-9b-unknown,Qwen3.5-9B,,MLE-Dojo,,test,leaderboard percentile,9.6,,,,,,arxiv:2608.12564,0,Avg over categories,2026-08-14
+qwen3-5-9b-wm-mle-dojo-train,Qwen3.5-9B-WM,MLE-Dojo (train),MLE-Dojo,,test,leaderboard percentile,16.1,,,,,A100,arxiv:2608.12564,1,Avg over categories,2026-08-14
 vega-stage1-blip3o-journeydb-densefusion-finevision-llava-onevision-infinity-mm-stage2-koala-36m-openvid-1m-llava-video-178k-sharegpt-4o-image-blip3o-60k-echo-4o,Vega,"Stage1: Blip3o, JourneyDB, DenseFusion, FineVision, LLaVA-OneVision, Infinity-mm; Stage2: Koala-36M, OpenVid-1M, LLaVA-Video-178K, ShareGPT-4o-Image, Blip3o-60k, Echo-4o",MLVU,,,accuracy (mean over subtasks),71.6,,,,,,arxiv:2606.31326,1,,2026-07-01
 ba-att-ours-unknown,BA-Att (Ours),,MLVU-dev,,,accuracy,59.71,,,,,,arxiv:2605.19726,1,LLaDA-V base,2026-06-04
 mr-q-mmbench-200-tasks,MR.Q,MMBench (200 tasks),MMBench,DMControl Ext,,normalized score,,,,,,,arxiv:2606.05555,1,"Fig. 2, per-domain aggregate; MR.Q matches or surpasses Newt",2026-06-05
@@ -9274,6 +9364,8 @@ adaptive-wam-navsim,Adaptive-WAM,NAVSIM,NAVSIM v1,,,PDMS,90.8,,,,,,arxiv:2608.06
 adaptive-wam-navsim,Adaptive-WAM,NAVSIM,NAVSIM v1,,,end-to-end planning latency,170.0,,ms,,,A100,arxiv:2608.06008,1,"adaptive routing, batch size 1, at η=90",2026-08-07
 auto-jepa-navsim-trainval,Auto-JEPA,NAVSIM trainval,NAVSIM v1,,navtest,PDMS,91.3,,,,,,arxiv:2607.29031,1,,2026-08-03
 autovla-unknown,AutoVLA,,NAVSIM v1,,navtest,PDMS,89.1,,,,,,arxiv:2607.29031,0,from Table 1,2026-08-03
+autovla-unknown,AutoVLA,,NAVSIM v1,,,PDMS,89.1,,,,,,arxiv:2608.12854,0,,2026-08-14
+brainwam-unknown,BrainWAM,,NAVSIM v1,,,PDMS,89.5,565.0,ms,,,NVIDIA H20,arxiv:2608.12854,1,2 video denoising steps,2026-08-14
 cophy-navsim-v1-v2,CoPhy,NAVSIM v1+v2,NAVSIM v1,NAVTEST,test,PDMS,91.4,,,,,8 H20 GPUs,arxiv:2605.21139,1,State-of-the-art on NAVSIM v1,2026-06-04
 cophy-navsim-v1-v2,CoPhy,NAVSIM v1+v2,NAVSIM v1,,,NC,99.0,,,,,,arxiv:2605.21139,1,,2026-06-04
 cophy-navsim-v1-v2,CoPhy,NAVSIM v1+v2,NAVSIM v1,,,DAC,98.2,,,,,,arxiv:2605.21139,1,,2026-06-04
@@ -9286,8 +9378,10 @@ diffusiondrive-navsim-v1-v2,DiffusionDrive,NAVSIM v1+v2,NAVSIM v1,,test,PDMS,88.
 diffusiondrive-unknown,DiffusionDrive,,NAVSIM v1,,Navtest,PDMS,88.1,,,,,,arxiv:2607.05133,0,baseline from prior work,2026-07-07
 diffusiondrive-unknown,DiffusionDrive,,NAVSIM v1,,,PDMS,88.1,,,,,,arxiv:2607.20988,0,"Table 1, end-to-end baseline",2026-07-24
 diffusiondrive-unknown,DiffusionDrive,,NAVSIM v1,,navtest,PDMS,88.1,,,,,,arxiv:2607.29031,0,from Table 1,2026-08-03
+diffusiondrive-unknown,DiffusionDrive,,NAVSIM v1,,,PDMS,88.1,,,,,,arxiv:2608.12854,0,,2026-08-14
 drivedpo-navsim-v1,DriveDPO,NAVSIM v1,NAVSIM v1,,test,PDMS,90.0,,,,,,arxiv:2605.21139,0,"Quoted from Table 1, second best",2026-06-04
 drivelaw-unknown,DriveLaW,,NAVSIM v1,noise robustness test set (rain/fog),,PDMS,67.49,,,,,,arxiv:2607.20988,0,"Table 6, corrupted cases",2026-07-24
+drivelaw-unknown,DriveLaW,,NAVSIM v1,,,PDMS,89.1,,,,,,arxiv:2608.12854,0,,2026-08-14
 drivesuprim-navsim-v1,DriveSuprim,NAVSIM v1,NAVSIM v1,,test,PDMS,89.9,,,,,,arxiv:2605.21139,0,Quoted from Table 1,2026-06-04
 driveva-navsim,DriveVA,NAVSIM,NAVSIM v1,,,PDMS,90.5,,,,,,arxiv:2608.06008,0,"from Liu et al. 2026, world-model planner",2026-08-07
 drivevla-w0-3b-unknown,DriveVLA-W0-3B,,NAVSIM v1,,,PDMS,90.3,,,,,,arxiv:2606.22913,0,,2026-06-24
@@ -9326,6 +9420,7 @@ perceptdrive-navsim-navtrain,PerceptDrive,NAVSIM navtrain,NAVSIM v1,,navtest,PDM
 perceptdrive-pr-navsim-navtrain,PerceptDrive (+PR),NAVSIM navtrain,NAVSIM v1,,navtest,PDMS,89.8,,,,,,arxiv:2607.20175,1,,2026-07-23
 recogdrive-unknown,ReCogDrive,,NAVSIM v1,,,PDMS,90.5,,,,,,arxiv:2607.20988,0,"Table 1, VLA-based baseline",2026-07-24
 transfuser-unknown,TransFuser,,NAVSIM v1,,navtest,PDMS,84.0,,,,,,arxiv:2607.29031,0,from Table 1,2026-08-03
+tri-mot-unknown,Tri-MoT,,NAVSIM v1,,,PDMS,87.8,,,,,,arxiv:2608.12854,1,,2026-08-14
 universe-navsim-v1,UNIVERSE,NAVSIM v1,NAVSIM v1,,Navtest,PDMS,91.0,,,,,,arxiv:2607.05133,1,closed-loop planning,2026-07-07
 universe-navsim-v1,UNIVERSE,NAVSIM v1,NAVSIM v1,,Navtest,inference latency,376.0,,ms,,,,arxiv:2607.05133,1,trajectory-only inference,2026-07-07
 universe-two-dit-navsim-v1,UNIVERSE Two-DiT,NAVSIM v1,NAVSIM v1,,Navtest,PDMS,89.6,,,,,,arxiv:2607.05133,1,Two-DiT variant,2026-07-07
@@ -9333,6 +9428,8 @@ universe-two-dit-navsim-v1,UNIVERSE Two-DiT,NAVSIM v1,NAVSIM v1,,Navtest,inferen
 universe-w-o-mask-navsim-v1,UNIVERSE w.o. Mask,NAVSIM v1,NAVSIM v1,,Navtest,PDMS,90.9,,,,,,arxiv:2607.05133,1,no visibility mask,2026-07-07
 universe-w-o-mask-navsim-v1,UNIVERSE w.o. Mask,NAVSIM v1,NAVSIM v1,,Navtest,inference latency,1623.0,,ms,,,,arxiv:2607.05133,1,coupled video-action rollout,2026-07-07
 universe-w-o-video-co-train-navsim-v1,UNIVERSE w.o. video co-train,NAVSIM v1,NAVSIM v1,,Navtest,PDMS,88.2,,,,,,arxiv:2607.05133,1,no video co-training,2026-07-07
+vla-only-unknown,VLA-only,,NAVSIM v1,,,PDMS,86.1,,,,,,arxiv:2608.12854,1,,2026-08-14
+wam-only-unknown,WAM-only,,NAVSIM v1,,,PDMS,88.1,,,,,,arxiv:2608.12854,1,,2026-08-14
 wote-navsim-v1,WoTE,NAVSIM v1,NAVSIM v1,,test,PDMS,88.3,,,,,,arxiv:2605.21139,0,Quoted from Table 1,2026-06-04
 wote-unknown,WoTE,,NAVSIM v1,,Navtest,PDMS,88.3,,,,,,arxiv:2607.05133,0,baseline from prior work,2026-07-07
 wote-unknown,WoTE,,NAVSIM v1,noise robustness test set (rain/fog),,PDMS,60.65,,,,,,arxiv:2607.20988,0,"Table 6, corrupted cases",2026-07-24
@@ -9342,6 +9439,7 @@ pwm-unknown,PWM,,NAVSIM v1 navtest,,navtest,PDMS,88.1,,,,,,arxiv:2606.31226,0,qu
 uni-world-vla-unknown,Uni-World VLA,,NAVSIM v1 navtest,,navtest,PDMS,89.4,,,,,,arxiv:2606.31226,0,quoted from Table 1,2026-07-01
 adaptive-wam-navsim,Adaptive-WAM,NAVSIM,NAVSIM v2,,,EPDMS,89.9,,,,,,arxiv:2608.06008,1,best among front-view video world-model planners,2026-08-07
 auto-jepa-navsim-trainval,Auto-JEPA,NAVSIM trainval,NAVSIM v2,,,EPDMS,89.1,,,,,,arxiv:2607.29031,1,updated official implementation with human-behavior filtering,2026-08-03
+brainwam-unknown,BrainWAM,,NAVSIM v2,,,EPDMS,89.6,565.0,ms,,,NVIDIA H20,arxiv:2608.12854,1,2 video denoising steps,2026-08-14
 clover-unknown,CLOVER,,NAVSIM v2,,,EPDMS,90.4,,,,,,arxiv:2607.29031,0,from text (learned generator–scorer pipeline),2026-08-03
 cophy-navsim-v1-v2,CoPhy,NAVSIM v1+v2,NAVSIM v2,,test,EPDMS,86.1,,,,,,arxiv:2605.21139,1,State-of-the-art on NAVSIM v2,2026-06-04
 cophy-navsim-v1-v2,CoPhy,NAVSIM v1+v2,NAVSIM v2,,,NC,99.3,,,,,,arxiv:2605.21139,1,,2026-06-04
@@ -9354,6 +9452,7 @@ cophy-navsim-v1-v2,CoPhy,NAVSIM v1+v2,NAVSIM v2,,,LK,96.8,,,,,,arxiv:2605.21139,
 cophy-navsim-v1-v2,CoPhy,NAVSIM v1+v2,NAVSIM v2,,,C,97.4,,,,,,arxiv:2605.21139,1,,2026-06-04
 cophy-navsim-v1-v2,CoPhy,NAVSIM v1+v2,NAVSIM v2,,,EC,80.0,,,,,,arxiv:2605.21139,1,,2026-06-04
 diffusiondrive-navsim-v1-v2,DiffusionDrive,NAVSIM v1+v2,NAVSIM v2,,test,EPDMS,84.5,,,,,,arxiv:2605.21139,0,Quoted from Table 2,2026-06-04
+drivedreamer-policy-unknown,DriveDreamer-Policy,,NAVSIM v2,,,EPDMS,88.7,,,,,,arxiv:2608.12854,0,,2026-08-14
 drivefuture-unknown,DriveFuture,,NAVSIM v2,,navtest,EPDMS,89.9,,,,,,arxiv:2607.20175,0,,2026-07-23
 drivevla-w0-3b-unknown,DriveVLA-W0-3B,,NAVSIM v2,,,EPDMS,86.1,,,,,,arxiv:2606.22913,0,,2026-06-24
 drivevla-w0-unknown,DriveVLA-W0,,NAVSIM v2,,,EPDMS,86.1,,,,,,arxiv:2607.29031,0,from Table 2,2026-08-03
@@ -9418,6 +9517,14 @@ drivestack-vla-navsim-dataset,DriveStack-VLA,NAVSIM dataset,NAVSIMv2,,navtest,EP
 drivesuprim-unknown,DriveSuprim,,NAVSIMv2,Navhard,Stage 2,EPDMS,44.7,,,,,,arxiv:2608.10413,0,,2026-08-12
 drivevla-m0-base-large-scale-autonomous-driving-qa-data,DriveVLA-M0-Base,large-scale autonomous-driving QA data,NAVSIMv2,Navhard,Stage 2,EPDMS,47.0,,,,,,arxiv:2608.10413,1,,2026-08-12
 gtrs-dense-unknown,GTRS-Dense,,NAVSIMv2,Navhard,Stage 2,EPDMS,45.3,,,,,,arxiv:2608.10413,0,,2026-08-12
+alpamayo-1-5-10b-unknown,Alpamayo 1.5-10B,,NVIDIA Autonomous Vehicle Dataset (open-loop),trajectory prediction,,minADE1@6.4s,1.705,,,,,RTX PRO 6000,arxiv:2608.12932,1,,2026-08-14
+alpamayo-1-5-10b-unknown,Alpamayo 1.5-10B,,NVIDIA Autonomous Vehicle Dataset (open-loop),trajectory prediction,,minADE6@6.4s,0.767,,,,,RTX PRO 6000,arxiv:2608.12932,1,,2026-08-14
+alpamayo-1-5-10b-unknown,Alpamayo 1.5-10B,,NVIDIA Autonomous Vehicle Dataset (open-loop),trajectory prediction,,latency,716.9,,ms,,,RTX PRO 6000,arxiv:2608.12932,1,1 trajectory sample,2026-08-14
+alpamayo-1-5-10b-unknown,Alpamayo 1.5-10B,,NVIDIA Autonomous Vehicle Dataset (open-loop),trajectory prediction,,control frequency,1.4,,Hz,,,RTX PRO 6000,arxiv:2608.12932,1,derived from 716.9 ms latency,2026-08-14
+flashdrive-alpamayo-1-5-10b-nvidia-autonomous-vehicle-dataset,FlashDrive (Alpamayo 1.5-10B),NVIDIA Autonomous Vehicle Dataset,NVIDIA Autonomous Vehicle Dataset (open-loop),trajectory prediction,,minADE1@6.4s,1.573,,,,,RTX PRO 6000,arxiv:2608.12932,1,,2026-08-14
+flashdrive-alpamayo-1-5-10b-nvidia-autonomous-vehicle-dataset,FlashDrive (Alpamayo 1.5-10B),NVIDIA Autonomous Vehicle Dataset,NVIDIA Autonomous Vehicle Dataset (open-loop),trajectory prediction,,minADE6@6.4s,0.844,,,,,RTX PRO 6000,arxiv:2608.12932,1,,2026-08-14
+flashdrive-alpamayo-1-5-10b-nvidia-autonomous-vehicle-dataset,FlashDrive (Alpamayo 1.5-10B),NVIDIA Autonomous Vehicle Dataset,NVIDIA Autonomous Vehicle Dataset (open-loop),trajectory prediction,,latency,151.4,,ms,,,RTX PRO 6000,arxiv:2608.12932,1,1 trajectory sample,2026-08-14
+flashdrive-alpamayo-1-5-10b-nvidia-autonomous-vehicle-dataset,FlashDrive (Alpamayo 1.5-10B),NVIDIA Autonomous Vehicle Dataset,NVIDIA Autonomous Vehicle Dataset (open-loop),trajectory prediction,,control frequency,6.6,,Hz,,,RTX PRO 6000,arxiv:2608.12932,1,derived from 151.4 ms latency,2026-08-14
 early-fusion-nyu-depth-v2,Early Fusion,NYU Depth V2,NYU Depth V2,Early Fusion depth probing,,RMSE,0.44,,,,,,arxiv:2605.24642,1,δ1=0.88,2026-06-04
 gr00t-n1-5-unknown,GR00T-N1.5,,NYU Depth V2,vision encoder depth probing,,RMSE,0.92,,,,,,arxiv:2605.24642,1,δ1=0.51,2026-06-04
 gr00t-n1-5-unknown,GR00T-N1.5,,NYU Depth V2,VLM depth probing,,RMSE,0.73,,,,,,arxiv:2605.24642,1,δ1=0.63,2026-06-04
@@ -10667,6 +10774,24 @@ v-jepa-2-unknown,V-JEPA-2,,Planning,,,relative planning speed,8.0,8.0,x,,,,arxiv
 no-op-policy-unknown,No-op Policy,,Platform skill-graph testbed,,,skill success rate,0.317,,,,,,arxiv:2606.27780,1,at T=10,2026-06-29
 r-gcn-unknown,R-GCN,,Platform skill-graph testbed,,,Pearson r,0.231,,,,,,arxiv:2606.27780,1,calibration against ground-truth simulator,2026-06-29
 r-gcn-unknown,R-GCN,,Platform skill-graph testbed,,,MAE,0.029,,,,,,arxiv:2606.27780,1,calibration against ground-truth simulator,2026-06-29
+genie-3-unknown,Genie 3,,PlayWorld,,,Overall Rubric Score,2.12,,,,,,arxiv:2608.13552,1,,2026-08-14
+genie-3-unknown,Genie 3,,PlayWorld,,,Overall Trajectory Validation Pass Rate,87.1,,,,,,arxiv:2608.13552,1,,2026-08-14
+happyoyster-unknown,HappyOyster,,PlayWorld,,,Overall Rubric Score,1.92,,,,,,arxiv:2608.13552,1,,2026-08-14
+happyoyster-unknown,HappyOyster,,PlayWorld,,,Overall Trajectory Validation Pass Rate,79.6,,,,,,arxiv:2608.13552,1,,2026-08-14
+hunyuan-gamecraft-2-unknown,Hunyuan-GameCraft-2,,PlayWorld,,,Overall Rubric Score,1.42,,,,,,arxiv:2608.13552,1,,2026-08-14
+hunyuan-gamecraft-2-unknown,Hunyuan-GameCraft-2,,PlayWorld,,,Overall Trajectory Validation Pass Rate,61.5,,,,,,arxiv:2608.13552,1,,2026-08-14
+hy-world2-unknown,HY-World2,,PlayWorld,,,Overall Rubric Score,1.61,,,,,,arxiv:2608.13552,1,,2026-08-14
+hy-world2-unknown,HY-World2,,PlayWorld,,,Overall Trajectory Validation Pass Rate,51.7,,,,,,arxiv:2608.13552,1,,2026-08-14
+hy-worldplay-unknown,HY-WorldPlay,,PlayWorld,,,Overall Rubric Score,1.21,,,,,,arxiv:2608.13552,1,,2026-08-14
+hy-worldplay-unknown,HY-WorldPlay,,PlayWorld,,,Overall Trajectory Validation Pass Rate,41.6,,,,,,arxiv:2608.13552,1,,2026-08-14
+lingbot-world-unknown,LingBot-World,,PlayWorld,,,Overall Rubric Score,1.78,,,,,,arxiv:2608.13552,1,,2026-08-14
+lingbot-world-unknown,LingBot-World,,PlayWorld,,,Overall Trajectory Validation Pass Rate,72.7,,,,,,arxiv:2608.13552,1,,2026-08-14
+lingbot-world2-unknown,LingBot-World2,,PlayWorld,,,Overall Rubric Score,1.82,,,,,,arxiv:2608.13552,1,,2026-08-14
+lingbot-world2-unknown,LingBot-World2,,PlayWorld,,,Overall Trajectory Validation Pass Rate,78.8,,,,,,arxiv:2608.13552,1,,2026-08-14
+matrix-game-3-0-unknown,Matrix-Game-3.0,,PlayWorld,,,Overall Rubric Score,1.14,,,,,,arxiv:2608.13552,1,,2026-08-14
+matrix-game-3-0-unknown,Matrix-Game-3.0,,PlayWorld,,,Overall Trajectory Validation Pass Rate,68.2,,,,,,arxiv:2608.13552,1,,2026-08-14
+sana-wm-unknown,SANA-WM,,PlayWorld,,,Overall Rubric Score,1.48,,,,,,arxiv:2608.13552,1,,2026-08-14
+sana-wm-unknown,SANA-WM,,PlayWorld,,,Overall Trajectory Validation Pass Rate,80.4,,,,,,arxiv:2608.13552,1,,2026-08-14
 fearl-playground-unknown,FEARL (Playground),,Playground,,,success rate (shielded),100.0,,,,,,arxiv:2606.23754,1,,2026-06-24
 fearl-playground-unknown,FEARL (Playground),,Playground,,,violation rate (shielded),0.0,,,,,,arxiv:2606.23754,1,,2026-06-24
 fearl-playground-unknown,FEARL (Playground),,Playground,,,certified volume,99.4,,,,,,arxiv:2606.23754,1,percent,2026-06-24
@@ -10826,6 +10951,7 @@ lewm-pusht,LeWM,PushT,PushT,Random Init.,,success rate,0.0,,,,,,arxiv:2606.09311
 lewm-pusht,LeWM,PushT,PushT,,,CEM planning success rate,94.0,,,,,,arxiv:2607.18715,1,LeWM baseline on standard PushT (no world effect),2026-07-23
 lewm-pusht-expert-demonstrations,LeWM,PushT expert demonstrations,PushT,,held-out test,success rate,12.7,,,,,,arxiv:2607.17973,0,"target offset H=150, quoted from paper",2026-07-21
 lewm-pusht-offline-dataset,LeWM,PushT offline dataset,PushT,,,success rate,87.0,,,,,,arxiv:2608.12078,1,"in-distribution (from Figure 3, reading from bar plot)",2026-08-13
+lewm-unaugmented,LeWM,unaugmented,PushT,,,planning success rate drop at σ=0.08 (percentage points),74.6,,,,,,arxiv:2608.12939,1,mean loss; clean success not explicitly stated,2026-08-14
 lewm-unknown,LeWM,,PushT,,,success rate,96.0,,,,,,arxiv:2606.09028,1,,2026-06-09
 lewm-unknown,LeWM,,PushT,,single eval seed,success rate,96.0,,,,,,arxiv:2608.11174,0,from original LeWM paper,2026-08-12
 lewm-unknown,LeWM,,PushT,d=25,"long-horizon, single eval seed",success rate,96.0,,,,,,arxiv:2608.11174,0,from original LeWM paper,2026-08-12
@@ -11235,6 +11361,8 @@ le-wm-unknown,Le-WM,,Reacher,,,Success (%),17.0,,,,,,arxiv:2606.15594,0,Baseline
 le-wm-unknown,Le-WM,,Reacher,,,success rate,76.0,,,,,,arxiv:2607.02403,1,Original planning cost (goal cost only),2026-07-03
 lewm-offline-datasets,LeWM,offline datasets,Reacher,,,success rate,86.0,,,,,,arxiv:2605.31111,0,from Maes et al. 2026,2026-06-04
 lewm-reacher,LeWM,Reacher,Reacher,,,CEM planning success rate,82.0,,,,,,arxiv:2607.18715,1,LeWM baseline on standard Reacher,2026-07-23
+lewm-unaugmented,LeWM,unaugmented,Reacher,,,planning success rate drop at σ=0.08 (percentage points),41.0,,,,,,arxiv:2608.12939,1,mean loss,2026-08-14
+lewm-unaugmented,LeWM,unaugmented,Reacher,,,clean planning success rate,59.2,,,,,,arxiv:2608.12939,1,percentage,2026-08-14
 lewm-unknown,LeWM,,Reacher,,,success rate,96.0,,,,,,arxiv:2607.25337,1,std=1.9,2026-07-30
 lewm-unknown,LeWM,,Reacher,,single eval seed,success rate,86.0,,,,,,arxiv:2608.11174,0,from original LeWM paper,2026-08-12
 leworldmodel-lewm-unknown,LeWorldModel (LeWM),,Reacher,,test,planning success rate,79.87,,,,,,arxiv:2606.31232,0,from original paper,2026-07-01
@@ -11593,6 +11721,9 @@ fastwam-unknown,FastWAM,,Real-World Fruit Picking,,,Success Rate,0.78,,,,,,arxiv
 gigaworld-policy-0-5-open-source-robot-data-internal-real-robot-data,GigaWorld-Policy-0.5,Open-source robot data + internal real-robot data,Real-World Fruit Picking,,,Success Rate,0.85,,,,,,arxiv:2607.13960,1,,2026-07-16
 gigaworld-policy-unknown,GigaWorld-Policy,,Real-World Fruit Picking,,,Success Rate,0.8,,,,,,arxiv:2607.13960,0,,2026-07-16
 motus-unknown,Motus,,Real-World Fruit Picking,,,Success Rate,0.8,,,,,,arxiv:2607.13960,0,,2026-07-16
+passgen-w-ig-hand2bot-real,PassGen (w IG),Hand2Bot-Real,Real-World Handover,Overall,,ISR,0.9,,,,,"UR5e, Intel RealSense L515",arxiv:2608.13028,1,"Table 5, 54/60",2026-08-14
+passgen-w-ig-hand2bot-real,PassGen (w IG),Hand2Bot-Real,Real-World Handover,Overall,,FTR,0.0667,,,,,"UR5e, Intel RealSense L515",arxiv:2608.13028,1,"Table 5, 2/30",2026-08-14
+passgen-w-o-ig-hand2bot-real,PassGen (w/o IG),Hand2Bot-Real,Real-World Handover,Overall,,FTR,0.8333,,,,,"UR5e, Intel RealSense L515",arxiv:2608.13028,1,"Table 5, 25/30, baseline without IG",2026-08-14
 fearl-real-world-mapless-unknown,FEARL (Real-World Mapless),,Real-World Indoor Navigation,,,success rate (shielded),61.1,,,,,,arxiv:2606.23754,1,,2026-06-24
 fearl-real-world-mapless-unknown,FEARL (Real-World Mapless),,Real-World Indoor Navigation,,,violation rate (shielded),0.0,,,,,,arxiv:2606.23754,1,,2026-06-24
 fearl-real-world-mapless-unknown,FEARL (Real-World Mapless),,Real-World Indoor Navigation,,,certified volume,77.1,,,,,,arxiv:2606.23754,1,"percent, hyperparameters adjusted; n=100, ρ=0.5%, δ=97.6%",2026-06-24
@@ -13176,6 +13307,7 @@ x-vla-unknown,X-VLA,,RoboTwin,,Clean,success rate,72.9,,,,,,arxiv:2606.11187,0,,
 0-unknown,π0,,RoboTwin 2.0,Handover Block,Easy,success rate,64.0,,,,,,arxiv:2606.20285,0,from Table I,2026-06-19
 0-unknown,π0,,RoboTwin 2.0,,,success rate,82.2,3.35,FPS,4.38,TFLOPs,,arxiv:2607.12287,0,"10 steps, total time 298.46 ms",2026-07-15
 0-unknown,π0,,RoboTwin 2.0,,Easy,success rate,46.42,,,,,,arxiv:2608.05369,0,,2026-08-07
+0-unknown,π0,,RoboTwin 2.0,,,success rate,49.2,,,,,,arxiv:2608.13026,0,macro average across horizons,2026-08-14
 4d-wam-fastwam-robotwin-2-0,4D-WAM (FastWAM),RoboTwin 2.0,RoboTwin 2.0,,average,success rate,91.34,,,,,,arxiv:2608.08023,1,,2026-08-11
 abot-m0-robotwin-2-0,ABot-M0,RoboTwin 2.0,RoboTwin 2.0,,clean,success rate,81.2,,,,,,arxiv:2606.09811,0,baseline,2026-06-09
 abot-m0-unknown,ABot-M0,,RoboTwin 2.0,,clean,success rate,86.1,,,,,,arxiv:2606.10040,0,baseline,2026-06-10
@@ -13340,6 +13472,7 @@ openvla-oft-robotwin-2-0,OpenVLA-OFT,RoboTwin 2.0,RoboTwin 2.0,Place Empty Cup,,
 openvla-oft-robotwin-2-0,OpenVLA-OFT,RoboTwin 2.0,RoboTwin 2.0,Handover Block,,success rate,33.1,,,,,,arxiv:2606.29892,1,SFT baseline,2026-06-30
 openvla-oft-robotwin-2-0,OpenVLA-OFT,RoboTwin 2.0,RoboTwin 2.0,Stack Bowls,,success rate,40.6,,,,,,arxiv:2606.29892,1,SFT baseline,2026-06-30
 openvla-oft-sft-unknown,OpenVLA-OFT + SFT,,RoboTwin 2.0,,domain-randomized,success rate,31.9,,,,,,arxiv:2605.30795,0,Baseline,2026-06-04
+openvla-oft-sft-unknown,OpenVLA-OFT (SFT),,RoboTwin 2.0,,,success rate,38.3,,,,,,arxiv:2608.13026,1,macro average across horizons,2026-08-14
 openvla-oft-simplevla-rl-unknown,OpenVLA-OFT + SimpleVLA-RL,,RoboTwin 2.0,,domain-randomized,success rate,71.3,,,,,,arxiv:2605.30795,0,Baseline,2026-06-04
 oracle-upper-bound-unknown,Oracle Upper Bound,,RoboTwin 2.0,,natural closed loop,Closed-loop success,73.3,,,,,,arxiv:2608.02578,1,,2026-08-04
 ours-bridgev2-video-only-egodex-video-only,Ours,BridgeV2 (video only) + EgoDex (video only),RoboTwin 2.0,,Average,success rate,67.7,,,,,,arxiv:2606.18955,1,Table II,2026-06-18
@@ -13359,6 +13492,7 @@ quovla-robotwin-2-0,QuoVLA,RoboTwin 2.0,RoboTwin 2.0,,Easy,success rate,45.1,,,,
 qwen-robotmanip-unknown,Qwen-RobotManip,,RoboTwin 2.0,,,success rate,93.85,,,,,,arxiv:2607.23969,0,Top VLA baseline,2026-07-28
 qwen-vla-unknown,Qwen-VLA,,RoboTwin 2.0,,Average,success rate,86.65,,,,,,arxiv:2608.06374,0,Quoted from Qwen Team (2026),2026-08-07
 rdt-1b-robotwin-2-0-50-demos-per-task,RDT-1B,RoboTwin 2.0 (50 demos per task),RoboTwin 2.0,,,success rate,49.7,,,,,,arxiv:2606.26801,0,From official benchmark,2026-06-26
+rdt-1b-unknown,RDT-1B,,RoboTwin 2.0,,,success rate,33.3,,,,,,arxiv:2608.13026,0,macro average across horizons,2026-08-14
 rdt-robotwin-2-0-clean,RDT,RoboTwin 2.0 Clean,RoboTwin 2.0,,Clean,success rate,34.5,,,,,,arxiv:2606.21088,1,,2026-06-24
 rdt-unknown,RDT,,RoboTwin 2.0,,Easy,success rate,34.5,,,,,,arxiv:2605.29416,0,Baseline from Table 2,2026-06-04
 rdt-unknown,RDT,,RoboTwin 2.0,,Hard,success rate,20.3,,,,,,arxiv:2605.22671,0,average over 10 tasks reported in Table 1; +37.7% gap cited,2026-06-04
@@ -13380,9 +13514,11 @@ selective-control-unknown,Selective Control,,RoboTwin 2.0,,coordination audit,Fa
 selective-control-unknown,Selective Control,,RoboTwin 2.0,,natural closed loop,Closed-loop success,53.3,,,,,,arxiv:2608.02578,1,,2026-08-04
 selfwam-robotwin-2-0,SelfWAM,RoboTwin 2.0,RoboTwin 2.0,,,success rate,92.62,,,,,,arxiv:2608.00725,1,,2026-08-05
 simplevla-rl-1000-demos-task-on-robotwin-2-0,SimpleVLA-RL,1000 demos/task on RoboTwin 2.0,RoboTwin 2.0,,8 selected tasks,success rate,68.7,,,,,,arxiv:2606.23623,0,From Table 2,2026-06-23
+simplevla-rl-robotwin-2-0,SimpleVLA-RL,RoboTwin 2.0,RoboTwin 2.0,,,success rate,68.8,,,,,,arxiv:2608.13026,1,macro average across horizons; std 0.9,2026-08-14
 snapkv-unknown,SnapKV,,RoboTwin 2.0,,,success rate,78.3,3.95,FPS,3.9,TFLOPs,,arxiv:2607.12287,0,from Table II,2026-07-15
 st-wam-robotwin-2-0,ST-WAM,RoboTwin 2.0,RoboTwin 2.0,,,success rate,92.77,,,,,,arxiv:2607.28993,1,Average of clean and randomized,2026-08-03
 st-wam-robotwin-2-0,ST-WAM,RoboTwin 2.0,RoboTwin 2.0,,,inference latency,756.17,,ms,,,NVIDIA A100-80GB,arxiv:2607.28993,1,"32-step action chunk, 10 flow steps, BF16",2026-08-03
+stage-reward-grpo-robotwin-2-0,Stage-Reward GRPO,RoboTwin 2.0,RoboTwin 2.0,,,success rate,59.2,,,,,,arxiv:2608.13026,1,macro average across horizons; std 1.0,2026-08-14
 stake-robotwin-2-0-50-demos-per-task,StaKe,RoboTwin 2.0 (50 demos per task),RoboTwin 2.0,,,success rate,59.8,,,,,,arxiv:2606.26801,1,Average over 10 tasks,2026-06-26
 stake-robotwin-2-0-50-demos-per-task,StaKe,RoboTwin 2.0 (50 demos per task),RoboTwin 2.0,Adjust Bottle,,success rate,96.0,,,,,,arxiv:2606.26801,1,2-keyframe task,2026-06-26
 stake-robotwin-2-0-50-demos-per-task,StaKe,RoboTwin 2.0 (50 demos per task),RoboTwin 2.0,Click Alarmclock,,success rate,76.0,,,,,,arxiv:2606.26801,1,2-keyframe task,2026-06-26
@@ -13404,14 +13540,17 @@ t2vla-ours-openvla-oft,T2VLA (Ours),OpenVLA-OFT,RoboTwin 2.0,Beat Hammer,,succes
 t2vla-ours-openvla-oft,T2VLA (Ours),OpenVLA-OFT,RoboTwin 2.0,Place Empty Cup,,success rate,84.8,,,,,,arxiv:2606.29892,1,Medium horizon (150-230 steps),2026-06-30
 t2vla-ours-openvla-oft,T2VLA (Ours),OpenVLA-OFT,RoboTwin 2.0,Handover Block,,success rate,44.1,,,,,,arxiv:2606.29892,1,Long horizon (280-650 steps),2026-06-30
 t2vla-ours-openvla-oft,T2VLA (Ours),OpenVLA-OFT,RoboTwin 2.0,Stack Bowls,,success rate,59.0,,,,,,arxiv:2606.29892,1,Long horizon (280-650 steps),2026-06-30
+temporal-grpo-robotwin-2-0,Temporal GRPO,RoboTwin 2.0,RoboTwin 2.0,,,success rate,75.8,,,,,,arxiv:2608.13026,1,macro average across horizons; std 0.7,2026-08-14
 test-time-q-guidance-same-as-q-vgm-shared-critic,Test-time Q Guidance,same as Q-VGM (shared critic),RoboTwin 2.0,,,success rate,80.4,,,,,,arxiv:2606.08015,1,Baseline,2026-06-09
 test-time-q-selection-same-as-q-vgm-shared-critic,Test-time Q Selection,same as Q-VGM (shared critic),RoboTwin 2.0,,,success rate,79.2,,,,,,arxiv:2606.08015,1,Baseline,2026-06-09
+tgrpo-robotwin-2-0,TGRPO,RoboTwin 2.0,RoboTwin 2.0,,,success rate,52.1,,,,,,arxiv:2608.13026,1,macro average across horizons; std 1.1,2026-08-14
 thinkingvla-open-x-embodiment-oxe-robotwin-real-world-demonstrations,ThinkingVLA,Open X-Embodiment (OXE) + RoboTwin + real-world demonstrations,RoboTwin 2.0,Average 20 Tasks,Easy,success rate,77.9,,,,,,arxiv:2606.17937,1,,2026-06-17
 thinkingvla-open-x-embodiment-oxe-robotwin-real-world-demonstrations,ThinkingVLA,Open X-Embodiment (OXE) + RoboTwin + real-world demonstrations,RoboTwin 2.0,Average Horizon=1,Easy,success rate,90.2,,,,,,arxiv:2606.17937,1,,2026-06-17
 thinkingvla-open-x-embodiment-oxe-robotwin-real-world-demonstrations,ThinkingVLA,Open X-Embodiment (OXE) + RoboTwin + real-world demonstrations,RoboTwin 2.0,Average Horizon=2,Easy,success rate,71.0,,,,,,arxiv:2606.17937,1,,2026-06-17
 thinkingvla-open-x-embodiment-oxe-robotwin-real-world-demonstrations,ThinkingVLA,Open X-Embodiment (OXE) + RoboTwin + real-world demonstrations,RoboTwin 2.0,Average Horizon=3,Easy,success rate,60.0,,,,,,arxiv:2606.17937,1,,2026-06-17
 track4action-robotwin-2-0,Track4Action,RoboTwin 2.0,RoboTwin 2.0,,clean,success rate,80.44,,,,,,arxiv:2608.03727,1,Average over 50 tasks,2026-08-05
 track4action-w-o-align-robotwin-2-0,Track4Action w/o Align.,RoboTwin 2.0,RoboTwin 2.0,,clean,success rate,41.32,,,,,,arxiv:2608.03727,1,Average over 50 tasks,2026-08-05
+trajectory-grpo-robotwin-2-0,Trajectory-GRPO,RoboTwin 2.0,RoboTwin 2.0,,,success rate,46.4,,,,,,arxiv:2608.13026,1,macro average across horizons; std 1.3,2026-08-14
 turbovla-robotwin-2-0,TurboVLA,RoboTwin 2.0,RoboTwin 2.0,,,success rate,60.2,,,,,,arxiv:2607.27205,1,43.4 ms latency,2026-07-30
 univla-bridgev2,UniVLA,BridgeV2,RoboTwin 2.0,,Average,success rate,63.6,,,,,,arxiv:2606.18955,1,Table II,2026-06-18
 up-vla-unknown,UP-VLA,,RoboTwin 2.0,Average 20 Tasks,Easy,success rate,51.2,,,,,,arxiv:2606.17937,0,quoted from other paper,2026-06-17
@@ -13574,6 +13713,12 @@ navmorph-unknown,NavMorph,,RxR-CE,,Val Unseen,SR,58.02,,,,,,arxiv:2607.23181,0,,
 navmorph-unknown,NavMorph,,RxR-CE,,Val Unseen,SPL,48.98,,,,,,arxiv:2607.23181,0,,2026-07-28
 streamvln-r2r-ce-rxr-ce-external-data-26330k,StreamVLN,R2R-CE + RxR-CE + external data (~26330K),RxR-CE,,val-unseen,SR,52.9,,,,,,arxiv:2606.30367,0,baseline from Table 1,2026-06-30
 cofl-s-r2r-ce-rxr-ce-training-episodes-augmented-with-instruction-diverse-slots-from-fine-grained-r2r-and-landmark-rxr,CoFL-S,R2R-CE + RxR-CE training episodes (augmented with instruction-diverse slots from Fine-Grained R2R and Landmark RxR),"RxR-CE (continuous-time Habitat benchmark, 3,669 episodes)",,val-unseen,success rate (SR),0.31,,,,,NVIDIA GeForce RTX 4090,arxiv:2607.02222,1,2 Hz planner frequency,2026-07-03
+context-forcing-chunk-3-unknown,Context Forcing (Chunk 3),,SANA-WM,,,Aggregate,80.72,,,,,,arxiv:2608.13391,0,,2026-08-14
+lingbot-world-chunk-3-unknown,LingBot-World (Chunk 3),,SANA-WM,,,Aggregate,80.23,,,,,,arxiv:2608.13391,0,,2026-08-14
+longlive-chunk-3-unknown,LongLive (Chunk 3),,SANA-WM,,,Aggregate,80.04,,,,,,arxiv:2608.13391,0,,2026-08-14
+ours-chunk-1-cosmos-predict2-5-2b-fine-tuned-on-generated-curated-videos,Ours (Chunk 1),Cosmos-Predict2.5-2B fine-tuned on generated/curated videos,SANA-WM,,,Aggregate,81.39,,,,,,arxiv:2608.13391,1,,2026-08-14
+ours-chunk-4-cosmos-predict2-5-2b-fine-tuned-on-generated-curated-videos,Ours (Chunk 4),Cosmos-Predict2.5-2B fine-tuned on generated/curated videos,SANA-WM,,,Aggregate,80.84,,,,,,arxiv:2608.13391,1,,2026-08-14
+rolling-forcing-chunk-3-unknown,Rolling Forcing (Chunk 3),,SANA-WM,,,Aggregate,80.04,,,,,,arxiv:2608.13391,0,,2026-08-14
 sol-attn-unknown,Sol-Attn,,SANA-WM Refiner,one-minute video refinement,,Pose Accuracy (CMC),1.296,3.04,x speedup,,,NVIDIA H100,arxiv:2607.24027,1,85.11% sparsity,2026-07-28
 ftta-kandinsky-5-0-lite-curated-dataset-of-40k-videos-24-60-fps-human-actions-and-natural-processes,FTTA Kandinsky 5.0 Lite,"curated dataset of ~40k videos (24-60 FPS, human actions and natural processes)",SBS human evaluation,Human Actions,,Speed consistency win rate,0.65,,,,,,arxiv:2606.10183,1,vs Kandinsky 5.0 Lite baseline,2026-06-10
 ftta-wan2-2-curated-dataset-of-40k-videos-24-60-fps-human-actions-and-natural-processes,FTTA Wan2.2,"curated dataset of ~40k videos (24-60 FPS, human actions and natural processes)",SBS human evaluation,Human Actions,,Speed consistency win rate,0.79,,,,,,arxiv:2606.10183,1,vs Wan2.2 baseline,2026-06-10
@@ -13791,6 +13936,7 @@ ultra-flash-unknown,Ultra Flash,,SR Quality,1K,,CLIP-IQA+,0.692,,,,,,arxiv:2606.
 adaworld-unknown,ADAWORLD,,SSv2,,,LPIPS,0.521,,,,,,openreview:BRBHruBDkb,0,± 0.022,2026-06-25
 dila-unknown,DiLA,,SSv2,,,LPIPS,0.356,,,,,,openreview:BRBHruBDkb,1,± 0.027,2026-06-25
 dila-w-o-content-unknown,DiLA w/o content,,SSv2,,,LPIPS,0.45,,,,,,openreview:BRBHruBDkb,1,± 0.031,2026-06-25
+v-rae-v-jepa2-1-l-ucf101-k600,V-RAE (V-JEPA2.1-L),UCF101+K600,SSv2,,,Top-1 Accuracy,72.91,,,,,,arxiv:2608.13556,1,Semantic probing,2026-08-14
 holocine-unknown,HoloCine,,ST-Bench,,,ViCLIP,0.4666,,,,,,arxiv:2608.05776,0,,2026-08-07
 joyai-echo-unknown,JoyAI-Echo,,ST-Bench,,,ViCLIP,0.59,,,,,,arxiv:2608.05776,0,,2026-08-07
 memento-unknown,Memento,,ST-Bench,,,ViCLIP,0.5258,,,,,,arxiv:2608.05776,0,,2026-08-07
@@ -14807,6 +14953,17 @@ surgical-wam-w-pt-surrol-action-free-surgical-videos-10k-surrol-action-labeled-d
 surgical-wam-w-pt-surrol-action-free-surgical-videos-10k-surrol-action-labeled-demonstrations,Surgical WAM w/ PT,SurRoL action-free surgical videos + 10k SurRoL action-labeled demonstrations,SurRoL,Needle Regrasp,,success rate,62.0,,,,,,arxiv:2608.11204,1,,2026-08-12
 surgical-wam-w-pt-surrol-action-free-surgical-videos-10k-surrol-action-labeled-demonstrations,Surgical WAM w/ PT,SurRoL action-free surgical videos + 10k SurRoL action-labeled demonstrations,SurRoL,BiPeg Transfer,,success rate,64.0,,,,,,arxiv:2608.11204,1,,2026-08-12
 surgical-wam-w-pt-surrol-action-free-surgical-videos-10k-surrol-action-labeled-demonstrations,Surgical WAM w/ PT,SurRoL action-free surgical videos + 10k SurRoL action-labeled demonstrations,SurRoL,average over four tasks,,success rate,77.8,,,,,,arxiv:2608.11204,1,"average of Needle Pick, Peg Transfer, Needle Regrasp, BiPeg Transfer",2026-08-12
+dreamerv2-surrol-pegtransfer,DreamerV2,SurRoL PegTransfer,SurRoL-based PegTransfer,single transfer,,success rate,0.0,,,,,,arxiv:2608.13103,1,std 0.0,2026-08-14
+gasdreamerv3-surrol-pegtransfer,GASDreamerV3,SurRoL PegTransfer,SurRoL-based PegTransfer,single transfer,,success rate,76.0,,,,,,arxiv:2608.13103,1,std 12.0,2026-08-14
+gasdreamerv3-surrol-pegtransfer,GASDreamerV3,SurRoL PegTransfer,SurRoL-based PegTransfer,repeated transfer,,success rate,77.3,,,,,,arxiv:2608.13103,1,std 18.6,2026-08-14
+gasdreamerv3-surrol-pegtransfer,GASDreamerV3,SurRoL PegTransfer,SurRoL-based PegTransfer,repeated transfer with perturbation,,success rate,65.3,,,,,,arxiv:2608.13103,1,std 14.0,2026-08-14
+ppo-surrol-pegtransfer,PPO,SurRoL PegTransfer,SurRoL-based PegTransfer,single transfer,,success rate,0.0,,,,,,arxiv:2608.13103,1,std 0.0,2026-08-14
+s2-hwm-surrol-pegtransfer,S2-HWM,SurRoL PegTransfer,SurRoL-based PegTransfer,single transfer,,success rate,98.7,,,,,,arxiv:2608.13103,1,std 2.3,2026-08-14
+s2-hwm-surrol-pegtransfer,S2-HWM,SurRoL PegTransfer,SurRoL-based PegTransfer,repeated transfer,,success rate,91.3,,,,,,arxiv:2608.13103,1,std 6.1,2026-08-14
+s2-hwm-surrol-pegtransfer,S2-HWM,SurRoL PegTransfer,SurRoL-based PegTransfer,repeated transfer with perturbation,,success rate,88.0,,,,,,arxiv:2608.13103,1,std 5.3,2026-08-14
+w-o-etm-surrol-pegtransfer,w/o ETM,SurRoL PegTransfer,SurRoL-based PegTransfer,single transfer,,success rate,91.3,,,,,,arxiv:2608.13103,1,std 5.0,2026-08-14
+w-o-event-gated-updates-surrol-pegtransfer,w/o Event-Gated Updates,SurRoL PegTransfer,SurRoL-based PegTransfer,single transfer,,success rate,80.7,,,,,,arxiv:2608.13103,1,std 28.3,2026-08-14
+w-o-hierarchical-policy-surrol-pegtransfer,w/o Hierarchical Policy,SurRoL PegTransfer,SurRoL-based PegTransfer,single transfer,,success rate,68.0,,,,,,arxiv:2608.13103,1,std 20.3,2026-08-14
 0-5-surgvla-bench,π0.5,SurgVLA-Bench,SurgVLA-Bench,Gauze Pick (T1-1),,success rate,78.0,,,,,4 NVIDIA A6000 GPUs,arxiv:2606.29247,1,"LoRA fine-tuned, Level 1 training",2026-06-30
 0-5-surgvla-bench,π0.5,SurgVLA-Bench,SurgVLA-Bench,Electrocoagulation (T1-3),,success rate,0.0,,,,,4 NVIDIA A6000 GPUs,arxiv:2606.29247,1,"LoRA fine-tuned, Level 1 training",2026-06-30
 0-5-surgvla-bench,π0.5,SurgVLA-Bench,SurgVLA-Bench,Vessel Clipping (T2-3),,success rate,14.0,,,,,4 NVIDIA A6000 GPUs,arxiv:2606.29247,1,"LoRA fine-tuned, Level 2 training",2026-06-30
@@ -15392,14 +15549,25 @@ lewm-trm-full-horizon-tworoom,LeWM TRM (full-horizon),TwoRoom,TwoRoom,hard n100,
 lewm-trm-full-horizon-tworoom,LeWM TRM (full-horizon),TwoRoom,TwoRoom,matched b50,,success rate,97.5,,,,,,arxiv:2605.22164,1,seed 3072 only,2026-06-04
 lewm-trm-max-50-100k-pairs-tworoom,"LeWM TRM (max Δ=50, 100k pairs)",TwoRoom,TwoRoom,matched b50,,success rate,35.0,,,,,,arxiv:2605.22164,1,seed 3072 only,2026-06-04
 lewm-tworoom,LeWM,TwoRoom,TwoRoom,,,CEM planning success rate,94.0,,,,,,arxiv:2607.18715,1,LeWM baseline on standard TwoRoom,2026-07-23
+lewm-unaugmented,LeWM,unaugmented,TwoRoom,,,planning success rate drop at σ=0.08 (percentage points),25.9,,,,,,arxiv:2608.12939,1,mean loss; clean success not explicitly stated,2026-08-14
 lewm-unknown,LeWM,,TwoRoom,,,success rate,87.0,,,,,,arxiv:2606.09028,1,,2026-06-09
 lewm-xy-rowspace-unknown,LeWM XY-rowspace,,TwoRoom,matched b50,,success rate,90.8,,,,,,arxiv:2605.22164,1,,2026-06-04
 leworldmodel-authors-checkpoint-tworoom-dataset-released,LeWorldModel (authors' checkpoint),TwoRoom dataset (released),TwoRoom,,,goals reached,84.0,,,,,laptop CPU,arxiv:2608.10145,0,"Repository evaluation config: goal offset 25, 50-step budget; 42/50 episodes",2026-08-12
+leworldmodel-authors-released-tworoom,LeWorldModel (authors' released),TwoRoom,TwoRoom,"offset 100, budget 150",,success rate,14.0,,,,,,arxiv:2608.12959,0,baseline from reproduction,2026-08-14
+leworldmodel-authors-released-tworoom,LeWorldModel (authors' released),TwoRoom,TwoRoom,"offset 100, budget 150, decoded-position cost",,success rate,70.0,,,,,4-core laptop CPU,arxiv:2608.12959,1,"repair, no retraining",2026-08-14
+leworldmodel-authors-released-tworoom,LeWorldModel (authors' released),TwoRoom,TwoRoom,"offset 100, budget 150, learned temporal head v2",,success rate,34.0,,,,,4-core laptop CPU,arxiv:2608.12959,1,"repair, no retraining",2026-08-14
 leworldmodel-corrected-pipeline-phase2-tworoom-dataset-released,"LeWorldModel (corrected pipeline, phase2)",TwoRoom dataset (released),TwoRoom,,held-out,"R2 (position, linear probe)",0.9971,,,,,laptop CPU,arxiv:2608.10145,1,,2026-08-12
 leworldmodel-corrected-pipeline-phase2-tworoom-dataset-released,"LeWorldModel (corrected pipeline, phase2)",TwoRoom dataset (released),TwoRoom,,held-out,"R2 (position, MLP probe)",0.9994,,,,,laptop CPU,arxiv:2608.10145,1,,2026-08-12
 leworldmodel-ours-corrected-pipeline-tworoom-dataset-released,"LeWorldModel (ours, corrected pipeline)",TwoRoom dataset (released),TwoRoom,,,goals reached,94.0,,,25.0,USD,"rented GPU for training, laptop CPU for evaluation",arxiv:2608.10145,1,"Goal offset 25, 50-step budget; 47/50 episodes",2026-08-12
+leworldmodel-phase2-recal-tworoom,LeWorldModel (phase2 recal),TwoRoom,TwoRoom,"offset 100, budget 150, decoded-position cost",,success rate,88.0,,,,,4-core laptop CPU,arxiv:2608.12959,1,"repair, no retraining",2026-08-14
+leworldmodel-phase2-recal-tworoom,LeWorldModel (phase2 recal),TwoRoom,TwoRoom,"offset 100, budget 150, learned temporal head",,success rate,98.0,,,,,4-core laptop CPU,arxiv:2608.12959,1,"repair, no retraining",2026-08-14
+leworldmodel-phase2-recal-tworoom,LeWorldModel (phase2 recal),TwoRoom,TwoRoom,"offset 100, budget 50, learned temporal head",,success rate,92.0,,,,,4-core laptop CPU,arxiv:2608.12959,1,third of budget,2026-08-14
+leworldmodel-phase2-recal-tworoom,LeWorldModel (phase2 recal),TwoRoom,TwoRoom,"offset 25, budget 50, decoded-position cost",,success rate,92.0,,,,,4-core laptop CPU,arxiv:2608.12959,1,"repair, no retraining",2026-08-14
+leworldmodel-phase2-recal-tworoom,LeWorldModel (phase2 recal),TwoRoom,TwoRoom,"offset 25, budget 50, learned temporal head",,success rate,98.0,,,,,4-core laptop CPU,arxiv:2608.12959,1,"repair, no retraining",2026-08-14
 leworldmodel-reference-faithful-run-0-tworoom-dataset-released,"LeWorldModel (reference-faithful, Run 0)",TwoRoom dataset (released),TwoRoom,,held-out,"R2 (position, linear probe)",0.9977,,,,,laptop CPU,arxiv:2608.10145,1,Pearson r = 0.9988,2026-08-12
 leworldmodel-reference-faithful-run-0-tworoom-dataset-released,"LeWorldModel (reference-faithful, Run 0)",TwoRoom dataset (released),TwoRoom,,held-out,"R2 (position, MLP probe)",0.9994,,,,,laptop CPU,arxiv:2608.10145,1,,2026-08-12
+leworldmodel-tworoom,LeWorldModel,TwoRoom,TwoRoom,"offset 25, budget 50",,success rate,94.0,,,,,,arxiv:2608.12959,0,baseline from reproduction,2026-08-14
+leworldmodel-tworoom,LeWorldModel,TwoRoom,TwoRoom,"offset 100, budget 150",,success rate,26.0,,,,,,arxiv:2608.12959,0,baseline from reproduction,2026-08-14
 pldm-raw-latent-mse-unknown,PLDM (raw latent MSE),,TwoRoom,hard n100,,success rate,32.7,,,,,,arxiv:2605.22164,1,,2026-06-04
 pldm-raw-latent-mse-unknown,PLDM (raw latent MSE),,TwoRoom,matched b50,,success rate,19.2,,,,,,arxiv:2605.22164,1,3-seed mean,2026-06-04
 pldm-trm-full-horizon-tworoom,PLDM TRM (full-horizon),TwoRoom,TwoRoom,hard n100,,success rate,84.0,,,,,,arxiv:2605.22164,1,,2026-06-04
@@ -15463,12 +15631,19 @@ vl-jepa-qwen3-8b-unknown,VL-JEPA (Qwen3-8B),,UCF-Crime,,"held-out (1,150 chunks)
 bsce-ucf-lt-real,BSCE,UCF-LT (real),UCF-LT,,,accuracy,79.3,,,,,,arxiv:2606.22416,1,,2026-06-23
 ce-ucf-lt-real,CE,UCF-LT (real),UCF-LT,,,accuracy,64.0,,,,,,arxiv:2606.22416,1,"From Table 2, overall average C/A.",2026-06-23
 gen2balance-ucf-lt-real-synthetic,Gen2Balance,UCF-LT (real + synthetic),UCF-LT,,,accuracy,88.9,,,,,,arxiv:2606.22416,1,Surpasses strongest baseline by +5.1%.,2026-06-23
+atoken-unknown,AToken,,UCF101,,,Top-1 Accuracy,30.83,,,,,,arxiv:2608.13556,0,Baseline from other paper,2026-08-14
 omnicache-unknown,OmniCache,,UCF101,,,FVD,503.12,,,,,NVIDIA A100 40GB,arxiv:2607.23844,1,"rf=50%, rb=40%, rt=50%",2026-07-28
 omnicache-unknown,OmniCache,,UCF101,,,latency per video,82.4,,s/video,,,NVIDIA A100 40GB,arxiv:2607.23844,1,25% speedup vs SVD-XT baseline,2026-07-28
 svd-xt-no-caching-unknown,SVD-XT (no caching),,UCF101,,,FVD,502.68,,,,,NVIDIA A100 40GB,arxiv:2607.23844,0,baseline,2026-07-28
 svd-xt-no-caching-unknown,SVD-XT (no caching),,UCF101,,,latency per video,110.0,,s/video,,,NVIDIA A100 40GB,arxiv:2607.23844,0,baseline,2026-07-28
 tomesd-unknown,ToMeSD,,UCF101,,,FVD,503.8,,,,,NVIDIA A100 40GB,arxiv:2607.23844,0,40% token merging,2026-07-28
 tomesd-unknown,ToMeSD,,UCF101,,,latency per video,92.6,,s/video,,,NVIDIA A100 40GB,arxiv:2607.23844,0,40% token merging,2026-07-28
+v-rae-best-variant-unknown,V-RAE (best variant),,UCF101,,,gFVD,117.86,,,,,,arxiv:2608.13556,1,"Class-conditional generation, converges up to 6x faster",2026-08-14
+v-rae-dinov3-l-ucf101-k600,V-RAE (DINOv3-L),UCF101+K600,UCF101,,test,rFVD,6.12,,,,,,arxiv:2608.13556,1,,2026-08-14
+v-rae-dinov3-l-ucf101-k600,V-RAE (DINOv3-L),UCF101+K600,UCF101,,,Top-1 Accuracy,89.13,,,,,,arxiv:2608.13556,1,"Semantic probing, linear probe",2026-08-14
+v-rae-siglip2-l-ucf101-k600,V-RAE (SigLIP2-L),UCF101+K600,UCF101,,,Top-1 Accuracy,90.92,,,,,,arxiv:2608.13556,1,Semantic probing,2026-08-14
+v-rae-v-jepa2-1-l-ucf101-k600,V-RAE (V-JEPA2.1-L),UCF101+K600,UCF101,,test,rFVD,6.65,,,,,,arxiv:2608.13556,1,,2026-08-14
+wan2-1-vae-unknown,Wan2.1 VAE,,UCF101,,test,rFVD,6.05,,,,,,arxiv:2608.13556,0,Baseline from other paper,2026-08-14
 motioncraft-unknown,MotionCraft,,UDM10,,,PSNR,28.15,,,,,,arxiv:2608.08553,1,,2026-08-11
 motioncraft-unknown,MotionCraft,,UDM10,,,SSIM,0.82,,,,,,arxiv:2608.08553,1,,2026-08-11
 motioncraft-unknown,MotionCraft,,UDM10,,,MUSIQ,76.3,,,,,,arxiv:2608.08553,1,,2026-08-11
@@ -16341,6 +16516,7 @@ reward-forcing-unknown,Reward Forcing,,VBench-1.0,,,|ΔAQ|r (reset jump),3.85,,,
 reward-forcing-unknown,Reward Forcing,,VBench-1.0,,,|ΔIQ|r (reset jump),5.08,,,,,,arxiv:2605.20476,0,AR rollout,2026-06-04
 causvid-unknown,CausVid,,VBench-2.0,,,Multi-View Consistency,23.8,,,,,,arxiv:2607.18436,0,baseline from Table 2,2026-07-23
 cogvideox-1-5-unknown,CogVideoX-1.5,,VBench-2.0,Material,,Plausibility,83.19,,,,,,arxiv:2607.27380,0,Best per-dimension,2026-07-31
+evoke-student-unknown,Evoke Student,,VBench-2.0,,,visual quality,,,,,,,arxiv:2608.13546,1,competitive with many-step systems,2026-08-14
 longlive-unknown,LongLive,,VBench-2.0,,,Multi-View Consistency,24.53,,,,,,arxiv:2607.18436,0,baseline from Table 2,2026-07-23
 omniweaving-unknown,OmniWeaving,,VBench-2.0,,,Average plausibility,52.18,,,,,,arxiv:2607.27380,0,Baseline from paper,2026-07-31
 rolling-forcing-unknown,Rolling Forcing,,VBench-2.0,,,Multi-View Consistency,18.87,,,,,,arxiv:2607.18436,0,baseline from Table 2,2026-07-23
@@ -16366,6 +16542,8 @@ aad-1-stage-iii-vbench-i2v,AAD-1 (Stage-III),VBench-I2V,VBench-I2V,,,Aesthetic Q
 aad-1-stage-iii-vbench-i2v,AAD-1 (Stage-III),VBench-I2V,VBench-I2V,,,Imaging Quality,71.49,,,,,,arxiv:2606.03972,1,,2026-06-05
 aad-1-stage-iii-vbench-i2v,AAD-1 (Stage-III),VBench-I2V,VBench-I2V,,,I2V Subject,98.65,,,,,,arxiv:2606.03972,1,,2026-06-05
 aad-1-stage-iii-vbench-i2v,AAD-1 (Stage-III),VBench-I2V,VBench-I2V,,,I2V Background,97.83,,,,,,arxiv:2606.03972,1,,2026-06-05
+causal-forcing-chunk-1-unknown,Causal Forcing (Chunk 1),,VBench-I2V,,,Aggregate,87.63,,,,,,arxiv:2608.13391,0,,2026-08-14
+causvid-chunk-3-unknown,CausVid (Chunk 3),,VBench-I2V,,,Aggregate,80.77,,,,,,arxiv:2608.13391,0,,2026-08-14
 causvid-unknown,CausVid,,VBench-I2V,,,Subject Consistency,83.45,,,,,,arxiv:2606.03972,0,4 NFE,2026-06-05
 causvid-unknown,CausVid,,VBench-I2V,,,Background Consistency,89.37,,,,,,arxiv:2606.03972,0,4 NFE,2026-06-05
 causvid-unknown,CausVid,,VBench-I2V,,,Motion Smoothness,98.61,,,,,,arxiv:2606.03972,0,4 NFE,2026-06-05
@@ -16374,8 +16552,15 @@ causvid-unknown,CausVid,,VBench-I2V,,,Aesthetic Quality,61.55,,,,,,arxiv:2606.03
 causvid-unknown,CausVid,,VBench-I2V,,,Imaging Quality,70.6,,,,,,arxiv:2606.03972,0,4 NFE,2026-06-05
 causvid-unknown,CausVid,,VBench-I2V,,,I2V Subject,92.91,,,,,,arxiv:2606.03972,0,4 NFE,2026-06-05
 causvid-unknown,CausVid,,VBench-I2V,,,I2V Background,83.34,,,,,,arxiv:2606.03972,0,4 NFE,2026-06-05
+context-forcing-chunk-3-unknown,Context Forcing (Chunk 3),,VBench-I2V,,,Aggregate,85.41,,,,,,arxiv:2608.13391,0,,2026-08-14
 dvg-unknown,DVG,,VBench-I2V,,,I2V Score,92.75,3.79,×,,,,arxiv:2605.21042,1,"D=70%, 50 NFE, CFG Distilled, HunyuanVideo-1.5 I2V",2026-06-04
 hunyuanvideo-1-5-unknown,HunyuanVideo-1.5,,VBench-I2V,,,I2V Score,94.13,1.0,×,,,,arxiv:2605.21042,0,"Baseline, 100 NFE, I2V",2026-06-04
+lingbot-world-chunk-3-unknown,LingBot-World (Chunk 3),,VBench-I2V,,,Aggregate,86.86,,,,,,arxiv:2608.13391,0,,2026-08-14
+longlive-chunk-3-unknown,LongLive (Chunk 3),,VBench-I2V,,,Aggregate,84.93,,,,,,arxiv:2608.13391,0,,2026-08-14
+ours-chunk-1-cosmos-predict2-5-2b-fine-tuned-on-generated-curated-videos,Ours (Chunk 1),Cosmos-Predict2.5-2B fine-tuned on generated/curated videos,VBench-I2V,,,Aggregate,88.46,,,,,,arxiv:2608.13391,1,,2026-08-14
+ours-chunk-4-cosmos-predict2-5-2b-fine-tuned-on-generated-curated-videos,Ours (Chunk 4),Cosmos-Predict2.5-2B fine-tuned on generated/curated videos,VBench-I2V,,,Aggregate,88.47,,,,,,arxiv:2608.13391,1,,2026-08-14
+rolling-forcing-chunk-3-unknown,Rolling Forcing (Chunk 3),,VBench-I2V,,,Aggregate,85.54,,,,,,arxiv:2608.13391,0,,2026-08-14
+self-forcing-chunk-3-unknown,Self-Forcing (Chunk 3),,VBench-I2V,,,Aggregate,85.69,,,,,,arxiv:2608.13391,0,,2026-08-14
 self-forcing-unknown,Self Forcing,,VBench-I2V,,,Subject Consistency,91.77,,,,,,arxiv:2606.03972,0,4 NFE,2026-06-05
 self-forcing-unknown,Self Forcing,,VBench-I2V,,,Background Consistency,93.41,,,,,,arxiv:2606.03972,0,4 NFE,2026-06-05
 self-forcing-unknown,Self Forcing,,VBench-I2V,,,Motion Smoothness,98.55,,,,,,arxiv:2606.03972,0,4 NFE,2026-06-05
@@ -16421,6 +16606,7 @@ dummy-forcing-unknown,Dummy Forcing,,VBench-Long,,,Gen. Speedup,1.46,,,,,,arxiv:
 echo-infinity-vidprom,Echo-Infinity,VidProM,VBench-Long,,30s,Quality,85.61,18.5,FPS,,,NVIDIA H100,arxiv:2606.04527,1,,2026-06-05
 echo-infinity-vidprom,Echo-Infinity,VidProM,VBench-Long,,30s,Semantic,82.01,18.5,FPS,,,NVIDIA H100,arxiv:2606.04527,1,,2026-06-05
 echo-infinity-vidprom,Echo-Infinity,VidProM,VBench-Long,,30s,User Preference,59.53,18.5,FPS,,,NVIDIA H100,arxiv:2606.04527,1,,2026-06-05
+evoke-student-unknown,Evoke Student,,VBench-Long,,,visual quality,,,,,,,arxiv:2608.13546,1,competitive with many-step systems,2026-08-14
 fademem-ft-unknown,FadeMem-FT,,VBench-Long,MovieGenBench 60s,,Avg (weighted),81.03,,,,,,arxiv:2606.10671,1,light fine-tuning variant,2026-06-10
 fademem-tf-unknown,FadeMem-TF,,VBench-Long,MovieGenBench 60s,,Avg (weighted),80.45,,,,,,arxiv:2606.10671,1,inference-time variant,2026-06-10
 flex-forcing-vidprom-extended-prompts,Flex-Forcing,VidProM (extended prompts),VBench-Long,,,VBench-Long Total Score,84.01,24.96,fps,,,GB200,arxiv:2607.03509,1,built upon Infinity-RoPE,2026-07-07
@@ -16692,6 +16878,9 @@ x-vla-unknown,X-VLA,,VLA-REPLICA,,ID,success rate,0.14,,,,,,arxiv:2605.20774,1,,
 0-5-unknown,π0.5,,VLABench,,,Success Rate,48.1,,,,,,arxiv:2606.03784,0,Average across all tracks,2026-06-05
 0-5-unknown,π0.5,,VLABench,Track 1,,success rate,0.39,,,,,,arxiv:2606.27268,1,Average across tasks in Track 1,2026-06-26
 0-5-unknown,π0.5,,VLABench,,,success rate,38.8,,,,,NVIDIA RTX 5090 32GB,arxiv:2607.06370,1,Full NFE=10; action head latency 18.8ms; speedup 1.0x,2026-07-08
+0-5-vlabench,π0.5,VLABench,VLABench,,,"R² (weak decodability, layer 0)",0.95,,,,,,arxiv:2608.13474,1,Weak decodability of progress feature at layer 0,2026-08-14
+0-5-vlabench,π0.5,VLABench,VLABench,,unseen tasks,"AUROC (per-replan, OOD detection)",0.833,,,,,,arxiv:2608.13474,1,"Vτ detector, cross-task generalization, unseen tasks",2026-08-14
+0-5-vlabench,π0.5,VLABench,VLABench,,seen tasks,"AUROC (per-episode, OOD detection)",0.91,,,,,,arxiv:2608.13474,1,"Vτ detector, cross-task generalization, seen tasks",2026-08-14
 0-fast-unknown,π0-FAST,,VLABench,,,Success Rate,39.8,,,,,,arxiv:2606.03784,0,Average across all tracks,2026-06-05
 0-fast-unknown,π0-Fast,,VLABench,,,success rate,43.1,,,,,,arxiv:2607.02195,0,delta chunk variant,2026-07-03
 0-unknown,π0,,VLABench,,,Success Rate,29.4,,,,,,arxiv:2606.03784,0,Average across all tracks,2026-06-05
@@ -16709,8 +16898,12 @@ hide-and-seek-vlabench,Hide-and-Seek,VLABench,VLABench,Seen Tasks,,TWA,0.662,,,,
 hide-and-seek-vlabench,Hide-and-Seek,VLABench,VLABench,Unseen Tasks,,bACC,0.713,,,,,,arxiv:2605.30834,1,π0.5 policy,2026-06-04
 hide-and-seek-vlabench,Hide-and-Seek,VLABench,VLABench,Unseen Tasks,,wACC,0.709,,,,,,arxiv:2605.30834,1,π0.5 policy,2026-06-04
 hide-and-seek-vlabench,Hide-and-Seek,VLABench,VLABench,Unseen Tasks,,TWA,0.608,,,,,,arxiv:2605.30834,1,π0.5 policy,2026-06-04
+safe-lstm-vlabench,SAFE-LSTM,VLABench,VLABench,,unseen tasks,"AUROC (per-replan, OOD detection)",0.849,,,,,,arxiv:2608.13474,0,Baseline from SAFE [20],2026-08-14
+safe-lstm-vlabench,SAFE-LSTM,VLABench,VLABench,,unseen tasks,"AUROC (per-episode, OOD detection)",0.838,,,,,,arxiv:2608.13474,0,Baseline from SAFE [20],2026-08-14
 safe-mlp-vlabench,SAFE-MLP,VLABench,VLABench,Seen Tasks,,bACC,0.788,,,,,,arxiv:2605.30834,0,π0.5 policy,2026-06-04
 safe-mlp-vlabench,SAFE-MLP,VLABench,VLABench,Unseen Tasks,,bACC,0.641,,,,,,arxiv:2605.30834,0,π0.5 policy,2026-06-04
+safe-mlp-vlabench,SAFE-MLP,VLABench,VLABench,,unseen tasks,"AUROC (per-replan, OOD detection)",0.935,,,,,,arxiv:2608.13474,0,Baseline from SAFE [20],2026-08-14
+safe-mlp-vlabench,SAFE-MLP,VLABench,VLABench,,unseen tasks,"AUROC (per-episode, OOD detection)",0.917,,,,,,arxiv:2608.13474,0,Baseline from SAFE [20],2026-08-14
 sparc-vlabench-primitive-tasks,SPARC,VLABench (primitive tasks),VLABench,π0.5,in-distribution,success rate,37.5,,,,,,arxiv:2606.16253,1,"bpp=0.0333, from Table 3",2026-06-16
 uncompressed-unknown,Uncompressed,,VLABench,π0.5,in-distribution,success rate,40.5,,,,,,arxiv:2606.16253,1,"No compression, from Table 3",2026-06-16
 x-vla-unknown,X-VLA,,VLABench,,,success rate,29.4,,,,,,arxiv:2607.02195,0,,2026-07-03
@@ -17188,6 +17381,18 @@ wan-2-7-unknown,Wan 2.7,,WBENCH,,navigation split (158 navigation cases),Setting
 wan-2-7-unknown,Wan 2.7,,WBENCH,,navigation split (158 navigation cases),Setting Adherence - Subject,94.6,,,,,,arxiv:2605.25874,1,text-driven model,2026-06-04
 yume-1-5-unknown,YUME 1.5,,WBENCH,,navigation split (158 navigation cases),Video Quality Average,77.6,,,,,,arxiv:2605.25874,1,text-driven model,2026-06-04
 yume-1-5-unknown,YUME 1.5,,WBENCH,,navigation split (158 navigation cases),Navigation,72.0,,,,,,arxiv:2605.25874,1,highest navigation among text-driven,2026-06-04
+evoke-student-unknown,Evoke Student,,WBench,,,performance,,,,,,,arxiv:2608.13546,1,"state-of-the-art, exact value not given",2026-08-14
+alayaworld-unknown,AlayaWorld,,WBench navigation split,,,Video Quality Average,79.1,,,,,,arxiv:2608.13492,1,,2026-08-14
+alayaworld-unknown,AlayaWorld,,WBench navigation split,,,Consistency Average,89.5,,,,,,arxiv:2608.13492,1,,2026-08-14
+alayaworld-unknown,AlayaWorld,,WBench navigation split,,,Navigation,79.9,,,,,,arxiv:2608.13492,1,,2026-08-14
+alayaworld-unknown,AlayaWorld,,WBench navigation split,,,Imaging,67.7,,,,,,arxiv:2608.13492,1,,2026-08-14
+alayaworld-unknown,AlayaWorld,,WBench navigation split,,,Aesthetic,62.6,,,,,,arxiv:2608.13492,1,,2026-08-14
+happy-oyster-unknown,Happy Oyster,,WBench navigation split,,,Consistency Average,84.3,,,,,,arxiv:2608.13492,0,,2026-08-14
+happy-oyster-unknown,Happy Oyster,,WBench navigation split,,,Video Quality Average,77.3,,,,,,arxiv:2608.13492,0,,2026-08-14
+hy-world-1-5-unknown,HY-World 1.5,,WBench navigation split,,,Consistency Average,86.9,,,,,,arxiv:2608.13492,0,,2026-08-14
+hy-world-1-5-unknown,HY-World 1.5,,WBench navigation split,,,Video Quality Average,78.1,,,,,,arxiv:2608.13492,0,,2026-08-14
+lingbot-v2-unknown,LingBot-v2,,WBench navigation split,,,Consistency Average,86.5,,,,,,arxiv:2608.13492,0,,2026-08-14
+lingbot-v2-unknown,LingBot-v2,,WBench navigation split,,,Video Quality Average,81.8,,,,,,arxiv:2608.13492,0,,2026-08-14
 cipo-ours-motionbench-and-wisa,cIPO (Ours),MotionBench and WISA,WISA,,test,VBench Overall,0.247,,,,,,arxiv:2607.28058,1,,2026-07-31
 densedpo-motionbench-and-wisa,DenseDPO,MotionBench and WISA,WISA,,test,VBench Overall,0.223,,,,,,arxiv:2607.28058,1,,2026-07-31
 dpo-off-gt-motionbench-and-wisa,"DPO (Off, GT)",MotionBench and WISA,WISA,,test,VBench Overall,0.222,,,,,,arxiv:2607.28058,1,,2026-07-31
@@ -17594,6 +17799,15 @@ worldscape-moe-realestate10k-dl3dv-10k-iworld-bench-unreal-engine-sekai-spatialv
 worldscape-moe-w-o-moe-realestate10k-dl3dv-10k-iworld-bench-unreal-engine-sekai-spatialvid-robotwin-libero-egodex-ego4d,Worldscape-MoE w/o MoE,"RealEstate10K, DL3dv-10k, iWorld-Bench (Unreal Engine), Sekai, SpatialVid, RoboTwin, LIBERO, EgoDex, Ego4D",WorldArena,,,EWM Score,61.88,,,,,,arxiv:2607.03964,1,,2026-07-08
 wow-robotwin-2-0,WoW,RoboTwin 2.0,WorldArena,"adjust bottle, click bell",test,Average success rate,58.0,,,,,,arxiv:2607.29302,0,Baseline from WorldArena,2026-08-03
 wow-unknown,WoW,,WorldArena,,,closed-loop success rate,20.5,,,,,,arxiv:2606.28128,0,Strongest baseline,2026-06-29
+dreamx-phi-1-0-fdm-0730-unknown,DreamX-Phi-1.0-FDM-0730,,WorldArena 1.0 Track 1,,,EWMScore-P,76.88,,,,,,arxiv:2608.13489,1,Offline evaluation,2026-08-14
+alpha-world-unknown,Alpha-World,,WorldArena 2.0 Track 1,,,EWMScore-P,60.13,,,,,,arxiv:2608.13489,0,Quoted from leaderboard snapshot,2026-08-14
+ctrl-world-unknown,Ctrl-World,,WorldArena 2.0 Track 1,,,EWMScore-P,56.24,,,,,,arxiv:2608.13489,0,Quoted from leaderboard snapshot,2026-08-14
+dreamx-phi-1-0-fdm-0730-unknown,DreamX-Phi-1.0-FDM-0730,,WorldArena 2.0 Track 1,,,EWMScore-P,60.65,,,,,,arxiv:2608.13489,1,First place in snapshot,2026-08-14
+flowwam-fiveages-unknown,FlowWAM-FiveAges,,WorldArena 2.0 Track 1,,,EWMScore-P,59.72,,,,,,arxiv:2608.13489,0,Quoted from leaderboard snapshot,2026-08-14
+irasim-unknown,IRASim,,WorldArena 2.0 Track 1,,,EWMScore-P,44.97,,,,,,arxiv:2608.13489,0,Quoted from leaderboard snapshot,2026-08-14
+dreamx-phi-1-0-fdm-0730-unknown,DreamX-Phi-1.0-FDM-0730,,WorldArena 2.0 Track 2,Adjust Bottle,,success rate,67.19,,,,,,arxiv:2608.13489,1,Ties for second place,2026-08-14
+lute-unknown,Lute,,WorldArena 2.0 Track 2,Adjust Bottle,,success rate,67.19,,,,,,arxiv:2608.13489,0,Quoted from leaderboard snapshot; ties with DreamX-Phi,2026-08-14
+wovr-plus-unknown,WOVR-PLUS,,WorldArena 2.0 Track 2,Adjust Bottle,,success rate,68.75,,,,,,arxiv:2608.13489,0,Quoted from leaderboard snapshot,2026-08-14
 openvla-bridgedata-v2,OpenVLA,BridgeData V2,WorldGym,Put Eggplant into Pot (Easy Version),,success rate,73.0,,,,,,arxiv:2606.22363,1,Low Anomaly group,2026-06-23
 openvla-bridgedata-v2,OpenVLA,BridgeData V2,WorldGym,Lift Eggplant,,success rate,64.0,,,,,,arxiv:2606.22363,1,Low Anomaly group,2026-06-23
 openvla-bridgedata-v2,OpenVLA,BridgeData V2,WorldGym,Put Carrot On Plate,,success rate,75.0,,,,,,arxiv:2606.22363,1,Low Anomaly group,2026-06-23
@@ -18377,6 +18591,7 @@ clean-fine-tuned-nuscenes,Clean fine-tuned,nuScenes,nuScenes,,Strict-4F,Action-A
 clean-fine-tuned-nuscenes,Clean fine-tuned,nuScenes,nuScenes,,Strict-4F,E2E-ASR,12.5,,,,,,arxiv:2606.21172,1,Attack performance,2026-06-24
 clear-internvl3-1b-simlingo-dataset-3-1m-samples,CLEAR (InternVL3-1B),SimLingo dataset (~3.1M samples),nuScenes,,validation,Average L2 error,0.49,,,,,,arxiv:2607.02841,1,Zero-shot evaluation,2026-07-08
 clear-internvl3-1b-simlingo-dataset-3-1m-samples,CLEAR (InternVL3-1B),SimLingo dataset (~3.1M samples),nuScenes,,validation,Average Collision Rate,0.3,,,,,,arxiv:2607.02841,1,Zero-shot evaluation,2026-07-08
+common-sft-nuscenes-sft,Common SFT,nuScenes SFT,nuScenes,planning,single-sample,Avg. L2,0.624,,,,,,arxiv:2608.13395,1,,2026-08-14
 control-free-unknown,Control-free,,nuScenes,,validation,Contain,10.22,,,,,,arxiv:2606.19495,0,GT First + Last frames,2026-06-19
 control-free-unknown,Control-free,,nuScenes,,validation,GOW,40.65,,,,,,arxiv:2606.19495,0,GT First + Last frames,2026-06-19
 control-free-unknown,Control-free,,nuScenes,,validation,GMFA,0.828,,,,,,arxiv:2606.19495,0,GT First + Last frames,2026-06-19
@@ -18418,6 +18633,10 @@ drivinggpt-unknown,DrivingGPT,,nuScenes,video generation,validation,FVD,142.6,,,
 epona-nuscenes,Epona,nuScenes,nuScenes,,val,FID,7.5,,,,,,arxiv:2607.06516,0,Baseline from Table 1,2026-07-08
 epona-unknown,Epona,,nuScenes,,validation,"Collision Rate (6s, Avg.)",0.87,,,,,,arxiv:2606.16274,0,Baseline,2026-06-16
 epona-unknown,Epona,,nuScenes,video generation,validation,FVD,82.8,,,,,,arxiv:2606.27504,0,,2026-06-29
+fire-vla-nuscenes-rl-prompts,FIRE-VLA,nuScenes (RL prompts),nuScenes,planning,single-sample,Avg. L2,0.6023,,,,,,arxiv:2608.13395,1,,2026-08-14
+fire-vla-nuscenes-rl-prompts,FIRE-VLA,nuScenes (RL prompts),nuScenes,planning,single-sample,Reward,0.6785,,,,,,arxiv:2608.13395,1,,2026-08-14
+fire-vla-nuscenes-rl-prompts,FIRE-VLA,nuScenes (RL prompts),nuScenes,planning,G=4,Evaluation-persistent failure prevalence,11.2,,,,,,arxiv:2608.13395,1,,2026-08-14
+fire-vla-nuscenes-rl-prompts,FIRE-VLA,nuScenes (RL prompts),nuScenes,planning,G=4,Any > 10m,0.83,,,,,,arxiv:2608.13395,1,,2026-08-14
 fr3d-waymo-open-dataset,FR3D,Waymo Open Dataset,nuScenes,depth estimation,,AbsR,0.229,,,,,,arxiv:2606.18250,1,T+2.5s,2026-06-17
 gaussianworld-nuscenes,GaussianWorld,nuScenes,nuScenes,16 foreground classes,validation,mIoU,21.36,,,,,,arxiv:2606.13460,1,mean over 3 seeds; std 0.03,2026-06-12
 gaussianworld-nuscenes,GaussianWorld,nuScenes,nuScenes,16 foreground classes,validation,object mIoU,18.18,,,,,,arxiv:2606.13460,1,10 object classes,2026-06-12
@@ -18532,6 +18751,10 @@ sparseworld-v-nuscenes,SparseWorld-V,nuScenes,nuScenes,Open-loop planning,valida
 sparseworld-v-nuscenes,SparseWorld-V,nuScenes,nuScenes,Open-loop planning,validation,Col. Rate (Avg),0.24,,,,,,arxiv:2605.24354,1,,2026-06-04
 sparseworld-v-nuscenes,SparseWorld-V,nuScenes,nuScenes,Motion prediction (6 steps),validation,EPA,0.619,,,,,,arxiv:2605.24354,1,,2026-06-04
 sparseworld-v-nuscenes,SparseWorld-V,nuScenes,nuScenes,Motion prediction (6 steps),validation,MR,0.113,,,,,,arxiv:2605.24354,1,,2026-06-04
+standard-grpo-nuscenes-rl-prompts,Standard GRPO,nuScenes (RL prompts),nuScenes,planning,single-sample,Avg. L2,0.6421,,,,,,arxiv:2608.13395,1,,2026-08-14
+standard-grpo-nuscenes-rl-prompts,Standard GRPO,nuScenes (RL prompts),nuScenes,planning,single-sample,Reward,0.6788,,,,,,arxiv:2608.13395,1,,2026-08-14
+standard-grpo-nuscenes-rl-prompts,Standard GRPO,nuScenes (RL prompts),nuScenes,planning,G=4,Evaluation-persistent failure prevalence,13.03,,,,,,arxiv:2608.13395,1,,2026-08-14
+standard-grpo-nuscenes-rl-prompts,Standard GRPO,nuScenes (RL prompts),nuScenes,planning,G=4,Any > 10m,1.35,,,,,,arxiv:2608.13395,1,,2026-08-14
 stream-forcing-nuscenes,Stream Forcing,nuScenes,nuScenes,driving video generation,test,FID,9.4,,,,,,arxiv:2608.10439,1,Autonomous driving world model,2026-08-12
 stream-forcing-nuscenes,Stream Forcing,nuScenes,nuScenes,driving video generation,test,FVD,105.0,,,,,,arxiv:2608.10439,1,Autonomous driving world model,2026-08-12
 streampetr-nuscenes,StreamPETR,nuScenes,nuScenes,2D object detection,,mAP,46.5,,,,,,arxiv:2607.04637,0,,2026-07-07
