@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-17 · **Tracked:** 839 core · 704 adjacent ·
-379 news · **19470** benchmark rows across **7787** model
+**Last updated:** 2026-08-18 · **Tracked:** 856 core · 727 adjacent ·
+386 news · **19882** benchmark rows across **7942** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2448 results_
+#### LIBERO  ·  _2517 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _486 results_
+#### RoboTwin  ·  _490 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -132,7 +132,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | HY-VLA | place_empty_cup | success rate | 100.0 | authors |
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
 
-#### SimplerEnv  ·  _251 results_
+#### SimplerEnv  ·  _253 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -177,7 +177,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SUREFlow _(LIBERO, Meta-World, LIBERO-PRO)_ | Easy | Success Rate | 97.8 | authors |
 | FabriVLA _(Evo-1 Meta-World demonstration dataset)_ | easy | success rate | 95.0 | authors |
 
-#### ManiSkill  ·  _72 results_
+#### ManiSkill  ·  _78 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | OCM | — | Steps | 34.5 | authors |
 | Reflexion | — | Success Rate | 30.6 | 3rd-party |
 
-#### VBench  ·  _977 results_
+#### VBench  ·  _987 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -252,20 +252,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | LongLive (Vanilla) | — | KV Cache | 100.0 | authors |
 | Reward (Vanilla) | — | KV Cache | 100.0 | authors |
 
-#### AgiBot / GENIE  ·  _55 results_
+#### AgiBot / GENIE  ·  _64 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
+| NebulaVLA-Homo | — | avg inference latency | 115.0 | authors |
 | Egocentric (ours) _(HumanNet (egocentric portion, 5000h subset))_ | Seen tasks (in-distribution) | success rate | 92.5 | authors |
+| NebulaVLA-Heter | Packaging Line Material Feeding | success rate | 92.5 | authors |
 | Reward as an Agent | — | Overall Accuracy | 91.0 | authors |
 | PAIWorld _(AgiBot-World, RoboMIND, Galaxea, RoboTwin, RoboCOIN (2.5M clips))_ | — | Scene Consistency | 90.41 | authors |
+| NebulaVLA-Homo | Packaging Line Material Feeding | success rate | 90.0 | authors |
 | PAIWorld _(AgiBot-World, RoboMIND, Galaxea, RoboTwin, RoboCOIN (2.5M clips))_ | — | EWMScore | 82.45 | authors |
+| InternVLA-M1 | — | avg inference latency | 81.0 | 3rd-party |
+| InternVLA-M1 | Pick-and-Place | success rate | 77.91 | 3rd-party |
 | π0.5 + language memory (Genie Sim) | single-package sorting | average stage success rate | 63.9 | authors |
-| π0.5 (Genie Sim) | single-package sorting | average stage success rate | 41.7 | authors |
-| Wan2.2 (no pretraining) | Seen tasks (in-distribution) | success rate | 40.0 | authors |
-| EmbodiedVAE _(RobNet, RobSet, BC-Z, RH20T, DROID)_ | video reconstruction | PSNR | 31.6745 | authors |
-| CMD | video reconstruction | PSNR | 31.403 | authors |
-| VidTwin | video reconstruction | PSNR | 30.8263 | authors |
 
 #### Habitat  ·  _19 results_
 
@@ -297,7 +297,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _242 results_
+#### nuScenes  ·  _245 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -538,7 +538,14 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Qisen Ma](https://www.semanticscholar.org/author/2215860505)** (6 papers) — The author focuses on improving World Action Models and Vision-Language-Action models for robotic manipulation, including keyframe supervision, sparse keyframe interpolation, optical flow as action representation, spatio-temporal memory augmentation, and…
 
 ## 📰 Embodied / Physical-AI News
+- [Unichem acquires Loomia to accelerate entry into the humanoid ‘skin’ market](https://www.therobotreport.com/unichem-acquires-loomia-accelerate-entry-humanoid-skin-market/) — _The Robot Report_
+- [Drones With Claws Perch on Arctic Icebergs](https://spectrum.ieee.org/arctic-iceberg-drones) — _IEEE Spectrum_
 - [Gravis Robotics raises $200M for autonomous construction](https://www.therobotreport.com/gravis-robotics-raises-200m-autonomous-construction/) — _The Robot Report_
+- [Five years of operation shape Diligent Robotics rollout of Moxi 2.0](https://www.therobotreport.com/five-years-operation-shape-diligent-robotics-rollout-moxi-2-0/) — _The Robot Report_
+- [Surgeons use da Vinci surgical robot to perform common cardiac surgery](https://www.therobotreport.com/surgeons-use-da-vinci-surgical-robot-perform-common-cardiac-surgery/) — _The Robot Report_
+- [How Generalist uses human demonstration data for robot learning](https://www.therobotreport.com/how-generalist-uses-human-demonstration-data-robot-learning/) — _The Robot Report_
+- [Is Shipyard Welding the Right First Job for Humanoid Robots?](https://spectrum.ieee.org/persona-ai-humanoid-robot-welding) — _IEEE Spectrum_
+- [Same Cluster, 33 Points More Utilization: What Changed Was the Order](https://huggingface.co/blog/Dharma-AI/gpu-management-pt2) — _Hugging Face - Blog_
 - [How robotics is revolutionizing stroke rehabilitation](https://www.therobotreport.com/how-robotics-is-revolutionizing-stroke-rehabilitation/) — _The Robot Report_
 - [Why robots that can’t communicate naturally won’t be adopted](https://www.therobotreport.com/why-robots-that-cant-communicate-naturally-wont-be-adopted-says-treble/) — _The Robot Report_
 - [Robots on Wall Street: Non-traditional paths to public markets for robotics companies](https://www.therobotreport.com/robots-on-wall-street-non-traditional-paths-public-markets-robotics-companies/) — _The Robot Report_
@@ -546,13 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Neros Technologies raises $250M to deploy its defense drones by the end of 2026](https://www.therobotreport.com/neros-technologies-raises-250m-to-deploy-its-defense-drones-by-the-end-of-2026/) — _The Robot Report_
 - [Video Friday: Lift Happens](https://spectrum.ieee.org/video-friday-darpa-heavy-lift-challenge) — _IEEE Spectrum_
 - [State of Open Models: Summer 2026 Observations](https://huggingface.co/blog/state-of-open-models-summer-2026) — _Hugging Face - Blog_
-- [ARM Institute calls for defense manufacturing technology projects](https://www.therobotreport.com/arm-institute-calls-for-defense-manufacturing-technology-project/) — _The Robot Report_
-- [Experts to discuss the state of humanoid robots at RoboBusiness](https://www.therobotreport.com/experts-discuss-state-humanoid-robots-robobusiness-2026/) — _The Robot Report_
-- [Mobile manipulators and humanoids: The future of robotics](https://www.therobotreport.com/mobile-manipulators-and-humanoids/) — _The Robot Report_
-- [BioflexBot robot hand aims to replicate key human hand motions](https://www.therobotreport.com/bioflexbot-robot-hand-aims-to-replicate-key-human-hand-motions/) — _The Robot Report_
-- [Record, train, and deploy from one place with Strands Agents, LeRobot, and Hugging Face Storage Buckets](https://huggingface.co/blog/amazon/strands-lerobot-streaming-data-loop) — _Hugging Face - Blog_
-- [What We Learned by Reproducing 2,200 papers from ICML](https://huggingface.co/blog/icml-2026-open-reproductions) — _Hugging Face - Blog_
-- [Strengthening U.S. Army sustainment: TALUS to deliver autonomous distribution](https://www.therobotreport.com/strengthening-u-s-army-sustainment-talus-to-deliver-autonomous-distribution/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
