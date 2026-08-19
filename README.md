@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-18 · **Tracked:** 856 core · 727 adjacent ·
-386 news · **19882** benchmark rows across **7942** model
+**Last updated:** 2026-08-19 · **Tracked:** 866 core · 734 adjacent ·
+391 news · **20109** benchmark rows across **8015** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -61,6 +61,7 @@ variants · **30** authors
 | **7.53** | Learning While Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies | 2026-07-10 | spd – · gen 7 · spec 8 · cost – | [abs](https://openreview.net/forum?id=h3hJmhiWJ7) · [pdf](https://openreview.net/pdf?id=h3hJmhiWJ7) |
 | **7.53** | Reflex: Enabling Fast and Predictive Vision-Language-Action Models for Reaction-Critical Manipulation | 2026-08-14 | spd 8 · gen 4 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2608.14379) · [pdf](https://arxiv.org/pdf/2608.14379v1) |
 | **7.52** | World-Language-Action Model for Unified World Modeling, Language Reasoning, and Action Synthesis | 2026-06-04 | spd 8 · gen 7 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.05979) · [pdf](https://arxiv.org/pdf/2606.05979v1) · [code](https://github.com/SJTU-DENG-Lab/WLA) |
+| **7.52** | CompCPZ: Preserving Multi-Modal Intent in Language-Guided Robot Manipulation | 2026-08-18 | spd 8 · gen 5 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2608.17717) · [pdf](https://arxiv.org/pdf/2608.17717v1) |
 | **7.51** | FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation | 2026-06-11 | spd – · gen 8 · spec 6 · cost – | [abs](https://arxiv.org/abs/2606.13102) · [pdf](https://arxiv.org/pdf/2606.13102v1) |
 | **7.49** | 3DThinkVLA: Endowing Vision-Language-Action Models with Latent 3D Priors via 3D-Thinking-Guided Co-training | 2026-06-03 | spd – · gen 6 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.04436) · [pdf](https://arxiv.org/pdf/2606.04436v1) |
 | **7.49** | $\texttt{WEAVER}$, Better, Faster, Longer: An Effective World Model for Robotic Manipulation | 2026-06-11 | spd 7 · gen 4 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.13672) · [pdf](https://arxiv.org/pdf/2606.13672v1) · [code](https://github.com/mseitzer/pytorch-fid) |
@@ -79,7 +80,6 @@ variants · **30** authors
 | **7.44** | Flow as Flow: Modeling Robot Velocity Fields as Probability Velocity Fields for Flow-Based Object Manipulation | 2026-06-22 | spd 8 · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.23090) · [pdf](https://arxiv.org/pdf/2606.23090v1) |
 | **7.44** | ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies | 2026-06-30 | spd 8 · gen 4 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.31132) · [pdf](https://arxiv.org/pdf/2606.31132v1) |
 | **7.44** | Learning 4D Geometric Priors for Inference-Efficient World Action Models | 2026-07-06 | spd 5 · gen 6 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2607.05468) · [pdf](https://arxiv.org/pdf/2607.05468v1) |
-| **7.44** | Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies | 2026-08-03 | spd 6 · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2608.01826) · [pdf](https://arxiv.org/pdf/2608.01826v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2517 results_
+#### LIBERO  ·  _2562 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -132,7 +132,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | HY-VLA | place_empty_cup | success rate | 100.0 | authors |
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
 
-#### SimplerEnv  ·  _253 results_
+#### SimplerEnv  ·  _255 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -177,10 +177,11 @@ _Model identity = (model, training data); same name on different data is a disti
 | SUREFlow _(LIBERO, Meta-World, LIBERO-PRO)_ | Easy | Success Rate | 97.8 | authors |
 | FabriVLA _(Evo-1 Meta-World demonstration dataset)_ | easy | success rate | 95.0 | authors |
 
-#### ManiSkill  ·  _78 results_
+#### ManiSkill  ·  _104 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
+| CompCPZ _(ManiSkill3 (200 synthetic frames for YOLOv8n fine-tune))_ | Pooled 18 families | paired sign test wins | 1900.0 | authors |
 | SWAAP _(fine-tuned on 5000 transitions with 10% poisoned, α=0.99)_ | lift-cube | return | 175.0 | authors |
 | SWAAP _(fine-tuned on 5000 transitions with 10% poisoned, α=0.9)_ | pick-cube | return | 147.0 | authors |
 | FlowMPC _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | anytime success rate | 98.68 | authors |
@@ -190,9 +191,8 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 | — | success rate | 89.8 | authors |
 | FORCE (π0) _(ManiSkill (offline + online))_ | — | success rate | 86.9 | authors |
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
-| FORCE (Octo) _(ManiSkill (offline + online))_ | — | success rate | 82.3 | authors |
 
-#### RoboCasa  ·  _214 results_
+#### RoboCasa  ·  _221 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,20 +237,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | OCM | — | Steps | 34.5 | authors |
 | Reflexion | — | Success Rate | 30.6 | 3rd-party |
 
-#### VBench  ·  _987 results_
+#### VBench  ·  _1002 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | HunyuanVideo (no caching) | 33 prompts from VBench | Latency | 1359.0 | authors |
+| Wan2.1-14B | — | latency | 948.0 | authors |
+| MDD | — | latency | 321.0 | authors |
+| EasyAnimateV5.1-12B | — | latency | 246.0 | authors |
 | Wan-I2V | Cut & Drag | Flow-Err | 181.1 | 3rd-party |
 | GWTF | Cut & Drag | Flow-Err | 152.81 | 3rd-party |
 | PTQ4DiT | — | FVD-FP | 124.2 | authors |
 | Q-ARVD | — | FVD-FP | 116.26 | authors |
 | Wan-T2V | T2V Motion Transfer | Flow-Err | 103.26 | 3rd-party |
 | TTM | Cut & Drag | Flow-Err | 102.39 | 3rd-party |
-| ϕ-Noise | Cut & Drag | Flow-Err | 101.49 | authors |
-| LongLive (Vanilla) | — | KV Cache | 100.0 | authors |
-| Reward (Vanilla) | — | KV Cache | 100.0 | authors |
 
 #### AgiBot / GENIE  ·  _64 results_
 
@@ -297,7 +297,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _245 results_
+#### nuScenes  ·  _249 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -387,7 +387,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
 | RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
 
-#### Bench2Drive  ·  _95 results_
+#### Bench2Drive  ·  _97 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -447,6 +447,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | MVTrack4Gen Redirector _(Kubric + MultiCamVideo)_ | — | mRotErr | 1.718 | authors |
 | Full reward (Geo-Align) _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | RotErr | 1.3895 | authors |
 
+#### PushT  ·  _75 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LeWM + AITS | — | success rate | 100.0 | authors |
+| VIS-WM | — | success rate | 98.0 | authors |
+| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
+| LeWM | — | success rate | 96.0 | authors |
+| Le-WM | — | success rate | 96.0 | authors |
+| LeWM _(PushT)_ | Short-horizon (t=25) | success rate | 94.53 | authors |
+| VLWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 94.0 | authors |
+| LeWM _(PushT)_ | — | CEM planning success rate | 94.0 | authors |
+| SIGReg (LeWM) _(LeWM offline dataset)_ | — | success rate | 93.2 | authors |
+| AdaJEPA (WM w/ Temporal Straightening spatial) _(PushT)_ | goal-reaching | success rate | 92.0 | authors |
+
 #### NAVSIM v1  ·  _74 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -461,21 +476,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | DAC | 98.2 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | TTC | 96.8 | authors |
-
-#### Real-world  ·  _73 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| InSight _(50 human scooping demonstrations + acquired lateral-push primitive)_ | sweeping | success rate | 100.0 | authors |
-| SAGE-SFT _(π0.5)_ | Place the green cube on the plate | Success rate | 100.0 | authors |
-| OASIS | Goal | success rate | 98.6 | authors |
-| InSight _(50 human pick-and-place demonstrations + 20 successful pour primitives)_ | pour beans into bowl | success rate | 96.0 | authors |
-| 3DThinkVLA (Ours) _(VLA data + 3D reasoning data (co-training))_ | Transparent container placement | success rate | 93.3 | authors |
-| InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
-| π0.5 | Place the green cube on the plate | Success rate | 90.0 | 3rd-party |
-| MaskWAM | language-ambiguous tasks (ID + OOD) | success rate | 84.9 | authors |
-| π0.5 | Average (Goal, Spatial, Long) | success rate | 81.6 | 3rd-party |
-| Afford-VLA _(LIBERO + Affordance dataset)_ | Cup-to-Plate | Success rate | 80.0 | authors |
 
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
@@ -538,8 +538,13 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Qisen Ma](https://www.semanticscholar.org/author/2215860505)** (6 papers) — The author focuses on improving World Action Models and Vision-Language-Action models for robotic manipulation, including keyframe supervision, sparse keyframe interpolation, optical flow as action representation, spatio-temporal memory augmentation, and…
 
 ## 📰 Embodied / Physical-AI News
+- [Pudu Robotics launches new MP2000 autonomous forklift](https://www.therobotreport.com/pudu-robotics-launches-new-mp2000-autonomous-forklift/) — _The Robot Report_
 - [Unichem acquires Loomia to accelerate entry into the humanoid ‘skin’ market](https://www.therobotreport.com/unichem-acquires-loomia-accelerate-entry-humanoid-skin-market/) — _The Robot Report_
 - [Drones With Claws Perch on Arctic Icebergs](https://spectrum.ieee.org/arctic-iceberg-drones) — _IEEE Spectrum_
+- [How to achieve high voltage in industrial systems without high complexity](https://www.therobotreport.com/how-achieve-high-voltage-industrial-systems-without-high-complexity/) — _The Robot Report_
+- [FORT Robotics to take safety stack public via SPAC merger](https://www.therobotreport.com/fort-robotics-takes-safety-stack-public-via-spac-merger/) — _The Robot Report_
+- [How Much Memory Does Your Agent Actually Need?](https://huggingface.co/blog/ibm-research/altk-evolve-hmm) — _Hugging Face - Blog_
+- [Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers](https://huggingface.co/blog/multi-vector-encoder) — _Hugging Face - Blog_
 - [Gravis Robotics raises $200M for autonomous construction](https://www.therobotreport.com/gravis-robotics-raises-200m-autonomous-construction/) — _The Robot Report_
 - [Five years of operation shape Diligent Robotics rollout of Moxi 2.0](https://www.therobotreport.com/five-years-operation-shape-diligent-robotics-rollout-moxi-2-0/) — _The Robot Report_
 - [Surgeons use da Vinci surgical robot to perform common cardiac surgery](https://www.therobotreport.com/surgeons-use-da-vinci-surgical-robot-perform-common-cardiac-surgery/) — _The Robot Report_
@@ -548,11 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Same Cluster, 33 Points More Utilization: What Changed Was the Order](https://huggingface.co/blog/Dharma-AI/gpu-management-pt2) — _Hugging Face - Blog_
 - [How robotics is revolutionizing stroke rehabilitation](https://www.therobotreport.com/how-robotics-is-revolutionizing-stroke-rehabilitation/) — _The Robot Report_
 - [Why robots that can’t communicate naturally won’t be adopted](https://www.therobotreport.com/why-robots-that-cant-communicate-naturally-wont-be-adopted-says-treble/) — _The Robot Report_
-- [Robots on Wall Street: Non-traditional paths to public markets for robotics companies](https://www.therobotreport.com/robots-on-wall-street-non-traditional-paths-public-markets-robotics-companies/) — _The Robot Report_
-- [How Protolabs turns CAD files into parts in under 24 hours](https://www.therobotreport.com/how-protolabs-turns-cad-files-into-parts-under-24-hours/) — _The Robot Report_
-- [Neros Technologies raises $250M to deploy its defense drones by the end of 2026](https://www.therobotreport.com/neros-technologies-raises-250m-to-deploy-its-defense-drones-by-the-end-of-2026/) — _The Robot Report_
-- [Video Friday: Lift Happens](https://spectrum.ieee.org/video-friday-darpa-heavy-lift-challenge) — _IEEE Spectrum_
-- [State of Open Models: Summer 2026 Observations](https://huggingface.co/blog/state-of-open-models-summer-2026) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
