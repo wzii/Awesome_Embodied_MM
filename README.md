@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-19 · **Tracked:** 866 core · 734 adjacent ·
-391 news · **20109** benchmark rows across **8015** model
+**Last updated:** 2026-08-20 · **Tracked:** 872 core · 738 adjacent ·
+396 news · **20203** benchmark rows across **8054** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -35,6 +35,7 @@ variants · **30** authors
 | **8.11** | Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving | 2026-07-17 | spd 9 · gen 4 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2607.15621) · [pdf](https://arxiv.org/pdf/2607.15621v1) |
 | **8.09** | DriftWorld: Fast World Modeling through Drifting | 2026-07-16 | spd 9 · gen 6 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.15065) · [pdf](https://arxiv.org/pdf/2607.15065v1) · [code](https://github.com/Susie-Lu/driftworld) |
 | **8.09** | Keep the Future, Drop the Rollout: RIFT for World Action Models | 2026-08-12 | spd 8 · gen 6 · spec 9 · cost 7 | [abs](https://arxiv.org/abs/2608.11521) · [pdf](https://arxiv.org/pdf/2608.11521v1) |
+| **7.87** | Reinforced Planning with Latent World Models | 2026-08-19 | spd 8 · gen 6 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2608.18669) · [pdf](https://arxiv.org/pdf/2608.18669v1) |
 | **7.83** | Deltoris: Enabling Real-time VLA Inference in Embodied AI via Bit-level Sparsity and Speculative Inference | 2026-08-05 | spd 9 · gen – · spec 4 · cost 7 | [abs](https://arxiv.org/abs/2608.04428) · [pdf](https://arxiv.org/pdf/2608.04428v1) |
 | **7.79** | Causal-rCM: A Unified Teacher-Forcing and Self-Forcing Open Recipe for Autoregressive Diffusion Distillation in Streaming Video Generation and Interactive World Models | 2026-06-24 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.25473) · [pdf](https://arxiv.org/pdf/2606.25473v1) · [code](https://github.com/NVlabs/rcm) |
 | **7.73** | BLUE: Toward Better Language Use in Efficient Vision-Language-Action Models for Autonomous Driving | 2026-06-07 | spd 8 · gen 3 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2606.08684) · [pdf](https://arxiv.org/pdf/2606.08684v1) · [code](https://github.com/George-Ling3/BLUE) |
@@ -79,7 +80,6 @@ variants · **30** authors
 | **7.44** | Efficient-WAM: A 1B-Parameter World-Action Model with Low-Cost Future Imagination | 2026-06-08 | spd 8 · gen 5 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2606.10040) · [pdf](https://arxiv.org/pdf/2606.10040v1) |
 | **7.44** | Flow as Flow: Modeling Robot Velocity Fields as Probability Velocity Fields for Flow-Based Object Manipulation | 2026-06-22 | spd 8 · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.23090) · [pdf](https://arxiv.org/pdf/2606.23090v1) |
 | **7.44** | ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies | 2026-06-30 | spd 8 · gen 4 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.31132) · [pdf](https://arxiv.org/pdf/2606.31132v1) |
-| **7.44** | Learning 4D Geometric Priors for Inference-Efficient World Action Models | 2026-07-06 | spd 5 · gen 6 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2607.05468) · [pdf](https://arxiv.org/pdf/2607.05468v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2562 results_
+#### LIBERO  ·  _2583 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -432,6 +432,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | LeapTalk (Lite) _(VividHead)_ | — | FVD | 285.0 | authors |
 | LeapTalk (Pro) _(VividHead)_ | — | FVD | 197.0 | authors |
 
+#### PushT  ·  _80 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LeWM + AITS | — | success rate | 100.0 | authors |
+| DA-LeWM | — | success rate | 98.7 | authors |
+| VIS-WM | — | success rate | 98.0 | authors |
+| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
+| LeWM | — | success rate | 96.0 | authors |
+| Le-WM | — | success rate | 96.0 | authors |
+| LeWM _(PushT)_ | Short-horizon (t=25) | success rate | 94.53 | authors |
+| VLWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 94.0 | authors |
+| LeWM _(PushT)_ | — | CEM planning success rate | 94.0 | authors |
+| SIGReg (LeWM) _(LeWM offline dataset)_ | — | success rate | 93.2 | authors |
+
 #### DAVIS  ·  _77 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -446,21 +461,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | MVTrack4Gen ReCamMaster _(Kubric + MultiCamVideo)_ | — | mRotErr | 1.858 | authors |
 | MVTrack4Gen Redirector _(Kubric + MultiCamVideo)_ | — | mRotErr | 1.718 | authors |
 | Full reward (Geo-Align) _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | RotErr | 1.3895 | authors |
-
-#### PushT  ·  _75 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| LeWM + AITS | — | success rate | 100.0 | authors |
-| VIS-WM | — | success rate | 98.0 | authors |
-| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
-| LeWM | — | success rate | 96.0 | authors |
-| Le-WM | — | success rate | 96.0 | authors |
-| LeWM _(PushT)_ | Short-horizon (t=25) | success rate | 94.53 | authors |
-| VLWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 94.0 | authors |
-| LeWM _(PushT)_ | — | CEM planning success rate | 94.0 | authors |
-| SIGReg (LeWM) _(LeWM offline dataset)_ | — | success rate | 93.2 | authors |
-| AdaJEPA (WM w/ Temporal Straightening spatial) _(PushT)_ | goal-reaching | success rate | 92.0 | authors |
 
 #### NAVSIM v1  ·  _74 results_
 
@@ -538,7 +538,12 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Qisen Ma](https://www.semanticscholar.org/author/2215860505)** (6 papers) — The author focuses on improving World Action Models and Vision-Language-Action models for robotic manipulation, including keyframe supervision, sparse keyframe interpolation, optical flow as action representation, spatio-temporal memory augmentation, and…
 
 ## 📰 Embodied / Physical-AI News
+- [Agtonomy releases new autonomous multi-point turning features](https://www.therobotreport.com/agtonomy-releases-new-autonomous-multi-point-turning-features/) — _The Robot Report_
 - [Pudu Robotics launches new MP2000 autonomous forklift](https://www.therobotreport.com/pudu-robotics-launches-new-mp2000-autonomous-forklift/) — _The Robot Report_
+- [Kollmorgen to give a joint-by-joint guide to humanoid motion at RoboBusiness](https://www.therobotreport.com/kollmorgen-give-joint-by-joint-guide-humanoid-motion-robobusiness/) — _The Robot Report_
+- [What does Unitree Robotics’ IPO mean for the humanoid industry?](https://www.therobotreport.com/what-does-unitree-robotics-ipo-mean-for-humanoid-industry/) — _The Robot Report_
+- [Serve Robotics to deploy its autonomous delivery robots with Grubhub](https://www.therobotreport.com/serve-robotics-deploys-autonomous-delivery-robots-grubhub/) — _The Robot Report_
+- [LFM2.5 Q4\_0 Checkpoints from Quantization-Aware Distillation](https://huggingface.co/blog/LiquidAI/qad) — _Hugging Face - Blog_
 - [Unichem acquires Loomia to accelerate entry into the humanoid ‘skin’ market](https://www.therobotreport.com/unichem-acquires-loomia-accelerate-entry-humanoid-skin-market/) — _The Robot Report_
 - [Drones With Claws Perch on Arctic Icebergs](https://spectrum.ieee.org/arctic-iceberg-drones) — _IEEE Spectrum_
 - [How to achieve high voltage in industrial systems without high complexity](https://www.therobotreport.com/how-achieve-high-voltage-industrial-systems-without-high-complexity/) — _The Robot Report_
@@ -548,11 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Gravis Robotics raises $200M for autonomous construction](https://www.therobotreport.com/gravis-robotics-raises-200m-autonomous-construction/) — _The Robot Report_
 - [Five years of operation shape Diligent Robotics rollout of Moxi 2.0](https://www.therobotreport.com/five-years-operation-shape-diligent-robotics-rollout-moxi-2-0/) — _The Robot Report_
 - [Surgeons use da Vinci surgical robot to perform common cardiac surgery](https://www.therobotreport.com/surgeons-use-da-vinci-surgical-robot-perform-common-cardiac-surgery/) — _The Robot Report_
-- [How Generalist uses human demonstration data for robot learning](https://www.therobotreport.com/how-generalist-uses-human-demonstration-data-robot-learning/) — _The Robot Report_
-- [Is Shipyard Welding the Right First Job for Humanoid Robots?](https://spectrum.ieee.org/persona-ai-humanoid-robot-welding) — _IEEE Spectrum_
-- [Same Cluster, 33 Points More Utilization: What Changed Was the Order](https://huggingface.co/blog/Dharma-AI/gpu-management-pt2) — _Hugging Face - Blog_
-- [How robotics is revolutionizing stroke rehabilitation](https://www.therobotreport.com/how-robotics-is-revolutionizing-stroke-rehabilitation/) — _The Robot Report_
-- [Why robots that can’t communicate naturally won’t be adopted](https://www.therobotreport.com/why-robots-that-cant-communicate-naturally-wont-be-adopted-says-treble/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
