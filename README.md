@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-20 · **Tracked:** 872 core · 738 adjacent ·
-396 news · **20203** benchmark rows across **8054** model
+**Last updated:** 2026-08-21 · **Tracked:** 883 core · 741 adjacent ·
+400 news · **20372** benchmark rows across **8139** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2583 results_
+#### LIBERO  ·  _2589 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _490 results_
+#### RoboTwin  ·  _497 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -462,20 +462,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | MVTrack4Gen Redirector _(Kubric + MultiCamVideo)_ | — | mRotErr | 1.718 | authors |
 | Full reward (Geo-Align) _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | RotErr | 1.3895 | authors |
 
-#### NAVSIM v1  ·  _74 results_
+#### Real-world  ·  _75 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| UNIVERSE w.o. Mask _(NAVSIM v1)_ | — | inference latency | 1623.0 | authors |
-| UNIVERSE Two-DiT _(NAVSIM v1)_ | — | inference latency | 551.0 | authors |
-| UNIVERSE _(NAVSIM v1)_ | — | inference latency | 376.0 | authors |
-| Full-depth planner _(NAVSIM)_ | — | end-to-end planning latency | 320.0 | authors |
-| Fixed B15 (single trajectory) _(NAVSIM)_ | — | end-to-end planning latency | 190.0 | authors |
-| Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | DAC | 98.2 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | TTC | 96.8 | authors |
+| InSight _(50 human scooping demonstrations + acquired lateral-push primitive)_ | sweeping | success rate | 100.0 | authors |
+| SAGE-SFT _(π0.5)_ | Place the green cube on the plate | Success rate | 100.0 | authors |
+| OASIS | Goal | success rate | 98.6 | authors |
+| InSight _(50 human pick-and-place demonstrations + 20 successful pour primitives)_ | pour beans into bowl | success rate | 96.0 | authors |
+| 3DThinkVLA (Ours) _(VLA data + 3D reasoning data (co-training))_ | Transparent container placement | success rate | 93.3 | authors |
+| InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
+| π0.5 | Place the green cube on the plate | Success rate | 90.0 | 3rd-party |
+| OrthoSkillVLA | Flip, Pick, Push, Press | Average success rate (%) | 86.25 | authors |
+| MaskWAM | language-ambiguous tasks (ID + OOD) | success rate | 84.9 | authors |
+| π0.5 | Average (Goal, Spatial, Long) | success rate | 81.6 | 3rd-party |
 
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
@@ -538,7 +538,11 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Qisen Ma](https://www.semanticscholar.org/author/2215860505)** (6 papers) — The author focuses on improving World Action Models and Vision-Language-Action models for robotic manipulation, including keyframe supervision, sparse keyframe interpolation, optical flow as action representation, spatio-temporal memory augmentation, and…
 
 ## 📰 Embodied / Physical-AI News
+- [Measuring benchmark optimization in speech recognition](https://huggingface.co/blog/asr-benchmark-optimization) — _Hugging Face - Blog_
 - [Agtonomy releases new autonomous multi-point turning features](https://www.therobotreport.com/agtonomy-releases-new-autonomous-multi-point-turning-features/) — _The Robot Report_
+- [Amazon plans to expand Prime Air to nearly 500 cities by the end of 2026](https://www.therobotreport.com/amazon-plans-expand-prime-air-nearly-500-cities-by-end-2026/) — _The Robot Report_
+- [ATDev gives update on its journey building autonomous wheelchairs](https://www.therobotreport.com/atdev-gives-update-journey-building-autonomous-wheelchairs/) — _The Robot Report_
+- [Up to 3.2x Faster Inference with LFM2.5-DSpark](https://huggingface.co/blog/LiquidAI/lfm25-dspark) — _Hugging Face - Blog_
 - [Pudu Robotics launches new MP2000 autonomous forklift](https://www.therobotreport.com/pudu-robotics-launches-new-mp2000-autonomous-forklift/) — _The Robot Report_
 - [Kollmorgen to give a joint-by-joint guide to humanoid motion at RoboBusiness](https://www.therobotreport.com/kollmorgen-give-joint-by-joint-guide-humanoid-motion-robobusiness/) — _The Robot Report_
 - [What does Unitree Robotics’ IPO mean for the humanoid industry?](https://www.therobotreport.com/what-does-unitree-robotics-ipo-mean-for-humanoid-industry/) — _The Robot Report_
@@ -549,10 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [How to achieve high voltage in industrial systems without high complexity](https://www.therobotreport.com/how-achieve-high-voltage-industrial-systems-without-high-complexity/) — _The Robot Report_
 - [FORT Robotics to take safety stack public via SPAC merger](https://www.therobotreport.com/fort-robotics-takes-safety-stack-public-via-spac-merger/) — _The Robot Report_
 - [How Much Memory Does Your Agent Actually Need?](https://huggingface.co/blog/ibm-research/altk-evolve-hmm) — _Hugging Face - Blog_
-- [Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers](https://huggingface.co/blog/multi-vector-encoder) — _Hugging Face - Blog_
-- [Gravis Robotics raises $200M for autonomous construction](https://www.therobotreport.com/gravis-robotics-raises-200m-autonomous-construction/) — _The Robot Report_
-- [Five years of operation shape Diligent Robotics rollout of Moxi 2.0](https://www.therobotreport.com/five-years-operation-shape-diligent-robotics-rollout-moxi-2-0/) — _The Robot Report_
-- [Surgeons use da Vinci surgical robot to perform common cardiac surgery](https://www.therobotreport.com/surgeons-use-da-vinci-surgical-robot-perform-common-cardiac-surgery/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
