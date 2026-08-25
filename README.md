@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-24 · **Tracked:** 892 core · 746 adjacent ·
-406 news · **20473** benchmark rows across **8190** model
+**Last updated:** 2026-08-25 · **Tracked:** 917 core · 761 adjacent ·
+413 news · **20896** benchmark rows across **8398** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2597 results_
+#### LIBERO  ·  _2632 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _497 results_
+#### RoboTwin  ·  _516 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -133,7 +133,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | HY-VLA | place_empty_cup | success rate | 100.0 | authors |
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
 
-#### SimplerEnv  ·  _255 results_
+#### SimplerEnv  ·  _260 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -193,7 +193,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FORCE (π0) _(ManiSkill (offline + online))_ | — | success rate | 86.9 | authors |
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 
-#### RoboCasa  ·  _221 results_
+#### RoboCasa  ·  _226 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -238,7 +238,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | OCM | — | Steps | 34.5 | authors |
 | Reflexion | — | Success Rate | 30.6 | 3rd-party |
 
-#### VBench  ·  _1002 results_
+#### VBench  ·  _1023 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -298,7 +298,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _253 results_
+#### nuScenes  ·  _259 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -327,6 +327,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | Cloak-VLA _(DROID)_ | Task Average | task progression rate | 88.0 | authors |
 | LAP-VLA | Task Average | task progression rate | 87.9 | 3rd-party |
 | G0.5 _(pretrained on robot datasets + VQA, then post-trained on DROID)_ | — | success rate | 82.5 | authors |
+
+#### NAVSIM  ·  _100 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
+| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | NC (no at-fault collision) | 99.4 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
+| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
+| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | TTC (time-to-collision) | 98.5 | authors |
+| S2-VLA _(ReCogDrive VQA + NAVSIM)_ | — | NC | 98.4 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
+| ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
+| RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
 
 #### SafeSora  ·  _99 results_
 
@@ -373,21 +388,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | Spatial inject-none _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 15.5 | authors |
 | Spatial inject-none _(Context-as-Memory dataset)_ | replay | Replay PSNR | 14.66 | authors |
 
-#### NAVSIM  ·  _97 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
-| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | NC (no at-fault collision) | 99.4 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
-| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
-| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | TTC (time-to-collision) | 98.5 | authors |
-| S2-VLA _(ReCogDrive VQA + NAVSIM)_ | — | NC | 98.4 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
-| ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
-| RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
-
 #### Bench2Drive  ·  _97 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -402,6 +402,36 @@ _Model identity = (model, training data); same name on different data is a disti
 | BLUE (CriticVLA) _(CriticVLA training set)_ | — | driving score | 90.37 | authors |
 | AnchorVLA _(PDM-Lite)_ | — | Driving Score | 89.92 | authors |
 | TakeVLA _(PDM-Lite)_ | — | driving score | 89.72 | 3rd-party |
+
+#### PushT  ·  _92 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LeWM + AITS | — | success rate | 100.0 | authors |
+| DA-LeWM | — | success rate | 98.7 | authors |
+| VIS-WM | — | success rate | 98.0 | authors |
+| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
+| LeWM | — | success rate | 96.0 | authors |
+| Le-WM | — | success rate | 96.0 | authors |
+| LeWM _(PushT)_ | Short-horizon (t=25) | success rate | 94.53 | authors |
+| VLWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 94.0 | authors |
+| LeWM _(PushT)_ | — | CEM planning success rate | 94.0 | authors |
+| SIGReg (LeWM) _(LeWM offline dataset)_ | — | success rate | 93.2 | authors |
+
+#### NAVSIM v1  ·  _85 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| UNIVERSE w.o. Mask _(NAVSIM v1)_ | — | inference latency | 1623.0 | authors |
+| UNIVERSE Two-DiT _(NAVSIM v1)_ | — | inference latency | 551.0 | authors |
+| UNIVERSE _(NAVSIM v1)_ | — | inference latency | 376.0 | authors |
+| Full-depth planner _(NAVSIM)_ | — | end-to-end planning latency | 320.0 | authors |
+| Fixed B15 (single trajectory) _(NAVSIM)_ | — | end-to-end planning latency | 190.0 | authors |
+| Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
+| CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
+| CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
+| CoPhy _(NAVSIM v1+v2)_ | — | DAC | 98.2 | authors |
+| CoPhy _(NAVSIM v1+v2)_ | — | TTC | 96.8 | authors |
 
 #### T2VSafetyBench  ·  _84 results_
 
@@ -432,36 +462,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | StableAvatar | — | FVD | 329.0 | 3rd-party |
 | LeapTalk (Lite) _(VividHead)_ | — | FVD | 285.0 | authors |
 | LeapTalk (Pro) _(VividHead)_ | — | FVD | 197.0 | authors |
-
-#### PushT  ·  _80 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| LeWM + AITS | — | success rate | 100.0 | authors |
-| DA-LeWM | — | success rate | 98.7 | authors |
-| VIS-WM | — | success rate | 98.0 | authors |
-| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
-| LeWM | — | success rate | 96.0 | authors |
-| Le-WM | — | success rate | 96.0 | authors |
-| LeWM _(PushT)_ | Short-horizon (t=25) | success rate | 94.53 | authors |
-| VLWM _(expert episodes (PushT, OGBench-Cube, TwoRoom))_ | goal offset 25 | success rate | 94.0 | authors |
-| LeWM _(PushT)_ | — | CEM planning success rate | 94.0 | authors |
-| SIGReg (LeWM) _(LeWM offline dataset)_ | — | success rate | 93.2 | authors |
-
-#### NAVSIM v1  ·  _78 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| UNIVERSE w.o. Mask _(NAVSIM v1)_ | — | inference latency | 1623.0 | authors |
-| UNIVERSE Two-DiT _(NAVSIM v1)_ | — | inference latency | 551.0 | authors |
-| UNIVERSE _(NAVSIM v1)_ | — | inference latency | 376.0 | authors |
-| Full-depth planner _(NAVSIM)_ | — | end-to-end planning latency | 320.0 | authors |
-| Fixed B15 (single trajectory) _(NAVSIM)_ | — | end-to-end planning latency | 190.0 | authors |
-| Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | DAC | 98.2 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | TTC | 96.8 | authors |
 
 #### DAVIS  ·  _77 results_
 
@@ -539,6 +539,11 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Nan Duan](https://www.semanticscholar.org/author/2360369479)** (6 papers) — Nan Duan's research focuses on advancing video generation, world models, and generative modeling, particularly for long-duration, real-time, and memory-efficient autoregressive video generation, as well as few-step flow matching and embodied data…
 
 ## 📰 Embodied / Physical-AI News
+- [AI Companion Robots Are Closing the Human Connection in Modern Homes](https://spectrum.ieee.org/ollobot-ai-companion-robot) — _IEEE Spectrum_
+- [Quantization-Aware Healing: a compressed, 4-bit model that outperforms its full-precision original](https://huggingface.co/blog/MultiverseComputingCAI/quantization-aware-healing) — _Hugging Face - Blog_
+- [Wire It, Run It, Deploy It: AI Workflows in Gradio](https://huggingface.co/blog/gradio-workflow-guide) — _Hugging Face - Blog_
+- [The next big AI play isn’t apps or humanoids; it’s machines with brains and brawn](https://www.therobotreport.com/the-next-big-ai-play-isnt-apps-or-humanoids-its-machines-with-brains-and-brawn/) — _The Robot Report_
+- [XPeng Motors humanoid robot unit Dogotix raises $900M](https://www.therobotreport.com/xpeng-motors-humanoid-robot-unit-dogotix-raises-900m/) — _The Robot Report_
 - [Use a digital twin to explore automation before committing capital](https://www.therobotreport.com/use-digital-twin-explore-automation-before-committing-capital/) — _The Robot Report_
 - [The technology that could bring robot mowers to one in two American lawns](https://www.therobotreport.com/technology-could-bring-robot-mowers-one-half-american-lawns/) — _The Robot Report_
 - [How software-defined manufacturing fits into real factory operations](https://www.therobotreport.com/how-software-defined-manufacturing-fits-into-real-factory-operations/) — _The Robot Report_
@@ -546,14 +551,9 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Measuring benchmark optimization in speech recognition](https://huggingface.co/blog/asr-benchmark-optimization) — _Hugging Face - Blog_
 - [Amazon’s Bhavana Chandrashekhar to speak at RoboBusiness’ Women in Robotics Lunch](https://www.therobotreport.com/amazons-bhavana-chandrashekhar-speaks-robobusiness-women-in-robotics-lunch/) — _The Robot Report_
 - [Schaeffler plans to mass produce gearboxes for humanoid robots in 2027](https://www.therobotreport.com/schaeffler-plans-to-mass-manufacture-gearboxes-for-humanoids-in-2027/) — _The Robot Report_
+- [Video Friday: Do We Need Superhuman Humanoid Robots?](https://spectrum.ieee.org/video-friday-unitree-superhuman) — _IEEE Spectrum_
+- [How Hugging Face Inference Endpoints, Jobs, and Buckets Power Search on Papers with Code](https://huggingface.co/blog/pwc-search) — _Hugging Face - Blog_
 - [Agtonomy releases new autonomous multi-point turning features](https://www.therobotreport.com/agtonomy-releases-new-autonomous-multi-point-turning-features/) — _The Robot Report_
-- [Amazon plans to expand Prime Air to nearly 500 cities by the end of 2026](https://www.therobotreport.com/amazon-plans-expand-prime-air-nearly-500-cities-by-end-2026/) — _The Robot Report_
-- [ATDev gives update on its journey building autonomous wheelchairs](https://www.therobotreport.com/atdev-gives-update-journey-building-autonomous-wheelchairs/) — _The Robot Report_
-- [Up to 3.2x Faster Inference with LFM2.5-DSpark](https://huggingface.co/blog/LiquidAI/lfm25-dspark) — _Hugging Face - Blog_
-- [Pudu Robotics launches new MP2000 autonomous forklift](https://www.therobotreport.com/pudu-robotics-launches-new-mp2000-autonomous-forklift/) — _The Robot Report_
-- [Kollmorgen to give a joint-by-joint guide to humanoid motion at RoboBusiness](https://www.therobotreport.com/kollmorgen-give-joint-by-joint-guide-humanoid-motion-robobusiness/) — _The Robot Report_
-- [What does Unitree Robotics’ IPO mean for the humanoid industry?](https://www.therobotreport.com/what-does-unitree-robotics-ipo-mean-for-humanoid-industry/) — _The Robot Report_
-- [Serve Robotics to deploy its autonomous delivery robots with Grubhub](https://www.therobotreport.com/serve-robotics-deploys-autonomous-delivery-robots-grubhub/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
