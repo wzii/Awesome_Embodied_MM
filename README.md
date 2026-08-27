@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-26 · **Tracked:** 928 core · 769 adjacent ·
-418 news · **21169** benchmark rows across **8541** model
+**Last updated:** 2026-08-27 · **Tracked:** 944 core · 771 adjacent ·
+424 news · **21375** benchmark rows across **8614** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -45,6 +45,7 @@ variants · **30** authors
 | **7.71** | StellaVLA: In-Context Structured Demonstration for Generalizable Vision-Language-Action Models | 2026-08-12 | spd 5 · gen 8 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.11671) · [pdf](https://arxiv.org/pdf/2608.11671v1) |
 | **7.67** | vla.cpp: A Unified Inference Runtime for Vision-Language-Action Models | 2026-06-06 | spd 8 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2606.08094) · [pdf](https://arxiv.org/pdf/2606.08094v1) · [code](https://github.com/ggml-org/llama.cpp) |
 | **7.67** | Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models | 2026-06-16 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.17846) · [pdf](https://arxiv.org/pdf/2606.17846v1) · [code](https://github.com/QwenLM/Qwen-RobotManip) |
+| **7.67** | One Policy, Many Embodiments: Unified Camera-Centric Action Geometry Pre-training for Heterogeneous Embodied Manipulation | 2026-08-26 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2608.26058) · [pdf](https://arxiv.org/pdf/2608.26058v1) |
 | **7.66** | Cosmos 3: Omnimodal World Models for Physical AI | 2026-06-01 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.02800) · [pdf](https://arxiv.org/pdf/2606.02800v1) · [code](https://github.com/nvidia/cosmos) |
 | **7.66** | Multiplayer Interactive World Models with Representation Autoencoders | 2026-07-06 | spd 7 · gen 2 · spec 8 · cost 2 | [abs](https://arxiv.org/abs/2607.05352) · [pdf](https://arxiv.org/pdf/2607.05352v1) · [code](https://github.com/mira-wm/mira) |
 | **7.66** | GlanceWAM: Sparse Test-Time Imagination for World-Action Models | 2026-08-25 | spd 8 · gen 6 · spec 7 · cost 5 | [abs](https://arxiv.org/abs/2608.23927) · [pdf](https://arxiv.org/pdf/2608.23927v1) · [code](https://github.com/linhanwang/GlanceWAM) |
@@ -80,7 +81,6 @@ variants · **30** authors
 | **7.45** | QPILOTS: Efficient Test-Time Q-Steering for Flow Policies | 2026-06-11 | spd – · gen 6 · spec 8 · cost 4 | [abs](https://arxiv.org/abs/2606.14801) · [pdf](https://arxiv.org/pdf/2606.14801v1) |
 | **7.45** | Flex-$π$: A Multi-Stream World-Action Model with Compute Flexibility | 2026-08-11 | spd 6 · gen 5 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2608.10860) · [pdf](https://arxiv.org/pdf/2608.10860v1) |
 | **7.44** | VisualThink-VLA: Visual Intermediate Reasoning for Effective and Low-Latency Vision-Language-Action Policies | 2026-05-28 | spd 8 · gen 7 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2605.30011) · [pdf](https://arxiv.org/pdf/2605.30011v1) · [code](https://github.com/DCDmllm/VisualThink-VLA) |
-| **7.44** | Efficient-WAM: A 1B-Parameter World-Action Model with Low-Cost Future Imagination | 2026-06-08 | spd 8 · gen 5 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2606.10040) · [pdf](https://arxiv.org/pdf/2606.10040v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2663 results_
+#### LIBERO  ·  _2695 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -103,7 +103,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ConfidenceVLA | — | avg inference time | 712.9 | 3rd-party |
 | Agentic-VLA _(LIBERO)_ | Long | iterations to 90% success rate | 700.0 | authors |
 
-#### CALVIN  ·  _135 results_
+#### CALVIN  ·  _145 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _526 results_
+#### RoboTwin  ·  _554 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -163,7 +163,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0 + CamVLA | Mean | success rate | 51.4 | authors |
 | GR00T(arch) _(LIBERO-Spatial / RLBench-10Tasks)_ | Mean | success rate | 50.8 | authors |
 
-#### Meta-World  ·  _85 results_
+#### Meta-World  ·  _87 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -193,7 +193,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FORCE (π0) _(ManiSkill (offline + online))_ | — | success rate | 86.9 | authors |
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 
-#### RoboCasa  ·  _238 results_
+#### RoboCasa  ·  _239 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -253,11 +253,12 @@ _Model identity = (model, training data); same name on different data is a disti
 | Wan-T2V | T2V Motion Transfer | Flow-Err | 103.26 | 3rd-party |
 | TTM | Cut & Drag | Flow-Err | 102.39 | 3rd-party |
 
-#### AgiBot / GENIE  ·  _64 results_
+#### AgiBot / GENIE  ·  _68 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | NebulaVLA-Homo | — | avg inference latency | 115.0 | authors |
+| V-Link _(AGIBOT A3 Ultra teleoperation data)_ | Autonomous Power-On | success rate | 98.0 | authors |
 | Egocentric (ours) _(HumanNet (egocentric portion, 5000h subset))_ | Seen tasks (in-distribution) | success rate | 92.5 | authors |
 | NebulaVLA-Heter | Packaging Line Material Feeding | success rate | 92.5 | authors |
 | Reward as an Agent | — | Overall Accuracy | 91.0 | authors |
@@ -265,8 +266,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | NebulaVLA-Homo | Packaging Line Material Feeding | success rate | 90.0 | authors |
 | PAIWorld _(AgiBot-World, RoboMIND, Galaxea, RoboTwin, RoboCOIN (2.5M clips))_ | — | EWMScore | 82.45 | authors |
 | InternVLA-M1 | — | avg inference latency | 81.0 | 3rd-party |
-| InternVLA-M1 | Pick-and-Place | success rate | 77.91 | 3rd-party |
-| π0.5 + language memory (Genie Sim) | single-package sorting | average stage success rate | 63.9 | authors |
+| GR00T-N1.6 _(AGIBOT A3 Ultra teleoperation data)_ | Autonomous Power-On | success rate | 78.0 | authors |
 
 #### Habitat  ·  _19 results_
 
@@ -312,6 +312,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | ReWorld _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 270.4 | authors |
 | Diffusion (calibrated) - AnchoredVAEDiT | future frame prediction | FID | 162.5 | authors |
 | DrivingGPT | video generation | FVD | 142.6 | 3rd-party |
+
+#### DAVIS  ·  _123 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Image Conductor | joint object and camera control | EPE | 91.64 | 3rd-party |
+| Ours VAE _(in-house synthetic dataset)_ | reconstruction | VBench Total | 82.93 | authors |
+| LightX2V VAE | reconstruction | VBench Total | 82.44 | authors |
+| Go-With-The-Flow | joint object and camera control | EPE | 41.99 | 3rd-party |
+| Diffusion-As-Shader | joint object and camera control | EPE | 40.23 | 3rd-party |
+| 4DStreamCtrl Teacher _(OpenVidHD-Motion3D)_ | streaming efficiency | Latency | 34.92 | authors |
+| 4DStreamCtrl Causal _(OpenVidHD-Motion3D)_ | streaming efficiency | Memory | 31.8 | authors |
+| 4DStreamCtrl Teacher _(OpenVidHD-Motion3D)_ | streaming efficiency | Memory | 23.9 | authors |
+| 4DStreamCtrl Causal _(OpenVidHD-Motion3D)_ | joint object and camera control | FPS | 20.6 | authors |
+| 4DStreamCtrl Causal _(OpenVidHD-Motion3D)_ | streaming efficiency | Throughput | 20.6 | authors |
 
 #### PushT  ·  _110 results_
 
@@ -463,21 +478,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | LeapTalk (Lite) _(VividHead)_ | — | FVD | 285.0 | authors |
 | LeapTalk (Pro) _(VividHead)_ | — | FVD | 197.0 | authors |
 
-#### DAVIS  ·  _77 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Ours VAE _(in-house synthetic dataset)_ | reconstruction | VBench Total | 82.93 | authors |
-| LightX2V VAE | reconstruction | VBench Total | 82.44 | authors |
-| TrajectoryCrafter | 10 ReCamMaster camera trajectory types | RotErr | 10.434 | 3rd-party |
-| CogNVS | 10 ReCamMaster camera trajectory types | RotErr | 6.9499 | 3rd-party |
-| Recammaster _(synthetic (Unreal Engine))_ | 10 ReCamMaster camera trajectory types | RotErr | 2.3175 | 3rd-party |
-| Redirector _(synthetic)_ | 10 ReCamMaster camera trajectory types, speed=2.0 | RotErr | 1.9246 | 3rd-party |
-| Ours _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types, speed=2.0 | RotErr | 1.8821 | authors |
-| MVTrack4Gen ReCamMaster _(Kubric + MultiCamVideo)_ | — | mRotErr | 1.858 | authors |
-| MVTrack4Gen Redirector _(Kubric + MultiCamVideo)_ | — | mRotErr | 1.718 | authors |
-| Full reward (Geo-Align) _(CityWalk (conditioning) + OmniWorld (target trajectories, rescaled))_ | 10 ReCamMaster camera trajectory types | RotErr | 1.3895 | authors |
-
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
 - **ActionMap: Robot Policy Learning via Voxel Action Heatmap** — ActionMap replaces the unstructured single-point action decoder in VLA models with a voxel heatmap action head that predicts a probability distribution over a discretized 3D action space, explicitly exploiting the geometric proximity of neighboring actions rather than treating the action space as unstructured… _(→ WAM: In World Action Models, the action conditioning mechanism is critical for predicting how actions transform world states. The voxel heatmap representation can transfer in two ways: (1) as a structured action encoding input to the world model—replacing flat…)_ [abs](https://arxiv.org/abs/2606.06904) · [pdf](https://arxiv.org/pdf/2606.06904v1) · [code](https://github.com/showlab/ActionMap)
@@ -539,7 +539,13 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Nan Duan](https://www.semanticscholar.org/author/2360369479)** (6 papers) — Nan Duan's research focuses on advancing video generation, world models, and generative modeling, particularly for long-duration, real-time, and memory-efficient autoregressive video generation, as well as few-step flow matching and embodied data…
 
 ## 📰 Embodied / Physical-AI News
+- [Teradyne Robotics ramps up fight against cobot copycats](https://www.therobotreport.com/teradyne-robotics-sues-another-chinese-cobot-maker/) — _The Robot Report_
+- [NSF to invest $90M into three new technology centers, including one focused on robotics](https://www.therobotreport.com/nsf-invests-90m-three-new-technology-centers-including-one-focused-robotics/) — _The Robot Report_
+- [Carbon Robotics partners with iMerit to power instant in-field AI customization](https://www.therobotreport.com/carbon-robotics-partners-with-imerit-to-power-instant-in-field-ai-customization/) — _The Robot Report_
 - [Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers](https://huggingface.co/blog/train-multi-vector-encoder) — _Hugging Face - Blog_
+- [Gatik brings in $200M to continue expanding autonomous trucking operations](https://www.therobotreport.com/gatik-brings-in-200m-to-continue-expanding-autonomous-trucking-operations/) — _The Robot Report_
+- [IDS Imaging adds Nion ToF sensor to its portfolio of 3D cameras](https://www.therobotreport.com/ids-imaging-adds-nion-tof-camera-portfolio-3d-cameras/) — _The Robot Report_
+- [Bedrock Robotics’ first operator-free excavator deployments take off](https://www.therobotreport.com/bedrock-robotics-first-operator-free-excavator-deployments-take-off/) — _The Robot Report_
 - [AI Companion Robots Are Closing the Human Connection in Modern Homes](https://spectrum.ieee.org/ollobot-ai-companion-robot) — _IEEE Spectrum_
 - [Quantization-Aware Healing: a compressed, 4-bit model that outperforms its full-precision original](https://huggingface.co/blog/MultiverseComputingCAI/quantization-aware-healing) — _Hugging Face - Blog_
 - [Wire It, Run It, Deploy It: AI Workflows in Gradio](https://huggingface.co/blog/gradio-workflow-guide) — _Hugging Face - Blog_
@@ -548,12 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Jetson Orin Nano 2 doubles inference performance for robotics on the edge, says NVIDIA](https://www.therobotreport.com/jetson-orin-nano-2-doubles-inference-performance-robotics-edge-says-nvidia/) — _The Robot Report_
 - [Granite 4.2 LLMs: How They're Built](https://huggingface.co/blog/ibm-granite/granite-4-2) — _Hugging Face - Blog_
 - [The next big AI play isn’t apps or humanoids; it’s machines with brains and brawn](https://www.therobotreport.com/the-next-big-ai-play-isnt-apps-or-humanoids-its-machines-with-brains-and-brawn/) — _The Robot Report_
-- [XPeng Motors humanoid robot unit Dogotix raises $900M](https://www.therobotreport.com/xpeng-motors-humanoid-robot-unit-dogotix-raises-900m/) — _The Robot Report_
-- [Use a digital twin to explore automation before committing capital](https://www.therobotreport.com/use-digital-twin-explore-automation-before-committing-capital/) — _The Robot Report_
-- [The technology that could bring robot mowers to one in two American lawns](https://www.therobotreport.com/technology-could-bring-robot-mowers-one-half-american-lawns/) — _The Robot Report_
-- [How software-defined manufacturing fits into real factory operations](https://www.therobotreport.com/how-software-defined-manufacturing-fits-into-real-factory-operations/) — _The Robot Report_
-- [Robots don’t run themselves: The workforce powering physical AI](https://www.therobotreport.com/robots-dont-run-themselves-workforce-powering-physical-ai/) — _The Robot Report_
-- [Measuring benchmark optimization in speech recognition](https://huggingface.co/blog/asr-benchmark-optimization) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
