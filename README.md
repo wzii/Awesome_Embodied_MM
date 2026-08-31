@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-30 · **Tracked:** 956 core · 782 adjacent ·
-432 news · **21577** benchmark rows across **8726** model
+**Last updated:** 2026-08-31 · **Tracked:** 960 core · 789 adjacent ·
+433 news · **21697** benchmark rows across **8781** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2733 results_
+#### LIBERO  ·  _2751 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _569 results_
+#### RoboTwin  ·  _571 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -163,7 +163,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0 + CamVLA | Mean | success rate | 51.4 | authors |
 | GR00T(arch) _(LIBERO-Spatial / RLBench-10Tasks)_ | Mean | success rate | 50.8 | authors |
 
-#### Meta-World  ·  _87 results_
+#### Meta-World  ·  _92 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -193,7 +193,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FORCE (π0) _(ManiSkill (offline + online))_ | — | success rate | 86.9 | authors |
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 
-#### RoboCasa  ·  _243 results_
+#### RoboCasa  ·  _245 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -238,7 +238,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | OCM | — | Steps | 34.5 | authors |
 | Reflexion | — | Success Rate | 30.6 | 3rd-party |
 
-#### VBench  ·  _1046 results_
+#### VBench  ·  _1051 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -298,7 +298,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _259 results_
+#### nuScenes  ·  _267 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -539,6 +539,7 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Nan Duan](https://www.semanticscholar.org/author/2360369479)** (6 papers) — Nan Duan's research focuses on advancing video generation, world models, and generative modeling, particularly for long-duration, real-time, and memory-efficient autoregressive video generation, as well as few-step flow matching and embodied data…
 
 ## 📰 Embodied / Physical-AI News
+- [Reframe Systems raises $40M to scale its robotic microfactories for home building](https://www.therobotreport.com/reframe-systems-raises-40m-scale-robotic-microfactories-home-building/) — _The Robot Report_
 - [The edge AI wall: Why embodied AI requires new mathematics](https://www.therobotreport.com/edge-ai-wall-why-embodied-ai-requires-new-mathematics/) — _The Robot Report_
 - [The differences between decentralized and centralized power in swarm robotics](https://www.therobotreport.com/differences-between-decentralized-centralized-power-swarm-robotics/) — _The Robot Report_
 - [Deere faces headwinds in Q3 update and announces Reservoir R&D partnership](https://www.therobotreport.com/deere-faces-headwinds-in-q3-update-and-announces-10m-reservoir-rd-partnership/) — _The Robot Report_
@@ -553,7 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers](https://huggingface.co/blog/train-multi-vector-encoder) — _Hugging Face - Blog_
 - [Gatik brings in $200M to continue expanding autonomous trucking operations](https://www.therobotreport.com/gatik-brings-in-200m-to-continue-expanding-autonomous-trucking-operations/) — _The Robot Report_
 - [IDS Imaging adds Nion ToF sensor to its portfolio of 3D cameras](https://www.therobotreport.com/ids-imaging-adds-nion-tof-camera-portfolio-3d-cameras/) — _The Robot Report_
-- [Bedrock Robotics’ first operator-free excavator deployments take off](https://www.therobotreport.com/bedrock-robotics-first-operator-free-excavator-deployments-take-off/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
