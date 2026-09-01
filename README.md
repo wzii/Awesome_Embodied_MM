@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-08-31 · **Tracked:** 960 core · 789 adjacent ·
-433 news · **21697** benchmark rows across **8781** model
+**Last updated:** 2026-09-01 · **Tracked:** 980 core · 804 adjacent ·
+441 news · **22087** benchmark rows across **8943** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2751 results_
+#### LIBERO  ·  _2799 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -99,11 +99,11 @@ _Model identity = (model, training data); same name on different data is a disti
 | SimpleVLA-RL _(LIBERO)_ | Long | iterations to 90% success rate | 2450.0 | authors |
 | vla.cpp | — | peak RSS | 2031.0 | authors |
 | vla.cpp | — | VRAM usage | 1312.0 | authors |
+| π0.5 _(LIBERO)_ | — | latency | 958.54 | 3rd-party |
 | CoT-VLA | — | Mean Latency | 892.0 | 3rd-party |
 | ConfidenceVLA | — | avg inference time | 712.9 | 3rd-party |
-| Agentic-VLA _(LIBERO)_ | Long | iterations to 90% success rate | 700.0 | authors |
 
-#### CALVIN  ·  _145 results_
+#### CALVIN  ·  _150 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _571 results_
+#### RoboTwin  ·  _585 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -193,7 +193,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FORCE (π0) _(ManiSkill (offline + online))_ | — | success rate | 86.9 | authors |
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 
-#### RoboCasa  ·  _245 results_
+#### RoboCasa  ·  _247 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -223,22 +223,22 @@ _Model identity = (model, training data); same name on different data is a disti
 | BaseVLA _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 75.37 | authors |
 | OpenVLA + RL | speed steering | success rate | 48.9 | authors |
 
-#### ALFWorld  ·  _21 results_
+#### ALFWorld  ·  _29 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | GIGPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 90.4 | authors |
+| Online WMSFT _(ALFWorld)_ | — | success rate | 90.4 | authors |
+| KnOTS(V) _(ALFWorld)_ | — | success rate | 87.8 | authors |
+| WMRL->PRL _(ALFWorld)_ | — | success rate | 87.0 | authors |
+| PRL _(ALFWorld)_ | — | success rate | 84.6 | authors |
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
+| WMSFT->PRL _(ALFWorld)_ | — | success rate | 66.4 | authors |
 | Qwen3-8B (MEMWM+Skill) | Overall | task success | 65.24 | authors |
 | Expel | — | Success Rate | 60.1 | 3rd-party |
 | Qwen2.5-7B (MEMWM+Skill) | Overall | task success | 57.27 | authors |
-| Qwen2.5-7B (WM - SFT) | Overall | task success | 49.05 | authors |
-| OCM | — | Success Rate | 41.7 | authors |
-| AWM | — | Success Rate | 37.3 | 3rd-party |
-| OCM | — | Steps | 34.5 | authors |
-| Reflexion | — | Success Rate | 30.6 | 3rd-party |
 
-#### VBench  ·  _1051 results_
+#### VBench  ·  _1080 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -298,7 +298,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _267 results_
+#### nuScenes  ·  _283 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -327,6 +327,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | 4DStreamCtrl Teacher _(OpenVidHD-Motion3D)_ | streaming efficiency | Memory | 23.9 | authors |
 | 4DStreamCtrl Causal _(OpenVidHD-Motion3D)_ | joint object and camera control | FPS | 20.6 | authors |
 | 4DStreamCtrl Causal _(OpenVidHD-Motion3D)_ | streaming efficiency | Throughput | 20.6 | authors |
+
+#### NAVSIM  ·  _111 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
+| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | NC (no at-fault collision) | 99.4 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
+| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
+| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | TTC (time-to-collision) | 98.5 | authors |
+| S2-VLA _(ReCogDrive VQA + NAVSIM)_ | — | NC | 98.4 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
+| ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
+| RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
 
 #### PushT  ·  _110 results_
 
@@ -357,21 +372,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | Cloak-VLA _(DROID)_ | Task Average | task progression rate | 88.0 | authors |
 | LAP-VLA | Task Average | task progression rate | 87.9 | 3rd-party |
 | G0.5 _(pretrained on robot datasets + VQA, then post-trained on DROID)_ | — | success rate | 82.5 | authors |
-
-#### NAVSIM  ·  _100 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
-| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | NC (no at-fault collision) | 99.4 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
-| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
-| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | TTC (time-to-collision) | 98.5 | authors |
-| S2-VLA _(ReCogDrive VQA + NAVSIM)_ | — | NC | 98.4 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
-| ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
-| RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
 
 #### SafeSora  ·  _99 results_
 
@@ -433,20 +433,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | AnchorVLA _(PDM-Lite)_ | — | Driving Score | 89.92 | authors |
 | TakeVLA _(PDM-Lite)_ | — | driving score | 89.72 | 3rd-party |
 
-#### NAVSIM v1  ·  _85 results_
+#### NAVSIM v1  ·  _93 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | UNIVERSE w.o. Mask _(NAVSIM v1)_ | — | inference latency | 1623.0 | authors |
 | UNIVERSE Two-DiT _(NAVSIM v1)_ | — | inference latency | 551.0 | authors |
+| AMPT _(NAVSIM)_ | failure recovery | recovered scenes | 440.0 | authors |
 | UNIVERSE _(NAVSIM v1)_ | — | inference latency | 376.0 | authors |
+| Original GRPO _(NAVSIM)_ | failure recovery | recovered scenes | 367.0 | authors |
 | Full-depth planner _(NAVSIM)_ | — | end-to-end planning latency | 320.0 | authors |
 | Fixed B15 (single trajectory) _(NAVSIM)_ | — | end-to-end planning latency | 190.0 | authors |
 | Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | DAC | 98.2 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | TTC | 96.8 | authors |
 
 #### T2VSafetyBench  ·  _84 results_
 
@@ -539,21 +539,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Nan Duan](https://www.semanticscholar.org/author/2360369479)** (6 papers) — Nan Duan's research focuses on advancing video generation, world models, and generative modeling, particularly for long-duration, real-time, and memory-efficient autoregressive video generation, as well as few-step flow matching and embodied data…
 
 ## 📰 Embodied / Physical-AI News
+- [Learn how physical AI is being used to do real work at RoboBusiness](https://www.therobotreport.com/learn-how-physical-ai-is-being-used-to-do-real-work-at-robobusiness/) — _The Robot Report_
+- [Visko launches Orbis live model and closes pre-seed funding round](https://www.therobotreport.com/visko-launches-orbis-live-model-closes-pre-seed-funding-round/) — _The Robot Report_
+- [The Missing Layer in Robot Safety Assurance](https://www.therobotreport.com/the-missing-layer-in-robot-safety-assurance/) — _The Robot Report_
+- [HowToRobot and Robotics Australia Group partner on platform to encourage robot adoption](https://www.therobotreport.com/howtorobot-robotics-australia-group-partner-platform-encourage-robot-adoption/) — _The Robot Report_
+- [From spreadsheets to AI: Deere gives farmers new features in Operations Center, JD](https://www.therobotreport.com/from-spreadsheets-ai-john-deeres-new-jd-operations-center-features/) — _The Robot Report_
+- [Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI](https://huggingface.co/blog/webgpu-kernels) — _Hugging Face - Blog_
 - [Reframe Systems raises $40M to scale its robotic microfactories for home building](https://www.therobotreport.com/reframe-systems-raises-40m-scale-robotic-microfactories-home-building/) — _The Robot Report_
+- [Skild AI unveils S1 flagship robot foundation model](https://www.therobotreport.com/skild-ai-unveils-s1-flagship-robot-foundation-model/) — _The Robot Report_
+- [How better grippers can unlock physical AI](https://www.therobotreport.com/how-better-grippers-can-unlock-physical-ai/) — _The Robot Report_
 - [The edge AI wall: Why embodied AI requires new mathematics](https://www.therobotreport.com/edge-ai-wall-why-embodied-ai-requires-new-mathematics/) — _The Robot Report_
 - [The differences between decentralized and centralized power in swarm robotics](https://www.therobotreport.com/differences-between-decentralized-centralized-power-swarm-robotics/) — _The Robot Report_
 - [Deere faces headwinds in Q3 update and announces Reservoir R&D partnership](https://www.therobotreport.com/deere-faces-headwinds-in-q3-update-and-announces-10m-reservoir-rd-partnership/) — _The Robot Report_
 - [EXL acquires physical AI model developer iMerit](https://www.therobotreport.com/exl-acquires-physical-ai-model-developer-imerit/) — _The Robot Report_
 - [How Locus is getting a grasp on one of robotics biggest challenges: manipulation](https://www.therobotreport.com/locus-getting-grasp-one-robotics-biggest-challenges-manipulation/) — _The Robot Report_
 - [Video Friday: Meet Microduck](https://spectrum.ieee.org/video-friday-microduck-robot) — _IEEE Spectrum_
-- [The Open ASR Leaderboard Adds Its First Global South Language](https://huggingface.co/blog/open-asr-leaderboard-global-south) — _Hugging Face - Blog_
-- [From teach and repeat to SelfPath AI: The next robotics leap](https://www.therobotreport.com/from-teach-repeat-to-selfpath-ai-next-robotics-leap/) — _The Robot Report_
-- [Teradyne Robotics ramps up fight against cobot copycats](https://www.therobotreport.com/teradyne-robotics-sues-another-chinese-cobot-maker/) — _The Robot Report_
-- [NSF to invest $90M into three new technology centers, including one focused on robotics](https://www.therobotreport.com/nsf-invests-90m-three-new-technology-centers-including-one-focused-robotics/) — _The Robot Report_
-- [Carbon Robotics partners with iMerit to power instant in-field AI customization](https://www.therobotreport.com/carbon-robotics-partners-with-imerit-to-power-instant-in-field-ai-customization/) — _The Robot Report_
-- [Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers](https://huggingface.co/blog/train-multi-vector-encoder) — _Hugging Face - Blog_
-- [Gatik brings in $200M to continue expanding autonomous trucking operations](https://www.therobotreport.com/gatik-brings-in-200m-to-continue-expanding-autonomous-trucking-operations/) — _The Robot Report_
-- [IDS Imaging adds Nion ToF sensor to its portfolio of 3D cameras](https://www.therobotreport.com/ids-imaging-adds-nion-tof-camera-portfolio-3d-cameras/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
