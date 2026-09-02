@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-09-01 · **Tracked:** 980 core · 804 adjacent ·
-441 news · **22087** benchmark rows across **8943** model
+**Last updated:** 2026-09-02 · **Tracked:** 991 core · 808 adjacent ·
+445 news · **22201** benchmark rows across **9015** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -50,6 +50,7 @@ variants · **30** authors
 | **7.66** | Cosmos 3: Omnimodal World Models for Physical AI | 2026-06-01 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.02800) · [pdf](https://arxiv.org/pdf/2606.02800v1) · [code](https://github.com/nvidia/cosmos) |
 | **7.66** | Multiplayer Interactive World Models with Representation Autoencoders | 2026-07-06 | spd 7 · gen 2 · spec 8 · cost 2 | [abs](https://arxiv.org/abs/2607.05352) · [pdf](https://arxiv.org/pdf/2607.05352v1) · [code](https://github.com/mira-wm/mira) |
 | **7.66** | GlanceWAM: Sparse Test-Time Imagination for World-Action Models | 2026-08-25 | spd 8 · gen 6 · spec 7 · cost 5 | [abs](https://arxiv.org/abs/2608.23927) · [pdf](https://arxiv.org/pdf/2608.23927v1) · [code](https://github.com/linhanwang/GlanceWAM) |
+| **7.65** | ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training | 2026-08-31 | spd 8 · gen 8 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2609.00188) · [pdf](https://arxiv.org/pdf/2609.00188v1) · [code](https://github.com/ZimaBlue-WAM/ZimaBlue) |
 | **7.64** | Foresight Without Seeing: Latent Futures for World Action Models | 2026-08-12 | spd 5 · gen 4 · spec 9 · cost 6 | [abs](https://arxiv.org/abs/2608.11605) · [pdf](https://arxiv.org/pdf/2608.11605v1) |
 | **7.63** | Latent Action as Intention Enables Efficient Future Imagination for World Action Models | 2026-08-25 | spd 7 · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.24882) · [pdf](https://arxiv.org/pdf/2608.24882v1) |
 | **7.61** | AHA-WAM:Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing | 2026-06-08 | spd 8 · gen 3 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.09811) · [pdf](https://arxiv.org/pdf/2606.09811v1) |
@@ -80,7 +81,6 @@ variants · **30** authors
 | **7.46** | Afford-VLA: Action-Aligned Visual Planning via Internalized Affordance | 2026-05-22 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2605.24203) · [pdf](https://arxiv.org/pdf/2605.24203v1) |
 | **7.46** | WALA Learning Executable Latent Actions from Action-Labeled Demonstrations and Action-Free Videos | 2026-07-13 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.11397) · [pdf](https://arxiv.org/pdf/2607.11397v1) |
 | **7.45** | QPILOTS: Efficient Test-Time Q-Steering for Flow Policies | 2026-06-11 | spd – · gen 6 · spec 8 · cost 4 | [abs](https://arxiv.org/abs/2606.14801) · [pdf](https://arxiv.org/pdf/2606.14801v1) |
-| **7.45** | Flex-$π$: A Multi-Stream World-Action Model with Compute Flexibility | 2026-08-11 | spd 6 · gen 5 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2608.10860) · [pdf](https://arxiv.org/pdf/2608.10860v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2799 results_
+#### LIBERO  ·  _2803 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _585 results_
+#### RoboTwin  ·  _591 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -223,7 +223,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | BaseVLA _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 75.37 | authors |
 | OpenVLA + RL | speed steering | success rate | 48.9 | authors |
 
-#### ALFWorld  ·  _29 results_
+#### ALFWorld  ·  _37 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -235,8 +235,8 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | WMSFT->PRL _(ALFWorld)_ | — | success rate | 66.4 | authors |
 | Qwen3-8B (MEMWM+Skill) | Overall | task success | 65.24 | authors |
-| Expel | — | Success Rate | 60.1 | 3rd-party |
-| Qwen2.5-7B (MEMWM+Skill) | Overall | task success | 57.27 | authors |
+| ReflAct + BB-WM | — | SR@1 | 65.2 | authors |
+| ReflAct + Belief | — | SR@1 | 63.4 | authors |
 
 #### VBench  ·  _1080 results_
 
@@ -298,7 +298,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _283 results_
+#### nuScenes  ·  _291 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -539,21 +539,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Nan Duan](https://www.semanticscholar.org/author/2360369479)** (6 papers) — Nan Duan's research focuses on advancing video generation, world models, and generative modeling, particularly for long-duration, real-time, and memory-efficient autoregressive video generation, as well as few-step flow matching and embodied data…
 
 ## 📰 Embodied / Physical-AI News
+- [AIR to use Elmo Motion Control technology in uncrewed cargo aircraft](https://www.therobotreport.com/air-uses-elmo-motion-control-technology-in-uncrewed-cargo-aircraft/) — _The Robot Report_
+- [Real-Time Intelligence with IBM Time Series Models on Confluent](https://huggingface.co/blog/ibm-research/real-time-intelligence) — _Hugging Face - Blog_
 - [Learn how physical AI is being used to do real work at RoboBusiness](https://www.therobotreport.com/learn-how-physical-ai-is-being-used-to-do-real-work-at-robobusiness/) — _The Robot Report_
 - [Visko launches Orbis live model and closes pre-seed funding round](https://www.therobotreport.com/visko-launches-orbis-live-model-closes-pre-seed-funding-round/) — _The Robot Report_
 - [The Missing Layer in Robot Safety Assurance](https://www.therobotreport.com/the-missing-layer-in-robot-safety-assurance/) — _The Robot Report_
 - [HowToRobot and Robotics Australia Group partner on platform to encourage robot adoption](https://www.therobotreport.com/howtorobot-robotics-australia-group-partner-platform-encourage-robot-adoption/) — _The Robot Report_
 - [From spreadsheets to AI: Deere gives farmers new features in Operations Center, JD](https://www.therobotreport.com/from-spreadsheets-ai-john-deeres-new-jd-operations-center-features/) — _The Robot Report_
 - [Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI](https://huggingface.co/blog/webgpu-kernels) — _Hugging Face - Blog_
+- [Top 10 robotics stories of August 2026](https://www.therobotreport.com/top-10-robotics-stories-of-august-2026/) — _The Robot Report_
+- [BenchMIRT: What are LLM benchmarks actually measuring?](https://huggingface.co/blog/allenai/benchmirt) — _Hugging Face - Blog_
 - [Reframe Systems raises $40M to scale its robotic microfactories for home building](https://www.therobotreport.com/reframe-systems-raises-40m-scale-robotic-microfactories-home-building/) — _The Robot Report_
 - [Skild AI unveils S1 flagship robot foundation model](https://www.therobotreport.com/skild-ai-unveils-s1-flagship-robot-foundation-model/) — _The Robot Report_
 - [How better grippers can unlock physical AI](https://www.therobotreport.com/how-better-grippers-can-unlock-physical-ai/) — _The Robot Report_
 - [The edge AI wall: Why embodied AI requires new mathematics](https://www.therobotreport.com/edge-ai-wall-why-embodied-ai-requires-new-mathematics/) — _The Robot Report_
 - [The differences between decentralized and centralized power in swarm robotics](https://www.therobotreport.com/differences-between-decentralized-centralized-power-swarm-robotics/) — _The Robot Report_
-- [Deere faces headwinds in Q3 update and announces Reservoir R&D partnership](https://www.therobotreport.com/deere-faces-headwinds-in-q3-update-and-announces-10m-reservoir-rd-partnership/) — _The Robot Report_
-- [EXL acquires physical AI model developer iMerit](https://www.therobotreport.com/exl-acquires-physical-ai-model-developer-imerit/) — _The Robot Report_
-- [How Locus is getting a grasp on one of robotics biggest challenges: manipulation](https://www.therobotreport.com/locus-getting-grasp-one-robotics-biggest-challenges-manipulation/) — _The Robot Report_
-- [Video Friday: Meet Microduck](https://spectrum.ieee.org/video-friday-microduck-robot) — _IEEE Spectrum_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
