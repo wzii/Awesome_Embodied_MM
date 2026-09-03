@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-09-02 · **Tracked:** 991 core · 808 adjacent ·
-445 news · **22201** benchmark rows across **9015** model
+**Last updated:** 2026-09-03 · **Tracked:** 1001 core · 814 adjacent ·
+455 news · **22403** benchmark rows across **9123** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2803 results_
+#### LIBERO  ·  _2806 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _591 results_
+#### RoboTwin  ·  _599 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -193,7 +193,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FORCE (π0) _(ManiSkill (offline + online))_ | — | success rate | 86.9 | authors |
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 
-#### RoboCasa  ·  _247 results_
+#### RoboCasa  ·  _249 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -206,22 +206,22 @@ _Model identity = (model, training data); same name on different data is a disti
 | MiDAS _(1 demonstration)_ | — | success rate | 89.3 | authors |
 | X-WAM | Group average | success rate | 80.8 | authors |
 | Full action-cond. verifier _(Human300 + auxiliary rollouts)_ | perturbation study | timely recall | 77.9 | authors |
-| WALA _(RoboCasa-GR1-Tabletop)_ | — | average success rate | 75.2 | authors |
+| SA-WAM _(RoboCasa (50 demos per task))_ | — | success rate | 76.6 | authors |
 
-#### Open-X / RT  ·  _56 results_
+#### Open-X / RT  ·  _72 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
+| LAVLA (w/ PCA w/ weighted) _(Open-X-Embodiment)_ | — | CH Index | 1651.0 | authors |
+| LAVLA (w/ PCA) _(Open-X-Embodiment)_ | — | CH Index | 1063.9 | authors |
 | 4DNeX | 300 held-out trajectories | FVD | 818.0 | 3rd-party |
 | TesserAct | 300 held-out trajectories | FVD | 746.0 | 3rd-party |
 | Wan 2.1 14B | 300 held-out trajectories | FVD | 671.0 | 3rd-party |
+| LAVLA (baseline) _(Open-X-Embodiment)_ | — | CH Index | 402.12 | authors |
 | LVP | 300 held-out trajectories | FVD | 330.0 | 3rd-party |
 | PointAction _(BridgeData V2 + DROID (filtered ~75K clips))_ | 300 held-out trajectories | FVD | 320.0 | authors |
 | VisualThink-VLA _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 89.49 | authors |
 | FullSoft _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 88.45 | authors |
-| ECoT | — | success rate | 85.09 | 3rd-party |
-| BaseVLA _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 75.37 | authors |
-| OpenVLA + RL | speed steering | success rate | 48.9 | authors |
 
 #### ALFWorld  ·  _37 results_
 
@@ -539,21 +539,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Nan Duan](https://www.semanticscholar.org/author/2360369479)** (6 papers) — Nan Duan's research focuses on advancing video generation, world models, and generative modeling, particularly for long-duration, real-time, and memory-efficient autoregressive video generation, as well as few-step flow matching and embodied data…
 
 ## 📰 Embodied / Physical-AI News
+- [NVIDIA plans to acquire Hugging Face and keep AI development platform open](https://www.therobotreport.com/nvidia-to-acquire-hugging-face-and-keep-ai-develpment-platform-open/) — _The Robot Report_
+- [PlusAI to take autonomous trucking public via a SPAC deal](https://www.therobotreport.com/plusai-takes-autonomous-trucking-public-via-spac-deal/) — _The Robot Report_
+- [Protecting Dynamic Industrial Robot Cable Carriers](https://spectrum.ieee.org/industrial-robot-cable-carrier-protection) — _IEEE Spectrum_
+- [The Best Way to Explore Lunar Craters Is a Giant Robot Ball](https://spectrum.ieee.org/moon-ball-robot) — _IEEE Spectrum_
+- [NeoMME: an efficient Multimodal-native and Multilingual Encoder](https://huggingface.co/blog/Hcompany/neomme) — _Hugging Face - Blog_
+- [Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps](https://huggingface.co/blog/grpo-with-trl-ifstruct) — _Hugging Face - Blog_
+- [Give Your Coding Agents a Memory You Own](https://huggingface.co/blog/funes) — _Hugging Face - Blog_
+- [Training a coding model to paint watercolours with TRL and OpenEnv](https://huggingface.co/blog/train-to-paint-with-code) — _Hugging Face - Blog_
 - [AIR to use Elmo Motion Control technology in uncrewed cargo aircraft](https://www.therobotreport.com/air-uses-elmo-motion-control-technology-in-uncrewed-cargo-aircraft/) — _The Robot Report_
 - [Real-Time Intelligence with IBM Time Series Models on Confluent](https://huggingface.co/blog/ibm-research/real-time-intelligence) — _Hugging Face - Blog_
+- [NexCOBOT discusses physical AI market hurdles and acceleration](https://www.therobotreport.com/nexcobot-discusses-physical-ai-market-hurdles-and-acceleration/) — _The Robot Report_
+- [Learn why food is physical AI’s hardest problem at RoboBusiness](https://www.therobotreport.com/learn-why-food-is-physical-ai-hardest-problem-chef-robotics-robobusiness/) — _The Robot Report_
 - [Learn how physical AI is being used to do real work at RoboBusiness](https://www.therobotreport.com/learn-how-physical-ai-is-being-used-to-do-real-work-at-robobusiness/) — _The Robot Report_
 - [Visko launches Orbis live model and closes pre-seed funding round](https://www.therobotreport.com/visko-launches-orbis-live-model-closes-pre-seed-funding-round/) — _The Robot Report_
 - [The Missing Layer in Robot Safety Assurance](https://www.therobotreport.com/the-missing-layer-in-robot-safety-assurance/) — _The Robot Report_
-- [HowToRobot and Robotics Australia Group partner on platform to encourage robot adoption](https://www.therobotreport.com/howtorobot-robotics-australia-group-partner-platform-encourage-robot-adoption/) — _The Robot Report_
-- [From spreadsheets to AI: Deere gives farmers new features in Operations Center, JD](https://www.therobotreport.com/from-spreadsheets-ai-john-deeres-new-jd-operations-center-features/) — _The Robot Report_
-- [Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI](https://huggingface.co/blog/webgpu-kernels) — _Hugging Face - Blog_
-- [Top 10 robotics stories of August 2026](https://www.therobotreport.com/top-10-robotics-stories-of-august-2026/) — _The Robot Report_
-- [BenchMIRT: What are LLM benchmarks actually measuring?](https://huggingface.co/blog/allenai/benchmirt) — _Hugging Face - Blog_
-- [Reframe Systems raises $40M to scale its robotic microfactories for home building](https://www.therobotreport.com/reframe-systems-raises-40m-scale-robotic-microfactories-home-building/) — _The Robot Report_
-- [Skild AI unveils S1 flagship robot foundation model](https://www.therobotreport.com/skild-ai-unveils-s1-flagship-robot-foundation-model/) — _The Robot Report_
-- [How better grippers can unlock physical AI](https://www.therobotreport.com/how-better-grippers-can-unlock-physical-ai/) — _The Robot Report_
-- [The edge AI wall: Why embodied AI requires new mathematics](https://www.therobotreport.com/edge-ai-wall-why-embodied-ai-requires-new-mathematics/) — _The Robot Report_
-- [The differences between decentralized and centralized power in swarm robotics](https://www.therobotreport.com/differences-between-decentralized-centralized-power-swarm-robotics/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
