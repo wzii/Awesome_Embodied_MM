@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-09-09 · **Tracked:** 1053 core · 854 adjacent ·
-477 news · **23280** benchmark rows across **9462** model
+**Last updated:** 2026-09-10 · **Tracked:** 1064 core · 858 adjacent ·
+481 news · **23571** benchmark rows across **9604** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2902 results_
+#### LIBERO  ·  _2955 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _619 results_
+#### RoboTwin  ·  _621 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -133,7 +133,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | HY-VLA | place_empty_cup | success rate | 100.0 | authors |
 | π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
 
-#### SimplerEnv  ·  _270 results_
+#### SimplerEnv  ·  _278 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -193,7 +193,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FORCE (π0) _(ManiSkill (offline + online))_ | — | success rate | 86.9 | authors |
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 
-#### RoboCasa  ·  _252 results_
+#### RoboCasa  ·  _256 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -253,7 +253,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GWTF | Cut & Drag | Flow-Err | 152.81 | 3rd-party |
 | PTQ4DiT | — | FVD-FP | 124.2 | authors |
 
-#### AgiBot / GENIE  ·  _68 results_
+#### AgiBot / GENIE  ·  _72 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -539,8 +539,12 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Nan Duan](https://www.semanticscholar.org/author/2360369479)** (6 papers) — Nan Duan's research focuses on advancing video generation, world models, and generative modeling, particularly for long-duration, real-time, and memory-efficient autoregressive video generation, as well as few-step flow matching and embodied data…
 
 ## 📰 Embodied / Physical-AI News
+- [Rebuilding AUTOMATIC1111 with Gradio Workflow](https://huggingface.co/blog/gradio-workflow-1111) — _Hugging Face - Blog_
 - [Vention opens Physical AI Lab for manufacturing in Montreal](https://www.therobotreport.com/vention-opens-physical-ai-lab-manufacturing-montreal/) — _The Robot Report_
 - [IBM releases SOTA Granite Time Series PatchTST-FM-r2 model with commercial-friendly license](https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series) — _Hugging Face - Blog_
+- [What bricklaying has taught Monumental about robots in construction](https://www.therobotreport.com/what-bricklaying-has-taught-monumental-about-robots-construction/) — _The Robot Report_
+- [Unitree shares down 53% from IPO debut](https://www.therobotreport.com/unitree-shares-down-53-from-ipo-debut/) — _The Robot Report_
+- [AGIBOT to explain how to scale humanoids from the lab to the real world at RoboBusiness](https://www.therobotreport.com/agibot-share-plans-scale-humanoids-from-lab-to-real-world-at-robobusiness/) — _The Robot Report_
 - [Safety for Whom? Refusing the Right Subset of a Topic, Not the Whole Topic](https://huggingface.co/blog/MultiverseComputingCAI/safety-for-whom) — _Hugging Face - Blog_
 - [Boston Dynamics veteran launches Dynamic Creatures to bring characters to life with robotics](https://www.therobotreport.com/boston-dynamics-veterans-launch-dynamic-creatures-to-bring-characters-to-life-with-robotics/) — _The Robot Report_
 - [AI can’t outrun a humanoid’s hardware](https://www.therobotreport.com/ai-cant-outrun-a-humanoids-hardware/) — _The Robot Report_
@@ -550,10 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [MassRobotics shares member survey results around FCC restrictions](https://www.therobotreport.com/massrobotics-shares-member-survey-results-around-fcc-restrictions/) — _The Robot Report_
 - [This Robot Will Draw Your Blood Now](https://spectrum.ieee.org/blood-draw-robot-vitestro-aletta) — _IEEE Spectrum_
 - [Eric Sivertson discusses FPGAs and robot security](https://www.therobotreport.com/eric-sivertson-discusses-fpgas-robot-security/) — _The Robot Report_
-- [Pressure sensors can help improve robotic gripping accuracy](https://www.therobotreport.com/pressure-sensors-can-help-improve-robotic-gripping-accuracy/) — _The Robot Report_
-- [ARM Institute gets $90M for 10 projects to modernize military manufacturing](https://www.therobotreport.com/arm-institute-gets-90m-for-10-projects-to-modernize-military-manufacturing/) — _The Robot Report_
-- [Enovis to acquire surgical tech provider eCential Robotics for $180M](https://www.therobotreport.com/enovis-to-acquire-ecential-robotics-for-180m/) — _The Robot Report_
-- [Cyborg Roaches Can Stab You With Needles](https://spectrum.ieee.org/cyborg-rescue-roach) — _IEEE Spectrum_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
