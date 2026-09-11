@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-09-10 · **Tracked:** 1064 core · 858 adjacent ·
-481 news · **23571** benchmark rows across **9604** model
+**Last updated:** 2026-09-11 · **Tracked:** 1069 core · 869 adjacent ·
+488 news · **23717** benchmark rows across **9678** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -31,6 +31,7 @@ variants · **30** authors
 ## 🏆 Top World Action Model Papers
 | Score | Paper | Published | Top-4 (spd·gen·spec·cost) | Links |
 |------:|-------|-----------|---------------------------|-------|
+| **8.31** | IMLE-VLA: Fast Single-Step Action Generation for Vision-Language-Action Policies | 2026-09-10 | spd 9 · gen 7 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2609.10915) · [pdf](https://arxiv.org/pdf/2609.10915v1) |
 | **8.23** | Flash-WAM: Modality-Aware Distillation for World Action Models | 2026-06-03 | spd 9 · gen 6 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2606.05254) · [pdf](https://arxiv.org/pdf/2606.05254v1) |
 | **8.23** | VLA-Precision: Asymmetric Co-Bootstrapping for Efficient Real-World Online RL of Vision-Language-Action Models | 2026-09-03 | spd 8 · gen 6 · spec 9 · cost 7 | [abs](https://arxiv.org/abs/2609.04355) · [pdf](https://arxiv.org/pdf/2609.04355v1) |
 | **8.12** | TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM | 2026-07-29 | spd 9 · gen 3 · spec 8 · cost 9 | [abs](https://arxiv.org/abs/2607.27205) · [pdf](https://arxiv.org/pdf/2607.27205v1) · [code](https://github.com/H-EmbodVis/TurboVLA) |
@@ -80,7 +81,6 @@ variants · **30** authors
 | **7.49** | SV-WAM: An Efficient Surround-View World-Action Model for End-to-End Autonomous Driving | 2026-09-03 | spd 6 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2609.03602) · [pdf](https://arxiv.org/pdf/2609.03602v1) |
 | **7.48** | LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World | 2026-05-31 | spd – · gen 4 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.01458) · [pdf](https://arxiv.org/pdf/2606.01458v1) |
 | **7.48** | hint$^2$: Hierarchical World Models for Inference-Time Temporal Logic Guidance | 2026-08-13 | spd – · gen 4 · spec 8 · cost – | [abs](https://arxiv.org/abs/2608.13678) · [pdf](https://arxiv.org/pdf/2608.13678v1) |
-| **7.47** | DAM-VLA: Decoupled Asynchronous Multimodal Vision Language Action model | 2026-06-10 | spd 8 · gen 4 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.12105) · [pdf](https://arxiv.org/pdf/2606.12105v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2955 results_
+#### LIBERO  ·  _2981 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _621 results_
+#### RoboTwin  ·  _636 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -131,7 +131,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | HALO-WA _(online task-specific)_ | Beat Block Hammer | episode length | 213.7 | authors |
 | IRASim _(RoboTwin 2.0)_ | Overall | FVD | 126.2 | authors |
 | HY-VLA | place_empty_cup | success rate | 100.0 | authors |
-| π0.5 _(RoboTwin2.0)_ | Grab Roller | success rate | 98.6 | authors |
+| π0.5 Baseline | lift pot (PosCons) | Success Rate | 100.0 | 3rd-party |
 
 #### SimplerEnv  ·  _278 results_
 
@@ -193,7 +193,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FORCE (π0) _(ManiSkill (offline + online))_ | — | success rate | 86.9 | authors |
 | OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 
-#### RoboCasa  ·  _256 results_
+#### RoboCasa  ·  _257 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -238,7 +238,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ReflAct + BB-WM | — | SR@1 | 65.2 | authors |
 | ReflAct + Belief | — | SR@1 | 63.4 | authors |
 
-#### VBench  ·  _1141 results_
+#### VBench  ·  _1152 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -388,6 +388,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | LAP-VLA | Task Average | task progression rate | 87.9 | 3rd-party |
 | G0.5 _(pretrained on robot datasets + VQA, then post-trained on DROID)_ | — | success rate | 82.5 | authors |
 
+#### Real-world  ·  _100 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| InSight _(50 human scooping demonstrations + acquired lateral-push primitive)_ | sweeping | success rate | 100.0 | authors |
+| SAGE-SFT _(π0.5)_ | Place the green cube on the plate | Success rate | 100.0 | authors |
+| OASIS | Goal | success rate | 98.6 | authors |
+| InSight _(50 human pick-and-place demonstrations + 20 successful pour primitives)_ | pour beans into bowl | success rate | 96.0 | authors |
+| 3DThinkVLA (Ours) _(VLA data + 3D reasoning data (co-training))_ | Transparent container placement | success rate | 93.3 | authors |
+| InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
+| π0.5 | Place the green cube on the plate | Success rate | 90.0 | 3rd-party |
+| MaP-WAM _(Real-world custom tasks (50 trajectories per task))_ | Find Button | success rate | 88.0 | authors |
+| OrthoSkillVLA | Flip, Pick, Push, Press | Average success rate (%) | 86.25 | authors |
+| MaskWAM | language-ambiguous tasks (ID + OOD) | success rate | 84.9 | authors |
+
 #### NAVSIM v1  ·  _99 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -447,21 +462,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | Spatial cross-attn RO _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 17.12 | authors |
 | Spatial inject-none _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 15.5 | authors |
 | Spatial inject-none _(Context-as-Memory dataset)_ | replay | Replay PSNR | 14.66 | authors |
-
-#### Real-world  ·  _97 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| InSight _(50 human scooping demonstrations + acquired lateral-push primitive)_ | sweeping | success rate | 100.0 | authors |
-| SAGE-SFT _(π0.5)_ | Place the green cube on the plate | Success rate | 100.0 | authors |
-| OASIS | Goal | success rate | 98.6 | authors |
-| InSight _(50 human pick-and-place demonstrations + 20 successful pour primitives)_ | pour beans into bowl | success rate | 96.0 | authors |
-| 3DThinkVLA (Ours) _(VLA data + 3D reasoning data (co-training))_ | Transparent container placement | success rate | 93.3 | authors |
-| InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
-| π0.5 | Place the green cube on the plate | Success rate | 90.0 | 3rd-party |
-| OrthoSkillVLA | Flip, Pick, Push, Press | Average success rate (%) | 86.25 | authors |
-| MaskWAM | language-ambiguous tasks (ID + OOD) | success rate | 84.9 | authors |
-| π0.5 | Average (Goal, Spatial, Long) | success rate | 81.6 | 3rd-party |
 
 #### T2VSafetyBench  ·  _84 results_
 
@@ -539,7 +539,14 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Nan Duan](https://www.semanticscholar.org/author/2360369479)** (6 papers) — Nan Duan's research focuses on advancing video generation, world models, and generative modeling, particularly for long-duration, real-time, and memory-efficient autoregressive video generation, as well as few-step flow matching and embodied data…
 
 ## 📰 Embodied / Physical-AI News
+- [How to select the right rack and pinion system for high-precision linear motion](https://www.therobotreport.com/how-to-select-the-right-rack-and-pinion-system-for-high-precision-linear-motion/) — _The Robot Report_
+- [How drone developers are navigating changing regulatory landscapes to help farmers](https://www.therobotreport.com/how-hylio-drone-developers-navigate-changing-regulatory-landscape-help-farmers/) — _The Robot Report_
+- [Video Friday: Humanoid Robot Takes On Monkey Bars](https://spectrum.ieee.org/video-friday-disaster-response-robots) — _IEEE Spectrum_
 - [Rebuilding AUTOMATIC1111 with Gradio Workflow](https://huggingface.co/blog/gradio-workflow-1111) — _Hugging Face - Blog_
+- [Teradyne Robotics sues JAKA over 3 Universal Robots patents](https://www.therobotreport.com/teradyne-robotics-sues-jaka-over-3-universal-robots-patents/) — _The Robot Report_
+- [Swarmer to acquire Ukrainian UGV maker Ratel Robotics for up to $224M](https://www.therobotreport.com/swarmer-to-acquire-ukrainian-ugv-maker-ratel-robotics-for-up-to-224m/) — _The Robot Report_
+- [Comau automates picking, handling, and palletizing for Decathlon](https://www.therobotreport.com/comau-automates-picking-handling-and-palletizing-for-decathlon/) — _The Robot Report_
+- [Robots Are Learning to Feel](https://spectrum.ieee.org/tactile-data-robots) — _IEEE Spectrum_
 - [Vention opens Physical AI Lab for manufacturing in Montreal](https://www.therobotreport.com/vention-opens-physical-ai-lab-manufacturing-montreal/) — _The Robot Report_
 - [IBM releases SOTA Granite Time Series PatchTST-FM-r2 model with commercial-friendly license](https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series) — _Hugging Face - Blog_
 - [What bricklaying has taught Monumental about robots in construction](https://www.therobotreport.com/what-bricklaying-has-taught-monumental-about-robots-construction/) — _The Robot Report_
@@ -547,13 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [AGIBOT to explain how to scale humanoids from the lab to the real world at RoboBusiness](https://www.therobotreport.com/agibot-share-plans-scale-humanoids-from-lab-to-real-world-at-robobusiness/) — _The Robot Report_
 - [Safety for Whom? Refusing the Right Subset of a Topic, Not the Whole Topic](https://huggingface.co/blog/MultiverseComputingCAI/safety-for-whom) — _Hugging Face - Blog_
 - [Boston Dynamics veteran launches Dynamic Creatures to bring characters to life with robotics](https://www.therobotreport.com/boston-dynamics-veterans-launch-dynamic-creatures-to-bring-characters-to-life-with-robotics/) — _The Robot Report_
-- [AI can’t outrun a humanoid’s hardware](https://www.therobotreport.com/ai-cant-outrun-a-humanoids-hardware/) — _The Robot Report_
-- [Why vision AI is the safety backbone of the automated job site](https://www.therobotreport.com/why-vision-ai-is-safety-backbone-of-automated-job-site/) — _The Robot Report_
-- [Inbolt to discuss physical AI’s deployment problem at RoboBusiness](https://www.therobotreport.com/inbolt-ceo-to-discuss-physical-ais-deployment-problem-at-robobusiness/) — _The Robot Report_
-- [Agility Robotics reports $1.8M revenue ahead of humanoid SPAC](https://www.therobotreport.com/agility-robotics-reports-18m-revenue-ahead-of-humanoid-spac/) — _The Robot Report_
-- [MassRobotics shares member survey results around FCC restrictions](https://www.therobotreport.com/massrobotics-shares-member-survey-results-around-fcc-restrictions/) — _The Robot Report_
-- [This Robot Will Draw Your Blood Now](https://spectrum.ieee.org/blood-draw-robot-vitestro-aletta) — _IEEE Spectrum_
-- [Eric Sivertson discusses FPGAs and robot security](https://www.therobotreport.com/eric-sivertson-discusses-fpgas-robot-security/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
