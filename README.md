@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-09-15 · **Tracked:** 1069 core · 870 adjacent ·
-501 news · **23725** benchmark rows across **9683** model
+**Last updated:** 2026-09-16 · **Tracked:** 1113 core · 895 adjacent ·
+502 news · **24019** benchmark rows across **9822** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -74,13 +74,13 @@ variants · **30** authors
 | **7.53** | Reflex: Enabling Fast and Predictive Vision-Language-Action Models for Reaction-Critical Manipulation | 2026-08-14 | spd 8 · gen 4 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2608.14379) · [pdf](https://arxiv.org/pdf/2608.14379v1) |
 | **7.52** | World-Language-Action Model for Unified World Modeling, Language Reasoning, and Action Synthesis | 2026-06-04 | spd 8 · gen 7 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.05979) · [pdf](https://arxiv.org/pdf/2606.05979v1) · [code](https://github.com/SJTU-DENG-Lab/WLA) |
 | **7.52** | CompCPZ: Preserving Multi-Modal Intent in Language-Guided Robot Manipulation | 2026-08-18 | spd 8 · gen 5 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2608.17717) · [pdf](https://arxiv.org/pdf/2608.17717v1) |
+| **7.52** | What Makes an Efficient VLA? Navigating Action-Head Design, Scaling, and Latency | 2026-09-12 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2609.13984) · [pdf](https://arxiv.org/pdf/2609.13984v1) · [code](https://github.com/MindVLA-Team/EFFVLA) |
 | **7.51** | FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation | 2026-06-11 | spd – · gen 8 · spec 6 · cost – | [abs](https://arxiv.org/abs/2606.13102) · [pdf](https://arxiv.org/pdf/2606.13102v1) |
 | **7.49** | 3DThinkVLA: Endowing Vision-Language-Action Models with Latent 3D Priors via 3D-Thinking-Guided Co-training | 2026-06-03 | spd – · gen 6 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.04436) · [pdf](https://arxiv.org/pdf/2606.04436v1) |
 | **7.49** | $\texttt{WEAVER}$, Better, Faster, Longer: An Effective World Model for Robotic Manipulation | 2026-06-11 | spd 7 · gen 4 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.13672) · [pdf](https://arxiv.org/pdf/2606.13672v1) · [code](https://github.com/mseitzer/pytorch-fid) |
 | **7.49** | SimWAM: A Simple World Action Model for End-to-End Autonomous Driving | 2026-08-07 | spd 6 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2608.07468) · [pdf](https://arxiv.org/pdf/2608.07468v1) · [code](https://github.com/H-EmbodVis/SimWAM) |
 | **7.49** | SV-WAM: An Efficient Surround-View World-Action Model for End-to-End Autonomous Driving | 2026-09-03 | spd 6 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2609.03602) · [pdf](https://arxiv.org/pdf/2609.03602v1) |
-| **7.48** | LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World | 2026-05-31 | spd – · gen 4 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.01458) · [pdf](https://arxiv.org/pdf/2606.01458v1) |
-| **7.48** | hint$^2$: Hierarchical World Models for Inference-Time Temporal Logic Guidance | 2026-08-13 | spd – · gen 4 · spec 8 · cost – | [abs](https://arxiv.org/abs/2608.13678) · [pdf](https://arxiv.org/pdf/2608.13678v1) |
+| **7.49** | DIDO: Distilling Interaction-Centric Dynamics into One-Step Denoising for World Action Models | 2026-09-14 | spd 7 · gen 5 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2609.15570) · [pdf](https://arxiv.org/pdf/2609.15570v2) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _2981 results_
+#### LIBERO  ·  _3038 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _636 results_
+#### RoboTwin  ·  _646 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -208,7 +208,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GIFT-WAM-IDM | — | success rate | 82.3 | authors |
 | X-WAM | Group average | success rate | 80.8 | authors |
 
-#### Open-X / RT  ·  _72 results_
+#### Open-X / RT  ·  _73 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -313,20 +313,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | Diffusion (calibrated) - AnchoredVAEDiT | future frame prediction | FID | 162.5 | authors |
 | DrivingGPT | video generation | FVD | 142.6 | 3rd-party |
 
-#### DAVIS  ·  _123 results_
+#### DAVIS  ·  _141 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | Image Conductor | joint object and camera control | EPE | 91.64 | 3rd-party |
 | Ours VAE _(in-house synthetic dataset)_ | reconstruction | VBench Total | 82.93 | authors |
 | LightX2V VAE | reconstruction | VBench Total | 82.44 | authors |
-| Go-With-The-Flow | joint object and camera control | EPE | 41.99 | 3rd-party |
-| Diffusion-As-Shader | joint object and camera control | EPE | 40.23 | 3rd-party |
-| 4DStreamCtrl Teacher _(OpenVidHD-Motion3D)_ | streaming efficiency | Latency | 34.92 | authors |
-| 4DStreamCtrl Causal _(OpenVidHD-Motion3D)_ | streaming efficiency | Memory | 31.8 | authors |
-| 4DStreamCtrl Teacher _(OpenVidHD-Motion3D)_ | streaming efficiency | Memory | 23.9 | authors |
-| 4DStreamCtrl Causal _(OpenVidHD-Motion3D)_ | joint object and camera control | FPS | 20.6 | authors |
-| 4DStreamCtrl Causal _(OpenVidHD-Motion3D)_ | streaming efficiency | Throughput | 20.6 | authors |
+| CoTracker3 | — | DCAavg | 71.81 | 3rd-party |
+| CoTracker3 | — | AJ | 62.9 | 3rd-party |
+| LPA-CWM _(MOVi-F)_ | — | DCAavg | 58.98 | authors |
+| APA-CWM | — | DCAavg | 55.79 | authors |
+| RAFT | — | DCAavg | 49.0 | 3rd-party |
+| SEA-RAFT | — | DCAavg | 47.39 | 3rd-party |
+| LPA-CWM _(MOVi-F)_ | — | AJ | 45.29 | authors |
 
 #### PushT  ·  _113 results_
 
@@ -539,6 +539,7 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Nan Duan](https://www.semanticscholar.org/author/2360369479)** (6 papers) — Nan Duan's research focuses on advancing video generation, world models, and generative modeling, particularly for long-duration, real-time, and memory-efficient autoregressive video generation, as well as few-step flow matching and embodied data…
 
 ## 📰 Embodied / Physical-AI News
+- [Rethinking Robot Safety in the Age of AI](https://spectrum.ieee.org/physical-ai-robot-cybersecurity-vicone) — _IEEE Spectrum_
 - [InOrbit.AI releases OpenRobOps ISO 21423 reference implementation](https://www.therobotreport.com/inorbit-ai-releases-openrobops-iso-21423-reference-implementation/) — _The Robot Report_
 - [Agility’s Digit 5 humanoid has new legs, batteries and safety upgrades](https://www.therobotreport.com/agilitys-digit-5-humanoid-has-new-legs-batteries-safety-upgrades/) — _The Robot Report_
 - [Digit 5 May Be the First Humanoid Robot Worker That’s Truly Safe](https://spectrum.ieee.org/humanoid-robot-safety) — _IEEE Spectrum_
@@ -553,7 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [How drone developers are navigating changing regulatory landscapes to help farmers](https://www.therobotreport.com/how-hylio-drone-developers-navigate-changing-regulatory-landscape-help-farmers/) — _The Robot Report_
 - [Video Friday: Humanoid Robot Takes On Monkey Bars](https://spectrum.ieee.org/video-friday-disaster-response-robots) — _IEEE Spectrum_
 - [One brick at a time: How Monumental uses robotics to build walls](https://www.therobotreport.com/one-brick-at-a-time-how-monumental-uses-robotics-to-build-walls/) — _The Robot Report_
-- [Learn how AVs and robotics are laying the groundwork for field deployments at RoboBusiness](https://www.therobotreport.com/learn-how-avs-robotics-are-laying-groundwork-field-deployments-robobusiness/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
