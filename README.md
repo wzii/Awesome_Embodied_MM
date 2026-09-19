@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-09-18 · **Tracked:** 1165 core · 907 adjacent ·
-511 news · **24695** benchmark rows across **10153** model
+**Last updated:** 2026-09-19 · **Tracked:** 1165 core · 907 adjacent ·
+514 news · **24837** benchmark rows across **10223** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -88,7 +88,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _3163 results_
+#### LIBERO  ·  _3190 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -118,7 +118,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _698 results_
+#### RoboTwin  ·  _706 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -133,7 +133,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Flash-WAM _(LingBot-VA)_ | — | per-chunk latency | 348.0 | authors |
 | HALO-WA _(online task-specific)_ | Beat Block Hammer | episode length | 213.7 | authors |
 
-#### SimplerEnv  ·  _285 results_
+#### SimplerEnv  ·  _287 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -148,20 +148,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | X-VLA + IDR | WidowX | Average success rate | 95.83 | authors |
 | Reflective VLA _(π0.5 training data)_ | Spoon | success rate | 95.8 | authors |
 
-#### RLBench  ·  _55 results_
+#### RLBench  ·  _58 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | PointACT _(RLBench (10 tasks))_ | Close laptop lid | success rate | 99.0 | authors |
 | Uni-LaDiR | — | success rate | 87.0 | authors |
 | LaST0 | — | success rate | 82.0 | 3rd-party |
+| FASA (3D-DA) | — | average success rate | 77.48 | authors |
+| 3D Diffuser Actor | — | average success rate | 75.96 | 3rd-party |
 | EO1 (reproduced) _(RLBench (10 tasks))_ | Mean | success rate | 73.2 | 3rd-party |
 | AtlasVLA _(RLBench (100 demos per task))_ | — | success rate | 70.8 | authors |
 | GR00T(arch) + Point _(LIBERO-Spatial / RLBench-10Tasks)_ | Mean | success rate | 69.7 | authors |
 | GR00T(arch) + Point (final layer) _(RLBench-10Tasks)_ | Mean | success rate | 69.7 | authors |
 | GR00T(arch) + Point (multi-scale, K=128) _(RLBench-10Tasks)_ | Mean | success rate | 65.6 | authors |
-| GR00T(arch) + Point (multi-scale, K=64) _(RLBench-10Tasks)_ | Mean | success rate | 65.2 | authors |
-| π0.5 | — | success rate | 65.0 | 3rd-party |
 
 #### Meta-World  ·  _94 results_
 
@@ -178,7 +178,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GUARD (SmolVLA) | — | ROC-AUC | 99.94 | authors |
 | SUREFlow _(LIBERO, Meta-World, LIBERO-PRO)_ | Easy | Success Rate | 97.8 | authors |
 
-#### ManiSkill  ·  _107 results_
+#### ManiSkill  ·  _113 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -190,10 +190,10 @@ _Model identity = (model, training data); same name on different data is a disti
 | FM policy _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | anytime success rate | 95.78 | authors |
 | FM policy _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | end success rate | 93.14 | authors |
 | π0.5 | — | success rate | 89.8 | authors |
+| FASA (RDT) | PickCube, PushCube, StackCube | average success rate | 87.5 | authors |
 | FORCE (π0) _(ManiSkill (offline + online))_ | — | success rate | 86.9 | authors |
-| OpenVLA-OFT + Feat2Go | — | success rate | 82.9 | authors |
 
-#### RoboCasa  ·  _267 results_
+#### RoboCasa  ·  _268 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -223,7 +223,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VisualThink-VLA _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 89.49 | authors |
 | FullSoft _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 88.45 | authors |
 
-#### ALFWorld  ·  _37 results_
+#### ALFWorld  ·  _39 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -343,7 +343,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
 | RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
 
-#### PushT  ·  _117 results_
+#### PushT  ·  _118 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -352,11 +352,11 @@ _Model identity = (model, training data); same name on different data is a disti
 | DA-LeWM | — | success rate | 98.7 | authors |
 | VIS-WM | — | success rate | 98.0 | authors |
 | SA+IDM | — | success rate | 98.0 | authors |
+| UVA | — | success rate | 97.47 | authors |
 | FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
 | LeWM | — | success rate | 96.0 | authors |
 | Le-WM | — | success rate | 96.0 | authors |
 | LeWorldModel | — | success rate | 96.0 | 3rd-party |
-| LeFlow _(offline trajectory data from LeWM benchmarks)_ | — | success rate | 95.2 | authors |
 
 #### Bench2Drive  ·  _109 results_
 
@@ -539,10 +539,13 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Nan Duan](https://www.semanticscholar.org/author/2360369479)** (6 papers) — Nan Duan's research focuses on advancing video generation, world models, and generative modeling, particularly for long-duration, real-time, and memory-efficient autoregressive video generation, as well as few-step flow matching and embodied data…
 
 ## 📰 Embodied / Physical-AI News
+- [Hirebotics adds line tracking and linear rail capabilities to its cobots](https://www.therobotreport.com/hirebotics-adds-line-tracking-linear-rail-capabilities-cobots/) — _The Robot Report_
 - [F-Prime Capital to give insights on the state of robotics investments at RoboBusiness](https://www.therobotreport.com/f-prime-capital-give-insights-state-robotics-investments-robobusiness/) — _The Robot Report_
 - [Neptune Medical earns FDA clearance for its Triton 1 robotic system](https://www.therobotreport.com/neptune-medical-earns-fda-clearance-triton-1-robotic-system/) — _The Robot Report_
 - [Icarus Robotics flies ISS-bound robot in microgravity for the first time](https://www.therobotreport.com/icarus-robotics-flies-iss-bound-robot-in-microgravity-for-the-first-time/) — _The Robot Report_
 - [Video Friday: Two Birotors Make a Quadrotor](https://spectrum.ieee.org/video-friday-quadrotor-from-birotor) — _IEEE Spectrum_
+- [The picks-and-shovels strategy behind the robotics boom](https://www.therobotreport.com/the-picks-and-shovels-strategy-behind-the-robotics-boom/) — _The Robot Report_
+- [SoftBank agrees to acquire Robotics and AI Institute](https://www.therobotreport.com/softbank-agrees-to-acquire-robotics-and-ai-institute/) — _The Robot Report_
 - [Robotics investments reach $4.9B in August 2026](https://www.therobotreport.com/robotics-investments-reach-4-9b-in-august-2026/) — _The Robot Report_
 - [Arm Total Design for Physical AI brings more than 80 developers together](https://www.therobotreport.com/arm-total-design-for-physical-ai-brings-more-than-80-developers-together/) — _The Robot Report_
 - [Designing long-travel axes: When rack and pinion outperforms ball screws and linear motors](https://www.therobotreport.com/designing-long-travel-axes-when-rack-and-pinion-outperforms-ball-screws-and-linear-motors/) — _The Robot Report_
@@ -551,9 +554,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [The evolution of Digit: Agility Robotics’ journey from Cassie to Digit 5](https://www.therobotreport.com/the-evolution-of-digit-agility-robotics-journey-from-cassie-to-digit-5/) — _The Robot Report_
 - [InOrbit.AI releases OpenRobOps ISO 21423 reference implementation](https://www.therobotreport.com/inorbit-ai-releases-openrobops-iso-21423-reference-implementation/) — _The Robot Report_
 - [Agility’s Digit 5 humanoid has new legs, batteries and safety upgrades](https://www.therobotreport.com/agilitys-digit-5-humanoid-has-new-legs-batteries-safety-upgrades/) — _The Robot Report_
-- [Digit 5 May Be the First Humanoid Robot Worker That’s Truly Safe](https://spectrum.ieee.org/humanoid-robot-safety) — _IEEE Spectrum_
-- [Your Agent Aced the Task. Will It Do It Again?](https://huggingface.co/blog/ibm-research/altk-evolve-consistency) — _Hugging Face - Blog_
-- [Arm to discuss scaling physical AI at RoboBusiness](https://www.therobotreport.com/arm-to-discuss-scaling-physical-ai-at-robobusiness/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
