@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-09-21 · **Tracked:** 1165 core · 907 adjacent ·
-515 news · **24837** benchmark rows across **10223** model
+**Last updated:** 2026-09-22 · **Tracked:** 1240 core · 934 adjacent ·
+524 news · **25161** benchmark rows across **10368** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -46,6 +46,7 @@ variants · **30** authors
 | **7.79** | OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining | 2026-09-07 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2609.07398) · [pdf](https://arxiv.org/pdf/2609.07398v1) · [code](https://github.com/OpenWAM-Official/OpenWAM) |
 | **7.79** | Recovering Aggressively Pruned Vision-Language-Action Models with Offline Hidden-State Distillation | 2026-09-17 | spd 8 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2609.19579) · [pdf](https://arxiv.org/pdf/2609.19579v1) |
 | **7.73** | BLUE: Toward Better Language Use in Efficient Vision-Language-Action Models for Autonomous Driving | 2026-06-07 | spd 8 · gen 3 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2606.08684) · [pdf](https://arxiv.org/pdf/2606.08684v1) · [code](https://github.com/George-Ling3/BLUE) |
+| **7.73** | Think Like a World Model, Act Like a VLA: Distilling World-Model Representations into Compact Robot Policies | 2026-09-21 | spd 8 · gen 7 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2609.24682) · [pdf](https://arxiv.org/pdf/2609.24682v1) · [code](https://github.com/Lifelong-Robot-Learning/LIBERO) |
 | **7.72** | Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model | 2026-07-13 | spd – · gen 7 · spec 8 · cost 2 | [abs](https://arxiv.org/abs/2607.11643) · [pdf](https://arxiv.org/pdf/2607.11643v1) |
 | **7.71** | LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies | 2026-06-14 | spd 7 · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.15768) · [pdf](https://arxiv.org/pdf/2606.15768v1) |
 | **7.71** | StellaVLA: In-Context Structured Demonstration for Generalizable Vision-Language-Action Models | 2026-08-12 | spd 5 · gen 8 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.11671) · [pdf](https://arxiv.org/pdf/2608.11671v1) |
@@ -79,7 +80,6 @@ variants · **30** authors
 | **7.52** | World-Language-Action Model for Unified World Modeling, Language Reasoning, and Action Synthesis | 2026-06-04 | spd 8 · gen 7 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.05979) · [pdf](https://arxiv.org/pdf/2606.05979v1) · [code](https://github.com/SJTU-DENG-Lab/WLA) |
 | **7.52** | CompCPZ: Preserving Multi-Modal Intent in Language-Guided Robot Manipulation | 2026-08-18 | spd 8 · gen 5 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2608.17717) · [pdf](https://arxiv.org/pdf/2608.17717v1) |
 | **7.52** | What Makes an Efficient VLA? Navigating Action-Head Design, Scaling, and Latency | 2026-09-12 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2609.13984) · [pdf](https://arxiv.org/pdf/2609.13984v1) · [code](https://github.com/MindVLA-Team/EFFVLA) |
-| **7.52** | Decoupling Vision, Language, and Action for Efficient Multi-Task Robot Policies | 2026-09-16 | spd 8 · gen 4 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2609.18374) · [pdf](https://arxiv.org/pdf/2609.18374v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _3190 results_
+#### LIBERO  ·  _3248 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _706 results_
+#### RoboTwin  ·  _720 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FASA (RDT) | PickCube, PushCube, StackCube | average success rate | 87.5 | authors |
 | FORCE (π0) _(ManiSkill (offline + online))_ | — | success rate | 86.9 | authors |
 
-#### RoboCasa  ·  _268 results_
+#### RoboCasa  ·  _273 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ReflAct + BB-WM | — | SR@1 | 65.2 | authors |
 | ReflAct + Belief | — | SR@1 | 63.4 | authors |
 
-#### VBench  ·  _1165 results_
+#### VBench  ·  _1177 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -297,7 +297,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _319 results_
+#### nuScenes  ·  _328 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -538,21 +538,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [Intrinsic open sources key parts of its platform for easier development](https://www.therobotreport.com/intrinsic-open-sources-key-parts-platform-easier-development/) — _The Robot Report_
+- [Barbara Mazzolai Wants to Build a New Field of Robotics](https://spectrum.ieee.org/sustainability-robotics-barbara-mazzolai) — _IEEE Spectrum_
+- [How UK AISI and EvalEval Are Making Benchmark Results Reproducible](https://huggingface.co/blog/evaleval-aisi) — _Hugging Face - Blog_
+- [Transformers now runs llama.cpp quants](https://huggingface.co/blog/transformers-llama-cpp-quants) — _Hugging Face - Blog_
+- [Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community](https://huggingface.co/blog/omlx) — _Hugging Face - Blog_
+- [IAC completes autonomous racing event at Laguna Seca](https://www.therobotreport.com/iac-completes-autonomous-racing-event-at-laguna-seca/) — _The Robot Report_
+- [Boston Dynamics opens Metaplant Application Center to train Atlas humanoids](https://www.therobotreport.com/boston-dynamics-opens-metaplant-application-center-train-atlas-humanoid-robots/) — _The Robot Report_
+- [Pruning LLMs Like a Physicist: Block Removal as an Ising Optimization Problem](https://huggingface.co/blog/MultiverseComputingCAI/pruning-llms-like-a-physicist-block-removal-as-an) — _Hugging Face - Blog_
+- [tokenizers v1: encode, decode and scaling, measured](https://huggingface.co/blog/tokenizers-v1) — _Hugging Face - Blog_
 - [What do you do with a humanoid robot when it breaks down?](https://www.therobotreport.com/what-do-you-do-with-a-humanoid-robot-when-it-breaks-down/) — _The Robot Report_
 - [Hirebotics adds line tracking and linear rail capabilities to its cobots](https://www.therobotreport.com/hirebotics-adds-line-tracking-linear-rail-capabilities-cobots/) — _The Robot Report_
 - [F-Prime Capital to give insights on the state of robotics investments at RoboBusiness](https://www.therobotreport.com/f-prime-capital-give-insights-state-robotics-investments-robobusiness/) — _The Robot Report_
 - [Neptune Medical earns FDA clearance for its Triton 1 robotic system](https://www.therobotreport.com/neptune-medical-earns-fda-clearance-triton-1-robotic-system/) — _The Robot Report_
 - [Icarus Robotics flies ISS-bound robot in microgravity for the first time](https://www.therobotreport.com/icarus-robotics-flies-iss-bound-robot-in-microgravity-for-the-first-time/) — _The Robot Report_
 - [Video Friday: Two Birotors Make a Quadrotor](https://spectrum.ieee.org/video-friday-quadrotor-from-birotor) — _IEEE Spectrum_
-- [The picks-and-shovels strategy behind the robotics boom](https://www.therobotreport.com/the-picks-and-shovels-strategy-behind-the-robotics-boom/) — _The Robot Report_
-- [SoftBank agrees to acquire Robotics and AI Institute](https://www.therobotreport.com/softbank-agrees-to-acquire-robotics-and-ai-institute/) — _The Robot Report_
-- [Robotics investments reach $4.9B in August 2026](https://www.therobotreport.com/robotics-investments-reach-4-9b-in-august-2026/) — _The Robot Report_
-- [Arm Total Design for Physical AI brings more than 80 developers together](https://www.therobotreport.com/arm-total-design-for-physical-ai-brings-more-than-80-developers-together/) — _The Robot Report_
-- [Designing long-travel axes: When rack and pinion outperforms ball screws and linear motors](https://www.therobotreport.com/designing-long-travel-axes-when-rack-and-pinion-outperforms-ball-screws-and-linear-motors/) — _The Robot Report_
-- [Rethinking Robot Safety in the Age of AI](https://spectrum.ieee.org/physical-ai-robot-cybersecurity-vicone) — _IEEE Spectrum_
-- [OLogic to share how robots can learn from human demonstrations at RoboBusiness](https://www.therobotreport.com/ologic-to-share-how-robots-can-learn-from-human-demonstrations-at-robobusiness/) — _The Robot Report_
-- [The evolution of Digit: Agility Robotics’ journey from Cassie to Digit 5](https://www.therobotreport.com/the-evolution-of-digit-agility-robotics-journey-from-cassie-to-digit-5/) — _The Robot Report_
-- [InOrbit.AI releases OpenRobOps ISO 21423 reference implementation](https://www.therobotreport.com/inorbit-ai-releases-openrobops-iso-21423-reference-implementation/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
