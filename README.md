@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-09-22 · **Tracked:** 1240 core · 934 adjacent ·
-524 news · **25161** benchmark rows across **10368** model
+**Last updated:** 2026-09-23 · **Tracked:** 1254 core · 942 adjacent ·
+531 news · **25675** benchmark rows across **10599** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _3248 results_
+#### LIBERO  ·  _3349 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,7 +102,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SmolVLA _(LIBERO)_ | — | p99 latency | 1181.0 | authors |
 | SmolVLA | — | inference time per chunk | 1010.0 | authors |
 
-#### CALVIN  ·  _154 results_
+#### CALVIN  ·  _155 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 | SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _720 results_
+#### RoboTwin  ·  _748 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -132,7 +132,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Flash-WAM _(LingBot-VA)_ | — | per-chunk latency | 348.0 | authors |
 | HALO-WA _(online task-specific)_ | Beat Block Hammer | episode length | 213.7 | authors |
 
-#### SimplerEnv  ·  _287 results_
+#### SimplerEnv  ·  _298 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -141,11 +141,11 @@ _Model identity = (model, training data); same name on different data is a disti
 | GeoAlign _(robot-domain RGB-D + Dpol (SimplerEnv-Fractal demonstrations))_ | Pick Coke Can | success rate | 100.0 | authors |
 | S2-VLA | Eggplant in Basket | success rate | 100.0 | authors |
 | actuation-slack refresh | pick-coke | serve latency p50 | 100.0 | authors |
+| H-VLA _(FractalData (fine-tuned))_ | Google Robot (VM), Drawer+Apple | success rate | 98.0 | authors |
 | OpenVLA-7b | Pick up | failure rate (FR) | 97.5 | authors |
 | GR00T-N1.6 | Pick up | failed object coverage (FOC) | 97.1 | authors |
 | Afford-VLA _(LIBERO + Affordance dataset)_ | Put Eggplant | Success rate | 96.8 | authors |
 | X-VLA + IDR | WidowX | Average success rate | 95.83 | authors |
-| Reflective VLA _(π0.5 training data)_ | Spoon | success rate | 95.8 | authors |
 
 #### RLBench  ·  _58 results_
 
@@ -327,6 +327,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | SEA-RAFT | — | DCAavg | 47.39 | 3rd-party |
 | LPA-CWM _(MOVi-F)_ | — | AJ | 45.29 | authors |
 
+#### PushT  ·  _122 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LeWM + CEM | — | eval time | 198.92 | 3rd-party |
+| Teacher (canonical encoding) _(canonical encoding)_ | — | retrieval rank (held-out) | 169.8 | authors |
+| LeWM + AITS | — | success rate | 100.0 | authors |
+| DA-LeWM | — | success rate | 98.7 | authors |
+| VIS-WM | — | success rate | 98.0 | authors |
+| SA+IDM | — | success rate | 98.0 | authors |
+| UVA | — | success rate | 97.47 | authors |
+| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
+| LeWM | — | success rate | 96.0 | authors |
+| Le-WM | — | success rate | 96.0 | authors |
+
 #### NAVSIM  ·  _120 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -342,20 +357,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | ForgeDrive _(NAVSIM/nuPlan)_ | — | Driving Command Accuracy | 94.7 | authors |
 | RAP _(NAVSIM trainval)_ | — | PDMS | 93.8 | 3rd-party |
 
-#### PushT  ·  _118 results_
+#### DROID  ·  _115 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| LeWM + CEM | — | eval time | 198.92 | 3rd-party |
-| LeWM + AITS | — | success rate | 100.0 | authors |
-| DA-LeWM | — | success rate | 98.7 | authors |
-| VIS-WM | — | success rate | 98.0 | authors |
-| SA+IDM | — | success rate | 98.0 | authors |
-| UVA | — | success rate | 97.47 | authors |
-| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
-| LeWM | — | success rate | 96.0 | authors |
-| Le-WM | — | success rate | 96.0 | authors |
-| LeWorldModel | — | success rate | 96.0 | 3rd-party |
+| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
+| MiniWorld-3B _(DROID)_ | — | Trajectory Accuracy improvement | 249.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | Depth Accuracy improvement | 238.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | LPIPS improvement | 216.0 | authors |
+| TesserAct | — | FID | 164.54 | 3rd-party |
+| MiniWorld-3B _(DROID)_ | — | SSIM improvement | 125.0 | authors |
+| Causally Interleaved _(DROID)_ | — | Accuracy@0.5 | 94.52 | authors |
+| DINOv3 _(DROID)_ | — | Accuracy@0.5 | 94.05 | authors |
+| BC+VG _(DROID)_ | — | Accuracy@0.5 | 92.52 | authors |
+| π0.5-droid _(DROID)_ | Task Average | task progression rate | 89.3 | 3rd-party |
 
 #### Bench2Drive  ·  _109 results_
 
@@ -386,21 +401,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
-
-#### DROID  ·  _106 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
-| MiniWorld-3B _(DROID)_ | — | Trajectory Accuracy improvement | 249.0 | authors |
-| MiniWorld-3B _(DROID)_ | — | Depth Accuracy improvement | 238.0 | authors |
-| MiniWorld-3B _(DROID)_ | — | LPIPS improvement | 216.0 | authors |
-| TesserAct | — | FID | 164.54 | 3rd-party |
-| MiniWorld-3B _(DROID)_ | — | SSIM improvement | 125.0 | authors |
-| π0.5-droid _(DROID)_ | Task Average | task progression rate | 89.3 | 3rd-party |
-| Cloak-VLA _(DROID)_ | Task Average | task progression rate | 88.0 | authors |
-| LAP-VLA | Task Average | task progression rate | 87.9 | 3rd-party |
-| G0.5 _(pretrained on robot datasets + VQA, then post-trained on DROID)_ | — | success rate | 82.5 | authors |
 
 #### Real-world  ·  _101 results_
 
@@ -538,21 +538,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [Helicon brings automation to high-volume composites manufacturing](https://www.therobotreport.com/helicon-brings-automation-high-volume-composites-manufacturing/) — _The Robot Report_
+- [State of Humanoids keynote brings industry leaders to RoboBusiness](https://www.therobotreport.com/state-of-humanoids-keynote-brings-industry-leaders-robobusiness/) — _The Robot Report_
+- [Qualcomm to acquire PickNik Robotics and keep MoveIt open-source](https://www.therobotreport.com/qualcomm-acquires-picknik-robotics-keep-moveit-open-source/) — _The Robot Report_
+- [**Know Who Spoke When: Build Real-Time, Multi-Speaker AI with NVIDIA Nemotron 3 Diarization**](https://huggingface.co/blog/nvidia/nemotron-diarization) — _Hugging Face - Blog_
 - [Intrinsic open sources key parts of its platform for easier development](https://www.therobotreport.com/intrinsic-open-sources-key-parts-platform-easier-development/) — _The Robot Report_
 - [Barbara Mazzolai Wants to Build a New Field of Robotics](https://spectrum.ieee.org/sustainability-robotics-barbara-mazzolai) — _IEEE Spectrum_
 - [How UK AISI and EvalEval Are Making Benchmark Results Reproducible](https://huggingface.co/blog/evaleval-aisi) — _Hugging Face - Blog_
 - [Transformers now runs llama.cpp quants](https://huggingface.co/blog/transformers-llama-cpp-quants) — _Hugging Face - Blog_
 - [Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community](https://huggingface.co/blog/omlx) — _Hugging Face - Blog_
+- [Intel to discuss the infrastructure needed to scale physical AI at RoboBusiness](https://www.therobotreport.com/intel-discusses-infrastructure-needed-to-scale-physical-ai-robobusiness/) — _The Robot Report_
+- [Why outdoor robots fail (and how to build systems that survive)](https://www.therobotreport.com/why-outdoor-robots-fail-how-to-build-systems-that-survive/) — _The Robot Report_
+- [Isaac ROS 5.0 brings AI agents to robotics development, says NVIDIA](https://www.therobotreport.com/isaac-ros-5-0-brings-ai-agents-robotics-development-says-nvidia/) — _The Robot Report_
 - [IAC completes autonomous racing event at Laguna Seca](https://www.therobotreport.com/iac-completes-autonomous-racing-event-at-laguna-seca/) — _The Robot Report_
 - [Boston Dynamics opens Metaplant Application Center to train Atlas humanoids](https://www.therobotreport.com/boston-dynamics-opens-metaplant-application-center-train-atlas-humanoid-robots/) — _The Robot Report_
 - [Pruning LLMs Like a Physicist: Block Removal as an Ising Optimization Problem](https://huggingface.co/blog/MultiverseComputingCAI/pruning-llms-like-a-physicist-block-removal-as-an) — _Hugging Face - Blog_
-- [tokenizers v1: encode, decode and scaling, measured](https://huggingface.co/blog/tokenizers-v1) — _Hugging Face - Blog_
-- [What do you do with a humanoid robot when it breaks down?](https://www.therobotreport.com/what-do-you-do-with-a-humanoid-robot-when-it-breaks-down/) — _The Robot Report_
-- [Hirebotics adds line tracking and linear rail capabilities to its cobots](https://www.therobotreport.com/hirebotics-adds-line-tracking-linear-rail-capabilities-cobots/) — _The Robot Report_
-- [F-Prime Capital to give insights on the state of robotics investments at RoboBusiness](https://www.therobotreport.com/f-prime-capital-give-insights-state-robotics-investments-robobusiness/) — _The Robot Report_
-- [Neptune Medical earns FDA clearance for its Triton 1 robotic system](https://www.therobotreport.com/neptune-medical-earns-fda-clearance-triton-1-robotic-system/) — _The Robot Report_
-- [Icarus Robotics flies ISS-bound robot in microgravity for the first time](https://www.therobotreport.com/icarus-robotics-flies-iss-bound-robot-in-microgravity-for-the-first-time/) — _The Robot Report_
-- [Video Friday: Two Birotors Make a Quadrotor](https://spectrum.ieee.org/video-friday-quadrotor-from-birotor) — _IEEE Spectrum_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
