@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-09-23 · **Tracked:** 1254 core · 942 adjacent ·
-531 news · **25675** benchmark rows across **10599** model
+**Last updated:** 2026-09-24 · **Tracked:** 1270 core · 951 adjacent ·
+537 news · **26116** benchmark rows across **10818** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _3349 results_
+#### LIBERO  ·  _3395 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,7 +102,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SmolVLA _(LIBERO)_ | — | p99 latency | 1181.0 | authors |
 | SmolVLA | — | inference time per chunk | 1010.0 | authors |
 
-#### CALVIN  ·  _155 results_
+#### CALVIN  ·  _169 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -110,14 +110,14 @@ _Model identity = (model, training data); same name on different data is a disti
 | FLOWER _(CALVIN ABC)_ | — | success rate (1 task) | 99.3 | authors |
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 3-step success rate | 96.8 | authors |
 | FLOWER + Ours _(CALVIN ABC)_ | — | success rate (2 tasks) | 96.6 | authors |
+| AffordanceWAM _(Human videos + robot videos (affordance-annotated joint pre-training then task-specific fine-tuning))_ | — | Success Rate (1/5) | 96.1 | authors |
 | FLOWER _(CALVIN ABC)_ | — | success rate (2 tasks) | 95.9 | authors |
 | SAPS (Cosine) _(CALVIN)_ | long-horizon chains (5 subtasks) | subtask success rate (ST-SR) | 94.85 | authors |
 | VLM4VLA + Ours _(CALVIN ABC)_ | — | success rate (1 task) | 94.4 | authors |
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
-| SAPS (Cosine) _(CALVIN)_ | 11 single subtasks | average success rate | 93.0 | authors |
 
-#### RoboTwin  ·  _748 results_
+#### RoboTwin  ·  _771 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -162,7 +162,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GR00T(arch) + Point (final layer) _(RLBench-10Tasks)_ | Mean | success rate | 69.7 | authors |
 | GR00T(arch) + Point (multi-scale, K=128) _(RLBench-10Tasks)_ | Mean | success rate | 65.6 | authors |
 
-#### Meta-World  ·  _94 results_
+#### Meta-World  ·  _109 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FASA (RDT) | PickCube, PushCube, StackCube | average success rate | 87.5 | authors |
 | FORCE (π0) _(ManiSkill (offline + online))_ | — | success rate | 86.9 | authors |
 
-#### RoboCasa  ·  _273 results_
+#### RoboCasa  ·  _299 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ReflAct + BB-WM | — | SR@1 | 65.2 | authors |
 | ReflAct + Belief | — | SR@1 | 63.4 | authors |
 
-#### VBench  ·  _1177 results_
+#### VBench  ·  _1181 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -327,6 +327,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | SEA-RAFT | — | DCAavg | 47.39 | 3rd-party |
 | LPA-CWM _(MOVi-F)_ | — | AJ | 45.29 | authors |
 
+#### Bench2Drive  ·  _123 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| BLUE _(SimLingo training set (~400 routes))_ | — | latency | 549.5 | authors |
+| ORION _(Bench2Drive, Chat-B2D)_ | trajectory prediction | decoder latency | 497.52 | authors |
+| CLEAR (InternVL3-1B) _(SimLingo dataset (~3.1M samples))_ | — | Efficiency | 275.4 | authors |
+| VLGA _(Bench2Drive train routes)_ | — | Efficiency | 194.63 | authors |
+| ORION _(Bench2Drive, Chat-B2D)_ | command probe | command-probe accuracy | 97.7 | authors |
+| LinkVLA _(PDM-Lite)_ | — | Driving Score | 91.01 | 3rd-party |
+| BLUE _(SimLingo training set (~400 routes))_ | — | driving score | 90.58 | authors |
+| BLUE (CriticVLA) _(CriticVLA training set)_ | — | driving score | 90.37 | authors |
+| AnchorVLA _(PDM-Lite)_ | — | Driving Score | 89.92 | authors |
+| TakeVLA _(PDM-Lite)_ | — | driving score | 89.72 | 3rd-party |
+
 #### PushT  ·  _122 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -372,20 +387,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | BC+VG _(DROID)_ | — | Accuracy@0.5 | 92.52 | authors |
 | π0.5-droid _(DROID)_ | Task Average | task progression rate | 89.3 | 3rd-party |
 
-#### Bench2Drive  ·  _109 results_
+#### Real-world  ·  _112 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| BLUE _(SimLingo training set (~400 routes))_ | — | latency | 549.5 | authors |
-| ORION _(Bench2Drive, Chat-B2D)_ | trajectory prediction | decoder latency | 497.52 | authors |
-| CLEAR (InternVL3-1B) _(SimLingo dataset (~3.1M samples))_ | — | Efficiency | 275.4 | authors |
-| VLGA _(Bench2Drive train routes)_ | — | Efficiency | 194.63 | authors |
-| ORION _(Bench2Drive, Chat-B2D)_ | command probe | command-probe accuracy | 97.7 | authors |
-| LinkVLA _(PDM-Lite)_ | — | Driving Score | 91.01 | 3rd-party |
-| BLUE _(SimLingo training set (~400 routes))_ | — | driving score | 90.58 | authors |
-| BLUE (CriticVLA) _(CriticVLA training set)_ | — | driving score | 90.37 | authors |
-| AnchorVLA _(PDM-Lite)_ | — | Driving Score | 89.92 | authors |
-| TakeVLA _(PDM-Lite)_ | — | driving score | 89.72 | 3rd-party |
+| InSight _(50 human scooping demonstrations + acquired lateral-push primitive)_ | sweeping | success rate | 100.0 | authors |
+| SAGE-SFT _(π0.5)_ | Place the green cube on the plate | Success rate | 100.0 | authors |
+| OASIS | Goal | success rate | 98.6 | authors |
+| InSight _(50 human pick-and-place demonstrations + 20 successful pour primitives)_ | pour beans into bowl | success rate | 96.0 | authors |
+| 3DThinkVLA (Ours) _(VLA data + 3D reasoning data (co-training))_ | Transparent container placement | success rate | 93.3 | authors |
+| InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
+| π0.5 | Place the green cube on the plate | Success rate | 90.0 | 3rd-party |
+| MaP-WAM _(Real-world custom tasks (50 trajectories per task))_ | Find Button | success rate | 88.0 | authors |
+| OrthoSkillVLA | Flip, Pick, Push, Press | Average success rate (%) | 86.25 | authors |
+| MaskWAM | language-ambiguous tasks (ID + OOD) | success rate | 84.9 | authors |
 
 #### NAVSIM v1  ·  _106 results_
 
@@ -401,21 +416,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
-
-#### Real-world  ·  _101 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| InSight _(50 human scooping demonstrations + acquired lateral-push primitive)_ | sweeping | success rate | 100.0 | authors |
-| SAGE-SFT _(π0.5)_ | Place the green cube on the plate | Success rate | 100.0 | authors |
-| OASIS | Goal | success rate | 98.6 | authors |
-| InSight _(50 human pick-and-place demonstrations + 20 successful pour primitives)_ | pour beans into bowl | success rate | 96.0 | authors |
-| 3DThinkVLA (Ours) _(VLA data + 3D reasoning data (co-training))_ | Transparent container placement | success rate | 93.3 | authors |
-| InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
-| π0.5 | Place the green cube on the plate | Success rate | 90.0 | 3rd-party |
-| MaP-WAM _(Real-world custom tasks (50 trajectories per task))_ | Find Button | success rate | 88.0 | authors |
-| OrthoSkillVLA | Flip, Pick, Push, Press | Average success rate (%) | 86.25 | authors |
-| MaskWAM | language-ambiguous tasks (ID + OOD) | success rate | 84.9 | authors |
 
 #### SafeSora  ·  _99 results_
 
@@ -538,21 +538,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [Why you should look beyond the spec sheet when choosing motion architecture](https://www.therobotreport.com/why-you-should-look-beyond-spec-sheet-when-choosing-motion-architecture/) — _The Robot Report_
+- [Epson introduces AX6 cobot with compact design, no-code programming](https://www.therobotreport.com/epson-introduces-ax6-cobot-compact-design-no-code-programming/) — _The Robot Report_
+- [ANYbotics opens the door for inspections with ANYmal robots](https://www.therobotreport.com/anybotics-opens-the-door-for-inspections-with-anymal-robots/) — _The Robot Report_
+- [Accelerating vision-language models with LFM2.5-VL-DSpark](https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark) — _Hugging Face - Blog_
 - [Helicon brings automation to high-volume composites manufacturing](https://www.therobotreport.com/helicon-brings-automation-high-volume-composites-manufacturing/) — _The Robot Report_
 - [State of Humanoids keynote brings industry leaders to RoboBusiness](https://www.therobotreport.com/state-of-humanoids-keynote-brings-industry-leaders-robobusiness/) — _The Robot Report_
 - [Qualcomm to acquire PickNik Robotics and keep MoveIt open-source](https://www.therobotreport.com/qualcomm-acquires-picknik-robotics-keep-moveit-open-source/) — _The Robot Report_
 - [**Know Who Spoke When: Build Real-Time, Multi-Speaker AI with NVIDIA Nemotron 3 Diarization**](https://huggingface.co/blog/nvidia/nemotron-diarization) — _Hugging Face - Blog_
+- [With the new VENTUNO Q board, Arduino hopes to make robotics development easier](https://www.therobotreport.com/new-ventuno-q-board-arduino-hopes-make-robotics-development-easier/) — _The Robot Report_
+- [How to Use NVIDIA Warp and MjWarp to Accelerate Robotics Simulation and Learning Workflows](https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp) — _Hugging Face - Blog_
 - [Intrinsic open sources key parts of its platform for easier development](https://www.therobotreport.com/intrinsic-open-sources-key-parts-platform-easier-development/) — _The Robot Report_
 - [Barbara Mazzolai Wants to Build a New Field of Robotics](https://spectrum.ieee.org/sustainability-robotics-barbara-mazzolai) — _IEEE Spectrum_
 - [How UK AISI and EvalEval Are Making Benchmark Results Reproducible](https://huggingface.co/blog/evaleval-aisi) — _Hugging Face - Blog_
 - [Transformers now runs llama.cpp quants](https://huggingface.co/blog/transformers-llama-cpp-quants) — _Hugging Face - Blog_
 - [Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community](https://huggingface.co/blog/omlx) — _Hugging Face - Blog_
-- [Intel to discuss the infrastructure needed to scale physical AI at RoboBusiness](https://www.therobotreport.com/intel-discusses-infrastructure-needed-to-scale-physical-ai-robobusiness/) — _The Robot Report_
-- [Why outdoor robots fail (and how to build systems that survive)](https://www.therobotreport.com/why-outdoor-robots-fail-how-to-build-systems-that-survive/) — _The Robot Report_
-- [Isaac ROS 5.0 brings AI agents to robotics development, says NVIDIA](https://www.therobotreport.com/isaac-ros-5-0-brings-ai-agents-robotics-development-says-nvidia/) — _The Robot Report_
-- [IAC completes autonomous racing event at Laguna Seca](https://www.therobotreport.com/iac-completes-autonomous-racing-event-at-laguna-seca/) — _The Robot Report_
-- [Boston Dynamics opens Metaplant Application Center to train Atlas humanoids](https://www.therobotreport.com/boston-dynamics-opens-metaplant-application-center-train-atlas-humanoid-robots/) — _The Robot Report_
-- [Pruning LLMs Like a Physicist: Block Removal as an Ising Optimization Problem](https://huggingface.co/blog/MultiverseComputingCAI/pruning-llms-like-a-physicist-block-removal-as-an) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
