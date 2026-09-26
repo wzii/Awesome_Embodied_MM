@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-09-25 · **Tracked:** 1285 core · 960 adjacent ·
-542 news · **26474** benchmark rows across **11002** model
+**Last updated:** 2026-09-26 · **Tracked:** 1285 core · 960 adjacent ·
+545 news · **26634** benchmark rows across **11082** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _3428 results_
+#### LIBERO  ·  _3451 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _807 results_
+#### RoboTwin  ·  _830 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -162,7 +162,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GR00T(arch) + Point (final layer) _(RLBench-10Tasks)_ | Mean | success rate | 69.7 | authors |
 | GR00T(arch) + Point (multi-scale, K=128) _(RLBench-10Tasks)_ | Mean | success rate | 65.6 | authors |
 
-#### Meta-World  ·  _109 results_
+#### Meta-World  ·  _111 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FASA (RDT) | PickCube, PushCube, StackCube | average success rate | 87.5 | authors |
 | FORCE (π0) _(ManiSkill (offline + online))_ | — | success rate | 86.9 | authors |
 
-#### RoboCasa  ·  _302 results_
+#### RoboCasa  ·  _305 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -342,7 +342,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | AnchorVLA _(PDM-Lite)_ | — | Driving Score | 89.92 | authors |
 | TakeVLA _(PDM-Lite)_ | — | driving score | 89.72 | 3rd-party |
 
-#### PushT  ·  _122 results_
+#### PushT  ·  _124 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -538,9 +538,12 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [From 14 cities to 15,000: What it will take to scale robotaxis?](https://www.therobotreport.com/from-14-cities-to-15000-what-it-will-take-to-scale-robotaxis/) — _The Robot Report_
 - [Agility Robotics, maker of Digit humanoid, exploring wheeled robots](https://www.therobotreport.com/agility-robotics-maker-of-digit-humanoid-exploring-wheeled-robots/) — _The Robot Report_
 - [Farmers are facing more pressure; CNH says robotics can help](https://www.therobotreport.com/farmers-are-facing-more-pressure-cnh-says-robotics-can-help/) — _The Robot Report_
 - [Video Friday: Life’s Better With a Little Robot Goose](https://spectrum.ieee.org/video-friday-goose-household-robots) — _IEEE Spectrum_
+- [Amazon to invest $100M in new Indiana manufacturing facility](https://www.therobotreport.com/amazon-to-invest-100m-in-new-indiana-manufacturing-facility/) — _The Robot Report_
+- [General Robotics is betting on modular intelligence, not one robot brain](https://www.therobotreport.com/general-robotics-is-betting-on-modular-intelligence-not-one-robot-brain/) — _The Robot Report_
 - [Why you should look beyond the spec sheet when choosing motion architecture](https://www.therobotreport.com/why-you-should-look-beyond-spec-sheet-when-choosing-motion-architecture/) — _The Robot Report_
 - [Epson introduces AX6 cobot with compact design, no-code programming](https://www.therobotreport.com/epson-introduces-ax6-cobot-compact-design-no-code-programming/) — _The Robot Report_
 - [ANYbotics opens the door for inspections with ANYmal robots](https://www.therobotreport.com/anybotics-opens-the-door-for-inspections-with-anymal-robots/) — _The Robot Report_
@@ -550,9 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Helicon brings automation to high-volume composites manufacturing](https://www.therobotreport.com/helicon-brings-automation-high-volume-composites-manufacturing/) — _The Robot Report_
 - [State of Humanoids keynote brings industry leaders to RoboBusiness](https://www.therobotreport.com/state-of-humanoids-keynote-brings-industry-leaders-robobusiness/) — _The Robot Report_
 - [Qualcomm to acquire PickNik Robotics and keep MoveIt open-source](https://www.therobotreport.com/qualcomm-acquires-picknik-robotics-keep-moveit-open-source/) — _The Robot Report_
-- [**Know Who Spoke When: Build Real-Time, Multi-Speaker AI with NVIDIA Nemotron 3 Diarization**](https://huggingface.co/blog/nvidia/nemotron-diarization) — _Hugging Face - Blog_
-- [With the new VENTUNO Q board, Arduino hopes to make robotics development easier](https://www.therobotreport.com/new-ventuno-q-board-arduino-hopes-make-robotics-development-easier/) — _The Robot Report_
-- [How to Use NVIDIA Warp and MjWarp to Accelerate Robotics Simulation and Learning Workflows](https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
