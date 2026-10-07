@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-06 · **Tracked:** 1596 core · 1138 adjacent ·
-584 news · **29450** benchmark rows across **12403** model
+**Last updated:** 2026-10-07 · **Tracked:** 1628 core · 1149 adjacent ·
+591 news · **29827** benchmark rows across **12563** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -66,6 +66,7 @@ variants · **30** authors
 | **7.66** | Towards a General Humanoid Loco-Manipulation Model via Egocentric Whole-Body Human Data Pretraining | 2026-09-30 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.00438) · [pdf](https://arxiv.org/pdf/2610.00438v1) |
 | **7.65** | ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training | 2026-08-31 | spd 8 · gen 8 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2609.00188) · [pdf](https://arxiv.org/pdf/2609.00188v1) · [code](https://github.com/ZimaBlue-WAM/ZimaBlue) |
 | **7.65** | DeltaWAM: Delta World Action Models for Bimanual Manipulation | 2026-09-23 | spd 7 · gen 4 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2609.28811) · [pdf](https://arxiv.org/pdf/2609.28811v1) · [code](https://github.com/AIGeeksGroup/DeltaWAM) |
+| **7.65** | StairVLA: Stage-Aware Hierarchical Action Generation for Vision-Language-Action Models | 2026-10-06 | spd 8 · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2610.07756) · [pdf](https://arxiv.org/pdf/2610.07756v1) |
 | **7.64** | Foresight Without Seeing: Latent Futures for World Action Models | 2026-08-12 | spd 5 · gen 4 · spec 9 · cost 6 | [abs](https://arxiv.org/abs/2608.11605) · [pdf](https://arxiv.org/pdf/2608.11605v1) |
 | **7.63** | Latent Action as Intention Enables Efficient Future Imagination for World Action Models | 2026-08-25 | spd 7 · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.24882) · [pdf](https://arxiv.org/pdf/2608.24882v1) |
 | **7.61** | AHA-WAM:Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing | 2026-06-08 | spd 8 · gen 3 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.09811) · [pdf](https://arxiv.org/pdf/2606.09811v1) |
@@ -79,7 +80,6 @@ variants · **30** authors
 | **7.57** | SANTS: A State-Adaptive Scheduler for World Action Models | 2026-05-27 | spd 8 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2605.27947) · [pdf](https://arxiv.org/pdf/2605.27947v1) |
 | **7.57** | Finetuning Vision-Language-Action Models Requires Fewer Layers Than You Think | 2026-06-18 | spd 7 · gen 7 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.20246) · [pdf](https://arxiv.org/pdf/2606.20246v1) |
 | **7.57** | Structure-Aware Robust Fine-Tuning: Defending Vision-Language-Action Robots Against Physical Attention Hijacking | 2026-08-04 | spd 8 · gen 5 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2608.03231) · [pdf](https://arxiv.org/pdf/2608.03231v1) |
-| **7.57** | Decoupled Early Exits for Task-Dependent Compute Allocation in Flow-Matching VLAs | 2026-09-24 | spd 8 · gen 6 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2609.29382) · [pdf](https://arxiv.org/pdf/2609.29382v1) · [code](https://github.com/esgi-research-group/ee-vla) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _3849 results_
+#### LIBERO  ·  _3899 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _945 results_
+#### RoboTwin  ·  _950 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 | FASA (RDT) | PickCube, PushCube, StackCube | average success rate | 87.5 | authors |
 
-#### RoboCasa  ·  _341 results_
+#### RoboCasa  ·  _344 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -342,6 +342,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | AnchorVLA _(PDM-Lite)_ | — | Driving Score | 89.92 | authors |
 | TakeVLA _(PDM-Lite)_ | — | driving score | 89.72 | 3rd-party |
 
+#### PushT  ·  _135 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LeWM + CEM | — | eval time | 198.92 | 3rd-party |
+| Teacher (canonical encoding) _(canonical encoding)_ | — | retrieval rank (held-out) | 169.8 | authors |
+| LeWM + AITS | — | success rate | 100.0 | authors |
+| DA-LeWM | — | success rate | 98.7 | authors |
+| VIS-WM | — | success rate | 98.0 | authors |
+| SA+IDM | — | success rate | 98.0 | authors |
+| UVA | — | success rate | 97.47 | authors |
+| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
+| LeWM | — | success rate | 96.0 | authors |
+| Le-WM | — | success rate | 96.0 | authors |
+
 #### NAVSIM v1  ·  _134 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -371,21 +386,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | DINOv3 _(DROID)_ | — | Accuracy@0.5 | 94.05 | authors |
 | BC+VG _(DROID)_ | — | Accuracy@0.5 | 92.52 | authors |
 | π0.5-droid _(DROID)_ | Task Average | task progression rate | 89.3 | 3rd-party |
-
-#### PushT  ·  _133 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| LeWM + CEM | — | eval time | 198.92 | 3rd-party |
-| Teacher (canonical encoding) _(canonical encoding)_ | — | retrieval rank (held-out) | 169.8 | authors |
-| LeWM + AITS | — | success rate | 100.0 | authors |
-| DA-LeWM | — | success rate | 98.7 | authors |
-| VIS-WM | — | success rate | 98.0 | authors |
-| SA+IDM | — | success rate | 98.0 | authors |
-| UVA | — | success rate | 97.47 | authors |
-| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
-| LeWM | — | success rate | 96.0 | authors |
-| Le-WM | — | success rate | 96.0 | authors |
 
 #### NAVSIM  ·  _125 results_
 
@@ -447,6 +447,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | BindWeave | Overall | MS | 0.963 | 3rd-party |
 | FFGO-Wan2.2-14B | Overall | MS | 0.945 | 3rd-party |
 
+#### TwoRoom  ·  _98 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LeWM + CEM | — | eval time | 224.78 | 3rd-party |
+| DINO-WM | — | success rate | 100.0 | 3rd-party |
+| LeFlow _(offline trajectory data from LeWM benchmarks)_ | — | success rate | 100.0 | authors |
+| GCBC | — | success rate | 100.0 | 3rd-party |
+| GCIVL | — | success rate | 100.0 | 3rd-party |
+| GCIQL | — | success rate | 100.0 | 3rd-party |
+| SA+IDM | — | success rate | 100.0 | authors |
+| ALeWM _(TwoRoom)_ | — | success rate | 100.0 | authors |
+| RWM | — | success rate | 99.67 | authors |
+| LeWM + TEMPO _(TwoRoom dataset)_ | three plans | success rate | 99.2 | authors |
+
 #### Context-as-Memory dataset  ·  _98 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -461,21 +476,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | Spatial cross-attn RO _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 17.12 | authors |
 | Spatial inject-none _(Context-as-Memory dataset)_ | open-domain return | Open-domain VLM | 15.5 | authors |
 | Spatial inject-none _(Context-as-Memory dataset)_ | replay | Replay PSNR | 14.66 | authors |
-
-#### TwoRoom  ·  _97 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| LeWM + CEM | — | eval time | 224.78 | 3rd-party |
-| DINO-WM | — | success rate | 100.0 | 3rd-party |
-| LeFlow _(offline trajectory data from LeWM benchmarks)_ | — | success rate | 100.0 | authors |
-| GCBC | — | success rate | 100.0 | 3rd-party |
-| GCIVL | — | success rate | 100.0 | 3rd-party |
-| GCIQL | — | success rate | 100.0 | 3rd-party |
-| SA+IDM | — | success rate | 100.0 | authors |
-| ALeWM _(TwoRoom)_ | — | success rate | 100.0 | authors |
-| RWM | — | success rate | 99.67 | authors |
-| LeWM + TEMPO _(TwoRoom dataset)_ | three plans | success rate | 99.2 | authors |
 
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
@@ -538,21 +538,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [Teradyne Robotics, Elite Robots settle cobot dispute](https://www.therobotreport.com/terayne-robotics-elite-robots-settle-cobot-dispute/) — _The Robot Report_
+- [Harmonic Drive to share how integrated actuators can reduce engineering at RoboBusiness](https://www.therobotreport.com/harmonic-drive-share-how-integrated-actuators-reduce-engineering-robobusiness/) — _The Robot Report_
+- [HiPHI: A Large-Scale Benchmark for High-Precision Human Motion and Object Interaction](https://content.knowledgehub.wiley.com/hiphi-a-large-scale-benchmark-for-high-precision-human-motion-and-object-interaction/) — _IEEE Spectrum_
+- [Multimodal open d1 decision models for the edge](https://huggingface.co/blog/LiquidAI/open-d1) — _Hugging Face - Blog_
+- [One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO](https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026) — _Hugging Face - Blog_
 - [Sovereign AI, same landlord — thoughts on the physical AI race](https://www.therobotreport.com/sovereign-ai-same-landlord-thoughts-physical-ai-race/) — _The Robot Report_
 - [FireDome builds autonomous ‘artillery’ for wildfire defense](https://www.therobotreport.com/firedome-builds-autonomous-artillery-for-wildfire-defense/) — _The Robot Report_
 - [Overview AI launches OV Spark line of AI inspection cameras](https://www.therobotreport.com/overview-ai-launches-ov-spark-line-ai-inspection-cameras/) — _The Robot Report_
 - [Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance](https://huggingface.co/blog/tiiuae/falcon-emirati) — _Hugging Face - Blog_
+- [Boston Dynamics appoints former Amazon exec Rohit Prasad as new CEO](https://www.therobotreport.com/boston-dynamics-appoints-former-amazon-executive-rohit-prasad-new-ceo/) — _The Robot Report_
+- [Pegasus 1.6 brings video understanding to physical AI, says TwelveLabs](https://www.therobotreport.com/pegasus-1-6-brings-video-understanding-physical-ai-says-twelvelabs/) — _The Robot Report_
 - [Teradyne invests in Bright Machines to bring robotics to AI infrastructure manufacturing](https://www.therobotreport.com/teradyne-invests-ibright-machines-brings-robotics-ai-infrastructure-manufacturing/) — _The Robot Report_
 - [FCC robot restrictions could accelerate shift to local AI](https://www.therobotreport.com/fcc-robot-restrictions-could-accelerate-shift-to-local-ai/) — _The Robot Report_
 - [How robotics and physical AI can responsibly tackle key physical security challenges](https://www.therobotreport.com/how-robotics-physical-ai-can-responsibly-tackle-key-physical-security-challenges/) — _The Robot Report_
 - [The physical AI race will be won in the patent office](https://www.therobotreport.com/physical-ai-race-will-be-won-in-patent-office/) — _The Robot Report_
-- [The Agent Said It Was Done. The Database Disagreed.](https://huggingface.co/blog/microsoft/thinkingbox) — _Hugging Face - Blog_
-- [Video Friday: Albatross Falls, Spins, Self-Rights, and Sails Away](https://spectrum.ieee.org/video-friday-bioinspired-robotics) — _IEEE Spectrum_
-- [Open-sourcing AstaBrief, the fast report-generation model in Asta](https://huggingface.co/blog/allenai/astabrief) — _Hugging Face - Blog_
-- [AutoSynthData: Generating Training Data for Enterprise Agents](https://huggingface.co/blog/ServiceNow-AI/autosynthdata) — _Hugging Face - Blog_
-- [Inside Omron’s next-generation LD mobile robots](https://www.therobotreport.com/inside-omrons-next-generation-ld-mobile-robots/) — _The Robot Report_
-- [Eli Lilly, Purdue to share field learnings on human robot interaction at RoboBusiness](https://www.therobotreport.com/eli-lilly-purdue-to-share-field-learnings-on-human-robot-interaction-at-robobusiness/) — _The Robot Report_
-- [Runway introduces Praxis-1 world action model for robotics](https://www.therobotreport.com/runway-introduces-praxis-1-world-action-model-robotics/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
