@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-07 · **Tracked:** 1628 core · 1149 adjacent ·
-591 news · **29827** benchmark rows across **12563** model
+**Last updated:** 2026-10-08 · **Tracked:** 1654 core · 1169 adjacent ·
+597 news · **30103** benchmark rows across **12724** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -40,15 +40,18 @@ variants · **30** authors
 | **8.1** | CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators | 2026-08-27 | spd – · gen 9 · spec 7 · cost – | [abs](https://arxiv.org/abs/2608.27406) · [pdf](https://arxiv.org/pdf/2608.27406v1) · [code](https://github.com/omni-CLAP/clap) |
 | **8.09** | DriftWorld: Fast World Modeling through Drifting | 2026-07-16 | spd 9 · gen 6 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.15065) · [pdf](https://arxiv.org/pdf/2607.15065v1) · [code](https://github.com/Susie-Lu/driftworld) |
 | **8.09** | Keep the Future, Drop the Rollout: RIFT for World Action Models | 2026-08-12 | spd 8 · gen 6 · spec 9 · cost 7 | [abs](https://arxiv.org/abs/2608.11521) · [pdf](https://arxiv.org/pdf/2608.11521v1) |
+| **8.01** | RealtimeWAM: How Fast Can I Run My World Action Model? | 2026-10-07 | spd 9 · gen 7 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2610.10079) · [pdf](https://arxiv.org/pdf/2610.10079v1) |
 | **7.96** | VLA-ULAP: Interleaving Cloud VLA Calls with Ultra-Lightweight Local Action Prediction at the Edge | 2026-09-16 | spd 9 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2609.18663) · [pdf](https://arxiv.org/pdf/2609.18663v1) |
 | **7.87** | Reinforced Planning with Latent World Models | 2026-08-19 | spd 8 · gen 6 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2608.18669) · [pdf](https://arxiv.org/pdf/2608.18669v1) |
 | **7.87** | RealtimeWAM: One-Step Asynchronous World Action Models | 2026-10-05 | spd 8 · gen 6 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2610.06617) · [pdf](https://arxiv.org/pdf/2610.06617v1) · [code](https://github.com/ModelTC/LightX2V) |
+| **7.85** | RoboJEPA: Scaling Robotic Latent World Models | 2026-10-07 | spd – · gen 8 · spec 6 · cost – | [abs](https://arxiv.org/abs/2610.10515) · [pdf](https://arxiv.org/pdf/2610.10515v1) · [code](https://github.com/facebookresearch/robo_jepa) |
 | **7.83** | Deltoris: Enabling Real-time VLA Inference in Embodied AI via Bit-level Sparsity and Speculative Inference | 2026-08-05 | spd 9 · gen – · spec 4 · cost 7 | [abs](https://arxiv.org/abs/2608.04428) · [pdf](https://arxiv.org/pdf/2608.04428v1) |
 | **7.8** | Staircase Policy: Streaming Inference for World-Action Models with Large Action Chunks | 2026-09-29 | spd 8 · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2609.36471) · [pdf](https://arxiv.org/pdf/2609.36471v1) |
 | **7.79** | Causal-rCM: A Unified Teacher-Forcing and Self-Forcing Open Recipe for Autoregressive Diffusion Distillation in Streaming Video Generation and Interactive World Models | 2026-06-24 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.25473) · [pdf](https://arxiv.org/pdf/2606.25473v1) · [code](https://github.com/NVlabs/rcm) |
 | **7.79** | OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining | 2026-09-07 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2609.07398) · [pdf](https://arxiv.org/pdf/2609.07398v1) · [code](https://github.com/OpenWAM-Official/OpenWAM) |
 | **7.79** | Recovering Aggressively Pruned Vision-Language-Action Models with Offline Hidden-State Distillation | 2026-09-17 | spd 8 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2609.19579) · [pdf](https://arxiv.org/pdf/2609.19579v1) |
 | **7.79** | What Makes World Action Models Generalize? An Empirical Study of Test-Time Future Modeling | 2026-09-28 | spd 8 · gen 7 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2609.34981) · [pdf](https://arxiv.org/pdf/2609.34981v1) |
+| **7.74** | Video Prediction Policy 2: Predict Better, Act Better | 2026-10-07 | spd – · gen 8 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2610.10270) · [pdf](https://arxiv.org/pdf/2610.10270v1) |
 | **7.73** | BLUE: Toward Better Language Use in Efficient Vision-Language-Action Models for Autonomous Driving | 2026-06-07 | spd 8 · gen 3 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2606.08684) · [pdf](https://arxiv.org/pdf/2606.08684v1) · [code](https://github.com/George-Ling3/BLUE) |
 | **7.73** | Think Like a World Model, Act Like a VLA: Distilling World-Model Representations into Compact Robot Policies | 2026-09-21 | spd 8 · gen 7 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2609.24682) · [pdf](https://arxiv.org/pdf/2609.24682v1) · [code](https://github.com/Lifelong-Robot-Learning/LIBERO) |
 | **7.72** | Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model | 2026-07-13 | spd – · gen 7 · spec 8 · cost 2 | [abs](https://arxiv.org/abs/2607.11643) · [pdf](https://arxiv.org/pdf/2607.11643v1) |
@@ -59,6 +62,7 @@ variants · **30** authors
 | **7.67** | One Policy, Many Embodiments: Unified Camera-Centric Action Geometry Pre-training for Heterogeneous Embodied Manipulation | 2026-08-26 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2608.26058) · [pdf](https://arxiv.org/pdf/2608.26058v1) |
 | **7.67** | Triggering Generalist Reasoning via Predictive Uncertainty for Dual-System VLA | 2026-10-04 | spd 7 · gen 5 · spec 6 · cost 9 | [abs](https://arxiv.org/abs/2610.05025) · [pdf](https://arxiv.org/pdf/2610.05025v1) |
 | **7.67** | World Action Modeling with Progressive Visual Planning | 2026-10-01 | spd 5 · gen 8 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2610.02508) · [pdf](https://arxiv.org/pdf/2610.02508v1) |
+| **7.67** | Long-WAM: Scaling the Context of World-Action Models | 2026-10-07 | spd 7 · gen 8 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2610.10528) · [pdf](https://arxiv.org/pdf/2610.10528v1) |
 | **7.66** | Cosmos 3: Omnimodal World Models for Physical AI | 2026-06-01 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.02800) · [pdf](https://arxiv.org/pdf/2606.02800v1) · [code](https://github.com/nvidia/cosmos) |
 | **7.66** | Multiplayer Interactive World Models with Representation Autoencoders | 2026-07-06 | spd 7 · gen 2 · spec 8 · cost 2 | [abs](https://arxiv.org/abs/2607.05352) · [pdf](https://arxiv.org/pdf/2607.05352v1) · [code](https://github.com/mira-wm/mira) |
 | **7.66** | GlanceWAM: Sparse Test-Time Imagination for World-Action Models | 2026-08-25 | spd 8 · gen 6 · spec 7 · cost 5 | [abs](https://arxiv.org/abs/2608.23927) · [pdf](https://arxiv.org/pdf/2608.23927v1) · [code](https://github.com/linhanwang/GlanceWAM) |
@@ -76,10 +80,6 @@ variants · **30** authors
 | **7.59** | JEPA-WAM: Learning Vision-Language-Action Policies with Joint-Embedding World Modeling | 2026-08-10 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2608.09381) · [pdf](https://arxiv.org/pdf/2608.09381v1) |
 | **7.59** | ICI-VLA: In-Context Imitation with Spatiotemporally Aligned Demonstrations for Vision-Language-Action Models | 2026-09-07 | spd – · gen 7 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2609.07581) · [pdf](https://arxiv.org/pdf/2609.07581v1) |
 | **7.58** | Revisiting Embodied Chain-of-Thought for Generalizable Robot Manipulation | 2026-06-02 | spd – · gen 6 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.03784) · [pdf](https://arxiv.org/pdf/2606.03784v2) |
-| **7.58** | FOCA: Future-Oriented Conditioning for Data-Efficient Vision-Language-Action Adaptation | 2026-06-18 | spd – · gen 6 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.20867) · [pdf](https://arxiv.org/pdf/2606.20867v1) |
-| **7.57** | SANTS: A State-Adaptive Scheduler for World Action Models | 2026-05-27 | spd 8 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2605.27947) · [pdf](https://arxiv.org/pdf/2605.27947v1) |
-| **7.57** | Finetuning Vision-Language-Action Models Requires Fewer Layers Than You Think | 2026-06-18 | spd 7 · gen 7 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2606.20246) · [pdf](https://arxiv.org/pdf/2606.20246v1) |
-| **7.57** | Structure-Aware Robust Fine-Tuning: Defending Vision-Language-Action Robots Against Physical Attention Hijacking | 2026-08-04 | spd 8 · gen 5 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2608.03231) · [pdf](https://arxiv.org/pdf/2608.03231v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _3899 results_
+#### LIBERO  ·  _3958 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 | FASA (RDT) | PickCube, PushCube, StackCube | average success rate | 87.5 | authors |
 
-#### RoboCasa  ·  _344 results_
+#### RoboCasa  ·  _346 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | OPSD-MIS _(ALFWorld)_ | — | pass@64 | 75.55 | authors |
 
-#### VBench  ·  _1340 results_
+#### VBench  ·  _1364 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -252,7 +252,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GWTF | Cut & Drag | Flow-Err | 152.81 | 3rd-party |
 | PTQ4DiT | — | FVD-FP | 124.2 | authors |
 
-#### AgiBot / GENIE  ·  _111 results_
+#### AgiBot / GENIE  ·  _128 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -261,11 +261,11 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(AGIBOT G1 real-world teleoperation dataset (fine-tuned))_ | Collaborative Tea | success rate | 100.0 | 3rd-party |
 | V-Link _(AGIBOT A3 Ultra teleoperation data)_ | Autonomous Power-On | success rate | 98.0 | authors |
 | TAO-DA (Dual-Tower) _(AGIBOT G1 real-world teleoperation dataset)_ | Dual-arm routing accuracy | per-class accuracy | 96.13 | authors |
+| RoboRender (video) _(AgiBot-World-Alpha + DROID (~130k clips))_ | — | FVD | 93.9 | authors |
 | Egocentric (ours) _(HumanNet (egocentric portion, 5000h subset))_ | Seen tasks (in-distribution) | success rate | 92.5 | authors |
 | NebulaVLA-Heter | Packaging Line Material Feeding | success rate | 92.5 | authors |
 | Reward as an Agent | — | Overall Accuracy | 91.0 | authors |
 | PAIWorld _(AgiBot-World, RoboMIND, Galaxea, RoboTwin, RoboCOIN (2.5M clips))_ | — | Scene Consistency | 90.41 | authors |
-| NebulaVLA-Homo | Packaging Line Material Feeding | success rate | 90.0 | authors |
 
 #### Habitat  ·  _51 results_
 
@@ -327,7 +327,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SEA-RAFT | — | DCAavg | 47.39 | 3rd-party |
 | LPA-CWM _(MOVi-F)_ | — | AJ | 45.29 | authors |
 
-#### Bench2Drive  ·  _137 results_
+#### Bench2Drive  ·  _140 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -342,7 +342,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | AnchorVLA _(PDM-Lite)_ | — | Driving Score | 89.92 | authors |
 | TakeVLA _(PDM-Lite)_ | — | driving score | 89.72 | 3rd-party |
 
-#### PushT  ·  _135 results_
+#### PushT  ·  _139 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -417,6 +417,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | OrthoSkillVLA | Flip, Pick, Push, Press | Average success rate (%) | 86.25 | authors |
 | ATW | billiards counterfactual | per-question accuracy | 85.0 | authors |
 
+#### TwoRoom  ·  _102 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LeWM + CEM | — | eval time | 224.78 | 3rd-party |
+| DINO-WM | — | success rate | 100.0 | 3rd-party |
+| LeFlow _(offline trajectory data from LeWM benchmarks)_ | — | success rate | 100.0 | authors |
+| GCBC | — | success rate | 100.0 | 3rd-party |
+| GCIVL | — | success rate | 100.0 | 3rd-party |
+| GCIQL | — | success rate | 100.0 | 3rd-party |
+| SA+IDM | — | success rate | 100.0 | authors |
+| ALeWM _(TwoRoom)_ | — | success rate | 100.0 | authors |
+| RWM | — | success rate | 99.67 | authors |
+| LeWM + TEMPO _(TwoRoom dataset)_ | three plans | success rate | 99.2 | authors |
+
 #### SafeSora  ·  _99 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -446,21 +461,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | MAGREF | Overall | MS | 0.964 | 3rd-party |
 | BindWeave | Overall | MS | 0.963 | 3rd-party |
 | FFGO-Wan2.2-14B | Overall | MS | 0.945 | 3rd-party |
-
-#### TwoRoom  ·  _98 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| LeWM + CEM | — | eval time | 224.78 | 3rd-party |
-| DINO-WM | — | success rate | 100.0 | 3rd-party |
-| LeFlow _(offline trajectory data from LeWM benchmarks)_ | — | success rate | 100.0 | authors |
-| GCBC | — | success rate | 100.0 | 3rd-party |
-| GCIVL | — | success rate | 100.0 | 3rd-party |
-| GCIQL | — | success rate | 100.0 | 3rd-party |
-| SA+IDM | — | success rate | 100.0 | authors |
-| ALeWM _(TwoRoom)_ | — | success rate | 100.0 | authors |
-| RWM | — | success rate | 99.67 | authors |
-| LeWM + TEMPO _(TwoRoom dataset)_ | three plans | success rate | 99.2 | authors |
 
 #### Context-as-Memory dataset  ·  _98 results_
 
@@ -492,6 +492,7 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **A Safe Action Is Not Enough: Feasible-Future Decoding for Vision-Language-Action Policies** — Feasible-Future Decoding: a training-free inference-time reranker that addresses the feasibility-likelihood gap in VLA policies. Instead of selecting actions solely by likelihood, it evaluates each candidate action by computing its 'feasible-future mass'—a quantity derived from the exact next-block marginal of the… _(→ WAM: World Action Models inherently combine action generation with world state prediction, making them naturally suited to evaluate the feasibility-likelihood gap. The feasible-future decoding approach can transfer directly: when a WAM proposes candidate actions…)_ [abs](https://arxiv.org/abs/2610.05166) · [pdf](https://arxiv.org/pdf/2610.05166v1)
 - **Awomo-SimDataEngine: Agentic Simulation-ReadyWorld Generation** — A graph-native agentic harness that coordinates the full pipeline from asset generation through scene construction to demonstration synthesis, with bounded repair — detecting failures at any stage, routing them back to the responsible module for targeted correction, while preserving unaffected scene state. This… _(→ WAM: The bounded repair mechanism directly transfers to WAM training and inference. At training time, the data engine already produces validated, replayable demonstrations that improved WAM success from 77.17% to 89.43% on LIBERO-Plus — proving that…)_ [abs](https://arxiv.org/abs/2610.02274) · [pdf](https://arxiv.org/pdf/2610.02274v1)
 - **WAMJET: A Harness for World Action Model Acceleration** — An agentic, bottleneck-driven harness (WAMJET) that automates the selection, composition, and iterative refinement of inference acceleration techniques for World Action Models by equipping coding agents with reusable optimization guidance, profiling/measurement tools, and validation mechanisms. _(→ WAM: This innovation is directly applicable to World Action Models as it is specifically designed to solve their deployment bottleneck: the high computational cost of large video backbones and video-action co-prediction. By automating the engineering-heavy process…)_ [abs](https://arxiv.org/abs/2610.03797) · [pdf](https://arxiv.org/pdf/2610.03797v1) · [code](https://github.com/liulixinkerry/WAMJET)
+- **World Models Dream of Success: Diagnosing and Repairing Failure Insensitivity in Robot World Models** — CureWM introduces execution-verified counterfactual replay for post-hoc repair of world models' failure insensitivity (optimism bias). It constructs alternative actions from successful demonstrations across a severity grid, verifies their outcomes through actual execution in simulation or on hardware, and fine-tunes… _(→ WAM: World Action Models must predict action consequences and support planning/action selection, making failure insensitivity equally damaging. The counterfactual construction method transfers directly: take successful trajectories, perturb actions to create…)_ [abs](https://arxiv.org/abs/2610.09134) · [pdf](https://arxiv.org/pdf/2610.09134v1) · [code](https://github.com/jiuyixu25/CureWM)
 - **World Models: A Comprehensive Survey of Architectures, Methodologies, Reasoning Paradigms, and Applications** — A unifying multi-axis taxonomy for world models that integrates architecture, methodological families, reasoning strategies (particularly the convergence of chain-of-thought reasoning with world-model imagination), and applications, providing a structured framework to map the fragmented landscape of world model… _(→ WAM: The taxonomy's explicit categorization of reasoning strategies (imagination-based planning, latent policy learning, counterfactual reasoning) directly informs how WAMs can be architected to generate actions rather than just passive predictions. Specifically…)_ [abs](https://arxiv.org/abs/2606.00133) · [pdf](https://arxiv.org/pdf/2606.00133v1)
 - **PhAIL: A Real-Robot VLA Benchmark and Distributional Methodology** — Replacing binary success rate metrics with a distributional evaluation methodology based on the time-to-success cumulative distribution function (CDF), scored via Human-Relative Throughput (HRT) and compared using macro-averaged Kolmogorov-Smirnov significance tests to resolve close model comparisons with small sample… _(→ WAM: Evaluating World Action Models often relies on binary task completion metrics, which fail to capture the speed-efficiency trade-offs of different policies. By adopting the time-to-success CDF and HRT scoring, WAM evaluations can distinguish between models…)_ [abs](https://arxiv.org/abs/2605.29710) · [pdf](https://arxiv.org/pdf/2605.29710v1) · [code](https://github.com/Positronic-Robotics/phail-paper)
 - **VLAConf: Calibrated Task-Success Confidence for Vision-Language-Action Models** — A lightweight, one-class discriminative confidence head that leverages frozen pretrained VLA internal representations and step-conditioned modeling to estimate step-wise anomaly scores in a single forward pass, avoiding the computational overhead of resampling and generalizing to continuous action spaces. _(→ WAM: World Action Models (WAMs) often suffer from compounding errors over long horizons and need to know when their world state predictions become unreliable. VLAConf's lightweight confidence head can be directly attached to a WAM's internal representations to…)_ [abs](https://arxiv.org/abs/2605.29605) · [pdf](https://arxiv.org/pdf/2605.29605v1)
@@ -508,7 +509,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **A Tutorial on World Models and Physical AI** — A unifying framework that distinguishes explicit world models (learning structured dynamics for rollout-based reasoning and planning) from implicit world models (encoding predictive structure within scalable learned representations), and proposes that diverse world modeling approaches are unified through shared… _(→ WAM: The explicit/implicit distinction provides a principled architectural blueprint for World Action Models: WAMs can integrate explicit structured dynamics for action-conditioned rollout planning (enabling precise, hierarchical action generation and long-horizon…)_ [abs](https://arxiv.org/abs/2606.12783) · [pdf](https://arxiv.org/pdf/2606.12783v1)
 - **WireCraft: A Simulation Benchmark for Industrial DLO Manipulation** — A modular simulation benchmark for industrial Deformable Linear Object (DLO) manipulation featuring dual physics models (articulated and deformable), configurable task families (connector insertion, clip routing, channel seating), and standardized evaluation protocols bridging simulation and real-world data. _(→ WAM: World Action Models must predict future states given actions, but currently lack benchmarks for complex, infinite-dimensional deformable dynamics. WireCraft provides the exact training data and evaluation protocols needed to develop WAMs capable of modeling…)_ [abs](https://arxiv.org/abs/2606.18097) · [pdf](https://arxiv.org/pdf/2606.18097v1) · [code](https://github.com/isaac-sim/IsaacSim)
 - **ROBOSHACKLES: A Safety Dataset for Human-Injury Prevention in Embodied Foundation Models** — A scalable pipeline for constructing safety-critical robotic video data without real-world harm: starting from real robot observations (DROID), applying hazard-aware image editing to inject dangerous states, generating temporal prompts specifying expected scene evolution, and using a video generation model (Wan2.7) to… _(→ WAM: World Action Models must predict future world states conditioned on actions, making safety-critical anticipation essential. The hazard-aware editing + temporal-prompt + rollout-synthesis pipeline can be directly repurposed to generate safety-critical training…)_ [abs](https://arxiv.org/abs/2606.18632) · [pdf](https://arxiv.org/pdf/2606.18632v1)
-- **Current World Models Lack a Persistent State Core** — Current world models lack a persistent state core—an internal world state that continuously evolves over time, decoupled from observation. When the camera looks away and returns, models simply resume the scene from the state at which it was last observed rather than advancing the event during the unobserved period… _(→ WAM: A World Action Model must predict the consequences of actions over time, including delayed and indirect effects. Without a persistent state core, a WAM cannot reason about what happens to objects or events when they leave the agent's observation—yet…)_ [abs](https://arxiv.org/abs/2606.20545) · [pdf](https://arxiv.org/pdf/2606.20545v1) · [code](https://github.com/JinPLu/WRBench)
 
 ## 👥 Influential Authors & Groups
 - **[Kaipeng Zhang](https://www.semanticscholar.org/author/2349384231)** (16 papers) — Kaipeng Zhang's research focuses on interactive world modeling, particularly developing video world models that enable long-horizon, playable, and controllable generation through explicit state management, dynamics modeling, and real-time rendering, with…
@@ -538,21 +538,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [Jabil discusses the pace of humanoid robot development and production](https://www.therobotreport.com/jabil-discusses-pace-humanoid-robot-development-production/) — _The Robot Report_
+- [Helm.ai reaches $70M in signed commercial contracts for its foundation models](https://www.therobotreport.com/helm-ai-reaches-70m-signed-commercial-contracts-foundation-models/) — _The Robot Report_
+- [AWS launches open-source Physical AI Toolchain for robotics](https://www.therobotreport.com/aws-launches-open-source-physical-ai-toolchain-for-robotics/) — _The Robot Report_
+- [This Disembodied Hand Is All the Robot You Need](https://spectrum.ieee.org/walking-robotic-hand) — _IEEE Spectrum_
 - [Teradyne Robotics, Elite Robots settle cobot dispute](https://www.therobotreport.com/terayne-robotics-elite-robots-settle-cobot-dispute/) — _The Robot Report_
 - [Harmonic Drive to share how integrated actuators can reduce engineering at RoboBusiness](https://www.therobotreport.com/harmonic-drive-share-how-integrated-actuators-reduce-engineering-robobusiness/) — _The Robot Report_
 - [HiPHI: A Large-Scale Benchmark for High-Precision Human Motion and Object Interaction](https://content.knowledgehub.wiley.com/hiphi-a-large-scale-benchmark-for-high-precision-human-motion-and-object-interaction/) — _IEEE Spectrum_
 - [Multimodal open d1 decision models for the edge](https://huggingface.co/blog/LiquidAI/open-d1) — _Hugging Face - Blog_
 - [One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO](https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026) — _Hugging Face - Blog_
+- [PTC acquisition positions Schneider Electric to challenge Siemens](https://www.therobotreport.com/ptc-acquisition-positions-schneider-electric-challenge-siemens/) — _The Robot Report_
+- [Introducing Falcon ASR](https://huggingface.co/blog/tiiuae/falcon-asr) — _Hugging Face - Blog_
 - [Sovereign AI, same landlord — thoughts on the physical AI race](https://www.therobotreport.com/sovereign-ai-same-landlord-thoughts-physical-ai-race/) — _The Robot Report_
 - [FireDome builds autonomous ‘artillery’ for wildfire defense](https://www.therobotreport.com/firedome-builds-autonomous-artillery-for-wildfire-defense/) — _The Robot Report_
 - [Overview AI launches OV Spark line of AI inspection cameras](https://www.therobotreport.com/overview-ai-launches-ov-spark-line-ai-inspection-cameras/) — _The Robot Report_
 - [Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance](https://huggingface.co/blog/tiiuae/falcon-emirati) — _Hugging Face - Blog_
-- [Boston Dynamics appoints former Amazon exec Rohit Prasad as new CEO](https://www.therobotreport.com/boston-dynamics-appoints-former-amazon-executive-rohit-prasad-new-ceo/) — _The Robot Report_
-- [Pegasus 1.6 brings video understanding to physical AI, says TwelveLabs](https://www.therobotreport.com/pegasus-1-6-brings-video-understanding-physical-ai-says-twelvelabs/) — _The Robot Report_
-- [Teradyne invests in Bright Machines to bring robotics to AI infrastructure manufacturing](https://www.therobotreport.com/teradyne-invests-ibright-machines-brings-robotics-ai-infrastructure-manufacturing/) — _The Robot Report_
-- [FCC robot restrictions could accelerate shift to local AI](https://www.therobotreport.com/fcc-robot-restrictions-could-accelerate-shift-to-local-ai/) — _The Robot Report_
-- [How robotics and physical AI can responsibly tackle key physical security challenges](https://www.therobotreport.com/how-robotics-physical-ai-can-responsibly-tackle-key-physical-security-challenges/) — _The Robot Report_
-- [The physical AI race will be won in the patent office](https://www.therobotreport.com/physical-ai-race-will-be-won-in-patent-office/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
