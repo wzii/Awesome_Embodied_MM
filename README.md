@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-08 · **Tracked:** 1654 core · 1169 adjacent ·
-597 news · **30103** benchmark rows across **12724** model
+**Last updated:** 2026-10-09 · **Tracked:** 1654 core · 1169 adjacent ·
+601 news · **30318** benchmark rows across **12819** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -75,11 +75,11 @@ variants · **30** authors
 | **7.63** | Latent Action as Intention Enables Efficient Future Imagination for World Action Models | 2026-08-25 | spd 7 · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.24882) · [pdf](https://arxiv.org/pdf/2608.24882v1) |
 | **7.61** | AHA-WAM:Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing | 2026-06-08 | spd 8 · gen 3 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.09811) · [pdf](https://arxiv.org/pdf/2606.09811v1) |
 | **7.61** | GEAR-VLA: Learning Geometry-Aware Action Representations for Generalizable Robotic Manipulation | 2026-06-07 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.08530) · [pdf](https://arxiv.org/pdf/2606.08530v1) · [code](https://github.com/babynabeauty/GEAR-VLA) |
+| **7.61** | EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution | 2026-10-07 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.10498) · [pdf](https://arxiv.org/pdf/2610.10498v1) |
 | **7.6** | FIVE-VLA: Fast and EffectIVE Autonomous Driving with Recurrent Action Memory | 2026-09-16 | spd 8 · gen 2 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2609.18623) · [pdf](https://arxiv.org/pdf/2609.18623v1) · [code](https://github.com/OpenDriveLab/DriveLM) |
 | **7.59** | Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories | 2026-07-16 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.15330) · [pdf](https://arxiv.org/pdf/2607.15330v1) · [code](https://github.com/Physical-Intelligence/openpi) |
 | **7.59** | JEPA-WAM: Learning Vision-Language-Action Policies with Joint-Embedding World Modeling | 2026-08-10 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2608.09381) · [pdf](https://arxiv.org/pdf/2608.09381v1) |
 | **7.59** | ICI-VLA: In-Context Imitation with Spatiotemporally Aligned Demonstrations for Vision-Language-Action Models | 2026-09-07 | spd – · gen 7 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2609.07581) · [pdf](https://arxiv.org/pdf/2609.07581v1) |
-| **7.58** | Revisiting Embodied Chain-of-Thought for Generalizable Robot Manipulation | 2026-06-02 | spd – · gen 6 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.03784) · [pdf](https://arxiv.org/pdf/2606.03784v2) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _3958 results_
+#### LIBERO  ·  _3973 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _950 results_
+#### RoboTwin  ·  _955 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -162,7 +162,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GR00T(arch) + Point (final layer) _(RLBench-10Tasks)_ | Mean | success rate | 69.7 | authors |
 | ECHO _(RLBench (6 tasks, episodes 0-99))_ | — | success rate | 69.3 | authors |
 
-#### Meta-World  ·  _164 results_
+#### Meta-World  ·  _181 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 | FASA (RDT) | PickCube, PushCube, StackCube | average success rate | 87.5 | authors |
 
-#### RoboCasa  ·  _346 results_
+#### RoboCasa  ·  _354 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -204,8 +204,8 @@ _Model identity = (model, training data); same name on different data is a disti
 | Z-1 RL _(RoboCasa demonstrations)_ | Door | success rate | 97.0 | authors |
 | Z-1 SFT _(RoboCasa demonstrations)_ | Door | success rate | 93.2 | authors |
 | MiDAS _(1 demonstration)_ | — | success rate | 89.3 | authors |
+| PyRUA-Lean | — | success rate | 86.7 | authors |
 | ReSync (X-WAM) | — | success rate | 84.79 | authors |
-| GIFT-WAM-Fast | — | success rate | 83.6 | authors |
 
 #### Open-X / RT  ·  _73 results_
 
@@ -312,6 +312,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | REPA w/ DINOv2 _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 295.9 | 3rd-party |
 | Self-Flow _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 283.3 | 3rd-party |
 
+#### PushT  ·  _145 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LeWM + CEM | — | eval time | 198.92 | 3rd-party |
+| Teacher (canonical encoding) _(canonical encoding)_ | — | retrieval rank (held-out) | 169.8 | authors |
+| LeWM + AITS | — | success rate | 100.0 | authors |
+| DA-LeWM | — | success rate | 98.7 | authors |
+| VIS-WM | — | success rate | 98.0 | authors |
+| SA+IDM | — | success rate | 98.0 | authors |
+| UVA | — | success rate | 97.47 | authors |
+| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
+| LeWM | — | success rate | 96.0 | authors |
+| Le-WM | — | success rate | 96.0 | authors |
+
 #### DAVIS  ·  _141 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -341,21 +356,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | BLUE (CriticVLA) _(CriticVLA training set)_ | — | driving score | 90.37 | authors |
 | AnchorVLA _(PDM-Lite)_ | — | Driving Score | 89.92 | authors |
 | TakeVLA _(PDM-Lite)_ | — | driving score | 89.72 | 3rd-party |
-
-#### PushT  ·  _139 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| LeWM + CEM | — | eval time | 198.92 | 3rd-party |
-| Teacher (canonical encoding) _(canonical encoding)_ | — | retrieval rank (held-out) | 169.8 | authors |
-| LeWM + AITS | — | success rate | 100.0 | authors |
-| DA-LeWM | — | success rate | 98.7 | authors |
-| VIS-WM | — | success rate | 98.0 | authors |
-| SA+IDM | — | success rate | 98.0 | authors |
-| UVA | — | success rate | 97.47 | authors |
-| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
-| LeWM | — | success rate | 96.0 | authors |
-| Le-WM | — | success rate | 96.0 | authors |
 
 #### NAVSIM v1  ·  _134 results_
 
@@ -538,10 +538,14 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [Boston Dynamics gives more insight into its redesigned humanoid hand](https://www.therobotreport.com/boston-dynamics-gives-more-insight-into-its-redesigned-humanoid-hand/) — _The Robot Report_
+- [Impactful scheduling for GPU clusters](https://huggingface.co/blog/allenai/impactful-scheduling) — _Hugging Face - Blog_
 - [Jabil discusses the pace of humanoid robot development and production](https://www.therobotreport.com/jabil-discusses-pace-humanoid-robot-development-production/) — _The Robot Report_
 - [Helm.ai reaches $70M in signed commercial contracts for its foundation models](https://www.therobotreport.com/helm-ai-reaches-70m-signed-commercial-contracts-foundation-models/) — _The Robot Report_
 - [AWS launches open-source Physical AI Toolchain for robotics](https://www.therobotreport.com/aws-launches-open-source-physical-ai-toolchain-for-robotics/) — _The Robot Report_
 - [This Disembodied Hand Is All the Robot You Need](https://spectrum.ieee.org/walking-robotic-hand) — _IEEE Spectrum_
+- [SafeWorld emerges from stealth to build, deploy robot safety simulation technologies](https://www.therobotreport.com/safeworld-emerges-stealth-build-deploy-robot-safety-simulation-technologies/) — _The Robot Report_
+- [The model that didn't exist, so you made it yourself](https://huggingface.co/blog/building-with-ml-intern) — _Hugging Face - Blog_
 - [Teradyne Robotics, Elite Robots settle cobot dispute](https://www.therobotreport.com/terayne-robotics-elite-robots-settle-cobot-dispute/) — _The Robot Report_
 - [Harmonic Drive to share how integrated actuators can reduce engineering at RoboBusiness](https://www.therobotreport.com/harmonic-drive-share-how-integrated-actuators-reduce-engineering-robobusiness/) — _The Robot Report_
 - [HiPHI: A Large-Scale Benchmark for High-Precision Human Motion and Object Interaction](https://content.knowledgehub.wiley.com/hiphi-a-large-scale-benchmark-for-high-precision-human-motion-and-object-interaction/) — _IEEE Spectrum_
@@ -549,10 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO](https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026) — _Hugging Face - Blog_
 - [PTC acquisition positions Schneider Electric to challenge Siemens](https://www.therobotreport.com/ptc-acquisition-positions-schneider-electric-challenge-siemens/) — _The Robot Report_
 - [Introducing Falcon ASR](https://huggingface.co/blog/tiiuae/falcon-asr) — _Hugging Face - Blog_
-- [Sovereign AI, same landlord — thoughts on the physical AI race](https://www.therobotreport.com/sovereign-ai-same-landlord-thoughts-physical-ai-race/) — _The Robot Report_
-- [FireDome builds autonomous ‘artillery’ for wildfire defense](https://www.therobotreport.com/firedome-builds-autonomous-artillery-for-wildfire-defense/) — _The Robot Report_
-- [Overview AI launches OV Spark line of AI inspection cameras](https://www.therobotreport.com/overview-ai-launches-ov-spark-line-ai-inspection-cameras/) — _The Robot Report_
-- [Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance](https://huggingface.co/blog/tiiuae/falcon-emirati) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
