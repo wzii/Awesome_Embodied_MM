@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-09 · **Tracked:** 1654 core · 1169 adjacent ·
-601 news · **30318** benchmark rows across **12819** model
+**Last updated:** 2026-10-10 · **Tracked:** 1691 core · 1192 adjacent ·
+605 news · **30642** benchmark rows across **12975** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -52,6 +52,7 @@ variants · **30** authors
 | **7.79** | Recovering Aggressively Pruned Vision-Language-Action Models with Offline Hidden-State Distillation | 2026-09-17 | spd 8 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2609.19579) · [pdf](https://arxiv.org/pdf/2609.19579v1) |
 | **7.79** | What Makes World Action Models Generalize? An Empirical Study of Test-Time Future Modeling | 2026-09-28 | spd 8 · gen 7 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2609.34981) · [pdf](https://arxiv.org/pdf/2609.34981v1) |
 | **7.74** | Video Prediction Policy 2: Predict Better, Act Better | 2026-10-07 | spd – · gen 8 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2610.10270) · [pdf](https://arxiv.org/pdf/2610.10270v1) |
+| **7.74** | VioLA: Learning Generalist Humanoid Control Policies from Human Data | 2026-10-08 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.12435) · [pdf](https://arxiv.org/pdf/2610.12435v1) |
 | **7.73** | BLUE: Toward Better Language Use in Efficient Vision-Language-Action Models for Autonomous Driving | 2026-06-07 | spd 8 · gen 3 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2606.08684) · [pdf](https://arxiv.org/pdf/2606.08684v1) · [code](https://github.com/George-Ling3/BLUE) |
 | **7.73** | Think Like a World Model, Act Like a VLA: Distilling World-Model Representations into Compact Robot Policies | 2026-09-21 | spd 8 · gen 7 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2609.24682) · [pdf](https://arxiv.org/pdf/2609.24682v1) · [code](https://github.com/Lifelong-Robot-Learning/LIBERO) |
 | **7.72** | Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model | 2026-07-13 | spd – · gen 7 · spec 8 · cost 2 | [abs](https://arxiv.org/abs/2607.11643) · [pdf](https://arxiv.org/pdf/2607.11643v1) |
@@ -68,6 +69,7 @@ variants · **30** authors
 | **7.66** | GlanceWAM: Sparse Test-Time Imagination for World-Action Models | 2026-08-25 | spd 8 · gen 6 · spec 7 · cost 5 | [abs](https://arxiv.org/abs/2608.23927) · [pdf](https://arxiv.org/pdf/2608.23927v1) · [code](https://github.com/linhanwang/GlanceWAM) |
 | **7.66** | Reinforcement Learning for Real-Time Vision-Language-Action Policies | 2026-09-16 | spd 7 · gen 5 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2609.18207) · [pdf](https://arxiv.org/pdf/2609.18207v1) |
 | **7.66** | Towards a General Humanoid Loco-Manipulation Model via Egocentric Whole-Body Human Data Pretraining | 2026-09-30 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.00438) · [pdf](https://arxiv.org/pdf/2610.00438v1) |
+| **7.66** | UNITAS: A 3D-Native World Action Model for Embodied Manipulation | 2026-10-08 | spd – · gen 7 · spec 8 · cost 4 | [abs](https://arxiv.org/abs/2610.12099) · [pdf](https://arxiv.org/pdf/2610.12099v1) · [code](https://github.com/DexForce/UNITAS) |
 | **7.65** | ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training | 2026-08-31 | spd 8 · gen 8 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2609.00188) · [pdf](https://arxiv.org/pdf/2609.00188v1) · [code](https://github.com/ZimaBlue-WAM/ZimaBlue) |
 | **7.65** | DeltaWAM: Delta World Action Models for Bimanual Manipulation | 2026-09-23 | spd 7 · gen 4 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2609.28811) · [pdf](https://arxiv.org/pdf/2609.28811v1) · [code](https://github.com/AIGeeksGroup/DeltaWAM) |
 | **7.65** | StairVLA: Stage-Aware Hierarchical Action Generation for Vision-Language-Action Models | 2026-10-06 | spd 8 · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2610.07756) · [pdf](https://arxiv.org/pdf/2610.07756v1) |
@@ -78,8 +80,6 @@ variants · **30** authors
 | **7.61** | EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution | 2026-10-07 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.10498) · [pdf](https://arxiv.org/pdf/2610.10498v1) |
 | **7.6** | FIVE-VLA: Fast and EffectIVE Autonomous Driving with Recurrent Action Memory | 2026-09-16 | spd 8 · gen 2 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2609.18623) · [pdf](https://arxiv.org/pdf/2609.18623v1) · [code](https://github.com/OpenDriveLab/DriveLM) |
 | **7.59** | Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories | 2026-07-16 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2607.15330) · [pdf](https://arxiv.org/pdf/2607.15330v1) · [code](https://github.com/Physical-Intelligence/openpi) |
-| **7.59** | JEPA-WAM: Learning Vision-Language-Action Policies with Joint-Embedding World Modeling | 2026-08-10 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2608.09381) · [pdf](https://arxiv.org/pdf/2608.09381v1) |
-| **7.59** | ICI-VLA: In-Context Imitation with Spatiotemporally Aligned Demonstrations for Vision-Language-Action Models | 2026-09-07 | spd – · gen 7 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2609.07581) · [pdf](https://arxiv.org/pdf/2609.07581v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _3973 results_
+#### LIBERO  ·  _3994 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _955 results_
+#### RoboTwin  ·  _959 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 | FASA (RDT) | PickCube, PushCube, StackCube | average success rate | 87.5 | authors |
 
-#### RoboCasa  ·  _354 results_
+#### RoboCasa  ·  _359 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -207,7 +207,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | PyRUA-Lean | — | success rate | 86.7 | authors |
 | ReSync (X-WAM) | — | success rate | 84.79 | authors |
 
-#### Open-X / RT  ·  _73 results_
+#### Open-X / RT  ·  _80 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | OPSD-MIS _(ALFWorld)_ | — | pass@64 | 75.55 | authors |
 
-#### VBench  ·  _1364 results_
+#### VBench  ·  _1385 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -538,8 +538,12 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [Why dexterity is physical AI’s real bottleneck](https://www.therobotreport.com/why-dexterity-is-physical-ai-real-bottleneck/) — _The Robot Report_
 - [Boston Dynamics gives more insight into its redesigned humanoid hand](https://www.therobotreport.com/boston-dynamics-gives-more-insight-into-its-redesigned-humanoid-hand/) — _The Robot Report_
 - [Impactful scheduling for GPU clusters](https://huggingface.co/blog/allenai/impactful-scheduling) — _Hugging Face - Blog_
+- [Why humanoid robot demos still fail the generalization test](https://www.therobotreport.com/why-humanoid-robot-demos-still-fail-the-generalization-test/) — _The Robot Report_
+- [Groceryshop 2026 shows that retail robots are ready to scale, use AI](https://www.therobotreport.com/groceryshop-2026-shows-retail-robots-ready-scale-use-ai/) — _The Robot Report_
+- [Video Friday: Robot Decommissioning Takes a Fun Turn](https://spectrum.ieee.org/video-friday-reachy-mini-raps) — _IEEE Spectrum_
 - [Jabil discusses the pace of humanoid robot development and production](https://www.therobotreport.com/jabil-discusses-pace-humanoid-robot-development-production/) — _The Robot Report_
 - [Helm.ai reaches $70M in signed commercial contracts for its foundation models](https://www.therobotreport.com/helm-ai-reaches-70m-signed-commercial-contracts-foundation-models/) — _The Robot Report_
 - [AWS launches open-source Physical AI Toolchain for robotics](https://www.therobotreport.com/aws-launches-open-source-physical-ai-toolchain-for-robotics/) — _The Robot Report_
@@ -549,10 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Teradyne Robotics, Elite Robots settle cobot dispute](https://www.therobotreport.com/terayne-robotics-elite-robots-settle-cobot-dispute/) — _The Robot Report_
 - [Harmonic Drive to share how integrated actuators can reduce engineering at RoboBusiness](https://www.therobotreport.com/harmonic-drive-share-how-integrated-actuators-reduce-engineering-robobusiness/) — _The Robot Report_
 - [HiPHI: A Large-Scale Benchmark for High-Precision Human Motion and Object Interaction](https://content.knowledgehub.wiley.com/hiphi-a-large-scale-benchmark-for-high-precision-human-motion-and-object-interaction/) — _IEEE Spectrum_
-- [Multimodal open d1 decision models for the edge](https://huggingface.co/blog/LiquidAI/open-d1) — _Hugging Face - Blog_
-- [One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO](https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026) — _Hugging Face - Blog_
-- [PTC acquisition positions Schneider Electric to challenge Siemens](https://www.therobotreport.com/ptc-acquisition-positions-schneider-electric-challenge-siemens/) — _The Robot Report_
-- [Introducing Falcon ASR](https://huggingface.co/blog/tiiuae/falcon-asr) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
