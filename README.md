@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-12 · **Tracked:** 1719 core · 1205 adjacent ·
-607 news · **31290** benchmark rows across **13281** model
+**Last updated:** 2026-10-13 · **Tracked:** 1719 core · 1205 adjacent ·
+610 news · **31580** benchmark rows across **13429** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _4096 results_
+#### LIBERO  ·  _4193 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -96,11 +96,11 @@ _Model identity = (model, training data); same name on different data is a disti
 | OpenVLA-7B _(LIBERO)_ | — | I(X; X~) (attack channel capacity) | 5000.0 | authors |
 | AURA-Mem | — | inference state size | 4224.0 | authors |
 | Wan 2.2 (chunked) _(LIBERO-90)_ | — | FVD | 4177.0 | 3rd-party |
+| π0.5 (BF16) _(π0.5)_ | — | energy per successful episode | 2836.0 | 3rd-party |
+| OpenVLA-OFT (BF16) _(OpenVLA-OFT)_ | — | energy per successful episode | 2830.0 | 3rd-party |
 | SimpleVLA-RL _(LIBERO)_ | Long | iterations to 90% success rate | 2450.0 | authors |
 | vla.cpp | — | peak RSS | 2031.0 | authors |
-| vla.cpp | — | VRAM usage | 1312.0 | authors |
-| SmolVLA _(LIBERO)_ | — | p99 latency | 1181.0 | authors |
-| SmolVLA | — | inference time per chunk | 1010.0 | authors |
+| ActTune (π0.5, W4A4) _(π0.5)_ | — | energy per successful episode | 1527.2 | authors |
 
 #### CALVIN  ·  _179 results_
 
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1014 results_
+#### RoboTwin  ·  _1036 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -162,7 +162,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GR00T(arch) + Point (final layer) _(RLBench-10Tasks)_ | Mean | success rate | 69.7 | authors |
 | ECHO _(RLBench (6 tasks, episodes 0-99))_ | — | success rate | 69.3 | authors |
 
-#### Meta-World  ·  _181 results_
+#### Meta-World  ·  _187 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 | FASA (RDT) | PickCube, PushCube, StackCube | average success rate | 87.5 | authors |
 
-#### RoboCasa  ·  _371 results_
+#### RoboCasa  ·  _377 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -252,7 +252,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GWTF | Cut & Drag | Flow-Err | 152.81 | 3rd-party |
 | PTQ4DiT | — | FVD-FP | 124.2 | authors |
 
-#### AgiBot / GENIE  ·  _128 results_
+#### AgiBot / GENIE  ·  _130 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -538,6 +538,9 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [Promise Robotics partners with D.R. Horton on physical AI for homebuilding](https://www.therobotreport.com/promise-robotics-partners-d-r-horton-physical-ai-homebuilding/) — _The Robot Report_
+- [Q&A: Mars Perseverance Rover Distance Record](https://spectrum.ieee.org/mars-rover-distance-record) — _IEEE Spectrum_
+- [Run fast, private agents on-device with LFM2.5-24B-A2B](https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b) — _Hugging Face - Blog_
 - [Closing the reality gap: Why real-time execution has become the new competitive advantage](https://www.therobotreport.com/closing-reality-gap-why-real-time-execution-has-become-new-competitive-advantage/) — _The Robot Report_
 - [Will ‘boring’ robots win in the real world? Why robotic form should follow workflow](https://www.therobotreport.com/will-boring-robots-win-in-the-real-world-why-robotic-form-should-follow-workflow/) — _The Robot Report_
 - [Why dexterity is physical AI’s real bottleneck](https://www.therobotreport.com/why-dexterity-is-physical-ai-real-bottleneck/) — _The Robot Report_
@@ -550,9 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Helm.ai reaches $70M in signed commercial contracts for its foundation models](https://www.therobotreport.com/helm-ai-reaches-70m-signed-commercial-contracts-foundation-models/) — _The Robot Report_
 - [AWS launches open-source Physical AI Toolchain for robotics](https://www.therobotreport.com/aws-launches-open-source-physical-ai-toolchain-for-robotics/) — _The Robot Report_
 - [This Disembodied Hand Is All the Robot You Need](https://spectrum.ieee.org/walking-robotic-hand) — _IEEE Spectrum_
-- [SafeWorld emerges from stealth to build, deploy robot safety simulation technologies](https://www.therobotreport.com/safeworld-emerges-stealth-build-deploy-robot-safety-simulation-technologies/) — _The Robot Report_
-- [The model that didn't exist, so you made it yourself](https://huggingface.co/blog/building-with-ml-intern) — _Hugging Face - Blog_
-- [Teradyne Robotics, Elite Robots settle cobot dispute](https://www.therobotreport.com/terayne-robotics-elite-robots-settle-cobot-dispute/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
