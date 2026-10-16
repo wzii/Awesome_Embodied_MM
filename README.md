@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-15 · **Tracked:** 1834 core · 1268 adjacent ·
-621 news · **32324** benchmark rows across **13815** model
+**Last updated:** 2026-10-16 · **Tracked:** 1834 core · 1268 adjacent ·
+625 news · **32605** benchmark rows across **13943** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -53,10 +53,12 @@ variants · **30** authors
 | **7.79** | OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining | 2026-09-07 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2609.07398) · [pdf](https://arxiv.org/pdf/2609.07398v1) · [code](https://github.com/OpenWAM-Official/OpenWAM) |
 | **7.79** | Recovering Aggressively Pruned Vision-Language-Action Models with Offline Hidden-State Distillation | 2026-09-17 | spd 8 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2609.19579) · [pdf](https://arxiv.org/pdf/2609.19579v1) |
 | **7.79** | What Makes World Action Models Generalize? An Empirical Study of Test-Time Future Modeling | 2026-09-28 | spd 8 · gen 7 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2609.34981) · [pdf](https://arxiv.org/pdf/2609.34981v1) |
+| **7.79** | TacitVLA: Reasoning Vision-Language-Action Models Without Reasoning Latency | 2026-10-13 | spd 8 · gen 7 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2610.17540) · [pdf](https://arxiv.org/pdf/2610.17540v1) · [code](https://github.com/NVlabs/alpasim) |
 | **7.74** | Video Prediction Policy 2: Predict Better, Act Better | 2026-10-07 | spd – · gen 8 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2610.10270) · [pdf](https://arxiv.org/pdf/2610.10270v1) |
 | **7.74** | VioLA: Learning Generalist Humanoid Control Policies from Human Data | 2026-10-08 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.12435) · [pdf](https://arxiv.org/pdf/2610.12435v1) |
 | **7.73** | BLUE: Toward Better Language Use in Efficient Vision-Language-Action Models for Autonomous Driving | 2026-06-07 | spd 8 · gen 3 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2606.08684) · [pdf](https://arxiv.org/pdf/2606.08684v1) · [code](https://github.com/George-Ling3/BLUE) |
 | **7.73** | Think Like a World Model, Act Like a VLA: Distilling World-Model Representations into Compact Robot Policies | 2026-09-21 | spd 8 · gen 7 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2609.24682) · [pdf](https://arxiv.org/pdf/2609.24682v1) · [code](https://github.com/Lifelong-Robot-Learning/LIBERO) |
+| **7.73** | $Δ$ Flow Matching for Robot Foundation Models | 2026-10-11 | spd 8 · gen 6 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2610.15794) · [pdf](https://arxiv.org/pdf/2610.15794v1) |
 | **7.72** | Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model | 2026-07-13 | spd – · gen 7 · spec 8 · cost 2 | [abs](https://arxiv.org/abs/2607.11643) · [pdf](https://arxiv.org/pdf/2607.11643v1) |
 | **7.72** | Forward Dynamics Models | 2026-10-09 | spd 5 · gen 6 · spec 9 · cost 6 | [abs](https://arxiv.org/abs/2610.13117) · [pdf](https://arxiv.org/pdf/2610.13117v1) |
 | **7.71** | LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies | 2026-06-14 | spd 7 · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.15768) · [pdf](https://arxiv.org/pdf/2606.15768v1) |
@@ -78,8 +80,6 @@ variants · **30** authors
 | **7.65** | StairVLA: Stage-Aware Hierarchical Action Generation for Vision-Language-Action Models | 2026-10-06 | spd 8 · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2610.07756) · [pdf](https://arxiv.org/pdf/2610.07756v1) |
 | **7.64** | Foresight Without Seeing: Latent Futures for World Action Models | 2026-08-12 | spd 5 · gen 4 · spec 9 · cost 6 | [abs](https://arxiv.org/abs/2608.11605) · [pdf](https://arxiv.org/pdf/2608.11605v1) |
 | **7.63** | Latent Action as Intention Enables Efficient Future Imagination for World Action Models | 2026-08-25 | spd 7 · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.24882) · [pdf](https://arxiv.org/pdf/2608.24882v1) |
-| **7.61** | AHA-WAM:Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing | 2026-06-08 | spd 8 · gen 3 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2606.09811) · [pdf](https://arxiv.org/pdf/2606.09811v1) |
-| **7.61** | GEAR-VLA: Learning Geometry-Aware Action Representations for Generalizable Robotic Manipulation | 2026-06-07 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.08530) · [pdf](https://arxiv.org/pdf/2606.08530v1) · [code](https://github.com/babynabeauty/GEAR-VLA) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _4276 results_
+#### LIBERO  ·  _4318 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1084 results_
+#### RoboTwin  ·  _1098 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -125,12 +125,12 @@ _Model identity = (model, training data); same name on different data is a disti
 | FARE _(RoboTwin 2.0)_ | — | inference latency | 6872.4 | authors |
 | LingBot-VA _(RoboTwin 2.0)_ | — | inference latency | 6200.7 | authors |
 | Motus (Native) | — | observation-to-action latency | 2343.14 | authors |
+| Async+RTC | — | mean jerk norm | 2022.2 | authors |
+| π0.5 H10E10 | — | mean jerk norm | 1468.8 | authors |
+| π0.5 H50E10 | — | mean jerk norm | 1463.7 | authors |
 | Motus (Native) | — | GPU inference time per replan | 1455.69 | authors |
-| Joint-WAM _(RoboTwin 2.0 demonstrations)_ | — | replanning latency | 978.0 | authors |
-| LingBot-VLA + BCP _(RoboTwin 2.0 Clean)_ | all 50 tasks | VLA inference time | 940.13 | authors |
-| WAMACHINE (Motus) _(Motus)_ | — | observation-to-action latency | 906.38 | authors |
-| ST-WAM _(RoboTwin 2.0)_ | — | inference latency | 756.17 | authors |
-| WAMACHINE (Motus) _(Motus)_ | — | GPU inference time per replan | 652.26 | authors |
+| REACT | — | mean jerk norm | 1219.0 | authors |
+| REACT w/o DD | — | mean jerk norm | 1064.7 | authors |
 
 #### SimplerEnv  ·  _336 results_
 
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | OPSD-MIS _(ALFWorld)_ | — | pass@64 | 75.55 | authors |
 
-#### VBench  ·  _1441 results_
+#### VBench  ·  _1447 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -538,21 +538,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [Video Friday: When Two Robots Become One](https://spectrum.ieee.org/video-friday-reconfigurable-robots) — _IEEE Spectrum_
+- [Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline](https://huggingface.co/blog/nvidia/scaling-indic-pretraining) — _Hugging Face - Blog_
+- [Welcome Beam: a 501B open model you can own, customize, and scale](https://huggingface.co/blog/reflection-beam) — _Hugging Face - Blog_
 - [Stryker invests $400M into CMR Surgical](https://www.therobotreport.com/stryker-invests-400m-into-cmr-surgical/) — _The Robot Report_
 - [How ADI is helping robotics startups scale](https://www.therobotreport.com/how-adi-is-helping-robotics-startups-scale-2/) — _The Robot Report_
 - [Agility chooses Nyobolt for ultra-fast charging for Digit 5 humanoid](https://www.therobotreport.com/agility-robotics-chooses-nyobolt-ultra-fast-charging-digit-5-humanoid/) — _The Robot Report_
 - [Apertus 1.5 Release Notes](https://huggingface.co/blog/swiss-ai/apertus-v15-release-notes) — _Hugging Face - Blog_
 - [Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta](https://huggingface.co/blog/meta-muse-spark-open) — _Hugging Face - Blog_
 - [Welcome FLUX.3 Image Klein in Diffusers](https://huggingface.co/blog/flux-3) — _Hugging Face - Blog_
+- [Granite Switch 4.1: Chat, Decisions, and Speech from One Endpoint](https://huggingface.co/blog/ibm-granite/granite-switch-4-1) — _Hugging Face - Blog_
 - [RoboBusiness 2026 panel to discuss reshoring with robots](https://www.therobotreport.com/robobusiness-2026-panel-discusses-reshoring-with-robots/) — _The Robot Report_
 - [Timken Precision Drives puts the motion challenge first in humanoid robots](https://www.therobotreport.com/timken-precision-drives-puts-motion-challenge-first-humanoid-robots/) — _The Robot Report_
 - [HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost](https://huggingface.co/blog/allenai/hiro-acev2) — _Hugging Face - Blog_
 - [Promise Robotics partners with D.R. Horton on physical AI for homebuilding](https://www.therobotreport.com/promise-robotics-partners-d-r-horton-physical-ai-homebuilding/) — _The Robot Report_
 - [Q&A: Mars Perseverance Rover Distance Record](https://spectrum.ieee.org/mars-rover-distance-record) — _IEEE Spectrum_
-- [Run fast, private agents on-device with LFM2.5-24B-A2B](https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b) — _Hugging Face - Blog_
-- [NYSOFA expands partnership with Intuition Robotics to bring ElliQ to more seniors](https://www.therobotreport.com/nysofa-expands-partnership-intuition-robotics-bring-elliq-more-seniors/) — _The Robot Report_
-- [Hello Robot, A&K Robotics to discuss how robots navigate crowded indoor spaces at RoboBusiness](https://www.therobotreport.com/hello-robot-ak-robotics-discuss-how-robots-navigate-crowded-indoor-spaces-robobusiness/) — _The Robot Report_
-- [Closing the reality gap: Why real-time execution has become the new competitive advantage](https://www.therobotreport.com/closing-reality-gap-why-real-time-execution-has-become-new-competitive-advantage/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
