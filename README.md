@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-16 · **Tracked:** 1834 core · 1268 adjacent ·
-625 news · **32605** benchmark rows across **13943** model
+**Last updated:** 2026-10-17 · **Tracked:** 1861 core · 1284 adjacent ·
+628 news · **32846** benchmark rows across **14058** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -41,6 +41,7 @@ variants · **30** authors
 | **8.1** | CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators | 2026-08-27 | spd – · gen 9 · spec 7 · cost – | [abs](https://arxiv.org/abs/2608.27406) · [pdf](https://arxiv.org/pdf/2608.27406v1) · [code](https://github.com/omni-CLAP/clap) |
 | **8.09** | DriftWorld: Fast World Modeling through Drifting | 2026-07-16 | spd 9 · gen 6 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2607.15065) · [pdf](https://arxiv.org/pdf/2607.15065v1) · [code](https://github.com/Susie-Lu/driftworld) |
 | **8.09** | Keep the Future, Drop the Rollout: RIFT for World Action Models | 2026-08-12 | spd 8 · gen 6 · spec 9 · cost 7 | [abs](https://arxiv.org/abs/2608.11521) · [pdf](https://arxiv.org/pdf/2608.11521v1) |
+| **8.09** | Action Jets: Learning the Local Shape of the Action-conditioned Data Manifold | 2026-10-13 | spd 9 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2610.19007) · [pdf](https://arxiv.org/pdf/2610.19007v1) |
 | **8.01** | RealtimeWAM: How Fast Can I Run My World Action Model? | 2026-10-07 | spd 9 · gen 7 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2610.10079) · [pdf](https://arxiv.org/pdf/2610.10079v1) |
 | **8.01** | 1Step-WAM: Your World Action Model but Faster using 1-Step Action Generation | 2026-10-11 | spd 9 · gen 6 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2610.15625) · [pdf](https://arxiv.org/pdf/2610.15625v1) · [code](https://github.com/changdong1687/1Step-WAM) |
 | **7.96** | VLA-ULAP: Interleaving Cloud VLA Calls with Ultra-Lightweight Local Action Prediction at the Edge | 2026-09-16 | spd 9 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2609.18663) · [pdf](https://arxiv.org/pdf/2609.18663v1) |
@@ -75,11 +76,10 @@ variants · **30** authors
 | **7.66** | Reinforcement Learning for Real-Time Vision-Language-Action Policies | 2026-09-16 | spd 7 · gen 5 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2609.18207) · [pdf](https://arxiv.org/pdf/2609.18207v1) |
 | **7.66** | Towards a General Humanoid Loco-Manipulation Model via Egocentric Whole-Body Human Data Pretraining | 2026-09-30 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.00438) · [pdf](https://arxiv.org/pdf/2610.00438v1) |
 | **7.66** | UNITAS: A 3D-Native World Action Model for Embodied Manipulation | 2026-10-08 | spd – · gen 7 · spec 8 · cost 4 | [abs](https://arxiv.org/abs/2610.12099) · [pdf](https://arxiv.org/pdf/2610.12099v1) · [code](https://github.com/DexForce/UNITAS) |
+| **7.66** | REKI: Registering Knowledge in VLAs | 2026-10-15 | spd 4 · gen 8 · spec 6 · cost 7 | [abs](https://arxiv.org/abs/2610.22178) · [pdf](https://arxiv.org/pdf/2610.22178v1) · [code](https://github.com/kyutai-labs/reki) |
 | **7.65** | ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training | 2026-08-31 | spd 8 · gen 8 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2609.00188) · [pdf](https://arxiv.org/pdf/2609.00188v1) · [code](https://github.com/ZimaBlue-WAM/ZimaBlue) |
 | **7.65** | DeltaWAM: Delta World Action Models for Bimanual Manipulation | 2026-09-23 | spd 7 · gen 4 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2609.28811) · [pdf](https://arxiv.org/pdf/2609.28811v1) · [code](https://github.com/AIGeeksGroup/DeltaWAM) |
 | **7.65** | StairVLA: Stage-Aware Hierarchical Action Generation for Vision-Language-Action Models | 2026-10-06 | spd 8 · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2610.07756) · [pdf](https://arxiv.org/pdf/2610.07756v1) |
-| **7.64** | Foresight Without Seeing: Latent Futures for World Action Models | 2026-08-12 | spd 5 · gen 4 · spec 9 · cost 6 | [abs](https://arxiv.org/abs/2608.11605) · [pdf](https://arxiv.org/pdf/2608.11605v1) |
-| **7.63** | Latent Action as Intention Enables Efficient Future Imagination for World Action Models | 2026-08-25 | spd 7 · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.24882) · [pdf](https://arxiv.org/pdf/2608.24882v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _4318 results_
+#### LIBERO  ·  _4329 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,7 +102,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | vla.cpp | — | peak RSS | 2031.0 | authors |
 | ActTune (π0.5, W4A4) _(π0.5)_ | — | energy per successful episode | 1527.2 | authors |
 
-#### CALVIN  ·  _187 results_
+#### CALVIN  ·  _192 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -132,7 +132,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | REACT | — | mean jerk norm | 1219.0 | authors |
 | REACT w/o DD | — | mean jerk norm | 1064.7 | authors |
 
-#### SimplerEnv  ·  _336 results_
+#### SimplerEnv  ·  _338 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 | FASA (RDT) | PickCube, PushCube, StackCube | average success rate | 87.5 | authors |
 
-#### RoboCasa  ·  _417 results_
+#### RoboCasa  ·  _420 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | OPSD-MIS _(ALFWorld)_ | — | pass@64 | 75.55 | authors |
 
-#### VBench  ·  _1447 results_
+#### VBench  ·  _1462 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -327,20 +327,50 @@ _Model identity = (model, training data); same name on different data is a disti
 | LeWM | — | success rate | 96.0 | authors |
 | Le-WM | — | success rate | 96.0 | authors |
 
-#### Bench2Drive  ·  _146 results_
+#### NAVSIM  ·  _153 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
+| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | NC (no at-fault collision) | 99.4 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
+| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
+| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | TTC (time-to-collision) | 98.5 | authors |
+| S2-VLA _(ReCogDrive VQA + NAVSIM)_ | — | NC | 98.4 | authors |
+| GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | NC | 98.4 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
+| GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | DAC | 95.6 | authors |
+
+#### Bench2Drive  ·  _150 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | BLUE _(SimLingo training set (~400 routes))_ | — | latency | 549.5 | authors |
 | ORION _(Bench2Drive, Chat-B2D)_ | trajectory prediction | decoder latency | 497.52 | authors |
 | CLEAR (InternVL3-1B) _(SimLingo dataset (~3.1M samples))_ | — | Efficiency | 275.4 | authors |
+| Reflect-VLA-4B | — | Effi | 212.2 | authors |
 | VLGA _(Bench2Drive train routes)_ | — | Efficiency | 194.63 | authors |
 | ORION _(Bench2Drive, Chat-B2D)_ | command probe | command-probe accuracy | 97.7 | authors |
 | LinkVLA _(PDM-Lite)_ | — | Driving Score | 91.01 | 3rd-party |
 | BLUE _(SimLingo training set (~400 routes))_ | — | driving score | 90.58 | authors |
 | BLUE (CriticVLA) _(CriticVLA training set)_ | — | driving score | 90.37 | authors |
 | AnchorVLA _(PDM-Lite)_ | — | Driving Score | 89.92 | authors |
-| TakeVLA _(PDM-Lite)_ | — | driving score | 89.72 | 3rd-party |
+
+#### NAVSIM v1  ·  _146 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| UNIVERSE w.o. Mask _(NAVSIM v1)_ | — | inference latency | 1623.0 | authors |
+| UNIVERSE Two-DiT _(NAVSIM v1)_ | — | inference latency | 551.0 | authors |
+| AMPT _(NAVSIM)_ | failure recovery | recovered scenes | 440.0 | authors |
+| UNIVERSE _(NAVSIM v1)_ | — | inference latency | 376.0 | authors |
+| Original GRPO _(NAVSIM)_ | failure recovery | recovered scenes | 367.0 | authors |
+| Full-depth planner _(NAVSIM)_ | — | end-to-end planning latency | 320.0 | authors |
+| Fixed B15 (single trajectory) _(NAVSIM)_ | — | end-to-end planning latency | 190.0 | authors |
+| Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
+| CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
+| CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
 
 #### DROID  ·  _146 results_
 
@@ -372,37 +402,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SEA-RAFT | — | DCAavg | 47.39 | 3rd-party |
 | LPA-CWM _(MOVi-F)_ | — | AJ | 45.29 | authors |
 
-#### NAVSIM v1  ·  _134 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| UNIVERSE w.o. Mask _(NAVSIM v1)_ | — | inference latency | 1623.0 | authors |
-| UNIVERSE Two-DiT _(NAVSIM v1)_ | — | inference latency | 551.0 | authors |
-| AMPT _(NAVSIM)_ | failure recovery | recovered scenes | 440.0 | authors |
-| UNIVERSE _(NAVSIM v1)_ | — | inference latency | 376.0 | authors |
-| Original GRPO _(NAVSIM)_ | failure recovery | recovered scenes | 367.0 | authors |
-| Full-depth planner _(NAVSIM)_ | — | end-to-end planning latency | 320.0 | authors |
-| Fixed B15 (single trajectory) _(NAVSIM)_ | — | end-to-end planning latency | 190.0 | authors |
-| Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
-
-#### NAVSIM  ·  _132 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
-| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | NC (no at-fault collision) | 99.4 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
-| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
-| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | TTC (time-to-collision) | 98.5 | authors |
-| S2-VLA _(ReCogDrive VQA + NAVSIM)_ | — | NC | 98.4 | authors |
-| GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | NC | 98.4 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
-| GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | DAC | 95.6 | authors |
-
-#### Real-world  ·  _127 results_
+#### Real-world  ·  _131 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -447,35 +447,35 @@ _Model identity = (model, training data); same name on different data is a disti
 | Traj-LeWM _(public LeWM datasets (Push-T, OGBench-Cube, Reacher, Two-Room))_ | — | success rate | 88.0 | authors |
 | SA+IDM | — | success rate | 87.0 | authors |
 
-#### Reacher  ·  _99 results_
+#### RoboMME  ·  _104 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| LeWM + CEM | — | eval time | 326.01 | 3rd-party |
-| Ours (SLS2) | — | Safety (%) | 100.0 | authors |
-| Ours (SLS2) | — | Success (%) | 100.0 | authors |
-| Ours (SLS2) | — | Robust Success (%) | 100.0 | authors |
-| Planner-facing backdoor (LeWorldModel) | — | Success rate after trigger removal | 100.0 | authors |
-| FlexiWorld _(LeWM benchmark offline expert trajectories)_ | — | success rate | 99.72 | authors |
-| INTACT _(LeWM benchmark offline expert trajectories)_ | — | success rate | 98.42 | 3rd-party |
-| LeWM + TEMPO _(Reacher dataset)_ | three plans | success rate | 98.4 | authors |
-| RWM | — | success rate | 97.89 | authors |
-| Temporal-Distance-JEPA | — | success rate | 97.0 | authors |
+| Human | — | success rate | 90.5 | 3rd-party |
+| Human Performance | — | average success rate | 90.5 | 3rd-party |
+| SimpleMemVLA _(RoboMME)_ | — | success rate | 88.3 | authors |
+| SimpleMemVLA | — | success rate | 88.3 | authors |
+| Tracker _(RoboMME demonstrations)_ | Permanence suite | success rate | 87.2 | authors |
+| LEDGER _(RoboMME demonstrations)_ | Permanence suite | success rate | 86.7 | authors |
+| Oracle | — | success rate | 84.1 | 3rd-party |
+| Oracle (ground-truth subgoal) | — | success rate | 84.08 | 3rd-party |
+| ECoMEM _(16 RoboMME tasks)_ | — | average success rate | 82.42 | authors |
+| EvoMem-VLA _(RoboMME)_ | — | success rate | 82.0 | authors |
 
-#### Real-World  ·  _99 results_
+#### OGBench  ·  _99 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| Pi0.5 _(real-world demo)_ | pick fruits to basket | success rate | 100.0 | 3rd-party |
-| Pi0.5+adapter _(real-world demo)_ | pick fruits to basket | success rate | 100.0 | authors |
-| DeicticVLA (real-world) _(real-world demonstrations)_ | unseen categories | success rate | 100.0 | authors |
-| NativeMEM _(Mixture of standard and memory-demanding demonstrations)_ | — | success rate | 98.7 | authors |
-| Faster-WAM _(real-world demonstrations)_ | Pick Strawberries, Build Tower, Store Boxes, Stack Plates | success rate | 95.8 | authors |
-| HIL-ResRL (Diffusion Policy) _(50 demos (Pick and Place, Place Upright), 80 demos (Plug in Hole))_ | Pick and Place, Place Upright, Plug in Hole (aggregate) | Average success rate | 95.0 | authors |
-| HIL-ResRL (π0.5) _(50 demos (Pick and Place, Place Upright), 80 demos (Plug in Hole))_ | Pick and Place, Place Upright, Plug in Hole (aggregate) | Average success rate | 95.0 | authors |
-| LaWAM _(3,000 hours robot videos + 1,500 hours egocentric human videos)_ | Pick-and-Place | success rate | 93.3 | authors |
-| HIL-ResRL (with force) _(80 demos (Plug in Hole))_ | Multiple Plug-in-Hole | Success rate | 93.0 | authors |
-| MemoryWAM | Shell Game | success rate | 90.0 | authors |
+| CoFi | PointMaze-Giant | success rate | 96.0 | authors |
+| ProWorld _(OGBench)_ | PushT | success rate | 94.0 | authors |
+| QPILOTS-M _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 90.0 | authors |
+| QPILOTS-U _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 89.0 | authors |
+| FIRM-WM | Cube | success rate | 88.0 | authors |
+| WMPA | scene-play | success rate | 87.0 | authors |
+| QAM-E _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 85.0 | 3rd-party |
+| DTRC | HumanoidMaze-Medium | success rate | 84.7 | authors |
+| CDGS | AntMaze-Giant | success rate | 84.0 | 3rd-party |
+| LeWM _(OGBench)_ | PushT | success rate | 83.33 | authors |
 
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
@@ -538,9 +538,12 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [The rise of the machines is canceled: Why humanoids with AI are helpers, not enemies](https://www.therobotreport.com/rise-machines-canceled-why-humanoids-ai-are-helpers-not-enemies/) — _The Robot Report_
 - [Video Friday: When Two Robots Become One](https://spectrum.ieee.org/video-friday-reconfigurable-robots) — _IEEE Spectrum_
 - [Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline](https://huggingface.co/blog/nvidia/scaling-indic-pretraining) — _Hugging Face - Blog_
 - [Welcome Beam: a 501B open model you can own, customize, and scale](https://huggingface.co/blog/reflection-beam) — _Hugging Face - Blog_
+- [Why opportunity charging is winning as robot fleets scale](https://www.therobotreport.com/why-opportunity-charging-is-winning-as-robot-fleets-scale/) — _The Robot Report_
+- [MassRobotics opens applications for Healthcare Robotics Startup Catalyst Program](https://www.therobotreport.com/massrobotics-opens-applications-healthcare-robotics-startup-catalyst-program/) — _The Robot Report_
 - [Stryker invests $400M into CMR Surgical](https://www.therobotreport.com/stryker-invests-400m-into-cmr-surgical/) — _The Robot Report_
 - [How ADI is helping robotics startups scale](https://www.therobotreport.com/how-adi-is-helping-robotics-startups-scale-2/) — _The Robot Report_
 - [Agility chooses Nyobolt for ultra-fast charging for Digit 5 humanoid](https://www.therobotreport.com/agility-robotics-chooses-nyobolt-ultra-fast-charging-digit-5-humanoid/) — _The Robot Report_
@@ -550,9 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Granite Switch 4.1: Chat, Decisions, and Speech from One Endpoint](https://huggingface.co/blog/ibm-granite/granite-switch-4-1) — _Hugging Face - Blog_
 - [RoboBusiness 2026 panel to discuss reshoring with robots](https://www.therobotreport.com/robobusiness-2026-panel-discusses-reshoring-with-robots/) — _The Robot Report_
 - [Timken Precision Drives puts the motion challenge first in humanoid robots](https://www.therobotreport.com/timken-precision-drives-puts-motion-challenge-first-humanoid-robots/) — _The Robot Report_
-- [HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost](https://huggingface.co/blog/allenai/hiro-acev2) — _Hugging Face - Blog_
-- [Promise Robotics partners with D.R. Horton on physical AI for homebuilding](https://www.therobotreport.com/promise-robotics-partners-d-r-horton-physical-ai-homebuilding/) — _The Robot Report_
-- [Q&A: Mars Perseverance Rover Distance Record](https://spectrum.ieee.org/mars-rover-distance-record) — _IEEE Spectrum_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
