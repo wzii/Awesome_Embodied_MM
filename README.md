@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-17 · **Tracked:** 1861 core · 1284 adjacent ·
-628 news · **32846** benchmark rows across **14058** model
+**Last updated:** 2026-10-18 · **Tracked:** 1861 core · 1284 adjacent ·
+630 news · **33183** benchmark rows across **14225** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _4329 results_
+#### LIBERO  ·  _4388 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1098 results_
+#### RoboTwin  ·  _1131 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -132,7 +132,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | REACT | — | mean jerk norm | 1219.0 | authors |
 | REACT w/o DD | — | mean jerk norm | 1064.7 | authors |
 
-#### SimplerEnv  ·  _338 results_
+#### SimplerEnv  ·  _342 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -162,7 +162,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GR00T(arch) + Point (final layer) _(RLBench-10Tasks)_ | Mean | success rate | 69.7 | authors |
 | ECHO _(RLBench (6 tasks, episodes 0-99))_ | — | success rate | 69.3 | authors |
 
-#### Meta-World  ·  _191 results_
+#### Meta-World  ·  _200 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -177,7 +177,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VICX _(Meta-World (drawer-open, reach, basketball))_ | coffee-button | success rate | 100.0 | authors |
 | RECON _(expert demonstrations + online interaction)_ | Drawer Open | success rate | 100.0 | authors |
 
-#### ManiSkill  ·  _138 results_
+#### ManiSkill  ·  _141 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 | FASA (RDT) | PickCube, PushCube, StackCube | average success rate | 87.5 | authors |
 
-#### RoboCasa  ·  _420 results_
+#### RoboCasa  ·  _431 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -312,7 +312,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | REPA w/ DINOv2 _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 295.9 | 3rd-party |
 | Self-Flow _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 283.3 | 3rd-party |
 
-#### PushT  ·  _157 results_
+#### PushT  ·  _161 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -323,9 +323,24 @@ _Model identity = (model, training data); same name on different data is a disti
 | VIS-WM | — | success rate | 98.0 | authors |
 | SA+IDM | — | success rate | 98.0 | authors |
 | UVA | — | success rate | 97.47 | authors |
+| MemWM | — | success rate | 96.7 | authors |
 | FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
 | LeWM | — | success rate | 96.0 | authors |
-| Le-WM | — | success rate | 96.0 | authors |
+
+#### Bench2Drive  ·  _157 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| BLUE _(SimLingo training set (~400 routes))_ | — | latency | 549.5 | authors |
+| ORION _(Bench2Drive, Chat-B2D)_ | trajectory prediction | decoder latency | 497.52 | authors |
+| CLEAR (InternVL3-1B) _(SimLingo dataset (~3.1M samples))_ | — | Efficiency | 275.4 | authors |
+| Reflect-VLA-4B | — | Effi | 212.2 | authors |
+| VLGA _(Bench2Drive train routes)_ | — | Efficiency | 194.63 | authors |
+| ORION _(Bench2Drive, Chat-B2D)_ | command probe | command-probe accuracy | 97.7 | authors |
+| LinkVLA _(PDM-Lite)_ | — | Driving Score | 91.01 | 3rd-party |
+| BLUE _(SimLingo training set (~400 routes))_ | — | driving score | 90.58 | authors |
+| BLUE (CriticVLA) _(CriticVLA training set)_ | — | driving score | 90.37 | authors |
+| AnchorVLA _(PDM-Lite)_ | — | Driving Score | 89.92 | authors |
 
 #### NAVSIM  ·  _153 results_
 
@@ -341,21 +356,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
 | Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
 | GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | DAC | 95.6 | authors |
-
-#### Bench2Drive  ·  _150 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| BLUE _(SimLingo training set (~400 routes))_ | — | latency | 549.5 | authors |
-| ORION _(Bench2Drive, Chat-B2D)_ | trajectory prediction | decoder latency | 497.52 | authors |
-| CLEAR (InternVL3-1B) _(SimLingo dataset (~3.1M samples))_ | — | Efficiency | 275.4 | authors |
-| Reflect-VLA-4B | — | Effi | 212.2 | authors |
-| VLGA _(Bench2Drive train routes)_ | — | Efficiency | 194.63 | authors |
-| ORION _(Bench2Drive, Chat-B2D)_ | command probe | command-probe accuracy | 97.7 | authors |
-| LinkVLA _(PDM-Lite)_ | — | Driving Score | 91.01 | 3rd-party |
-| BLUE _(SimLingo training set (~400 routes))_ | — | driving score | 90.58 | authors |
-| BLUE (CriticVLA) _(CriticVLA training set)_ | — | driving score | 90.37 | authors |
-| AnchorVLA _(PDM-Lite)_ | — | Driving Score | 89.92 | authors |
 
 #### NAVSIM v1  ·  _146 results_
 
@@ -402,7 +402,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SEA-RAFT | — | DCAavg | 47.39 | 3rd-party |
 | LPA-CWM _(MOVi-F)_ | — | AJ | 45.29 | authors |
 
-#### Real-world  ·  _131 results_
+#### Real-world  ·  _133 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -412,12 +412,12 @@ _Model identity = (model, training data); same name on different data is a disti
 | InSight _(50 human pick-and-place demonstrations + 20 successful pour primitives)_ | pour beans into bowl | success rate | 96.0 | authors |
 | 3DThinkVLA (Ours) _(VLA data + 3D reasoning data (co-training))_ | Transparent container placement | success rate | 93.3 | authors |
 | InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
+| CF-Prune (α=35%) _(Real-world demonstration)_ | — | overall success rate | 90.7 | authors |
 | π0.5 | Place the green cube on the plate | Success rate | 90.0 | 3rd-party |
 | MaP-WAM _(Real-world custom tasks (50 trajectories per task))_ | Find Button | success rate | 88.0 | authors |
 | OrthoSkillVLA | Flip, Pick, Push, Press | Average success rate (%) | 86.25 | authors |
-| ATW | billiards counterfactual | per-question accuracy | 85.0 | authors |
 
-#### TwoRoom  ·  _114 results_
+#### TwoRoom  ·  _118 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -431,6 +431,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | ALeWM _(TwoRoom)_ | — | success rate | 100.0 | authors |
 | RWM | — | success rate | 99.67 | authors |
 | LeWM + TEMPO _(TwoRoom dataset)_ | three plans | success rate | 99.2 | authors |
+
+#### RoboMME  ·  _111 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Human | — | success rate | 90.5 | 3rd-party |
+| Human Performance | — | average success rate | 90.5 | 3rd-party |
+| SimpleMemVLA _(RoboMME)_ | — | success rate | 88.3 | authors |
+| SimpleMemVLA | — | success rate | 88.3 | authors |
+| Tracker _(RoboMME demonstrations)_ | Permanence suite | success rate | 87.2 | authors |
+| LEDGER _(RoboMME demonstrations)_ | Permanence suite | success rate | 86.7 | authors |
+| Oracle | — | success rate | 84.1 | 3rd-party |
+| GroundSG+Oracle | — | success rate | 84.1 | 3rd-party |
+| Oracle (ground-truth subgoal) | — | success rate | 84.08 | 3rd-party |
+| ECoMEM _(16 RoboMME tasks)_ | — | average success rate | 82.42 | authors |
 
 #### OGBench-Cube  ·  _107 results_
 
@@ -447,35 +462,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | Traj-LeWM _(public LeWM datasets (Push-T, OGBench-Cube, Reacher, Two-Room))_ | — | success rate | 88.0 | authors |
 | SA+IDM | — | success rate | 87.0 | authors |
 
-#### RoboMME  ·  _104 results_
+#### Reacher  ·  _103 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
-| Human | — | success rate | 90.5 | 3rd-party |
-| Human Performance | — | average success rate | 90.5 | 3rd-party |
-| SimpleMemVLA _(RoboMME)_ | — | success rate | 88.3 | authors |
-| SimpleMemVLA | — | success rate | 88.3 | authors |
-| Tracker _(RoboMME demonstrations)_ | Permanence suite | success rate | 87.2 | authors |
-| LEDGER _(RoboMME demonstrations)_ | Permanence suite | success rate | 86.7 | authors |
-| Oracle | — | success rate | 84.1 | 3rd-party |
-| Oracle (ground-truth subgoal) | — | success rate | 84.08 | 3rd-party |
-| ECoMEM _(16 RoboMME tasks)_ | — | average success rate | 82.42 | authors |
-| EvoMem-VLA _(RoboMME)_ | — | success rate | 82.0 | authors |
-
-#### OGBench  ·  _99 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| CoFi | PointMaze-Giant | success rate | 96.0 | authors |
-| ProWorld _(OGBench)_ | PushT | success rate | 94.0 | authors |
-| QPILOTS-M _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 90.0 | authors |
-| QPILOTS-U _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 89.0 | authors |
-| FIRM-WM | Cube | success rate | 88.0 | authors |
-| WMPA | scene-play | success rate | 87.0 | authors |
-| QAM-E _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 85.0 | 3rd-party |
-| DTRC | HumanoidMaze-Medium | success rate | 84.7 | authors |
-| CDGS | AntMaze-Giant | success rate | 84.0 | 3rd-party |
-| LeWM _(OGBench)_ | PushT | success rate | 83.33 | authors |
+| LeWM + CEM | — | eval time | 326.01 | 3rd-party |
+| Ours (SLS2) | — | Safety (%) | 100.0 | authors |
+| Ours (SLS2) | — | Success (%) | 100.0 | authors |
+| Ours (SLS2) | — | Robust Success (%) | 100.0 | authors |
+| Planner-facing backdoor (LeWorldModel) | — | Success rate after trigger removal | 100.0 | authors |
+| FlexiWorld _(LeWM benchmark offline expert trajectories)_ | — | success rate | 99.72 | authors |
+| INTACT _(LeWM benchmark offline expert trajectories)_ | — | success rate | 98.42 | 3rd-party |
+| LeWM + TEMPO _(Reacher dataset)_ | three plans | success rate | 98.4 | authors |
+| RWM | — | success rate | 97.89 | authors |
+| Temporal-Distance-JEPA | — | success rate | 97.0 | authors |
 
 ## 🔬 Innovation Watch — adjacent fields (VLA / world models / video generation)
 _Not scored; surfaced for techniques transferable to WAM._
@@ -538,7 +538,9 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [How to choose a BLDC motor for robotic arms and mobile robots](https://www.therobotreport.com/how-to-choose-bldc-motor-robotic-arms-mobile-robots/) — _The Robot Report_
 - [The rise of the machines is canceled: Why humanoids with AI are helpers, not enemies](https://www.therobotreport.com/rise-machines-canceled-why-humanoids-ai-are-helpers-not-enemies/) — _The Robot Report_
+- [ADI explains the race to make AI physical](https://www.therobotreport.com/adi-explains-the-race-to-make-ai-physical/) — _The Robot Report_
 - [Video Friday: When Two Robots Become One](https://spectrum.ieee.org/video-friday-reconfigurable-robots) — _IEEE Spectrum_
 - [Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline](https://huggingface.co/blog/nvidia/scaling-indic-pretraining) — _Hugging Face - Blog_
 - [Welcome Beam: a 501B open model you can own, customize, and scale](https://huggingface.co/blog/reflection-beam) — _Hugging Face - Blog_
@@ -551,8 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta](https://huggingface.co/blog/meta-muse-spark-open) — _Hugging Face - Blog_
 - [Welcome FLUX.3 Image Klein in Diffusers](https://huggingface.co/blog/flux-3) — _Hugging Face - Blog_
 - [Granite Switch 4.1: Chat, Decisions, and Speech from One Endpoint](https://huggingface.co/blog/ibm-granite/granite-switch-4-1) — _Hugging Face - Blog_
-- [RoboBusiness 2026 panel to discuss reshoring with robots](https://www.therobotreport.com/robobusiness-2026-panel-discusses-reshoring-with-robots/) — _The Robot Report_
-- [Timken Precision Drives puts the motion challenge first in humanoid robots](https://www.therobotreport.com/timken-precision-drives-puts-motion-challenge-first-humanoid-robots/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
