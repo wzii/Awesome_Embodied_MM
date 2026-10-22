@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-21 · **Tracked:** 1943 core · 1330 adjacent ·
-653 news · **34380** benchmark rows across **14735** model
+**Last updated:** 2026-10-22 · **Tracked:** 1965 core · 1339 adjacent ·
+657 news · **34747** benchmark rows across **14878** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _4590 results_
+#### LIBERO  ·  _4619 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,7 +102,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | vla.cpp | — | peak RSS | 2031.0 | authors |
 | ActTune (π0.5, W4A4) _(π0.5)_ | — | energy per successful episode | 1527.2 | authors |
 
-#### CALVIN  ·  _196 results_
+#### CALVIN  ·  _198 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,22 +117,22 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1181 results_
+#### RoboTwin  ·  _1210 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | LingBot-VA | — | per-chunk latency | 8100.0 | authors |
 | FARE _(RoboTwin 2.0)_ | — | inference latency | 6872.4 | authors |
 | LingBot-VA _(RoboTwin 2.0)_ | — | inference latency | 6200.7 | authors |
+| Fixed-interval Naive | 7-task aggregate | recovery attempts | 3781.0 | authors |
 | Motus (Native) | — | observation-to-action latency | 2343.14 | authors |
 | Async+RTC | — | mean jerk norm | 2022.2 | authors |
 | π0.5 H10E10 | — | mean jerk norm | 1468.8 | authors |
 | π0.5 H50E10 | — | mean jerk norm | 1463.7 | authors |
 | Motus (Native) | — | GPU inference time per replan | 1455.69 | authors |
 | REACT | — | mean jerk norm | 1219.0 | authors |
-| REACT w/o DD | — | mean jerk norm | 1064.7 | authors |
 
-#### SimplerEnv  ·  _349 results_
+#### SimplerEnv  ·  _356 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 | FASA (RDT) | PickCube, PushCube, StackCube | average success rate | 87.5 | authors |
 
-#### RoboCasa  ·  _435 results_
+#### RoboCasa  ·  _473 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -200,14 +200,14 @@ _Model identity = (model, training data); same name on different data is a disti
 | Joint-WAM _(RoboCasa)_ | — | inference latency | 593.1 | authors |
 | LAWA _(RoboCasa + egocentric videos)_ | — | inference latency | 338.5 | authors |
 | Fast-WAM _(RoboCasa)_ | — | inference latency | 196.5 | authors |
+| Axiom-0 _(pretrain_human300)_ | — | mean generation latency | 135.55 | authors |
+| Xiaomi-Robotics-1 | — | mean generation latency | 133.25 | authors |
 | Cosmos-Policy | Turn Off Microwave | success rate | 100.0 | authors |
 | ALDER | Drawer and Door (pooled) | prediction coverage | 100.0 | authors |
 | Z-1 RL _(RoboCasa demonstrations)_ | Door | success rate | 97.0 | authors |
 | Z-1 SFT _(RoboCasa demonstrations)_ | Door | success rate | 93.2 | authors |
-| EpicWorldModel (FM) _(500 human demonstrations of RoboCasa NavigateKitchen)_ | — | success rate | 90.0 | authors |
-| MiDAS _(1 demonstration)_ | — | success rate | 89.3 | authors |
 
-#### Open-X / RT  ·  _112 results_
+#### Open-X / RT  ·  _114 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | OPSD-MIS _(ALFWorld)_ | — | pass@64 | 75.55 | authors |
 
-#### VBench  ·  _1513 results_
+#### VBench  ·  _1523 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -327,6 +327,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | OccWAM _(Bench2Drive (PDM-Lite expert), Chat-B2D)_ | — | Driving Score | 90.45 | authors |
 | BLUE (CriticVLA) _(CriticVLA training set)_ | — | driving score | 90.37 | authors |
 
+#### NAVSIM  ·  _164 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
+| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | NC (no at-fault collision) | 99.4 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
+| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
+| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | TTC (time-to-collision) | 98.5 | authors |
+| S2-VLA _(ReCogDrive VQA + NAVSIM)_ | — | NC | 98.4 | authors |
+| GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | NC | 98.4 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
+| GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | DAC | 95.6 | authors |
+
 #### PushT  ·  _161 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -356,21 +371,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
-
-#### NAVSIM  ·  _153 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
-| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | NC (no at-fault collision) | 99.4 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
-| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
-| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | TTC (time-to-collision) | 98.5 | authors |
-| S2-VLA _(ReCogDrive VQA + NAVSIM)_ | — | NC | 98.4 | authors |
-| GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | NC | 98.4 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
-| GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | DAC | 95.6 | authors |
 
 #### Real-world  ·  _146 results_
 
@@ -538,21 +538,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [Dream Labs raises $90M and launches Dream API](https://www.therobotreport.com/dream-labs-raises-90m-and-launches-dream-api/) — _The Robot Report_
+- [OlmoEarth v1.3: State-of-the-art embeddings for the whole planet](https://huggingface.co/blog/allenai/olmoearth-v1-3) — _Hugging Face - Blog_
+- [Ensemble forecasting with IBM Granite time-series models](https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1) — _Hugging Face - Blog_
 - [AGCO to deploy Agility Digit humanoid in Kansas factory](https://www.therobotreport.com/agco-to-deploy-agility-digit-humanoid-in-kansas-factory/) — _The Robot Report_
 - [A guide to Day 2 of RoboBusiness 2026](https://www.therobotreport.com/a-guide-to-day-2-of-robobusiness-2026/) — _The Robot Report_
 - [How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications](https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization) — _Hugging Face - Blog_
 - [Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.](https://huggingface.co/blog/amazon/profiling-torchneuron-part-1) — _Hugging Face - Blog_
 - [Granite Speech 5.0: Transcribe, Translate, and Attribute more Accurately and Faster](https://huggingface.co/blog/ibm-granite/granite-speech-5) — _Hugging Face - Blog_
 - [NVIDIA Kumo Forecast Combines Pretrained Time-Series Representations with Historical Pattern Retrieval and Interpretability](https://huggingface.co/blog/nvidia/kumo-forecast) — _Hugging Face - Blog_
+- [NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required](https://huggingface.co/blog/nvidia/kumo-relational) — _Hugging Face - Blog_
 - [RoboBusiness rebrands as Robotics Summit & Expo West](https://www.therobotreport.com/robobusiness-rebrands-as-robotics-summit-expo-west/) — _The Robot Report_
 - [2027 TRR50 Robotics Innovation Awards open nominations](https://www.therobotreport.com/2027-trr50-robotics-innovation-awards-open-nominations/) — _The Robot Report_
 - [Avenda Health expands Unfold AI platform to support intraoperative prostate cancer care](https://www.therobotreport.com/avenda-health-expands-unfold-ai-platform-support-intraoperative-prostate-cancer-care/) — _The Robot Report_
 - [A guide to Day 1 of RoboBusiness 2026](https://www.therobotreport.com/a-guide-to-day-1-of-robobusiness-2026/) — _The Robot Report_
 - [Gecko Robotics secures $300M contract with the U.S. Navy](https://www.therobotreport.com/gecko-robotics-earns-300m-contract-with-the-u-s-navy/) — _The Robot Report_
-- [FairStress: A deeper evaluation of fairness in LLM decision-making](https://huggingface.co/blog/allenai/fairstress) — _Hugging Face - Blog_
-- [ALTK-Evolve: How learned memory tops the τ²-bench leaderboard on customer service tasks without a frontier model](https://huggingface.co/blog/ibm-research/altk-evolve-bc) — _Hugging Face - Blog_
-- [Hugging Face ❤️ TorchTPU: TPUs, Natively](https://huggingface.co/blog/hf-torchtpu) — _Hugging Face - Blog_
-- [AnyLanguageModel 1.0: One Year of Local Models on Apple Platforms](https://huggingface.co/blog/anylanguagemodel-1-0) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
