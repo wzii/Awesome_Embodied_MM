@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-22 · **Tracked:** 1965 core · 1339 adjacent ·
-657 news · **34747** benchmark rows across **14878** model
+**Last updated:** 2026-10-23 · **Tracked:** 1980 core · 1357 adjacent ·
+661 news · **35082** benchmark rows across **15029** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _4619 results_
+#### LIBERO  ·  _4657 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,7 +102,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | vla.cpp | — | peak RSS | 2031.0 | authors |
 | ActTune (π0.5, W4A4) _(π0.5)_ | — | energy per successful episode | 1527.2 | authors |
 
-#### CALVIN  ·  _198 results_
+#### CALVIN  ·  _202 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1210 results_
+#### RoboTwin  ·  _1220 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -132,7 +132,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Motus (Native) | — | GPU inference time per replan | 1455.69 | authors |
 | REACT | — | mean jerk norm | 1219.0 | authors |
 
-#### SimplerEnv  ·  _356 results_
+#### SimplerEnv  ·  _380 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -147,7 +147,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GR00T-N1.6 | Pick up | failed object coverage (FOC) | 97.1 | authors |
 | Afford-VLA _(LIBERO + Affordance dataset)_ | Put Eggplant | Success rate | 96.8 | authors |
 
-#### RLBench  ·  _75 results_
+#### RLBench  ·  _80 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -155,14 +155,14 @@ _Model identity = (model, training data); same name on different data is a disti
 | Uni-LaDiR | — | success rate | 87.0 | authors |
 | LaST0 | — | success rate | 82.0 | 3rd-party |
 | FASA (3D-DA) | — | average success rate | 77.48 | authors |
+| AWAM | — | success rate | 76.5 | authors |
 | 3D Diffuser Actor | — | average success rate | 75.96 | 3rd-party |
+| TVVE | — | success rate | 75.0 | 3rd-party |
 | EO1 (reproduced) _(RLBench (10 tasks))_ | Mean | success rate | 73.2 | 3rd-party |
-| AtlasVLA _(RLBench (100 demos per task))_ | — | success rate | 70.8 | authors |
-| GR00T(arch) + Point _(LIBERO-Spatial / RLBench-10Tasks)_ | Mean | success rate | 69.7 | authors |
-| GR00T(arch) + Point (final layer) _(RLBench-10Tasks)_ | Mean | success rate | 69.7 | authors |
-| ECHO _(RLBench (6 tasks, episodes 0-99))_ | — | success rate | 69.3 | authors |
+| ARP | — | success rate | 73.0 | 3rd-party |
+| RVT2 | — | success rate | 72.8 | 3rd-party |
 
-#### Meta-World  ·  _200 results_
+#### Meta-World  ·  _204 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -177,7 +177,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VICX _(Meta-World (drawer-open, reach, basketball))_ | coffee-button | success rate | 100.0 | authors |
 | RECON _(expert demonstrations + online interaction)_ | Drawer Open | success rate | 100.0 | authors |
 
-#### ManiSkill  ·  _141 results_
+#### ManiSkill  ·  _145 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -190,9 +190,9 @@ _Model identity = (model, training data); same name on different data is a disti
 | FM policy _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | end success rate | 93.14 | authors |
 | π0.5 | — | success rate | 89.8 | authors |
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
-| FASA (RDT) | PickCube, PushCube, StackCube | average success rate | 87.5 | authors |
+| Per-task FlowSDE | — | success_once | 88.1 | authors |
 
-#### RoboCasa  ·  _473 results_
+#### RoboCasa  ·  _478 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | OPSD-MIS _(ALFWorld)_ | — | pass@64 | 75.55 | authors |
 
-#### VBench  ·  _1523 results_
+#### VBench  ·  _1529 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -327,6 +327,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | OccWAM _(Bench2Drive (PDM-Lite expert), Chat-B2D)_ | — | Driving Score | 90.45 | authors |
 | BLUE (CriticVLA) _(CriticVLA training set)_ | — | driving score | 90.37 | authors |
 
+#### PushT  ·  _165 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LeWM _(LeWM offline datasets)_ | — | planning time | 669.6 | 3rd-party |
+| LeWM + CEM | — | eval time | 198.92 | 3rd-party |
+| Teacher (canonical encoding) _(canonical encoding)_ | — | retrieval rank (held-out) | 169.8 | authors |
+| LeWM + AITS | — | success rate | 100.0 | authors |
+| DA-LeWM | — | success rate | 98.7 | authors |
+| VIS-WM | — | success rate | 98.0 | authors |
+| SA+IDM | — | success rate | 98.0 | authors |
+| UVA | — | success rate | 97.47 | authors |
+| MemWM | — | success rate | 96.7 | authors |
+| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
+
 #### NAVSIM  ·  _164 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -341,21 +356,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
 | Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
 | GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | DAC | 95.6 | authors |
-
-#### PushT  ·  _161 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| LeWM + CEM | — | eval time | 198.92 | 3rd-party |
-| Teacher (canonical encoding) _(canonical encoding)_ | — | retrieval rank (held-out) | 169.8 | authors |
-| LeWM + AITS | — | success rate | 100.0 | authors |
-| DA-LeWM | — | success rate | 98.7 | authors |
-| VIS-WM | — | success rate | 98.0 | authors |
-| SA+IDM | — | success rate | 98.0 | authors |
-| UVA | — | success rate | 97.47 | authors |
-| MemWM | — | success rate | 96.7 | authors |
-| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
-| LeWM | — | success rate | 96.0 | authors |
 
 #### NAVSIM v1  ·  _154 results_
 
@@ -372,7 +372,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
 
-#### Real-world  ·  _146 results_
+#### Real-world  ·  _147 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -417,7 +417,22 @@ _Model identity = (model, training data); same name on different data is a disti
 | SEA-RAFT | — | DCAavg | 47.39 | 3rd-party |
 | LPA-CWM _(MOVi-F)_ | — | AJ | 45.29 | authors |
 
-#### TwoRoom  ·  _118 results_
+#### RoboMME  ·  _125 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Human | — | success rate | 90.5 | 3rd-party |
+| Human Performance | — | average success rate | 90.5 | 3rd-party |
+| TacitVLA | Counting | success rate | 89.5 | authors |
+| SimpleMemVLA _(RoboMME)_ | — | success rate | 88.3 | authors |
+| SimpleMemVLA | — | success rate | 88.3 | authors |
+| LTM-pi (CD-LAM) _(RoboMME-10x)_ | — | success rate | 87.5 | authors |
+| Tracker _(RoboMME demonstrations)_ | Permanence suite | success rate | 87.2 | authors |
+| LEDGER _(RoboMME demonstrations)_ | Permanence suite | success rate | 86.7 | authors |
+| Explicit Reasoning | Counting | success rate | 86.7 | authors |
+| Oracle | — | success rate | 84.1 | 3rd-party |
+
+#### TwoRoom  ·  _120 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -431,21 +446,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | ALeWM _(TwoRoom)_ | — | success rate | 100.0 | authors |
 | RWM | — | success rate | 99.67 | authors |
 | LeWM + TEMPO _(TwoRoom dataset)_ | three plans | success rate | 99.2 | authors |
-
-#### RoboMME  ·  _118 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Human | — | success rate | 90.5 | 3rd-party |
-| Human Performance | — | average success rate | 90.5 | 3rd-party |
-| TacitVLA | Counting | success rate | 89.5 | authors |
-| SimpleMemVLA _(RoboMME)_ | — | success rate | 88.3 | authors |
-| SimpleMemVLA | — | success rate | 88.3 | authors |
-| Tracker _(RoboMME demonstrations)_ | Permanence suite | success rate | 87.2 | authors |
-| LEDGER _(RoboMME demonstrations)_ | Permanence suite | success rate | 86.7 | authors |
-| Explicit Reasoning | Counting | success rate | 86.7 | authors |
-| Oracle | — | success rate | 84.1 | 3rd-party |
-| GroundSG+Oracle | — | success rate | 84.1 | 3rd-party |
 
 #### OGBench  ·  _110 results_
 
@@ -492,6 +492,7 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **A Safe Action Is Not Enough: Feasible-Future Decoding for Vision-Language-Action Policies** — Feasible-Future Decoding: a training-free inference-time reranker that addresses the feasibility-likelihood gap in VLA policies. Instead of selecting actions solely by likelihood, it evaluates each candidate action by computing its 'feasible-future mass'—a quantity derived from the exact next-block marginal of the… _(→ WAM: World Action Models inherently combine action generation with world state prediction, making them naturally suited to evaluate the feasibility-likelihood gap. The feasible-future decoding approach can transfer directly: when a WAM proposes candidate actions…)_ [abs](https://arxiv.org/abs/2610.05166) · [pdf](https://arxiv.org/pdf/2610.05166v1)
 - **Awomo-SimDataEngine: Agentic Simulation-ReadyWorld Generation** — A graph-native agentic harness that coordinates the full pipeline from asset generation through scene construction to demonstration synthesis, with bounded repair — detecting failures at any stage, routing them back to the responsible module for targeted correction, while preserving unaffected scene state. This… _(→ WAM: The bounded repair mechanism directly transfers to WAM training and inference. At training time, the data engine already produces validated, replayable demonstrations that improved WAM success from 77.17% to 89.43% on LIBERO-Plus — proving that…)_ [abs](https://arxiv.org/abs/2610.02274) · [pdf](https://arxiv.org/pdf/2610.02274v1)
 - **WAMJET: A Harness for World Action Model Acceleration** — An agentic, bottleneck-driven harness (WAMJET) that automates the selection, composition, and iterative refinement of inference acceleration techniques for World Action Models by equipping coding agents with reusable optimization guidance, profiling/measurement tools, and validation mechanisms. _(→ WAM: This innovation is directly applicable to World Action Models as it is specifically designed to solve their deployment bottleneck: the high computational cost of large video backbones and video-action co-prediction. By automating the engineering-heavy process…)_ [abs](https://arxiv.org/abs/2610.03797) · [pdf](https://arxiv.org/pdf/2610.03797v1) · [code](https://github.com/liulixinkerry/WAMJET)
+- **Reading, Writing, Sharing, and Interacting with the World through Video** — A unifying conceptual framework that decomposes video world models into four complementary operations—Reading (inferring world properties), Writing (synthesizing video), Sharing (jointly understanding and generating), and Interacting (updating states under actions)—while explicitly distinguishing between temporal… _(→ WAM: The 'Interacting' operation directly maps to the core loop of a World Action Model (predicting and updating world states under actions). Additionally, the explicit distinction between video-level temporal coherence and latent world-state consistency provides…)_ [abs](https://arxiv.org/abs/2610.31668) · [pdf](https://arxiv.org/pdf/2610.31668v1) · [code](https://github.com/vid-gen/awesome-video-world-model)
 - **World Models Dream of Success: Diagnosing and Repairing Failure Insensitivity in Robot World Models** — CureWM introduces execution-verified counterfactual replay for post-hoc repair of world models' failure insensitivity (optimism bias). It constructs alternative actions from successful demonstrations across a severity grid, verifies their outcomes through actual execution in simulation or on hardware, and fine-tunes… _(→ WAM: World Action Models must predict action consequences and support planning/action selection, making failure insensitivity equally damaging. The counterfactual construction method transfers directly: take successful trajectories, perturb actions to create…)_ [abs](https://arxiv.org/abs/2610.09134) · [pdf](https://arxiv.org/pdf/2610.09134v1) · [code](https://github.com/jiuyixu25/CureWM)
 - **World Models: A Comprehensive Survey of Architectures, Methodologies, Reasoning Paradigms, and Applications** — A unifying multi-axis taxonomy for world models that integrates architecture, methodological families, reasoning strategies (particularly the convergence of chain-of-thought reasoning with world-model imagination), and applications, providing a structured framework to map the fragmented landscape of world model… _(→ WAM: The taxonomy's explicit categorization of reasoning strategies (imagination-based planning, latent policy learning, counterfactual reasoning) directly informs how WAMs can be architected to generate actions rather than just passive predictions. Specifically…)_ [abs](https://arxiv.org/abs/2606.00133) · [pdf](https://arxiv.org/pdf/2606.00133v1)
 - **PhAIL: A Real-Robot VLA Benchmark and Distributional Methodology** — Replacing binary success rate metrics with a distributional evaluation methodology based on the time-to-success cumulative distribution function (CDF), scored via Human-Relative Throughput (HRT) and compared using macro-averaged Kolmogorov-Smirnov significance tests to resolve close model comparisons with small sample… _(→ WAM: Evaluating World Action Models often relies on binary task completion metrics, which fail to capture the speed-efficiency trade-offs of different policies. By adopting the time-to-success CDF and HRT scoring, WAM evaluations can distinguish between models…)_ [abs](https://arxiv.org/abs/2605.29710) · [pdf](https://arxiv.org/pdf/2605.29710v1) · [code](https://github.com/Positronic-Robotics/phail-paper)
@@ -508,7 +509,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **MaskWAM: Unifying Mask Prompting and Prediction for World-Action Models** — The core technical innovation is the dual use of object masks—both as first-frame visual prompts (inputs) to provide precise spatial grounding and as prediction targets (outputs) for object-centric semantic supervision—unified within a Mixture of Transformers (MoT) architecture. _(→ WAM: World Action Models typically suffer from referential ambiguity from text inputs and visual noise from predicting raw RGB pixels. Transferring this mask-based approach allows WAMs to replace or augment noisy RGB prediction with mask prediction, suppressing…)_ [abs](https://arxiv.org/abs/2606.13515) · [pdf](https://arxiv.org/pdf/2606.13515v1) · [code](https://github.com/QwenLM/Qwen3-VL)
 - **A Tutorial on World Models and Physical AI** — A unifying framework that distinguishes explicit world models (learning structured dynamics for rollout-based reasoning and planning) from implicit world models (encoding predictive structure within scalable learned representations), and proposes that diverse world modeling approaches are unified through shared… _(→ WAM: The explicit/implicit distinction provides a principled architectural blueprint for World Action Models: WAMs can integrate explicit structured dynamics for action-conditioned rollout planning (enabling precise, hierarchical action generation and long-horizon…)_ [abs](https://arxiv.org/abs/2606.12783) · [pdf](https://arxiv.org/pdf/2606.12783v1)
 - **WireCraft: A Simulation Benchmark for Industrial DLO Manipulation** — A modular simulation benchmark for industrial Deformable Linear Object (DLO) manipulation featuring dual physics models (articulated and deformable), configurable task families (connector insertion, clip routing, channel seating), and standardized evaluation protocols bridging simulation and real-world data. _(→ WAM: World Action Models must predict future states given actions, but currently lack benchmarks for complex, infinite-dimensional deformable dynamics. WireCraft provides the exact training data and evaluation protocols needed to develop WAMs capable of modeling…)_ [abs](https://arxiv.org/abs/2606.18097) · [pdf](https://arxiv.org/pdf/2606.18097v1) · [code](https://github.com/isaac-sim/IsaacSim)
-- **ROBOSHACKLES: A Safety Dataset for Human-Injury Prevention in Embodied Foundation Models** — A scalable pipeline for constructing safety-critical robotic video data without real-world harm: starting from real robot observations (DROID), applying hazard-aware image editing to inject dangerous states, generating temporal prompts specifying expected scene evolution, and using a video generation model (Wan2.7) to… _(→ WAM: World Action Models must predict future world states conditioned on actions, making safety-critical anticipation essential. The hazard-aware editing + temporal-prompt + rollout-synthesis pipeline can be directly repurposed to generate safety-critical training…)_ [abs](https://arxiv.org/abs/2606.18632) · [pdf](https://arxiv.org/pdf/2606.18632v1)
 
 ## 👥 Influential Authors & Groups
 - **[Kaipeng Zhang](https://www.semanticscholar.org/author/2349384231)** (16 papers) — Kaipeng Zhang's research focuses on interactive world modeling, particularly developing video world models that enable long-horizon, playable, and controllable generation through explicit state management, dynamics modeling, and real-time rendering, with…
@@ -538,9 +538,13 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [Video Friday: Quadruped Robot Solves Giant Rubik’s Cube by Itself](https://spectrum.ieee.org/video-friday-rubiks-cube-robot) — _IEEE Spectrum_
+- [LitPivot: Developing research ideas through dynamic contextualization within the literature landscape](https://huggingface.co/blog/allenai/litpivot) — _Hugging Face - Blog_
+- [Does Your Model Run on AWS Trainium? Look It Up](https://huggingface.co/blog/torch-neuronx-model-support) — _Hugging Face - Blog_
 - [Dream Labs raises $90M and launches Dream API](https://www.therobotreport.com/dream-labs-raises-90m-and-launches-dream-api/) — _The Robot Report_
 - [OlmoEarth v1.3: State-of-the-art embeddings for the whole planet](https://huggingface.co/blog/allenai/olmoearth-v1-3) — _Hugging Face - Blog_
 - [Ensemble forecasting with IBM Granite time-series models](https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1) — _Hugging Face - Blog_
+- [Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox](https://huggingface.co/blog/microsoft/thinkingbox-training) — _Hugging Face - Blog_
 - [AGCO to deploy Agility Digit humanoid in Kansas factory](https://www.therobotreport.com/agco-to-deploy-agility-digit-humanoid-in-kansas-factory/) — _The Robot Report_
 - [A guide to Day 2 of RoboBusiness 2026](https://www.therobotreport.com/a-guide-to-day-2-of-robobusiness-2026/) — _The Robot Report_
 - [How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications](https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization) — _Hugging Face - Blog_
@@ -549,10 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [NVIDIA Kumo Forecast Combines Pretrained Time-Series Representations with Historical Pattern Retrieval and Interpretability](https://huggingface.co/blog/nvidia/kumo-forecast) — _Hugging Face - Blog_
 - [NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required](https://huggingface.co/blog/nvidia/kumo-relational) — _Hugging Face - Blog_
 - [RoboBusiness rebrands as Robotics Summit & Expo West](https://www.therobotreport.com/robobusiness-rebrands-as-robotics-summit-expo-west/) — _The Robot Report_
-- [2027 TRR50 Robotics Innovation Awards open nominations](https://www.therobotreport.com/2027-trr50-robotics-innovation-awards-open-nominations/) — _The Robot Report_
-- [Avenda Health expands Unfold AI platform to support intraoperative prostate cancer care](https://www.therobotreport.com/avenda-health-expands-unfold-ai-platform-support-intraoperative-prostate-cancer-care/) — _The Robot Report_
-- [A guide to Day 1 of RoboBusiness 2026](https://www.therobotreport.com/a-guide-to-day-1-of-robobusiness-2026/) — _The Robot Report_
-- [Gecko Robotics secures $300M contract with the U.S. Navy](https://www.therobotreport.com/gecko-robotics-earns-300m-contract-with-the-u-s-navy/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
