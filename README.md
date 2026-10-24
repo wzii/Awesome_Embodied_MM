@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-23 · **Tracked:** 1980 core · 1357 adjacent ·
-661 news · **35082** benchmark rows across **15029** model
+**Last updated:** 2026-10-24 · **Tracked:** 1980 core · 1357 adjacent ·
+664 news · **35400** benchmark rows across **15193** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _4657 results_
+#### LIBERO  ·  _4694 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1220 results_
+#### RoboTwin  ·  _1234 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -162,7 +162,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ARP | — | success rate | 73.0 | 3rd-party |
 | RVT2 | — | success rate | 72.8 | 3rd-party |
 
-#### Meta-World  ·  _204 results_
+#### Meta-World  ·  _209 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -297,7 +297,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _380 results_
+#### nuScenes  ·  _394 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -311,6 +311,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | Vanilla Flow _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 304.1 | 3rd-party |
 | REPA w/ DINOv2 _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 295.9 | 3rd-party |
 | Self-Flow _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 283.3 | 3rd-party |
+
+#### PushT  ·  _171 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LeWM _(LeWM offline datasets)_ | — | planning time | 669.6 | 3rd-party |
+| LeWM + CEM | — | eval time | 198.92 | 3rd-party |
+| Teacher (canonical encoding) _(canonical encoding)_ | — | retrieval rank (held-out) | 169.8 | authors |
+| LeWM + AITS | — | success rate | 100.0 | authors |
+| DA-LeWM | — | success rate | 98.7 | authors |
+| VIS-WM | — | success rate | 98.0 | authors |
+| SA+IDM | — | success rate | 98.0 | authors |
+| UVA | — | success rate | 97.47 | authors |
+| MemWM | — | success rate | 96.7 | authors |
+| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
 
 #### Bench2Drive  ·  _165 results_
 
@@ -326,21 +341,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | BLUE _(SimLingo training set (~400 routes))_ | — | driving score | 90.58 | authors |
 | OccWAM _(Bench2Drive (PDM-Lite expert), Chat-B2D)_ | — | Driving Score | 90.45 | authors |
 | BLUE (CriticVLA) _(CriticVLA training set)_ | — | driving score | 90.37 | authors |
-
-#### PushT  ·  _165 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| LeWM _(LeWM offline datasets)_ | — | planning time | 669.6 | 3rd-party |
-| LeWM + CEM | — | eval time | 198.92 | 3rd-party |
-| Teacher (canonical encoding) _(canonical encoding)_ | — | retrieval rank (held-out) | 169.8 | authors |
-| LeWM + AITS | — | success rate | 100.0 | authors |
-| DA-LeWM | — | success rate | 98.7 | authors |
-| VIS-WM | — | success rate | 98.0 | authors |
-| SA+IDM | — | success rate | 98.0 | authors |
-| UVA | — | success rate | 97.47 | authors |
-| MemWM | — | success rate | 96.7 | authors |
-| FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
 
 #### NAVSIM  ·  _164 results_
 
@@ -372,22 +372,22 @@ _Model identity = (model, training data); same name on different data is a disti
 | CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
 
-#### Real-world  ·  _147 results_
+#### Real-world  ·  _151 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | InSight _(50 human scooping demonstrations + acquired lateral-push primitive)_ | sweeping | success rate | 100.0 | authors |
 | SAGE-SFT _(π0.5)_ | Place the green cube on the plate | Success rate | 100.0 | authors |
 | OASIS | Goal | success rate | 98.6 | authors |
+| MambaAct | Nut Pouring | final success rate | 96.9 | authors |
 | InSight _(50 human pick-and-place demonstrations + 20 successful pour primitives)_ | pour beans into bowl | success rate | 96.0 | authors |
 | 3DThinkVLA (Ours) _(VLA data + 3D reasoning data (co-training))_ | Transparent container placement | success rate | 93.3 | authors |
 | Seer + FlowVLA _(Real-world 40 demos per task)_ | Stack Cups | success rate | 93.3 | authors |
 | InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
+| π0.5 | Nut Pouring | final success rate | 91.3 | authors |
 | CF-Prune (α=35%) _(Real-world demonstration)_ | — | overall success rate | 90.7 | authors |
-| π0.5 | Place the green cube on the plate | Success rate | 90.0 | 3rd-party |
-| MaP-WAM _(Real-world custom tasks (50 trajectories per task))_ | Find Button | success rate | 88.0 | authors |
 
-#### DROID  ·  _146 results_
+#### DROID  ·  _148 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -417,6 +417,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | SEA-RAFT | — | DCAavg | 47.39 | 3rd-party |
 | LPA-CWM _(MOVi-F)_ | — | AJ | 45.29 | authors |
 
+#### TwoRoom  ·  _125 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| LeWM + CEM | — | eval time | 224.78 | 3rd-party |
+| DINO-WM | — | success rate | 100.0 | 3rd-party |
+| LeFlow _(offline trajectory data from LeWM benchmarks)_ | — | success rate | 100.0 | authors |
+| GCBC | — | success rate | 100.0 | 3rd-party |
+| GCIVL | — | success rate | 100.0 | 3rd-party |
+| GCIQL | — | success rate | 100.0 | 3rd-party |
+| SA+IDM | — | success rate | 100.0 | authors |
+| ALeWM _(TwoRoom)_ | — | success rate | 100.0 | authors |
+| LeWM + NGC (Oracle Predictor) | offset 75 | success rate | 100.0 | authors |
+| RWM | — | success rate | 99.67 | authors |
+
 #### RoboMME  ·  _125 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -431,21 +446,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | LEDGER _(RoboMME demonstrations)_ | Permanence suite | success rate | 86.7 | authors |
 | Explicit Reasoning | Counting | success rate | 86.7 | authors |
 | Oracle | — | success rate | 84.1 | 3rd-party |
-
-#### TwoRoom  ·  _120 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| LeWM + CEM | — | eval time | 224.78 | 3rd-party |
-| DINO-WM | — | success rate | 100.0 | 3rd-party |
-| LeFlow _(offline trajectory data from LeWM benchmarks)_ | — | success rate | 100.0 | authors |
-| GCBC | — | success rate | 100.0 | 3rd-party |
-| GCIVL | — | success rate | 100.0 | 3rd-party |
-| GCIQL | — | success rate | 100.0 | 3rd-party |
-| SA+IDM | — | success rate | 100.0 | authors |
-| ALeWM _(TwoRoom)_ | — | success rate | 100.0 | authors |
-| RWM | — | success rate | 99.67 | authors |
-| LeWM + TEMPO _(TwoRoom dataset)_ | three plans | success rate | 99.2 | authors |
 
 #### OGBench  ·  _110 results_
 
@@ -538,9 +538,12 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [Eka Robotics raises $150M to scale its vision-force-action model for robots](https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/) — _The Robot Report_
 - [Video Friday: Quadruped Robot Solves Giant Rubik’s Cube by Itself](https://spectrum.ieee.org/video-friday-rubiks-cube-robot) — _IEEE Spectrum_
 - [LitPivot: Developing research ideas through dynamic contextualization within the literature landscape](https://huggingface.co/blog/allenai/litpivot) — _Hugging Face - Blog_
 - [Does Your Model Run on AWS Trainium? Look It Up](https://huggingface.co/blog/torch-neuronx-model-support) — _Hugging Face - Blog_
+- [Webinar to discuss how the FCC robotics ruling affects automation buyers](https://www.therobotreport.com/webinar-discuss-how-fcc-robotics-ruling-affects-automation-buyers/) — _The Robot Report_
+- [Generative Bionics to launch Physical AI Data Factory in Italy](https://www.therobotreport.com/generative-bionics-to-launch-physical-ai-data-factory-in-italy/) — _The Robot Report_
 - [Dream Labs raises $90M and launches Dream API](https://www.therobotreport.com/dream-labs-raises-90m-and-launches-dream-api/) — _The Robot Report_
 - [OlmoEarth v1.3: State-of-the-art embeddings for the whole planet](https://huggingface.co/blog/allenai/olmoearth-v1-3) — _Hugging Face - Blog_
 - [Ensemble forecasting with IBM Granite time-series models](https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1) — _Hugging Face - Blog_
@@ -550,9 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications](https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization) — _Hugging Face - Blog_
 - [Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.](https://huggingface.co/blog/amazon/profiling-torchneuron-part-1) — _Hugging Face - Blog_
 - [Granite Speech 5.0: Transcribe, Translate, and Attribute more Accurately and Faster](https://huggingface.co/blog/ibm-granite/granite-speech-5) — _Hugging Face - Blog_
-- [NVIDIA Kumo Forecast Combines Pretrained Time-Series Representations with Historical Pattern Retrieval and Interpretability](https://huggingface.co/blog/nvidia/kumo-forecast) — _Hugging Face - Blog_
-- [NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required](https://huggingface.co/blog/nvidia/kumo-relational) — _Hugging Face - Blog_
-- [RoboBusiness rebrands as Robotics Summit & Expo West](https://www.therobotreport.com/robobusiness-rebrands-as-robotics-summit-expo-west/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
