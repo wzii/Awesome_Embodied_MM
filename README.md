@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-25 · **Tracked:** 1980 core · 1357 adjacent ·
-665 news · **35611** benchmark rows across **15282** model
+**Last updated:** 2026-10-26 · **Tracked:** 1994 core · 1366 adjacent ·
+666 news · **36037** benchmark rows across **15448** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _4728 results_
+#### LIBERO  ·  _4796 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,7 +102,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | vla.cpp | — | peak RSS | 2031.0 | authors |
 | ActTune (π0.5, W4A4) _(π0.5)_ | — | energy per successful episode | 1527.2 | authors |
 
-#### CALVIN  ·  _204 results_
+#### CALVIN  ·  _209 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1246 results_
+#### RoboTwin  ·  _1256 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -132,7 +132,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Motus (Native) | — | GPU inference time per replan | 1455.69 | authors |
 | REACT | — | mean jerk norm | 1219.0 | authors |
 
-#### SimplerEnv  ·  _392 results_
+#### SimplerEnv  ·  _397 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -162,7 +162,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ARP | — | success rate | 73.0 | 3rd-party |
 | RVT2 | — | success rate | 72.8 | 3rd-party |
 
-#### Meta-World  ·  _209 results_
+#### Meta-World  ·  _220 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 | Per-task FlowSDE | — | success_once | 88.1 | authors |
 
-#### RoboCasa  ·  _482 results_
+#### RoboCasa  ·  _493 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -222,7 +222,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VisualThink-VLA _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 89.49 | authors |
 | FullSoft _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 88.45 | authors |
 
-#### ALFWorld  ·  _57 results_
+#### ALFWorld  ·  _65 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | OPSD-MIS _(ALFWorld)_ | — | pass@64 | 75.55 | authors |
 
-#### VBench  ·  _1537 results_
+#### VBench  ·  _1539 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -357,6 +357,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
 | GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | DAC | 95.6 | authors |
 
+#### DROID  ·  _162 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
+| π0-FAST _(DROID (zero-shot))_ | average across three tasks (successful trajectories only) | action steps length | 269.0 | 3rd-party |
+| MiniWorld-3B _(DROID)_ | — | Trajectory Accuracy improvement | 249.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | Depth Accuracy improvement | 238.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | LPIPS improvement | 216.0 | authors |
+| SWAP _(offline trajectories from candidate policies on DROID tasks)_ | average across three tasks (successful trajectories only) | action steps length | 193.0 | authors |
+| TesserAct | — | FID | 164.54 | 3rd-party |
+| MiniWorld-3B _(DROID)_ | — | SSIM improvement | 125.0 | authors |
+| SWAP _(offline trajectories from candidate policies on DROID tasks)_ | Marker → Bowl | success rate | 100.0 | authors |
+| Causally Interleaved _(DROID)_ | — | Accuracy@0.5 | 94.52 | authors |
+
 #### NAVSIM v1  ·  _154 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -387,21 +402,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 | Nut Pouring | final success rate | 91.3 | authors |
 | CF-Prune (α=35%) _(Real-world demonstration)_ | — | overall success rate | 90.7 | authors |
 
-#### DROID  ·  _148 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
-| π0-FAST _(DROID (zero-shot))_ | average across three tasks (successful trajectories only) | action steps length | 269.0 | 3rd-party |
-| MiniWorld-3B _(DROID)_ | — | Trajectory Accuracy improvement | 249.0 | authors |
-| MiniWorld-3B _(DROID)_ | — | Depth Accuracy improvement | 238.0 | authors |
-| MiniWorld-3B _(DROID)_ | — | LPIPS improvement | 216.0 | authors |
-| SWAP _(offline trajectories from candidate policies on DROID tasks)_ | average across three tasks (successful trajectories only) | action steps length | 193.0 | authors |
-| TesserAct | — | FID | 164.54 | 3rd-party |
-| MiniWorld-3B _(DROID)_ | — | SSIM improvement | 125.0 | authors |
-| SWAP _(offline trajectories from candidate policies on DROID tasks)_ | Marker → Bowl | success rate | 100.0 | authors |
-| Causally Interleaved _(DROID)_ | — | Accuracy@0.5 | 94.52 | authors |
-
 #### DAVIS  ·  _141 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -417,6 +417,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | SEA-RAFT | — | DCAavg | 47.39 | 3rd-party |
 | LPA-CWM _(MOVi-F)_ | — | AJ | 45.29 | authors |
 
+#### RoboMME  ·  _133 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Human | — | success rate | 90.5 | 3rd-party |
+| Human Performance | — | average success rate | 90.5 | 3rd-party |
+| TacitVLA | Counting | success rate | 89.5 | authors |
+| SimpleMemVLA _(RoboMME)_ | — | success rate | 88.3 | authors |
+| SimpleMemVLA | — | success rate | 88.3 | authors |
+| LTM-pi (CD-LAM) _(RoboMME-10x)_ | — | success rate | 87.5 | authors |
+| Tracker _(RoboMME demonstrations)_ | Permanence suite | success rate | 87.2 | authors |
+| LEDGER _(RoboMME demonstrations)_ | Permanence suite | success rate | 86.7 | authors |
+| Explicit Reasoning | Counting | success rate | 86.7 | authors |
+| Oracle | — | success rate | 84.1 | 3rd-party |
+
 #### TwoRoom  ·  _125 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -431,21 +446,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | ALeWM _(TwoRoom)_ | — | success rate | 100.0 | authors |
 | LeWM + NGC (Oracle Predictor) | offset 75 | success rate | 100.0 | authors |
 | RWM | — | success rate | 99.67 | authors |
-
-#### RoboMME  ·  _125 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Human | — | success rate | 90.5 | 3rd-party |
-| Human Performance | — | average success rate | 90.5 | 3rd-party |
-| TacitVLA | Counting | success rate | 89.5 | authors |
-| SimpleMemVLA _(RoboMME)_ | — | success rate | 88.3 | authors |
-| SimpleMemVLA | — | success rate | 88.3 | authors |
-| LTM-pi (CD-LAM) _(RoboMME-10x)_ | — | success rate | 87.5 | authors |
-| Tracker _(RoboMME demonstrations)_ | Permanence suite | success rate | 87.2 | authors |
-| LEDGER _(RoboMME demonstrations)_ | Permanence suite | success rate | 86.7 | authors |
-| Explicit Reasoning | Counting | success rate | 86.7 | authors |
-| Oracle | — | success rate | 84.1 | 3rd-party |
 
 #### OGBench  ·  _120 results_
 
@@ -538,6 +538,7 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Randall Balestriero](https://www.semanticscholar.org/author/2378151189)** (7 papers) — Randall Balestriero's research focuses on developing and analyzing latent world models for planning and control, including metrics for planning-relevant quality (VIScore), theoretical recovery of latent variables (LeJEPA), physics-parameter generalization…
 
 ## 📰 Embodied / Physical-AI News
+- [Agility and GXO Logistics plan expanded deployment of Digit humanoid](https://www.therobotreport.com/agility-gxo-logistics-plan-expanded-deployment-digit-humanoid/) — _The Robot Report_
 - [Teradyne Robotics partners with Sereact to scale physical AI in retail and logistics](https://www.therobotreport.com/teradyne-robotics-partners-sereact-scale-physical-ai-retail-logistics/) — _The Robot Report_
 - [Eka Robotics raises $150M to scale its vision-force-action model for robots](https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/) — _The Robot Report_
 - [Video Friday: Quadruped Robot Solves Giant Rubik’s Cube by Itself](https://spectrum.ieee.org/video-friday-rubiks-cube-robot) — _IEEE Spectrum_
@@ -552,7 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [AGCO to deploy Agility Digit humanoid in Kansas factory](https://www.therobotreport.com/agco-to-deploy-agility-digit-humanoid-in-kansas-factory/) — _The Robot Report_
 - [A guide to Day 2 of RoboBusiness 2026](https://www.therobotreport.com/a-guide-to-day-2-of-robobusiness-2026/) — _The Robot Report_
 - [How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications](https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization) — _Hugging Face - Blog_
-- [Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.](https://huggingface.co/blog/amazon/profiling-torchneuron-part-1) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
