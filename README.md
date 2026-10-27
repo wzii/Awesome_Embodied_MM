@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-26 · **Tracked:** 1994 core · 1366 adjacent ·
-666 news · **36037** benchmark rows across **15448** model
+**Last updated:** 2026-10-27 · **Tracked:** 2017 core · 1385 adjacent ·
+673 news · **36509** benchmark rows across **15654** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -78,12 +78,13 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _4796 results_
+#### LIBERO  ·  _4826 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | KV baseline (growing cache) | — | inference state size at 100k steps | 25600000.0 | authors |
 | π0.5 (LeRobot) _(lerobot/libero)_ | — | inference time per chunk | 12781.0 | authors |
+| VLA-0 _(LIBERO-10)_ | — | median end-to-end latency | 6300.0 | authors |
 | OpenVLA-7B _(LIBERO)_ | — | I(X; X~) (attack channel capacity) | 5000.0 | authors |
 | AURA-Mem | — | inference state size | 4224.0 | authors |
 | Wan 2.2 (chunked) _(LIBERO-90)_ | — | FVD | 4177.0 | 3rd-party |
@@ -91,9 +92,8 @@ _Model identity = (model, training data); same name on different data is a disti
 | OpenVLA-OFT (BF16) _(OpenVLA-OFT)_ | — | energy per successful episode | 2830.0 | 3rd-party |
 | SimpleVLA-RL _(LIBERO)_ | Long | iterations to 90% success rate | 2450.0 | authors |
 | vla.cpp | — | peak RSS | 2031.0 | authors |
-| ActTune (π0.5, W4A4) _(π0.5)_ | — | energy per successful episode | 1527.2 | authors |
 
-#### CALVIN  ·  _209 results_
+#### CALVIN  ·  _214 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -108,7 +108,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1256 results_
+#### RoboTwin  ·  _1296 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -153,7 +153,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ARP | — | success rate | 73.0 | 3rd-party |
 | RVT2 | — | success rate | 72.8 | 3rd-party |
 
-#### Meta-World  ·  _220 results_
+#### Meta-World  ·  _223 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -183,7 +183,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 | Per-task FlowSDE | — | success_once | 88.1 | authors |
 
-#### RoboCasa  ·  _493 results_
+#### RoboCasa  ·  _506 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -228,7 +228,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | OPSD-MIS _(ALFWorld)_ | — | pass@64 | 75.55 | authors |
 
-#### VBench  ·  _1539 results_
+#### VBench  ·  _1555 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -333,7 +333,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | BLUE _(SimLingo training set (~400 routes))_ | — | driving score | 90.58 | authors |
 | OccWAM _(Bench2Drive (PDM-Lite expert), Chat-B2D)_ | — | Driving Score | 90.45 | authors |
 
-#### NAVSIM  ·  _164 results_
+#### NAVSIM  ·  _176 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -484,6 +484,7 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **Awomo-SimDataEngine: Agentic Simulation-ReadyWorld Generation** — A graph-native agentic harness that coordinates the full pipeline from asset generation through scene construction to demonstration synthesis, with bounded repair — detecting failures at any stage, routing them back to the responsible module for targeted correction, while preserving unaffected scene state. This… _(→ WAM: The bounded repair mechanism directly transfers to WAM training and inference. At training time, the data engine already produces validated, replayable demonstrations that improved WAM success from 77.17% to 89.43% on LIBERO-Plus — proving that…)_ [abs](https://arxiv.org/abs/2610.02274) · [pdf](https://arxiv.org/pdf/2610.02274v1)
 - **WAMJET: A Harness for World Action Model Acceleration** — An agentic, bottleneck-driven harness (WAMJET) that automates the selection, composition, and iterative refinement of inference acceleration techniques for World Action Models by equipping coding agents with reusable optimization guidance, profiling/measurement tools, and validation mechanisms. _(→ WAM: This innovation is directly applicable to World Action Models as it is specifically designed to solve their deployment bottleneck: the high computational cost of large video backbones and video-action co-prediction. By automating the engineering-heavy process…)_ [abs](https://arxiv.org/abs/2610.03797) · [pdf](https://arxiv.org/pdf/2610.03797v1) · [code](https://github.com/liulixinkerry/WAMJET)
 - **Reading, Writing, Sharing, and Interacting with the World through Video** — A unifying conceptual framework that decomposes video world models into four complementary operations—Reading (inferring world properties), Writing (synthesizing video), Sharing (jointly understanding and generating), and Interacting (updating states under actions)—while explicitly distinguishing between temporal… _(→ WAM: The 'Interacting' operation directly maps to the core loop of a World Action Model (predicting and updating world states under actions). Additionally, the explicit distinction between video-level temporal coherence and latent world-state consistency provides…)_ [abs](https://arxiv.org/abs/2610.31668) · [pdf](https://arxiv.org/pdf/2610.31668v1) · [code](https://github.com/vid-gen/awesome-video-world-model)
+- **Beyond Behaviour: A Stimulus-Response Safety Evaluation of Vision-Language-Action Models** — A stimulus-response safety evaluation framework that probes the dissociation between internal hazard registration and action output in VLA models, revealing that models can internally represent danger (visible hazards, harmful consequences) yet still default to task-execution actions rather than safety-oriented… _(→ WAM: This finding is critical for World Action Models because it reveals that simply having accurate world knowledge (internally registering danger) is insufficient for safe action generation. WAMs must explicitly bridge the gap between hazard perception and…)_ [abs](https://arxiv.org/abs/2610.34837) · [pdf](https://arxiv.org/pdf/2610.34837v1)
 - **World Models Dream of Success: Diagnosing and Repairing Failure Insensitivity in Robot World Models** — CureWM introduces execution-verified counterfactual replay for post-hoc repair of world models' failure insensitivity (optimism bias). It constructs alternative actions from successful demonstrations across a severity grid, verifies their outcomes through actual execution in simulation or on hardware, and fine-tunes… _(→ WAM: World Action Models must predict action consequences and support planning/action selection, making failure insensitivity equally damaging. The counterfactual construction method transfers directly: take successful trajectories, perturb actions to create…)_ [abs](https://arxiv.org/abs/2610.09134) · [pdf](https://arxiv.org/pdf/2610.09134v1) · [code](https://github.com/jiuyixu25/CureWM)
 - **World Models: A Comprehensive Survey of Architectures, Methodologies, Reasoning Paradigms, and Applications** — A unifying multi-axis taxonomy for world models that integrates architecture, methodological families, reasoning strategies (particularly the convergence of chain-of-thought reasoning with world-model imagination), and applications, providing a structured framework to map the fragmented landscape of world model… _(→ WAM: The taxonomy's explicit categorization of reasoning strategies (imagination-based planning, latent policy learning, counterfactual reasoning) directly informs how WAMs can be architected to generate actions rather than just passive predictions. Specifically…)_ [abs](https://arxiv.org/abs/2606.00133) · [pdf](https://arxiv.org/pdf/2606.00133v1)
 - **PhAIL: A Real-Robot VLA Benchmark and Distributional Methodology** — Replacing binary success rate metrics with a distributional evaluation methodology based on the time-to-success cumulative distribution function (CDF), scored via Human-Relative Throughput (HRT) and compared using macro-averaged Kolmogorov-Smirnov significance tests to resolve close model comparisons with small sample… _(→ WAM: Evaluating World Action Models often relies on binary task completion metrics, which fail to capture the speed-efficiency trade-offs of different policies. By adopting the time-to-success CDF and HRT scoring, WAM evaluations can distinguish between models…)_ [abs](https://arxiv.org/abs/2605.29710) · [pdf](https://arxiv.org/pdf/2605.29710v1) · [code](https://github.com/Positronic-Robotics/phail-paper)
@@ -499,7 +500,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **What Matters in Orchestrating Robot Policies: A Systematic Study of Hierarchical VLA Agents** — A systematic study that unifies hierarchical VLA agents under an options-style control framework, benchmarking core design choices—planner selection, controller selection, switching mechanisms between levels, and observation/memory representations—to derive practical principles showing how model choices and interface… _(→ WAM: World Action Models must handle complex, long-horizon tasks requiring temporal abstraction. The options-style hierarchical framework and the derived interface design principles directly transfer: (1) WAMs can adopt the options framework to structure world…)_ [abs](https://arxiv.org/abs/2606.10267) · [pdf](https://arxiv.org/pdf/2606.10267v1)
 - **MaskWAM: Unifying Mask Prompting and Prediction for World-Action Models** — The core technical innovation is the dual use of object masks—both as first-frame visual prompts (inputs) to provide precise spatial grounding and as prediction targets (outputs) for object-centric semantic supervision—unified within a Mixture of Transformers (MoT) architecture. _(→ WAM: World Action Models typically suffer from referential ambiguity from text inputs and visual noise from predicting raw RGB pixels. Transferring this mask-based approach allows WAMs to replace or augment noisy RGB prediction with mask prediction, suppressing…)_ [abs](https://arxiv.org/abs/2606.13515) · [pdf](https://arxiv.org/pdf/2606.13515v1) · [code](https://github.com/QwenLM/Qwen3-VL)
 - **A Tutorial on World Models and Physical AI** — A unifying framework that distinguishes explicit world models (learning structured dynamics for rollout-based reasoning and planning) from implicit world models (encoding predictive structure within scalable learned representations), and proposes that diverse world modeling approaches are unified through shared… _(→ WAM: The explicit/implicit distinction provides a principled architectural blueprint for World Action Models: WAMs can integrate explicit structured dynamics for action-conditioned rollout planning (enabling precise, hierarchical action generation and long-horizon…)_ [abs](https://arxiv.org/abs/2606.12783) · [pdf](https://arxiv.org/pdf/2606.12783v1)
-- **WireCraft: A Simulation Benchmark for Industrial DLO Manipulation** — A modular simulation benchmark for industrial Deformable Linear Object (DLO) manipulation featuring dual physics models (articulated and deformable), configurable task families (connector insertion, clip routing, channel seating), and standardized evaluation protocols bridging simulation and real-world data. _(→ WAM: World Action Models must predict future states given actions, but currently lack benchmarks for complex, infinite-dimensional deformable dynamics. WireCraft provides the exact training data and evaluation protocols needed to develop WAMs capable of modeling…)_ [abs](https://arxiv.org/abs/2606.18097) · [pdf](https://arxiv.org/pdf/2606.18097v1) · [code](https://github.com/isaac-sim/IsaacSim)
 
 ## 👥 Influential Authors & Groups
 - **[Kai-Peng Zhang](https://www.semanticscholar.org/author/2349384231)** (22 papers) — Kai-Peng Zhang's research focuses on video world models, particularly interactive, long-horizon, and controllable generation. This includes dynamic resource allocation, state decoupling, multi-agent simulation, and dataset construction for enabling real-time…
@@ -529,7 +529,14 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Xiao-Wei Chi](https://www.semanticscholar.org/author/2192825554)** (10 papers) — Xiao-Wei Chi's research focuses on developing World-Action Models (WAMs) for embodied AI, including safe RL with world models, efficient video-based action planning, and multimodal (vision, tactile) world modeling for robotic manipulation, with a strong…
 
 ## 📰 Embodied / Physical-AI News
+- [ANYbotics begins delivering ANYmal X legged robot for explosive atmospheres](https://www.therobotreport.com/anybotics-begins-delivering-anymal-x-legged-robot-explosive-atmospheres/) — _The Robot Report_
+- [Embotech and BMW move 1M vehicles with automated driving technology](https://www.therobotreport.com/embotech-bmw-move-1m-vehicles-automated-driving-technology/) — _The Robot Report_
+- [Xpanner launches autonomous pile driver for solar farm contruction](https://www.therobotreport.com/xpanner-launches-new-autonomous-pile-driver-solar-farm-contruction/) — _The Robot Report_
+- [Build specialized multimodal models with LFM3](https://huggingface.co/blog/LiquidAI/lfm3) — _Hugging Face - Blog_
+- [Can we trust LLMs to judge whether a research idea is novel?](https://huggingface.co/blog/allenai/novelty-bench) — _Hugging Face - Blog_
 - [Agility and GXO Logistics plan expanded deployment of Digit humanoid](https://www.therobotreport.com/agility-gxo-logistics-plan-expanded-deployment-digit-humanoid/) — _The Robot Report_
+- [Bedrock Robotics nears $1B in total funding as demand for autonomous heavy equipment surges](https://www.therobotreport.com/bedrock-robotics-nears-1b-in-total-funding-as-demand-for-autonomous-heavy-equipment-surges/) — _The Robot Report_
+- [OMRON to acquire OnLogic to address edge AI applications](https://www.therobotreport.com/omron-acquires-onlogic-address-edge-ai-applications/) — _The Robot Report_
 - [Teradyne Robotics partners with Sereact to scale physical AI in retail and logistics](https://www.therobotreport.com/teradyne-robotics-partners-sereact-scale-physical-ai-retail-logistics/) — _The Robot Report_
 - [Eka Robotics raises $150M to scale its vision-force-action model for robots](https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/) — _The Robot Report_
 - [Video Friday: Quadruped Robot Solves Giant Rubik’s Cube by Itself](https://spectrum.ieee.org/video-friday-rubiks-cube-robot) — _IEEE Spectrum_
@@ -537,13 +544,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Does Your Model Run on AWS Trainium? Look It Up](https://huggingface.co/blog/torch-neuronx-model-support) — _Hugging Face - Blog_
 - [Webinar to discuss how the FCC robotics ruling affects automation buyers](https://www.therobotreport.com/webinar-discuss-how-fcc-robotics-ruling-affects-automation-buyers/) — _The Robot Report_
 - [Generative Bionics to launch Physical AI Data Factory in Italy](https://www.therobotreport.com/generative-bionics-to-launch-physical-ai-data-factory-in-italy/) — _The Robot Report_
-- [Dream Labs raises $90M and launches Dream API](https://www.therobotreport.com/dream-labs-raises-90m-and-launches-dream-api/) — _The Robot Report_
-- [OlmoEarth v1.3: State-of-the-art embeddings for the whole planet](https://huggingface.co/blog/allenai/olmoearth-v1-3) — _Hugging Face - Blog_
-- [Ensemble forecasting with IBM Granite time-series models](https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1) — _Hugging Face - Blog_
-- [Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox](https://huggingface.co/blog/microsoft/thinkingbox-training) — _Hugging Face - Blog_
-- [AGCO to deploy Agility Digit humanoid in Kansas factory](https://www.therobotreport.com/agco-to-deploy-agility-digit-humanoid-in-kansas-factory/) — _The Robot Report_
-- [A guide to Day 2 of RoboBusiness 2026](https://www.therobotreport.com/a-guide-to-day-2-of-robobusiness-2026/) — _The Robot Report_
-- [How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications](https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
