@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-27 · **Tracked:** 2017 core · 1385 adjacent ·
-673 news · **36509** benchmark rows across **15654** model
+**Last updated:** 2026-10-28 · **Tracked:** 2037 core · 1394 adjacent ·
+676 news · **36696** benchmark rows across **15726** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -64,13 +64,13 @@ variants · **30** authors
 | **7.67** | Triggering Generalist Reasoning via Predictive Uncertainty for Dual-System VLA | 2026-10-04 | spd 7 · gen 5 · spec 6 · cost 9 | [abs](https://arxiv.org/abs/2610.05025) · [pdf](https://arxiv.org/pdf/2610.05025v1) |
 | **7.67** | World Action Modeling with Progressive Visual Planning | 2026-10-01 | spd 5 · gen 8 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2610.02508) · [pdf](https://arxiv.org/pdf/2610.02508v1) |
 | **7.67** | Long-WAM: Scaling the Context of World-Action Models | 2026-10-07 | spd 7 · gen 8 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2610.10528) · [pdf](https://arxiv.org/pdf/2610.10528v1) |
+| **7.67** | World Dreamer v5-lite: A Multi-Robot World Action Model with One Dreamer | 2026-10-27 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.37518) · [pdf](https://arxiv.org/pdf/2610.37518v1) · [code](https://github.com/enactic/openarm) |
 | **7.66** | Cosmos 3: Omnimodal World Models for Physical AI | 2026-06-01 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2606.02800) · [pdf](https://arxiv.org/pdf/2606.02800v1) · [code](https://github.com/nvidia/cosmos) |
 | **7.66** | Multiplayer Interactive World Models with Representation Autoencoders | 2026-07-06 | spd 7 · gen 2 · spec 8 · cost 2 | [abs](https://arxiv.org/abs/2607.05352) · [pdf](https://arxiv.org/pdf/2607.05352v1) · [code](https://github.com/mira-wm/mira) |
 | **7.66** | GlanceWAM: Sparse Test-Time Imagination for World-Action Models | 2026-08-25 | spd 8 · gen 6 · spec 7 · cost 5 | [abs](https://arxiv.org/abs/2608.23927) · [pdf](https://arxiv.org/pdf/2608.23927v1) · [code](https://github.com/linhanwang/GlanceWAM) |
 | **7.66** | Reinforcement Learning for Real-Time Vision-Language-Action Policies | 2026-09-16 | spd 7 · gen 5 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2609.18207) · [pdf](https://arxiv.org/pdf/2609.18207v1) |
 | **7.66** | Towards a General Humanoid Loco-Manipulation Model via Egocentric Whole-Body Human Data Pretraining | 2026-09-30 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.00438) · [pdf](https://arxiv.org/pdf/2610.00438v1) |
 | **7.66** | UNITAS: A 3D-Native World Action Model for Embodied Manipulation | 2026-10-08 | spd – · gen 7 · spec 8 · cost 4 | [abs](https://arxiv.org/abs/2610.12099) · [pdf](https://arxiv.org/pdf/2610.12099v1) · [code](https://github.com/DexForce/UNITAS) |
-| **7.66** | REKI: Registering Knowledge in VLAs | 2026-10-15 | spd 4 · gen 8 · spec 6 · cost 7 | [abs](https://arxiv.org/abs/2610.22178) · [pdf](https://arxiv.org/pdf/2610.22178v1) · [code](https://github.com/kyutai-labs/reki) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -78,7 +78,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _4826 results_
+#### LIBERO  ·  _4860 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -108,7 +108,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1296 results_
+#### RoboTwin  ·  _1297 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -123,7 +123,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Motus (Native) | — | GPU inference time per replan | 1455.69 | authors |
 | REACT | — | mean jerk norm | 1219.0 | authors |
 
-#### SimplerEnv  ·  _397 results_
+#### SimplerEnv  ·  _398 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -168,7 +168,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VICX _(Meta-World (drawer-open, reach, basketball))_ | coffee-button | success rate | 100.0 | authors |
 | RECON _(expert demonstrations + online interaction)_ | Drawer Open | success rate | 100.0 | authors |
 
-#### ManiSkill  ·  _145 results_
+#### ManiSkill  ·  _153 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -178,12 +178,12 @@ _Model identity = (model, training data); same name on different data is a disti
 | FlowMPC _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | anytime success rate | 98.68 | authors |
 | FlowMPC _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | end success rate | 97.44 | authors |
 | FM policy _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | anytime success rate | 95.78 | authors |
+| Teacher _(OpenVLA-OFT after GRPO RL)_ | PutOnPlateInScene25Main-v3 | success-once | 93.8 | authors |
 | FM policy _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | end success rate | 93.14 | authors |
 | π0.5 | — | success rate | 89.8 | authors |
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
-| Per-task FlowSDE | — | success_once | 88.1 | authors |
 
-#### RoboCasa  ·  _506 results_
+#### RoboCasa  ·  _511 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -228,7 +228,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | OPSD-MIS _(ALFWorld)_ | — | pass@64 | 75.55 | authors |
 
-#### VBench  ·  _1555 results_
+#### VBench  ·  _1559 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -408,6 +408,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | SEA-RAFT | — | DCAavg | 47.39 | 3rd-party |
 | LPA-CWM _(MOVi-F)_ | — | AJ | 45.29 | authors |
 
+#### OGBench  ·  _135 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| CoFi | PointMaze-Giant | success rate | 96.0 | authors |
+| ProWorld _(OGBench)_ | PushT | success rate | 94.0 | authors |
+| QPILOTS-M _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 90.0 | authors |
+| QPILOTS-U _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 89.0 | authors |
+| FIRM-WM | Cube | success rate | 88.0 | authors |
+| WMPA | scene-play | success rate | 87.0 | authors |
+| QAM-E _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 85.0 | 3rd-party |
+| DTRC | HumanoidMaze-Medium | success rate | 84.7 | authors |
+| CDGS | AntMaze-Giant | success rate | 84.0 | 3rd-party |
+| LeWM _(OGBench)_ | PushT | success rate | 83.33 | authors |
+
 #### RoboMME  ·  _133 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -437,21 +452,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | ALeWM _(TwoRoom)_ | — | success rate | 100.0 | authors |
 | LeWM + NGC (Oracle Predictor) | offset 75 | success rate | 100.0 | authors |
 | RWM | — | success rate | 99.67 | authors |
-
-#### OGBench  ·  _120 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| CoFi | PointMaze-Giant | success rate | 96.0 | authors |
-| ProWorld _(OGBench)_ | PushT | success rate | 94.0 | authors |
-| QPILOTS-M _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 90.0 | authors |
-| QPILOTS-U _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 89.0 | authors |
-| FIRM-WM | Cube | success rate | 88.0 | authors |
-| WMPA | scene-play | success rate | 87.0 | authors |
-| QAM-E _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 85.0 | 3rd-party |
-| DTRC | HumanoidMaze-Medium | success rate | 84.7 | authors |
-| CDGS | AntMaze-Giant | success rate | 84.0 | 3rd-party |
-| LeWM _(OGBench)_ | PushT | success rate | 83.33 | authors |
 
 #### Push-T  ·  _108 results_
 
@@ -529,6 +529,9 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Xiao-Wei Chi](https://www.semanticscholar.org/author/2192825554)** (10 papers) — Xiao-Wei Chi's research focuses on developing World-Action Models (WAMs) for embodied AI, including safe RL with world models, efficient video-based action planning, and multimodal (vision, tactile) world modeling for robotic manipulation, with a strong…
 
 ## 📰 Embodied / Physical-AI News
+- [Warp Sciences emerges from stealth, to apply robotics to drug research](https://www.therobotreport.com/warp-sciences-emerges-stealth-apply-robotics-drug-research/) — _The Robot Report_
+- [WorldOracle Tests Whether World Models Can Reliably Predict Real-World Executions](https://www.therobotreport.com/worldoracle-tests-whether-world-models-can-reliably-predict-real-world-executions/) — _The Robot Report_
+- [NVIDIA Nemotron 3.5 Transcribe and Granary v2: Intelligent Multilingual Transcription You Can Prompt and Adapt](https://huggingface.co/blog/nvidia/nemotron-transcribe-granary) — _Hugging Face - Blog_
 - [ANYbotics begins delivering ANYmal X legged robot for explosive atmospheres](https://www.therobotreport.com/anybotics-begins-delivering-anymal-x-legged-robot-explosive-atmospheres/) — _The Robot Report_
 - [Embotech and BMW move 1M vehicles with automated driving technology](https://www.therobotreport.com/embotech-bmw-move-1m-vehicles-automated-driving-technology/) — _The Robot Report_
 - [Xpanner launches autonomous pile driver for solar farm contruction](https://www.therobotreport.com/xpanner-launches-new-autonomous-pile-driver-solar-farm-contruction/) — _The Robot Report_
@@ -541,9 +544,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Eka Robotics raises $150M to scale its vision-force-action model for robots](https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/) — _The Robot Report_
 - [Video Friday: Quadruped Robot Solves Giant Rubik’s Cube by Itself](https://spectrum.ieee.org/video-friday-rubiks-cube-robot) — _IEEE Spectrum_
 - [LitPivot: Developing research ideas through dynamic contextualization within the literature landscape](https://huggingface.co/blog/allenai/litpivot) — _Hugging Face - Blog_
-- [Does Your Model Run on AWS Trainium? Look It Up](https://huggingface.co/blog/torch-neuronx-model-support) — _Hugging Face - Blog_
-- [Webinar to discuss how the FCC robotics ruling affects automation buyers](https://www.therobotreport.com/webinar-discuss-how-fcc-robotics-ruling-affects-automation-buyers/) — _The Robot Report_
-- [Generative Bionics to launch Physical AI Data Factory in Italy](https://www.therobotreport.com/generative-bionics-to-launch-physical-ai-data-factory-in-italy/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
