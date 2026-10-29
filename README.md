@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-10-28 · **Tracked:** 2037 core · 1394 adjacent ·
-676 news · **36696** benchmark rows across **15726** model
+**Last updated:** 2026-10-29 · **Tracked:** 2037 core · 1394 adjacent ·
+683 news · **36731** benchmark rows across **15732** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -108,7 +108,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1297 results_
+#### RoboTwin  ·  _1305 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -228,7 +228,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | OPSD-MIS _(ALFWorld)_ | — | pass@64 | 75.55 | authors |
 
-#### VBench  ·  _1559 results_
+#### VBench  ·  _1565 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -529,21 +529,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Xiao-Wei Chi](https://www.semanticscholar.org/author/2192825554)** (10 papers) — Xiao-Wei Chi's research focuses on developing World-Action Models (WAMs) for embodied AI, including safe RL with world models, efficient video-based action planning, and multimodal (vision, tactile) world modeling for robotic manipulation, with a strong…
 
 ## 📰 Embodied / Physical-AI News
+- [AGIBOT introduces Worken to measure robot productivity at AGIBOT Innovation Day 2026](https://www.therobotreport.com/agibot-introduces-worken-measure-robot-productivity-innovation-day-2026/) — _The Robot Report_
+- [Granite Switch 4.1.1 — Update models like you update software](https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1) — _Hugging Face - Blog_
+- [Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready](https://huggingface.co/blog/announcing-project-protostar) — _Hugging Face - Blog_
+- [Welcome Le Chonk: Mistral Large 4 on Hugging Face](https://huggingface.co/blog/mistral-large4) — _Hugging Face - Blog_
+- [Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms](https://huggingface.co/blog/anydecisionmodel) — _Hugging Face - Blog_
 - [Warp Sciences emerges from stealth, to apply robotics to drug research](https://www.therobotreport.com/warp-sciences-emerges-stealth-apply-robotics-drug-research/) — _The Robot Report_
 - [WorldOracle Tests Whether World Models Can Reliably Predict Real-World Executions](https://www.therobotreport.com/worldoracle-tests-whether-world-models-can-reliably-predict-real-world-executions/) — _The Robot Report_
 - [NVIDIA Nemotron 3.5 Transcribe and Granary v2: Intelligent Multilingual Transcription You Can Prompt and Adapt](https://huggingface.co/blog/nvidia/nemotron-transcribe-granary) — _Hugging Face - Blog_
+- [North American robot orders climb 24.8% in Q3 of 2026, says A3](https://www.therobotreport.com/north-american-robot-orders-climb-24-8-q3-2026-says-a3/) — _The Robot Report_
+- [What Symbotic’s Walmart growth teaches robotics startups about anchor customers](https://www.therobotreport.com/what-symbotic-growth-with-walmart-teaches-robotics-startups-about-anchor-customers/) — _The Robot Report_
 - [ANYbotics begins delivering ANYmal X legged robot for explosive atmospheres](https://www.therobotreport.com/anybotics-begins-delivering-anymal-x-legged-robot-explosive-atmospheres/) — _The Robot Report_
 - [Embotech and BMW move 1M vehicles with automated driving technology](https://www.therobotreport.com/embotech-bmw-move-1m-vehicles-automated-driving-technology/) — _The Robot Report_
 - [Xpanner launches autonomous pile driver for solar farm contruction](https://www.therobotreport.com/xpanner-launches-new-autonomous-pile-driver-solar-farm-contruction/) — _The Robot Report_
 - [Build specialized multimodal models with LFM3](https://huggingface.co/blog/LiquidAI/lfm3) — _Hugging Face - Blog_
 - [Can we trust LLMs to judge whether a research idea is novel?](https://huggingface.co/blog/allenai/novelty-bench) — _Hugging Face - Blog_
-- [Agility and GXO Logistics plan expanded deployment of Digit humanoid](https://www.therobotreport.com/agility-gxo-logistics-plan-expanded-deployment-digit-humanoid/) — _The Robot Report_
-- [Bedrock Robotics nears $1B in total funding as demand for autonomous heavy equipment surges](https://www.therobotreport.com/bedrock-robotics-nears-1b-in-total-funding-as-demand-for-autonomous-heavy-equipment-surges/) — _The Robot Report_
-- [OMRON to acquire OnLogic to address edge AI applications](https://www.therobotreport.com/omron-acquires-onlogic-address-edge-ai-applications/) — _The Robot Report_
-- [Teradyne Robotics partners with Sereact to scale physical AI in retail and logistics](https://www.therobotreport.com/teradyne-robotics-partners-sereact-scale-physical-ai-retail-logistics/) — _The Robot Report_
-- [Eka Robotics raises $150M to scale its vision-force-action model for robots](https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/) — _The Robot Report_
-- [Video Friday: Quadruped Robot Solves Giant Rubik’s Cube by Itself](https://spectrum.ieee.org/video-friday-rubiks-cube-robot) — _IEEE Spectrum_
-- [LitPivot: Developing research ideas through dynamic contextualization within the literature landscape](https://huggingface.co/blog/allenai/litpivot) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
