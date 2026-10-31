@@ -1897,6 +1897,9 @@ g0-5-pretrained-on-robot-datasets-vqa-then-post-trained-on-behavior-for-one-epoc
 0-5-cleaned-behavior-1k-demonstrations,π0.5,cleaned BEHAVIOR-1K demonstrations,BEHAVIOR-1K,Set mousetraps,public test instances,progress score,8.3,,,,,,arxiv:2607.06256,1,mean over 3 instances,2026-07-08
 0-5-cleaned-behavior-1k-demonstrations,π0.5,cleaned BEHAVIOR-1K demonstrations,BEHAVIOR-1K,Freeze pies,public test instances,progress score,6.4,,,,,,arxiv:2607.06256,1,mean over 3 instances,2026-07-08
 0-5-cleaned-behavior-1k-demonstrations,π0.5,cleaned BEHAVIOR-1K demonstrations,BEHAVIOR-1K,Hide Easter eggs,public test instances,progress score,0.0,,,,,,arxiv:2607.06256,1,mean over 3 instances,2026-07-08
+0-5-fine-tuned-behavior-1k,π0.5 (fine-tuned),BEHAVIOR-1K,BEHAVIOR-1K,,public test set,Q-score,0.39,,,,,,arxiv:2610.37917,1,,2026-10-31
+0-5-fine-tuned-behavior-1k,π0.5 (fine-tuned),BEHAVIOR-1K,BEHAVIOR-1K,all 100 tasks,,∆Q,-0.16,,,,,,arxiv:2610.37917,1,actions/chunk 13 vs baseline 26,2026-10-31
+0-5-fine-tuned-behavior-1k,π0.5 (fine-tuned),BEHAVIOR-1K,BEHAVIOR-1K,all 100 tasks,,simulation step change (%),-29.0,,,,,,arxiv:2610.37917,1,restart before first drop vs fresh start,2026-10-31
 0-5-language-memory-behavior-1k-unknown,π0.5 + language memory (BEHAVIOR-1K),,BEHAVIOR-1K,turning on radio,,average stage success rate,40.0,,,,,,arxiv:2608.04765,1,,2026-08-06
 egr-behavior-1k,EGR,BEHAVIOR-1K,BEHAVIOR-1K,NAV,Full,success rate,40.91,,,,,,arxiv:2609.03142,1,,2026-09-04
 egr-behavior-1k,EGR,BEHAVIOR-1K,BEHAVIOR-1K,MAN,Full,success rate,16.39,,,,,,arxiv:2609.03142,1,,2026-09-04
@@ -8405,6 +8408,15 @@ dual-engine-architecture-proposed-grid-world-exploration-data-4096-steps-social-
 dual-engine-architecture-proposed-grid-world-exploration-data-4096-steps-social-labels,Dual-Engine Architecture (proposed),grid-world exploration data (4096 steps) + social labels,"Grid World (7x7, v3+v4) + MuJoCo 3D Desktop (v5)",grounding accuracy without Layer 3,,accuracy,22.2,,,,,,arxiv:2607.08312,1,"ablation: without DP-Means collision resolution, 36 objects",2026-07-10
 dual-engine-architecture-proposed-grid-world-exploration-data-4096-steps-social-labels,Dual-Engine Architecture (proposed),grid-world exploration data (4096 steps) + social labels,"Grid World (7x7, v4)",semantic grounding,,Memory Table grounding accuracy,79.0,,,,,,arxiv:2607.08312,1,"V-JEPA encoder, 5 seeds, 500 steps",2026-07-10
 dual-engine-architecture-proposed-grid-world-exploration-data-4096-steps-social-labels,Dual-Engine Architecture (proposed),grid-world exploration data (4096 steps) + social labels,"Grid World (7x7, v4)",social prediction main effect,,accuracy difference,0.375,,,,,,arxiv:2607.08312,1,"V-JEPA encoder, 5 seeds, 500 steps",2026-07-10
+bd-s-unknown,BD-S,,GridWorld,,shift,success rate,0.74,,,,,,arxiv:2610.38903,1,from Table 1,2026-10-31
+md-qp-unknown,MD-QP,,GridWorld,,held-out pairs,IQD paired difference,0.22,,,,,,arxiv:2610.38903,1,"95% CI [0.20, 0.24]",2026-10-31
+md-unknown,MD,,GridWorld,,held-out pairs,IQD,0.41,,,,,,arxiv:2610.38903,1,"95% CI [0.38, 0.44]",2026-10-31
+md-unknown,MD,,GridWorld,,held-out pairs,dT decoding RMSE,0.12,,,,,,arxiv:2610.38903,1,"95% CI [0.10, 0.14]",2026-10-31
+md-unknown,MD,,GridWorld,,held-out pairs,dT decoding Spearman ρ,0.91,,,,,,arxiv:2610.38903,1,"95% CI [0.88, 0.93]",2026-10-31
+md-unknown,MD,,GridWorld,,shift,success rate,0.514,,,,,,arxiv:2610.38903,1,from Table 1,2026-10-31
+qp-unknown,QP,,GridWorld,,held-out pairs,IQD,0.19,,,,,,arxiv:2610.38903,1,"95% CI [0.17, 0.21]",2026-10-31
+qp-unknown,QP,,GridWorld,,shift,success rate,0.798,,,,,,arxiv:2610.38903,1,from Table 1,2026-10-31
+tr-unknown,TR,,GridWorld,,shift,success rate,0.574,,,,,,arxiv:2610.38903,1,from Table 1,2026-10-31
 gpt-6-astra-unknown,GPT-6 Astra,,Grounding Benchmark Suite (34 benchmarks),,,average score,71.54,,,,,,arxiv:2609.39601,0,,2026-10-01
 groundingpi-unknown,GroundingPI,,Grounding Benchmark Suite (34 benchmarks),,,average score,73.68,,,,,,arxiv:2609.39601,1,,2026-10-01
 gemini-3-pro-unknown,Gemini-3-pro,,GroupToM-Bench,,,Cognitive Transition Gap,20.3,,,,,,arxiv:2606.04184,1,Difference between individual (L1-L3) and group (L4-L7) accuracy,2026-06-05
@@ -21315,6 +21327,7 @@ ac-cpc-lewm-offline-dataset,AC-CPC,LeWM offline dataset,PushT,,,success rate,62.
 ac-mtm-lewm-offline-dataset,AC-MTM,LeWM offline dataset,PushT,,,success rate,86.7,,,,,,arxiv:2608.17542,1,mean ± 1.5 over 3 seeds,2026-08-19
 adajepa-dino-wm-patch-pusht,AdaJEPA (DINO-WM patch),PushT,PushT,goal-reaching,validation,success rate,70.0,3.68,s,,,H200,arxiv:2606.32026,1,"GD planner, +2.0%",2026-07-01
 adajepa-wm-w-temporal-straightening-spatial-pusht,AdaJEPA (WM w/ Temporal Straightening spatial),PushT,PushT,goal-reaching,validation,success rate,92.0,3.38,s,,,H200,arxiv:2606.32026,1,"GD planner, +0.7%",2026-07-01
+adapted-icem-icem500-unknown,Adapted iCEM (iCEM500),,PushT,,16 reserved scenes,successful tasks,2.0,,,49.309,s,,arxiv:2610.37891,1,out of 16; planning+encoding time summed,2026-10-31
 agima-a7b-no-imagine-sft-on-same-task-data-action-only-no-intermediate-visual-predictions,Agima-A7B (No Imagine),"SFT on same task data (action-only, no intermediate visual predictions)",PushT,,far,success rate,1.0,,,,,,arxiv:2610.26845,1,K=5,2026-10-24
 agima-a7b-no-imagine-sft-on-same-task-data-action-only-no-intermediate-visual-predictions,Agima-A7B (No Imagine),"SFT on same task data (action-only, no intermediate visual predictions)",PushT,,far,final coverage,6.7,,,,,,arxiv:2610.26845,1,K=5,2026-10-24
 agima-a7b-sft-on-simpler-instances-linear-rollouts-of-maze2d-sokoban-pacman-pusht,Agima-A7B,SFT on simpler instances (linear rollouts) of Maze2D/Sokoban/Pacman/PushT,PushT,,far,success rate,18.0,,,,,,arxiv:2610.26845,1,K=5,2026-10-24
@@ -21393,6 +21406,7 @@ j-law-pusht,J-LAW,PushT,PushT,,,latent RMSE,0.031,,,,,,arxiv:2606.28712,1,"Stage
 jepa-ttt-offline-data-under-training-dynamics,JEPA-TTT,offline data under training dynamics,PushT,action rotation,,latent MSE reduction (%),89.0,,,,,,arxiv:2610.00722,1,,2026-10-11
 jepa-ttt-offline-data-under-training-dynamics,JEPA-TTT,offline data under training dynamics,PushT,contact rotation,,latent MSE reduction (%),45.0,,,,,,arxiv:2610.00722,1,,2026-10-11
 le-wm-unknown,Le-WM,,PushT,,,success rate,96.0,,,,,,arxiv:2607.02403,1,Original planning cost (goal cost only),2026-07-03
+learned8-unknown,learned8,,PushT,,16 reserved scenes,successful tasks,8.0,,,59.079,s,,arxiv:2610.37891,1,out of 16; planning+encoding time summed,2026-10-31
 leflow-offline-trajectory-data-from-lewm-benchmarks,LeFlow,offline trajectory data from LeWM benchmarks,PushT,,,success rate,95.2,,,,,,arxiv:2608.24855,1,"mean ± std over five runs (seeds 42-46), H=5, 50 episodes",2026-08-26
 leflow-offline-trajectory-data-from-lewm-benchmarks,LeFlow,offline trajectory data from LeWM benchmarks,PushT,,,eval time,17.42,,s,,,,arxiv:2608.24855,1,"end-to-end, H=5, 50 episodes, five-run mean",2026-08-26
 lewm-aits-unknown,LeWM + AITS,,PushT,,,success rate,100.0,,,,,,arxiv:2606.09028,1,∆ over LeWM: +4,2026-06-09
@@ -21466,10 +21480,12 @@ random-adaln-unknown,Random (AdaLN),,PushT,,,success rate,41.3,,,,,,arxiv:2610.1
 random-search-unknown,Random search,,PushT,,"large online grid (12,016 candidates)",discovery rate (Reval ≥1.60),0.109,,,,,,arxiv:2608.22421,0,Quoted as baseline,2026-08-25
 random-search-unknown,Random search,,PushT,,"large online grid (12,016 candidates), budget 64",mean best search score,1.512,,,,,,arxiv:2608.22421,0,Quoted as baseline,2026-08-25
 recap-ours-paired-target-triangle-and-pool-disc-demos-at-45-on-pusht,ReCAP (Ours),Paired target (triangle) and pool (disc) demos at ±45° on PushT,PushT,unseen angles,seven unseen goal angles from -60° to +60°,success rate,34.9,,,,,,arxiv:2606.15631,1,"full pool, average over unseen angles from Fig. 4 and 5a",2026-06-16
+released-leplanner-unknown,Released LePlanner,,PushT,,16 reserved scenes,successful tasks,16.0,,,5.652,s,,arxiv:2610.37891,1,out of 16; planning+encoding time summed,2026-10-31
 rwm-unknown,RWM,,PushT,,,success rate,95.44,,,,,,arxiv:2609.29171,1,±0.69,2026-09-26
 sa-idm-unknown,SA+IDM,,PushT,,,success rate,98.0,,,,,,arxiv:2609.03565,1,,2026-09-04
 sage-pusht-expert-demonstrations,SAGE,PushT expert demonstrations,PushT,,held-out test,success rate,64.7,,,,,,arxiv:2607.17973,1,target offset H=150,2026-07-21
 salt-unknown,SALT,,PushT,,,success rate,88.0,,,,,NVIDIA H100 80 GB,arxiv:2609.33595,1,mean over 3 seeds of 50 episodes,2026-10-03
+selected-adam-adam32-lr-0-1-unknown,"Selected Adam (Adam32, lr 0.1)",,PushT,,16 reserved scenes,successful tasks,7.0,,,218.44,s,,arxiv:2610.37891,1,out of 16; planning+encoding time summed,2026-10-31
 sigreg-lewm-lewm-offline-dataset,SIGReg (LeWM),LeWM offline dataset,PushT,,,success rate,93.2,,,,,,arxiv:2608.17542,1,mean ± 0.2 over 3 seeds,2026-08-19
 slotcontrast-wm-pusht-offline-dataset,SlotContrast-WM,PushT offline dataset,PushT,,,success rate,84.7,,,,,,arxiv:2608.12078,1,"without proprioception or masking, from Section 3.3",2026-08-13
 smwm-unknown,SMWM,,PushT,PushT,nominal,success rate,0.83,,,,,,arxiv:2610.00727,0,from source paper,2026-10-11
@@ -35067,6 +35083,17 @@ pgsa-unknown,PGSA,,copper solenoid (magnetostatics),,,temporal consistency horiz
 ours-manhattan-and-paris-combined,Ours,Manhattan and Paris (combined),cross-city signature decoding,city identity linear decoding,,five-fold accuracy,89.3,,,,,,arxiv:2606.03609,1,from temporal latents; ±3.0% reported,2026-06-05
 single-frame-raw-pixels-baseline-unknown,Single-frame raw pixels (baseline),,cross-city signature decoding,city identity linear decoding (raw pixels),,five-fold accuracy,78.5,,,,,,arxiv:2606.03609,0,strongest single-frame baseline,2026-06-05
 single-frame-trivial-statistics-baseline-unknown,Single-frame trivial statistics (baseline),,cross-city signature decoding,city identity linear decoding (frame statistics),,five-fold accuracy,69.4,,,,,,arxiv:2606.03609,0,,2026-06-05
+ours-2-880-trajectories-across-4-source-tasks-6-controller-types-4-gain-settings,Ours,"2,880 trajectories across 4 source tasks × 6 controller types × 4 gain settings",cross-controller transfer (cross-task context),"USB insertion (zero-shot, context from tool-bit insertion)",,success rate,0.35,,,,,,arxiv:2610.39280,1,retains 78% of in-domain performance,2026-10-31
+naive-joint-policy-unknown,Naive Joint Policy,,cross-controller transfer (held-out controller mode),zero-shot average across 6 held-out controller modes,,success rate,0.175,,,,,,arxiv:2610.39280,0,,2026-10-31
+ours-2-880-trajectories-across-4-source-tasks-6-controller-types-4-gain-settings,Ours,"2,880 trajectories across 4 source tasks × 6 controller types × 4 gain settings",cross-controller transfer (held-out controller mode),zero-shot average across 6 held-out controller modes,,success rate,0.503,,,,,,arxiv:2610.39280,1,+32.8 pp over joint policy,2026-10-31
+naive-joint-policy-unknown,Naive Joint Policy,,cross-controller transfer (held-out gains),"zero-shot average across 4 unseen (Kp, Kd) pairs",,success rate,0.285,,,,,,arxiv:2610.39280,0,,2026-10-31
+ours-2-880-trajectories-across-4-source-tasks-6-controller-types-4-gain-settings,Ours,"2,880 trajectories across 4 source tasks × 6 controller types × 4 gain settings",cross-controller transfer (held-out gains),"zero-shot average across 4 unseen (Kp, Kd) pairs",,success rate,0.52,,,,,,arxiv:2610.39280,1,,2026-10-31
+synthetic-relabeling-unknown,Synthetic Relabeling,,cross-controller transfer (held-out gains),"zero-shot average across 4 unseen (Kp, Kd) pairs",,success rate,0.235,,,,,,arxiv:2610.39280,0,,2026-10-31
+ground-truth-controller-conditioning-unknown,Ground-Truth Controller Conditioning,,cross-controller transfer (held-out task–controller),zero-shot (average across 5 tasks),,success rate,0.12,,,,,,arxiv:2610.39280,0,,2026-10-31
+ours-2-880-trajectories-across-4-source-tasks-6-controller-types-4-gain-settings,Ours,"2,880 trajectories across 4 source tasks × 6 controller types × 4 gain settings",cross-controller transfer (held-out task–controller),zero-shot (average across 5 tasks),,success rate,0.5,,,,,,arxiv:2610.39280,1,Average across 5 tasks; same-task upper bound 75.0%,2026-10-31
+ours-2-880-trajectories-across-4-source-tasks-6-controller-types-4-gain-settings,Ours,"2,880 trajectories across 4 source tasks × 6 controller types × 4 gain settings",cross-controller transfer (held-out task–controller),"few-shot (5 demos, average across 5 tasks)",,success rate,0.69,,,,,,arxiv:2610.39280,1,,2026-10-31
+sysid-unknown,SysID,,cross-controller transfer (held-out task–controller),zero-shot (average across 5 tasks),,success rate,0.27,,,,,,arxiv:2610.39280,0,,2026-10-31
+sysid-unknown,SysID,,cross-controller transfer (held-out task–controller),"few-shot (5 demos, average across 5 tasks)",,success rate,0.47,,,,,,arxiv:2610.39280,0,,2026-10-31
 keybert-unknown,KeyBERT,,"cross-venue (ACL, CVPR, ICLR, ICML, NeurIPS)",,2025,papers with 'large language model' keyword (annual count),1296.0,,,,,,arxiv:2606.12828,1,highest single-year topic count in dataset,2026-06-12
 keybert-unknown,KeyBERT,,"cross-venue (ACL, CVPR, ICLR, ICML, NeurIPS)",,2025,papers with 'reinforcement learning' keyword (annual count),1202.0,,,,,,arxiv:2606.12828,1,,2026-06-12
 keybert-unknown,KeyBERT,,"cross-venue (ACL, CVPR, ICLR, ICML, NeurIPS)",,2025,papers with 'diffusion model' keyword (annual count),2101.0,,,,,,arxiv:2606.12828,1,,2026-06-12
@@ -36604,6 +36631,12 @@ cut3r-unknown,CUT3R,,single RTX 4090,,,generation time,35.64,,,,,RTX 4090,arxiv:
 streaming4d-unknown,Streaming4D,,single RTX 4090,,,generation time,29.29,,,,,RTX 4090,arxiv:2609.00610,1,resolution 384×208,2026-09-02
 streaming4d-unknown,Streaming4D,,single RTX 4090,,,speedup vs sequential baseline,1.24,,,,,RTX 4090,arxiv:2609.00610,1,max speedup across tested resolutions,2026-09-02
 tacex-intrinsic-only-unknown,TacEx (intrinsic-only),,single-object pick-and-place,grasp and lift object to target,,offline return,,,,,,,arxiv:2609.40134,1,Figure 2; tactile-only exploration yields highest offline return,2026-10-08
+qp-unknown,QP,,six-task diagnostic suite,,shift,shift success advantage over MD,26.1,,,,,,arxiv:2610.38903,1,"95% CI [21.5, 30.7]",2026-10-31
+qp-unknown,QP,,six-task diagnostic suite,,shift,shift success advantage over BD-S,6.4,,,,,,arxiv:2610.38903,1,"95% CI [3.8, 9.0]",2026-10-31
+qp-unknown,QP,,six-task diagnostic suite,,shift,shift success advantage over TR,23.2,,,,,,arxiv:2610.38903,1,"95% CI [18.8, 27.6]",2026-10-31
+qp-unknown,QP,,six-task diagnostic suite,,ID,ID success advantage over MD,8.9,,,,,,arxiv:2610.38903,1,"95% CI [5.7, 12.1]",2026-10-31
+qp-unknown,QP,,six-task diagnostic suite,,ID,ID success advantage over BD-S,3.0,,,,,,arxiv:2610.38903,1,"95% CI [1.0, 5.0]",2026-10-31
+qp-unknown,QP,,six-task diagnostic suite,,ID,ID success advantage over TR,6.9,,,,,,arxiv:2610.38903,1,"95% CI [3.9, 9.9]",2026-10-31
 rcwm-unknown,RCWM,,snow-village,,,PSNR,17.9,,,,,,arxiv:2609.11499,1,,2026-09-11
 dexsim-bi-directional-something-something-v2,DexSIM Bi-directional,something-something-v2,something-something-v2,,test,SSIM,0.573,,,,,,arxiv:2605.24630,1,,2026-06-04
 dexsim-bi-directional-something-something-v2,DexSIM Bi-directional,something-something-v2,something-something-v2,,test,PSNR,15.92,,,,,,arxiv:2605.24630,1,,2026-06-04
