@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-11-01 · **Tracked:** 2065 core · 1416 adjacent ·
-694 news · **36943** benchmark rows across **15823** model
+**Last updated:** 2026-11-02 · **Tracked:** 2081 core · 1427 adjacent ·
+698 news · **37136** benchmark rows across **15917** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -26,6 +26,7 @@ variants · **30** authors
 | **8.23** | VLA-Precision: Asymmetric Co-Bootstrapping for Efficient Real-World Online RL of Vision-Language-Action Models | 2026-09-03 | spd 8 · gen 6 · spec 9 · cost 7 | [abs](https://arxiv.org/abs/2609.04355) · [pdf](https://arxiv.org/pdf/2609.04355v1) |
 | **8.18** | GreenWAM: A World Foundation Model for Robotics | 2026-10-13 | spd 5 · gen 9 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.18774) · [pdf](https://arxiv.org/pdf/2610.18774v1) |
 | **8.15** | Kinematic MeanFlow: One-Step Action Generation Policy for Robotic Foundation Models | 2026-10-01 | spd 9 · gen 6 · spec 7 · cost 7 | [abs](https://arxiv.org/abs/2610.00864) · [pdf](https://arxiv.org/pdf/2610.00864v1) · [code](https://github.com/IntelChina-AI/K-MF) |
+| **8.15** | Let LiDAR Decide Where to Look: Geometry-Measured Token Selection for Efficient Sparse Latent World Models | 2026-10-29 | spd 6 · gen 3 · spec 8 · cost 9 | [abs](https://arxiv.org/abs/2610.40935) · [pdf](https://arxiv.org/pdf/2610.40935v1) |
 | **8.12** | TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM | 2026-07-29 | spd 9 · gen 3 · spec 8 · cost 9 | [abs](https://arxiv.org/abs/2607.27205) · [pdf](https://arxiv.org/pdf/2607.27205v1) · [code](https://github.com/H-EmbodVis/TurboVLA) |
 | **8.12** | MINERVA: How Small Can a Manipulation Policy Be and Still Solve LIBERO? | 2026-09-03 | spd 9 · gen 3 · spec 8 · cost 9 | [abs](https://arxiv.org/abs/2609.03715) · [pdf](https://arxiv.org/pdf/2609.03715v1) · [code](https://github.com/k1000dai/MINERVA) |
 | **8.11** | Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving | 2026-07-17 | spd 9 · gen 4 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2607.15621) · [pdf](https://arxiv.org/pdf/2607.15621v1) |
@@ -42,6 +43,7 @@ variants · **30** authors
 | **7.87** | Self-Improving Video-to-Action Models | 2026-10-16 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.24177) · [pdf](https://arxiv.org/pdf/2610.24177v1) |
 | **7.85** | RoboJEPA: Scaling Robotic Latent World Models | 2026-10-07 | spd – · gen 8 · spec 6 · cost – | [abs](https://arxiv.org/abs/2610.10515) · [pdf](https://arxiv.org/pdf/2610.10515v1) · [code](https://github.com/facebookresearch/robo_jepa) |
 | **7.84** | Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience | 2026-10-19 | spd 7 · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2610.26855) · [pdf](https://arxiv.org/pdf/2610.26855v1) |
+| **7.84** | CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents | 2026-10-29 | spd – · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2610.40799) · [pdf](https://arxiv.org/pdf/2610.40799v1) |
 | **7.83** | Deltoris: Enabling Real-time VLA Inference in Embodied AI via Bit-level Sparsity and Speculative Inference | 2026-08-05 | spd 9 · gen – · spec 4 · cost 7 | [abs](https://arxiv.org/abs/2608.04428) · [pdf](https://arxiv.org/pdf/2608.04428v1) |
 | **7.8** | Staircase Policy: Streaming Inference for World-Action Models with Large Action Chunks | 2026-09-29 | spd 8 · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2609.36471) · [pdf](https://arxiv.org/pdf/2609.36471v1) |
 | **7.79** | Causal-rCM: A Unified Teacher-Forcing and Self-Forcing Open Recipe for Autoregressive Diffusion Distillation in Streaming Video Generation and Interactive World Models | 2026-06-24 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.25473) · [pdf](https://arxiv.org/pdf/2606.25473v1) · [code](https://github.com/NVlabs/rcm) |
@@ -69,8 +71,6 @@ variants · **30** authors
 | **7.66** | Multiplayer Interactive World Models with Representation Autoencoders | 2026-07-06 | spd 7 · gen 2 · spec 8 · cost 2 | [abs](https://arxiv.org/abs/2607.05352) · [pdf](https://arxiv.org/pdf/2607.05352v1) · [code](https://github.com/mira-wm/mira) |
 | **7.66** | GlanceWAM: Sparse Test-Time Imagination for World-Action Models | 2026-08-25 | spd 8 · gen 6 · spec 7 · cost 5 | [abs](https://arxiv.org/abs/2608.23927) · [pdf](https://arxiv.org/pdf/2608.23927v1) · [code](https://github.com/linhanwang/GlanceWAM) |
 | **7.66** | Reinforcement Learning for Real-Time Vision-Language-Action Policies | 2026-09-16 | spd 7 · gen 5 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2609.18207) · [pdf](https://arxiv.org/pdf/2609.18207v1) |
-| **7.66** | Towards a General Humanoid Loco-Manipulation Model via Egocentric Whole-Body Human Data Pretraining | 2026-09-30 | spd – · gen 7 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.00438) · [pdf](https://arxiv.org/pdf/2610.00438v1) |
-| **7.66** | UNITAS: A 3D-Native World Action Model for Embodied Manipulation | 2026-10-08 | spd – · gen 7 · spec 8 · cost 4 | [abs](https://arxiv.org/abs/2610.12099) · [pdf](https://arxiv.org/pdf/2610.12099v1) · [code](https://github.com/DexForce/UNITAS) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -78,7 +78,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _4865 results_
+#### LIBERO  ·  _4901 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -108,7 +108,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1319 results_
+#### RoboTwin  ·  _1335 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -123,7 +123,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Motus (Native) | — | GPU inference time per replan | 1455.69 | authors |
 | REACT | — | mean jerk norm | 1219.0 | authors |
 
-#### SimplerEnv  ·  _398 results_
+#### SimplerEnv  ·  _405 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -183,7 +183,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 | — | success rate | 89.8 | authors |
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 
-#### RoboCasa  ·  _516 results_
+#### RoboCasa  ·  _529 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -193,10 +193,10 @@ _Model identity = (model, training data); same name on different data is a disti
 | Fast-WAM _(RoboCasa)_ | — | inference latency | 196.5 | authors |
 | Axiom-0 _(pretrain_human300)_ | — | mean generation latency | 135.55 | authors |
 | Xiaomi-Robotics-1 | — | mean generation latency | 133.25 | authors |
+| Cosmos Policy _(Cosmos Policy pretrained checkpoint (evaluated on RoboCasa))_ | direct policy, paired bug vs render-fixed | successes (count) | 105.0 | authors |
 | Cosmos-Policy | Turn Off Microwave | success rate | 100.0 | authors |
 | ALDER | Drawer and Door (pooled) | prediction coverage | 100.0 | authors |
 | Z-1 RL _(RoboCasa demonstrations)_ | Door | success rate | 97.0 | authors |
-| Z-1 SFT _(RoboCasa demonstrations)_ | Door | success rate | 93.2 | authors |
 
 #### Open-X / RT  ·  _114 results_
 
@@ -228,7 +228,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | OPSD-MIS _(ALFWorld)_ | — | pass@64 | 75.55 | authors |
 
-#### VBench  ·  _1565 results_
+#### VBench  ·  _1578 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -288,7 +288,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _394 results_
+#### nuScenes  ·  _414 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -318,6 +318,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | MemWM | — | success rate | 96.7 | authors |
 | FF-JEPA (DM) _(PushT filtered successful demonstrations)_ | Short-horizon (t=25) | success rate | 96.09 | authors |
 
+#### NAVSIM  ·  _180 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
+| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | NC (no at-fault collision) | 99.4 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
+| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
+| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | TTC (time-to-collision) | 98.5 | authors |
+| S2-VLA _(ReCogDrive VQA + NAVSIM)_ | — | NC | 98.4 | authors |
+| GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | NC | 98.4 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
+| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
+| GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | DAC | 95.6 | authors |
+
 #### Bench2Drive  ·  _178 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -332,21 +347,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | LinkVLA _(PDM-Lite)_ | — | Driving Score | 91.01 | 3rd-party |
 | BLUE _(SimLingo training set (~400 routes))_ | — | driving score | 90.58 | authors |
 | OccWAM _(Bench2Drive (PDM-Lite expert), Chat-B2D)_ | — | Driving Score | 90.45 | authors |
-
-#### NAVSIM  ·  _176 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | Comf. | 100.0 | authors |
-| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | NC (no at-fault collision) | 99.4 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | NC | 98.7 | authors |
-| SafeAlign-VLA _(NAVSIM navtrain)_ | trajectory planning | NC | 98.6 | authors |
-| WCog-VLA-2B _(NAVSIM + 158k open-source driving VQA samples + 170k NAVSIM-tailored samples (85k trajectory-specific VQA + 85k Game-CoT))_ | — | TTC (time-to-collision) | 98.5 | authors |
-| S2-VLA _(ReCogDrive VQA + NAVSIM)_ | — | NC | 98.4 | authors |
-| GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | NC | 98.4 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
-| Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
-| GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | DAC | 95.6 | authors |
 
 #### DROID  ·  _162 results_
 
@@ -529,6 +529,10 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Xiao-Wei Chi](https://www.semanticscholar.org/author/2192825554)** (10 papers) — Xiao-Wei Chi's research focuses on developing World-Action Models (WAMs) for embodied AI, including safe RL with world models, efficient video-based action planning, and multimodal (vision, tactile) world modeling for robotic manipulation, with a strong…
 
 ## 📰 Embodied / Physical-AI News
+- [Tutor Intelligence raises Series B to scale model training, robot deployments](https://www.therobotreport.com/tutor-intelligence-raises-series-b-to-scale-model-training-robot-deployments/) — _The Robot Report_
+- [Gentherm designs ThermAffyx to protect, move patients during robotic surgeries](https://www.therobotreport.com/gentherm-designs-thermaffyx-protect-move-patients-during-robotic-surgeries/) — _The Robot Report_
+- [Top 10 robotics developments of October 2026](https://www.therobotreport.com/top-10-robotics-developments-october-2026/) — _The Robot Report_
+- [What AgTech founders get wrong about ROI](https://www.therobotreport.com/what-agtech-founders-get-wrong-about-roi/) — _The Robot Report_
 - [28 Zero-Day Findings in Less Than Two Days: What AI-Speed Discovery Means for Robotics](https://www.therobotreport.com/28-zero-day-findings-in-less-than-two-days-what-ai-speed-discovery-means-for-robotics/) — _The Robot Report_
 - [Why physical AI is the next lucrative frontier](https://www.therobotreport.com/why-physical-ai-next-lucrative-frontier/) — _The Robot Report_
 - [Solving the Interconnect Challenge in Modern Robotics: How 3M Is Engineering for Motion, Density, and Uptime](https://www.therobotreport.com/solving-the-interconnect-challenge-in-modern-robotics-how-3m-is-engineering-for-motion-density-and-uptime/) — _The Robot Report_
@@ -540,10 +544,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Percepto launches Axion AI platform to unify inspection data analysis](https://www.therobotreport.com/percepto-launches-axion-ai-platform-unify-inspection-data-analysis/) — _The Robot Report_
 - [AGIBOT introduces Worken to measure robot productivity at AGIBOT Innovation Day 2026](https://www.therobotreport.com/agibot-introduces-worken-measure-robot-productivity-innovation-day-2026/) — _The Robot Report_
 - [Granite Switch 4.1.1 — Update models like you update software](https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1) — _Hugging Face - Blog_
-- [Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready](https://huggingface.co/blog/announcing-project-protostar) — _Hugging Face - Blog_
-- [Welcome Le Chonk: Mistral Large 4 on Hugging Face](https://huggingface.co/blog/mistral-large4) — _Hugging Face - Blog_
-- [Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms](https://huggingface.co/blog/anydecisionmodel) — _Hugging Face - Blog_
-- [White House makes Section 232 determination regarding foreign-made robots](https://www.therobotreport.com/white-house-makes-section-232-determination-regarding-foreign-made-robots/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
