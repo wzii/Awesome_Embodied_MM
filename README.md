@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-11-04 · **Tracked:** 2136 core · 1479 adjacent ·
-710 news · **37667** benchmark rows across **16176** model
+**Last updated:** 2026-11-05 · **Tracked:** 2151 core · 1487 adjacent ·
+715 news · **37957** benchmark rows across **16346** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -31,6 +31,7 @@ variants · **30** authors
 | Score | Paper | Published | Top-4 (spd·gen·spec·cost) | Links |
 |------:|-------|-----------|---------------------------|-------|
 | **8.31** | IMLE-VLA: Fast Single-Step Action Generation for Vision-Language-Action Policies | 2026-09-10 | spd 9 · gen 7 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2609.10915) · [pdf](https://arxiv.org/pdf/2609.10915v1) |
+| **8.31** | Open-HumanScale: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models | 2026-11-04 | spd – · gen 8 · spec 9 · cost – | [abs](https://arxiv.org/abs/2611.06817) · [pdf](https://arxiv.org/pdf/2611.06817v1) · [code](https://github.com/DAGroup-PKU/HumanNet) |
 | **8.23** | Flash-WAM: Modality-Aware Distillation for World Action Models | 2026-06-03 | spd 9 · gen 6 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2606.05254) · [pdf](https://arxiv.org/pdf/2606.05254v1) |
 | **8.23** | VLA-Precision: Asymmetric Co-Bootstrapping for Efficient Real-World Online RL of Vision-Language-Action Models | 2026-09-03 | spd 8 · gen 6 · spec 9 · cost 7 | [abs](https://arxiv.org/abs/2609.04355) · [pdf](https://arxiv.org/pdf/2609.04355v1) |
 | **8.18** | GreenWAM: A World Foundation Model for Robotics | 2026-10-13 | spd 5 · gen 9 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.18774) · [pdf](https://arxiv.org/pdf/2610.18774v1) |
@@ -79,7 +80,6 @@ variants · **30** authors
 | **7.67** | Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models | 2026-06-16 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.17846) · [pdf](https://arxiv.org/pdf/2606.17846v1) · [code](https://github.com/QwenLM/Qwen-RobotManip) |
 | **7.67** | One Policy, Many Embodiments: Unified Camera-Centric Action Geometry Pre-training for Heterogeneous Embodied Manipulation | 2026-08-26 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2608.26058) · [pdf](https://arxiv.org/pdf/2608.26058v1) |
 | **7.67** | Triggering Generalist Reasoning via Predictive Uncertainty for Dual-System VLA | 2026-10-04 | spd 7 · gen 5 · spec 6 · cost 9 | [abs](https://arxiv.org/abs/2610.05025) · [pdf](https://arxiv.org/pdf/2610.05025v1) |
-| **7.67** | World Action Modeling with Progressive Visual Planning | 2026-10-01 | spd 5 · gen 8 · spec 8 · cost 5 | [abs](https://arxiv.org/abs/2610.02508) · [pdf](https://arxiv.org/pdf/2610.02508v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _4994 results_
+#### LIBERO  ·  _5021 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,7 +102,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SimpleVLA-RL _(LIBERO)_ | Long | iterations to 90% success rate | 2450.0 | authors |
 | vla.cpp | — | peak RSS | 2031.0 | authors |
 
-#### CALVIN  ·  _214 results_
+#### CALVIN  ·  _215 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1339 results_
+#### RoboTwin  ·  _1345 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -207,7 +207,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ALDER | Drawer and Door (pooled) | prediction coverage | 100.0 | authors |
 | Z-1 RL _(RoboCasa demonstrations)_ | Door | success rate | 97.0 | authors |
 
-#### Open-X / RT  ·  _114 results_
+#### Open-X / RT  ·  _121 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -217,10 +217,10 @@ _Model identity = (model, training data); same name on different data is a disti
 | TesserAct | 300 held-out trajectories | FVD | 746.0 | 3rd-party |
 | Wan 2.1 14B | 300 held-out trajectories | FVD | 671.0 | 3rd-party |
 | LAVLA (baseline) _(Open-X-Embodiment)_ | — | CH Index | 402.12 | authors |
+| DIAMOND _(RT-1)_ | — | FVD | 382.4 | authors |
 | LVP | 300 held-out trajectories | FVD | 330.0 | 3rd-party |
 | PointAction _(BridgeData V2 + DROID (filtered ~75K clips))_ | 300 held-out trajectories | FVD | 320.0 | authors |
-| VisualThink-VLA _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 89.49 | authors |
-| FullSoft _(Open X-Embodiment (BridgeData V2, Fractal, RoboTurk, LIBERO, UT Austin MUTEX))_ | — | success rate | 88.45 | authors |
+| SD-VAE _(RT-1)_ | — | FVD | 120.4 | authors |
 
 #### ALFWorld  ·  _65 results_
 
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | OPSD-MIS _(ALFWorld)_ | — | pass@64 | 75.55 | authors |
 
-#### VBench  ·  _1608 results_
+#### VBench  ·  _1620 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -342,7 +342,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
 | GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | DAC | 95.6 | authors |
 
-#### Bench2Drive  ·  _178 results_
+#### Bench2Drive  ·  _180 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -357,7 +357,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | BLUE _(SimLingo training set (~400 routes))_ | — | driving score | 90.58 | authors |
 | OccWAM _(Bench2Drive (PDM-Lite expert), Chat-B2D)_ | — | Driving Score | 90.45 | authors |
 
-#### DROID  ·  _162 results_
+#### DROID  ·  _167 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -370,7 +370,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | TesserAct | — | FID | 164.54 | 3rd-party |
 | MiniWorld-3B _(DROID)_ | — | SSIM improvement | 125.0 | authors |
 | SWAP _(offline trajectories from candidate policies on DROID tasks)_ | Marker → Bowl | success rate | 100.0 | authors |
-| Causally Interleaved _(DROID)_ | — | Accuracy@0.5 | 94.52 | authors |
+| Cycle WAM _(DROID)_ | simulator three scenes total | success rate | 98.3 | authors |
 
 #### OGBench  ·  _161 results_
 
@@ -538,6 +538,11 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Zhen-Yu Wu](https://www.semanticscholar.org/author/2257436035)** (3 papers) — Research on world-action models for robotic manipulation, focusing on disentangled video generation for efficient world modeling, closed-loop policy improvement from deployment rollouts, and real-robot reinforcement learning via world-model simulation.
 
 ## 📰 Embodied / Physical-AI News
+- [How Ambi Robotics helps its customers prepare for peak season](https://www.therobotreport.com/how-ambi-robotics-helps-customers-prepare-peak-season/) — _The Robot Report_
+- [Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics](https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/) — _The Robot Report_
+- [Agility Robotics begins trading on Nasdaq](https://www.therobotreport.com/agility-robotics-begins-trading-on-nasdaq/) — _The Robot Report_
+- [New NVIDIA Cosmos 3 Open Models for Interactive World Simulation](https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation) — _Hugging Face - Blog_
+- [A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks.](https://huggingface.co/blog/phonon-tts) — _Hugging Face - Blog_
 - [Robotics Startup Radar 2026](https://www.therobotreport.com/robotics-startup-radar-2026/) — _The Robot Report_
 - [How GlobalLogic helped Haystack Robotics build a UV disinfection robot](https://www.therobotreport.com/how-globallogic-helped-haystack-robotics-build-uv-disinfection-robot/) — _The Robot Report_
 - [LiberAI Unveils Liber-0, a World Action Model That Grounds Human Experience in Robot Action](https://www.therobotreport.com/liberai-unveils-liber-0-a-world-action-model-that-grounds-human-experience-in-robot-action/) — _The Robot Report_
@@ -548,11 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [StateBench: Testing how language models track state changes over long documents](https://huggingface.co/blog/allenai/statebench) — _Hugging Face - Blog_
 - [Palette: teaching a small model to build decks in your design language](https://huggingface.co/blog/ibm-research/palette-deck-building) — _Hugging Face - Blog_
 - [CWE-bench v2: More coverage, quality, and transparency](https://huggingface.co/blog/cwe-bench) — _Hugging Face - Blog_
-- [Transformers Model Integration Contracts](https://huggingface.co/blog/transformers-mic) — _Hugging Face - Blog_
-- [Ben Waters on the latest wireless charging strategies](https://www.therobotreport.com/ben-waters-on-the-latest-wireless-charging-strategies/) — _The Robot Report_
-- [Tutor Intelligence raises Series B to scale model training, robot deployments](https://www.therobotreport.com/tutor-intelligence-raises-series-b-to-scale-model-training-robot-deployments/) — _The Robot Report_
-- [Gentherm designs ThermAffyx to protect, move patients during robotic surgeries](https://www.therobotreport.com/gentherm-designs-thermaffyx-protect-move-patients-during-robotic-surgeries/) — _The Robot Report_
-- [Top 10 robotics developments of October 2026](https://www.therobotreport.com/top-10-robotics-developments-october-2026/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
