@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-11-05 · **Tracked:** 2151 core · 1487 adjacent ·
-715 news · **37957** benchmark rows across **16346** model
+**Last updated:** 2026-11-06 · **Tracked:** 2166 core · 1497 adjacent ·
+719 news · **38246** benchmark rows across **16486** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _5021 results_
+#### LIBERO  ·  _5060 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,7 +102,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SimpleVLA-RL _(LIBERO)_ | Long | iterations to 90% success rate | 2450.0 | authors |
 | vla.cpp | — | peak RSS | 2031.0 | authors |
 
-#### CALVIN  ·  _215 results_
+#### CALVIN  ·  _216 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1345 results_
+#### RoboTwin  ·  _1352 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -132,7 +132,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Motus (Native) | — | GPU inference time per replan | 1455.69 | authors |
 | REACT | — | mean jerk norm | 1219.0 | authors |
 
-#### SimplerEnv  ·  _405 results_
+#### SimplerEnv  ·  _407 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 | — | success rate | 89.8 | authors |
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 
-#### RoboCasa  ·  _536 results_
+#### RoboCasa  ·  _538 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -207,7 +207,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ALDER | Drawer and Door (pooled) | prediction coverage | 100.0 | authors |
 | Z-1 RL _(RoboCasa demonstrations)_ | Door | success rate | 97.0 | authors |
 
-#### Open-X / RT  ·  _121 results_
+#### Open-X / RT  ·  _124 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -252,7 +252,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GWTF | Cut & Drag | Flow-Err | 152.81 | 3rd-party |
 | PTQ4DiT | — | FVD-FP | 124.2 | authors |
 
-#### AgiBot / GENIE  ·  _137 results_
+#### AgiBot / GENIE  ·  _141 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -297,7 +297,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
 | PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
-#### nuScenes  ·  _422 results_
+#### nuScenes  ·  _432 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -357,7 +357,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | BLUE _(SimLingo training set (~400 routes))_ | — | driving score | 90.58 | authors |
 | OccWAM _(Bench2Drive (PDM-Lite expert), Chat-B2D)_ | — | Driving Score | 90.45 | authors |
 
-#### DROID  ·  _167 results_
+#### DROID  ·  _169 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -372,11 +372,12 @@ _Model identity = (model, training data); same name on different data is a disti
 | SWAP _(offline trajectories from candidate policies on DROID tasks)_ | Marker → Bowl | success rate | 100.0 | authors |
 | Cycle WAM _(DROID)_ | simulator three scenes total | success rate | 98.3 | authors |
 
-#### OGBench  ·  _161 results_
+#### OGBench  ·  _167 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | CoFi | PointMaze-Giant | success rate | 96.0 | authors |
+| MAC-v2 _(various)_ | visual-puzzle-3x3 | success rate | 95.0 | authors |
 | ProWorld _(OGBench)_ | PushT | success rate | 94.0 | authors |
 | CGSE, re-anchoring _(OGBench play data)_ | cube-single | success rate | 91.2 | authors |
 | CGSE, chaining _(OGBench play data)_ | cube-single | success rate | 90.9 | authors |
@@ -385,7 +386,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | No world model _(OGBench play data)_ | cube-single | success rate | 89.3 | authors |
 | QPILOTS-U _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 89.0 | authors |
 | GradPlan _(OGBench play data)_ | cube-single | success rate | 88.9 | authors |
-| FIRM-WM | Cube | success rate | 88.0 | authors |
 
 #### NAVSIM v1  ·  _161 results_
 
@@ -417,6 +417,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 | Nut Pouring | final success rate | 91.3 | authors |
 | CF-Prune (α=35%) _(Real-world demonstration)_ | — | overall success rate | 90.7 | authors |
 
+#### RoboMME  ·  _147 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Three-tier Astra | Permanence | success rate | 94.0 | authors |
+| Human | — | success rate | 90.5 | 3rd-party |
+| Human Performance | — | average success rate | 90.5 | 3rd-party |
+| TacitVLA | Counting | success rate | 89.5 | authors |
+| SimpleMemVLA _(RoboMME)_ | — | success rate | 88.3 | authors |
+| SimpleMemVLA | — | success rate | 88.3 | authors |
+| LTM-pi (CD-LAM) _(RoboMME-10x)_ | — | success rate | 87.5 | authors |
+| Tracker _(RoboMME demonstrations)_ | Permanence suite | success rate | 87.2 | authors |
+| LEDGER _(RoboMME demonstrations)_ | Permanence suite | success rate | 86.7 | authors |
+| Explicit Reasoning | Counting | success rate | 86.7 | authors |
+
 #### DAVIS  ·  _141 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -431,21 +446,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | RAFT | — | DCAavg | 49.0 | 3rd-party |
 | SEA-RAFT | — | DCAavg | 47.39 | 3rd-party |
 | LPA-CWM _(MOVi-F)_ | — | AJ | 45.29 | authors |
-
-#### RoboMME  ·  _133 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Human | — | success rate | 90.5 | 3rd-party |
-| Human Performance | — | average success rate | 90.5 | 3rd-party |
-| TacitVLA | Counting | success rate | 89.5 | authors |
-| SimpleMemVLA _(RoboMME)_ | — | success rate | 88.3 | authors |
-| SimpleMemVLA | — | success rate | 88.3 | authors |
-| LTM-pi (CD-LAM) _(RoboMME-10x)_ | — | success rate | 87.5 | authors |
-| Tracker _(RoboMME demonstrations)_ | Permanence suite | success rate | 87.2 | authors |
-| LEDGER _(RoboMME demonstrations)_ | Permanence suite | success rate | 86.7 | authors |
-| Explicit Reasoning | Counting | success rate | 86.7 | authors |
-| Oracle | — | success rate | 84.1 | 3rd-party |
 
 #### TwoRoom  ·  _125 results_
 
@@ -538,21 +538,21 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Zhen-Yu Wu](https://www.semanticscholar.org/author/2257436035)** (3 papers) — Research on world-action models for robotic manipulation, focusing on disentangled video generation for efficient world modeling, closed-loop policy improvement from deployment rollouts, and real-robot reinforcement learning via world-model simulation.
 
 ## 📰 Embodied / Physical-AI News
+- [Video Friday: Room-Scale Cable-Driven Home Robot Tidies Up](https://spectrum.ieee.org/video-friday-home-cable-robot) — _IEEE Spectrum_
+- [ToyBlocks: A controlled world for robot learning and evaluation](https://huggingface.co/blog/allenai/toyblocks) — _Hugging Face - Blog_
+- [Egyptian and Nigerian English join the Open ASR Leaderboard](https://huggingface.co/blog/open-asr-leaderboard-liva) — _Hugging Face - Blog_
 - [How Ambi Robotics helps its customers prepare for peak season](https://www.therobotreport.com/how-ambi-robotics-helps-customers-prepare-peak-season/) — _The Robot Report_
 - [Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics](https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/) — _The Robot Report_
 - [Agility Robotics begins trading on Nasdaq](https://www.therobotreport.com/agility-robotics-begins-trading-on-nasdaq/) — _The Robot Report_
 - [New NVIDIA Cosmos 3 Open Models for Interactive World Simulation](https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation) — _Hugging Face - Blog_
 - [A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks.](https://huggingface.co/blog/phonon-tts) — _Hugging Face - Blog_
+- [How did Agility Robotics perform on its first day on the stock market?](https://www.therobotreport.com/how-did-agility-robotics-perform-on-its-first-day-on-the-stock-market/) — _The Robot Report_
 - [Robotics Startup Radar 2026](https://www.therobotreport.com/robotics-startup-radar-2026/) — _The Robot Report_
 - [How GlobalLogic helped Haystack Robotics build a UV disinfection robot](https://www.therobotreport.com/how-globallogic-helped-haystack-robotics-build-uv-disinfection-robot/) — _The Robot Report_
 - [LiberAI Unveils Liber-0, a World Action Model That Grounds Human Experience in Robot Action](https://www.therobotreport.com/liberai-unveils-liber-0-a-world-action-model-that-grounds-human-experience-in-robot-action/) — _The Robot Report_
 - [Are Drone Ports the Next Annoying Tech Neighbor?](https://spectrum.ieee.org/drone-delivery-noise) — _IEEE Spectrum_
 - [Dharma Field Extractor: Any Document In, Structured Fields in JSON Out](https://huggingface.co/blog/Dharma-AI/dharma-field-extractor) — _Hugging Face - Blog_
 - [New ISO interoperability standard covers collaboration among mobile robots from multiple vendors](https://www.therobotreport.com/new-iso-interoperability-standard-covers-collaboration-among-mobile-robots-from-multiple-vendors/) — _The Robot Report_
-- [Churchill Capital XI shareholders approve $2.5B Agility Robotics humanoid SPAC](https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/) — _The Robot Report_
-- [StateBench: Testing how language models track state changes over long documents](https://huggingface.co/blog/allenai/statebench) — _Hugging Face - Blog_
-- [Palette: teaching a small model to build decks in your design language](https://huggingface.co/blog/ibm-research/palette-deck-building) — _Hugging Face - Blog_
-- [CWE-bench v2: More coverage, quality, and transparency](https://huggingface.co/blog/cwe-bench) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
