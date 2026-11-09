@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-11-08 · **Tracked:** 2166 core · 1497 adjacent ·
-724 news · **38246** benchmark rows across **16486** model
+**Last updated:** 2026-11-09 · **Tracked:** 2179 core · 1505 adjacent ·
+730 news · **38494** benchmark rows across **16565** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -54,6 +54,7 @@ variants · **30** authors
 | **7.87** | W2A: Distilling World Priors into Action Models for Real-Time Robotic Control | 2026-11-02 | spd 8 · gen 4 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2611.02600) · [pdf](https://arxiv.org/pdf/2611.02600v1) |
 | **7.86** | AIRoA-0: Long-Horizon, Precise, Cross-Embodiment Manipulation from Handheld Data | 2026-11-02 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2611.03815) · [pdf](https://arxiv.org/pdf/2611.03815v1) |
 | **7.85** | RoboJEPA: Scaling Robotic Latent World Models | 2026-10-07 | spd – · gen 8 · spec 6 · cost – | [abs](https://arxiv.org/abs/2610.10515) · [pdf](https://arxiv.org/pdf/2610.10515v1) · [code](https://github.com/facebookresearch/robo_jepa) |
+| **7.85** | On Agentic Manipulation Policies | 2026-11-06 | spd – · gen 9 · spec 8 · cost – | [abs](https://arxiv.org/abs/2611.09892) · [pdf](https://arxiv.org/pdf/2611.09892v1) |
 | **7.84** | Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience | 2026-10-19 | spd 7 · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2610.26855) · [pdf](https://arxiv.org/pdf/2610.26855v1) |
 | **7.84** | CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents | 2026-10-29 | spd – · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2610.40799) · [pdf](https://arxiv.org/pdf/2610.40799v1) |
 | **7.83** | Deltoris: Enabling Real-time VLA Inference in Embodied AI via Bit-level Sparsity and Speculative Inference | 2026-08-05 | spd 9 · gen – · spec 4 · cost 7 | [abs](https://arxiv.org/abs/2608.04428) · [pdf](https://arxiv.org/pdf/2608.04428v1) |
@@ -79,7 +80,6 @@ variants · **30** authors
 | **7.67** | vla.cpp: A Unified Inference Runtime for Vision-Language-Action Models | 2026-06-06 | spd 8 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2606.08094) · [pdf](https://arxiv.org/pdf/2606.08094v1) · [code](https://github.com/ggml-org/llama.cpp) |
 | **7.67** | Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models | 2026-06-16 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2606.17846) · [pdf](https://arxiv.org/pdf/2606.17846v1) · [code](https://github.com/QwenLM/Qwen-RobotManip) |
 | **7.67** | One Policy, Many Embodiments: Unified Camera-Centric Action Geometry Pre-training for Heterogeneous Embodied Manipulation | 2026-08-26 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2608.26058) · [pdf](https://arxiv.org/pdf/2608.26058v1) |
-| **7.67** | Triggering Generalist Reasoning via Predictive Uncertainty for Dual-System VLA | 2026-10-04 | spd 7 · gen 5 · spec 6 · cost 9 | [abs](https://arxiv.org/abs/2610.05025) · [pdf](https://arxiv.org/pdf/2610.05025v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _5060 results_
+#### LIBERO  ·  _5092 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1352 results_
+#### RoboTwin  ·  _1364 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 | — | success rate | 89.8 | authors |
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 
-#### RoboCasa  ·  _538 results_
+#### RoboCasa  ·  _544 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 | OPSD-MIS _(ALFWorld)_ | — | pass@64 | 75.55 | authors |
 
-#### VBench  ·  _1620 results_
+#### VBench  ·  _1633 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -282,20 +282,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | Qwen3.5-4B+SVA | — | success rate | 53.06 | authors |
 | Qwen3.5-27B | — | success rate | 47.22 | 3rd-party |
 
-#### BEHAVIOR  ·  _83 results_
+#### BEHAVIOR  ·  _91 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | MPVI _(none (no additional training))_ | — | Q-score improvement | 113.0 | authors |
 | π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | place_on | success rate | 100.0 | authors |
+| AMP1 (Gemini 4 Argon) | — | success rate | 96.0 | authors |
 | SERF _(per-task finetune on BEHAVIOR-1K)_ | Failure recovery (object drop) | recovery success rate | 95.0 | authors |
 | PI0.5 (ft) _(per-task finetune on BEHAVIOR-1K)_ | Failure recovery (object drop) | recovery success rate | 65.0 | authors |
+| CaP-Agent0 | — | success rate | 64.0 | 3rd-party |
 | SERF _(per-task finetune on BEHAVIOR-1K)_ | Collecting Children's Toys | task progress | 63.5 | authors |
 | SERF (env) _(per-task finetune on BEHAVIOR-1K)_ | Putting Shoes On Rack | task progress | 59.0 | authors |
 | SBP _(per-task finetune on BEHAVIOR-1K)_ | Collecting Children's Toys | task progress | 57.9 | authors |
 | PI0.5 (ft) _(per-task finetune on BEHAVIOR-1K)_ | Scene-configuration generalization (Additional Objects) | task progress | 50.6 | authors |
-| π0.5 _(cleaned BEHAVIOR-1K demonstrations)_ | Turn on radio | progress score | 50.0 | authors |
-| PI0.5 (pre) _(BEHAVIOR-1K (50 tasks))_ | Assembling Gift Baskets | task progress | 44.1 | authors |
 
 #### nuScenes  ·  _432 results_
 
@@ -538,6 +538,12 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Zhen-Yu Wu](https://www.semanticscholar.org/author/2257436035)** (3 papers) — Research on world-action models for robotic manipulation, focusing on disentangled video generation for efficient world modeling, closed-loop policy improvement from deployment rollouts, and real-robot reinforcement learning via world-model simulation.
 
 ## 📰 Embodied / Physical-AI News
+- [NVIDIA launches GR00T 2 and Isaac Lab 3.0 at CoRL](https://www.therobotreport.com/nvidia-launches-gr00t-2-isaac-lab-3-0-corl/) — _The Robot Report_
+- [Boston Dynamics adds wheels to Atlas humanoid to test whole-body control](https://www.therobotreport.com/boston-dynamics-adds-wheels-to-atlas-humanoid-to-test-whole-body-control/) — _The Robot Report_
+- [How to minimize Wi-Fi roaming interruptions for autonomous mobile robots](https://www.therobotreport.com/how-minimize-wi-fi-roaming-interruptions-autonomous-mobile-robots/) — _The Robot Report_
+- [Can Agentic Robotics Solve Robotics’ Data Scaling Problem?](https://spectrum.ieee.org/agentic-robotics) — _IEEE Spectrum_
+- [Nemotron-Personas-Finance-Japan: A Synthetic Dataset Capturing Japan's Demographics and Financial Context](https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan) — _Hugging Face - Blog_
+- [Your Experts Have Partners. There's HOPE for Keeping Them Together](https://huggingface.co/blog/amazon/higher-order-pruning-experts) — _Hugging Face - Blog_
 - [ARM Institute consortium grows to more than 500 organizations](https://www.therobotreport.com/arm-institute-members-grows-more-than-500-organizations/) — _The Robot Report_
 - [Robot integration brings high-precision production to midmarket manufacturers](https://www.therobotreport.com/robot-integration-brings-high-precision-production-to-midmarket-manufacturers/) — _The Robot Report_
 - [Video Friday: Room-Scale Cable-Driven Home Robot Tidies Up](https://spectrum.ieee.org/video-friday-home-cable-robot) — _IEEE Spectrum_
@@ -547,12 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Boston Dynamics built Stretch Gen 2 for reliable, consistent performance](https://www.therobotreport.com/boston-dynamics-built-stretch-gen-2-for-reliable-consistent-performance/) — _The Robot Report_
 - [Industry experts discuss China blocking SoftBank acquisition of ABB Robotics](https://www.therobotreport.com/industry-experts-discuss-china-blocking-softbank-acquisition-abb-robotics/) — _The Robot Report_
 - [How Ambi Robotics helps its customers prepare for peak season](https://www.therobotreport.com/how-ambi-robotics-helps-customers-prepare-peak-season/) — _The Robot Report_
-- [Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics](https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/) — _The Robot Report_
-- [Agility Robotics begins trading on Nasdaq](https://www.therobotreport.com/agility-robotics-begins-trading-on-nasdaq/) — _The Robot Report_
-- [New NVIDIA Cosmos 3 Open Models for Interactive World Simulation](https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation) — _Hugging Face - Blog_
-- [A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks.](https://huggingface.co/blog/phonon-tts) — _Hugging Face - Blog_
-- [How did Agility Robotics perform on its first day on the stock market?](https://www.therobotreport.com/how-did-agility-robotics-perform-on-its-first-day-on-the-stock-market/) — _The Robot Report_
-- [Robotics Startup Radar 2026](https://www.therobotreport.com/robotics-startup-radar-2026/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
