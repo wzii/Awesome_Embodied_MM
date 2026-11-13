@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-11-12 · **Tracked:** 2230 core · 1539 adjacent ·
-746 news · **39207** benchmark rows across **16843** model
+**Last updated:** 2026-11-13 · **Tracked:** 2252 core · 1562 adjacent ·
+753 news · **39637** benchmark rows across **16981** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _5156 results_
+#### LIBERO  ·  _5183 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
 | VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1368 results_
+#### RoboTwin  ·  _1372 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -132,7 +132,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Motus (Native) | — | GPU inference time per replan | 1455.69 | authors |
 | REACT | — | mean jerk norm | 1219.0 | authors |
 
-#### SimplerEnv  ·  _413 results_
+#### SimplerEnv  ·  _423 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -162,7 +162,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | AWAM | — | success rate | 76.5 | authors |
 | 3D Diffuser Actor | — | average success rate | 75.96 | 3rd-party |
 
-#### Meta-World  ·  _223 results_
+#### Meta-World  ·  _235 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO-MIS _(ALFWorld)_ | — | pass@64 | 83.21 | authors |
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 
-#### VBench  ·  _1656 results_
+#### VBench  ·  _1675 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -297,7 +297,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SBP _(per-task finetune on BEHAVIOR-1K)_ | Collecting Children's Toys | task progress | 57.9 | authors |
 | PI0.5 (ft) _(per-task finetune on BEHAVIOR-1K)_ | Scene-configuration generalization (Additional Objects) | task progress | 50.6 | authors |
 
-#### nuScenes  ·  _439 results_
+#### nuScenes  ·  _442 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -312,7 +312,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | REPA w/ DINOv2 _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 295.9 | 3rd-party |
 | Self-Flow _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 283.3 | 3rd-party |
 
-#### PushT  ·  _202 results_
+#### PushT  ·  _209 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -326,6 +326,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | SA+IDM | — | success rate | 98.0 | authors |
 | UVA | — | success rate | 97.47 | authors |
 | MemWM | — | success rate | 96.7 | authors |
+
+#### NAVSIM v1  ·  _181 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| UNIVERSE w.o. Mask _(NAVSIM v1)_ | — | inference latency | 1623.0 | authors |
+| UNIVERSE Two-DiT _(NAVSIM v1)_ | — | inference latency | 551.0 | authors |
+| AMPT _(NAVSIM)_ | failure recovery | recovered scenes | 440.0 | authors |
+| UNIVERSE _(NAVSIM v1)_ | — | inference latency | 376.0 | authors |
+| Original GRPO _(NAVSIM)_ | failure recovery | recovered scenes | 367.0 | authors |
+| Full-depth planner _(NAVSIM)_ | — | end-to-end planning latency | 320.0 | authors |
+| Fixed B15 (single trajectory) _(NAVSIM)_ | — | end-to-end planning latency | 190.0 | authors |
+| Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
+| CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
+| CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
 
 #### NAVSIM  ·  _180 results_
 
@@ -386,21 +401,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | No world model _(OGBench play data)_ | cube-single | success rate | 89.3 | authors |
 | QPILOTS-U _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 89.0 | authors |
 | GradPlan _(OGBench play data)_ | cube-single | success rate | 88.9 | authors |
-
-#### NAVSIM v1  ·  _161 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| UNIVERSE w.o. Mask _(NAVSIM v1)_ | — | inference latency | 1623.0 | authors |
-| UNIVERSE Two-DiT _(NAVSIM v1)_ | — | inference latency | 551.0 | authors |
-| AMPT _(NAVSIM)_ | failure recovery | recovered scenes | 440.0 | authors |
-| UNIVERSE _(NAVSIM v1)_ | — | inference latency | 376.0 | authors |
-| Original GRPO _(NAVSIM)_ | failure recovery | recovered scenes | 367.0 | authors |
-| Full-depth planner _(NAVSIM)_ | — | end-to-end planning latency | 320.0 | authors |
-| Fixed B15 (single trajectory) _(NAVSIM)_ | — | end-to-end planning latency | 190.0 | authors |
-| Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
 
 #### Real-world  ·  _153 results_
 
@@ -538,6 +538,13 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Zhen-Yu Wu](https://www.semanticscholar.org/author/2257436035)** (3 papers) — Research on world-action models for robotic manipulation, focusing on disentangled video generation for efficient world modeling, closed-loop policy improvement from deployment rollouts, and real-robot reinforcement learning via world-model simulation.
 
 ## 📰 Embodied / Physical-AI News
+- [Six AGIBOT G2 Robots Complete 1,730 Tasks in 24-Hour Shanghai Convenience Store Trial](https://www.therobotreport.com/six-agibot-g2-robots-complete-1730-tasks-in-24-hour-shanghai-convenience-store-trial/) — _The Robot Report_
+- [How Rhoda AI is using video data to create generalized AI models for robots](https://www.therobotreport.com/how-rhoda-ai-is-using-video-data-to-create-generalized-ai-models-for-robots/) — _The Robot Report_
+- [Narwal builds robot vacuums to serve regional needs](https://www.therobotreport.com/narwal-builds-robot-vacuums-to-serve-regional-needs/) — _The Robot Report_
+- [Video Friday: NASA PROMISEs a New Moon Rover](https://spectrum.ieee.org/video-friday-moon-rover-promise) — _IEEE Spectrum_
+- [Build a Robot Pick-and-Place Simulation with SimReady Assets](https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place) — _Hugging Face - Blog_
+- [XYBench: Helping with the problem behind the question](https://huggingface.co/blog/allenai/xybench) — _Hugging Face - Blog_
+- [llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem](https://huggingface.co/blog/ggml-org/llama-cpp-v1) — _Hugging Face - Blog_
 - [NVIDIA replaces CEO amid China AI and robotics concerns](https://www.therobotreport.com/nvidia-replaces-ceo-amid-china-ai-and-robotics-concerns/) — _The Robot Report_
 - [Viam Launchpad aims to accelerate robotics deployments](https://www.therobotreport.com/viam-launchpad-aims-to-accelerate-robotics-deployments/) — _The Robot Report_
 - [Runway’s Praxis-1 world action model for robotics is now available](https://www.therobotreport.com/runways-praxis-1-world-action-model-for-robotics-is-now-available/) — _The Robot Report_
@@ -546,13 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Serve Robotics opens robot delivery network for others to build on](https://www.therobotreport.com/serve-robotics-opens-robot-delivery-network-for-others-to-build-on/) — _The Robot Report_
 - [Memories.ai builds standardized egocentric video pipeline](https://www.therobotreport.com/memories-ai-builds-standardized-egocentric-video-pipeline/) — _The Robot Report_
 - [Can AI agents program industrial robots without training data? Berkeley says yes](https://www.therobotreport.com/can-ai-agents-program-industrial-robots-without-training-data-berkeley-says-yes/) — _The Robot Report_
-- [BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model](https://huggingface.co/blog/qvac/botpsy) — _Hugging Face - Blog_
-- [Token Pooling-Aware Training for Multi-Vector Embedding Models](https://huggingface.co/blog/token-pooling) — _Hugging Face - Blog_
-- [Dynamic Creatures partners with Sixth Wall Studio to bring Hasbro characters to life with robots](https://www.therobotreport.com/dynamic-creatures-partners-sixth-wall-studio-bring-hasbro-characters-life-with-robots/) — _The Robot Report_
-- [Why predictive maintenance matters more as factories add robots](https://www.therobotreport.com/why-predictive-maintenance-matters-more-as-factories-add-robots/) — _The Robot Report_
-- [Intel and Altera expand collaboration to simplify sensor integration for physical AI](https://www.therobotreport.com/intel-altera-expand-collaboration-simplify-sensor-integration-physical-ai/) — _The Robot Report_
-- [Axon invests $1.2B into Skydio and becomes its U.S. public safety distributor](https://www.therobotreport.com/axon-invests-1-2b-into-skydio-and-becomes-its-u-s-public-safety-distributor/) — _The Robot Report_
-- [Pay for Hugging Face Hub with your Google Cloud Account](https://huggingface.co/blog/hub-gcp-marketplace) — _Hugging Face - Blog_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
