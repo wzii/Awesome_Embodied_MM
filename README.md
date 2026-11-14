@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-11-13 · **Tracked:** 2252 core · 1562 adjacent ·
-753 news · **39637** benchmark rows across **16981** model
+**Last updated:** 2026-11-14 · **Tracked:** 2252 core · 1562 adjacent ·
+753 news · **39651** benchmark rows across **16985** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
