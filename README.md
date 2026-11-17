@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-11-16 · **Tracked:** 2257 core · 1568 adjacent ·
-759 news · **39800** benchmark rows across **17039** model
+**Last updated:** 2026-11-17 · **Tracked:** 2286 core · 1592 adjacent ·
+762 news · **40157** benchmark rows across **17184** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _5203 results_
+#### LIBERO  ·  _5287 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,10 +102,12 @@ _Model identity = (model, training data); same name on different data is a disti
 | SimpleVLA-RL _(LIBERO)_ | Long | iterations to 90% success rate | 2450.0 | authors |
 | vla.cpp | — | peak RSS | 2031.0 | authors |
 
-#### CALVIN  ·  _220 results_
+#### CALVIN  ·  _227 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
+| OpenVLA-AR _(CALVIN ABC→D)_ | — | inference latency (median) | 848.0 | 3rd-party |
+| PlanDiv _(CALVIN ABC→D)_ | — | inference latency (median) | 288.0 | authors |
 | FLOWER + Ours _(CALVIN ABC)_ | — | success rate (1 task) | 99.5 | authors |
 | FLOWER _(CALVIN ABC)_ | — | success rate (1 task) | 99.3 | authors |
 | MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 3-step success rate | 96.8 | authors |
@@ -114,10 +116,8 @@ _Model identity = (model, training data); same name on different data is a disti
 | FLOWER _(CALVIN ABC)_ | — | success rate (2 tasks) | 95.9 | authors |
 | SAPS (Cosine) _(CALVIN)_ | long-horizon chains (5 subtasks) | subtask success rate (ST-SR) | 94.85 | authors |
 | VLM4VLA + Ours _(CALVIN ABC)_ | — | success rate (1 task) | 94.4 | authors |
-| MPCoT _(LIBERO, CALVIN ABC→D)_ | — | 4-step success rate | 93.7 | authors |
-| VLM4VLA _(CALVIN ABC)_ | — | success rate (1 task) | 93.4 | authors |
 
-#### RoboTwin  ·  _1372 results_
+#### RoboTwin  ·  _1381 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -162,7 +162,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | AWAM | — | success rate | 76.5 | authors |
 | 3D Diffuser Actor | — | average success rate | 75.96 | 3rd-party |
 
-#### Meta-World  ·  _238 results_
+#### Meta-World  ·  _242 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | π0.5 | — | success rate | 89.8 | authors |
 | π0.5 _(RL on ManiSkill)_ | — | success rate | 89.1 | authors |
 
-#### RoboCasa  ·  _566 results_
+#### RoboCasa  ·  _567 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO-MIS _(ALFWorld)_ | — | pass@64 | 83.21 | authors |
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 
-#### VBench  ·  _1675 results_
+#### VBench  ·  _1679 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -297,7 +297,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SBP _(per-task finetune on BEHAVIOR-1K)_ | Collecting Children's Toys | task progress | 57.9 | authors |
 | PI0.5 (ft) _(per-task finetune on BEHAVIOR-1K)_ | Scene-configuration generalization (Additional Objects) | task progress | 50.6 | authors |
 
-#### nuScenes  ·  _442 results_
+#### nuScenes  ·  _465 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -447,7 +447,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SEA-RAFT | — | DCAavg | 47.39 | 3rd-party |
 | LPA-CWM _(MOVi-F)_ | — | AJ | 45.29 | authors |
 
-#### TwoRoom  ·  _126 results_
+#### TwoRoom  ·  _128 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -538,10 +538,13 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Zhen-Yu Wu](https://www.semanticscholar.org/author/2257436035)** (3 papers) — Research on world-action models for robotic manipulation, focusing on disentangled video generation for efficient world modeling, closed-loop policy improvement from deployment rollouts, and real-robot reinforcement learning via world-model simulation.
 
 ## 📰 Embodied / Physical-AI News
+- [Learn how AI is changing supply chain robotics](https://www.therobotreport.com/learn-how-ai-is-changing-supply-chain-robotics/) — _The Robot Report_
+- [Boston Dynamics’ Atlas humanoid lands first non-automotive trial](https://www.therobotreport.com/boston-dynamics-atlas-humanoid-lands-first-non-automotive-trial/) — _The Robot Report_
 - [Agile Robots raises $500M to increase production capacity](https://www.therobotreport.com/agile-robots-raises-500m-to-increase-production-capacity/) — _The Robot Report_
 - [Can Robots Bring Stroke Surgery to Remote Hospitals?](https://spectrum.ieee.org/telesurgery-stroke) — _IEEE Spectrum_
 - [28 Zero-Day Findings in Under Two Days. Is Robotics Security Keeping Pace?](https://spectrum.ieee.org/zero-day-robotics-vulnerabilities-vicone-security) — _IEEE Spectrum_
 - [Hugging Face and OpenRouter join forces to make open-weight models easy to run](https://huggingface.co/blog/openrouter) — _Hugging Face - Blog_
+- [The hidden reason most robots fail on the factory floor](https://www.therobotreport.com/the-hidden-reason-most-robots-fail-on-the-factory-floor/) — _The Robot Report_
 - [Why Skydio Built a Lopsided Drone](https://spectrum.ieee.org/skydio-f10-lightrunner-asymmetrical-drone) — _IEEE Spectrum_
 - [Food robotics 2.0: why this time could be different](https://www.therobotreport.com/food-robotics-2-0-why-this-time-could-be-different/) — _The Robot Report_
 - [Six AGIBOT G2 Robots Complete 1,730 Tasks in 24-Hour Shanghai Convenience Store Trial](https://www.therobotreport.com/six-agibot-g2-robots-complete-1730-tasks-in-24-hour-shanghai-convenience-store-trial/) — _The Robot Report_
@@ -550,9 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Video Friday: NASA PROMISEs a New Moon Rover](https://spectrum.ieee.org/video-friday-moon-rover-promise) — _IEEE Spectrum_
 - [Build a Robot Pick-and-Place Simulation with SimReady Assets](https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place) — _Hugging Face - Blog_
 - [XYBench: Helping with the problem behind the question](https://huggingface.co/blog/allenai/xybench) — _Hugging Face - Blog_
-- [llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem](https://huggingface.co/blog/ggml-org/llama-cpp-v1) — _Hugging Face - Blog_
-- [NVIDIA replaces CEO amid China AI and robotics concerns](https://www.therobotreport.com/nvidia-replaces-ceo-amid-china-ai-and-robotics-concerns/) — _The Robot Report_
-- [Viam Launchpad aims to accelerate robotics deployments](https://www.therobotreport.com/viam-launchpad-aims-to-accelerate-robotics-deployments/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
