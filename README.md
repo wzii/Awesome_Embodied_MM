@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-11-18 · **Tracked:** 2310 core · 1610 adjacent ·
-770 news · **40621** benchmark rows across **17421** model
+**Last updated:** 2026-11-19 · **Tracked:** 2350 core · 1624 adjacent ·
+772 news · **41032** benchmark rows across **17583** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -58,6 +58,7 @@ variants · **30** authors
 | **7.84** | Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience | 2026-10-19 | spd 7 · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2610.26855) · [pdf](https://arxiv.org/pdf/2610.26855v1) |
 | **7.84** | CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents | 2026-10-29 | spd – · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2610.40799) · [pdf](https://arxiv.org/pdf/2610.40799v1) |
 | **7.83** | Deltoris: Enabling Real-time VLA Inference in Embodied AI via Bit-level Sparsity and Speculative Inference | 2026-08-05 | spd 9 · gen – · spec 4 · cost 7 | [abs](https://arxiv.org/abs/2608.04428) · [pdf](https://arxiv.org/pdf/2608.04428v1) |
+| **7.81** | Phoenix: Learning Scene Structure Representations for Generalizable World-Action Models | 2026-11-18 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2611.24938) · [pdf](https://arxiv.org/pdf/2611.24938v1) |
 | **7.8** | Staircase Policy: Streaming Inference for World-Action Models with Large Action Chunks | 2026-09-29 | spd 8 · gen 6 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2609.36471) · [pdf](https://arxiv.org/pdf/2609.36471v1) |
 | **7.79** | Causal-rCM: A Unified Teacher-Forcing and Self-Forcing Open Recipe for Autoregressive Diffusion Distillation in Streaming Video Generation and Interactive World Models | 2026-06-24 | spd 8 · gen 4 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2606.25473) · [pdf](https://arxiv.org/pdf/2606.25473v1) · [code](https://github.com/NVlabs/rcm) |
 | **7.79** | OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining | 2026-09-07 | spd – · gen 8 · spec 7 · cost – | [abs](https://arxiv.org/abs/2609.07398) · [pdf](https://arxiv.org/pdf/2609.07398v1) · [code](https://github.com/OpenWAM-Official/OpenWAM) |
@@ -79,7 +80,6 @@ variants · **30** authors
 | **7.71** | StellaVLA: In-Context Structured Demonstration for Generalizable Vision-Language-Action Models | 2026-08-12 | spd 5 · gen 8 · spec 8 · cost 6 | [abs](https://arxiv.org/abs/2608.11671) · [pdf](https://arxiv.org/pdf/2608.11671v1) |
 | **7.71** | Future Representation Distillation for Imagination-Free World Action Models | 2026-11-03 | spd 7 · gen 8 · spec 7 · cost 6 | [abs](https://arxiv.org/abs/2611.04527) · [pdf](https://arxiv.org/pdf/2611.04527v1) · [code](https://github.com/harryjo97/dreamfree) |
 | **7.71** | ForeAct: Geometry-Guided Action Learning from World Representations | 2026-11-08 | spd 7 · gen 6 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2611.11500) · [pdf](https://arxiv.org/pdf/2611.11500v1) |
-| **7.67** | vla.cpp: A Unified Inference Runtime for Vision-Language-Action Models | 2026-06-06 | spd 8 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2606.08094) · [pdf](https://arxiv.org/pdf/2606.08094v1) · [code](https://github.com/ggml-org/llama.cpp) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _5370 results_
+#### LIBERO  ·  _5458 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,7 +102,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SimpleVLA-RL _(LIBERO)_ | Long | iterations to 90% success rate | 2450.0 | authors |
 | vla.cpp | — | peak RSS | 2031.0 | authors |
 
-#### CALVIN  ·  _231 results_
+#### CALVIN  ·  _240 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SAPS (Cosine) _(CALVIN)_ | long-horizon chains (5 subtasks) | subtask success rate (ST-SR) | 94.85 | authors |
 | VLM4VLA + Ours _(CALVIN ABC)_ | — | success rate (1 task) | 94.4 | authors |
 
-#### RoboTwin  ·  _1394 results_
+#### RoboTwin  ·  _1417 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FM policy _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | end success rate | 93.14 | authors |
 | πRL | — | success rate | 90.9 | authors |
 
-#### RoboCasa  ·  _570 results_
+#### RoboCasa  ·  _580 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO-MIS _(ALFWorld)_ | — | pass@64 | 83.21 | authors |
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 
-#### VBench  ·  _1696 results_
+#### VBench  ·  _1700 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -297,7 +297,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SBP _(per-task finetune on BEHAVIOR-1K)_ | Collecting Children's Toys | task progress | 57.9 | authors |
 | PI0.5 (ft) _(per-task finetune on BEHAVIOR-1K)_ | Scene-configuration generalization (Additional Objects) | task progress | 50.6 | authors |
 
-#### nuScenes  ·  _493 results_
+#### nuScenes  ·  _494 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -357,6 +357,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | Ours† _(OpenScene (NAVSIM train split))_ | planning | TTC | 95.9 | authors |
 | GeoCoTDrive _(NAVSIM + PlanningGrounding)_ | — | DAC | 95.6 | authors |
 
+#### DROID  ·  _182 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
+| π0-FAST _(DROID (zero-shot))_ | average across three tasks (successful trajectories only) | action steps length | 269.0 | 3rd-party |
+| MiniWorld-3B _(DROID)_ | — | Trajectory Accuracy improvement | 249.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | Depth Accuracy improvement | 238.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | LPIPS improvement | 216.0 | authors |
+| SWAP _(offline trajectories from candidate policies on DROID tasks)_ | average across three tasks (successful trajectories only) | action steps length | 193.0 | authors |
+| TesserAct | — | FID | 164.54 | 3rd-party |
+| MiniWorld-3B _(DROID)_ | — | SSIM improvement | 125.0 | authors |
+| SWAP _(offline trajectories from candidate policies on DROID tasks)_ | Marker → Bowl | success rate | 100.0 | authors |
+| RAGu _(DROID)_ | Wipe Table | success rate | 100.0 | authors |
+
 #### NAVSIM v1  ·  _181 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -371,21 +386,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
-
-#### DROID  ·  _179 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
-| π0-FAST _(DROID (zero-shot))_ | average across three tasks (successful trajectories only) | action steps length | 269.0 | 3rd-party |
-| MiniWorld-3B _(DROID)_ | — | Trajectory Accuracy improvement | 249.0 | authors |
-| MiniWorld-3B _(DROID)_ | — | Depth Accuracy improvement | 238.0 | authors |
-| MiniWorld-3B _(DROID)_ | — | LPIPS improvement | 216.0 | authors |
-| SWAP _(offline trajectories from candidate policies on DROID tasks)_ | average across three tasks (successful trajectories only) | action steps length | 193.0 | authors |
-| TesserAct | — | FID | 164.54 | 3rd-party |
-| MiniWorld-3B _(DROID)_ | — | SSIM improvement | 125.0 | authors |
-| SWAP _(offline trajectories from candidate policies on DROID tasks)_ | Marker → Bowl | success rate | 100.0 | authors |
-| RAGu _(DROID)_ | Wipe Table | success rate | 100.0 | authors |
 
 #### OGBench  ·  _176 results_
 
@@ -462,7 +462,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | LeWM + NGC (Oracle Predictor) | offset 75 | success rate | 100.0 | authors |
 | WA-JEPA _(offline demonstrations)_ | short-horizon goal reaching | success rate | 100.0 | authors |
 
-#### Push-T  ·  _125 results_
+#### Push-T  ·  _131 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -538,6 +538,7 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Zhen-Yu Wu](https://www.semanticscholar.org/author/2257436035)** (3 papers) — Research on world-action models for robotic manipulation, focusing on disentangled video generation for efficient world modeling, closed-loop policy improvement from deployment rollouts, and real-robot reinforcement learning via world-model simulation.
 
 ## 📰 Embodied / Physical-AI News
+- [What industrial drone deployments reveal about real-world autonomy challenges](https://www.therobotreport.com/what-industrial-drone-deployments-reveal-about-real-world-autonomy-challenges/) — _The Robot Report_
 - [From Commercial Scale to Embodied Intelligence: The Next Challenge for Robotics](https://www.therobotreport.com/from-commercial-scale-to-embodied-intelligence-the-next-challenge-for-robotics/) — _The Robot Report_
 - [Rockwell Automation acquiring mobile robot maker AGILOX](https://www.therobotreport.com/rockwell-automation-acquiring-mobile-robot-maker-agilox/) — _The Robot Report_
 - [DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency](https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin) — _Hugging Face - Blog_
@@ -545,14 +546,13 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Time-Series Models in the Streamhouse: A New Frontier and Use Cases](https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse) — _Hugging Face - Blog_
 - [180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers](https://huggingface.co/blog/moe-expert-streaming) — _Hugging Face - Blog_
 - [Rumble-2-Flash: an open 0.5B speech model for 40+ languages](https://huggingface.co/blog/rumble-2-flash) — _Hugging Face - Blog_
+- [Humyn Labs raises $47M to collect real-world data for robotics](https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/) — _The Robot Report_
 - [Learn how AI is changing supply chain robotics](https://www.therobotreport.com/learn-how-ai-is-changing-supply-chain-robotics/) — _The Robot Report_
 - [Boston Dynamics’ Atlas humanoid lands first non-automotive trial](https://www.therobotreport.com/boston-dynamics-atlas-humanoid-lands-first-non-automotive-trial/) — _The Robot Report_
 - [California DMV bars Waymo AVs from operating on the state’s freeways](https://www.therobotreport.com/california-dmv-bars-waymo-avs-from-operating-on-the-states-freeways/) — _The Robot Report_
 - [Agile Robots raises $500M to increase production capacity](https://www.therobotreport.com/agile-robots-raises-500m-to-increase-production-capacity/) — _The Robot Report_
 - [Can Robots Bring Stroke Surgery to Remote Hospitals?](https://spectrum.ieee.org/telesurgery-stroke) — _IEEE Spectrum_
 - [28 Zero-Day Findings in Under Two Days. Is Robotics Security Keeping Pace?](https://spectrum.ieee.org/zero-day-robotics-vulnerabilities-vicone-security) — _IEEE Spectrum_
-- [Hugging Face and OpenRouter join forces to make open-weight models easy to run](https://huggingface.co/blog/openrouter) — _Hugging Face - Blog_
-- [The hidden reason most robots fail on the factory floor](https://www.therobotreport.com/the-hidden-reason-most-robots-fail-on-the-factory-floor/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
