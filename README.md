@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-11-20 · **Tracked:** 2381 core · 1658 adjacent ·
-777 news · **41271** benchmark rows across **17648** model
+**Last updated:** 2026-11-21 · **Tracked:** 2381 core · 1658 adjacent ·
+778 news · **41805** benchmark rows across **17889** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _5497 results_
+#### LIBERO  ·  _5645 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,7 +102,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SimpleVLA-RL _(LIBERO)_ | Long | iterations to 90% success rate | 2450.0 | authors |
 | vla.cpp | — | peak RSS | 2031.0 | authors |
 
-#### CALVIN  ·  _240 results_
+#### CALVIN  ·  _242 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SAPS (Cosine) _(CALVIN)_ | long-horizon chains (5 subtasks) | subtask success rate (ST-SR) | 94.85 | authors |
 | VLM4VLA + Ours _(CALVIN ABC)_ | — | success rate (1 task) | 94.4 | authors |
 
-#### RoboTwin  ·  _1417 results_
+#### RoboTwin  ·  _1441 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -147,11 +147,12 @@ _Model identity = (model, training data); same name on different data is a disti
 | OpenVLA-7b | Pick up | failure rate (FR) | 97.5 | authors |
 | GR00T-N1.6 | Pick up | failed object coverage (FOC) | 97.1 | authors |
 
-#### RLBench  ·  _90 results_
+#### RLBench  ·  _97 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | PointACT _(RLBench (10 tasks))_ | Close laptop lid | success rate | 99.0 | authors |
+| LaST1.0 _(AGIBot, GenRobot, Simplexity Robotics i7)_ | — | success rate | 92.0 | authors |
 | LaST0.5 _(14k hours of heterogeneous robotic data)_ | — | success rate | 88.0 | authors |
 | Uni-LaDiR | — | success rate | 87.0 | authors |
 | LaST0.5 w/o AWAT _(14k hours of heterogeneous robotic data)_ | — | success rate | 85.0 | authors |
@@ -160,9 +161,8 @@ _Model identity = (model, training data); same name on different data is a disti
 | FASA (3D-DA) | — | average success rate | 77.48 | authors |
 | Cosmos Policy _(Open X-Embodiment)_ | — | success rate | 77.0 | 3rd-party |
 | AWAM | — | success rate | 76.5 | authors |
-| 3D Diffuser Actor | — | average success rate | 75.96 | 3rd-party |
 
-#### Meta-World  ·  _246 results_
+#### Meta-World  ·  _247 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,20 +192,20 @@ _Model identity = (model, training data); same name on different data is a disti
 | FM policy _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | end success rate | 93.14 | authors |
 | πRL | — | success rate | 90.9 | authors |
 
-#### RoboCasa  ·  _586 results_
+#### RoboCasa  ·  _615 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
+| RoboJEPA | Push | Plan time | 25728.4 | 3rd-party |
+| CompACT | Obstacle | Plan time | 8424.0 | 3rd-party |
 | Always train | Composite-Unseen | GPU minutes (training) | 3411.0 | authors |
 | Joint-WAM _(RoboCasa)_ | — | inference latency | 593.1 | authors |
+| ProbeShare _(DROID and RoboCasa)_ | Obstacle | Plan time | 569.0 | authors |
 | LAWA _(RoboCasa + egocentric videos)_ | — | inference latency | 338.5 | authors |
 | Fast-WAM _(RoboCasa)_ | — | inference latency | 196.5 | authors |
 | Axiom-0 _(pretrain_human300)_ | — | mean generation latency | 135.55 | authors |
 | Xiaomi-Robotics-1 | — | mean generation latency | 133.25 | authors |
 | Cosmos Policy _(Cosmos Policy pretrained checkpoint (evaluated on RoboCasa))_ | direct policy, paired bug vs render-fixed | successes (count) | 105.0 | authors |
-| Cosmos-Policy | Turn Off Microwave | success rate | 100.0 | authors |
-| ALDER | Drawer and Door (pooled) | prediction coverage | 100.0 | authors |
-| Z-1 RL _(RoboCasa demonstrations)_ | Door | success rate | 97.0 | authors |
 
 #### Open-X / RT  ·  _124 results_
 
@@ -312,7 +312,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | REPA w/ DINOv2 _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 295.9 | 3rd-party |
 | Self-Flow _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 283.3 | 3rd-party |
 
-#### PushT  ·  _225 results_
+#### PushT  ·  _236 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -327,7 +327,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SA+IDM | — | success rate | 98.0 | authors |
 | UVA | — | success rate | 97.47 | authors |
 
-#### Bench2Drive  ·  _196 results_
+#### Bench2Drive  ·  _212 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -341,6 +341,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | AgentWorld _(Bench2Drive)_ | closed-loop driving | Efficiency | 147.82 | authors |
 | AutoVLA _(Bench2Drive)_ | closed-loop driving | Efficiency | 146.93 | 3rd-party |
 | UniAD-Base _(Bench2Drive)_ | closed-loop driving | Efficiency | 129.21 | 3rd-party |
+
+#### NAVSIM v1  ·  _193 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| UNIVERSE w.o. Mask _(NAVSIM v1)_ | — | inference latency | 1623.0 | authors |
+| UNIVERSE Two-DiT _(NAVSIM v1)_ | — | inference latency | 551.0 | authors |
+| AMPT _(NAVSIM)_ | failure recovery | recovered scenes | 440.0 | authors |
+| UNIVERSE _(NAVSIM v1)_ | — | inference latency | 376.0 | authors |
+| Original GRPO _(NAVSIM)_ | failure recovery | recovered scenes | 367.0 | authors |
+| Full-depth planner _(NAVSIM)_ | — | end-to-end planning latency | 320.0 | authors |
+| Fixed B15 (single trajectory) _(NAVSIM)_ | — | end-to-end planning latency | 190.0 | authors |
+| Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
+| CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
+| PGSD (FCRS) _(NAVSIM v1 navtrain)_ | — | Comf. | 100.0 | authors |
 
 #### NAVSIM  ·  _189 results_
 
@@ -372,21 +387,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | SWAP _(offline trajectories from candidate policies on DROID tasks)_ | Marker → Bowl | success rate | 100.0 | authors |
 | RAGu _(DROID)_ | Wipe Table | success rate | 100.0 | authors |
 
-#### NAVSIM v1  ·  _181 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| UNIVERSE w.o. Mask _(NAVSIM v1)_ | — | inference latency | 1623.0 | authors |
-| UNIVERSE Two-DiT _(NAVSIM v1)_ | — | inference latency | 551.0 | authors |
-| AMPT _(NAVSIM)_ | failure recovery | recovered scenes | 440.0 | authors |
-| UNIVERSE _(NAVSIM v1)_ | — | inference latency | 376.0 | authors |
-| Original GRPO _(NAVSIM)_ | failure recovery | recovered scenes | 367.0 | authors |
-| Full-depth planner _(NAVSIM)_ | — | end-to-end planning latency | 320.0 | authors |
-| Fixed B15 (single trajectory) _(NAVSIM)_ | — | end-to-end planning latency | 190.0 | authors |
-| Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
-| CoPhy _(NAVSIM v1+v2)_ | — | NC | 99.0 | authors |
-
 #### OGBench  ·  _176 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -402,10 +402,11 @@ _Model identity = (model, training data); same name on different data is a disti
 | QPILOTS-U _(OGBench dataset)_ | all 50 tasks | aggregate success rate (offline → online) | 89.0 | authors |
 | GradPlan _(OGBench play data)_ | cube-single | success rate | 88.9 | authors |
 
-#### Real-world  ·  _153 results_
+#### Real-world  ·  _156 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
+| BiCAT _(Real-world demonstrations (SO-101, G1, YAM))_ | All six tasks | successful trials / total trials | 113.0 | authors |
 | InSight _(50 human scooping demonstrations + acquired lateral-push primitive)_ | sweeping | success rate | 100.0 | authors |
 | SAGE-SFT _(π0.5)_ | Place the green cube on the plate | Success rate | 100.0 | authors |
 | OASIS | Goal | success rate | 98.6 | authors |
@@ -415,7 +416,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | Seer + FlowVLA _(Real-world 40 demos per task)_ | Stack Cups | success rate | 93.3 | authors |
 | InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
 | π0.5 | Nut Pouring | final success rate | 91.3 | authors |
-| CF-Prune (α=35%) _(Real-world demonstration)_ | — | overall success rate | 90.7 | authors |
 
 #### RoboMME  ·  _147 results_
 
@@ -462,7 +462,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SEA-RAFT | — | DCAavg | 47.39 | 3rd-party |
 | LPA-CWM _(MOVi-F)_ | — | AJ | 45.29 | authors |
 
-#### Push-T  ·  _131 results_
+#### Push-T  ·  _134 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -538,6 +538,7 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Zhen-Yu Wu](https://www.semanticscholar.org/author/2257436035)** (3 papers) — Research on world-action models for robotic manipulation, focusing on disentangled video generation for efficient world modeling, closed-loop policy improvement from deployment rollouts, and real-robot reinforcement learning via world-model simulation.
 
 ## 📰 Embodied / Physical-AI News
+- [Medtronic’s Hugo surgical robot ready for bigger operation](https://www.therobotreport.com/medtronics-hugo-surgical-robot-ready-for-bigger-operation/) — _The Robot Report_
 - [MassRobotics launching marine robotics facility on Boston Harbor](https://www.therobotreport.com/massrobotics-launching-marine-robotics-facility-on-boston-harbor/) — _The Robot Report_
 - [Robotics enters its post-Jensen Huang era](https://www.therobotreport.com/robotics-enters-its-post-jensen-huang-era/) — _The Robot Report_
 - [Video Friday: Drone Squeezes Itself to Fit Through Tight Spaces](https://spectrum.ieee.org/video-friday-morphing-robots-quadrotor) — _IEEE Spectrum_
@@ -552,7 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers](https://huggingface.co/blog/moe-expert-streaming) — _Hugging Face - Blog_
 - [Rumble-2-Flash: an open 0.5B speech model for 40+ languages](https://huggingface.co/blog/rumble-2-flash) — _Hugging Face - Blog_
 - [Humyn Labs raises $47M to collect real-world data for robotics](https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/) — _The Robot Report_
-- [Learn how AI is changing supply chain robotics](https://www.therobotreport.com/learn-how-ai-is-changing-supply-chain-robotics/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
