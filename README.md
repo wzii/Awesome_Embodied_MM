@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-11-21 · **Tracked:** 2381 core · 1658 adjacent ·
-778 news · **41805** benchmark rows across **17889** model
+**Last updated:** 2026-11-22 · **Tracked:** 2381 core · 1658 adjacent ·
+779 news · **41953** benchmark rows across **17972** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,20 +87,20 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _5645 results_
+#### LIBERO  ·  _5689 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | KV baseline (growing cache) | — | inference state size at 100k steps | 25600000.0 | authors |
+| AdamW _(LIBERO)_ | — | Peak GPU memory | 18578.0 | authors |
 | π0.5 (LeRobot) _(lerobot/libero)_ | — | inference time per chunk | 12781.0 | authors |
+| Dune _(LIBERO)_ | — | Peak GPU memory | 10898.0 | authors |
+| Dust _(LIBERO)_ | — | Peak GPU memory | 10748.0 | authors |
 | VLA-0 _(LIBERO-10)_ | — | median end-to-end latency | 6300.0 | authors |
 | OpenVLA-7B _(LIBERO)_ | — | I(X; X~) (attack channel capacity) | 5000.0 | authors |
 | AURA-Mem | — | inference state size | 4224.0 | authors |
 | Wan 2.2 (chunked) _(LIBERO-90)_ | — | FVD | 4177.0 | 3rd-party |
 | π0.5 (BF16) _(π0.5)_ | — | energy per successful episode | 2836.0 | 3rd-party |
-| OpenVLA-OFT (BF16) _(OpenVLA-OFT)_ | — | energy per successful episode | 2830.0 | 3rd-party |
-| SimpleVLA-RL _(LIBERO)_ | Long | iterations to 90% success rate | 2450.0 | authors |
-| vla.cpp | — | peak RSS | 2031.0 | authors |
 
 #### CALVIN  ·  _242 results_
 
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SAPS (Cosine) _(CALVIN)_ | long-horizon chains (5 subtasks) | subtask success rate (ST-SR) | 94.85 | authors |
 | VLM4VLA + Ours _(CALVIN ABC)_ | — | success rate (1 task) | 94.4 | authors |
 
-#### RoboTwin  ·  _1441 results_
+#### RoboTwin  ·  _1452 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -162,7 +162,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Cosmos Policy _(Open X-Embodiment)_ | — | success rate | 77.0 | 3rd-party |
 | AWAM | — | success rate | 76.5 | authors |
 
-#### Meta-World  ·  _247 results_
+#### Meta-World  ·  _252 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -174,8 +174,8 @@ _Model identity = (model, training data); same name on different data is a disti
 | SpikeWorld _(multimodal cache (SHD, SSC, text, image, video) + Meta-World)_ | reach, push, pick-place | mean cumulative reward | 422.58 | authors |
 | Full prediction tuning _(same as SpikeWorld (further tuning on Meta-World))_ | reach, push, pick-place | mean cumulative reward | 422.19 | authors |
 | SmolVLA | Mug position | Natural MAE | 128.314 | authors |
+| DINO-WM _(Metaworld (JEPA-WMs study))_ | new tasks (all 42 families) | full success | 127.0 | authors |
 | VICX _(Meta-World (drawer-open, reach, basketball))_ | coffee-button | success rate | 100.0 | authors |
-| RECON _(expert demonstrations + online interaction)_ | Drawer Open | success rate | 100.0 | authors |
 
 #### ManiSkill  ·  _179 results_
 
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FM policy _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | end success rate | 93.14 | authors |
 | πRL | — | success rate | 90.9 | authors |
 
-#### RoboCasa  ·  _615 results_
+#### RoboCasa  ·  _623 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -312,11 +312,12 @@ _Model identity = (model, training data); same name on different data is a disti
 | REPA w/ DINOv2 _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 295.9 | 3rd-party |
 | Self-Flow _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 283.3 | 3rd-party |
 
-#### PushT  ·  _236 results_
+#### PushT  ·  _251 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
 | LeWM _(offline demonstrations)_ | short-horizon goal reaching | complete-plan latency | 1047.36 | 3rd-party |
+| DINO-WM _(PushT (JEPA-WMs study))_ | new episodes | full success | 678.0 | authors |
 | LeWM _(LeWM offline datasets)_ | — | planning time | 669.6 | 3rd-party |
 | LeWM + CEM | — | eval time | 198.92 | 3rd-party |
 | Teacher (canonical encoding) _(canonical encoding)_ | — | retrieval rank (held-out) | 169.8 | authors |
@@ -325,7 +326,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | DA-LeWM | — | success rate | 98.7 | authors |
 | VIS-WM | — | success rate | 98.0 | authors |
 | SA+IDM | — | success rate | 98.0 | authors |
-| UVA | — | success rate | 97.47 | authors |
 
 #### Bench2Drive  ·  _212 results_
 
@@ -539,6 +539,7 @@ _Not scored; surfaced for techniques transferable to WAM._
 
 ## 📰 Embodied / Physical-AI News
 - [Medtronic’s Hugo surgical robot ready for bigger operation](https://www.therobotreport.com/medtronics-hugo-surgical-robot-ready-for-bigger-operation/) — _The Robot Report_
+- [The manufacturing data gap holding back physical AI](https://www.therobotreport.com/the-manufacturing-data-gap-holding-back-physical-ai/) — _The Robot Report_
 - [MassRobotics launching marine robotics facility on Boston Harbor](https://www.therobotreport.com/massrobotics-launching-marine-robotics-facility-on-boston-harbor/) — _The Robot Report_
 - [Robotics enters its post-Jensen Huang era](https://www.therobotreport.com/robotics-enters-its-post-jensen-huang-era/) — _The Robot Report_
 - [Video Friday: Drone Squeezes Itself to Fit Through Tight Spaces](https://spectrum.ieee.org/video-friday-morphing-robots-quadrotor) — _IEEE Spectrum_
@@ -552,7 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [Time-Series Models in the Streamhouse: A New Frontier and Use Cases](https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse) — _Hugging Face - Blog_
 - [180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers](https://huggingface.co/blog/moe-expert-streaming) — _Hugging Face - Blog_
 - [Rumble-2-Flash: an open 0.5B speech model for 40+ languages](https://huggingface.co/blog/rumble-2-flash) — _Hugging Face - Blog_
-- [Humyn Labs raises $47M to collect real-world data for robotics](https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
