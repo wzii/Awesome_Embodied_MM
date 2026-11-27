@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-11-26 · **Tracked:** 2559 core · 1791 adjacent ·
-796 news · **43638** benchmark rows across **18647** model
+**Last updated:** 2026-11-27 · **Tracked:** 2559 core · 1791 adjacent ·
+798 news · **44043** benchmark rows across **18843** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -51,6 +51,7 @@ variants · **30** authors
 | **8.01** | 1Step-WAM: Your World Action Model but Faster using 1-Step Action Generation | 2026-10-11 | spd 9 · gen 6 · spec 6 · cost 8 | [abs](https://arxiv.org/abs/2610.15625) · [pdf](https://arxiv.org/pdf/2610.15625v1) · [code](https://github.com/changdong1687/1Step-WAM) |
 | **7.96** | VLA-ULAP: Interleaving Cloud VLA Calls with Ultra-Lightweight Local Action Prediction at the Edge | 2026-09-16 | spd 9 · gen 5 · spec 7 · cost 8 | [abs](https://arxiv.org/abs/2609.18663) · [pdf](https://arxiv.org/pdf/2609.18663v1) |
 | **7.94** | SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable World Model | 2026-10-20 | spd – · gen 5 · spec 9 · cost – | [abs](https://arxiv.org/abs/2610.28480) · [pdf](https://arxiv.org/pdf/2610.28480v1) |
+| **7.92** | SplatWAM: Splatting World Action Models for Real-Time 3D Imagination | 2026-11-24 | spd 8 · gen 7 · spec 8 · cost 7 | [abs](https://arxiv.org/abs/2611.33467) · [pdf](https://arxiv.org/pdf/2611.33467v1) |
 | **7.87** | Reinforced Planning with Latent World Models | 2026-08-19 | spd 8 · gen 6 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2608.18669) · [pdf](https://arxiv.org/pdf/2608.18669v1) |
 | **7.87** | RealtimeWAM: One-Step Asynchronous World Action Models | 2026-10-05 | spd 8 · gen 6 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2610.06617) · [pdf](https://arxiv.org/pdf/2610.06617v1) · [code](https://github.com/ModelTC/LightX2V) |
 | **7.87** | Self-Improving Video-to-Action Models | 2026-10-16 | spd – · gen 8 · spec 8 · cost – | [abs](https://arxiv.org/abs/2610.24177) · [pdf](https://arxiv.org/pdf/2610.24177v1) |
@@ -79,7 +80,6 @@ variants · **30** authors
 | **7.73** | $Δ$ Flow Matching for Robot Foundation Models | 2026-10-11 | spd 8 · gen 6 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2610.15794) · [pdf](https://arxiv.org/pdf/2610.15794v1) |
 | **7.73** | LoopedWAM: Looped World Action Models for Elastic Inference | 2026-11-19 | spd 8 · gen 7 · spec 8 · cost 8 | [abs](https://arxiv.org/abs/2611.25595) · [pdf](https://arxiv.org/pdf/2611.25595v1) · [code](https://github.com/anhdao69/LoopedWAM) |
 | **7.72** | Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model | 2026-07-13 | spd – · gen 7 · spec 8 · cost 2 | [abs](https://arxiv.org/abs/2607.11643) · [pdf](https://arxiv.org/pdf/2607.11643v1) |
-| **7.72** | Forward Dynamics Models | 2026-10-09 | spd 5 · gen 6 · spec 9 · cost 6 | [abs](https://arxiv.org/abs/2610.13117) · [pdf](https://arxiv.org/pdf/2610.13117v1) |
 
 ## 📊 Benchmark Leaderboard
 _Model identity = (name, training dataset); the same name on different data is a distinct row.
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _5899 results_
+#### LIBERO  ·  _6017 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,7 +102,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLA-0 _(LIBERO-10)_ | — | median end-to-end latency | 6300.0 | authors |
 | OpenVLA-7B _(LIBERO)_ | — | I(X; X~) (attack channel capacity) | 5000.0 | authors |
 
-#### CALVIN  ·  _242 results_
+#### CALVIN  ·  _254 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SAPS (Cosine) _(CALVIN)_ | long-horizon chains (5 subtasks) | subtask success rate (ST-SR) | 94.85 | authors |
 | VLM4VLA + Ours _(CALVIN ABC)_ | — | success rate (1 task) | 94.4 | authors |
 
-#### RoboTwin  ·  _1498 results_
+#### RoboTwin  ·  _1518 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -162,7 +162,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Cosmos Policy _(Open X-Embodiment)_ | — | success rate | 77.0 | 3rd-party |
 | AWAM | — | success rate | 76.5 | authors |
 
-#### Meta-World  ·  _252 results_
+#### Meta-World  ·  _255 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -177,7 +177,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | DINO-WM _(Metaworld (JEPA-WMs study))_ | new tasks (all 42 families) | full success | 127.0 | authors |
 | VICX _(Meta-World (drawer-open, reach, basketball))_ | coffee-button | success rate | 100.0 | authors |
 
-#### ManiSkill  ·  _179 results_
+#### ManiSkill  ·  _184 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -192,7 +192,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | FM policy _(expert trajectories from SAC policy on PickCube-v1)_ | PickCube-v1 | end success rate | 93.14 | authors |
 | πRL | — | success rate | 90.9 | authors |
 
-#### RoboCasa  ·  _641 results_
+#### RoboCasa  ·  _658 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -237,7 +237,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | GRPO-MIS _(ALFWorld)_ | — | pass@64 | 83.21 | authors |
 | GRPO w/ PaW _(on-policy RL rollouts)_ | — | success rate | 77.9 | authors |
 
-#### VBench  ·  _1804 results_
+#### VBench  ·  _1813 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -282,7 +282,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Qwen3.5-4B+SVA | — | success rate | 53.06 | authors |
 | Qwen3.5-27B | — | success rate | 47.22 | 3rd-party |
 
-#### BEHAVIOR  ·  _103 results_
+#### BEHAVIOR  ·  _106 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -297,7 +297,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SBP _(per-task finetune on BEHAVIOR-1K)_ | Collecting Children's Toys | task progress | 57.9 | authors |
 | PI0.5 (ft) _(per-task finetune on BEHAVIOR-1K)_ | Scene-configuration generalization (Additional Objects) | task progress | 50.6 | authors |
 
-#### nuScenes  ·  _502 results_
+#### nuScenes  ·  _506 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -312,7 +312,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | REPA w/ DINOv2 _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 295.9 | 3rd-party |
 | Self-Flow _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 283.3 | 3rd-party |
 
-#### PushT  ·  _258 results_
+#### PushT  ·  _261 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -327,7 +327,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VIS-WM | — | success rate | 98.0 | authors |
 | SA+IDM | — | success rate | 98.0 | authors |
 
-#### Bench2Drive  ·  _212 results_
+#### Bench2Drive  ·  _217 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -357,6 +357,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | ReactDrive _(Waymo Open Dataset + nuPlan)_ | — | DDC | 98.4 | authors |
 | Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
 
+#### DROID  ·  _194 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| DreamZero | — | Bradley-Terry Elo | 1580.0 | authors |
+| π0.5 | — | Bradley-Terry Elo | 1539.0 | authors |
+| GR00T N1.7 | — | Bradley-Terry Elo | 1500.0 | authors |
+| MolmoAct2 | — | Bradley-Terry Elo | 1456.0 | authors |
+| GR00T N1.6 | — | Bradley-Terry Elo | 1453.0 | authors |
+| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
+| π0-FAST _(DROID (zero-shot))_ | average across three tasks (successful trajectories only) | action steps length | 269.0 | 3rd-party |
+| MiniWorld-3B _(DROID)_ | — | Trajectory Accuracy improvement | 249.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | Depth Accuracy improvement | 238.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | LPIPS improvement | 216.0 | authors |
+
 #### NAVSIM v1  ·  _193 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -371,21 +386,6 @@ _Model identity = (model, training data); same name on different data is a disti
 | Adaptive-WAM _(NAVSIM)_ | — | end-to-end planning latency | 170.0 | authors |
 | CoPhy _(NAVSIM v1+v2)_ | — | C | 100.0 | authors |
 | PGSD (FCRS) _(NAVSIM v1 navtrain)_ | — | Comf. | 100.0 | authors |
-
-#### DROID  ·  _191 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| DreamZero | — | Bradley-Terry Elo | 1580.0 | authors |
-| π0.5 | — | Bradley-Terry Elo | 1539.0 | authors |
-| GR00T N1.7 | — | Bradley-Terry Elo | 1500.0 | authors |
-| MolmoAct2 | — | Bradley-Terry Elo | 1456.0 | authors |
-| GR00T N1.6 | — | Bradley-Terry Elo | 1453.0 | authors |
-| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
-| π0-FAST _(DROID (zero-shot))_ | average across three tasks (successful trajectories only) | action steps length | 269.0 | 3rd-party |
-| MiniWorld-3B _(DROID)_ | — | Trajectory Accuracy improvement | 249.0 | authors |
-| MiniWorld-3B _(DROID)_ | — | Depth Accuracy improvement | 238.0 | authors |
-| MiniWorld-3B _(DROID)_ | — | LPIPS improvement | 216.0 | authors |
 
 #### OGBench  ·  _176 results_
 
@@ -417,7 +417,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | InSight _(50 human pick-and-place demonstrations + 20 successful twist primitives)_ | twist cap open | success rate | 92.0 | authors |
 | π0.5 | Nut Pouring | final success rate | 91.3 | authors |
 
-#### TwoRoom  ·  _152 results_
+#### TwoRoom  ·  _154 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -432,7 +432,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ALeWM _(TwoRoom)_ | — | success rate | 100.0 | authors |
 | LeWM + NGC (Oracle Predictor) | offset 75 | success rate | 100.0 | authors |
 
-#### RoboMME  ·  _147 results_
+#### RoboMME  ·  _153 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -538,6 +538,8 @@ _Not scored; surfaced for techniques transferable to WAM._
 - **[Zhen-Yu Wu](https://www.semanticscholar.org/author/2257436035)** (3 papers) — Research on world-action models for robotic manipulation, focusing on disentangled video generation for efficient world modeling, closed-loop policy improvement from deployment rollouts, and real-robot reinforcement learning via world-model simulation.
 
 ## 📰 Embodied / Physical-AI News
+- [GXO doubling down on robotics in 2027](https://www.therobotreport.com/gxo-doubling-down-on-robotics-in-2027/) — _The Robot Report_
+- [Taking Trainium3 to the Track: Generating Videos with LTX-2.5](https://huggingface.co/blog/video-trainium3) — _Hugging Face - Blog_
 - [Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon](https://huggingface.co/blog/ggml-org/llamacpp-amd-bench) — _Hugging Face - Blog_
 - [Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference](https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin) — _Hugging Face - Blog_
 - [Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems](https://huggingface.co/blog/training-swarms) — _Hugging Face - Blog_
@@ -551,8 +553,6 @@ _Not scored; surfaced for techniques transferable to WAM._
 - [SoftBank acquires Marc Raibert’s Robotics and AI Institute](https://www.therobotreport.com/softbank-acquires-marc-raiberts-robotics-and-ai-institute/) — _The Robot Report_
 - [Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton](https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance) — _Hugging Face - Blog_
 - [How does Orchard AI fit into John Deere’s technology portfolio?](https://www.therobotreport.com/how-does-orchard-ai-fit-into-john-deeres-technology-portfolio/) — _The Robot Report_
-- [Special Report: Engineering Focus on Motion Control](https://www.therobotreport.com/special-report-engineering-focus-on-motion-control/) — _The Robot Report_
-- [NVIDIA reinstates Jensen Huang after 11-day absence](https://www.therobotreport.com/nvidia-reinstates-jensen-huang-after-11-day-absence/) — _The Robot Report_
 
 ---
 _Generated by [Awesome-Embodied&MM](https://github.com/wzii/Awesome_Embodied_MM)._
