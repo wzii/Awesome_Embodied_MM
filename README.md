@@ -4,8 +4,8 @@
 > (VLA) models, action-conditioned video/world generation, robot foundation models, and
 > embodied/physical AI. Auto-generated; do not edit by hand.
 
-**Last updated:** 2026-11-27 · **Tracked:** 2559 core · 1791 adjacent ·
-798 news · **44043** benchmark rows across **18843** model
+**Last updated:** 2026-11-28 · **Tracked:** 2559 core · 1791 adjacent ·
+798 news · **44440** benchmark rows across **18964** model
 variants · **30** authors
 
 > Scoring: two layers — general (novelty/soundness/impact) + WAM-specific. Top-4 WAM metrics
@@ -87,7 +87,7 @@ Numbers are as reported; `authors` = self-reported, `3rd-party` = quoted compari
 _Model identity = (model, training data); same name on different data is a distinct row. `authors` = self-reported, `3rd-party` = quoted. Higher is better for success-rate-style metrics._
 
 
-#### LIBERO  ·  _6017 results_
+#### LIBERO  ·  _6060 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -102,7 +102,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | VLA-0 _(LIBERO-10)_ | — | median end-to-end latency | 6300.0 | authors |
 | OpenVLA-7B _(LIBERO)_ | — | I(X; X~) (attack channel capacity) | 5000.0 | authors |
 
-#### CALVIN  ·  _254 results_
+#### CALVIN  ·  _258 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -117,7 +117,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SAPS (Cosine) _(CALVIN)_ | long-horizon chains (5 subtasks) | subtask success rate (ST-SR) | 94.85 | authors |
 | VLM4VLA + Ours _(CALVIN ABC)_ | — | success rate (1 task) | 94.4 | authors |
 
-#### RoboTwin  ·  _1518 results_
+#### RoboTwin  ·  _1519 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -132,7 +132,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | Motus (Native) | — | GPU inference time per replan | 1455.69 | authors |
 | REACT | — | mean jerk norm | 1219.0 | authors |
 
-#### SimplerEnv  ·  _425 results_
+#### SimplerEnv  ·  _427 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -297,7 +297,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | SBP _(per-task finetune on BEHAVIOR-1K)_ | Collecting Children's Toys | task progress | 57.9 | authors |
 | PI0.5 (ft) _(per-task finetune on BEHAVIOR-1K)_ | Scene-configuration generalization (Additional Objects) | task progress | 50.6 | authors |
 
-#### nuScenes  ·  _506 results_
+#### nuScenes  ·  _516 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -312,7 +312,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | REPA w/ DINOv2 _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 295.9 | 3rd-party |
 | Self-Flow _(nuScenes (from scratch))_ | video generation (from scratch) | FVD | 283.3 | 3rd-party |
 
-#### PushT  ·  _261 results_
+#### PushT  ·  _265 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
@@ -342,6 +342,21 @@ _Model identity = (model, training data); same name on different data is a disti
 | AutoVLA _(Bench2Drive)_ | closed-loop driving | Efficiency | 146.93 | 3rd-party |
 | UniAD-Base _(Bench2Drive)_ | closed-loop driving | Efficiency | 129.21 | 3rd-party |
 
+#### DROID  ·  _212 results_
+
+| Model (training data) | Task | Metric | Value | Source |
+|-----------------------|------|--------|------:|:------:|
+| DreamZero | — | Bradley-Terry Elo | 1580.0 | authors |
+| π0.5 | — | Bradley-Terry Elo | 1539.0 | authors |
+| GR00T N1.7 | — | Bradley-Terry Elo | 1500.0 | authors |
+| MolmoAct2 | — | Bradley-Terry Elo | 1456.0 | authors |
+| GR00T N1.6 | — | Bradley-Terry Elo | 1453.0 | authors |
+| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
+| π0-FAST _(DROID (zero-shot))_ | average across three tasks (successful trajectories only) | action steps length | 269.0 | 3rd-party |
+| MiniWorld-3B _(DROID)_ | — | Trajectory Accuracy improvement | 249.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | Depth Accuracy improvement | 238.0 | authors |
+| MiniWorld-3B _(DROID)_ | — | LPIPS improvement | 216.0 | authors |
+
 #### NAVSIM  ·  _205 results_
 
 | Model (training data) | Task | Metric | Value | Source |
@@ -357,22 +372,7 @@ _Model identity = (model, training data); same name on different data is a disti
 | ReactDrive _(Waymo Open Dataset + nuPlan)_ | — | DDC | 98.4 | authors |
 | Ours† _(OpenScene (NAVSIM train split))_ | planning | DAC | 98.2 | authors |
 
-#### DROID  ·  _194 results_
-
-| Model (training data) | Task | Metric | Value | Source |
-|-----------------------|------|--------|------:|:------:|
-| DreamZero | — | Bradley-Terry Elo | 1580.0 | authors |
-| π0.5 | — | Bradley-Terry Elo | 1539.0 | authors |
-| GR00T N1.7 | — | Bradley-Terry Elo | 1500.0 | authors |
-| MolmoAct2 | — | Bradley-Terry Elo | 1456.0 | authors |
-| GR00T N1.6 | — | Bradley-Terry Elo | 1453.0 | authors |
-| Wan2.2 TI2V 5B _(DROID 700-sample pick-and-place subset)_ | — | inference time | 400.0 | 3rd-party |
-| π0-FAST _(DROID (zero-shot))_ | average across three tasks (successful trajectories only) | action steps length | 269.0 | 3rd-party |
-| MiniWorld-3B _(DROID)_ | — | Trajectory Accuracy improvement | 249.0 | authors |
-| MiniWorld-3B _(DROID)_ | — | Depth Accuracy improvement | 238.0 | authors |
-| MiniWorld-3B _(DROID)_ | — | LPIPS improvement | 216.0 | authors |
-
-#### NAVSIM v1  ·  _193 results_
+#### NAVSIM v1  ·  _202 results_
 
 | Model (training data) | Task | Metric | Value | Source |
 |-----------------------|------|--------|------:|:------:|
